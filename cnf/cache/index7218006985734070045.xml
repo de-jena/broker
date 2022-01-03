@@ -1,0 +1,653 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Project Dependencies" increment="1636551142949">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="@API Guardian"/>
+      <attribute name="osgi.identity" value="org.apiguardian.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.2" type="Version"/>
+      <attribute name="documentation" value="https://github.com/apiguardian-team/apiguardian"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apiguardian.api"/>
+      <attribute name="bundle-version" value="1.1.2" type="Version"/>
+      <attribute name="version" value="1.1.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+      <attribute name="bnd.hashes" value="-1808614382,65018" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.apiguardian.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.apiguardian.api"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apiguardian:apiguardian-api"/>
+      <attribute name="from" value="org.apiguardian:apiguardian-api:1.1.2"/>
+      <attribute name="version" value="1.1.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="apiguardian-api"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="1.1.2"/>
+      <attribute name="maven-groupId" value="org.apiguardian"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="6806" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="B509448AC506D607319F182537F0B35D71007582EC741832A1F111E5B5B70B38"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="&quot;(Apache-2.0 OR EPL-2.0)&quot;;description=&quot;This program and the accompanying materials are made available under the terms of the Apache License, Version 2.0, or the Eclipse Public License 2.0.&quot;;link=&quot;https://opensource.org/licenses/Apache-2.0,https://opensource.org/licenses/EPL-2.0&quot;"/>
+      <attribute name="copyright" value="Copyright (c) aQute SARL (2000, 2021) and others. All Rights Reserved."/>
+      <attribute name="osgi.identity" value="biz.aQute.remote.agent"/>
+      <attribute name="documentation" value="https://bnd.bndtools.org/"/>
+      <attribute name="description" value="This bundle acts as an agent for the remote launching architecture. When started, it will bind to port 29998 and listens for incoming requests. When this port is accessed, it will open a link that allows it to act as an OSGi management agent that is remotely controlled. When this connection is closed, it will remove all bundles that were installed through this connection. The protocol is highly optimized to make this also work for small devices and slow connections."/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="6.0.0.202110041835" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="6.0.0.202110041835" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="biz.aQute.remote.agent"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="6.0.0.202110041835" type="Version"/>
+      <attribute name="osgi.wiring.host" value="biz.aQute.remote.agent"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="biz.aQute.bnd:biz.aQute.remote.agent"/>
+      <attribute name="from" value="biz.aQute.bnd:biz.aQute.remote.agent:6.0.0"/>
+      <attribute name="version" value="6.0.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="biz.aQute.remote.agent"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="6.0.0"/>
+      <attribute name="maven-groupId" value="biz.aQute.bnd"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="456042" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/biz/aQute/bnd/biz.aQute.remote.agent/6.0.0/biz.aQute.remote.agent-6.0.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="37B460DC8EA0CBD54128855C10191B4EA5C355374114D05940D50B3774F68CBE"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.launch)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.launch"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.gogo.runtime)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apache.felix.gogo.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.openmbean)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.openmbean"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.dto)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.startlevel)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.startlevel"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.wiring)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.wiring"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.wiring.dto)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.wiring.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.resource)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.resource.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.resource.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.packageadmin)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.packageadmin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.tracker"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.service.command)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apache.felix.service.command"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://opensource.org/licenses/apache2.0.php; link=&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;; description=&quot;Apache License, Version 2.0&quot;"/>
+      <attribute name="copyright" value="aQute SARL All Rights Reserved"/>
+      <attribute name="osgi.identity" value="biz.aQute.gogo.commands.provider"/>
+      <attribute name="documentation" value="https://aQute.biz"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.0.202104061645" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.0.202104061645" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="biz.aQute.gogo.commands.provider"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.0.202104061645" type="Version"/>
+      <attribute name="osgi.wiring.host" value="biz.aQute.gogo.commands.provider"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="biz.aQute:biz.aQute.gogo.commands.provider"/>
+      <attribute name="from" value="biz.aQute:biz.aQute.gogo.commands.provider:1.7.0"/>
+      <attribute name="version" value="1.7.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="biz.aQute.gogo.commands.provider"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="1.7.0"/>
+      <attribute name="maven-groupId" value="biz.aQute"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="481036" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/biz/aQute/biz.aQute.gogo.commands.provider/1.7.0/biz.aQute.gogo.commands.provider-1.7.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="B4E805681F170B511BAFF8D720E9FF26D118AFE0AC5926801ECE7A28692132D9"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.log)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.log.admin)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.log.admin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.component.runtime)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.component.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.component.runtime.dto)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.component.runtime.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.http.runtime)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.http.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.http.runtime.dto)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.http.runtime.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.jaxrs.runtime)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.jaxrs.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.jaxrs.runtime.dto)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.jaxrs.runtime.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.gogo.runtime)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.felix.gogo.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.felix.service.command)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.felix.service.command"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.dto)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.hooks.service)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.hooks.service"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.startlevel)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.startlevel"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.wiring)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.wiring"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.resource)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.packageadmin)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.packageadmin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.startlevel)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.startlevel"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.tracker"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Eclipse Public License v1.0"/>
+      <attribute name="copyright" value="Data In Motion Consulting"/>
+      <attribute name="osgi.identity" value="org.gecko.templates"/>
+      <attribute name="description" value="Project templates for the Gecko.io Project"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.31" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.31" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.gecko.templates"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.31" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.gecko.templates"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.gecko.runtime:org.gecko.templates"/>
+      <attribute name="from" value="org.gecko.runtime:org.gecko.templates:1.0.31"/>
+      <attribute name="version" value="1.0.31" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="org.gecko.templates"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="1.0.31"/>
+      <attribute name="maven-groupId" value="org.gecko.runtime"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="emf-model-help.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko EMF Model"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="metaType" value="emf-model-metatype.xml"/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/emf-model"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="config-help.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Configurator"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/config"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="comp-help.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Component Development"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/ds"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="comp-api-help.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Component with API Development"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/ds-api"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="rest-no-config.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko Jaxrs Resource Example"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/rest-no-config"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="rest-no-config.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko Jaxrs Resource Example with JaxrsRuntime config"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/rest-with-config"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="runtime.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko Server Runtime"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/gecko-runtime"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="runtime-simple.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko Runtime Simple"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/gecko-runtime-simple"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="jolokia.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Jolokia Bundle"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/jolokia"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="integration-test.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Integration Test"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/integration-test"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="mmt-help.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="M2M Transformation Template"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="ccc/Gecko OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/mmt"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="templates/launch/gecko-export.xml"/>
+      <attribute name="engine" value="mustache"/>
+      <attribute name="name" value="Gecko Export"/>
+      <attribute name="icon" value="data:image/gif;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAABAQAgABAAEAsAAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECY+AAAAAAAaP2dbG0BqeRk8ZHsaPWWNAAAAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgTH6PI1aMFAAAAAAAAAAAAAAAACNTinIPIzlVAAAAAAAAAAAAAAAAAAAAAAAAAAAONx85AAAAABRUKykfSHp8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIEp7fwAAAA0AAAAAAAAAAAAAAAAXWTNZGF02uA45IUAWXC1ZHURxdSWUVhgQQCV1CSYVMQAAAAAAAAAZAAAACShfnTcOIzlDAAAAAAAAAAAhfkkAAAAAABtqPYgXXDSaGjtmTw4cPzQZYDejGmk82gMPBigbWE6qHG48jQAAAAcoXpseGT1kXAAAAAAAAAAAAAAAAAAAAAAAAAAAFlYxTyhboz0BAwgpHXJBVhJHKEgAAAAAGUNclwAAAAAAAAAAIU+BaAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAABVRL2YrZKY0DR8zPyebWRcMMRxDAAAAACJSiU8ZPGOSHUVyhh9LfEEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATTCteAAAAABg5X34AAAAAE0srYAAAAAAAAAAAAAAAAAAAAACH//8AAAAAAAAAAAAAAAAAAAAAAAAAAAAigEoAGmc8SQAAAAgaQGqFAAAAABJJKVMGGw8qFVIvqAAAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACulXwoQPSNfKWGfQwkXJkYbajxpF102Ph50Qv4AAgIkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH3xHMgYfBUIgTH6NAAAAGwAAAAAppF8JAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjiE8lED4jcBo7aqQMLh5MEUYlYBlhOFgXXC5PEkknaQwwHD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF1kzbxNLK20WYCdJIk+HXRczYIQYOWFtHUJzeBZKPnUUUS8VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIoJLACGCTD8XWzTGDjkhQAAAAAAcdjYzEUggWRVYLFsYXjYUSP+fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhg0oaG2g8RAAAAAAAAAAAIVgiAAAAAAAAAAAAI4lOAAAAAAAAAAAAAAAAAP//AAD/3wAA/f8AAP//AADf/wAAzJ8AAP+/AAD/zwAA//8AAPu/AAD/vwAA/f8AAP7/AAD/vwAA/f8AAP//AAAoAAAAEAAAACAAAAABAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="/>
+      <attribute name="org.bndtools.template" value="bndrun"/>
+      <attribute name="category" value="ccc/Gecko bndrun Templates"/>
+      <attribute name="dir" value="templates/launch/gecko-export"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="90175" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/gecko/runtime/org.gecko.templates/1.0.31/org.gecko.templates-1.0.31.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="71A820DD1388A4E588C9426EBDA8D21E179B36097C033C94701C9633E73459B0"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="&quot;(Apache-2.0 OR EPL-2.0)&quot;;description=&quot;This program and the accompanying materials are made available under the terms of the Apache License, Version 2.0, or the Eclipse Public License 2.0.&quot;;link=&quot;https://opensource.org/licenses/Apache-2.0,https://opensource.org/licenses/EPL-2.0&quot;"/>
+      <attribute name="copyright" value="Copyright (c) aQute SARL (2000, 2021) and others. All Rights Reserved."/>
+      <attribute name="osgi.identity" value="biz.aQute.remote.launcher"/>
+      <attribute name="documentation" value="https://bnd.bndtools.org/"/>
+      <attribute name="description" value="A launcher for the bnd launch architecture. This JAR contains a Launcher-Plugin. This plugin is found when you put this JAR on the -runpath of a launch specification in either a bndrun or bnd file. This launcher will read the -runremote header and contact a remote agent. The remote agent can be either a biz.aQute.remote.main, which will run as main, or a biz.aQute.remote.agent, which will run as a bundle. This JAR contains the agent so if the remote agent is a main then it will install the agent in this JAR."/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="6.0.0.202110041835" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="6.0.0.202110041835" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="biz.aQute.remote.launcher"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="6.0.0.202110041835" type="Version"/>
+      <attribute name="osgi.wiring.host" value="biz.aQute.remote.launcher"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="biz.aQute.bnd:biz.aQute.remote.launcher"/>
+      <attribute name="from" value="biz.aQute.bnd:biz.aQute.remote.launcher:6.0.0"/>
+      <attribute name="version" value="6.0.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="biz.aQute.remote.launcher"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="6.0.0"/>
+      <attribute name="maven-groupId" value="biz.aQute.bnd"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="504994" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/biz/aQute/bnd/biz.aQute.remote.launcher/6.0.0/biz.aQute.remote.launcher-6.0.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="C36975092A489D25DEF1D84365DF11EFDD196FD9E21C35C1E08A68BF87CA1907"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="&quot;(Apache-2.0 OR EPL-2.0)&quot;;description=&quot;This program and the accompanying materials are made available under the terms of the Apache License, Version 2.0, or the Eclipse Public License 2.0.&quot;;link=&quot;https://opensource.org/licenses/Apache-2.0,https://opensource.org/licenses/EPL-2.0&quot;"/>
+      <attribute name="copyright" value="Copyright (c) Neil Bartlett (2009, 2021) and others. All Rights Reserved."/>
+      <attribute name="osgi.identity" value="org.bndtools.templates.osgi"/>
+      <attribute name="documentation" value="https://bndtools.org/"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="5.3.0.202109151209" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="5.3.0.202109151209" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.bndtools.templates.osgi"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="5.3.0.202109151209" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.bndtools.templates.osgi"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.bndtools:org.bndtools.templates.osgi"/>
+      <attribute name="from" value="org.bndtools:org.bndtools.templates.osgi:5.3.0"/>
+      <attribute name="version" value="5.3.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="org.bndtools.templates.osgi"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="5.3.0"/>
+      <attribute name="maven-groupId" value="org.bndtools"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="comp-help.xml"/>
+      <attribute name="name" value="Component Development"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAPYAAElJSU5OTlFRUVNTU1hYWFtbW2FhYWJiYmRkZGlpaWtra21tbW5ubm9vb3l5eYCAgIGBgYKCgoODg4WFhYeHh4mJiYyMjI+Pj5ycnJ6enqCgoKGhoaOjo6Wlpaampqenp6ioqKqqqqysrLCwsLGxsbKysrW1tbe3t7m5ubq6ury8vL29vb6+vr+/v8DAwMHBwcLCwsPDw8TExMXFxcbGxsfHx8jIyMnJycrKysvLy8zMzM3Nzc7Ozs/Pz9HR0dLS0tTU1NXV1dbW1tjY2NnZ2dvb29zc3N3d3d7e3uLi4uTk5OXl5efn5+np6e3t7QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAE8AIf8LSW1hZ2VNYWdpY2sHZ2FtbWE9MQAsAAAAABAAEAAAB6CAT4KDTy8vhIiEL05MI4mCPjw8hUxGjiIeHoRGTkYvKj4+IyI8TCqKTD5GRqGsPC8OipGfGB6GnxWCry9GPCoRghWGPBURES+pkpqDIp88RgwqqS88joO2Iy8+CR4XHq88GIIXnyoJBAGCzdQvIiIq8B4MhCI+1JKSzvODKkYexp8YMPDgI9agCA0SPInwSmGBAAAeLVQxooBERAUIPAoEADs="/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="bbb/OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/ds"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="api-help.xml"/>
+      <attribute name="name" value="API Project"/>
+      <attribute name="icon" value="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABZVBMVEUAAABLh7sxW5A2ZJkzX5Q2ZZpMi8FQkcdHgrcxW5A5aZ5SlMpfrOJdqN4xW5BbpNpVmtBDe7FfrOJOjsRfrOJfrOJAdaoxW5BfrOJfrOJSlMoxW5A8b6Q8b6RfrOJVmtAxW5A5aZ5Yn9VbpNoxW5BdqN5dqN45aZ5frOJSlMpfrOIxW5BAdapDe7H////A3PjB3fr6/P/C3Pn8/v/3+/6/3Prx9/7u9f3j8P3I4fvD3fq92/nm8P3c6/3g7fzR5PvN4/vL4vvU5/rF3vnz+f3Y6v3V6fza6vnH3/fB2e+my+pqseVsn+Gju9dglNdYj9SDocRXhrY9ZZjr8f3q8/vQ5frB3Pq11fmtz/eix/fi7fXi6vXY5/XA2vTT3+6y0O3N3OyaxuuMwOqBvOp3t+jD1OeGruS6zuKzxt+HuN97pdlvnthqm9eMrtVxndKVr85aj8tXlMhTjcFShrltkLhfgq1PdKOdhMrdAAAALnRSTlMA/NqKaxQQB/v69vHw7evq5eTj2s/MysnGu7u2s6uopKOekoSEbV1XS0U2NCge2PG++QAAAOpJREFUGNMVzNNiA1EUheETtKlt2z0eT0ZJG7O2bT5/9vx367tYCKG1kZvbQqGjb2BwdGolAbB4jaH0bibI5juXAOavsG7vaKpkWJ51A8zl2fZW0tF1HRfZE8D0hep7bgAo3nM9AGM5h/CU4Xt74rN9FaD/1LUshdKUwb6aERTRspayb4bwHUIiIjkhhFLTT7cgaPOHKYRwzs3guDeEjZqgIFQxk5dDsJsm3+yjwwOLG572MAGw3FZ7fnktlyuVoluaBYhVMSSkqt5nPmIA8d/S4935iSaFY1fj4cfCzPhwtKu1Xv//i64j1ABv2TB0qN71PQAAAABJRU5ErkJggg=="/>
+      <attribute name="ranking" value="1000.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="bbb/OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/api"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="integration-test-help.xml"/>
+      <attribute name="name" value="Integration Testing"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAMQAAOCwsuG6u9hCT9lLV9pfattqc9x0fNx+hd2IjiGETzmPYSyKV1Gbc12hfGqnhXatjo65oJu/qafFsrPKu7/QxOLExP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABYALAAAAAAQABAAAAVMoCWOZGmeaHpGTMs8qsgkUyzTtjVPRV8hBYRpZxEILYQT0ShKihqQW42JFEUSCtEiIaI6LQsGBZKAIQUWwIEEYTgko4BhcAjk7vhTCAA7"/>
+      <attribute name="ranking" value="999.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="project"/>
+      <attribute name="category" value="bbb/OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/integration-test"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="name" value="Minimal Workspace"/>
+      <attribute name="ranking" value="0.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="workspace"/>
+      <attribute name="category" value="bbb/OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/workspace-minimal"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="templates/launch/felix-gogo.xml"/>
+      <attribute name="name" value="Felix 4+"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEAAQAOYAAAAAAP///+EdiTcIsd/AXIyltvCtwoUNb8VoTy4FVW07zOh0lH9/f4oHstbg4tvQmSItMbYDjuc5YMWfuD8FgXYO2OIMY8WkUuheZNyCucnJyWUGrfXt1oYemFkDaemWoaysrOtVgiMGeFYGks0CfMkferAdktxBd+fdraAFo0wKwffZ5e7Fxfzu8e64rt7Vg7oHdOglXuZodUQGbYIMw+AZdc+6VNeauePq6uWJltkCbpIEmfPc1nQGqGwJzeuhqygGa+RBa+hHevf5+UcKiuAyaMcEiOQdaukUXd0XYiMFUbwLiJ8HmH2GieLRjHgIx+ywudgMbvfi4rQHlr8Di1AGl+qDlokKq/76+/r18eNAdqQEnI2rs9MDed8EbGcHs+iXp/Lx2Pnv7ScETvfe5uYLZNsFcKQFoNni47sIiv37+MoFh74EiP79/Pv7+/Pf1v34+sADiP////fa5AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAAHQALAAAAAAQABAAAAeRgA8vKC10hoeIhk4XNic/YomJYQQIB2lFH1mRh29BMB47SzEsm4YGJQ0UVUZIOXClNyZUIzNTZVpSm3JWUWcbCUw6GDybbWAWbD1jV2YSHKVQSRFfSjRrMmqlC14pKkAVAi6lWEIkTwNEXSGldGRHcT4iHRM47HM1WwoQXGjsdCsZCjQB4c/QEAduGBREpIFOIAA7"/>
+      <attribute name="ranking" value="1001.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="bndrun"/>
+      <attribute name="category" value="bbb/OSGi Standard Templates"/>
+      <attribute name="dir" value="templates/launch/felix-gogo"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="templates/launch/enroute/base.xml"/>
+      <attribute name="name" value="OSGi enRoute Base Launcher"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEQAQAPUvAAAAACQkJUVFR1RVV1VWWGBhY2JjZWNkZm9wcnBxc3R1d3V2eXx9f4eJjIiJjJOVmJianZ6go6CipaiqramrrqyusbO1uLa3urm7vbq8vsbHycfIysjJy8rLzdHS1NTV1tbX2dzd3t7f4e3u7vDw8fLy8/X19fb29vf39/j5+fr6+/v7+/z8/P39/f7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADAALAAAAAARABAAAAaMQJhwCAMYiUiicZlEGh3QAqA53LyuV5SCinpBLhGAIvRqvlADwKZQMVrKyFfDuK5IAyO4UINargUbRhF6MBoeSx8HAB9pBy9TRRsfRgKPAA9zBY9CABR9ABhtAA4YAIOQAJoODC9SYhsBKBxHRhxnF0sPHCAvArRGIi8TaQEYXQpMRUYYWFcirlTRQkEAOw=="/>
+      <attribute name="ranking" value="1000.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="bndrun"/>
+      <attribute name="category" value="ccc/OSGi enRoute"/>
+      <attribute name="dir" value="templates/launch/enroute/base"/>
+    </capability>
+    <capability namespace="org.bndtools.template">
+      <attribute name="help" value="templates/launch/enroute/debug.xml"/>
+      <attribute name="name" value="OSGi enRoute Debug Launcher"/>
+      <attribute name="icon" value="data:image/gif;base64,R0lGODlhEQAQAPUvAAAAACQkJUVFR1RVV1VWWGBhY2JjZWNkZm9wcnBxc3R1d3V2eXx9f4eJjIiJjJOVmJianZ6go6CipaiqramrrqyusbO1uLa3urm7vbq8vsbHycfIysjJy8rLzdHS1NTV1tbX2dzd3t7f4e3u7vDw8fLy8/X19fb29vf39/j5+fr6+/v7+/z8/P39/f7+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADAALAAAAAARABAAAAaMQJhwCAMYiUiicZlEGh3QAqA53LyuV5SCinpBLhGAIvRqvlADwKZQMVrKyFfDuK5IAyO4UINargUbRhF6MBoeSx8HAB9pBy9TRRsfRgKPAA9zBY9CABR9ABhtAA4YAIOQAJoODC9SYhsBKBxHRhxnF0sPHCAvArRGIi8TaQEYXQpMRUYYWFcirlTRQkEAOw=="/>
+      <attribute name="ranking" value="999.0" type="Double"/>
+      <attribute name="org.bndtools.template" value="bndrun"/>
+      <attribute name="category" value="ccc/OSGi enRoute"/>
+      <attribute name="dir" value="templates/launch/enroute/debug"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="17977" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/bndtools/org.bndtools.templates.osgi/5.3.0/org.bndtools.templates.osgi-5.3.0.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="313C7E759076D4491B940BE8CD028B67466C804B10A566C33E2C5BB954E5C8BA"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
+      <attribute name="osgi.identity" value="org.apache.felix.configurator"/>
+      <attribute name="documentation" value="https://www.apache.org/"/>
+      <attribute name="description" value="Implementation of the OSGi Configurator Service Specification 1.0"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.6" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.felix.configurator"/>
+      <attribute name="bundle-version" value="1.0.6" type="Version"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.configurator"/>
+      <attribute name="bnd.hashes" value="2084237690,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.6" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.apache.felix.configurator"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.6" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.apache.felix.configurator"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.felix:org.apache.felix.configurator"/>
+      <attribute name="from" value="org.apache.felix:org.apache.felix.configurator:1.0.6"/>
+      <attribute name="version" value="1.0.6" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="org.apache.felix.configurator"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Project Dependencies"/>
+      <attribute name="maven-version" value="1.0.6"/>
+      <attribute name="maven-groupId" value="org.apache.felix"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="289056" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/apache/felix/org.apache.felix.configurator/1.0.6/org.apache.felix.configurator-1.0.6.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="9DA2B1B84049E0ECFC5798781A6FFB0B1BAEA4721F25E767AAA142A29DA3CA15"/>
+    </capability>
+    <capability namespace="osgi.extender">
+      <attribute name="osgi.extender" value="osgi.configurator"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.coordinator)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.coordinator"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.log)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.8.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework.wiring)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework.wiring"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.cm)(version&gt;=1.6.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.cm"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.tracker)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.tracker"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.7))"/>
+    </requirement>
+  </resource>
+</repository>

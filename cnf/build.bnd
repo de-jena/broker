@@ -1,0 +1,11 @@
+-groupid: broker_test
+-fixupmessages: \
+	'No metadata for revision';\
+		restrict:=error;\
+    	is:=warning
+    	
+java: java
+javac: javac
+javac.source: 1.8
+javac.target: 1.8
+javac.debug:  on

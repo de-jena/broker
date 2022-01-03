@@ -1,0 +1,41 @@
+-runfw: org.eclipse.osgi;version='[3.13.100.v20180827-1536,3.13.100.v20180827-1536]'
+-runprovidedcapabilities: ${native_capability}
+
+-resolve.effective: active
+
+-runproperties: \
+	org.osgi.service.http.port=8080,\
+	osgi.console=,\
+	osgi.console.enable.builtin=false
+
+-runbundles: \
+	ch.qos.logback.classic;version='[1.2.3,1.2.4)',\
+	ch.qos.logback.core;version='[1.2.3,1.2.4)',\
+	javax.mail;version='[1.4.3,1.4.4)',\
+	mqtt-device;version='[2.0.0,2.0.1)',\
+	mqtt-utils;version='[2.0.0,2.0.1)',\
+	org.apache.felix.configadmin;version='[1.9.8,1.9.9)',\
+	org.apache.felix.configurator;version='[1.0.6,1.0.7)',\
+	org.apache.felix.gogo.command;version='[1.0.2,1.0.3)',\
+	org.apache.felix.gogo.runtime;version='[1.0.10,1.0.11)',\
+	org.apache.felix.gogo.shell;version='[1.0.0,1.0.1)',\
+	org.apache.felix.scr;version='[2.1.10,2.1.11)',\
+	org.apache.servicemix.specs.activation-api-1.1;version='[2.9.0,2.9.1)',\
+	org.eclipse.paho.client.mqttv3;version='[1.2.2,1.2.3)',\
+	org.gecko.sensinact.rat;version=snapshot,\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
+	sensinact-common;version='[2.0.0,2.0.1)',\
+	sensinact-core;version='[2.0.0,2.0.1)',\
+	sensinact-datastore-api;version='[2.0.0,2.0.1)',\
+	sensinact-generic;version='[2.0.0,2.0.1)',\
+	sensinact-security-none;version='[2.0.0,2.0.1)',\
+	sensinact-signature-validator;version='[2.0.0,2.0.1)',\
+	sensinact-utils;version='[2.0.0,2.0.1)',\
+	slf4j.api;version='[1.7.25,1.7.26)'
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	bnd.identity;id='org.gecko.sensinact.rat'
+-runee: JavaSE-11

@@ -1,0 +1,16 @@
+{
+	":configurator:resource-version": 1,
+  
+	"MQTT~GPSRat": 
+	{
+		"id": "DIMC",
+		"host": "datainmotion.de",
+		"username": "demo",
+		"password" : "1234",
+		"topic": "gpsrat/#"	 
+	},
+	"org.apache.felix.scr.ScrService":
+	{
+		"ds.loglevel":4
+	}
+}

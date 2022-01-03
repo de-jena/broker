@@ -1,0 +1,4 @@
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-includeresource: OSGI-INF/configurator/=configs/
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

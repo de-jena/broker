@@ -1,0 +1,1306 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Slf4j and Logback Dependencies" increment="1641214516173">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="Extensions to the SLF4J API"/>
+      <attribute name="osgi.identity" value="slf4j.ext"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.ext"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.profiler"/>
+      <attribute name="bnd.hashes" value="-1771109032,-937619447,-1288991898,-316092636,-668820019,-1084161356,-2060720186,2647074" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.ext"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.cal10n"/>
+      <attribute name="bnd.hashes" value="200881360,-2145613286" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.ext"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.ext"/>
+      <attribute name="bnd.hashes" value="2034899268,1435539189,1569661098,-636160829,119938783,73313124,-1222557688,-568070174" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="slf4j.ext"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.host" value="slf4j.ext"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:slf4j-ext"/>
+      <attribute name="from" value="org.slf4j:slf4j-ext:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="slf4j-ext"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="42377" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/slf4j-ext/1.7.25/slf4j-ext-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="9DF4EA4D390EB559F153716FA77658C26540F4F83635973B8C0E0DA70D6FA944"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.cal10n)(version&gt;=0.8.1))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.cal10n"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="JUL to SLF4J bridge"/>
+      <attribute name="osgi.identity" value="jul.to.slf4j"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.slf4j,org.slf4j.spi"/>
+      <attribute name="bundle-symbolic-name" value="jul.to.slf4j"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.bridge"/>
+      <attribute name="bnd.hashes" value="2140069854" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="jul.to.slf4j"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.host" value="jul.to.slf4j"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:jul-to-slf4j"/>
+      <attribute name="from" value="org.slf4j:jul-to-slf4j:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="jul-to-slf4j"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4596" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/jul-to-slf4j/1.7.25/jul-to-slf4j-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="416C5A0C145AD19526E108D44B6BF77B75412D47982CCE6CE8D43ABDBDBB0FAC"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-v10.html, http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+      <attribute name="osgi.identity" value="ch.qos.logback.core"/>
+      <attribute name="documentation" value="http://www.qos.ch"/>
+      <attribute name="description" value="logback-core module"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.encoder,ch.qos.logback.core.filter,ch.qos.logback.core.helpers,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,ch.qos.logback.core.status,ch.qos.logback.core.util"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core"/>
+      <attribute name="bnd.hashes" value="1237836135,1991921880,-1698218082,152025396,-1248053779,-878823522,-1678783089,1564469504,-815180720,69463811,-2025855158,-1960399557,-468644573,-2062905724,430863464,1079902291,106334117" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.boolex"/>
+      <attribute name="bnd.hashes" value="-65530797,674344661,1199814470,-379619559,-1789452014" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.db.dialect,ch.qos.logback.core.joran.action,ch.qos.logback.core.joran.spi,ch.qos.logback.core.joran.util.beans,ch.qos.logback.core.spi,javax.sql,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.db"/>
+      <attribute name="bnd.hashes" value="-1633787172,21952697,1533112106,-211055530,-1144377908,1086949182,-1540615938,-684648574" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.db.dialect"/>
+      <attribute name="bnd.hashes" value="2010381728,-1021830692,632668706,-312916258,1790277476,959235752,-1784631246,-1171374952,1227772581,443286618,-1872032204" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.encoder"/>
+      <attribute name="bnd.hashes" value="467507635,-471558377,57285884,-688211475,-1131771882,-2038399338" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.boolex,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.filter"/>
+      <attribute name="bnd.hashes" value="-1408603608,-722978713,2104342424" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.helpers"/>
+      <attribute name="bnd.hashes" value="-259970439,1602416918,-2066915827,-1238332596" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.spi,ch.qos.logback.core.util"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.hook"/>
+      <attribute name="bnd.hashes" value="-885956136,622766265,-1344725206" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.pattern"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.html"/>
+      <attribute name="bnd.hashes" value="-1525012424,-656846042,1486059738,-1015798988" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.event,ch.qos.logback.core.joran.spi,ch.qos.logback.core.joran.util.beans,ch.qos.logback.core.spi,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran"/>
+      <attribute name="bnd.hashes" value="1933899404,-1229489056" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.joran.spi,ch.qos.logback.core.joran.util,ch.qos.logback.core.joran.util.beans,ch.qos.logback.core.spi,ch.qos.logback.core.util,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.action"/>
+      <attribute name="bnd.hashes" value="1425835181,1955883606,-1069358419,79711796,-449596552,-1345232259,-1641805054,-1477179430,928597544,-1478587610,2060966620,489881374,-1256913765,-1614491426,937269701,2138852964,-361181658,344392178,1957874947,882811019,477488207,-1417815876,1291231948" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.joran.action,ch.qos.logback.core.joran.event,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,org.codehaus.commons.compiler,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.conditional"/>
+      <attribute name="bnd.hashes" value="1142656251,1648051439,663081427,-931329708,36908959,1586404221,-1891710253,1732629886,-53010080" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,ch.qos.logback.core.status,org.xml.sax,org.xml.sax.helpers"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.event"/>
+      <attribute name="bnd.hashes" value="-1061937672,1766239903,349036013,-1979249424,-1667618354,396363640" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,javax.xml.stream,javax.xml.stream.events"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.event.stax"/>
+      <attribute name="bnd.hashes" value="-1061937672,1766239903,396363640,4051714,-679821856" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.node"/>
+      <attribute name="bnd.hashes" value="-1789745025" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.action,ch.qos.logback.core.joran.event,ch.qos.logback.core.spi,ch.qos.logback.core.status,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.spi"/>
+      <attribute name="bnd.hashes" value="-1154431335,1889075699,301888983,167237032,-512034857,-1564834622,-1953316575,297104091,1681245691,1611946253,-916282777,-340140454,1409287381,592760594,-1082435020,-99119323,-584458861,-1226775399" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.spi,ch.qos.logback.core.joran.util.beans,ch.qos.logback.core.spi,ch.qos.logback.core.util"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.util"/>
+      <attribute name="bnd.hashes" value="1606030969,1399993044,22379765" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.util.beans"/>
+      <attribute name="bnd.hashes" value="-240410100,-358513450,1728840030,1386185714" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.layout"/>
+      <attribute name="bnd.hashes" value="-657441329" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.boolex,ch.qos.logback.core.helpers,ch.qos.logback.core.net.ssl,ch.qos.logback.core.pattern,ch.qos.logback.core.sift,ch.qos.logback.core.spi,ch.qos.logback.core.util,javax.mail,javax.net"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net"/>
+      <attribute name="bnd.hashes" value="-126773532,-94870852,-1015474561,31419218,1241434553,1200355544,-1698708310,-1004806990,1456054264,-1107960103,1761745042,1169974830,-569689061,1235705338,1967790031,2126652824,9825016" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.net.ssl,ch.qos.logback.core.spi,javax.net"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net.server"/>
+      <attribute name="bnd.hashes" value="-1927464097,2021122027,1685995011,-1480225240,-12302390,1655070880,112930028,236451176,752175232,1000013434,514470199,2046922867,-1236606070" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,javax.net,javax.net.ssl"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net.ssl"/>
+      <attribute name="bnd.hashes" value="1976602785,1149401316,-1595934338,1595160728,82412,1854760049,2072292165,-1618363269,1746104088,-182918550,469720503,392364704,-1778844768,1064278080,-627602523" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.encoder,ch.qos.logback.core.spi,ch.qos.logback.core.status"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern"/>
+      <attribute name="bnd.hashes" value="1040636665,1654237568,-1026470494,64447553,-1978017435,-1260291173,-166825,-1915346479,-914447189,512101107,2106174591,249322250,-316092636" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.pattern"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern.color"/>
+      <attribute name="bnd.hashes" value="885190988,1862066456,1043862771,1429801432,-1579422623,1021021911,-1362313155,850893733,681430653,-1794376142,-1965361284,-1510671731,588603068,1941825308,-1233511614,7160106,1602234050,980725389" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.pattern,ch.qos.logback.core.pattern.util,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern.parser"/>
+      <attribute name="bnd.hashes" value="-534884161,2042308873,1153641255,2433570,-845370878,-1911543745,2109290073,80988633,1814417370,175865529" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern.util"/>
+      <attribute name="bnd.hashes" value="1290874925,21047903,-471363252,2092508351,-1950064898" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.property"/>
+      <attribute name="bnd.hashes" value="1695878730,-1258848520" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.read"/>
+      <attribute name="bnd.hashes" value="2010612448,-1873647579" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.status"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.recovery"/>
+      <attribute name="bnd.hashes" value="-1576924101,-1389739614,1233253495,8305597" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran.spi,ch.qos.logback.core.rolling.helper,ch.qos.logback.core.spi,ch.qos.logback.core.util"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.rolling"/>
+      <attribute name="bnd.hashes" value="1204775786,-38603309,808346024,-440589385,-1230640344,-1570165415,82021761,2132577061,1132551719,-1445483218,237346313,650439802,959425713,-1947134692,1426629133" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.pattern,ch.qos.logback.core.rolling,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.rolling.helper"/>
+      <attribute name="bnd.hashes" value="806526316,-925197303,-1187802493,1624016101,1207928597,-1378900394,484543305,1836173895,733851749,-1068916167,108569069,742107264,1070132355,-1965707012,-1181820886,1257321394,-684137529" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.joran,ch.qos.logback.core.joran.event,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,ch.qos.logback.core.util"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.sift"/>
+      <attribute name="bnd.hashes" value="-222664041,-1882940038,1317393827,1341881297,-1518352901,-1089309060,-40397962,1291340674" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.filter,ch.qos.logback.core.helpers,ch.qos.logback.core.status"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.spi"/>
+      <attribute name="bnd.hashes" value="67115090,1841089469,1277689821,-404078106,-2085767898,543190939,1253629455,1745664384,1745884367,-624739713,1815461132,1048760023,-1872469609,765487666,1672091434,1168980438,26015916,1129156108,9209442,-2144971214" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.spi,javax.servlet,javax.servlet.http"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.status"/>
+      <attribute name="bnd.hashes" value="506302458,1175929440,-157481131,-166281410,-578905036,664048741,-1808614382,-2054038013,1151185638,-1404231050,-279407813,-2053454028,366111027,-1001804232" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.subst"/>
+      <attribute name="bnd.hashes" value="2622298,2433570,2058683787,-1911543745,80988633,1814417370,2146092791" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core,ch.qos.logback.core.rolling,ch.qos.logback.core.rolling.helper,ch.qos.logback.core.spi,ch.qos.logback.core.status"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.core"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.util"/>
+      <attribute name="bnd.hashes" value="-762240740,495371628,1490248541,1688110458,1417224150,1521526266,750357973,1565053489,1678962540,356048380,1190510070,-1927368268,369926444,74073711,-739799708,-670920771,-670851138,-618969457,-414360592,1710151909,771505563,-2013651917,106067319,1265101987,-512119845,-1485741162,-1429386328,-736820655,-1658947683,-2012681073" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="ch.qos.logback.core"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="ch.qos.logback.core"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="ch.qos.logback:logback-core"/>
+      <attribute name="from" value="ch.qos.logback:logback-core:1.2.3"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="logback-core"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.2.3"/>
+      <attribute name="maven-groupId" value="ch.qos.logback"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="471901" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="5946D837FE6F960C02A53EDA7A6926ECC3C758BBDD69AA453EE429F858217F22"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.mail)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.mail.internet)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.naming)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.naming"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.sql)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.sql"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.namespace)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.namespace"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.stream)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.stream.events)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.stream.events"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax.helpers)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.codehaus.janino)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.janino"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.codehaus.commons.compiler)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.commons.compiler"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.fusesource.jansi)(version&gt;=1.9.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.fusesource.jansi"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="OSGi LogService implementation over SLF4J"/>
+      <attribute name="osgi.identity" value="org.slf4j.osgi-over-slf4j"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.slf4j.osgi-over-slf4j"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.slf4j.osgi-over-slf4j"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:osgi-over-slf4j"/>
+      <attribute name="from" value="org.slf4j:osgi-over-slf4j:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="osgi-over-slf4j"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="5478" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/osgi-over-slf4j/1.7.25/osgi-over-slf4j-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="147264E477683171772728941ADB09B0AF954ECD042002E35D2F4B6B71341185"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.log)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="Log4j implemented over SLF4J"/>
+      <attribute name="osgi.identity" value="log4j.over.slf4j"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="log4j.over.slf4j"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.2.17" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.log4j"/>
+      <attribute name="bnd.hashes" value="1237836135,-594090284,-774410653,115155230,-878823522,69463811,-2025855158,73313124,385112736,806644713,-2013470288,76172,77133,-1617094982,-1100816956,-465098294,808346024,-1431314532,1232154362" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="log4j.over.slf4j"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.2.17" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.log4j.helpers"/>
+      <attribute name="bnd.hashes" value="-2013495936,934591008" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="log4j.over.slf4j"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.2.17" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.log4j.spi"/>
+      <attribute name="bnd.hashes" value="1335045973,1105434690,2104342424,-327964327,971415866,107691290,-754233701,450435317" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="log4j.over.slf4j"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.2.17" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.log4j.xml"/>
+      <attribute name="bnd.hashes" value="-1632266889" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="log4j.over.slf4j"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.host" value="log4j.over.slf4j"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:log4j-over-slf4j"/>
+      <attribute name="from" value="org.slf4j:log4j-over-slf4j:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="log4j-over-slf4j"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="23645" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/log4j-over-slf4j/1.7.25/log4j-over-slf4j-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="C84C5CE4BBB661369CCD4C7B99682027598A0FB2E3D63A84259DBE5C0BF1F949"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.6.0))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.6.0))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.6.0))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="The slf4j API"/>
+      <attribute name="osgi.identity" value="slf4j.api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.api"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+      <attribute name="bnd.hashes" value="-1574625391,1542098343,-2013470288,971415866,656190246,76172,-1997438886,-206827696" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.api"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+      <attribute name="bnd.hashes" value="999291513,-210874492,718830627,-21867238" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.api"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+      <attribute name="bnd.hashes" value="-878893391,652059112,-1175473662,1408872259,366798586,-22532957,1262883103,1146947307,-1106355182,1284350074,1258974954,-319512896,-1150326250,2647074" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.api"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.event"/>
+      <attribute name="bnd.hashes" value="-468363275,755169383,73313124,-754233701,589596757" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="slf4j.api"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.host" value="slf4j.api"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:slf4j-api"/>
+      <attribute name="from" value="org.slf4j:slf4j-api:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="slf4j-api"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="41203" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="18C4A0095D5C1DA6B817592E767BB23D29DD2F560AD74DF75FF3961DBDE25B79"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.impl)(version&gt;=1.6.0))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.impl"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="SLF4J Simple binding"/>
+      <attribute name="osgi.identity" value="slf4j.simple"/>
+      <attribute name="type" value="osgi.fragment"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.simple"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.impl"/>
+      <attribute name="bnd.hashes" value="-240364420,-435277278,-1418929662,-2007785964,-1792014168,579679496,1614616456,-705254350" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:slf4j-simple"/>
+      <attribute name="from" value="org.slf4j:slf4j-simple:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="slf4j-simple"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="15257" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/slf4j-simple/1.7.25/slf4j-simple-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="0966E86FFFA5BE52D3D9E7B89DD674D98A03EED0A454FBAF7C1BD9493BD9D874"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.event)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.event"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.bundle">
+      <directive name="filter" value="(osgi.wiring.bundle=slf4j.api)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.host">
+      <directive name="filter" value="(osgi.wiring.host=slf4j.api)"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-v10.html, http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html"/>
+      <attribute name="osgi.identity" value="ch.qos.logback.classic"/>
+      <attribute name="documentation" value="http://www.qos.ch"/>
+      <attribute name="description" value="logback-classic module"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.classic.turbo,ch.qos.logback.core,ch.qos.logback.core.pattern,ch.qos.logback.core.spi,ch.qos.logback.core.status,javax.servlet.http,org.slf4j,org.slf4j.event,org.slf4j.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic"/>
+      <attribute name="bnd.hashes" value="-67643453,-774410653,149635325,73313124,-2013470288,-1280137761,-1617094982,1129865026" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core.boolex,groovy.lang"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.boolex"/>
+      <attribute name="bnd.hashes" value="401783209,336340700,1263815142,2041860136,-1228412186,67904790" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.db.names,ch.qos.logback.classic.spi,ch.qos.logback.core.db"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.db"/>
+      <attribute name="bnd.hashes" value="1726909413,-1144377908,1699522061" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.db.names"/>
+      <attribute name="bnd.hashes" value="-112196831,-1321177265,-1736634448,-1088162399,15250265" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.db.script"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core.pattern"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.encoder"/>
+      <attribute name="bnd.hashes" value="-593305342" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.spi,ch.qos.logback.core.filter,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.filter"/>
+      <attribute name="bnd.hashes" value="-1227929604,-501082205" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.core,ch.qos.logback.core.spi,groovy.lang,org.codehaus.groovy.control.customizers"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.gaffer"/>
+      <attribute name="bnd.hashes" value="1183837877,-1802515444,-792112766,-187620827,-1927680729,1770819814,-1378635653,979323497,1690972732,411581961,-547019580,1944216210,-700144745" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.servlet"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.helpers"/>
+      <attribute name="bnd.hashes" value="1890848448" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core.html,ch.qos.logback.core.pattern"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.html"/>
+      <attribute name="bnd.hashes" value="732963097,-1826261502,-714065227,338845383" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.spi,ch.qos.logback.core,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi,javax.management"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.jmx"/>
+      <attribute name="bnd.hashes" value="901760842,-1599614829,-348854465" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core.joran,ch.qos.logback.core.joran.spi,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.joran"/>
+      <attribute name="bnd.hashes" value="-2080894737,-1086453209,941104123" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.core.joran.action,ch.qos.logback.core.joran.spi,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.joran.action"/>
+      <attribute name="bnd.hashes" value="-397306196,-1246224864,917230480,-871437531,1473173186,1638928928,-1376388422,-940750842,-383379511,-1287278299,22202888" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.spi,ch.qos.logback.core.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.jul"/>
+      <attribute name="bnd.hashes" value="-1903915153,747006707" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.layout"/>
+      <attribute name="bnd.hashes" value="-520070326" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.log4j"/>
+      <attribute name="bnd.hashes" value="1910121985" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.spi,ch.qos.logback.core,ch.qos.logback.core.boolex,ch.qos.logback.core.helpers,ch.qos.logback.core.joran.spi,ch.qos.logback.core.net,ch.qos.logback.core.net.ssl,ch.qos.logback.core.pattern,ch.qos.logback.core.spi,javax.net,javax.net.ssl"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.net"/>
+      <attribute name="bnd.hashes" value="510681393,-591255168,245764541,-1421402394,891653006,-523046768,-1784094840,-286863970,-1262114310,2024549429,1050941090,424131550" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.net,ch.qos.logback.classic.spi,ch.qos.logback.core.net,ch.qos.logback.core.net.server,ch.qos.logback.core.net.ssl,ch.qos.logback.core.spi,javax.net"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.net.server"/>
+      <attribute name="bnd.hashes" value="475745884,1597116920,-1869871548,-1803598656,-1287874600,349483017,-1632428879,-1409573859,903481541" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core,ch.qos.logback.core.pattern,org.slf4j"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.pattern"/>
+      <attribute name="bnd.hashes" value="80601533,932324139,2072581134,-1599254266,222181710,83361286,-2142130830,1498142102,57623193,1784983874,-482636132,1364145610,1003993967,-751306101,-1794658864,788561268,-215355802,2111112569,-832965507,90222215,-947223867,1190382379,-666985017,-737467511,873030837,-88389162,-1216774506,1797809403,1672579090,2647074" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core.pattern.color"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.pattern.color"/>
+      <attribute name="bnd.hashes" value="2081863239" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.selector"/>
+      <attribute name="bnd.hashes" value="1640185559,653076110,658805325" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.servlet"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.selector.servlet"/>
+      <attribute name="bnd.hashes" value="1618748764,-1671546313" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.servlet"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.servlet"/>
+      <attribute name="bnd.hashes" value="883328123,-1343786391" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic.spi,ch.qos.logback.core,ch.qos.logback.core.joran.action,ch.qos.logback.core.joran.event,ch.qos.logback.core.joran.spi,ch.qos.logback.core.sift,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.sift"/>
+      <attribute name="bnd.hashes" value="-2079272807,1885954456,-101041993,610048085,-729786086,1165697797,1823588625" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.turbo,ch.qos.logback.core,ch.qos.logback.core.spi,org.slf4j"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.spi"/>
+      <attribute name="bnd.hashes" value="-200873483,1445635925,1335045973,327613342,-697816732,540238263,1607184038,-612321345,955267888,2029092787,-1851738920,-801737253,-754233701,1030889108,2122597519,319562721,-1175387098,418564399,-2136861394,-1975504304,-529429401,-2011428652" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.core.spi,org.slf4j"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.turbo"/>
+      <attribute name="bnd.hashes" value="1910026036,171900324,-213956374,-2045474780,-1282146631,-2077225870,-687637003,451115034,-798097510,-1198956778" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="ch.qos.logback.classic,ch.qos.logback.classic.selector,ch.qos.logback.classic.spi,ch.qos.logback.core.joran.spi,ch.qos.logback.core.status,javax.naming,org.slf4j.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.classic.util"/>
+      <attribute name="bnd.hashes" value="592495059,656464742,1354612474,973720210,74073711,-1653364629,-1485138861,514041966,1378367229,1409660243" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.slf4j,org.slf4j.spi"/>
+      <attribute name="bundle-symbolic-name" value="ch.qos.logback.classic"/>
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.impl"/>
+      <attribute name="bnd.hashes" value="579679496,1614616456,-705254350" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="ch.qos.logback.classic"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.2.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="ch.qos.logback.classic"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="ch.qos.logback:logback-classic"/>
+      <attribute name="from" value="ch.qos.logback:logback-classic:1.2.3"/>
+      <attribute name="version" value="1.2.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="logback-classic"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.2.3"/>
+      <attribute name="maven-groupId" value="ch.qos.logback"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="290339" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/ch/qos/logback/logback-classic/1.2.3/logback-classic-1.2.3.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="FB53F8539E7FCB8F093A56E138112056EC1DC809EBB020B59D8A36A5EBAC37E0"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.reflect)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.reflect"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.naming)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.naming"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.slf4j)"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.event)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.event"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.util)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.control)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.control"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.control.customizers)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.control.customizers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.reflection)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.reflection"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.runtime)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.runtime"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.runtime.callsite)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.runtime.callsite"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.runtime.typehandling)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.runtime.typehandling"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.runtime.wrappers)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.runtime.wrappers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.codehaus.groovy.transform)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.codehaus.groovy.transform"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=groovy.lang)(version&gt;=2.4.0)(!(version&gt;=3.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="groovy.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.boolex)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.boolex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.db)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.db"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.encoder)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.encoder"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.filter)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.filter"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.helpers)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.html)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.html"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.action)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.action"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.conditional)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.conditional"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.event)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.event"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.spi)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.util)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.joran.util.beans)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.joran.util.beans"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.net)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.net.server)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net.server"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.net.ssl)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.pattern)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.pattern.color)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern.color"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.pattern.parser)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.pattern.parser"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.sift)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.sift"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.spi)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.status)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.status"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.rolling)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.rolling"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.rolling.helper)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.rolling.helper"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=ch.qos.logback.core.read)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="ch.qos.logback.core.read"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.6))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="description" value="SLF4J JCL Binding"/>
+      <attribute name="osgi.identity" value="slf4j.jcl"/>
+      <attribute name="type" value="osgi.fragment"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="slf4j.jcl"/>
+      <attribute name="bundle-version" value="1.7.25" type="Version"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.impl"/>
+      <attribute name="bnd.hashes" value="-53026772,5598695,579679496,1614616456,-705254350" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.slf4j:slf4j-jcl"/>
+      <attribute name="from" value="org.slf4j:slf4j-jcl:1.7.25"/>
+      <attribute name="version" value="1.7.25" type="Version"/>
+    </capability>
+    <capability namespace="bnd.maven">
+      <attribute name="maven-artifactId" value="slf4j-jcl"/>
+      <attribute name="maven-extension" value="jar"/>
+      <attribute name="maven-repository" value="Slf4j and Logback Dependencies"/>
+      <attribute name="maven-version" value="1.7.25"/>
+      <attribute name="maven-groupId" value="org.slf4j"/>
+      <attribute name="maven-classifier" value=""/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="6983" type="Long"/>
+      <attribute name="url" value="file:/C:/Users/ungei/.m2/repository/org/slf4j/slf4j-jcl/1.7.25/slf4j-jcl-1.7.25.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="06C368AEC9DFB3466FF574A7478C62A90B14C14B7E4A3C482C7D2AF79DF37F03"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.25))"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.apache.commons.logging)"/>
+      <attribute name="osgi.wiring.package" value="org.apache.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.bundle">
+      <directive name="filter" value="(osgi.wiring.bundle=slf4j.api)"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.host">
+      <directive name="filter" value="(osgi.wiring.host=slf4j.api)"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+</repository>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.dim.trafficos.device.model/src" modelPluginID="de.dim.trafficos.device.model"
+    modelName="TOSDevice" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>device.ecore</foreignModel>
+  <genPackages prefix="TOSDevice" basePackage="de.dim.trafficos.model" resource="XMI"
+      disposableProviderFactory="true" contentTypeIdentifier="device#1.0" fileExtensions="tos"
+      ecorePackage="device.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//DeviceActivationType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DeviceActivationType/INACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DeviceActivationType/ACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DeviceActivationType/DELETED"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DeviceActivationType/UNKNOWN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//ClearAreaType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ClearAreaType/ClearPedestrian"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ClearAreaType/ClearMain"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ClearAreaType/ClearSecondary"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//DirectionType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/STRAIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/TURN_RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/TURN_LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/OTHER"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/STRAIGHT_TURNS"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/STRAIGHT_LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/STRAIGHT_RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//DirectionType/LEFT_RIGHT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//ScheduleModeType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ScheduleModeType/EVERY_DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ScheduleModeType/WEEKEND"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ScheduleModeType/WORKING_DAY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//TimeTableModeType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//TimeTableModeType/OFF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//ParameterDataType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ParameterDataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ParameterDataType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//ParameterDataType/DATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//IntersectionStateType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/UNKNOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/ENABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/DISABLED_DARK"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/DISABLED_FLASH_SECONDARY"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/DISABLED_FLASH_ALL"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//IntersectionStateType/DISABLED_DEFAULT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//LifeCycleDeviceType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/LOADING"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/PROVISIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/UNPROVISIONED"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/RUNNING"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/ON_ERROR"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//LifeCycleDeviceType/EXCEPTIONAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//OutputElementType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//OutputElementType/OTHER"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//OutputElementType/RED"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//OutputElementType/AMBER"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//OutputElementType/GREEN"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//OutputElementType/BEEP"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//PublicTransportType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportType/TRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportType/BUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//PublicTransportDataValueType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDataValueType/UNKNOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDataValueType/DOOR_CHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDataValueType/TELEGRAM"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDataValueType/GEO_INFO"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDataValueType/LOCATION_MESSAGE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="device.ecore#//PublicTransportDoorChangeType">
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDoorChangeType/DOOR_CLOSE"/>
+      <genEnumLiterals ecoreEnumLiteral="device.ecore#//PublicTransportDoorChangeType/DOOR_OPEN"/>
+    </genEnums>
+    <genClasses ecoreClass="device.ecore#//DeviceGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//DeviceGroup/device"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Device/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Device/activationState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Device/configuration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Device/deviceInformation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Device/systemInformation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Device/lifeCycleType"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//SystemInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/hardwareType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/hardwareRev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/osType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/osRev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/softwareType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//SystemInfo/softwareRev"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DeviceInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceInfo/technicalName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceInfo/humanReadableName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceInfo/shortName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceInfo/description"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DeviceConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DeviceConfiguration/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//DeviceConfiguration/intersection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//DeviceConfiguration/currentIntersection"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Intersection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/road"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/phase"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/phaseGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/timeTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/program"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Intersection/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Intersection/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Intersection/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Intersection/description"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Road">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Road/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Road/mainRoad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/incomingLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/outgoingLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/pedestrianLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/cycleLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/publicTransportLane"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Lane">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Lane/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Lane/refRoadId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Lane/link"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Lane/road"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Lane/subLane"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference device.ecore#//Lane/parentLane"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Lane/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Lane/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Lane/detector"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//ConflictingLane">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ConflictingLane/conflictingLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ConflictingLane/conflictingLink"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ConflictingLane/signalGroup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ConflictingLane/signalGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//IncomingLane"/>
+    <genClasses ecoreClass="device.ecore#//OutgoingLane"/>
+    <genClasses ecoreClass="device.ecore#//PedestrianLane"/>
+    <genClasses ecoreClass="device.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Link/index"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Link/refIncomingLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Link/refOutgoingLane"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Phase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Phase/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Phase/lane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Phase/transition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Phase/weightMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Phase/weightMax"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//ProgramEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//ProgramEntry/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//ProgramEntry/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//ProgramEntry/duration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ProgramEntry/refPhase"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Program/length"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Program/outputEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Program/signalTable"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Transition/refNextPhase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Transition/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Transition/unchangedLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Transition/changedLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Transition/clearArea"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//ProgramTransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//ProgramTransition/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//ClearArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//ClearArea/type"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PhaseGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PhaseGroup/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PhaseGroup/penalty"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//PhaseGroup/phase"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//IdNameElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//IdNameElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//IdNameElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Output/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Output/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Output/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Localizable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Localizable/location"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Location/id"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//NetworkLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//NetworkLocation/ip4Address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//NetworkLocation/ip6Address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//NetworkLocation/hostname"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Position/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Position/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Position/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Position/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Position/bearing"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//AddressLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AddressLocation/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AddressLocation/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AddressLocation/zip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AddressLocation/district"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TimeTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//TimeTable/entry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TimeTable/defaultMode"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TimeTableEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TimeTableEntry/program"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DataEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DataEntry/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DataEntry/configuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DataEntry/device"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//DataValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DataValue/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//DataValue/element"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//DataValue/elementRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//DataValue/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Parameter/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//CacheDataEntry"/>
+    <genClasses ecoreClass="device.ecore#//SignalTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//SignalTable/cacheDataEntry"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//HardwareConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//HardwareConfiguration/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//HardwareConfiguration/pinConfiguration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//HardwareConfiguration/deviceId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//HardwareConfiguration/deviceConfigurationId"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//OutputConfiguration">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//OutputConfiguration/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//OutputConfiguration/pin"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//OutPinConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//OutPinConfiguration/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//OutPinConfiguration/gpio"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//OutPinConfiguration/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//OutPinConfiguration/comment"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportLane"/>
+    <genClasses ecoreClass="device.ecore#//CycleLane"/>
+    <genClasses ecoreClass="device.ecore#//AbstractDataEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDataEntry/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDataEntry/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractDataEntry/index"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportStation"/>
+    <genClasses ecoreClass="device.ecore#//PublicTransportTimeTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportTimeTable/entry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportTimeTable/type"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//AbstractTimeTableEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractTimeTableEntry/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractTimeTableEntry/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractTimeTableEntry/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//AbstractTimeTableEntry/end"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportTimeTableEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportTimeTableEntry/firstStation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportTimeTableEntry/lastStation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportTimeTableEntry/stops"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportProgram/dataEntry"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLine/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportLine/timeTable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLine/lineNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportConfiguration/publicTransport"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportDataEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportDataEntry/dataValue"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportDataValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportDataValue/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportDataValue/lineRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportDataValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportDataValueObject"/>
+    <genClasses ecoreClass="device.ecore#//PublicTransportTelegram"/>
+    <genClasses ecoreClass="device.ecore#//PublicTransportPosition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportPosition/position"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportDoorChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportDoorChange/type"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportStop">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//PublicTransportStop/station"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//PublicTransportLocMsg">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/lineNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/tripNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/routeNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/travelNum"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/counter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/kilometer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/posState"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/lastStop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/nextStop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/actualTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/expectedTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/gps"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/odo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/door"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

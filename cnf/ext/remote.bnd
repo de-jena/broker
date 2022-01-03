@@ -1,0 +1,26 @@
+# Copyright 2021 Data In Motion Consulting GmbH
+#
+# This program and the accompanying materials are made available under the terms of the 
+# Eclipse Public License v2.0 which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v20.html
+#
+# SPDX-License-Identifier: EPL-2.0
+#
+# this will be replaced with `bnd-workspace-extensions` to solve the caching problem and use fixed versions. 
+-include: \
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_baseline.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_header.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_release.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/felix.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgiR7.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgiR8.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/slf4j.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgitest_junit5.bnd,\
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/jacoco.bnd,\
+	https://gitlab.com/gecko.io/geckoEMF/-/raw/master/cnf/geckoEMF/geckoEMF.bnd,\
+	https://gitlab.com/gecko.io/geckoEMFUtil/-/raw/main/cnf/geckoEMFUtil/geckoEMFUtil.bnd
+	
+#	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_run.bnd,\
+#	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_build.bnd,\
+-require-bnd: "(version>=6.0.0)"
+	

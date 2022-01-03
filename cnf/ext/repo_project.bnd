@@ -1,0 +1,68 @@
+# Copyright 2021 Data In Motion Consulting GmbH
+#
+# This program and the accompanying materials are made available under the terms of the 
+# Eclipse Public License v2.0 which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v20.html
+#
+# SPDX-License-Identifier: EPL-2.0
+
+#-plugin.broker_test: \
+#	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
+#		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
+#		snapshotUrl			= "https://oss.sonatype.org/content/repositories/snapshots/";\
+#		revision            = "${dependencies.project}";\
+#		transitive          = false;\
+#		name                = "Project Dependencies"
+
+-plugin.maven_central:\
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		releaseUrl=https://repo.maven.apache.org/maven2/;\
+		index=${.}/central.maven;\
+		name='Maven Central'
+
+
+##  All Project Deps
+dependencies.project:\
+
+	
+emfjson_old:\
+	com.fasterxml.jackson.core:jackson-annotations:2.9.7,\
+	com.fasterxml.jackson.core:jackson-core:2.9.7,\
+	com.fasterxml.jackson.core:jackson-databind:2.9.7,\
+	com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.7,\
+	com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.9.7,\
+	org.emfjson:emfjson-jackson:1.1.0
+
+-plugin.sensinact: \
+	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
+		releaseUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/,https://repo.maven.apache.org/maven2/";\
+		snapshotUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/,https://oss.sonatype.org/content/repositories/snapshots/";\
+		revision            = "org.eclipse.sensinact.gateway.distribution:sdk:pom:2.0-SNAPSHOT";\
+		transitive          = true;\
+		readOnly			= true;\
+		name                = "SensiNact SDK"
+
+-plugin.sensinact.template: \
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/sensinact/;\
+		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/sensinact/;\
+		index="${.}/sensinact.maven";\
+		readOnly			= true;\
+		name='SensiNact Template'
+
+-plugin.Local: \
+	aQute.bnd.deployer.repository.LocalIndexedRepo; \
+		name = Local; \
+		pretty = true; \
+		local = ${build}/local
+
+-plugin.gecko: \
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/dim-release/;\
+		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/;\
+		index=${.}/dim_release.maven;\
+		name='DIM_Nexus_Release',\
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/maven-public/;\
+		index=${.}/dim_nexus.maven;\
+		name='DIM_Nexus'

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="device" nsURI="http://datainmotion.de/trafficos/device/1.0"
+    nsPrefix="device">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceGroup" eSuperTypes="#//Device">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Grouping devices, but also inheriting from device to make all meta information also available"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="device" upperBound="-1"
+        eType="#//Device" eKeys="#//Device/id"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" eSuperTypes="#//Localizable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="activationState" eType="#//DeviceActivationType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configuration" eType="#//DeviceConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deviceInformation" eType="#//DeviceInfo"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="systemInformation" eType="#//SystemInfo"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lifeCycleType" eType="#//LifeCycleDeviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemInfo">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Usually information about the real system out in the field"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hardwareRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="osType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="osRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareRev" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceInfo">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Information about the digitial twin"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="technicalName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="humanReadableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shortName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DeviceActivationType">
+    <eLiterals name="INACTIVE"/>
+    <eLiterals name="ACTIVE" value="1"/>
+    <eLiterals name="DELETED" value="2"/>
+    <eLiterals name="UNKNOWN" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intersection" lowerBound="1"
+        upperBound="-1" eType="#//Intersection" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentIntersection" eType="#//Intersection"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Intersection" eSuperTypes="#//AbstractDataEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="road" lowerBound="1" upperBound="-1"
+        eType="#//Road" containment="true" eKeys="#//Road/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        containment="true" eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phase" upperBound="-1"
+        eType="#//Phase" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phaseGroup" upperBound="-1"
+        eType="#//PhaseGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeTable" eType="#//TimeTable"
+        containment="true" eKeys="#//IdNameElement/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1"
+        eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" upperBound="-1"
+        eType="#//Program" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//IntersectionStateType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Road">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainRoad" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLane" upperBound="-1"
+        eType="#//IncomingLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLane" upperBound="-1"
+        eType="#//OutgoingLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pedestrianLane" upperBound="-1"
+        eType="#//PedestrianLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cycleLane" upperBound="-1"
+        eType="#//CycleLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicTransportLane" upperBound="-1"
+        eType="#//PublicTransportLane" containment="true" eKeys="#//Lane/id"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lane">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refRoadId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="road" eType="#//Road" eKeys="#//Road/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subLane" upperBound="-1"
+        eType="#//Lane" containment="true" eOpposite="#//Lane/parentLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentLane" eType="#//Lane"
+        eOpposite="#//Lane/subLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//DirectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detector" upperBound="-1"
+        eType="#//Output"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConflictingLane" eSuperTypes="#//Lane">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflictingLane" upperBound="-1"
+        eType="#//ConflictingLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflictingLink" upperBound="-1"
+        eType="#//Link" eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="#//Output"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroups" upperBound="-1"
+        eType="#//Output"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingLane" eSuperTypes="#//Lane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PedestrianLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refIncomingLane" eType="#//Lane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refOutgoingLane" eType="#//OutgoingLane"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Phase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lane" lowerBound="1" upperBound="-1"
+        eType="#//ConflictingLane">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are all the lanes which have the green at the same time, namely non-conflicting with each other."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weightMin" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weightMax" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="begin" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refPhase" lowerBound="1"
+        eType="#//Phase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Program" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputEntry" upperBound="-1"
+        eType="#//ProgramEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalTable" eType="#//SignalTable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refNextPhase" lowerBound="1"
+        eType="#//Phase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unchangedLane" upperBound="-1"
+        eType="#//ConflictingLane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changedLane" upperBound="-1"
+        eType="#//ConflictingLane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clearArea" upperBound="-1"
+        eType="#//ClearArea" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramTransition" eSuperTypes="#//ProgramEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="#//Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ClearAreaType">
+    <eLiterals name="ClearPedestrian"/>
+    <eLiterals name="ClearMain" value="1"/>
+    <eLiterals name="ClearSecondary" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearArea">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClearAreaType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DirectionType">
+    <eLiterals name="STRAIGHT"/>
+    <eLiterals name="TURN_RIGHT" value="1"/>
+    <eLiterals name="TURN_LEFT" value="2"/>
+    <eLiterals name="OTHER" value="3"/>
+    <eLiterals name="STRAIGHT_TURNS" value="4"/>
+    <eLiterals name="STRAIGHT_LEFT" value="5"/>
+    <eLiterals name="STRAIGHT_RIGHT" value="6"/>
+    <eLiterals name="LEFT_RIGHT" value="7"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhaseGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="penalty" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a value which takes into account how many times the same lane is present in more than a Phase of the group. A penalty term of 0 means no lane is repeated more than once, a penalty term of 1 means a lane is present in two phases of the group, a penalty term of 2 means a lane is present in three phases or two lanes are present in two phases, etc."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phase" lowerBound="1" upperBound="-1"
+        eType="#//Phase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//IdNameElement #//Localizable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Localizable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" upperBound="-1"
+        eType="#//Location" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkLocation" eSuperTypes="#//Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip4Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ip6Address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Position" eSuperTypes="#//Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="altitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//DirectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bearing" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddressLocation" eSuperTypes="#//Location">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="street" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zip" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="district" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeTable" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//TimeTableEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMode" eType="#//TimeTableModeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeTableEntry" eSuperTypes="#//AbstractTimeTableEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" lowerBound="1"
+        eType="#//Program" eKeys="#//IdNameElement/id"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScheduleModeType">
+    <eLiterals name="EVERY_DAY"/>
+    <eLiterals name="WEEKEND" value="1"/>
+    <eLiterals name="WORKING_DAY" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeTableModeType">
+    <eLiterals name="OFF"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataEntry" eSuperTypes="#//AbstractDataEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" upperBound="-1"
+        eType="#//DataValue" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="configuration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="device" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
+        eType="#//IdNameElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementRef" eType="#//IdNameElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataType" eType="#//ParameterDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ParameterDataType">
+    <eLiterals name="STRING"/>
+    <eLiterals name="INTEGER" value="1"/>
+    <eLiterals name="DATE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CacheDataEntry" eSuperTypes="#//DataEntry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalTable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cacheDataEntry" upperBound="-1"
+        eType="#//CacheDataEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntersectionStateType">
+    <eLiterals name="UNKNOWN"/>
+    <eLiterals name="NONE" value="1"/>
+    <eLiterals name="ENABLED" value="2"/>
+    <eLiterals name="DISABLED_DARK" value="3"/>
+    <eLiterals name="DISABLED_FLASH_SECONDARY" value="4"/>
+    <eLiterals name="DISABLED_FLASH_ALL" value="5"/>
+    <eLiterals name="DISABLED_DEFAULT" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LifeCycleDeviceType">
+    <eLiterals name="NONE" literal="NONE"/>
+    <eLiterals name="LOADING" value="1"/>
+    <eLiterals name="PROVISIONED" value="2"/>
+    <eLiterals name="UNPROVISIONED" value="3"/>
+    <eLiterals name="RUNNING" value="4"/>
+    <eLiterals name="ON_ERROR" value="6"/>
+    <eLiterals name="EXCEPTIONAL" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HardwareConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pinConfiguration" upperBound="-1"
+        eType="#//OutputConfiguration" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceConfigurationId"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+        eType="#//Output"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pin" lowerBound="2" upperBound="3"
+        eType="#//OutPinConfiguration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutPinConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pin" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gpio" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//OutputElementType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OutputElementType">
+    <eLiterals name="OTHER" value="100"/>
+    <eLiterals name="RED"/>
+    <eLiterals name="AMBER" value="1"/>
+    <eLiterals name="GREEN" value="2"/>
+    <eLiterals name="BEEP" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CycleLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDataEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportStation" eSuperTypes="#//IdNameElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PublicTransportType">
+    <eLiterals name="TRAM"/>
+    <eLiterals name="BUS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportTimeTable" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//PublicTransportTimeTableEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ScheduleModeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractTimeTableEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//ScheduleModeType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="begin" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Minute of the day"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Minute of the day"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportTimeTableEntry" eSuperTypes="#//AbstractTimeTableEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="firstStation" lowerBound="1"
+        eType="#//PublicTransportStation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lastStation" lowerBound="1"
+        eType="#//PublicTransportStation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stops" upperBound="-1"
+        eType="#//PublicTransportStop" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportProgram" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataEntry" upperBound="-1"
+        eType="#//PublicTransportDataEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportLine" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PublicTransportType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeTable" upperBound="-1"
+        eType="#//PublicTransportTimeTable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportConfiguration" eSuperTypes="#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicTransport" upperBound="-1"
+        eType="#//PublicTransportLine" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PublicTransportDataValueType">
+    <eLiterals name="UNKNOWN"/>
+    <eLiterals name="DOOR_CHANGE" value="1"/>
+    <eLiterals name="TELEGRAM" value="2"/>
+    <eLiterals name="GEO_INFO" value="3"/>
+    <eLiterals name="LOCATION_MESSAGE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportDataEntry" eSuperTypes="#//AbstractDataEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataValue" upperBound="-1"
+        eType="#//PublicTransportDataValue" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportDataValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PublicTransportDataValueType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lineRef" eType="#//IdNameElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//PublicTransportDataValueObject"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportDataValueObject" eSuperTypes="#//IdNameElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportTelegram" eSuperTypes="#//PublicTransportDataValueObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportPosition" eSuperTypes="#//PublicTransportDataValueObject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//Position"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportDoorChange" eSuperTypes="#//PublicTransportPosition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PublicTransportDoorChangeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PublicTransportDoorChangeType">
+    <eLiterals name="DOOR_CLOSE"/>
+    <eLiterals name="DOOR_OPEN" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportStop">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="station" eType="#//PublicTransportStation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportLocMsg" eSuperTypes="#//PublicTransportDataValueObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tripNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="routeNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="travelNum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="counter" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kilometer" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="posState" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastStop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextStop" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedTime" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="odo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="door" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

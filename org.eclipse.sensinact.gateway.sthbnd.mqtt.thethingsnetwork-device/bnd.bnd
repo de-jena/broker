@@ -1,0 +1,23 @@
+-buildpath: \
+	osgi.annotation,\
+	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-device,\
+	org.eclipse.sensinact.gateway.sensinact-common,\
+	org.eclipse.sensinact.gateway.sensinact-generic,\
+	org.eclipse.sensinact.gateway.sensinact-utils,\
+	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-utils,\
+	org.eclipse.paho.client.mqttv3,\
+	org.osgi.framework,\
+	org.eclipse.sensinact.gateway.sensinact-core,\
+	osgi.cmpn,\
+	org.gecko.osgi.messaging,\
+	org.osgi.util.pushstream,\
+	org.osgi.annotation.bundle,\
+	slf4j.api,\
+	org.osgi.service.component.annotations,\
+	org.osgi.util.promise,\
+	org.osgi.service.metatype.annotations
+	
+Bundle-Version: 2.0.0-SNAPSHOT
+
+-includeresource.resource:\
+	resources

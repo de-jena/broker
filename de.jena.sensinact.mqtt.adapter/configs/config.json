@@ -1,0 +1,18 @@
+{
+  ":configurator:resource-version": 1,
+
+	"MQTTService~dim":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234",
+		"id" : "dim"
+	},
+	"MQTTService~ttn":
+	{
+		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
+		"username" : "scj-simple-sensors@ttn",
+		"password" : "NNSXS.6Z5OFLUZ7WSTECNCNYOCROVBL4ZUKCJ3ZUPIJHQ.LGDZO7FJYSGVIMIATERZRREJZWZN6QS7HOAYYC6G7XYR35HVCOAQ",
+		"id" : "ttn"
+	}
+}
