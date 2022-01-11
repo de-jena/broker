@@ -42,7 +42,7 @@ pipeline  {
 
 				sh "./gradlew clean build itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
-				junit '**/generated/test-reports/**/*.xml'
+				junit testResults: '**/generated/test-reports/**/*.xml', allowEmptyResults: true
 
 			}
 		}

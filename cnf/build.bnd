@@ -1,4 +1,4 @@
--groupid: broker_test
+-groupid: de.jena.broker
 -fixupmessages: \
 	'No metadata for revision';\
 		restrict:=error;\
