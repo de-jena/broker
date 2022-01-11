@@ -47,54 +47,12 @@ pipeline  {
 			}
 		}
 
-		stage('Release') {
-			when {
-				branch 'main'
-			}
-
-			steps {
-				echo "I am creating a release on branch: ${env.GIT_BRANCH}"
-
-				sh "./gradlew clean build release prepareDocker -Drelease.dir=release/ -x itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
-
-			}
-
-		}
-
-		stage('Snapshot release') {
-			when {
-				branch 'develop'
-			}
+		stage('Prepare Docker') {
 
 			steps  {
-				echo "I am creating a release on branch: ${env.GIT_BRANCH}"
+				echo "I am preparing docker: ${env.GIT_BRANCH}"
 
-				sh "./gradlew release prepareDocker -x itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
-
-			}
-
-		}
-
-		stage('Snapshot docker image build'){
-			when {
-				branch 'develop'
-			}
-
-			steps  {
-
-				script {
-					commitHashShort = sh(script: "git log -1 --format=%h", returnStdout: true).trim()
-				}
-
-				echo "I am building and publishing a docker image on branch: ${env.GIT_BRANCH}"
-
-				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'de.jena.sensinact.runtime/generated/docker',
-							cloud: 'docker',
-							tagsString: """devel.data-in-motion.biz:6000/jena/broker:latest
-														 devel.data-in-motion.biz:6000/jena/broker:${commitHashShort}""",
-							pushOnSuccess: true,
-							pushCredentialsId: 'dim-nexus'])
+				sh "./gradlew prepareDocker -x itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 
