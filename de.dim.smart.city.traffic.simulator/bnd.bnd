@@ -1,0 +1,15 @@
+-buildpath: \
+	osgi.annotation;version='7.0',\
+	osgi.core;version='7.0',\
+	osgi.cmpn;version='7.0',\
+	de.dim.smart.city.r09.importer.api;version=latest,\
+	de.dim.smart.city.csv.api;version=latest,\
+	de.dim.smart.city.mqtt.api;version=latest,\
+	de.dim.trafficos.device.model,\
+	org.gecko.emf.repository.api,\
+	de.dim.trafficos.simulator.api;version='1.1'
+	
+-enable-gecko-emf: true
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.dim.smart.city.traffic.simulator

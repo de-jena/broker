@@ -36,7 +36,7 @@ emfjson_old:\
 -plugin.sensinact: \
 	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
 		releaseUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/,https://repo.maven.apache.org/maven2/";\
-		snapshotUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/,https://oss.sonatype.org/content/repositories/snapshots/";\
+		snapshotUrl			= "https://repo.eclipse.org/content/repositories/sensinact-snapshots,https://oss.sonatype.org/content/repositories/snapshots/";\
 		revision            = "org.eclipse.sensinact.gateway.distribution:sdk:pom:2.0-SNAPSHOT";\
 		transitive          = true;\
 		readOnly			= true;\

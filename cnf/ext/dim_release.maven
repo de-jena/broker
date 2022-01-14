@@ -1,0 +1,2 @@
+org.geckoprojects.repository:org.gecko.emf.repository.api:9.2.2
+org.geckoprojects.repository:org.gecko.emf.repository.mongo:3.1.0

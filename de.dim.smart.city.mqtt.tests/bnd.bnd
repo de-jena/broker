@@ -1,0 +1,99 @@
+
+
+# Discover and run all test cases annotated with the @RunWith annotation
+Test-Cases: ${classes;CONCRETE;ANNOTATED;org.junit.runner.RunWith}
+
+# Needed for Mockito's mocking to work
+-runsystempackages.objenesis: sun.misc,sun.reflect
+
+-resolve.effective: active:="osgi.service"
+
+# We need JUnit and Mockito to resolve the test cases at runtime. 
+# Other runtime dependencies should be added as necessary
+-runbundles.junit: \
+	${junit},\
+	${mockito},\
+	${gecko}
+
+-buildpath: \
+	osgi.annotation;version=7.0,\
+	osgi.core;version=7.0,\
+	osgi.cmpn;version=7.0,\
+	de.dim.smart.city.mqtt.api;version=latest,\
+	org.gecko.emf.repository.api,\
+	de.dim.trafficos.device.model,\
+	org.eclipse.emf.common,\
+	org.eclipse.emf.ecore,\
+	org.eclipse.emf.ecore.xmi,\
+	org.gecko.emf.mongo.api
+
+-includeresource: data=data/,\
+OSGI-INF/configurator/=config/    
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.dim.smart.city.mqtt.tests
+-runfw: org.apache.felix.framework;version='[6.0.1,6.0.1]'
+-runee: JavaSE-11
+-runrequires: \
+	bnd.identity;id='org.apache.felix.gogo.command',\
+	bnd.identity;id='org.apache.felix.gogo.runtime',\
+	bnd.identity;id='org.apache.felix.gogo.shell',\
+	bnd.identity;id='de.dim.smart.city.mqtt.tests',\
+	bnd.identity;id='org.gecko.emf.repository.mongo',\
+	bnd.identity;id='org.gecko.emf.mongo.api',\
+	bnd.identity;id='de.dim.smart.city.mqtt.impl',\
+	bnd.identity;id='org.eclipse.paho.client.mqttv3',\
+	bnd.identity;id='org.gecko.adapter.mqtt',\
+	bnd.identity;id='org.emfjson.jackson',\
+	bnd.identity;id='org.gecko.core.resource.json',\
+	bnd.identity;id='org.gecko.emf.osgi.json'
+-runbundles: \
+	de.dim.smart.city.mqtt.api;version=snapshot,\
+	de.dim.smart.city.mqtt.tests;version=snapshot,\
+	de.dim.trafficos.device.model;version='[2.0.0,2.0.1)',\
+	org.apache.felix.configadmin;version='[1.9.10,1.9.11)',\
+	org.apache.felix.configurator;version='[1.0.8,1.0.9)',\
+	org.apache.felix.gogo.command;version='[1.0.2,1.0.3)',\
+	org.apache.felix.gogo.runtime;version='[1.1.0,1.1.1)',\
+	org.apache.felix.gogo.shell;version='[1.1.0,1.1.1)',\
+	org.apache.felix.log;version='[1.2.0,1.2.1)',\
+	org.apache.felix.metatype;version='[1.2.2,1.2.3)',\
+	org.apache.felix.scr;version='[2.1.14,2.1.15)',\
+	org.apache.servicemix.bundles.junit;version='[4.12.0,4.12.1)',\
+	org.eclipse.emf.common;version='[2.16.0,2.16.1)',\
+	org.eclipse.emf.ecore;version='[2.19.0,2.19.1)',\
+	org.eclipse.emf.ecore.xmi;version='[2.16.0,2.16.1)',\
+	org.gecko.core.test;version='[2.0.2,2.0.3)',\
+	org.gecko.emf.collections;version='[2.0.15,2.0.16)',\
+	org.gecko.emf.mongo.api;version='[5.2.3,5.2.4)',\
+	org.gecko.emf.mongo.component;version='[4.2.3,4.2.4)',\
+	org.gecko.emf.osgi.api;version='[3.3.1,3.3.2)',\
+	org.gecko.emf.osgi.component;version='[2.2.12,2.2.13)',\
+	org.gecko.emf.osgi.ecore;version='[2.2.8,2.2.9)',\
+	org.gecko.emf.repository.api;version='[9.1.2,9.1.3)',\
+	org.gecko.emf.repository.mongo;version='[3.0.6,3.0.7)',\
+	org.gecko.mongo.osgi.api;version='[2.2.2,2.2.3)',\
+	org.gecko.mongo.osgi.component;version='[2.1.9,2.1.10)',\
+	org.mockito.mockito-core;version='[1.10.19,1.10.20)',\
+	org.mongodb.mongo-java-driver;version='[3.9.1,3.9.2)',\
+	org.osgi.util.function;version='[1.1.0,1.1.1)',\
+	org.osgi.util.promise;version='[1.1.0,1.1.1)',\
+	de.dim.smart.city.mqtt.impl;version=snapshot,\
+	org.eclipse.paho.client.mqttv3;version='[1.2.0,1.2.1)',\
+	org.gecko.core.api;version='[1.0.5,1.0.6)',\
+	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
+	org.gecko.osgi.messaging;version='[3.1.0,3.1.1)',\
+	org.osgi.util.pushstream;version='[1.0.0,1.0.1)',\
+	com.fasterxml.jackson.core.jackson-annotations;version='[2.9.7,2.9.8)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.9.7,2.9.8)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.9.7,2.9.8)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-properties;version='[2.9.7,2.9.8)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.9.7,2.9.8)',\
+	org.emfjson.jackson;version='[1.1.0,1.1.1)',\
+	org.gecko.core.resource;version='[1.0.1,1.0.2)',\
+	org.gecko.core.resource.json;version='[1.0.1,1.0.2)',\
+	org.gecko.emf.osgi.json;version='[1.3.1,1.3.2)',\
+	org.yaml.snakeyaml;version='[1.23.0,1.23.1)',\
+	org.gecko.adapter.mqtt;version='[1.0.5,1.0.6)',\
+	org.objenesis;version='[2.6.0,2.6.1)'

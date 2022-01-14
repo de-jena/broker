@@ -1,0 +1,16 @@
+-buildpath: \
+	osgi.annotation;version=7.0,\
+	osgi.core;version=7.0,\
+	osgi.cmpn;version=7.0,\
+	org.eclipse.emf.common,\
+	org.eclipse.emf.ecore,\
+	org.eclipse.emf.ecore.xmi,\
+	org.emfjson.jackson,\
+	org.gecko.emf.osgi.json,\
+	org.gecko.osgi.messaging,\
+	org.gecko.emf.repository.api,\
+	de.dim.trafficos.device.model
+
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-sub: *.bnd

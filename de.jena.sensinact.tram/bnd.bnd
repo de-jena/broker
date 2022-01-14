@@ -14,7 +14,8 @@
 	de.dim.trafficos.device.model;version=snapshot,\
 	org.gecko.emf.util.annotations,\
 	org.emfjson.jackson,\
-	org.gecko.emf.osgi.json
+	org.gecko.emf.osgi.json,\
+	de.dim.trafficos.device.model
 
 
 javac.source: 1.8

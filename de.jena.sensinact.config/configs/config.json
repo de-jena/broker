@@ -1,0 +1,15 @@
+{
+	":configurator:resource-version": 1,
+	"MQTTService":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234"
+	},
+	"EMFMongoRepositoryConfigurator~test": {
+		"mongo.instances": "test",
+		"test.baseUris": "mongodb://mongodb",
+		"test.databases": "test",
+		"test.test.repoType": "PROTOTYPE"
+	}
+}

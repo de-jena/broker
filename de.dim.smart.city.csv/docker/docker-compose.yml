@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+    dim-mongo:
+        image: mongo:latest
+        volumes:
+            - ./data/mongo_dev/:/data/mongo_dev/
+        entrypoint: [ "/usr/bin/mongod", "--dbpath", "/data", "--journal", "--bind_ip", "0.0.0.0"]
+        ports:
+            - "27017:27017"
+            - "28017:28017"
+        networks:
+            - mongo
+            
+networks:    
+    mongo:
+

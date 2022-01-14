@@ -1,0 +1,57 @@
+SW: 17.001.538, DLG: 17.001.534, SD: 17.001.1139, SETUP: 17.001.027, BV: F2014, TV: TARIF, OS: 42.006.037
+20200706|124354|7|TST|14002|DatamediaLogin executeChangedData, WLAN-Status 1
+20200706|124354|1|DLG|3001|WLAN.ConnectStart
+20200706|124354|1|DLG|3001|Exit
+20200706|124354|3|DLG|3000|TransferMeldung
+20200706|124354|1|DLG|3001|Init
+20200706|124354|7|TST|14002|DrawAll: numDrawnObjects = 3, numOperations = 28
+20200706|124354|7|TST|14002|DrawAll: timeForDrawing = 17, timeSum = 20
+20200706|124434|7|TST|14002|SMG: SmgPowerSupplyHoldSession State ignitionIsOn
+20200706|124434|7|TST|14002|SMG: --> itsIPowerLcdCtrOn->write(0), rc = 0
+20200706|124657|7|TST|14002|DatamediaLogin executeChangedData, WLAN-Status 0
+20200706|124657|1|DLG|3001|WLAN.ConnectEnde
+20200706|124704|7|TST|14002|SMG: SmgManager->stateChange: ActivateImport
+20200706|124704|7|TST|14002|SMG: SmgPowerSupplyHoldSession PowerHoldReleaseRequest from: ServerTransfer
+20200706|124704|7|TST|14002|SMG: SMG State evaluateActivateImportNeeded
+20200706|124704|7|TST|14002|SMG: SmgPowerSupplyHoldSession PowerHoldRequest from: SmgManager
+20200706|124704|7|TST|14002|Anzahl der Zeile in Versionsdatei with id = 1137 = 8
+20200706|124704|5|DMS|8091|Versione(0): app, DEF, 14.1.44, 1, , 11.7.2015, vcard\DEF\app, app.zip, a
+20200706|124704|5|DMS|8091|Versione(1): dialog, DEF, 14.1.7, -1, , 10.6.2015, vcard\DEF\dialog, dialog.zip, a
+20200706|124704|5|DMS|8091|Versione(2): sd, DEF, 14.1.1082, -1, F1507, 27.8.2015, vcard\DEF\sd\1, sd.zip, a
+20200706|124704|5|DMS|8091|Versione(3): setup, DEF, 14.1.15, 0, , 1.7.2015, vcard\DEF\setup, setup.zip, a
+20200706|124704|5|DMS|8091|Versione(4): setup, DEF, 17.1.27, 0, , 3.7.2019, vcard\setup\, setup.zip, 1a
+20200706|124704|5|DMS|8091|Versione(5): dialog, DEF, 17.1.534, -1, , 16.10.2019, vcard\dialog\, dialog.zip, 1a
+20200706|124704|5|DMS|8091|Versione(6): app, DEF, 17.1.538, 1, , 16.10.2019, vcard\app\, app.zip, 1a
+20200706|124704|5|DMS|8091|Versione(7): sd, DEF, 17.1.1139, -1, F2014, 25.6.2020, vcard\sd\, sd.zip, 1a
+20200706|124704|7|TST|14002|Die Datei \harddisk\sys\b4_sram_403.b4b konnte nicht geöffnet werden (GetLastError = 2, a=80000000 s=1 c=3 f=80)
+20200706|124704|5|DMS|8091|DMS cpmE: Versionseintrag <= : app Mandant DEF
+20200706|124704|5|DMS|8091|DMS cpmE: Versionseintrag <= : dialog Mandant DEF
+20200706|124704|5|DMS|8091|DMS cpmE: Basisversion ungleich: Gesamttransfer erwartet
+20200706|124704|5|DMS|8091|DMS cpmE: Versione.datentyp: Komplettdaten
+20200706|124704|5|DMS|8091|DMS cpmE: Daten sofort gueltig: Gesamttransfer erwartet
+20200706|124704|5|DMS|8091|DMS cpmE: Daten aelter: Kein Transfer
+20200706|124704|5|DMS|8091|DMS cpmE: Versionseintrag <= : setup Mandant DEF
+20200706|124704|5|DMS|8091|DMS: activateNeeded <0> atLeastOneKurierData<0> Schicht<0>
+20200706|124704|7|TST|14002|SMG: SmgPowerSupplyHoldSession PowerHoldReleaseRequest from: SmgManager
+20200706|124704|7|TST|14002|SMG: SMG State normalRun
+20200706|124704|1|DLG|3001|Aktivierung.Ende
+20200706|124704|1|DLG|3001|Exit
+20200706|124704|3|DLG|3000|KeineBedienung
+20200706|124704|1|DLG|3001|Init
+20200706|124704|7|TST|14002|DrawAll: numDrawnObjects = 2, numOperations = 14
+20200706|124704|7|TST|14002|DrawAll: timeForDrawing = 11, timeSum = 14
+20200706|124754|7|SMG|1215|TstIdle: Counts/ms|36647|1
+20200706|124757|7|SMG|1216|System Voltage|-333
+20200706|125258|7|SMG|1216|System Voltage|-333
+20200706|125754|7|SMG|1215|TstIdle: Counts/ms|36839|1
+20200706|125757|7|SMG|1216|System Voltage|-333
+20200706|130258|7|SMG|1216|System Voltage|-333
+20200706|130754|7|SMG|1215|TstIdle: Counts/ms|36687|1
+20200706|130757|7|SMG|1216|System Voltage|-333
+20200706|131110|7|TST|14002|DMS: Eeprom 12 999
+20200706|131110|7|TST|14002|DMS: (setHeaderInfo(): 6.7.2020:47471787
+20200706|131110|7|TST|14002|SessionController: executeChangedData
+20200706|131119|7|TST|14002|SMG: SmgPowerSupplyHoldSession State followUpTimeBegin
+20200706|131119|7|TST|14002|SMG: SmgManager->stateChange: HoldTimeStart
+20200706|131129|7|TST|14002|SMG: SmgPowerSupplyHoldSession State followUpTime
+20200706|131141|7|TST|14002|SMG: SmgPowerSupplyHoldSession PowerHoldRequest from: ServerTransfer
