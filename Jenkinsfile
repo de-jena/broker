@@ -69,7 +69,7 @@ pipeline  {
 				step([$class: 'DockerBuilderPublisher',
 				      dockerFileDirectory: 'de.jena.sensinact.runtime/generated/docker',
 							cloud: 'docker',
-							tagsString: 'devel.data-in-motion.biz:6000/jena/broker:release',
+							tagsString: 'devel.data-in-motion.biz:6000/jena/sensinact:latest',
 							pushOnSuccess: true,
 							pushCredentialsId: 'dim-nexus'])
 		  }
