@@ -118,7 +118,10 @@
 	org.eclipse.sensinact.gateway.nthbnd.sensinact-northbound-access;version='[2.0.0,2.0.1)',\
 	org.eclipse.sensinact.gateway.protocol.http;version='[2.0.0,2.0.1)',\
 	org.eclipse.sensinact.gateway.sensinact-shell;version='[2.0.0,2.0.1)',\
-	org.apache.felix.http.jetty;version='[4.1.10,4.1.11)'
+	org.apache.felix.http.jetty;version='[4.1.10,4.1.11)',\
+	org.eclipse.sensinact.gateway.nthbnd.mqtt-generic-agent;version='[2.0.0,2.0.1)',\
+	org.eclipse.sensinact.gateway.nthbnd.mqtt-agent;version='[2.0.0,2.0.1)',\
+	org.osgi.util.converter;version='[1.0.8,1.0.9)'
 
 -runrequires: \
 	bnd.identity;id='de.jena.sensinact.tram',\
@@ -138,5 +141,6 @@
 	bnd.identity;id='org.eclipse.sensinact.gateway.sensinact-shell',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.protocol.http',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.nthbnd.rest-access',\
-	bnd.identity;id='org.apache.felix.http.jetty'
+	bnd.identity;id='org.apache.felix.http.jetty',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.nthbnd.mqtt-agent'
 -runee: JavaSE-1.8

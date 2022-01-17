@@ -14,5 +14,13 @@
 		"username" : "scj-simple-sensors@ttn",
 		"password" : "NNSXS.6Z5OFLUZ7WSTECNCNYOCROVBL4ZUKCJ3ZUPIJHQ.LGDZO7FJYSGVIMIATERZRREJZWZN6QS7HOAYYC6G7XYR35HVCOAQ",
 		"id" : "ttn"
+	},
+	
+	"mqtt.agent.broker~genericagent" : 
+	{
+		"host" : "datainmotion.de",
+		"username" : "demo",
+		".password" : "1234",
+		"prefix" : "sensinact/"
 	}
 }
