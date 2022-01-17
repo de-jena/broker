@@ -12,4 +12,6 @@
 -enable-gecko-emf: true
 
 Bundle-Version: 1.0.0.SNAPSHOT
-Private-Package: de.dim.smart.city.traffic.simulator
+Export-Package: de.dim.trafficos.simulator.api
+-privatepackage: de.dim.smart.city.traffic.simulator,\
+	de.dim.trafficos.simulator.impl

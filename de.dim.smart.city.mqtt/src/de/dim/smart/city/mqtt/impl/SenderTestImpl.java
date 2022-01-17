@@ -37,7 +37,7 @@ import de.dim.trafficos.model.device.TOSDevicePackage;
 @Component
 public class SenderTestImpl implements SenderTestService{
 
-	@Reference
+	@Reference(target = "(id=dim)")
 	private MessagingService messaging;
 
 	@Reference(target="(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED)
@@ -67,8 +67,8 @@ public class SenderTestImpl implements SenderTestService{
 			resource.getContents().clear();
 			
 			byte[] content = baos.toByteArray();
-			logger.log(Level.SEVERE, "sending");
-			logger.log(Level.SEVERE, new String(content));
+//			logger.log(Level.SEVERE, "sending");
+//			logger.log(Level.SEVERE, new String(content));
 			
 			
 			ByteBuffer buffer = ByteBuffer.wrap(content);
@@ -77,7 +77,6 @@ public class SenderTestImpl implements SenderTestService{
 			resource = resourceSet.createResource(URI.createURI("temp.json"));
 			resource.load(new ByteArrayInputStream(content), null);
 			if(!resource.getContents().isEmpty()) {
-				logger.log(Level.SEVERE, resource.getContents().get(0).toString());
 				resource.getContents().clear();
 			} else {
 			}
@@ -92,11 +91,10 @@ public class SenderTestImpl implements SenderTestService{
 	 * @param copy
 	 */
 	private void removeNonContainments(EObject copy) {
-		logger.log(Level.SEVERE,"Removing from " + copy.eClass().getName());
+//		logger.log(Level.SEVERE,"Removing from " + copy.eClass().getName());
 		copy.eClass().getEAllReferences().stream()
 			.filter(r -> !r.isContainment())
 			.filter(r -> {
-				logger.severe(r.getName() + " - " + ( ((EClass) r.eContainer()).getEPackage() == TOSDevicePackage.eINSTANCE));
 				return ((EClass) r.eContainer()).getEPackage() == TOSDevicePackage.eINSTANCE;
 			})
 			.forEach(copy::eUnset);
@@ -104,7 +102,6 @@ public class SenderTestImpl implements SenderTestService{
 		copy.eClass().getEAllReferences().stream()
 			.filter(r -> r.isContainment())
 			.filter(r -> {
-				logger.severe(r.getName() + " - " + ( ((EClass) r.eContainer()).getName()));
 				return ((EClass) r.eContainer()).getEPackage() == TOSDevicePackage.eINSTANCE;
 			})
 			.filter(copy::eIsSet)

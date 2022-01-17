@@ -13,12 +13,11 @@ package de.dim.smart.city.r09.importer.impl;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -78,22 +77,6 @@ public class R09ImportServiceImpl implements R09ImportService {
 	
 	private static final String DASHED = "-----------------";
 
-
-	/* 
-	 * (non-Javadoc)
-	 * @see de.dim.smart.city.r09.importer.api.R09ImportService#importR09(java.net.URL, de.dim.trafficos.model.device.PublicTransportLine)
-	 */
-	@Override
-	public void importR09(URL pathToFiles, PublicTransportLine ptLine) throws IOException, ParseException {
-		try {
-			File folder = new File(pathToFiles.toURI());
-			importR09(folder, ptLine);
-		} catch (URISyntaxException e) {
-			throw new RuntimeException(e);
-		}
-		
-	}
-	
 	/* 
 	 * (non-Javadoc)
 	 * @see de.dim.smart.city.r09.importer.api.R09ImportService#importR09(java.lang.String, de.dim.trafficos.model.device.PublicTransportLine)
@@ -110,7 +93,7 @@ public class R09ImportServiceImpl implements R09ImportService {
 		long start = System.currentTimeMillis();
 		// Populates the array with names of files and directories
 		String[] files = pathToFiles.list();
-		List<String> result = List.of(files);
+		List<String> result = Arrays.asList(files);
 
 		EMFRepository repo = repoObjects.getService(); 
 		try {
@@ -128,10 +111,8 @@ public class R09ImportServiceImpl implements R09ImportService {
 				}
 			});
 			
-			PublicTransportLine line = repo.getEObject(TOSDevicePackage.Literals.PUBLIC_TRANSPORT_LINE, ptLine.getId());
-			if(line == null) {
-				repo.save(ptLine);
-			}
+			repo.save(ptLine);
+			
 			
 			int index = 0;
 			List<PublicTransportDataEntry> sortedDataEntry = dataEntryMap.values().stream().sorted((e1,e2) -> e1.getTimestamp().compareTo(e2.getTimestamp())).collect(Collectors.toList());
@@ -205,12 +186,12 @@ public class R09ImportServiceImpl implements R09ImportService {
 			return;
 		}
 		for(int i = 5; i < splitLine.length; i++) {
-			String portion = splitLine[i].strip();
+			String portion = splitLine[i].trim();
 			switch(i) {
 			case 5:
 				String[] subPortion = portion.split("/");
 				for(int j = 0; j < subPortion.length; j++) {
-					String sp = subPortion[j].strip();
+					String sp = subPortion[j].trim();
 					switch(j) {
 					case 0:
 						locMsg.setLineNum(sp);
@@ -248,7 +229,7 @@ public class R09ImportServiceImpl implements R09ImportService {
 			case 9:
 				subPortion = portion.split("/");
 				for(int j = 0; j < subPortion.length; j++) {
-					String sp = subPortion[j].strip();
+					String sp = subPortion[j].trim();
 					switch(j) {
 					case 0:
 						locMsg.setActualTime(Integer.parseInt(sp));
@@ -265,7 +246,7 @@ public class R09ImportServiceImpl implements R09ImportService {
 			case 10:
 				subPortion = portion.split("/");
 				for(int j = 0; j < subPortion.length; j++) {
-					String sp = subPortion[j].strip();
+					String sp = subPortion[j].trim();
 					switch(j) {
 					case 0:
 						locMsg.setGps(sp);
@@ -385,10 +366,10 @@ public class R09ImportServiceImpl implements R09ImportService {
 
 
 		lonStr = lonStr.replace(startLon, "");
-		lonStr = lonStr.strip();
+		lonStr = lonStr.trim();
 
 		latStr = latStr.replace(startLat, "");
-		latStr = latStr.strip();
+		latStr = latStr.trim();
 
 		lonStr = lonStr.substring(0, 2) + "." + lonStr.substring(2);
 		latStr = latStr.substring(0, 2) + "." + latStr.substring(2);

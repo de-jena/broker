@@ -12,16 +12,11 @@
 package de.jena.sensinact.publictransport;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Level;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sensinact.gateway.common.bundle.Mediator;
@@ -38,6 +33,8 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+import org.osgi.service.component.annotations.ReferencePolicy;
 import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushStream;
 
@@ -45,7 +42,6 @@ import de.dim.trafficos.model.device.DataEntry;
 import de.dim.trafficos.model.device.DataValue;
 import de.dim.trafficos.model.device.IdNameElement;
 import de.dim.trafficos.model.device.Intersection;
-import de.dim.trafficos.model.device.Location;
 import de.dim.trafficos.model.device.Output;
 import de.dim.trafficos.model.device.Position;
 import de.dim.trafficos.model.device.PublicTransportDataEntry;
@@ -71,14 +67,11 @@ public class MqttEndpointComponent {
 	private LocalProtocolStackEndpoint<GenericPacket> signalGroupConnector;
 	private ExtModelConfiguration<GenericPacket> signalGroupManager;
 
-	@Reference(target = "(id=dim)")
 	private MessagingService messaging;
 
-	@Reference(target="(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED)
 	private ResourceSet resourceSet;
 	private PushStream<Message> pTSubscribe;
 	private PushStream<Message> deSubscribe;
-	private PushStream<Message> outSubscribe;
 	
 	
 	public void handlePublicTransportMessage(Message message) {
@@ -89,8 +82,7 @@ public class MqttEndpointComponent {
 		try {
 			
 			byte[] content = message.payload().array();
-			System.out.println("Recieved:");
-			System.out.println(new String(content));
+			System.out.println("Recieved Public Transport Message");
 			ByteArrayInputStream bais = new ByteArrayInputStream(content);
 			resource.load(bais, saveOptions);
 			PublicTransportDataEntry ptde = (PublicTransportDataEntry) resource.getContents().get(0);
@@ -114,8 +106,7 @@ public class MqttEndpointComponent {
 		try {
 			
 			byte[] content = message.payload().array();
-			System.out.println("Recieved Data Entry:");
-			System.out.println(new String(content));
+			System.out.println("Recieved Data Entry");
 			ByteArrayInputStream bais = new ByteArrayInputStream(content);
 			resource.load(bais, saveOptions);
 			DataEntry de = (DataEntry) resource.getContents().get(0);
@@ -130,32 +121,12 @@ public class MqttEndpointComponent {
 		}
 	}
 
-	public void handleIntersectionMessage(Message message) {
-		
-		Resource resource = resourceSet.createResource(URI.createURI("temp.json"));
-		Map<String, Object> saveOptions = new HashMap<String, Object>();
-		saveOptions.put("OPTION_SERIALIZE_DEFAULT_VALUE", Boolean.TRUE);
-		try {
-			
-			byte[] content = message.payload().array();
-			System.out.println("Recieved Intersection:");
-			System.out.println(new String(content));
-			ByteArrayInputStream bais = new ByteArrayInputStream(content);
-			resource.load(bais, saveOptions);
-			Intersection de = (Intersection) resource.getContents().get(0);
-			
-			registerIntersection(de);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			resourceSet.getResources().remove(resource);
-			resource.getContents().clear();
-		}
-	}
-
 	@Activate
-	public void activate(BundleContext bctx) {
+	public MqttEndpointComponent(BundleContext bctx, 
+			@Reference(target = "(id=dim)") MessagingService messaging,
+			@Reference(target="(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED) ResourceSet resourceSet) {
+		this.messaging = messaging;
+		this.resourceSet = resourceSet;
 		mediator = new Mediator(bctx);
 		try {
 			tramManager = ExtModelConfigurationBuilder.instance(mediator, GenericPacket.class
@@ -172,21 +143,10 @@ public class MqttEndpointComponent {
 									).withStartAtInitializationTime(true
 											).build("signalGroup-resource.xml", Collections.<String, String>emptyMap());
 			signalGroupConnector = new LocalProtocolStackEndpoint<GenericPacket>(mediator);
-			signalGroupConnector.connect(tramManager);
-			
-//			System.out.println("saying hello");
-//			GenericPacket hello = new GenericPacket("test rat");
-//			hello.setHelloMessage(true);
-//			connector.process(hello);
-//			
-			
-			System.out.println("Saying Hello");
+			signalGroupConnector.connect(signalGroupManager);
 			
 			pTSubscribe = messaging.subscribe("public/transport/data/entry");
 			pTSubscribe.forEach(this::handlePublicTransportMessage);
-
-			outSubscribe = messaging.subscribe("intersection/output");
-			outSubscribe.forEach(this::handleIntersectionMessage);
 
 			deSubscribe = messaging.subscribe("intersection/data/entry");
 			deSubscribe.forEach(this::handleDataEntryMessage);
@@ -204,7 +164,6 @@ public class MqttEndpointComponent {
 		}
 
 		deSubscribe.close();
-		outSubscribe.close();
 		if (signalGroupConnector != null) {
 			signalGroupConnector.stop();
 		}
@@ -290,10 +249,14 @@ public class MqttEndpointComponent {
 	}
 	
 	/**
-	 * @param de
 	 */
-	private void registerIntersection(Intersection intersection) {
+	@Reference(cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC, unbind = "removeIntersection")
+	public void addIntersection(Intersection intersection) {
 		intersection.getOutput().stream().filter(o -> "SGR".equals(o.getType()) || "DET".equals(o.getType())).forEach(this::handleOutput);
+	}
+
+	public void removeIntersection(Intersection intersection) {
+		
 	}
 	
 

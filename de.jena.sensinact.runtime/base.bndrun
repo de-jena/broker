@@ -6,6 +6,33 @@
 -augment:  org.apache.felix.framework.security;\
 				capability:='osgi.service;objectClass=org.osgi.service.condpermadmin.ConditionalPermissionAdmin'
 
+-runsystempackages.default: \
+	com.sun.net.httpserver,\
+	javax.net.ssl,\
+	javax.xml.parsers,\
+	javax.imageio,\
+	javax.management,\
+	javax.naming,\
+	javax.sql,\
+	javax.swing,\
+	javax.swing.border,\
+	javax.swing.event,\
+	javax.mail,\
+	javax.mail.internet,\
+	javax.management.modelmbean,\
+	javax.management.remote,\
+	javax.xml.parsers,\
+	javax.security.auth,\
+	javax.security.cert,\
+	junit.framework,\
+	junit.textui,\
+	org.w3c.dom,\
+	org.xml.sax,\
+	org.xml.sax.helpers,\
+	sun.misc,\
+	sun.security.action,\
+	sun.reflect
+
 -runproperties: \
 	org.osgi.service.http.port=8080,\
 	osgi.console=,\
@@ -30,7 +57,6 @@
 	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
 	org.apache.felix.gogo.jline;version='[1.1.8,1.1.9)',\
 	org.apache.felix.gogo.runtime;version='[1.1.4,1.1.5)',\
-	org.apache.felix.http.bridge;version='[4.1.2,4.1.3)',\
 	org.apache.felix.http.servlet-api;version='[1.1.4,1.1.5)',\
 	org.apache.felix.scr;version='[2.1.28,2.1.29)',\
 	org.eclipse.emf.common;version='[2.20.0,2.20.1)',\
@@ -58,7 +84,6 @@
 	org.gecko.emf.osgi.json;version='[1.3.2,1.3.3)',\
 	org.gecko.osgi.messaging;version='[3.1.0,3.1.1)',\
 	org.jline;version='[3.13.2,3.13.3)',\
-	org.osgi.service.http.whiteboard;version='[1.1.0,1.1.1)',\
 	org.osgi.util.function;version='[1.1.0,1.1.1)',\
 	org.osgi.util.promise;version='[1.1.1,1.1.2)',\
 	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
@@ -73,7 +98,27 @@
 	org.gecko.mongo.osgi.component;version='[6.0.4,6.0.5)',\
 	org.mongodb.mongo-java-driver;version='[3.12.0,3.12.1)',\
 	org.osgi.service.log;version='[1.4.0,1.4.1)',\
-	org.osgi.service.metatype;version='[1.4.0,1.4.1)'
+	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
+	com.opencsv;version='[4.5.0,4.5.1)',\
+	de.dim.smart.city.csv.api;version=snapshot,\
+	de.dim.smart.city.csv.impl;version=snapshot,\
+	de.dim.smart.city.r09.importer.api;version=snapshot,\
+	de.dim.smart.city.r09.importer.impl;version=snapshot,\
+	de.dim.smart.city.traffic.simulator;version=snapshot,\
+	org.apache.commons.beanutils;version='[1.9.3,1.9.4)',\
+	org.apache.commons.collections;version='[3.2.2,3.2.3)',\
+	org.apache.commons.commons-collections4;version='[4.2.0,4.2.1)',\
+	org.apache.commons.lang3;version='[3.9.0,3.9.1)',\
+	org.apache.commons.text;version='[1.3.0,1.3.1)',\
+	org.osgi.service.event;version='[1.4.0,1.4.1)',\
+	de.jena.sensinact.config;version=snapshot,\
+	de.dim.smart.city.mqtt.api;version=snapshot,\
+	de.dim.smart.city.mqtt.impl;version=snapshot,\
+	org.eclipse.sensinact.gateway.nthbnd.rest-access;version='[2.0.0,2.0.1)',\
+	org.eclipse.sensinact.gateway.nthbnd.sensinact-northbound-access;version='[2.0.0,2.0.1)',\
+	org.eclipse.sensinact.gateway.protocol.http;version='[2.0.0,2.0.1)',\
+	org.eclipse.sensinact.gateway.sensinact-shell;version='[2.0.0,2.0.1)',\
+	org.apache.felix.http.jetty;version='[4.1.10,4.1.11)'
 
 -runrequires: \
 	bnd.identity;id='de.jena.sensinact.tram',\
@@ -88,5 +133,10 @@
 	bnd.identity;id='org.eclipse.sensinact.gateway.sensinact-signature-validator-mock',\
 	bnd.identity;id='org.apache.felix.framework.security',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.application-manager',\
-	bnd.identity;id='de.dim.smart.city.traffic.simulator'
+	bnd.identity;id='de.dim.smart.city.traffic.simulator',\
+	bnd.identity;id='de.jena.sensinact.config',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.sensinact-shell',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.protocol.http',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.nthbnd.rest-access',\
+	bnd.identity;id='org.apache.felix.http.jetty'
 -runee: JavaSE-1.8

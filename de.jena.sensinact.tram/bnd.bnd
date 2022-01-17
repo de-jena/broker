@@ -6,7 +6,7 @@
 	org.osgi.annotation.bundle,\
 	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-utils,\
 	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-device,\
-	osgi.cmpn,\
+	osgi.cmpn;version=7.0,\
 	org.osgi.framework,\
 	org.eclipse.sensinact.gateway.sensinact-utils,\
 	org.gecko.osgi.messaging,\
@@ -27,10 +27,8 @@ javac.target: 1.8
 Bundle-Version: 1.0.0.${tstamp}
 
 -includeresource.config: \
-	OSGI-INF/configurator/=config/,\
 	publictransport-resource.xml
 
-Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 -privatepackage: de.jena.sensinact.publictransport
 #TEST: ${repo;org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template}
 #-export: assembly.bndrun;version=1.0.0

@@ -7,7 +7,9 @@ Bundle-Version: 1.0.0.${tstamp}-SNAPSHOT
 -resourceonly: true
 -includeresource: \
 	@${repo;org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template}!/sensinact-distribution-template-2.0-SNAPSHOT/(*);rename:=$1,\
-	bin/felix.jar=${repo;org.apache.felix.main}
+	bin/felix.jar=${repo;org.apache.felix.main},\
+	data=data
+	
 	
 -export: assembly.bndrun;type=bnd.runbundles;name=distro.zip	
 

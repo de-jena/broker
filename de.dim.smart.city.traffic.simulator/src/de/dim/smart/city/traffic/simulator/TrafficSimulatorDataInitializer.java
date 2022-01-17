@@ -11,8 +11,11 @@
  */
 package de.dim.smart.city.traffic.simulator;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.URL;
+import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,14 +26,24 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gecko.emf.repository.EMFRepository;
+import org.osgi.annotation.bundle.Capabilities;
+import org.osgi.annotation.bundle.Capability;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
-import org.osgi.service.component.annotations.*;
+import org.osgi.namespace.service.ServiceNamespace;
+import org.osgi.service.component.ComponentServiceObjects;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.util.promise.Promise;
 import org.osgi.util.promise.PromiseFactory;
 
 import de.dim.smart.city.csv.api.CSVImportService;
@@ -53,11 +66,11 @@ import de.dim.trafficos.model.device.TOSDevicePackage;
 import de.dim.trafficos.simulator.api.IntersectionConstants;
 import de.dim.trafficos.simulator.api.IntersectionService;
 
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.gecko.emf.repository.EMFRepository;
-
 @Component
+@Capabilities({
+	@Capability(namespace = ServiceNamespace.SERVICE_NAMESPACE, attribute = ServiceNamespace.CAPABILITY_OBJECTCLASS_ATTRIBUTE + ":List<String>=\"de.dim.trafficos.model.device.Intersection,org.eclipse.emf.EObject\""),
+	@Capability(namespace = ServiceNamespace.SERVICE_NAMESPACE, attribute = ServiceNamespace.CAPABILITY_OBJECTCLASS_ATTRIBUTE + ":List<String>=\"de.dim.trafficos.model.device.PublicTransportLine,org.eclipse.emf.EObject\"")
+})
 public class TrafficSimulatorDataInitializer {
 
 	/** TRAM_L5 */
@@ -68,7 +81,7 @@ public class TrafficSimulatorDataInitializer {
 	R09ImportService r09Importer;
 
 	@Reference
-	EMFRepository repo;
+	ComponentServiceObjects<EMFRepository> repoObjects;
 	
 	@Reference
 	TOSDevicePackage tosPackage;
@@ -92,41 +105,53 @@ public class TrafficSimulatorDataInitializer {
 		this.ctx = ctx;
 		promiseFactory
 		.submit(() -> {
+			EMFRepository repo =  repoObjects.getService();
 			PublicTransportLine line = repo.getEObject(tosPackage.getPublicTransportLine(), TRAM_L5_ID);
-			if(line != null) {
-				repo.detach(line);
-			}
+			repoObjects.ungetService(repo);
 			return line;
 		})
-		.then(line -> {
-			if(line == null) {
-				return promiseFactory.submit(() -> importR09());
-			} else {
-				return promiseFactory.resolved(line);
-			}
-		}).onSuccess(this::register);
+		.then(this::handleLine).onSuccess(this::register).onFailure(Throwable::printStackTrace);
 
 		promiseFactory
 		.submit(() -> {
+			EMFRepository repo =  repoObjects.getService();
 			Intersection intersection = repo.getEObject(tosPackage.getIntersection(), INTERSECTION_ID);
-			if(intersection != null) {
-				repo.detach(intersection);
-			}
+			repoObjects.ungetService(repo);
 			return intersection;
 		})
 		.then(intersection -> {
-			if(intersection == null) {
+			if(intersection.getValue() == null) {
 				return promiseFactory
-						.submit(() -> createIntersection())
+						.submit(() -> {
+							try(InputStream is = new FileInputStream("data/12_124_2020.07.06_00-00_2020.07.08_00-00- alles.csv")){
+								csvImporter.importCSV(is);
+							}
+							return true;
+						})
 						.then(i -> {
-							csvImporter.importCSV(ctx.getBundle().getEntry("data/12_124_2020.07.06_00-00_2020.07.08_00-00- alles.csv").openStream());
-							return promiseFactory.resolved(i);
+							return promiseFactory.submit(this::createIntersection);
 						});
 			} else {
-				return promiseFactory.resolved(intersection);
+				return intersection;
 			}
 		})
-		.onSuccess(this::register);
+		.onSuccess(this::register).onFailure(Throwable::printStackTrace);
+	}
+
+	/**
+	 * @param line
+	 * @return
+	 * @throws InterruptedException 
+	 * @throws InvocationTargetException 
+	 */
+	private Promise<PublicTransportLine> handleLine(Promise<PublicTransportLine> line) throws InvocationTargetException, InterruptedException {
+		Promise<PublicTransportLine> result = null; 
+		if(line.getValue() == null) {
+			result = promiseFactory.submit(() -> importR09());
+		} else {
+			result = line;
+		}
+		return result;
 	}
 	
 	@Deactivate
@@ -136,8 +161,13 @@ public class TrafficSimulatorDataInitializer {
 	}
 	
 
-	private void register(Object service) {
-		registrations.add(ctx.registerService(new String[] {service.getClass().getName(), EObject.class.getName()}, service, new Hashtable<String, String>(Collections.singletonMap("simluate", "true"))));
+	private void register(EObject service) {
+		Dictionary<String, String> props = new Hashtable<String, String>();
+		props.put("simluate", "true");
+		props.put("id", EcoreUtil.getID(service));
+		ServiceRegistration<?> registration = ctx.registerService(new String[] {service.eClass().getInstanceClass().getName(), EObject.class.getName()}, service, props);
+		registrations.add(registration);
+		System.out.println("Registgered " + registration.getReference() + " with props " + props);
 	}
 	
 	private PublicTransportLine importR09() throws IOException, ParseException {
@@ -151,15 +181,19 @@ public class TrafficSimulatorDataInitializer {
 		line.setName("Test Tram L5");
 		line.setLineNumber("5");	
 		for(String suffix : folderSuffix) {
-			URL folder = this.getClass().getResource("data/logger_200706_"+suffix+"/logger");
+			
+			String folder = "data/logger_200706_"+suffix+"/logger";
+			File theFolder = new File(folder);
 			System.out.println("----------------------------");
-			System.out.println("Processing Folder " + folder);
+			System.out.println("Processing Folder " + theFolder.getAbsolutePath());
 			r09Importer.importR09(folder, line);
 		}
 		return line;
 	}
 	
+	
 	public Intersection createIntersection() {
+		EMFRepository repo =  repoObjects.getService();
 		Map<Integer, String> options = new HashMap<Integer, String>();
 		options.put(0, IntersectionConstants.MAIN_STRAIGHT_TURNS_SEP);
 		options.put(1, IntersectionConstants.SEC_STRAIGHT_LEFT_MERGE);
@@ -167,6 +201,7 @@ public class TrafficSimulatorDataInitializer {
 		options.put(3, IntersectionConstants.SEC_STRAIGHT_RIGHT_MERGE);
 		Intersection intersection = intersectionService.createIntersection(options);
 		intersection.setId(INTERSECTION_ID);
+		repo.attach(intersection);
 		List<Parameter> parameters = repo.getAllEObjects(TOSDevicePackage.Literals.PARAMETER);
 		intersection.getParameter().addAll(parameters);
 		
@@ -451,6 +486,7 @@ public class TrafficSimulatorDataInitializer {
 		}
 
 		for(ConflictingLane l : lanes) {
+			l.setSignalGroup(null);
 			switch(l.getId()) {
 			case "0_0":
 				l.getSignalGroups().add(intersection.getOutput().stream().filter(o->"K4".equals(o.getName())).findFirst().get());	
@@ -527,17 +563,21 @@ public class TrafficSimulatorDataInitializer {
 
 		out00.getDetector().add(intersection.getOutput().stream().filter(o->"IS10".equals(o.getName())).findFirst().get());	
 
+		List<EObject> toSave = new ArrayList<EObject>();
+		
 		for(Output out : realTL) {
-			repo.save(EcoreUtil.copy(out));
+			toSave.add(EcoreUtil.copy(out));
 		}
 		for(Output out : realDet) {
-			repo.save(EcoreUtil.copy(out));
+			toSave.add(EcoreUtil.copy(out));
 		}
 		for(Output out : intersection.getOutput()) {
-			repo.save(EcoreUtil.copy(out));
+			toSave.add(EcoreUtil.copy(out));
 		}
-		repo.save(intersection);
-		repo.detach(intersection);
+		toSave.add(intersection);
+		repo.save(toSave);
+		repoObjects.ungetService(repo);
+		
 		return intersection;
 	}
 

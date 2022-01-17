@@ -31,6 +31,7 @@ import org.gecko.emf.repository.EMFRepository;
 import org.gecko.emf.repository.query.IQuery;
 import org.gecko.emf.repository.query.IQueryBuilder;
 import org.gecko.emf.repository.query.QueryRepository;
+import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
@@ -54,13 +55,13 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	SenderTestService senderService;
 	
 	@Reference(target = "(repo_id=test.test)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
-	EMFRepository repo;
+	ComponentServiceObjects<EMFRepository> repoObjects;
 	
 	private static final Logger logger = Logger.getLogger(SimulatorTestImpl.class.getName());
 	
 	private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ", Locale.GERMAN);
 	
-	private final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
+	private ScheduledExecutorService ses = null;
 	private ScheduledFuture<?> simulationFuture;
 	private ReentrantLock simLock = new ReentrantLock(true);
 	private int counter = 0;
@@ -78,6 +79,7 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	 */
 	@Override
 	public void startSimulation() {
+		ses = Executors.newSingleThreadScheduledExecutor();
 		try {
 			startDate = SDF.parse("2020-07-06 07:30:00.000+0200");
 			endDate = SDF.parse("2020-07-06 09:00:00.000+0200");			
@@ -85,6 +87,9 @@ public class SimulatorTestImpl implements SimulatorTestService {
 			logger.severe("Error parsing starting date");
 			return;
 		}
+		
+		EMFRepository repo = repoObjects.getService();
+		
 		QueryRepository queryRepo = (QueryRepository) repo;
 		IQueryBuilder builder = queryRepo.createQueryBuilder();
 		IQuery query = builder.rangeQuery().column(TOSDevicePackage.Literals.ABSTRACT_DATA_ENTRY__TIMESTAMP).startValue(startDate).endValue(endDate).build();
@@ -109,6 +114,7 @@ public class SimulatorTestImpl implements SimulatorTestService {
 			}
 		}
 		counter = 0;
+		repoObjects.ungetService(repo);
 		simulationFuture = ses.scheduleAtFixedRate(this::simulate, 0, 1, TimeUnit.SECONDS);
 	}
 
@@ -136,12 +142,14 @@ public class SimulatorTestImpl implements SimulatorTestService {
 			ses.shutdownNow();
 			Thread.currentThread().interrupt();
 		}	
+		logger.info("Simulation stopped");
 	}
 	
 	private void simulate() {
 		if(counter > 500) {
-			System.out.println("Stopping simulation");
+			System.out.println("Restarting simulation");
 			stopSimulation();
+			startSimulation();
 		}
 		else if (simLock.tryLock()) {
 			try {

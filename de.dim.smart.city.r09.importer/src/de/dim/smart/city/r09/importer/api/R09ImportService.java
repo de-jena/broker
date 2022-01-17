@@ -32,8 +32,6 @@ public interface R09ImportService {
 	
 	public void importR09(String pathToFiles, PublicTransportLine ptLine) throws IOException, ParseException;
 	
-	public void importR09(URL pathToFiles, PublicTransportLine ptLine) throws IOException, ParseException;
-	
 	public Map<Date, PublicTransportDataEntry> importSingleR09(String line, PublicTransportLine ptLine, 
 			Map<Date, PublicTransportDataEntry> dataEntryMap);
 	

@@ -12,3 +12,5 @@
 	org.eclipse.sensinact.gateway.location.longitude=5.706474781036377d,\
 	org.eclipse.sensinact.simulated.gui.enabled=false,\
 	org.eclipse.sensinact.http.corsheader=true
+
+	

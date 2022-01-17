@@ -13,6 +13,12 @@ services:
         networks:
             - mongo
             
+    sensinact:
+        image: jena/sensinact:latest
+        ports:
+            - "8080:8080"
+        networks:
+            - mongo
 networks:    
     mongo:
 
