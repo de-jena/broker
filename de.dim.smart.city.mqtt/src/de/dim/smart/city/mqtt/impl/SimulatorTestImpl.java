@@ -33,6 +33,7 @@ import org.gecko.emf.repository.query.IQueryBuilder;
 import org.gecko.emf.repository.query.QueryRepository;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
 
@@ -61,7 +62,7 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	
 	private static final SimpleDateFormat SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSZ", Locale.GERMAN);
 	
-	private ScheduledExecutorService ses = null;
+	private final ScheduledExecutorService ses = Executors.newSingleThreadScheduledExecutor();
 	private ScheduledFuture<?> simulationFuture;
 	private ReentrantLock simLock = new ReentrantLock(true);
 	private int counter = 0;
@@ -72,6 +73,19 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	private Map<Long, DataEntry> dataEntryMap = new HashMap<>();
 	private Map<Long, PublicTransportDataEntry> ptDataEntryMap = new HashMap<>();
 	
+	@Deactivate
+	public void deactivate() {
+		stopSimulation();
+		ses.shutdown(); 
+		try {
+			if (!ses.awaitTermination(60, TimeUnit.SECONDS)) {
+				ses.shutdownNow(); 
+			}
+		} catch (InterruptedException ie) {
+			ses.shutdownNow();
+			Thread.currentThread().interrupt();
+		}	
+	}
 
 	/* 
 	 * (non-Javadoc)
@@ -79,7 +93,9 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	 */
 	@Override
 	public void startSimulation() {
-		ses = Executors.newSingleThreadScheduledExecutor();
+		dataEntryMap.clear();
+		ptDataEntryMap.clear();
+		
 		try {
 			startDate = SDF.parse("2020-07-06 07:30:00.000+0200");
 			endDate = SDF.parse("2020-07-06 09:00:00.000+0200");			
@@ -115,6 +131,7 @@ public class SimulatorTestImpl implements SimulatorTestService {
 		}
 		counter = 0;
 		repoObjects.ungetService(repo);
+		logger.info("Scheduling Simluation");
 		simulationFuture = ses.scheduleAtFixedRate(this::simulate, 0, 1, TimeUnit.SECONDS);
 	}
 
@@ -133,15 +150,6 @@ public class SimulatorTestImpl implements SimulatorTestService {
 				logger.severe(String.format("[%s] Simulation stopping was interrupted"));
 			}
 		}
-		ses.shutdown(); 
-		try {
-			if (!ses.awaitTermination(60, TimeUnit.SECONDS)) {
-				ses.shutdownNow(); 
-			}
-		} catch (InterruptedException ie) {
-			ses.shutdownNow();
-			Thread.currentThread().interrupt();
-		}	
 		logger.info("Simulation stopped");
 	}
 	
@@ -149,7 +157,7 @@ public class SimulatorTestImpl implements SimulatorTestService {
 		if(counter > 500) {
 			System.out.println("Restarting simulation");
 			stopSimulation();
-			startSimulation();
+			ses.submit(this::startSimulation);
 		}
 		else if (simLock.tryLock()) {
 			try {
