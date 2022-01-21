@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.ocpp.centralsystem.model/src"
+    modelPluginID="de.jena.sensinact.ocpp.centralsystem.model" modelName="CentralSystem"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>CentralSystem.ecore</foreignModel>
+  <genPackages prefix="OcppCentralSystem" basePackage="de.jena.sensinact.ocpp" resource="XMI"
+      disposableProviderFactory="true" ecorePackage="CentralSystem.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//AuthorizationStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//AuthorizationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//AuthorizationStatus/Blocked"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//AuthorizationStatus/Expired"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//AuthorizationStatus/Invalid"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//AuthorizationStatus/ConcurrentTx"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//ChargePointErrorCode">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/ConnectorLockFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/EVCommunicationError"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/GroundFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/HighTemperature"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/InternalError"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/LocalListConflict"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/NoError"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/OtherError"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/OverCurrentFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/OverVoltage"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/PowerMeterFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/PowerSwitchFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/ReaderFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/ResetFailure"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/UnderVoltage"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointErrorCode/WeakSignal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//ChargePointStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Available"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Preparing"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Charging"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/SuspendedEV"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/SuspendedEVSE"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Finishing"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Reserved"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Faulted"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ChargePointStatus/Unavailable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//DataTransferStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DataTransferStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DataTransferStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DataTransferStatus/UnknownMessageId"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DataTransferStatus/UnknownVendorId"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//DiagnosticsStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DiagnosticsStatus/Idle"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DiagnosticsStatus/Uploaded"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DiagnosticsStatus/UploadFailed"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//DiagnosticsStatus/Uploading"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//FirmwareStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/Downloaded"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/DownloadFailed"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/Downloading"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/Idle"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/InstallationFailed"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/Installed"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//FirmwareStatus/Installing"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//Location">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Location/Body"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Location/Cable"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Location/EV"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Location/Inlet"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Location/Outlet"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//Measurand">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/CurrentExport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/CurrentImport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/CurrentOffered"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyActiveExportRegister"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyActiveImportRegister"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyReactiveExportRegister"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyReactiveImportRegister"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyActiveExportInterval"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyActiveImportInterval"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyReactiveExportInterval"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/EnergyReactiveImportInterval"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/Frequency"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerActiveExport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerActiveImport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerFactor"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerOffered"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerReactiveExport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/PowerReactiveImport"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/RPM"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/SoC"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/Temperature"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Measurand/Voltage"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//Phase">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L1"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L2"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L3"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/N"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L1N"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L2N"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L3N"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L1L2"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L2L3"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Phase/L3L1"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//ReadingContext">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/InterruptionBegin"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/InterruptionEnd"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/Other"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/SampleClock"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/SamplePeriodic"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/TransactionBegin"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/TransactionEnd"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ReadingContext/Trigger"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//Reason">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/EmergencyStop"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/EVDisconnected"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/HardReset"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/Local"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/Other"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/PowerLoss"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/Reboot"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/Remote"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/SoftReset"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/UnlockCommand"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//Reason/DeAuthorized"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//RegistrationStatus">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//RegistrationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//RegistrationStatus/Pending"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//RegistrationStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//UnitOfMeasure">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/Celsius"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/Fahrenheit"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/Wh"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/kWh"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/varh"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/kvarh"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/W"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/kW"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/VA"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/kVA"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/var"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/kvar"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/A"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/V"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/K"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//UnitOfMeasure/Percent"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="CentralSystem.ecore#//ValueFormat">
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ValueFormat/Raw"/>
+      <genEnumLiterals ecoreEnumLiteral="CentralSystem.ecore#//ValueFormat/SignedData"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//AuthorizationStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//ChargePointErrorCodeObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//ChargePointStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//CiString20Type"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//CiString255Type"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//CiString25Type"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//CiString500Type"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//CiString50Type"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//DataTransferStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//DiagnosticsStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//FirmwareStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//IdToken"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//LocationObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//MeasurandObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//PhaseObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//ReadingContextObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//ReasonObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//RegistrationStatusObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//UnitOfMeasureObject"/>
+    <genDataTypes ecoreDataType="CentralSystem.ecore#//ValueFormatObject"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//AuthorizeRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//AuthorizeRequest/idTag"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//AuthorizeResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//AuthorizeResponse/idTagInfo"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//BootNotificationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/chargePointVendor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/chargePointModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/chargePointSerialNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/chargeBoxSerialNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/firmwareVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/iccid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/imsi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/meterType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationRequest/meterSerialNumber"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//BootNotificationResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationResponse/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationResponse/currentTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//BootNotificationResponse/interval"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//DataTransferRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DataTransferRequest/vendorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DataTransferRequest/messageId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DataTransferRequest/data"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//DataTransferResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DataTransferResponse/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DataTransferResponse/data"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//DiagnosticsStatusNotificationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DiagnosticsStatusNotificationRequest/status"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//DiagnosticsStatusNotificationResponse"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CentralSystem.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference CentralSystem.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/authorizeRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/authorizeResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/bootNotificationRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/bootNotificationResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/chargeBoxIdentity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/dataTransferRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/dataTransferResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/diagnosticsStatusNotificationRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/diagnosticsStatusNotificationResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/firmwareStatusNotificationRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/firmwareStatusNotificationResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/heartbeatRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/heartbeatResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/meterValuesRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/meterValuesResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/startTransactionRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/startTransactionResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/statusNotificationRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/statusNotificationResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/stopTransactionRequest"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//DocumentRoot/stopTransactionResponse"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//FirmwareStatusNotificationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//FirmwareStatusNotificationRequest/status"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//FirmwareStatusNotificationResponse"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//HeartbeatRequest"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//HeartbeatResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//HeartbeatResponse/currentTime"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//IdTagInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//IdTagInfo/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//IdTagInfo/expiryDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//IdTagInfo/parentIdTag"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//MeterValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//MeterValue/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//MeterValue/sampledValue"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//MeterValuesRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//MeterValuesRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//MeterValuesRequest/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//MeterValuesRequest/meterValue"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//MeterValuesResponse"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//SampledValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/context"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/format"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/measurand"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/phase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//SampledValue/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//StartTransactionRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionRequest/idTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionRequest/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionRequest/meterStart"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionRequest/reservationId"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//StartTransactionResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionResponse/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StartTransactionResponse/idTagInfo"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//StatusNotificationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/errorCode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/info"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/vendorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StatusNotificationRequest/vendorErrorCode"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//StatusNotificationResponse"/>
+    <genClasses ecoreClass="CentralSystem.ecore#//StopTransactionRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/idTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/meterStop"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/reason"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionRequest/transactionData"/>
+    </genClasses>
+    <genClasses ecoreClass="CentralSystem.ecore#//StopTransactionResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CentralSystem.ecore#//StopTransactionResponse/idTagInfo"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.hsmw.model/src" modelPluginID="de.jena.sensinact.hsmw.model"
+    modelName="ChargePoint" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>ChargePoint.ecore</foreignModel>
+  <genPackages prefix="OcppChargePoint" basePackage="de.jena.sensinact.ocpp" resource="XML"
+      disposableProviderFactory="true" ecorePackage="ChargePoint.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//AuthorizationStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AuthorizationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AuthorizationStatus/Blocked"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AuthorizationStatus/Expired"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AuthorizationStatus/Invalid"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AuthorizationStatus/ConcurrentTx"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//AvailabilityStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AvailabilityStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AvailabilityStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AvailabilityStatus/Scheduled"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//AvailabilityType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AvailabilityType/Inoperative"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//AvailabilityType/Operative"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//CancelReservationStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//CancelReservationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//CancelReservationStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ChargingProfileKindType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileKindType/Absolute"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileKindType/Recurring"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileKindType/Relative"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ChargingProfilePurposeType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfilePurposeType/ChargePointMaxProfile"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfilePurposeType/TxDefaultProfile"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfilePurposeType/TxProfile"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ChargingProfileStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingProfileStatus/NotSupported"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ChargingRateUnitType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingRateUnitType/W"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ChargingRateUnitType/A"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ClearCacheStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ClearCacheStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ClearCacheStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ClearChargingProfileStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ClearChargingProfileStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ClearChargingProfileStatus/Unknown"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ConfigurationStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ConfigurationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ConfigurationStatus/NotSupported"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ConfigurationStatus/RebootRequired"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ConfigurationStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//DataTransferStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//DataTransferStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//DataTransferStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//DataTransferStatus/UnknownMessageId"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//DataTransferStatus/UnknownVendorId"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//GetCompositeScheduleStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//GetCompositeScheduleStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//GetCompositeScheduleStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//MessageTrigger">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/BootNotification"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/DiagnosticsStatusNotification"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/FirmwareStatusNotification"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/Heartbeat"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/MeterValues"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//MessageTrigger/StatusNotification"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//RecurrencyKindType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//RecurrencyKindType/Daily"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//RecurrencyKindType/Weekly"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//RemoteStartStopStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//RemoteStartStopStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//RemoteStartStopStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ReservationStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ReservationStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ReservationStatus/Faulted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ReservationStatus/Occupied"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ReservationStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ReservationStatus/Unavailable"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ResetStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ResetStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ResetStatus/Rejected"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//ResetType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ResetType/Hard"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//ResetType/Soft"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//TriggerMessageStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//TriggerMessageStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//TriggerMessageStatus/Rejected"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//TriggerMessageStatus/NotImplemented"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//UnlockStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UnlockStatus/Unlocked"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UnlockStatus/UnlockFailed"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UnlockStatus/NotSupported"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//UpdateStatus">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateStatus/Accepted"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateStatus/Failed"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateStatus/NotSupported"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateStatus/VersionMismatch"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ChargePoint.ecore#//UpdateType">
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateType/Differential"/>
+      <genEnumLiterals ecoreEnumLiteral="ChargePoint.ecore#//UpdateType/Full"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//AuthorizationStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//AvailabilityStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//AvailabilityTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CancelReservationStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ChargingProfileKindTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ChargingProfilePurposeTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ChargingProfileStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ChargingRateUnitTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CiString20Type"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CiString255Type"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CiString25Type"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CiString500Type"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//CiString50Type"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ClearCacheStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ClearChargingProfileStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ConfigurationStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//DataTransferStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//DecimalOne"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//GetCompositeScheduleStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//IdToken"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//MessageTriggerObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//RecurrencyKindTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//RemoteStartStopStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ReservationStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ResetStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//ResetTypeObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//TriggerMessageStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//UnlockStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//UpdateStatusObject"/>
+    <genDataTypes ecoreDataType="ChargePoint.ecore#//UpdateTypeObject"/>
+    <genClasses ecoreClass="ChargePoint.ecore#//AuthorizationData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//AuthorizationData/idTag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//AuthorizationData/idTagInfo"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//CancelReservationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//CancelReservationRequest/reservationId"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//CancelReservationResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//CancelReservationResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChangeAvailabilityRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeAvailabilityRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeAvailabilityRequest/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChangeAvailabilityResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeAvailabilityResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChangeConfigurationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeConfigurationRequest/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeConfigurationRequest/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChangeConfigurationResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChangeConfigurationResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChargingProfile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/chargingProfileId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/transactionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/stackLevel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/chargingProfilePurpose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/chargingProfileKind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/recurrencyKind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/validFrom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingProfile/validTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//ChargingProfile/chargingSchedule"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChargingSchedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedule/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedule/startSchedule"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedule/chargingRateUnit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//ChargingSchedule/chargingSchedulePeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedule/minChargingRate"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ChargingSchedulePeriod">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedulePeriod/startPeriod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedulePeriod/limit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ChargingSchedulePeriod/numberPhases"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ClearCacheRequest"/>
+    <genClasses ecoreClass="ChargePoint.ecore#//ClearCacheResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearCacheResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ClearChargingProfileRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearChargingProfileRequest/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearChargingProfileRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearChargingProfileRequest/chargingProfilePurpose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearChargingProfileRequest/stackLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ClearChargingProfileResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ClearChargingProfileResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//DataTransferRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DataTransferRequest/vendorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DataTransferRequest/messageId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DataTransferRequest/data"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//DataTransferResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DataTransferResponse/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DataTransferResponse/data"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/cancelReservationRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/cancelReservationResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/changeAvailabilityRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/changeAvailabilityResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/changeConfigurationRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/changeConfigurationResponse"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//DocumentRoot/chargeBoxIdentity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/clearCacheRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/clearCacheResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/clearChargingProfileRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/clearChargingProfileResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/dataTransferRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/dataTransferResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getCompositeScheduleRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getCompositeScheduleResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getConfigurationRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getConfigurationResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getDiagnosticsRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getDiagnosticsResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getLocalListVersionRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/getLocalListVersionResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/remoteStartTransactionRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/remoteStartTransactionResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/remoteStopTransactionRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/remoteStopTransactionResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/reserveNowRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/reserveNowResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/resetRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/resetResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/sendLocalListRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/sendLocalListResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/setChargingProfileRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/setChargingProfileResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/triggerMessageRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/triggerMessageResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/unlockConnectorRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/unlockConnectorResponse"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/updateFirmwareRequest"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//DocumentRoot/updateFirmwareResponse"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetCompositeScheduleRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleRequest/duration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleRequest/chargingRateUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetCompositeScheduleResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleResponse/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleResponse/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetCompositeScheduleResponse/scheduleStart"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//GetCompositeScheduleResponse/chargingSchedule"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetConfigurationRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetConfigurationRequest/key"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetConfigurationResponse">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//GetConfigurationResponse/configurationKey"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetConfigurationResponse/unknownKey"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetDiagnosticsRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsRequest/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsRequest/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsRequest/stopTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsRequest/retries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsRequest/retryInterval"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetDiagnosticsResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetDiagnosticsResponse/fileName"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetLocalListVersionRequest"/>
+    <genClasses ecoreClass="ChargePoint.ecore#//GetLocalListVersionResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//GetLocalListVersionResponse/listVersion"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//IdTagInfo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//IdTagInfo/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//IdTagInfo/expiryDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//IdTagInfo/parentIdTag"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//KeyValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//KeyValue/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//KeyValue/readonly"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//KeyValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//RemoteStartTransactionRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//RemoteStartTransactionRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//RemoteStartTransactionRequest/idTag"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//RemoteStartTransactionRequest/chargingProfile"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//RemoteStartTransactionResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//RemoteStartTransactionResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//RemoteStopTransactionRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//RemoteStopTransactionRequest/transactionId"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//RemoteStopTransactionResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//RemoteStopTransactionResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ReserveNowRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowRequest/connectorId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowRequest/expiryDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowRequest/idTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowRequest/parentIdTag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowRequest/reservationId"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ReserveNowResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ReserveNowResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ResetRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ResetRequest/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//ResetResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//ResetResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//SendLocalListRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//SendLocalListRequest/listVersion"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//SendLocalListRequest/localAuthorizationList"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//SendLocalListRequest/updateType"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//SendLocalListResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//SendLocalListResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//SetChargingProfileRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//SetChargingProfileRequest/connectorId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ChargePoint.ecore#//SetChargingProfileRequest/csChargingProfiles"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//SetChargingProfileResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//SetChargingProfileResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//TriggerMessageRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//TriggerMessageRequest/requestedMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//TriggerMessageRequest/connectorId"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//TriggerMessageResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//TriggerMessageResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//UnlockConnectorRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UnlockConnectorRequest/connectorId"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//UnlockConnectorResponse">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UnlockConnectorResponse/status"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//UpdateFirmwareRequest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UpdateFirmwareRequest/retrieveDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UpdateFirmwareRequest/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UpdateFirmwareRequest/retries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ChargePoint.ecore#//UpdateFirmwareRequest/retryInterval"/>
+    </genClasses>
+    <genClasses ecoreClass="ChargePoint.ecore#//UpdateFirmwareResponse"/>
+  </genPackages>
+</genmodel:GenModel>
