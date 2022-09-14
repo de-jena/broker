@@ -93,6 +93,10 @@ public class SimulatorTestImpl implements SimulatorTestService {
 	 */
 	@Override
 	public void startSimulation() {
+		if(simulationFuture != null && !simulationFuture.isDone()) {
+			logger.warning("Simulation is still running. Can't start a second one");
+			return;
+		}
 		dataEntryMap.clear();
 		ptDataEntryMap.clear();
 		

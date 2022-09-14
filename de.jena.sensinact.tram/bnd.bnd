@@ -6,23 +6,22 @@
 	org.osgi.annotation.bundle,\
 	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-utils,\
 	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-device,\
-	osgi.cmpn;version=7.0,\
+	osgi.cmpn;version='7.0',\
 	org.osgi.framework,\
 	org.eclipse.sensinact.gateway.sensinact-utils,\
 	org.gecko.osgi.messaging,\
 	org.osgi.util.pushstream,\
 	de.dim.trafficos.device.model;version=snapshot,\
 	org.gecko.emf.util.annotations,\
-	org.emfjson.jackson,\
-	org.gecko.emf.osgi.json,\
-	de.dim.trafficos.device.model
+	de.dim.trafficos.device.model,\
+	org.gecko.emf.json
 
 
 javac.source: 1.8
 javac.target: 1.8
 
 
--enable-gecko-emf: true
+-library: enable-emf
 
 Bundle-Version: 1.0.0.${tstamp}
 

@@ -10,11 +10,11 @@
  */
 package org.eclipse.sensinact.gateway.sthbnd.ttn.model;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import jakarta.json.JsonException;
+import jakarta.json.JsonObject;
 
 public class TtnActivationPayload extends TtnPacketPayload {
 
@@ -30,11 +30,11 @@ public class TtnActivationPayload extends TtnPacketPayload {
         this.metadata = metadata;
     }
 
-    public TtnActivationPayload(JSONObject json) throws JSONException {
+    public TtnActivationPayload(JsonObject json) throws JsonException {
         this.applicationEui = json.getString("app_eui");
         this.deviceEui = json.getString("dev_eui");
         this.deviceAddress = json.getString("dev_addr");
-        this.metadata = new TtnMetadata(json.getJSONObject("metadata"));
+        this.metadata = new TtnMetadata(json.getJsonObject("metadata"));
     }
 
     public String getApplicationEui() {

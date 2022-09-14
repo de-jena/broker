@@ -40,7 +40,7 @@ public interface OcppCentralSystemPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "urn://Ocpp/Cs/2015/10/";
+	String eNS_URI = "urn://Ocpp/Cs/2015/10";
 
 	/**
 	 * The package namespace name.

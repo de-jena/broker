@@ -11,8 +11,8 @@
 	org.eclipse.sensinact.gateway.sensinact-utils,\
 	org.osgi.util.promise;version='1.1.1',\
 	org.gecko.osgi.messaging,\
-	org.gecko.emf.osgi.json,\
-	slf4j.api
+	slf4j.api,\
+	jakarta.json-api
 
 
 javac.source: 1.8

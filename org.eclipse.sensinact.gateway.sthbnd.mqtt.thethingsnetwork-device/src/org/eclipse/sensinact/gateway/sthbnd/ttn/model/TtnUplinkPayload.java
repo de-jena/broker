@@ -11,18 +11,14 @@
 
 package org.eclipse.sensinact.gateway.sthbnd.ttn.model;
 
-import org.eclipse.sensinact.gateway.common.bundle.Mediator;
-import org.eclipse.sensinact.gateway.sthbnd.ttn.listener.TtnUplinkListener;
-import org.eclipse.sensinact.gateway.sthbnd.ttn.packet.PayloadDecoder;
-import org.eclipse.sensinact.gateway.util.UriUtils;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.framework.ServiceReference;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
+import org.eclipse.sensinact.gateway.sthbnd.ttn.listener.TtnUplinkListener;
+import org.eclipse.sensinact.gateway.sthbnd.ttn.packet.PayloadDecoder;
+
+import jakarta.json.JsonException;
+import jakarta.json.JsonObject;
 
 public class TtnUplinkPayload extends TtnPacketPayload {
 
@@ -53,22 +49,22 @@ public class TtnUplinkPayload extends TtnPacketPayload {
         subPackets = new ArrayList<>();
     }
 
-    public TtnUplinkPayload(JSONObject json) throws JSONException {
-        JSONObject devIds = json.getJSONObject("end_device_ids");
-        this.applicationId = devIds.getJSONObject("application_ids").getString("application_id");
+    public TtnUplinkPayload(JsonObject json) throws JsonException {
+    	JsonObject devIds = json.getJsonObject("end_device_ids");
+        this.applicationId = devIds.getJsonObject("application_ids").getString("application_id");
         this.deviceId = devIds.getString("device_id");
         this.hardwareSerial = devIds.getString("dev_eui");
-        JSONObject uplink = json.getJSONObject("uplink_message");
+        JsonObject uplink = json.getJsonObject("uplink_message");
         this.port = uplink.getInt("f_port");
         this.counter = uplink.getInt("f_cnt");
-        this.confirmed = json.optBoolean("confirmed");
-        this.isRetry = json.optBoolean("is_retry");
-        this.metadata = new TtnMetadata(uplink.getJSONObject("settings"));
-        this.payloadRaw =uplink.optString("frm_payload");
-        JSONObject location = uplink.getJSONObject("locations").getJSONObject("user");
+        this.confirmed = json.getBoolean("confirmed");
+        this.isRetry = json.getBoolean("is_retry");
+        this.metadata = new TtnMetadata(uplink.getJsonObject("settings"));
+        this.payloadRaw =uplink.getString("frm_payload");
+        JsonObject location = uplink.getJsonObject("locations").getJsonObject("user");
         subPackets = new ArrayList<>();
         subPackets.add(new TtnSubPacket<>("admin", "location", null, null ,location.get("latitude") + ":" + location.get("longitude")));
-        JSONObject payload = uplink.optJSONObject("decoded_payload");
+        JsonObject payload = uplink.getJsonObject("decoded_payload");
         if(payload != null) {
         	payload.keySet().stream().map(k -> new TtnSubPacket<>("system", k, null,null,payload.get(k))).forEach(subPackets::add);
         }

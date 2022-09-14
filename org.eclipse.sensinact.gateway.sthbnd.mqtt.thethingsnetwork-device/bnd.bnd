@@ -15,7 +15,8 @@
 	slf4j.api,\
 	org.osgi.service.component.annotations,\
 	org.osgi.util.promise,\
-	org.osgi.service.metatype.annotations
+	org.osgi.service.metatype.annotations,\
+	jakarta.json-api
 	
 Bundle-Version: 2.0.0-SNAPSHOT
 

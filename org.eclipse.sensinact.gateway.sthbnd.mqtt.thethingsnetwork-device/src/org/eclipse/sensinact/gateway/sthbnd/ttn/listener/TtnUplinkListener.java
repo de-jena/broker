@@ -12,18 +12,18 @@ package org.eclipse.sensinact.gateway.sthbnd.ttn.listener;
 
 import java.util.List;
 
-import org.eclipse.sensinact.gateway.common.bundle.Mediator;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.device.MqttProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.listener.MqttTopicMessage;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnSubPacket;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnUplinkPayload;
-import org.eclipse.sensinact.gateway.sthbnd.ttn.packet.TtnActivationPacket;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.packet.TtnUplinkPacket;
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.eclipse.sensinact.gateway.util.json.JsonProviderFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jakarta.json.JsonException;
+import jakarta.json.JsonObject;
 
 public class TtnUplinkListener extends MqttTopicMessage {
 
@@ -50,12 +50,12 @@ public class TtnUplinkListener extends MqttTopicMessage {
             logger.debug("Uplink message: " + message);
         
         String device = topic.split("/")[3];
-        JSONObject json = new JSONObject(message);
+        JsonObject json = JsonProviderFactory.readObject(message);
         TtnUplinkPayload payload = null;
 
         try {
             payload = new TtnUplinkPayload(json);
-        } catch (JSONException e) {
+        } catch (JsonException e) {
             logger.error(e.getMessage(),e);
         }
         if (payload != null) {

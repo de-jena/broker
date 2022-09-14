@@ -6,6 +6,25 @@
     	
 java: java
 javac: javac
-javac.source: 1.8
-javac.target: 1.8
+javac.source: 17
+javac.target: 17
 javac.debug:  on
+
+-library:\
+	geckoEMF,\
+	geckoEMFUtil
+
+
+
+	
+# Find out if the current Bundle Version is already deployed in any repository (excluding the Workspace)
+releaseNotNeeded: ${findproviders;osgi.identity;(&(osgi.identity=${bsn})(version=${version}));REPOS}
+
+# If release not needed is empty, no Bundle has been found and for maven we do a release to the remote Repo. If not, we only do a release to the local .m2 Repo
+-maven-release.local: ${if;${def;releaseNotNeeded};local;remote}
+
+-maven-release: pom
+-pom: true
+-digest: sha256
+	
+

@@ -30,7 +30,6 @@ import org.eclipse.sensinact.gateway.generic.ExtModelConfiguration;
 import org.eclipse.sensinact.gateway.generic.ExtModelConfigurationBuilder;
 import org.eclipse.sensinact.gateway.generic.local.LocalProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
-import org.gecko.emf.osgi.json.annotation.RequireEMFJson;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.framework.BundleContext;
@@ -43,6 +42,7 @@ import org.osgi.util.pushstream.PushStream;
 
 import de.jena.sensinact.ocpp.structures.MeasurementNotification;
 import de.jena.sensinact.ocpp.structures.impl.OcppStructuresPackageImpl;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 
 @Component
 @RequireEMFJson

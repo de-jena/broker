@@ -40,7 +40,7 @@ public interface OcppChargePointPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "urn://Ocpp/Cp/2015/10/";
+	String eNS_URI = "urn://Ocpp/Cp/2015/10";
 
 	/**
 	 * The package namespace name.

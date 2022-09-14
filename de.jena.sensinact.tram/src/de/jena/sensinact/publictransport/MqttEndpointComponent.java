@@ -25,7 +25,6 @@ import org.eclipse.sensinact.gateway.generic.ExtModelConfiguration;
 import org.eclipse.sensinact.gateway.generic.ExtModelConfigurationBuilder;
 import org.eclipse.sensinact.gateway.generic.local.LocalProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
-import org.gecko.emf.osgi.json.annotation.RequireEMFJson;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.framework.BundleContext;
@@ -50,6 +49,7 @@ import de.dim.trafficos.model.device.PublicTransportDataValueType;
 import de.dim.trafficos.model.device.PublicTransportDoorChange;
 import de.dim.trafficos.model.device.PublicTransportDoorChangeType;
 import de.dim.trafficos.model.device.PublicTransportPosition;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 
 /**
  * 

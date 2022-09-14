@@ -1,0 +1,44 @@
+# Copyright 2021 Data In Motion Consulting GmbH
+#
+# This program and the accompanying materials are made available under the terms of the 
+# Eclipse Public License v2.0 which accompanies this distribution, and is available at
+# http://www.eclipse.org/legal/epl-v20.html
+#
+# SPDX-License-Identifier: EPL-2.0
+
+Bundle-DocURL: https://github.com/de-jena/broker
+Bundle-SCM: url=https://github.com/de-jena/broker, \
+	connection=scm:git:https://github.com/de-jena/broker.git, \
+	developerConnection=scm:git:git@github.com:de-jena/broker.git
+	
+-removeheaders: Bnd-LastModified, Tool, Created-By, Private-Package
+
+Bundle-Developers: \
+    jalbert; \
+        email="j.albert@data-in-motion.biz"; \
+        name="Juergen Albert"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://www.datainmotion.de"; \
+        roles="architect,developer", \
+    mhoffmann; \
+        name="Mark Hoffmann"; \
+        email="m.hoffmann@data-in-motion.biz"; \
+        url="https://www.datainmotion.de"; \
+        organization="Data In Motion"; \
+        organizationUrl="https://www.datainmotion.de"; \
+        roles="developer,architect",\
+    sbischof; \
+        name="Stefan Bischof"; \
+        email="stefan.bischof@jena.de"; \
+        url="https://www.jena.de"; \
+        organization="Stadt Jena"; \
+        organizationUrl="https://www.jena.de"; \
+        roles="developer,architect"
+        
+
+Bundle-License: Apache License 2.0
+Bundle-Copyright: Data In Motion Consuling GmbH - All rights reserved
+Bundle-Vendor: Data In Motion Consuling GmbH
+Bundle-ContactAddress: info@data-in-motion.biz
+
+Bundle-Version: ${base-version}

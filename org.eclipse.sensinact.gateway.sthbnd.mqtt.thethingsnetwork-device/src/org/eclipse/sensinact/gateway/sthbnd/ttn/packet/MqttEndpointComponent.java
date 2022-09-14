@@ -22,10 +22,9 @@ import org.eclipse.sensinact.gateway.generic.local.LocalProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnSubPacket;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnUplinkPayload;
+import org.eclipse.sensinact.gateway.util.json.JsonProviderFactory;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -34,6 +33,9 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.util.pushstream.PushStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import jakarta.json.JsonException;
+import jakarta.json.JsonObject;
 
 /**
  * 
@@ -62,12 +64,12 @@ public class MqttEndpointComponent {
 		byte[] content = message.payload().array();
 		System.out.println(new String(content));
 		
-        JSONObject json = new JSONObject(new String(content));
+        JsonObject json = JsonProviderFactory.readObject(new String(content));
         TtnUplinkPayload payload = null;
 
         try {
             payload = new TtnUplinkPayload(json);
-        } catch (JSONException e) {
+        } catch (JsonException e) {
         	e.printStackTrace();
                 logger.error(e.getMessage(),e);
         }

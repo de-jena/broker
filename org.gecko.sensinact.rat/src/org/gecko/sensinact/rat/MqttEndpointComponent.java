@@ -26,7 +26,6 @@ import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.api.MqttBroker;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.api.MqttBroker.Builder;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.api.MqttTopic;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.listener.MqttTopicMessage;
-import org.gecko.emf.osgi.json.annotation.RequireEMFJson;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;

@@ -10,16 +10,18 @@
  */
 package org.eclipse.sensinact.gateway.sthbnd.ttn.listener;
 
-import org.eclipse.sensinact.gateway.common.bundle.Mediator;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.device.MqttProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.listener.MqttTopicMessage;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnActivationPayload;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.packet.TtnActivationPacket;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.slf4j.LoggerFactory;
+import org.eclipse.sensinact.gateway.util.json.JsonProviderFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import jakarta.json.Json;
+import jakarta.json.JsonException;
+import jakarta.json.JsonObject;
 
 public class TtnActivationListener extends MqttTopicMessage {
 
@@ -42,12 +44,12 @@ public class TtnActivationListener extends MqttTopicMessage {
         	logger.debug("Activation message: " + message);
         }
         String device = topic.split("/")[2];
-        JSONObject json = new JSONObject(message);
+        JsonObject json = JsonProviderFactory.readObject(message);
         TtnActivationPayload payload = null;
 
         try {
             payload = new TtnActivationPayload(json);
-        } catch (JSONException e) {
+        } catch (JsonException e) {
             e.printStackTrace();
         }
         if (payload != null) {
