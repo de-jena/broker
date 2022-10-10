@@ -2,23 +2,19 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.configuration;
 
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointFactory;
 import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 import de.jena.sensinact.ocpp.chargepoint.impl.OcppChargePointPackageImpl;
 
-import java.util.Dictionary;
 import java.util.Hashtable;
 
+import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
 
-import org.gecko.emf.osgi.annotation.EMFModel;
-
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFModel;
-
-import org.gecko.emf.osgi.annotation.require.RequireEMF;
+import org.osgi.annotation.bundle.Capability;
 
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -26,63 +22,104 @@ import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceCardinality;
+
+import org.osgi.service.condition.Condition;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>EPackageConfiguration</b> and <b>ResourceFactoryConfigurator</b> for the model.
+ * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
- * <!-- end-user-doc -->
- * @see EPackageConfigurator
- * @see ResourceFactoryConfigurator
+ * 
  * @generated
  */
-@Component(name="OcppChargePointConfigurator", service= EPackageConfigurator.class)
-@EMFModel(name=OcppChargePointPackage.eNAME, nsURI={OcppChargePointPackage.eNS_URI}, version="1.0.0")
-@ProvideEMFModel(name = OcppChargePointPackage.eNAME, nsURI = { OcppChargePointPackage.eNS_URI }, version = "1.0.0")
-public class OcppChargePointConfigurationComponent implements EPackageConfigurator {
-	private ServiceRegistration<?> packageRegistration = null;
+@Component(name = "OcppChargePointConfigurator",
+ 	reference = @Reference( name = "ResourceSetFactory", service = org.gecko.emf.osgi.ResourceSetFactory.class, cardinality = ReferenceCardinality.MANDATORY)
+ )
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.chargepoint.OcppChargePointFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.ocpp.chargepoint" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.ocpp.chargepoint" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.ocpp.chargepoint" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
+public class OcppChargePointConfigurationComponent {
 	
+	private ServiceRegistration<?> packageRegistration = null;
+	private ServiceRegistration<EPackageConfigurator> ePackageConfiguratorRegistration = null;
+	private ServiceRegistration<?> eFactoryRegistration = null;
+	private ServiceRegistration<?> conditionRegistration = null;
+
+	/**
+	 * Activates the Configuration Component.
+	 *
+	 * @generated
+	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		OcppChargePointPackage p = OcppChargePointPackageImpl.init();
-		if(p == null){
-			p= OcppChargePointPackageImpl.eINSTANCE;
-			EPackage.Registry.INSTANCE.put(OcppChargePointPackage.eNS_URI,p);
-		}
-		Dictionary<String, Object> properties = new Hashtable<String, Object>();
-		properties.put(EMFNamespaces.EMF_MODEL_NAME, OcppChargePointPackage.eNAME);
-		properties.put(EMFNamespaces.EMF_MODEL_NSURI, OcppChargePointPackage.eNS_URI);
-		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ocppchargepoint");
-		String[] serviceClasses = new String[] {OcppChargePointPackage.class.getName(), EPackage.class.getName()};
-		packageRegistration = ctx.registerService(serviceClasses, p, properties);
+		OcppChargePointPackage ePackage = OcppChargePointPackageImpl.init();
+		
+		OcppChargePointEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
+		registerEPackageService(ePackage, packageConfigurator, ctx);
+		registerEFactoryService(ePackage, packageConfigurator, ctx);
+		registerConditionService(packageConfigurator, ctx);
+	}
+	
+	/**
+	 * Registers the OcppChargePointEPackageConfigurator as a service.
+	 *
+	 * @generated
+	 */
+	private OcppChargePointEPackageConfigurator registerEPackageConfiguratorService(OcppChargePointPackage ePackage, BundleContext ctx){
+		OcppChargePointEPackageConfigurator packageConfigurator = new OcppChargePointEPackageConfigurator(ePackage);
+		// register the EPackageConfigurator
+		Hashtable<String, Object> properties = new Hashtable<String, Object>();
+		properties.putAll(packageConfigurator.getServiceProperties());
+		ePackageConfiguratorRegistration = ctx.registerService(EPackageConfigurator.class, packageConfigurator, properties);
+
+		return packageConfigurator;
 	}
 
-	
-	/* 
-	 * (non-Javadoc)
-	 * @see org.gecko.emf.osgi.EPackageRegistryConfigurator#configureEPackage(org.eclipse.emf.ecore.EPackage.Registry)
+	/**
+	 * Registers the OcppChargePointPackage as a service.
+	 *
 	 * @generated
 	 */
-	@Override
-	public void configureEPackage(org.eclipse.emf.ecore.EPackage.Registry registry) {
-		registry.put(OcppChargePointPackage.eNS_URI, OcppChargePointPackageImpl.init());
+	private void registerEPackageService(OcppChargePointPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+		Hashtable<String, Object> properties = new Hashtable<String, Object>();
+		properties.putAll(packageConfigurator.getServiceProperties());
+		String[] serviceClasses = new String[] {OcppChargePointPackage.class.getName(), EPackage.class.getName()};
+		packageRegistration = ctx.registerService(serviceClasses, ePackage, properties);
 	}
-	
-	/* 
-	 * (non-Javadoc)
-	 * @see org.gecko.emf.osgi.EPackageRegistryConfigurator#unconfigureEPackage(org.eclipse.emf.ecore.EPackage.Registry)
+
+	/**
+	 * Registers the OcppChargePointFactory as a service.
+	 *
 	 * @generated
 	 */
-	@Override
-	public void unconfigureEPackage(org.eclipse.emf.ecore.EPackage.Registry registry) {
-		registry.remove(OcppChargePointPackage.eNS_URI);
+	private void registerEFactoryService(OcppChargePointPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+		Hashtable<String, Object> properties = new Hashtable<String, Object>();
+		properties.putAll(packageConfigurator.getServiceProperties());
+		String[] serviceClasses = new String[] {OcppChargePointFactory.class.getName(), EFactory.class.getName()};
+		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getOcppChargePointFactory(), properties);
 	}
-	
+
+	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+		// register the EPackage
+		Hashtable<String, Object> properties = new Hashtable<String, Object>();
+		properties.putAll(packageConfigurator.getServiceProperties());
+		properties.put(Condition.CONDITION_ID, OcppChargePointPackage.eNS_URI);
+		conditionRegistration = ctx.registerService(Condition.class, Condition.INSTANCE, properties);
+	}
+
+	/**
+	 * Deactivates and unregisteres everything.
+	 *
+	 * @generated
+	 */
 	@Deactivate
 	public void deactivate() {
+		conditionRegistration.unregister();
+		eFactoryRegistration.unregister();
+		packageRegistration.unregister();
+		ePackageConfiguratorRegistration.unregister();
 		EPackage.Registry.INSTANCE.remove(OcppChargePointPackage.eNS_URI);
-		if(packageRegistration != null){
-			packageRegistration.unregister();
-		}
 	}
 }

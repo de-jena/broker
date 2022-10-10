@@ -18,5 +18,6 @@
 	org.eclipse.sensinact.gateway.northbound.mqtt.username=demo,\
 	org.eclipse.sensinact.gateway.northbound.mqtt.password=1234
 	
+ 	
 
 	

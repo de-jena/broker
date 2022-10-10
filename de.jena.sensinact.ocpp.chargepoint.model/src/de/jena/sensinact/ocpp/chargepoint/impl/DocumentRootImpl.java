@@ -49,6 +49,7 @@ import org.eclipse.emf.common.util.EMap;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
@@ -194,7 +195,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	@Override
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null) {
-			xMLNSPrefixMap = new EcoreEMap<String,String>((EClass) eStaticClass().getEStructuralFeature(OcppChargePointPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP).getEType(), EStringToStringMapEntryImpl.class, this, OcppChargePointPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, OcppChargePointPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -207,7 +208,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	@Override
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null) {
-			xSISchemaLocation = new EcoreEMap<String,String>((EClass) eStaticClass().getEStructuralFeature(OcppChargePointPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION).getEType(), EStringToStringMapEntryImpl.class, this, OcppChargePointPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, OcppChargePointPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}

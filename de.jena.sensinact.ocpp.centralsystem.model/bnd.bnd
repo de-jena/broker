@@ -18,3 +18,4 @@
 
 Bundle-Version: 1.0.0.SNAPSHOT
 
+-buildpath: org.osgi.service.condition

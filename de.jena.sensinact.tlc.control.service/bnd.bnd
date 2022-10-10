@@ -1,0 +1,12 @@
+-buildpath: \
+	osgi.annotation;version='7.0',\
+	osgi.core;version='7.0',\
+	osgi.cmpn;version='7.0',\
+	de.jena.sensinact.sthbnd.rest.tlc.control.model,\
+	org.gecko.emf.repository.api
+
+-library: \
+	enable-emf
+	
+-sub: *.bnd
+

@@ -154,6 +154,7 @@
 	bnd.identity;id='de.jena.sensinact.hsmw',\
 	bnd.identity;id='de.jena.sensinact.tram',\
 	bnd.identity;id='de.dim.smart.city.traffic.simulator',\
-	bnd.identity;id='biz.aQute.gogo.commands.provider'
+	bnd.identity;id='biz.aQute.gogo.commands.provider',\
+	bnd.identity;id='de.jena.sensinact.sthbnd.rest.tlc.control'
 -runee: JavaSE-17
 -runblacklist: bnd.identity;id='org.gecko.emf.osgi.component';version='[4.0.0,4.1)'

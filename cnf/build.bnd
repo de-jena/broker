@@ -12,7 +12,8 @@ javac.debug:  on
 
 -library:\
 	geckoEMF,\
-	geckoEMFUtil
+	geckoEMFUtil,\
+	geckoJersey
 
 
 
@@ -26,5 +27,7 @@ releaseNotNeeded: ${findproviders;osgi.identity;(&(osgi.identity=${bsn})(version
 -maven-release: pom
 -pom: true
 -digest: sha256
+
+Bundle-Version: 1.0.0
 	
 

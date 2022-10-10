@@ -5,5 +5,10 @@
 		"test.baseUris": "mongodb://mongodb",
 		"test.databases": "test",
 		"test.test.repoType": "PROTOTYPE"
+	},
+
+	"JaxRsHttpWhiteboardRuntimeComponent~snarest": {
+		"jersey.jaxrs.whiteboard.name": "",
+		"jersey.context.path": "sensinact/rest"
 	}
 }

@@ -19,3 +19,4 @@
 Bundle-Version: 2.1.0.SNAPSHOT
 
 Provide-Capability: osgi.service;objectClass=de.dim.trafficos.model.device.TOSDevicePackage
+-buildpath: org.osgi.service.condition
