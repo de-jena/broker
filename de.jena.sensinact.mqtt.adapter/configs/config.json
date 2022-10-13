@@ -15,6 +15,13 @@
 		"password" : "NNSXS.6Z5OFLUZ7WSTECNCNYOCROVBL4ZUKCJ3ZUPIJHQ.LGDZO7FJYSGVIMIATERZRREJZWZN6QS7HOAYYC6G7XYR35HVCOAQ",
 		"id" : "ttn"
 	},
+	"MQTTService~ttn2":
+	{
+		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
+		"username" : "scj-sensors-01@ttn",
+		"password" : "NNSXS.KIMS23QQQFZFBVNSGUA2WJG32WTBTM72DSEUH7A.3EQSWFWSFO32OIFTYA2TYXK443OVKCQLTKHDWOYHTV64QU7BOD5A",
+		"id" : "ttn2"
+	},
 	
 	"mqtt.agent.broker~genericagent" : 
 	{
