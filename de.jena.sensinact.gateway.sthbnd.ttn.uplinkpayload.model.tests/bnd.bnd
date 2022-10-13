@@ -1,0 +1,14 @@
+#-enable-junit5: true
+-library: enable-emf,\
+	enableOSGi-Test
+
+-buildpath: \
+	org.osgi.framework,\
+	org.osgi.service.cm,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model
+
+-includeresource: data=data/
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model.tests
