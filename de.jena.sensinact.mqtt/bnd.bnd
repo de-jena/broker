@@ -11,8 +11,8 @@
 	org.eclipse.sensinact.gateway.sensinact-utils
 
 
-javac.source: 1.8
-javac.target: 1.8
+javac.source: 17
+javac.target: 17
 
 Bundle-Version: 1.0.0.${tstamp}
 

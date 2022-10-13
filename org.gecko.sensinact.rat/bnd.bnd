@@ -12,11 +12,11 @@
 	org.osgi.util.promise;version='1.1.1',\
 	org.gecko.osgi.messaging,\
 	slf4j.api,\
-	jakarta.json-api
+	jakarta.json-api;version='2.1'
 
 
-javac.source: 1.8
-javac.target: 1.8
+javac.source: 17
+javac.target: 17
 
 Bundle-Version: 1.0.0.${tstamp}
 
