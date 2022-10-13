@@ -16,7 +16,11 @@
 	org.osgi.service.component.annotations,\
 	org.osgi.util.promise,\
 	org.osgi.service.metatype.annotations,\
-	jakarta.json-api
+	org.eclipse.emf.ecore,\
+	org.eclipse.emf.common,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model;version=latest,\
+	jakarta.json-api;version='2.1'
 	
 Bundle-Version: 2.0.0-SNAPSHOT
 

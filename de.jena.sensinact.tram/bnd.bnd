@@ -17,8 +17,8 @@
 	org.gecko.emf.json
 
 
-javac.source: 1.8
-javac.target: 1.8
+javac.source: 17
+javac.target: 17
 
 
 -library: enable-emf

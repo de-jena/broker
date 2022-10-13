@@ -11,9 +11,20 @@
  */
 package org.eclipse.sensinact.gateway.sthbnd.ttn.packet;
 
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
+import org.eclipse.emf.common.util.EMap;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emfcloud.jackson.databind.EMFContext;
 import org.eclipse.sensinact.gateway.common.bundle.Mediator;
 import org.eclipse.sensinact.gateway.core.SensiNactResourceModelConfiguration.BuildPolicy;
 import org.eclipse.sensinact.gateway.generic.ExtModelConfiguration;
@@ -21,8 +32,6 @@ import org.eclipse.sensinact.gateway.generic.ExtModelConfigurationBuilder;
 import org.eclipse.sensinact.gateway.generic.local.LocalProtocolStackEndpoint;
 import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnSubPacket;
-import org.eclipse.sensinact.gateway.sthbnd.ttn.model.TtnUplinkPayload;
-import org.eclipse.sensinact.gateway.util.json.JsonProviderFactory;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.framework.BundleContext;
@@ -30,12 +39,15 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.json.JsonException;
-import jakarta.json.JsonObject;
+import de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model.uplinkpayload.RxMetadata;
+import de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model.uplinkpayload.TtnUplinkPayload;
+import de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model.uplinkpayload.UplinkMessage;
+import de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model.uplinkpayload.UplinkPayloadPackage;
 
 /**
  * 
@@ -52,45 +64,79 @@ public class MqttEndpointComponent {
 	private Logger logger = LoggerFactory.getLogger(MqttEndpointComponent.class.getName());
 	
 	@Reference(target = "(id=ttn)")
-	private MessagingService messaging;
+	private MessagingService messagingTtnSimpleSensors;
+	
+	@Reference(target = "(id=ttn2)")
+	private MessagingService messagingTtnSensors;
 
-//	@Reference(target="(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED)
-//	private ResourceSet resourceSet;
-	private PushStream<Message> subscribe;
+	@Reference(target="(&(emf.model.name=uplinkpayload)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED)
+	private ResourceSet resourceSet;
+	
+	@Reference
+	private UplinkPayloadPackage uplinkPayloadPackage;
+	
+	private PushStream<Message> subscriptionSimpleSensors;
+	private PushStream<Message> subscriptionSensors;
+	
+	private static final String SUBSCRIPTION_TOPIC = "v3/#";
 	
 	
+	@SuppressWarnings("rawtypes")
 	public void handleMessage(Message message) {
 		
+		System.out.println("Topic " +  message.topic());
 		byte[] content = message.payload().array();
 		System.out.println(new String(content));
 		
-        JsonObject json = JsonProviderFactory.readObject(new String(content));
-        TtnUplinkPayload payload = null;
+		Resource res = resourceSet.createResource(URI.createFileURI("temp.json"));
+		Map<?, ?> options = Collections.singletonMap(EMFContext.Attributes.ROOT_ELEMENT, uplinkPayloadPackage.getTtnUplinkPayload());
+		try {
+			res.load(new ByteArrayInputStream(content), options);
+			if(!res.getContents().isEmpty()) {
+				EObject eObj = res.getContents().get(0);
+				if(eObj instanceof TtnUplinkPayload) {
+					TtnUplinkPayload payload = (TtnUplinkPayload) eObj;
+					if(payload != null) {
+						System.out.println("We have a playload ");
+						List<TtnSubPacket> uplinkSubPackets = extractUplinkSubPackets(payload.getUplinkMessage());
+						if(uplinkSubPackets.isEmpty()) {
+							System.out.println("But no subpackets");
+			        		return;
+						}
+						System.out.println("Creating UplinkPacket with " + uplinkSubPackets.size() + " subpacket for " + payload.getEndDeviceIds().getDeviceId());
+						TtnUplinkPacket packet = new TtnUplinkPacket(payload.getEndDeviceIds().getDeviceId(), uplinkSubPackets);
+			            try {
+			            	System.out.println("Processing UplinkPacket");
+			                connector.process(packet);
+			            } catch (InvalidPacketException e) {
+			                e.printStackTrace();
+			            }
+					}
+					
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+            logger.error(e.getMessage(),e);
+		}
+	}
 
-        try {
-            payload = new TtnUplinkPayload(json);
-        } catch (JsonException e) {
-        	e.printStackTrace();
-                logger.error(e.getMessage(),e);
-        }
-        if (payload != null) {
-        	System.out.println("We have a playload ");
-        	List<TtnSubPacket> subPackets = payload.getSubPackets();
-        	if(subPackets.isEmpty()) {
-        		System.out.println("But no subpackages");
-        		return;
-        	}
-        	System.out.println("Creating UplinkPackaget with " + subPackets.size() + " subpackage for " + payload.getDeviceId());
-        	
-            TtnUplinkPacket packet = new TtnUplinkPacket(payload.getDeviceId(), subPackets);
-            try {
-            	System.out.println("Processing UplinkPackaget");
-                connector.process(packet);
-            } catch (InvalidPacketException e) {
-                e.printStackTrace();
-            }
-        }
+	@SuppressWarnings("rawtypes")
+	private List<TtnSubPacket>  extractUplinkSubPackets(UplinkMessage uplinkMessage) {
+		Objects.requireNonNull(uplinkMessage, () -> "UplinkMessage canno be null!");
+		List<RxMetadata> metadata = uplinkMessage.getRxMetadata();
+		List<TtnSubPacket> subPackets = new ArrayList<>();
 		
+		metadata.stream().filter(md -> md.getLocation() != null)
+		.forEach(md -> {
+			subPackets.add(new TtnSubPacket<>("admin", "location", null, null ,md.getLocation().getLatitude() + ":" + md.getLocation().getLongitude()));
+		});
+		
+		EMap<String, Object> decodedPayload = uplinkMessage.getDecodedPayload();
+		if(decodedPayload != null) {
+			decodedPayload.keySet().stream().map(k -> new TtnSubPacket<>("system", k, null,null,decodedPayload.get(k))).forEach(subPackets::add);
+		}
+		return subPackets;
 	}
 	
 	@Activate
@@ -103,25 +149,14 @@ public class MqttEndpointComponent {
 									).withStartAtInitializationTime(true
 	                    	).build("ttn-resource.xml", Collections.<String, String>emptyMap());
 			connector = new LocalProtocolStackEndpoint<TtnUplinkPacket>(mediator);
-			connector.connect(manager);
-			
-//			System.out.println("saying hello");
-//			PublicTransportPacket hello = new PublicTransportPacket("test rat");
-//			hello.setHelloMessage(true);
-//			connector.process(hello);
-//			
+			connector.connect(manager);		
 			
 			System.out.println("Here comes TTN");
 			
-			
-//	        String device = "hi";
-//	        TtnActivationPayload payload = new TtnActivationPayload("scj-simple-sensors@ttn", device, "260B95D6", new TtnMetadata("2021-11-05T12:48:54.789586818Z", 0, "modulation", "dataRate", "codingRate", Collections.emptyList()));
-//			TtnActivationPacket packet = new TtnActivationPacket(device, payload.getSubPackets());
-//			connector.process(packet);
-			
-			
-			subscribe = messaging.subscribe("v3/scj-simple-sensors@ttn/devices/eui-70b3d57ed004734a/up");
-			subscribe.forEach(this::handleMessage);
+//			subscribe = messaging.subscribe("v3/scj-simple-sensors@ttn/devices/eui-70b3d57ed004734a/up");
+			subscriptionSimpleSensors = messagingTtnSimpleSensors.subscribe(SUBSCRIPTION_TOPIC);
+			subscriptionSensors = messagingTtnSensors.subscribe(SUBSCRIPTION_TOPIC);
+			subscriptionSimpleSensors.merge(subscriptionSensors).forEach(this::handleMessage);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -131,30 +166,10 @@ public class MqttEndpointComponent {
 	@Deactivate
 	public void deactivate() {
 		System.out.println("deactivating TTN");
-		subscribe.close();
+		subscriptionSimpleSensors.close();
+		subscriptionSensors.close();
 		if (connector != null) {
 			connector.stop();
 		}
 	}
-//
-//	private void handleDataValue(PublicTransportDataValue value) {
-//		String name = value.getValue().getName();
-//		try {
-//			if(value.getType() == PublicTransportDataValueType.GEO_INFO) {
-//				PublicTransportPosition position = (PublicTransportPosition) value.getValue();
-//				
-//				PublicTransportPacket packet = new PublicTransportPacket(name, "admin", "location", position.getPosition().getLatitude() + ":" + position.getPosition().getLongitude());
-//				connector.process(packet);
-//			} else if (value.getType() == PublicTransportDataValueType.DOOR_CHANGE) {
-//				PublicTransportDoorChange doorChange = (PublicTransportDoorChange) value.getValue();
-//				PublicTransportPacket packet = new PublicTransportPacket(name, "vehicle", "door_status", doorChange.getType().toString());
-//				connector.process(packet);
-//				PublicTransportPacket doorStatus = new PublicTransportPacket(name, "admin", "icon", doorChange.getType() == PublicTransportDoorChangeType.DOOR_OPEN ? "tram_open" : "tram_closed");
-//				connector.process(doorStatus);
-//			}
-//		} catch (InvalidPacketException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//	}
 }

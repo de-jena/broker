@@ -25,8 +25,6 @@ import org.eclipse.sensinact.gateway.sthbnd.mqtt.util.api.MqttTopic;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.listener.TtnActivationListener;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.listener.TtnDownlinkListener;
 import org.eclipse.sensinact.gateway.sthbnd.ttn.listener.TtnUplinkListener;
-import org.osgi.annotation.bundle.Header;
-import org.osgi.framework.Constants;
 
 @SensiNactBridgeConfiguration(
 	startAtInitializationTime = true,

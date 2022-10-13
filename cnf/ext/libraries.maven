@@ -2,3 +2,4 @@ org.geckoprojects.emf:org.gecko.emf.osgi.bnd.library.workspace:4.2.0-SNAPSHOT
 org.geckoprojects.emf.utils:org.gecko.emf.util.bnd.library.workspace:1.0.0-SNAPSHOT
 org.geckoprojects.bnd:org.gecko.bnd.dimc.library:1.2.0-SNAPSHOT
 org.geckoprojects.jaxrs:org.gecko.rest.bnd.library:5.0.0-SNAPSHOT
+org.geckoprojects.bnd:org.gecko.bnd.osgitest.library:1.2.0-SNAPSHOT

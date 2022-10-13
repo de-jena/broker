@@ -31,7 +31,6 @@ import io.swagger.v3.oas.integration.api.OpenAPIConfiguration;
 import io.swagger.v3.oas.integration.api.OpenApiContext;
 import io.swagger.v3.oas.integration.api.OpenApiScanner;
 import io.swagger.v3.oas.models.OpenAPI;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 @Path("/openapi.{type:json|yaml}")
 @Component(name = OpenApiResource.COMPONENT_NAME, service = OpenApiResource.class, scope = ServiceScope.PROTOTYPE, configurationPolicy = ConfigurationPolicy.REQUIRE)

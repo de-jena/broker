@@ -19,7 +19,6 @@ import org.eclipse.sensinact.gateway.util.json.JsonProviderFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jakarta.json.Json;
 import jakarta.json.JsonException;
 import jakarta.json.JsonObject;
 
