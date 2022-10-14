@@ -5,8 +5,8 @@ package de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.IdsListReponse;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Location;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
@@ -45,7 +45,7 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modeEClass = null;
+	private EClass phaseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -66,7 +66,7 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modesListReponseEClass = null;
+	private EClass phasesListReponseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -222,8 +222,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EClass getMode() {
-		return modeEClass;
+	public EClass getPhase() {
+		return phaseEClass;
 	}
 
 	/**
@@ -232,8 +232,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMode_Id() {
-		return (EAttribute)modeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPhase_Id() {
+		return (EAttribute)phaseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -242,8 +242,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMode_Name() {
-		return (EAttribute)modeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPhase_Name() {
+		return (EAttribute)phaseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -252,8 +252,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMode_Description() {
-		return (EAttribute)modeEClass.getEStructuralFeatures().get(2);
+	public EAttribute getPhase_Description() {
+		return (EAttribute)phaseEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -262,8 +262,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMode_Code() {
-		return (EAttribute)modeEClass.getEStructuralFeatures().get(3);
+	public EAttribute getPhase_Code() {
+		return (EAttribute)phaseEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -282,7 +282,7 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getControl_Mode() {
+	public EAttribute getControl_PhaseId() {
 		return (EAttribute)controlEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -312,8 +312,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EClass getModesListReponse() {
-		return modesListReponseEClass;
+	public EClass getPhasesListReponse() {
+		return phasesListReponseEClass;
 	}
 
 	/**
@@ -322,8 +322,8 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EReference getModesListReponse_Modes() {
-		return (EReference)modesListReponseEClass.getEStructuralFeatures().get(0);
+	public EReference getPhasesListReponse_Phases() {
+		return (EReference)phasesListReponseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -362,7 +362,7 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	 * @generated
 	 */
 	@Override
-	public EReference getTlcHolder_Modes() {
+	public EReference getTlcHolder_Phases() {
 		return (EReference)tlcHolderEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -415,25 +415,25 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 		createEAttribute(locationEClass, LOCATION__LATITUDE);
 		createEAttribute(locationEClass, LOCATION__LONGITUDE);
 
-		modeEClass = createEClass(MODE);
-		createEAttribute(modeEClass, MODE__ID);
-		createEAttribute(modeEClass, MODE__NAME);
-		createEAttribute(modeEClass, MODE__DESCRIPTION);
-		createEAttribute(modeEClass, MODE__CODE);
+		phaseEClass = createEClass(PHASE);
+		createEAttribute(phaseEClass, PHASE__ID);
+		createEAttribute(phaseEClass, PHASE__NAME);
+		createEAttribute(phaseEClass, PHASE__DESCRIPTION);
+		createEAttribute(phaseEClass, PHASE__CODE);
 
 		controlEClass = createEClass(CONTROL);
-		createEAttribute(controlEClass, CONTROL__MODE);
+		createEAttribute(controlEClass, CONTROL__PHASE_ID);
 
 		idsListReponseEClass = createEClass(IDS_LIST_REPONSE);
 		createEAttribute(idsListReponseEClass, IDS_LIST_REPONSE__IDS);
 
-		modesListReponseEClass = createEClass(MODES_LIST_REPONSE);
-		createEReference(modesListReponseEClass, MODES_LIST_REPONSE__MODES);
+		phasesListReponseEClass = createEClass(PHASES_LIST_REPONSE);
+		createEReference(phasesListReponseEClass, PHASES_LIST_REPONSE__PHASES);
 
 		tlcHolderEClass = createEClass(TLC_HOLDER);
 		createEAttribute(tlcHolderEClass, TLC_HOLDER__ID);
 		createEReference(tlcHolderEClass, TLC_HOLDER__TLC);
-		createEReference(tlcHolderEClass, TLC_HOLDER__MODES);
+		createEReference(tlcHolderEClass, TLC_HOLDER__PHASES);
 		createEReference(tlcHolderEClass, TLC_HOLDER__CURRENT_CONTROL);
 	}
 
@@ -477,25 +477,25 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 		initEAttribute(getLocation_Latitude(), ecorePackage.getEString(), "latitude", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLocation_Longitude(), ecorePackage.getEString(), "longitude", null, 1, 1, Location.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(modeEClass, Mode.class, "Mode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMode_Id(), ecorePackage.getEString(), "id", null, 1, 1, Mode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMode_Name(), ecorePackage.getEString(), "name", null, 1, 1, Mode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMode_Description(), ecorePackage.getEString(), "description", null, 1, 1, Mode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMode_Code(), ecorePackage.getEBigInteger(), "code", null, 1, 1, Mode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(phaseEClass, Phase.class, "Phase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPhase_Id(), ecorePackage.getEString(), "id", null, 1, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhase_Name(), ecorePackage.getEString(), "name", null, 1, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhase_Description(), ecorePackage.getEString(), "description", null, 1, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPhase_Code(), ecorePackage.getEInt(), "code", null, 1, 1, Phase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controlEClass, Control.class, "Control", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getControl_Mode(), ecorePackage.getEString(), "mode", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getControl_PhaseId(), ecorePackage.getEString(), "phaseId", null, 1, 1, Control.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(idsListReponseEClass, IdsListReponse.class, "IdsListReponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIdsListReponse_Ids(), ecorePackage.getEString(), "ids", null, 0, -1, IdsListReponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(modesListReponseEClass, ModesListReponse.class, "ModesListReponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModesListReponse_Modes(), this.getMode(), null, "modes", null, 0, -1, ModesListReponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(phasesListReponseEClass, PhasesListReponse.class, "PhasesListReponse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPhasesListReponse_Phases(), this.getPhase(), null, "phases", null, 0, -1, PhasesListReponse.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tlcHolderEClass, TlcHolder.class, "TlcHolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTlcHolder_Id(), ecorePackage.getEString(), "id", null, 1, 1, TlcHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTlcHolder_Tlc(), this.getTlc(), null, "tlc", null, 1, 1, TlcHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTlcHolder_Modes(), this.getMode(), null, "modes", null, 0, -1, TlcHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTlcHolder_Phases(), this.getPhase(), null, "phases", null, 0, -1, TlcHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTlcHolder_CurrentControl(), this.getControl(), null, "currentControl", null, 0, 1, TlcHolder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
@@ -553,25 +553,31 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 			   "documentation", "A location represanting geo coordinates in decimal from"
 		   });
 		addAnnotation
-		  (getMode_Id(),
+		  (phaseEClass,
+		   source,
+		   new String[] {
+			   "documentation", "Phase correlating to the VTU of the TLC. It is used as a holder for additional human readable description of a Phase and the mapping to the port mapping via the byte #code"
+		   });
+		addAnnotation
+		  (getPhase_Id(),
 		   source,
 		   new String[] {
 			   "documentation", "The system internal identifier"
 		   });
 		addAnnotation
-		  (getMode_Name(),
+		  (getPhase_Name(),
 		   source,
 		   new String[] {
 			   "documentation", "The A human readable name"
 		   });
 		addAnnotation
-		  (getMode_Description(),
+		  (getPhase_Description(),
 		   source,
 		   new String[] {
 			   "documentation", "An additional description"
 		   });
 		addAnnotation
-		  (getMode_Code(),
+		  (getPhase_Code(),
 		   source,
 		   new String[] {
 			   "documentation", "Integer that will be mapped on the physical pins in the TLC"
@@ -593,13 +599,13 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 			   "nullFree", "false"
 		   });
 		addAnnotation
-		  (getModesListReponse_Modes(),
+		  (getPhasesListReponse_Phases(),
 		   source,
 		   new String[] {
 			   "nullFree", "false"
 		   });
 		addAnnotation
-		  (getTlcHolder_Modes(),
+		  (getTlcHolder_Phases(),
 		   source,
 		   new String[] {
 			   "nullFree", "false"

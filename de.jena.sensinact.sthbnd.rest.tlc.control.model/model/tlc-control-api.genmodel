@@ -18,25 +18,25 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Location/latitude"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Location/longitude"/>
     </genClasses>
-    <genClasses ecoreClass="tlc-control-api.ecore#//Mode">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Mode/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Mode/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Mode/description"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Mode/code"/>
+    <genClasses ecoreClass="tlc-control-api.ecore#//Phase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Phase/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Phase/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Phase/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Phase/code"/>
     </genClasses>
     <genClasses ecoreClass="tlc-control-api.ecore#//Control">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Control/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//Control/phaseId"/>
     </genClasses>
     <genClasses ecoreClass="tlc-control-api.ecore#//IdsListReponse">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//IdsListReponse/ids"/>
     </genClasses>
-    <genClasses ecoreClass="tlc-control-api.ecore#//ModesListReponse">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//ModesListReponse/modes"/>
+    <genClasses ecoreClass="tlc-control-api.ecore#//PhasesListReponse">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//PhasesListReponse/phases"/>
     </genClasses>
     <genClasses ecoreClass="tlc-control-api.ecore#//TlcHolder">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tlc-control-api.ecore#//TlcHolder/id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//TlcHolder/tlc"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//TlcHolder/modes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//TlcHolder/phases"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tlc-control-api.ecore#//TlcHolder/currentControl"/>
     </genClasses>
   </genPackages>

@@ -3,7 +3,7 @@
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl;
 
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder;
@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl#getTlc <em>Tlc</em>}</li>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl#getModes <em>Modes</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl#getPhases <em>Phases</em>}</li>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl#getCurrentControl <em>Current Control</em>}</li>
  * </ul>
  *
@@ -72,14 +72,14 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 	protected Tlc tlc;
 
 	/**
-	 * The cached value of the '{@link #getModes() <em>Modes</em>}' containment reference list.
+	 * The cached value of the '{@link #getPhases() <em>Phases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModes()
+	 * @see #getPhases()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Mode> modes;
+	protected EList<Phase> phases;
 
 	/**
 	 * The cached value of the '{@link #getCurrentControl() <em>Current Control</em>}' containment reference.
@@ -184,11 +184,11 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 	 * @generated
 	 */
 	@Override
-	public EList<Mode> getModes() {
-		if (modes == null) {
-			modes = new EObjectContainmentEList<Mode>(Mode.class, this, TlcControlPackage.TLC_HOLDER__MODES);
+	public EList<Phase> getPhases() {
+		if (phases == null) {
+			phases = new EObjectContainmentEList<Phase>(Phase.class, this, TlcControlPackage.TLC_HOLDER__PHASES);
 		}
-		return modes;
+		return phases;
 	}
 
 	/**
@@ -246,8 +246,8 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 		switch (featureID) {
 			case TlcControlPackage.TLC_HOLDER__TLC:
 				return basicSetTlc(null, msgs);
-			case TlcControlPackage.TLC_HOLDER__MODES:
-				return ((InternalEList<?>)getModes()).basicRemove(otherEnd, msgs);
+			case TlcControlPackage.TLC_HOLDER__PHASES:
+				return ((InternalEList<?>)getPhases()).basicRemove(otherEnd, msgs);
 			case TlcControlPackage.TLC_HOLDER__CURRENT_CONTROL:
 				return basicSetCurrentControl(null, msgs);
 		}
@@ -266,8 +266,8 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 				return getId();
 			case TlcControlPackage.TLC_HOLDER__TLC:
 				return getTlc();
-			case TlcControlPackage.TLC_HOLDER__MODES:
-				return getModes();
+			case TlcControlPackage.TLC_HOLDER__PHASES:
+				return getPhases();
 			case TlcControlPackage.TLC_HOLDER__CURRENT_CONTROL:
 				return getCurrentControl();
 		}
@@ -289,9 +289,9 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 			case TlcControlPackage.TLC_HOLDER__TLC:
 				setTlc((Tlc)newValue);
 				return;
-			case TlcControlPackage.TLC_HOLDER__MODES:
-				getModes().clear();
-				getModes().addAll((Collection<? extends Mode>)newValue);
+			case TlcControlPackage.TLC_HOLDER__PHASES:
+				getPhases().clear();
+				getPhases().addAll((Collection<? extends Phase>)newValue);
 				return;
 			case TlcControlPackage.TLC_HOLDER__CURRENT_CONTROL:
 				setCurrentControl((Control)newValue);
@@ -314,8 +314,8 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 			case TlcControlPackage.TLC_HOLDER__TLC:
 				setTlc((Tlc)null);
 				return;
-			case TlcControlPackage.TLC_HOLDER__MODES:
-				getModes().clear();
+			case TlcControlPackage.TLC_HOLDER__PHASES:
+				getPhases().clear();
 				return;
 			case TlcControlPackage.TLC_HOLDER__CURRENT_CONTROL:
 				setCurrentControl((Control)null);
@@ -336,8 +336,8 @@ public class TlcHolderImpl extends MinimalEObjectImpl.Container implements TlcHo
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case TlcControlPackage.TLC_HOLDER__TLC:
 				return tlc != null;
-			case TlcControlPackage.TLC_HOLDER__MODES:
-				return modes != null && !modes.isEmpty();
+			case TlcControlPackage.TLC_HOLDER__PHASES:
+				return phases != null && !phases.isEmpty();
 			case TlcControlPackage.TLC_HOLDER__CURRENT_CONTROL:
 				return currentControl != null;
 		}

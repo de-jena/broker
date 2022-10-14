@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tlcControl:TlcHolder
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tlcControl="https://jena.de/models/tlc/control/1.0"
+    xsi:schemaLocation="https://jena.de/models/tlc/control/1.0 tlc-control-api.ecore"
+    id="K434">
+  <tlc id="K434"
+      name="Teichgraben/Leutragraben"
+      description="Teichgraben/Leutragraben">
+    <location
+        latitude="50.927775"
+        longitude="11.583420"/>
+  </tlc>
+  <phases id="1"
+      name="Phase 1"
+      description="K1, K2, KR3, F5, H2, H4, BL5"/>
+  <phases id="2"
+      name="Phase 2"
+      description="K4, S4, S5, F1, F3, VT1, VT3, BL1"
+      code="1"/>
+  <phases id="3"
+      name="Phase 3"
+      description="K4, S4, F1, F3, VT1, VT3, BL1"
+      code="2"/>
+  <phases id="4"
+      name="Phase 4"
+      description="K4, S5, F1, F3, VT1, VT3, BL1"
+      code="3"/>
+  <phases id="5"
+      name="Phase 5"
+      description="K4, KR3, F1, F3, H2, H4, VT1, VT2, VT3,VT4, BL1"
+      code="4"/>
+  <phases id="6"
+      name="Phase 6"
+      description="K4, S4, F1, F3, VT1, VT3, BL1"
+      code="5"/>
+  <phases id="7"
+      name="Phase 7"
+      description="K4, S5, F1, F3, VT1, VT3, BL1"
+      code="6"/>
+</tlcControl:TlcHolder>

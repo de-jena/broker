@@ -10,4 +10,6 @@
 	io.swagger.core.v3.swagger-models,\
 	javax.servlet-api,\
 	com.fasterxml.jackson.core.jackson-databind,\
-	com.fasterxml.jackson.core.jackson-core
+	com.fasterxml.jackson.core.jackson-core,\
+	org.gecko.emf.rest,\
+	org.gecko.emf.json

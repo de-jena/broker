@@ -2,10 +2,8 @@
  */
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl;
 
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
-
-import java.math.BigInteger;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -16,21 +14,21 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Mode</b></em>'.
+ * An implementation of the model object '<em><b>Phase</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl#getId <em>Id</em>}</li>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
+public class PhaseImpl extends MinimalEObjectImpl.Container implements Phase {
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -99,7 +97,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final BigInteger CODE_EDEFAULT = null;
+	protected static final int CODE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
@@ -109,14 +107,14 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	 * @generated
 	 * @ordered
 	 */
-	protected BigInteger code = CODE_EDEFAULT;
+	protected int code = CODE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModeImpl() {
+	protected PhaseImpl() {
 		super();
 	}
 
@@ -127,7 +125,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TlcControlPackage.eINSTANCE.getMode();
+		return TlcControlPackage.eINSTANCE.getPhase();
 	}
 
 	/**
@@ -150,7 +148,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.MODE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.PHASE__ID, oldId, id));
 	}
 
 	/**
@@ -173,7 +171,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.MODE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.PHASE__NAME, oldName, name));
 	}
 
 	/**
@@ -196,7 +194,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.MODE__DESCRIPTION, oldDescription, description));
+			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.PHASE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -205,7 +203,7 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	 * @generated
 	 */
 	@Override
-	public BigInteger getCode() {
+	public int getCode() {
 		return code;
 	}
 
@@ -215,11 +213,11 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	 * @generated
 	 */
 	@Override
-	public void setCode(BigInteger newCode) {
-		BigInteger oldCode = code;
+	public void setCode(int newCode) {
+		int oldCode = code;
 		code = newCode;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.MODE__CODE, oldCode, code));
+			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.PHASE__CODE, oldCode, code));
 	}
 
 	/**
@@ -230,13 +228,13 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TlcControlPackage.MODE__ID:
+			case TlcControlPackage.PHASE__ID:
 				return getId();
-			case TlcControlPackage.MODE__NAME:
+			case TlcControlPackage.PHASE__NAME:
 				return getName();
-			case TlcControlPackage.MODE__DESCRIPTION:
+			case TlcControlPackage.PHASE__DESCRIPTION:
 				return getDescription();
-			case TlcControlPackage.MODE__CODE:
+			case TlcControlPackage.PHASE__CODE:
 				return getCode();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -250,17 +248,17 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TlcControlPackage.MODE__ID:
+			case TlcControlPackage.PHASE__ID:
 				setId((String)newValue);
 				return;
-			case TlcControlPackage.MODE__NAME:
+			case TlcControlPackage.PHASE__NAME:
 				setName((String)newValue);
 				return;
-			case TlcControlPackage.MODE__DESCRIPTION:
+			case TlcControlPackage.PHASE__DESCRIPTION:
 				setDescription((String)newValue);
 				return;
-			case TlcControlPackage.MODE__CODE:
-				setCode((BigInteger)newValue);
+			case TlcControlPackage.PHASE__CODE:
+				setCode((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,16 +272,16 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.MODE__ID:
+			case TlcControlPackage.PHASE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case TlcControlPackage.MODE__NAME:
+			case TlcControlPackage.PHASE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TlcControlPackage.MODE__DESCRIPTION:
+			case TlcControlPackage.PHASE__DESCRIPTION:
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
-			case TlcControlPackage.MODE__CODE:
+			case TlcControlPackage.PHASE__CODE:
 				setCode(CODE_EDEFAULT);
 				return;
 		}
@@ -298,14 +296,14 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.MODE__ID:
+			case TlcControlPackage.PHASE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case TlcControlPackage.MODE__NAME:
+			case TlcControlPackage.PHASE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TlcControlPackage.MODE__DESCRIPTION:
+			case TlcControlPackage.PHASE__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case TlcControlPackage.MODE__CODE:
-				return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+			case TlcControlPackage.PHASE__CODE:
+				return code != CODE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -332,4 +330,4 @@ public class ModeImpl extends MinimalEObjectImpl.Container implements Mode {
 		return result.toString();
 	}
 
-} //ModeImpl
+} //PhaseImpl

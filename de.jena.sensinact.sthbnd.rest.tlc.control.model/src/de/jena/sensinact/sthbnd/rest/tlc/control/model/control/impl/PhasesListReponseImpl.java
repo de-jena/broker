@@ -2,8 +2,8 @@
  */
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl;
 
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
 
 import java.util.Collection;
@@ -22,34 +22,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Modes List Reponse</b></em>'.
+ * An implementation of the model object '<em><b>Phases List Reponse</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModesListReponseImpl#getModes <em>Modes</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhasesListReponseImpl#getPhases <em>Phases</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ModesListReponseImpl extends MinimalEObjectImpl.Container implements ModesListReponse {
+public class PhasesListReponseImpl extends MinimalEObjectImpl.Container implements PhasesListReponse {
 	/**
-	 * The cached value of the '{@link #getModes() <em>Modes</em>}' containment reference list.
+	 * The cached value of the '{@link #getPhases() <em>Phases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModes()
+	 * @see #getPhases()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Mode> modes;
+	protected EList<Phase> phases;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModesListReponseImpl() {
+	protected PhasesListReponseImpl() {
 		super();
 	}
 
@@ -60,7 +60,7 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TlcControlPackage.eINSTANCE.getModesListReponse();
+		return TlcControlPackage.eINSTANCE.getPhasesListReponse();
 	}
 
 	/**
@@ -69,11 +69,11 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public EList<Mode> getModes() {
-		if (modes == null) {
-			modes = new EObjectContainmentEList<Mode>(Mode.class, this, TlcControlPackage.MODES_LIST_REPONSE__MODES);
+	public EList<Phase> getPhases() {
+		if (phases == null) {
+			phases = new EObjectContainmentEList<Phase>(Phase.class, this, TlcControlPackage.PHASES_LIST_REPONSE__PHASES);
 		}
-		return modes;
+		return phases;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TlcControlPackage.MODES_LIST_REPONSE__MODES:
-				return ((InternalEList<?>)getModes()).basicRemove(otherEnd, msgs);
+			case TlcControlPackage.PHASES_LIST_REPONSE__PHASES:
+				return ((InternalEList<?>)getPhases()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +98,8 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TlcControlPackage.MODES_LIST_REPONSE__MODES:
-				return getModes();
+			case TlcControlPackage.PHASES_LIST_REPONSE__PHASES:
+				return getPhases();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +113,9 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TlcControlPackage.MODES_LIST_REPONSE__MODES:
-				getModes().clear();
-				getModes().addAll((Collection<? extends Mode>)newValue);
+			case TlcControlPackage.PHASES_LIST_REPONSE__PHASES:
+				getPhases().clear();
+				getPhases().addAll((Collection<? extends Phase>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +129,8 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.MODES_LIST_REPONSE__MODES:
-				getModes().clear();
+			case TlcControlPackage.PHASES_LIST_REPONSE__PHASES:
+				getPhases().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -144,10 +144,10 @@ public class ModesListReponseImpl extends MinimalEObjectImpl.Container implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.MODES_LIST_REPONSE__MODES:
-				return modes != null && !modes.isEmpty();
+			case TlcControlPackage.PHASES_LIST_REPONSE__PHASES:
+				return phases != null && !phases.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ModesListReponseImpl
+} //PhasesListReponseImpl

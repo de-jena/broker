@@ -58,10 +58,10 @@ public class TlcControlFactoryImpl extends EFactoryImpl implements TlcControlFac
 		switch (eClass.getClassifierID()) {
 			case TlcControlPackage.TLC: return createTlc();
 			case TlcControlPackage.LOCATION: return createLocation();
-			case TlcControlPackage.MODE: return createMode();
+			case TlcControlPackage.PHASE: return createPhase();
 			case TlcControlPackage.CONTROL: return createControl();
 			case TlcControlPackage.IDS_LIST_REPONSE: return createIdsListReponse();
-			case TlcControlPackage.MODES_LIST_REPONSE: return createModesListReponse();
+			case TlcControlPackage.PHASES_LIST_REPONSE: return createPhasesListReponse();
 			case TlcControlPackage.TLC_HOLDER: return createTlcHolder();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -96,9 +96,9 @@ public class TlcControlFactoryImpl extends EFactoryImpl implements TlcControlFac
 	 * @generated
 	 */
 	@Override
-	public Mode createMode() {
-		ModeImpl mode = new ModeImpl();
-		return mode;
+	public Phase createPhase() {
+		PhaseImpl phase = new PhaseImpl();
+		return phase;
 	}
 
 	/**
@@ -129,9 +129,9 @@ public class TlcControlFactoryImpl extends EFactoryImpl implements TlcControlFac
 	 * @generated
 	 */
 	@Override
-	public ModesListReponse createModesListReponse() {
-		ModesListReponseImpl modesListReponse = new ModesListReponseImpl();
-		return modesListReponse;
+	public PhasesListReponse createPhasesListReponse() {
+		PhasesListReponseImpl phasesListReponse = new PhasesListReponseImpl();
+		return phasesListReponse;
 	}
 
 	/**

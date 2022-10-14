@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getMode <em>Mode</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getPhaseId <em>Phase Id</em>}</li>
  * </ul>
  *
  * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage#getControl()
@@ -22,25 +22,25 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Control extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Mode</b></em>' attribute.
+	 * Returns the value of the '<em><b>Phase Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mode</em>' attribute.
-	 * @see #setMode(String)
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage#getControl_Mode()
+	 * @return the value of the '<em>Phase Id</em>' attribute.
+	 * @see #setPhaseId(String)
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage#getControl_PhaseId()
 	 * @model required="true"
 	 * @generated
 	 */
-	String getMode();
+	String getPhaseId();
 
 	/**
-	 * Sets the value of the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getMode <em>Mode</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getPhaseId <em>Phase Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mode</em>' attribute.
-	 * @see #getMode()
+	 * @param value the new value of the '<em>Phase Id</em>' attribute.
+	 * @see #getPhaseId()
 	 * @generated
 	 */
-	void setMode(String value);
+	void setPhaseId(String value);
 
 } // Control

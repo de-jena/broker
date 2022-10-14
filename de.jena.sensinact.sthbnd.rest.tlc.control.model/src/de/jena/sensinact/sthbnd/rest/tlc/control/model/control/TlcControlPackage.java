@@ -167,14 +167,14 @@ public interface TlcControlPackage extends EPackage {
 	int LOCATION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl <em>Mode</em>}' class.
+	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl <em>Phase</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModeImpl
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcControlPackageImpl#getMode()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhaseImpl
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcControlPackageImpl#getPhase()
 	 * @generated
 	 */
-	int MODE = 2;
+	int PHASE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -183,7 +183,7 @@ public interface TlcControlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODE__ID = 0;
+	int PHASE__ID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -192,7 +192,7 @@ public interface TlcControlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODE__NAME = 1;
+	int PHASE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -201,7 +201,7 @@ public interface TlcControlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODE__DESCRIPTION = 2;
+	int PHASE__DESCRIPTION = 2;
 
 	/**
 	 * The feature id for the '<em><b>Code</b></em>' attribute.
@@ -210,25 +210,25 @@ public interface TlcControlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODE__CODE = 3;
+	int PHASE__CODE = 3;
 
 	/**
-	 * The number of structural features of the '<em>Mode</em>' class.
+	 * The number of structural features of the '<em>Phase</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODE_FEATURE_COUNT = 4;
+	int PHASE_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Mode</em>' class.
+	 * The number of operations of the '<em>Phase</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODE_OPERATION_COUNT = 0;
+	int PHASE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ControlImpl <em>Control</em>}' class.
@@ -241,13 +241,13 @@ public interface TlcControlPackage extends EPackage {
 	int CONTROL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * The feature id for the '<em><b>Phase Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL__MODE = 0;
+	int CONTROL__PHASE_ID = 0;
 
 	/**
 	 * The number of structural features of the '<em>Control</em>' class.
@@ -305,41 +305,41 @@ public interface TlcControlPackage extends EPackage {
 	int IDS_LIST_REPONSE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModesListReponseImpl <em>Modes List Reponse</em>}' class.
+	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhasesListReponseImpl <em>Phases List Reponse</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ModesListReponseImpl
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcControlPackageImpl#getModesListReponse()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.PhasesListReponseImpl
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcControlPackageImpl#getPhasesListReponse()
 	 * @generated
 	 */
-	int MODES_LIST_REPONSE = 5;
+	int PHASES_LIST_REPONSE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Modes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Phases</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODES_LIST_REPONSE__MODES = 0;
+	int PHASES_LIST_REPONSE__PHASES = 0;
 
 	/**
-	 * The number of structural features of the '<em>Modes List Reponse</em>' class.
+	 * The number of structural features of the '<em>Phases List Reponse</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODES_LIST_REPONSE_FEATURE_COUNT = 1;
+	int PHASES_LIST_REPONSE_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Modes List Reponse</em>' class.
+	 * The number of operations of the '<em>Phases List Reponse</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODES_LIST_REPONSE_OPERATION_COUNT = 0;
+	int PHASES_LIST_REPONSE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.TlcHolderImpl <em>Tlc Holder</em>}' class.
@@ -370,13 +370,13 @@ public interface TlcControlPackage extends EPackage {
 	int TLC_HOLDER__TLC = 1;
 
 	/**
-	 * The feature id for the '<em><b>Modes</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Phases</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TLC_HOLDER__MODES = 2;
+	int TLC_HOLDER__PHASES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Current Control</b></em>' containment reference.
@@ -493,58 +493,58 @@ public interface TlcControlPackage extends EPackage {
 	EAttribute getLocation_Longitude();
 
 	/**
-	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode <em>Mode</em>}'.
+	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase <em>Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mode</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode
+	 * @return the meta object for class '<em>Phase</em>'.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase
 	 * @generated
 	 */
-	EClass getMode();
+	EClass getPhase();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getId()
-	 * @see #getMode()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getId()
+	 * @see #getPhase()
 	 * @generated
 	 */
-	EAttribute getMode_Id();
+	EAttribute getPhase_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getName()
-	 * @see #getMode()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getName()
+	 * @see #getPhase()
 	 * @generated
 	 */
-	EAttribute getMode_Name();
+	EAttribute getPhase_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getDescription <em>Description</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getDescription()
-	 * @see #getMode()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getDescription()
+	 * @see #getPhase()
 	 * @generated
 	 */
-	EAttribute getMode_Description();
+	EAttribute getPhase_Description();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getCode <em>Code</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getCode <em>Code</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Code</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode#getCode()
-	 * @see #getMode()
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase#getCode()
+	 * @see #getPhase()
 	 * @generated
 	 */
-	EAttribute getMode_Code();
+	EAttribute getPhase_Code();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control <em>Control</em>}'.
@@ -557,15 +557,15 @@ public interface TlcControlPackage extends EPackage {
 	EClass getControl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getMode <em>Mode</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getPhaseId <em>Phase Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mode</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getMode()
+	 * @return the meta object for the attribute '<em>Phase Id</em>'.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control#getPhaseId()
 	 * @see #getControl()
 	 * @generated
 	 */
-	EAttribute getControl_Mode();
+	EAttribute getControl_PhaseId();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.IdsListReponse <em>Ids List Reponse</em>}'.
@@ -589,25 +589,25 @@ public interface TlcControlPackage extends EPackage {
 	EAttribute getIdsListReponse_Ids();
 
 	/**
-	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse <em>Modes List Reponse</em>}'.
+	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse <em>Phases List Reponse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Modes List Reponse</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse
+	 * @return the meta object for class '<em>Phases List Reponse</em>'.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse
 	 * @generated
 	 */
-	EClass getModesListReponse();
+	EClass getPhasesListReponse();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse#getModes <em>Modes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse#getPhases <em>Phases</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Modes</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse#getModes()
-	 * @see #getModesListReponse()
+	 * @return the meta object for the containment reference list '<em>Phases</em>'.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse#getPhases()
+	 * @see #getPhasesListReponse()
 	 * @generated
 	 */
-	EReference getModesListReponse_Modes();
+	EReference getPhasesListReponse_Phases();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder <em>Tlc Holder</em>}'.
@@ -642,15 +642,15 @@ public interface TlcControlPackage extends EPackage {
 	EReference getTlcHolder_Tlc();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getModes <em>Modes</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getPhases <em>Phases</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Modes</em>'.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getModes()
+	 * @return the meta object for the containment reference list '<em>Phases</em>'.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getPhases()
 	 * @see #getTlcHolder()
 	 * @generated
 	 */
-	EReference getTlcHolder_Modes();
+	EReference getTlcHolder_Phases();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getCurrentControl <em>Current Control</em>}'.

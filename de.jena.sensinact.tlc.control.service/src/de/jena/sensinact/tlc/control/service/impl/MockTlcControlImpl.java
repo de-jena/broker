@@ -11,47 +11,83 @@
  */
 package de.jena.sensinact.tlc.control.service.impl;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.gecko.emf.repository.query.IQuery;
-import org.gecko.emf.repository.query.QueryRepository;
+import org.osgi.framework.BundleContext;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceScope;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.osgi.service.component.annotations.ReferenceCardinality;
 
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
 import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder;
 import de.jena.sensinact.tlc.control.service.api.TlcControl;
 
-@Component(scope = ServiceScope.PROTOTYPE)
+@Component(reference = {
+		@Reference(name = "TlcControlPackage", service = TlcControlPackage.class, cardinality = ReferenceCardinality.AT_LEAST_ONE)
+})
 public class MockTlcControlImpl implements TlcControl{
 
-	@Reference (scope = ReferenceScope.PROTOTYPE_REQUIRED)
-	private QueryRepository repo;
+	private final ResourceSet resourceSet;
 	
-	@Reference
-	TlcControlPackage tlcPackage;
+	private final TlcControlFactory factory;
 	
+	Map<String, TlcHolder> tlcs = new HashMap<>(); 
+
+	/**
+	 * Creates a new instance.
+	 */
+	@Activate
+	public MockTlcControlImpl(@Reference ResourceSet resourceSet, @Reference TlcControlFactory factory, BundleContext context) {
+		this.resourceSet = resourceSet;
+		this.factory = factory;
+		loadTlcHodlers(context);
+	}
+	
+	/**
+	 * @param context
+	 */
+	private void loadTlcHodlers(BundleContext context) {
+		Enumeration<String> paths = context.getBundle().getEntryPaths("/data");
+	    while (paths.hasMoreElements()) {
+	    	URL url = context.getBundle().getEntry(paths.nextElement()); 
+			Resource resource = resourceSet.getResource(URI.createURI(url.toString()), true);
+			resource.getContents().stream()
+				.map(TlcHolder.class::cast)
+				.map(tlc -> {
+					Control control = factory.createControl();
+					control.setPhaseId("1");
+					tlc.setCurrentControl(control);
+					return tlc;
+				})
+				.forEach( tlc -> tlcs.put(tlc.getId(), tlc));
+		}
+		
+	}
+
 	/* 
 	 * (non-Javadoc)
 	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getTlcIds()
 	 */
 	@Override
 	public List<String> getTlcIds() {
-		IQuery query = repo.createQueryBuilder().allQuery().projectionPath(tlcPackage.getTlcHolder_Id()).build();
-		List<String> result = repo.getEObjectsByQuery(tlcPackage.getTlcHolder(), query)
-				.stream()
-				.map(TlcHolder.class::cast)
-				.map(TlcHolder::getId)
-				.collect(Collectors.toList());
+		List<String> result =new ArrayList<>(tlcs.keySet()); 
 		return result;
 	}
 
@@ -61,7 +97,7 @@ public class MockTlcControlImpl implements TlcControl{
 	 */
 	@Override
 	public Optional<Tlc> getTlc(String tlcId) {
-		TlcHolder holder = repo.getEObject(tlcPackage.getTlcHolder(), tlcId);
+		TlcHolder holder = tlcs.get(tlcId);
 		if(holder == null) {
 			return Optional.empty();
 		}
@@ -70,12 +106,12 @@ public class MockTlcControlImpl implements TlcControl{
 
 	/* 
 	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getModes(java.lang.String)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getPhases(java.lang.String)
 	 */
 	@Override
-	public List<Mode> getModes(String tlcId) {
-		TlcHolder tlcholder = repo.getEObject(tlcPackage.getTlcHolder(), tlcId);
-		return tlcholder.getModes().stream().map(EcoreUtil::copy).collect(Collectors.toList());
+	public List<Phase> getPhases(String tlcId) {
+		TlcHolder tlcholder = tlcs.get(tlcId);
+		return tlcholder.getPhases().stream().map(EcoreUtil::copy).collect(Collectors.toList());
 	}
 
 	/* 
@@ -84,42 +120,40 @@ public class MockTlcControlImpl implements TlcControl{
 	 */
 	@Override
 	public boolean tlcExists(String tlcId) {
-		return repo.getEObject(tlcPackage.getTlcHolder(), tlcId) != null;
+		return tlcs.containsKey(tlcId);
 	}
 
 	/* 
 	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#saveMode(java.lang.String, de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#savePhase(java.lang.String, de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase)
 	 */
 	@Override
-	public void saveMode(String tlcId, Mode mode) {
+	public void savePhase(String tlcId, Phase mode) {
 		TlcHolder holder = loadHolder(tlcId);
 		boolean add = true;
-		for (int i = 0; i < holder.getModes().size(); i++) {
-			Mode curMode = holder.getModes().get(i);
-			if(curMode.getId().equals(mode.getId())) {
-				holder.getModes().set(i, mode);
+		for (int i = 0; i < holder.getPhases().size(); i++) {
+			Phase curPhase = holder.getPhases().get(i);
+			if(curPhase.getId().equals(mode.getId())) {
+				holder.getPhases().set(i, mode);
 				add = false;
 			}
 		}
 		if(add) {
-			holder.getModes().add(mode);
+			holder.getPhases().add(mode);
 		}
-		repo.save(holder);
 	}
 
 	/* 
 	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#removeMode(java.lang.String, java.lang.String)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#removePhase(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public boolean removeMode(String tlcId, String modeId) {
+	public boolean removePhase(String tlcId, String modeId) {
 		TlcHolder holder = loadHolder(tlcId);
-		for (int i = 0; i < holder.getModes().size(); i++) {
-			Mode curMode = holder.getModes().get(i);
-			if(curMode.getId().equals(modeId)) {
-				holder.getModes().remove(i);
-				repo.save(holder);
+		for (int i = 0; i < holder.getPhases().size(); i++) {
+			Phase curPhase = holder.getPhases().get(i);
+			if(curPhase.getId().equals(modeId)) {
+				holder.getPhases().remove(i);
 				return true;
 			}
 		}
@@ -127,29 +161,29 @@ public class MockTlcControlImpl implements TlcControl{
 	}
 
 	/* 
-	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getControlMode(java.lang.String)
+	 * (non-Ja)vadoc)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getControlPhase(java.lang.String)
 	 */
 	@Override
-	public Optional<Control> getControlMode(String tlcId) {
+	public Optional<Control> getControlPhase(String tlcId) {
 		TlcHolder holder = loadHolder(tlcId);
 		return Optional.ofNullable(EcoreUtil.copy(holder.getCurrentControl()));
 	}
 
 	/* 
 	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getMode(java.lang.String, java.lang.String)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getPhase(java.lang.String, java.lang.String)
 	 */
 	@Override
-	public Optional<Mode> getMode(String tlcId, String modeId) {
+	public Optional<Phase> getPhase(String tlcId, String modeId) {
 		Objects.requireNonNull(tlcId, "tlcId is required");
 		Objects.requireNonNull(modeId, "modeId must be set");
 		
 		TlcHolder holder = loadHolder(tlcId);
-		for (int i = 0; i < holder.getModes().size(); i++) {
-			Mode curMode = holder.getModes().get(i);
-			if(curMode.getId().equals(modeId)) {
-				return Optional.of(EcoreUtil.copy(curMode));
+		for (int i = 0; i < holder.getPhases().size(); i++) {
+			Phase curPhase = holder.getPhases().get(i);
+			if(curPhase.getId().equals(modeId)) {
+				return Optional.of(EcoreUtil.copy(curPhase));
 			}
 		}
 		return Optional.empty();
@@ -160,7 +194,7 @@ public class MockTlcControlImpl implements TlcControl{
 	 * @return
 	 */
 	private TlcHolder loadHolder(String tlcId) {
-		TlcHolder holder = repo.getEObject(tlcPackage.getTlcHolder(), tlcId);
+		TlcHolder holder = tlcs.get(tlcId);
 		if(holder == null) {
 			throw new RuntimeException("TLC with id " + tlcId + " does not exist");
 		}
@@ -169,14 +203,13 @@ public class MockTlcControlImpl implements TlcControl{
 
 	/* 
 	 * (non-Javadoc)
-	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#setControlMode(java.lang.String, de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control)
+	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#setControlPhase(java.lang.String, de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control)
 	 */
 	@Override
-	public void setControlMode(String tlcId, Control control) {
+	public void setControlPhase(String tlcId, Control control) {
 		Objects.requireNonNull(tlcId, "tlcId is required");
 		Objects.requireNonNull(control, "Control must be set");
 		TlcHolder holder = loadHolder(tlcId);
 		holder.setCurrentControl(EcoreUtil.copy(control));
-		repo.save(holder);
 	}
 }

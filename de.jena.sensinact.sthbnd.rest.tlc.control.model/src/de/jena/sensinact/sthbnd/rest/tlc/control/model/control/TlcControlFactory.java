@@ -40,13 +40,13 @@ public interface TlcControlFactory extends EFactory {
 	Location createLocation();
 
 	/**
-	 * Returns a new object of class '<em>Mode</em>'.
+	 * Returns a new object of class '<em>Phase</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mode</em>'.
+	 * @return a new object of class '<em>Phase</em>'.
 	 * @generated
 	 */
-	Mode createMode();
+	Phase createPhase();
 
 	/**
 	 * Returns a new object of class '<em>Control</em>'.
@@ -67,13 +67,13 @@ public interface TlcControlFactory extends EFactory {
 	IdsListReponse createIdsListReponse();
 
 	/**
-	 * Returns a new object of class '<em>Modes List Reponse</em>'.
+	 * Returns a new object of class '<em>Phases List Reponse</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Modes List Reponse</em>'.
+	 * @return a new object of class '<em>Phases List Reponse</em>'.
 	 * @generated
 	 */
-	ModesListReponse createModesListReponse();
+	PhasesListReponse createPhasesListReponse();
 
 	/**
 	 * Returns a new object of class '<em>Tlc Holder</em>'.

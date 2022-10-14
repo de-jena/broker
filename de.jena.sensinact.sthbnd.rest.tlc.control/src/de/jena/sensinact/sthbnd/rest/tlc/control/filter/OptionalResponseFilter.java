@@ -16,7 +16,7 @@ import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsName;
 import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsWhiteboardTarget;
 
 /**
- * Handles responses that contain an Op
+ * Handles responses that contain an Optional. It returns a 204 if the Optional. If not it will resolve the entity and set it as the response entity.
  * 
  * @author Juergen Albert
  * @since 21 Sep 2022
@@ -25,10 +25,11 @@ import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsWhiteboardTarget;
 @JaxrsExtension
 @JaxrsName("OptionalResponse Handler")
 @ServiceRanking(Integer.MIN_VALUE)
-@JaxrsWhiteboardTarget("(optional.handler != false)")
-@JaxrsApplicationSelect("(optional.handler != false)")
+@JaxrsWhiteboardTarget("(!(optional.handler = false))")
+@JaxrsApplicationSelect("(!(optional.handler = false))")
 public class OptionalResponseFilter implements ContainerResponseFilter {
 
+	
     /* 
      * (non-Javadoc)
      * @see javax.ws.rs.container.ContainerResponseFilter#filter(javax.ws.rs.container.ContainerRequestContext, javax.ws.rs.container.ContainerResponseContext)
@@ -36,7 +37,11 @@ public class OptionalResponseFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext response) throws IOException {
         Object entity = response.getEntity();
-        if(entity != null && isNonPresentOptionalValue(entity)) {
+        if(entity instanceof Optional<?> && ((Optional) entity).isPresent()) {
+        	response.setEntity(((Optional<?>) entity).get());
+        	return;
+        }
+        if(entity == null || isNonPresentOptionalValue(entity)) {
             response.setStatus(HttpServletResponse.SC_NO_CONTENT);
             response.setEntity(null);
         }

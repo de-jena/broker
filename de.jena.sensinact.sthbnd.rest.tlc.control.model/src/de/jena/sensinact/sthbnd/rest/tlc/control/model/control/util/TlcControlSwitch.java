@@ -78,9 +78,9 @@ public class TlcControlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TlcControlPackage.MODE: {
-				Mode mode = (Mode)theEObject;
-				T result = caseMode(mode);
+			case TlcControlPackage.PHASE: {
+				Phase phase = (Phase)theEObject;
+				T result = casePhase(phase);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -96,9 +96,9 @@ public class TlcControlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TlcControlPackage.MODES_LIST_REPONSE: {
-				ModesListReponse modesListReponse = (ModesListReponse)theEObject;
-				T result = caseModesListReponse(modesListReponse);
+			case TlcControlPackage.PHASES_LIST_REPONSE: {
+				PhasesListReponse phasesListReponse = (PhasesListReponse)theEObject;
+				T result = casePhasesListReponse(phasesListReponse);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -143,17 +143,17 @@ public class TlcControlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mode</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Phase</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mode</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Phase</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMode(Mode object) {
+	public T casePhase(Phase object) {
 		return null;
 	}
 
@@ -188,17 +188,17 @@ public class TlcControlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Modes List Reponse</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Phases List Reponse</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Modes List Reponse</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Phases List Reponse</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModesListReponse(ModesListReponse object) {
+	public T casePhasesListReponse(PhasesListReponse object) {
 		return null;
 	}
 

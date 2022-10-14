@@ -3,7 +3,9 @@
 	osgi.core;version='7.0',\
 	osgi.cmpn;version='7.0',\
 	de.jena.sensinact.sthbnd.rest.tlc.control.model,\
-	org.gecko.emf.repository.api
+	org.gecko.emf.repository.api,\
+	org.gecko.rest.jersey,\
+	org.gecko.emf.rest
 
 -library: \
 	enable-emf

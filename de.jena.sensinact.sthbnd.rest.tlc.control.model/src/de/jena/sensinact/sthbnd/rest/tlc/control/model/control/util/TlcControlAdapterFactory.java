@@ -76,8 +76,8 @@ public class TlcControlAdapterFactory extends AdapterFactoryImpl {
 				return createLocationAdapter();
 			}
 			@Override
-			public Adapter caseMode(Mode object) {
-				return createModeAdapter();
+			public Adapter casePhase(Phase object) {
+				return createPhaseAdapter();
 			}
 			@Override
 			public Adapter caseControl(Control object) {
@@ -88,8 +88,8 @@ public class TlcControlAdapterFactory extends AdapterFactoryImpl {
 				return createIdsListReponseAdapter();
 			}
 			@Override
-			public Adapter caseModesListReponse(ModesListReponse object) {
-				return createModesListReponseAdapter();
+			public Adapter casePhasesListReponse(PhasesListReponse object) {
+				return createPhasesListReponseAdapter();
 			}
 			@Override
 			public Adapter caseTlcHolder(TlcHolder object) {
@@ -144,16 +144,16 @@ public class TlcControlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode <em>Mode</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase <em>Phase</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase
 	 * @generated
 	 */
-	public Adapter createModeAdapter() {
+	public Adapter createPhaseAdapter() {
 		return null;
 	}
 
@@ -186,16 +186,16 @@ public class TlcControlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse <em>Modes List Reponse</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse <em>Phases List Reponse</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse
 	 * @generated
 	 */
-	public Adapter createModesListReponseAdapter() {
+	public Adapter createPhasesListReponseAdapter() {
 		return null;
 	}
 

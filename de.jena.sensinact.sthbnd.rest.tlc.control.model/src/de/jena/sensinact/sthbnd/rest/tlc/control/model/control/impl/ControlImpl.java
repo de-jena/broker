@@ -20,31 +20,31 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ControlImpl#getMode <em>Mode</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.impl.ControlImpl#getPhaseId <em>Phase Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ControlImpl extends MinimalEObjectImpl.Container implements Control {
 	/**
-	 * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * The default value of the '{@link #getPhaseId() <em>Phase Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMode()
+	 * @see #getPhaseId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String MODE_EDEFAULT = null;
+	protected static final String PHASE_ID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
+	 * The cached value of the '{@link #getPhaseId() <em>Phase Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMode()
+	 * @see #getPhaseId()
 	 * @generated
 	 * @ordered
 	 */
-	protected String mode = MODE_EDEFAULT;
+	protected String phaseId = PHASE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,8 +71,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @generated
 	 */
 	@Override
-	public String getMode() {
-		return mode;
+	public String getPhaseId() {
+		return phaseId;
 	}
 
 	/**
@@ -81,11 +81,11 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	 * @generated
 	 */
 	@Override
-	public void setMode(String newMode) {
-		String oldMode = mode;
-		mode = newMode;
+	public void setPhaseId(String newPhaseId) {
+		String oldPhaseId = phaseId;
+		phaseId = newPhaseId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.CONTROL__MODE, oldMode, mode));
+			eNotify(new ENotificationImpl(this, Notification.SET, TlcControlPackage.CONTROL__PHASE_ID, oldPhaseId, phaseId));
 	}
 
 	/**
@@ -96,8 +96,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TlcControlPackage.CONTROL__MODE:
-				return getMode();
+			case TlcControlPackage.CONTROL__PHASE_ID:
+				return getPhaseId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,8 +110,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TlcControlPackage.CONTROL__MODE:
-				setMode((String)newValue);
+			case TlcControlPackage.CONTROL__PHASE_ID:
+				setPhaseId((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -125,8 +125,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.CONTROL__MODE:
-				setMode(MODE_EDEFAULT);
+			case TlcControlPackage.CONTROL__PHASE_ID:
+				setPhaseId(PHASE_ID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -140,8 +140,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TlcControlPackage.CONTROL__MODE:
-				return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
+			case TlcControlPackage.CONTROL__PHASE_ID:
+				return PHASE_ID_EDEFAULT == null ? phaseId != null : !PHASE_ID_EDEFAULT.equals(phaseId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,8 +156,8 @@ public class ControlImpl extends MinimalEObjectImpl.Container implements Control
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (mode: ");
-		result.append(mode);
+		result.append(" (phaseId: ");
+		result.append(phaseId);
 		result.append(')');
 		return result.toString();
 	}

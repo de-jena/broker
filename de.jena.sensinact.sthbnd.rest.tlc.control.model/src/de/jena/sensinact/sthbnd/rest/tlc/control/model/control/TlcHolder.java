@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getId <em>Id</em>}</li>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getTlc <em>Tlc</em>}</li>
- *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getModes <em>Modes</em>}</li>
+ *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getPhases <em>Phases</em>}</li>
  *   <li>{@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder#getCurrentControl <em>Current Control</em>}</li>
  * </ul>
  *
@@ -71,17 +71,17 @@ public interface TlcHolder extends EObject {
 	void setTlc(Tlc value);
 
 	/**
-	 * Returns the value of the '<em><b>Modes</b></em>' containment reference list.
-	 * The list contents are of type {@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode}.
+	 * Returns the value of the '<em><b>Phases</b></em>' containment reference list.
+	 * The list contents are of type {@link de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Modes</em>' containment reference list.
-	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage#getTlcHolder_Modes()
+	 * @return the value of the '<em>Phases</em>' containment reference list.
+	 * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage#getTlcHolder_Phases()
 	 * @model containment="true" ordered="false"
 	 *        annotation="http://www.eclipse.org/OCL/Collection nullFree='false'"
 	 * @generated
 	 */
-	EList<Mode> getModes();
+	EList<Phase> getPhases();
 
 	/**
 	 * Returns the value of the '<em><b>Current Control</b></em>' containment reference.

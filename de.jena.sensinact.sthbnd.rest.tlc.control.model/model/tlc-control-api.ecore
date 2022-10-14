@@ -38,7 +38,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Mode">
+  <eClassifiers xsi:type="ecore:EClass" name="Phase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Phase correlating to the VTU of the TLC. It is used as a holder for additional human readable description of a Phase and the mapping to the port mapping via the byte #code"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         iD="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -56,14 +59,15 @@
         <details key="documentation" value="An additional description"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigInteger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="Integer that will be mapped on the physical pins in the TLC"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Control">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phaseId" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IdsListReponse">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ids" ordered="false" upperBound="-1"
@@ -73,9 +77,9 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModesListReponse">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modes" ordered="false"
-        upperBound="-1" eType="#//Mode" containment="true">
+  <eClassifiers xsi:type="ecore:EClass" name="PhasesListReponse">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phases" ordered="false"
+        upperBound="-1" eType="#//Phase" containment="true">
       <eAnnotations source="http://www.eclipse.org/OCL/Collection">
         <details key="nullFree" value="false"/>
       </eAnnotations>
@@ -86,8 +90,8 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tlc" lowerBound="1" eType="#//Tlc"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="modes" ordered="false"
-        upperBound="-1" eType="#//Mode" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phases" ordered="false"
+        upperBound="-1" eType="#//Phase" containment="true">
       <eAnnotations source="http://www.eclipse.org/OCL/Collection">
         <details key="nullFree" value="false"/>
       </eAnnotations>

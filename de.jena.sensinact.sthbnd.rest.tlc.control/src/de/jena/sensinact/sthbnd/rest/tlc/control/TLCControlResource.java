@@ -14,11 +14,13 @@ package de.jena.sensinact.sthbnd.rest.tlc.control;
 import java.util.List;
 import java.util.Optional;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.WebApplicationException;
@@ -26,21 +28,25 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.gecko.emf.jaxrs.annotations.RequireEMFMessageBodyReaderWriter;
+import org.gecko.emf.jaxrs.annotations.json.EMFJSONConfig;
+import org.gecko.emf.jaxrs.annotations.json.EMFJSONConfig.USE;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;
-import org.osgi.service.jaxrs.whiteboard.annotations.RequireJaxrsWhiteboard;
 import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsName;
 import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsResource;
+
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.IdsListReponse;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.PhasesListReponse;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory;
 import de.jena.sensinact.tlc.control.service.api.TlcControl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.IdsListReponse;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.ModesListReponse;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory;
 
 /**
  * <p>
@@ -48,18 +54,16 @@ import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory
  * </p>
  * 
  * @since 1.0
- */
-/**
- * 
- * @author ungei
+ * @author Juergen Albert
  * @since 15 Sep 2022
  */
-@RequireJaxrsWhiteboard
 @JaxrsResource
 @JaxrsName("tlc")
 @Component(service = TLCControlResource.class, enabled = true, scope = ServiceScope.PROTOTYPE)
 @Path("/tlc")
 @Produces(MediaType.APPLICATION_JSON)
+@RequireEMFMessageBodyReaderWriter
+@RequireEMFJson
 public class TLCControlResource {
 
 	@Reference
@@ -75,6 +79,7 @@ public class TLCControlResource {
 				@ApiResponse(responseCode = "204", description = "No TLCs available"),
 				@ApiResponse(responseCode = "200", description = "A IdsList Response")
 		})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	public Response getTlcIds() {
 		List<String> ids = tlcControl.getTlcIds();
 		if(ids.isEmpty()) {
@@ -82,7 +87,7 @@ public class TLCControlResource {
 		}
 		IdsListReponse idsListReponse = factory.createIdsListReponse();
 		idsListReponse.getIds().addAll(ids);
-		
+		System.out.println("test");
 		return Response.ok(idsListReponse).build();
 	}
 
@@ -93,86 +98,92 @@ public class TLCControlResource {
 			@ApiResponse(responseCode = "204", description = "No TLC with this ID found"),
 			@ApiResponse(responseCode = "200", description = "The desired TLC")
 	})
-	public Response getTlcById(@QueryParam("tlcId") String tlcId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response getTlcById(@PathParam("tlcId") String tlcId) {
 		Optional<Tlc> tlc = tlcControl.getTlc(tlcId);
 		return Response.ok(tlc).build();
 	}
 
 	@POST
 	@Path("/{tlcId}/control/alive")
-	@Operation(description = "Post the alive ping for this TLC. Will return after the ping was forwarded.", 
+	@Operation(description = "Post the alive ping for this TLC. Will return after the ping was forwarded.",
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with this ID found"),
 			@ApiResponse(responseCode = "200", description = "Ping sucessfully send")
 	})
-	public Response setTlcAliveById(@QueryParam("tlcId") String tlcId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response setTlcAliveById(@PathParam("tlcId") String tlcId) {
 		return Response.ok().build();
 	}
 
 	@GET
-	@Path("/{tlcId}/control/mode")
-	@Operation(description = "Returns a Response containing the Mdoes", 
+	@Path("/{tlcId}/control/phase")
+	@Operation(description = "Returns a Response containing the Phases", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "204", description = "No Modes for this TLC available"),
-			@ApiResponse(responseCode = "200", description = "A Response with the availalble Modes")
+			@ApiResponse(responseCode = "204", description = "No Phases for this TLC available"),
+			@ApiResponse(responseCode = "200", description = "A Response with the availalble Phases")
 	})
-	public Response getAllTlcModes(@QueryParam("tlcId") String tlcId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response getAllTlcPhases(@PathParam("tlcId") String tlcId) {
 		if(tlcControl.tlcExists(tlcId)) {
-			List<Mode> modes = tlcControl.getModes(tlcId);
-			if(modes.isEmpty()) {
+			List<Phase> phases = tlcControl.getPhases(tlcId);
+			if(phases.isEmpty()) {
 				return Response.noContent().build();
 			}
-			ModesListReponse modesListReponse = factory.createModesListReponse();
-			modesListReponse.getModes().addAll(modes);
-			return Response.ok(modesListReponse).build();
+			PhasesListReponse phasesListReponse = factory.createPhasesListReponse();
+			phasesListReponse.getPhases().addAll(phases);
+			return Response.ok(phasesListReponse).build();
 		}
 		throw new WebApplicationException("TLC does not exist", Status.NOT_FOUND);
 	}
 
 	@GET
-	@Path("/{tlcId}/control/mode/{modeId}")
-	@Operation(description = "Returns the Mode with the specified ID", 
+	@Path("/{tlcId}/control/phase/{phaseId}")
+	@Operation(description = "Returns the Phase with the specified ID", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "204", description = "No Mode with the fiven ID for this TLC available"),
-			@ApiResponse(responseCode = "200", description = "The requested Mode")
+			@ApiResponse(responseCode = "204", description = "No Phase with the fiven ID for this TLC available"),
+			@ApiResponse(responseCode = "200", description = "The requested Phase")
 	})
-	public Response getTlcMode(@QueryParam("tlcId") String tlcId, @QueryParam("modeId") String modeId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response getTlcPhase(@PathParam("tlcId") String tlcId, @PathParam("phaseId") String phaseId) {
 		if(tlcControl.tlcExists(tlcId)) {
-			Optional<Mode> mode = tlcControl.getMode(tlcId, modeId);
-			return Response.ok(mode).build();
+			Optional<Phase> phase = tlcControl.getPhase(tlcId, phaseId);
+			return Response.ok(phase).build();
 		}
 		throw new WebApplicationException("TLC does not exist", Status.NOT_FOUND);
 	}
 
 	@PUT
 	@POST
-	@Path("/{tlcId}/control/mode")
-	@Operation(description = "Adds or replaces the Mode for a TLC", 
+	@Path("/{tlcId}/control/phase")
+	@Operation(description = "Adds or replaces the Phase for a TLC", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "200", description = "Mode saved sucessfully")
+			@ApiResponse(responseCode = "200", description = "Phase saved sucessfully")
 	})
-	public Response addTlcMode(@QueryParam("tlcId") String tlcId, Mode mode) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response addTlcPhase(@PathParam("tlcId") String tlcId,@EMFJSONConfig(typeUSE = USE.CLASS) Phase phase) {
 		if(tlcControl.tlcExists(tlcId)) {
-			tlcControl.saveMode(tlcId, mode);
+			tlcControl.savePhase(tlcId, phase);
 			return Response.ok().build();
 		}
 		throw new WebApplicationException("TLC does not exist", Status.NOT_FOUND);
 	}
 
 	@DELETE
-	@Path("/{tlcId}/control/mode/{modeId}")
-	@Operation(description = "Deltes a Mode for a TLC", 
+	@Path("/{tlcId}/control/phase/{phaseId}")
+	@Operation(description = "Deltes a Phase for a TLC", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "204", description = "Mode with the given ID does not exist"),
-			@ApiResponse(responseCode = "200", description = "Mode deleted sucessfully")
+			@ApiResponse(responseCode = "204", description = "Phase with the given ID does not exist"),
+			@ApiResponse(responseCode = "200", description = "Phase deleted sucessfully")
 	})
-	public Response removeTlcMode(@QueryParam("tlcId") String tlcId, @QueryParam("modeId") String modeId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Response removeTlcPhase(@PathParam("tlcId") String tlcId, @PathParam("phaseId") String phaseId) {
 		if(tlcControl.tlcExists(tlcId)) {
-			if(tlcControl.removeMode(tlcId, modeId)) {
+			if(tlcControl.removePhase(tlcId, phaseId)) {
 				return Response.ok().build();
 			} else {
 				return Response.noContent().build();
@@ -183,32 +194,35 @@ public class TLCControlResource {
 
 	/**
 	 * @param tlcId
-	 * @return the currently set mode. If no control is set yet, a 204 will be returned.
+	 * @return the currently set phase. If no control is set yet, a 204 will be returned.
 	 */
 	@GET
 	@Path("/{tlcId}/control")
-	@Operation(description = "Gets the current control mode", 
+	@Operation(description = "Gets the current control phase", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "200", description = "The current control mode")
+			@ApiResponse(responseCode = "200", description = "The current control phase")
 	})
-	public Optional<Control> getTlcMode(@QueryParam("tlcId") String tlcId) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	public Optional<Control> getTlcPhase(@PathParam("tlcId") String tlcId) {
 		if(tlcControl.tlcExists(tlcId)) {
-			return tlcControl.getControlMode(tlcId);
+			return tlcControl.getControlPhase(tlcId);
 		}
 		throw new WebApplicationException("TLC does not exist", Status.NOT_FOUND);
 	}
 
 	@POST
 	@Path("/{tlcId}/control")
-	@Operation(description = "Sets the current control mode", 
+	@Operation(description = "Sets the current control phase", 
 	responses = {
 			@ApiResponse(responseCode = "404", description = "No TLC with the given ID exists"),
-			@ApiResponse(responseCode = "200", description = "Control mode set sucesfully")
+			@ApiResponse(responseCode = "200", description = "Control phase set sucesfully")
 	})
-	public Response setTlcMode(@QueryParam("tlcId") String tlcId, Control control) {
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response setTlcPhase(@PathParam("tlcId") String tlcId, Control control) {
 		if(tlcControl.tlcExists(tlcId)) {
-			tlcControl.setControlMode(tlcId, control);
+			tlcControl.setControlPhase(tlcId, control);
 			return Response.ok().build();
 		}
 		throw new WebApplicationException("TLC does not exist", Status.NOT_FOUND);
