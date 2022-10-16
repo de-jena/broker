@@ -1,7 +1,4 @@
 Private-Package: de.jena.sensinact.tlc.control.service.impl
 
-Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
-
 -includeresource: \
-	OSGI-INF/configurator/=configs/,\
 	data=data

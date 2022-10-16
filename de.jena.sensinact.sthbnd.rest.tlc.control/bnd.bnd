@@ -13,3 +13,11 @@
 	com.fasterxml.jackson.core.jackson-core,\
 	org.gecko.emf.rest,\
 	org.gecko.emf.json
+
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+	
+-includeresource.swagger: \
+	swagger=@https://github.com/swagger-api/swagger-ui/archive/refs/tags/v3.52.3.zip!/swagger-ui-3.52.3/dist/(*);rename:=$1,\
+	swagger=swagger,\
+	OSGI-INF/configurator/=configs/
+	

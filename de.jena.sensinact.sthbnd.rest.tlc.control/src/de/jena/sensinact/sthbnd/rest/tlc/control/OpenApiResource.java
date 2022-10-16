@@ -17,8 +17,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.ServiceScope;
+import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardResource;
 import org.osgi.service.jaxrs.whiteboard.propertytypes.JaxrsResource;
 
 import io.swagger.v3.core.util.Json;
@@ -31,11 +31,11 @@ import io.swagger.v3.oas.integration.api.OpenAPIConfiguration;
 import io.swagger.v3.oas.integration.api.OpenApiContext;
 import io.swagger.v3.oas.integration.api.OpenApiScanner;
 import io.swagger.v3.oas.models.OpenAPI;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 @Path("/openapi.{type:json|yaml}")
-@Component(name = OpenApiResource.COMPONENT_NAME, service = OpenApiResource.class, scope = ServiceScope.PROTOTYPE, configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(name = OpenApiResource.COMPONENT_NAME, service = OpenApiResource.class, scope = ServiceScope.PROTOTYPE)
 @JaxrsResource
+@HttpWhiteboardResource(pattern =  "/swagger/*", prefix = "/swagger")
 public class OpenApiResource extends BaseOpenApiResource {
 
 	/** OPEN_API_RESOURCE */

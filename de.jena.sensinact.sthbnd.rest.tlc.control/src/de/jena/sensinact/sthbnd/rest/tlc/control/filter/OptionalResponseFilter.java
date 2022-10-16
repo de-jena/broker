@@ -37,7 +37,7 @@ public class OptionalResponseFilter implements ContainerResponseFilter {
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext response) throws IOException {
         Object entity = response.getEntity();
-        if(entity instanceof Optional<?> && ((Optional) entity).isPresent()) {
+        if(entity instanceof Optional<?> && ((Optional<?>) entity).isPresent()) {
         	response.setEntity(((Optional<?>) entity).get());
         	return;
         }
