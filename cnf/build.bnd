@@ -13,7 +13,8 @@ javac.debug:  on
 -library:\
 	geckoEMF,\
 	geckoEMFUtil,\
-	geckoJersey
+	geckoJersey,\
+	geckoOSGi-Test
 
 
 
