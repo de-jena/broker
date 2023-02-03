@@ -27,7 +27,7 @@ pipeline  {
 				echo "I am building app on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew clean build -x itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew clean build -x testOSGi --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 		}
@@ -38,7 +38,7 @@ pipeline  {
 				echo "I am running integration tests on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew  itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew  testOSGi --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 				junit testResults: '**/generated/test-reports/**/*.xml', allowEmptyResults: true
 
@@ -78,7 +78,7 @@ pipeline  {
 			steps  {
 				echo "I am preparing docker: ${env.GIT_BRANCH}"
 
-				sh "./gradlew prepareDocker -x itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew prepareDocker -x testOSGi --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 
