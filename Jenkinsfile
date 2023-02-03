@@ -2,13 +2,11 @@ pipeline  {
 	agent any
 
 	environment {
-		imagename = 'jena/broker'
-		dockerImage = ''
 		JAVA_OPTS = "-Xms2048m -Xmx2048m -XX:MaxMetaspaceSize=1024m ${sh(script:'echo $JAVA_OPTS', returnStdout: true).trim()}"
   }
 
 	tools {
-		jdk 'OpenJDK8'
+		jdk 'OpenJDK17'
 	}
 
 	options {
