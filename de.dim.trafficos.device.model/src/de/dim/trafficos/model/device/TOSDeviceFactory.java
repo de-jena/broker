@@ -517,6 +517,42 @@ public interface TOSDeviceFactory extends EFactory {
 	PublicTransportLocMsg createPublicTransportLocMsg();
 
 	/**
+	 * Returns a new object of class '<em>Traffic Light Module LML</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traffic Light Module LML</em>'.
+	 * @generated
+	 */
+	TrafficLightModuleLML createTrafficLightModuleLML();
+
+	/**
+	 * Returns a new object of class '<em>Traffic Light Signal Transmitter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traffic Light Signal Transmitter</em>'.
+	 * @generated
+	 */
+	TrafficLightSignalTransmitter createTrafficLightSignalTransmitter();
+
+	/**
+	 * Returns a new object of class '<em>Traffic Light Signal Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traffic Light Signal Group</em>'.
+	 * @generated
+	 */
+	TrafficLightSignalGroup createTrafficLightSignalGroup();
+
+	/**
+	 * Returns a new object of class '<em>Traffic Light Module FDL</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Traffic Light Module FDL</em>'.
+	 * @generated
+	 */
+	TrafficLightModuleFDL createTrafficLightModuleFDL();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

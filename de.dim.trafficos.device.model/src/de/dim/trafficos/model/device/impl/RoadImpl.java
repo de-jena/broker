@@ -9,6 +9,7 @@ import de.dim.trafficos.model.device.PedestrianLane;
 import de.dim.trafficos.model.device.PublicTransportLane;
 import de.dim.trafficos.model.device.Road;
 import de.dim.trafficos.model.device.TOSDevicePackage;
+import de.dim.trafficos.model.device.TrafficLightModuleLML;
 
 import java.util.Collection;
 
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dim.trafficos.model.device.impl.RoadImpl#getPedestrianLane <em>Pedestrian Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.model.device.impl.RoadImpl#getCycleLane <em>Cycle Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.model.device.impl.RoadImpl#getPublicTransportLane <em>Public Transport Lane</em>}</li>
+ *   <li>{@link de.dim.trafficos.model.device.impl.RoadImpl#getTrafficLightModule <em>Traffic Light Module</em>}</li>
  * </ul>
  *
  * @generated
@@ -135,6 +137,16 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	 * @ordered
 	 */
 	protected EList<PublicTransportLane> publicTransportLane;
+
+	/**
+	 * The cached value of the '{@link #getTrafficLightModule() <em>Traffic Light Module</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTrafficLightModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected TrafficLightModuleLML trafficLightModule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,6 +284,46 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	 * @generated
 	 */
 	@Override
+	public TrafficLightModuleLML getTrafficLightModule() {
+		if (trafficLightModule != null && trafficLightModule.eIsProxy()) {
+			InternalEObject oldTrafficLightModule = (InternalEObject)trafficLightModule;
+			trafficLightModule = (TrafficLightModuleLML)eResolveProxy(oldTrafficLightModule);
+			if (trafficLightModule != oldTrafficLightModule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE, oldTrafficLightModule, trafficLightModule));
+			}
+		}
+		return trafficLightModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrafficLightModuleLML basicGetTrafficLightModule() {
+		return trafficLightModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTrafficLightModule(TrafficLightModuleLML newTrafficLightModule) {
+		TrafficLightModuleLML oldTrafficLightModule = trafficLightModule;
+		trafficLightModule = newTrafficLightModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE, oldTrafficLightModule, trafficLightModule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TOSDevicePackage.ROAD__INCOMING_LANE:
@@ -310,6 +362,9 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				return getCycleLane();
 			case TOSDevicePackage.ROAD__PUBLIC_TRANSPORT_LANE:
 				return getPublicTransportLane();
+			case TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE:
+				if (resolve) return getTrafficLightModule();
+				return basicGetTrafficLightModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -349,6 +404,9 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				getPublicTransportLane().clear();
 				getPublicTransportLane().addAll((Collection<? extends PublicTransportLane>)newValue);
 				return;
+			case TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE:
+				setTrafficLightModule((TrafficLightModuleLML)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -382,6 +440,9 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 			case TOSDevicePackage.ROAD__PUBLIC_TRANSPORT_LANE:
 				getPublicTransportLane().clear();
 				return;
+			case TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE:
+				setTrafficLightModule((TrafficLightModuleLML)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -408,6 +469,8 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				return cycleLane != null && !cycleLane.isEmpty();
 			case TOSDevicePackage.ROAD__PUBLIC_TRANSPORT_LANE:
 				return publicTransportLane != null && !publicTransportLane.isEmpty();
+			case TOSDevicePackage.ROAD__TRAFFIC_LIGHT_MODULE:
+				return trafficLightModule != null;
 		}
 		return super.eIsSet(featureID);
 	}

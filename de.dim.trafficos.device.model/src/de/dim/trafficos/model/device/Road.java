@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.dim.trafficos.model.device.Road#getPedestrianLane <em>Pedestrian Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.model.device.Road#getCycleLane <em>Cycle Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.model.device.Road#getPublicTransportLane <em>Public Transport Lane</em>}</li>
+ *   <li>{@link de.dim.trafficos.model.device.Road#getTrafficLightModule <em>Traffic Light Module</em>}</li>
  * </ul>
  *
  * @see de.dim.trafficos.model.device.TOSDevicePackage#getRoad()
@@ -132,5 +133,27 @@ public interface Road extends EObject {
 	 * @generated
 	 */
 	EList<PublicTransportLane> getPublicTransportLane();
+
+	/**
+	 * Returns the value of the '<em><b>Traffic Light Module</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Traffic Light Module</em>' reference.
+	 * @see #setTrafficLightModule(TrafficLightModuleLML)
+	 * @see de.dim.trafficos.model.device.TOSDevicePackage#getRoad_TrafficLightModule()
+	 * @model
+	 * @generated
+	 */
+	TrafficLightModuleLML getTrafficLightModule();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.model.device.Road#getTrafficLightModule <em>Traffic Light Module</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Traffic Light Module</em>' reference.
+	 * @see #getTrafficLightModule()
+	 * @generated
+	 */
+	void setTrafficLightModule(TrafficLightModuleLML value);
 
 } // Road

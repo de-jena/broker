@@ -288,6 +288,22 @@ public class TOSDeviceAdapterFactory extends AdapterFactoryImpl {
 				return createPublicTransportLocMsgAdapter();
 			}
 			@Override
+			public Adapter caseTrafficLightModuleLML(TrafficLightModuleLML object) {
+				return createTrafficLightModuleLMLAdapter();
+			}
+			@Override
+			public Adapter caseTrafficLightSignalTransmitter(TrafficLightSignalTransmitter object) {
+				return createTrafficLightSignalTransmitterAdapter();
+			}
+			@Override
+			public Adapter caseTrafficLightSignalGroup(TrafficLightSignalGroup object) {
+				return createTrafficLightSignalGroupAdapter();
+			}
+			@Override
+			public Adapter caseTrafficLightModuleFDL(TrafficLightModuleFDL object) {
+				return createTrafficLightModuleFDLAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1074,6 +1090,62 @@ public class TOSDeviceAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPublicTransportLocMsgAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.model.device.TrafficLightModuleLML <em>Traffic Light Module LML</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML
+	 * @generated
+	 */
+	public Adapter createTrafficLightModuleLMLAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter <em>Traffic Light Signal Transmitter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter
+	 * @generated
+	 */
+	public Adapter createTrafficLightSignalTransmitterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.model.device.TrafficLightSignalGroup <em>Traffic Light Signal Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalGroup
+	 * @generated
+	 */
+	public Adapter createTrafficLightSignalGroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.model.device.TrafficLightModuleFDL <em>Traffic Light Module FDL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleFDL
+	 * @generated
+	 */
+	public Adapter createTrafficLightModuleFDLAdapter() {
 		return null;
 	}
 

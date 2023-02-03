@@ -133,6 +133,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/pedestrianLane"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/cycleLane"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference device.ecore#//Road/publicTransportLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//Road/trafficLightModule"/>
     </genClasses>
     <genClasses ecoreClass="device.ecore#//Lane">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//Lane/id"/>
@@ -337,6 +338,26 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/gps"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/odo"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//PublicTransportLocMsg/door"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TrafficLightModuleLML">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightModuleLML/address"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TrafficLightModuleLML/a"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TrafficLightModuleLML/b"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TrafficLightModuleLML/c"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TrafficLightSignalTransmitter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalTransmitter/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TrafficLightSignalTransmitter/signalGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalTransmitter/red"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalTransmitter/yellow"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalTransmitter/green"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalTransmitter/switch"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TrafficLightSignalGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute device.ecore#//TrafficLightSignalGroup/id"/>
+    </genClasses>
+    <genClasses ecoreClass="device.ecore#//TrafficLightModuleFDL">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference device.ecore#//TrafficLightModuleFDL/d"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

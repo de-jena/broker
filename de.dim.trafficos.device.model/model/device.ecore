@@ -93,6 +93,7 @@
         eType="#//CycleLane" containment="true" eKeys="#//Lane/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="publicTransportLane" upperBound="-1"
         eType="#//PublicTransportLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trafficLightModule" eType="#//TrafficLightModuleLML"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Lane">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -438,5 +439,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gps" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="odo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="door" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficLightModuleLML">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//TrafficLightSignalTransmitter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//TrafficLightSignalTransmitter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="c" eType="#//TrafficLightSignalTransmitter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficLightSignalTransmitter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="#//TrafficLightSignalGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="red" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yellow" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="green" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="switch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficLightSignalGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TrafficLightModuleFDL" eSuperTypes="#//TrafficLightModuleLML">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="d" eType="#//TrafficLightSignalTransmitter"/>
   </eClassifiers>
 </ecore:EPackage>
