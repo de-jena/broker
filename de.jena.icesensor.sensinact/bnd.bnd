@@ -5,8 +5,9 @@
 	org.osgi.service.event,\
 	de.jena.icesensor.model,\
 	de.jena.icesensor.api,\
-	org.eclipse.emf.ecore,\
 	org.osgi.service.component.annotations,\
 	org.osgi.util.pushstream,\
 	org.osgi.util.promise,\
 	org.eclipse.sensinact.gateway.core.annotation
+	
+-library: enable-emf
