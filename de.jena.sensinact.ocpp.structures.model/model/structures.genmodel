@@ -18,7 +18,7 @@
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/W"/>
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/Wh"/>
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/VA"/>
-      <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/var"/>
+      <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/VARIABLE"/>
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/Celsius"/>
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/K"/>
       <genEnumLiterals ecoreEnumLiteral="structures.ecore#//Unit/Percent"/>

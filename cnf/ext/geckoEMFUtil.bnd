@@ -4,4 +4,5 @@
 		snapshotUrl			= "https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/,https://oss.sonatype.org/content/repositories/snapshots/";\
 		index            	= "${.}/geckoEMFUtil.maven" ;\
 		readOnly            = true;\
+		poll_time 			= -1;\
 		name="GeckoEMF Util Dependencies"

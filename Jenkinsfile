@@ -40,15 +40,43 @@ pipeline  {
 				echo "I am running integration tests on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew clean build itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew  itest --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 				junit testResults: '**/generated/test-reports/**/*.xml', allowEmptyResults: true
 
 			}
 		}
+	
+	
+		stage('Resolve') {
 
+			steps {
+				echo "I am building app on branch: ${env.GIT_BRANCH}"
+
+
+				sh "./gradlew :de.jena.sensinact.runtime:resolve.base --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+
+			}
+		}
+
+		stage('Export') {
+			when {
+				branch 'main'
+			}
+			steps {
+				echo "I am building app on branch: ${env.GIT_BRANCH}"
+
+
+				sh "./gradlew :de.jena.sensinact.runtime:export.de.jena.sensinact.runtime.docker --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+
+			}
+		}
+
+	
 		stage('Prepare Docker') {
-
+			when {
+				branch 'main'
+			}
 			steps  {
 				echo "I am preparing docker: ${env.GIT_BRANCH}"
 
@@ -67,9 +95,16 @@ pipeline  {
 				echo "I am building and publishing a docker image on branch: ${env.GIT_BRANCH}"
 
 				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'de.jena.sensinact.runtime/generated/docker',
+				      dockerFileDirectory: 'docker',
 							cloud: 'docker',
-							tagsString: 'devel.data-in-motion.biz:6000/jena/sensinact:latest',
+							tagsString: 'registry-git.jena.de/scj/dim-broker:latest',
+							pushOnSuccess: true,
+							pushCredentialsId: 'github-jena'])
+
+				step([$class: 'DockerBuilderPublisher',
+				      dockerFileDirectory: 'docker',
+							cloud: 'docker',
+							tagsString: 'devel.data-in-motion.biz:6000/scj/dim-broker:latest',
 							pushOnSuccess: true,
 							pushCredentialsId: 'dim-nexus'])
 		  }

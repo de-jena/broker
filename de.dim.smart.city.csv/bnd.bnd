@@ -13,7 +13,5 @@
 	org.osgi.util.pushstream,\
 	org.osgi.util.promise
 
-Bundle-Version: 1.0.0.SNAPSHOT
-
 -sub: *.bnd
 

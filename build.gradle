@@ -4,27 +4,32 @@ plugins {
   id 'java'
 }
 
-// Allow gradle to enable JUnit support in submodules
+repositories {
+    mavenCentral()
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectName", "de-jena.MDO"
+    property "sonar.projectKey", "de-jena_MDO"
+    property "sonar.organization", "de-jena"
+    property "sonar.host.url", "https://sonarcloud.io"
+    property "sonar.coverage.jacoco.xmlReportPaths", "${rootDir}/build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
+  }
+}
+
+tasks.named('wrapper') {
+  jarFile = rootProject.file('.gradle-wrapper/gradle-wrapper.jar')
+}
+
 subprojects {
   tasks.withType(Test) {
     useJUnitPlatform()
   }
 }
 
-// Sonar setup
-sonarqube {
-  properties {
-    property "sonar.projectName", "â‚¬â‚¬project-symbolic-nameâ‚¬â‚¬"
-    property "sonar.projectKey", "geckoprojects-org_â‚¬â‚¬project-symbolic-nameâ‚¬â‚¬"
-    property "sonar.organization", "geckoprojects-org"
-    property "sonar.host.url", "https://sonarcloud.io"
-    property "sonar.coverage.jacoco.xmlReportPaths", "${rootDir}/build/reports/jacoco/codeCoverageReport/codeCoverageReport.xml"
-    //property "sonar.exclusions", "org.gecko.project/**/*.java, org.gecko.other.project/**/*.java"
-  }
-}
-
 task codeCoverageReport(type: JacocoReport) {
-    dependsOn(test)
+    dependsOn test
     // Gather execution data from all subprojects
     executionData fileTree(project.rootDir.absolutePath).include("**/**/jacoco.exec")
 

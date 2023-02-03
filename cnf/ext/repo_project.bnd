@@ -10,6 +10,7 @@
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
 		releaseUrl=https://repo.maven.apache.org/maven2/;\
 		index=${.}/central.maven;\
+		poll_time 			= -1;\
 		name='Maven Central'
 
 -plugin.sensinact.template: \
@@ -18,6 +19,7 @@
 		snapshotUrl="https://repo.eclipse.org/content/repositories/sensinact-snapshots,https://repository.apache.org/snapshots/";\
 		index="${.}/sensinact.maven";\
 		readOnly			= true;\
+		poll_time 			= -1;\
 		name='SensiNact SDK'
 
 -plugin.osgi: \
@@ -25,6 +27,7 @@
 		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
 		index="${.}/osgi.maven";\
 		readOnly			= true;\
+		poll_time 			= -1;\
 		name='OSGi Deps'
 
 -plugin.Local: \
@@ -38,6 +41,7 @@
 		releaseUrl="https://devel.data-in-motion.biz/nexus/repository/dim-release/,https://devel.data-in-motion.biz/nexus/repository/maven-public/";\
 		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/;\
 		index=${.}/dim_release.maven;\
+		poll_time 			= -1;\
 		name='DIM_Nexus_Release'
 
 -plugin.emf: \
@@ -47,4 +51,5 @@
 		index               = ${.}/eclipse_emf.maven;\
 		transitive          = false;\
 		readOnly            = true;\
+		poll_time 			= -1;\
 		name                = "EMF Milestone Dependendencies"

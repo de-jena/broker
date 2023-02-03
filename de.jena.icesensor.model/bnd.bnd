@@ -16,12 +16,4 @@
 # Bundle Annotations		
 -includeresource.model: model=model
 
-Bundle-Version: 1.0.0.SNAPSHOT
-
-Export-Package: \
-	de.jena.model.icesensor,\
-	de.jena.model.icesensor.impl,\
-	de.jena.model.icesensor.util
-	
--privatepackage: de.jena.model.icesensor.configuration
 -buildpath: org.osgi.service.condition

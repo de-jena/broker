@@ -1,4 +1,4 @@
--include: ~secrets.bndrun
+-include: -secrets.bndrun
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runprovidedcapabilities: ${native_capability}
 

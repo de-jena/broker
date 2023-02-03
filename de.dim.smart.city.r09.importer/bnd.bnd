@@ -11,8 +11,6 @@
 	de.dim.trafficos.device.model,\
 	org.osgi.service.component
 
-Bundle-Version: 1.0.0.${tstamp}-SNAPSHOT
-
 -sub: *.bnd
 
 

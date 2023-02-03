@@ -13,7 +13,5 @@
 	org.apache.felix.gogo.runtime;version=latest,\
 	org.osgi.service.component
 
-Bundle-Version: 1.0.0.SNAPSHOT
-
 -sub: *.bnd
 	

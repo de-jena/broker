@@ -60,7 +60,7 @@ public class EnergyManagement {
 			byte[] content = message.payload().array();
 			ByteArrayInputStream bais = new ByteArrayInputStream(content);
 			resource.load(bais, saveOptions);
-			resource.getContents().stream().findFirst().map(o -> (MeasurementNotification)  o).ifPresent(this::handleMeasurementNotification);
+			resource.getContents().stream().findFirst().map(o -> (MeasurementNotification)  o).ifPresent(o -> handleMeasurementNotification(message.topic(), o));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -91,11 +91,12 @@ public class EnergyManagement {
 		emSubscribe.close();
 	}
 	
-	private void handleMeasurementNotification(MeasurementNotification notification) {
-			
-		List<GenericPacket> packets = transform(notification, OcppStructuresPackageImpl.Literals.NOTIFICATION__SOURCE_ID);
+	private void handleMeasurementNotification(String topic, MeasurementNotification notification) {
+//		System.out.println("Topic topic " + topic);
+		String[] parts = topic.split("/");
+		List<GenericPacket> packets = transform(notification, parts[parts.length -2], parts[parts.length -1]);
 		packets.forEach(sensiNact::pushUpdate);
-		
+		packets.forEach(p -> System.out.println("Published " + p));
 	}
 
 	/**
@@ -103,13 +104,11 @@ public class EnergyManagement {
 	 * @param idValue 
 	 * @return
 	 */
-	private List<GenericPacket> transform(EObject notification, EAttribute idValue) {
+	private List<GenericPacket> transform(EObject notification, String provider, String service) {
+		
 		List<GenericPacket> packages = new ArrayList<GenericPacket>();
-		String id = notification.eGet(idValue).toString();
-		packages.add(new GenericPacket(id, "admin", "model", EcoreUtil.getURI(notification.eClass()).toString()));
 		notification.eClass().getEAllAttributes().stream()
-		.filter(attribute -> idValue != attribute)
-		.map(a -> new GenericPacket(id, notification.eClass().getName(), a.getName(),notification.eGet(a)))
+		.map(a -> new GenericPacket(notification.eClass().getName(), provider, service, a.getName(),notification.eGet(a)))
 		.forEach(packages::add);
 		return packages;
 	}

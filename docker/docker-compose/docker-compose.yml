@@ -9,7 +9,7 @@ services:
             - "27017:27017"
 
     sensinact:
-        image: devel.data-in-motion.biz:6000/scj/sensinact:latest
+        image: devel.data-in-motion.biz:6000/scj/dim-broker:latest
         ports:
             - "8080:8080"
 

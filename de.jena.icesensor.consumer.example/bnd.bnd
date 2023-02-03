@@ -23,7 +23,6 @@
 	org.eclipse.jetty.client,\
 	org.apache.commons.io
 
-Bundle-Version: 1.0.0.SNAPSHOT
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 
 -includeresource: \

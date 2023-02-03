@@ -13,5 +13,4 @@
 	org.eclipse.jetty.websocket.api,\
 	org.eclipse.jetty.websocket.client
 
-Bundle-Version: 1.0.0.SNAPSHOT
 

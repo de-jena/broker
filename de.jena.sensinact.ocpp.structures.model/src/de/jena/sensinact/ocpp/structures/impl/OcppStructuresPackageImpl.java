@@ -320,7 +320,7 @@ public class OcppStructuresPackageImpl extends EPackageImpl implements OcppStruc
 		addEEnumLiteral(unitEEnum, Unit.W);
 		addEEnumLiteral(unitEEnum, Unit.WH);
 		addEEnumLiteral(unitEEnum, Unit.VA);
-		addEEnumLiteral(unitEEnum, Unit.VAR);
+		addEEnumLiteral(unitEEnum, Unit.VARIABLE);
 		addEEnumLiteral(unitEEnum, Unit.CELSIUS);
 		addEEnumLiteral(unitEEnum, Unit.K);
 		addEEnumLiteral(unitEEnum, Unit.PERCENT);

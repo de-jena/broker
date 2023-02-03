@@ -2,9 +2,6 @@
 	org.osgi.annotation.bundle,\
 	org.osgi.framework
 
-
-Bundle-Version: 1.0.0.${tstamp}
-
 -includeresource.config: \
 	OSGI-INF/configurator/=config/
 

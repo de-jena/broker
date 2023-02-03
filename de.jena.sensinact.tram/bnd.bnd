@@ -13,6 +13,4 @@
 
 -library: enable-emf
 
-Bundle-Version: 1.0.0.${tstamp}
-
 -privatepackage: de.jena.sensinact.publictransport

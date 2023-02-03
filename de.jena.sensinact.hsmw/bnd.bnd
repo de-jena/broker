@@ -9,5 +9,4 @@
 
 -library: enable-emf
 
-Bundle-Version: 1.0.0.SNAPSHOT
 Private-Package: de.jena.sensinact.hsmw

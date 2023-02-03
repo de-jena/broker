@@ -82,14 +82,14 @@ public enum Unit implements Enumerator {
 	VA(8, "VA", "VA"),
 
 	/**
-	 * The '<em><b>Var</b></em>' literal object.
+	 * The '<em><b>VARIABLE</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #VAR_VALUE
+	 * @see #VARIABLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	VAR(9, "var", "var"),
+	VARIABLE(9, "VARIABLE", "VAr"),
 
 	/**
 	 * The '<em><b>Celsius</b></em>' literal object.
@@ -188,15 +188,15 @@ public enum Unit implements Enumerator {
 	public static final int VA_VALUE = 8;
 
 	/**
-	 * The '<em><b>Var</b></em>' literal value.
+	 * The '<em><b>VARIABLE</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #VAR
-	 * @model name="var"
+	 * @see #VARIABLE
+	 * @model literal="VAr"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VAR_VALUE = 9;
+	public static final int VARIABLE_VALUE = 9;
 
 	/**
 	 * The '<em><b>Celsius</b></em>' literal value.
@@ -245,7 +245,7 @@ public enum Unit implements Enumerator {
 			W,
 			WH,
 			VA,
-			VAR,
+			VARIABLE,
 			CELSIUS,
 			K,
 			PERCENT,
@@ -311,7 +311,7 @@ public enum Unit implements Enumerator {
 			case W_VALUE: return W;
 			case WH_VALUE: return WH;
 			case VA_VALUE: return VA;
-			case VAR_VALUE: return VAR;
+			case VARIABLE_VALUE: return VARIABLE;
 			case CELSIUS_VALUE: return CELSIUS;
 			case K_VALUE: return K;
 			case PERCENT_VALUE: return PERCENT;

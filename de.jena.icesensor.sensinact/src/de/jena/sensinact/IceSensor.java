@@ -8,7 +8,6 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.typedevent.TypedEventBus;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushEvent.EventType;
 import org.osgi.util.pushstream.PushStream;
@@ -22,8 +21,6 @@ public class IceSensor {
 
 	@Reference
 	private IceSensorService service;
-	@Reference
-	private TypedEventBus bus;
 
 	@Reference
 	private PrototypePush sensiNact;
@@ -81,6 +78,7 @@ public class IceSensor {
 
 	IceSensorDto toDTO(SensorData data) {
 		IceSensorDto dto = new IceSensorDto();
+		dto.model = "ICESensor";
 		dto.data = data.getAvg();
 		dto.service = data.getSensor_type();
 		dto.provider = data.getGateway();

@@ -20,11 +20,11 @@ task prepareDocker(){
     	copy {
 	        from new File("../de.jena.sensinact.runtime/generated/distributions/executable/de.jena.sensinact.runtime.docker.jar")
 	        into stageDir
-	        rename("de.jena.sensinact.runtime.docker.jar", "de.jena.sensinact.runtime..jar")
+	        rename("de.jena.sensinact.runtime.docker.jar", "de.jena.sensinact.runtime.jar")
 	    }
 	    copy {
-	        from new File("../de.jena.sensinact.runtime/data/")
-	        into new File(stageDir, "data")
+	        from new File("../de.jena.sensinact.runtime/runtime/")
+	        into new File(stageDir, "runtime")
 	    }
     }
 }
@@ -35,7 +35,7 @@ task prepareDocker(){
 task buildDocker(type:Exec, dependsOn: prepareDocker){
 	
 	workingDir '.'
-    def tag = "scj/sensinact:latest"
+    def tag = "scj/dim-broker:latest"
 	executable "docker"
 
 	args "build", "-f", "Dockerfile", ".", "-t", tag

@@ -12,30 +12,33 @@
 package de.jena.sensinact.hsmw;
 
 import org.eclipse.sensinact.prototype.annotation.dto.Data;
+import org.eclipse.sensinact.prototype.annotation.dto.Model;
 import org.eclipse.sensinact.prototype.annotation.dto.Provider;
 import org.eclipse.sensinact.prototype.annotation.dto.Resource;
 import org.eclipse.sensinact.prototype.annotation.dto.Service;
 
 /**
  * 
- * @author ungei
+ * @author Juergen Albert
  * @since 22 Oct 2021
  */
 public class GenericPacket {
 
-
+	@Model
+	public String model;
 	@Provider
-	protected String providerId;
+	public String providerId;
 	@Service
-    protected String serviceId;
+    public String serviceId;
 	@Resource
-    protected String resourceId;
+    public String resourceId;
 	@Data
-    protected Object payload;
+    public Object payload;
     
-    public GenericPacket(String providerId, String serviceId, String resourceId, Object data) {
-        this.providerId = providerId;
-        this.serviceId = serviceId;
+    public GenericPacket(String model, String providerId, String serviceId, String resourceId, Object data) {
+        this.model = model;
+		this.providerId = providerId;
+        this.serviceId = serviceId.replace("_", "");
         this.resourceId = resourceId;
         this.payload = data;
     }
@@ -55,4 +58,20 @@ public class GenericPacket {
     public Object getPayload() {
         return payload;
     }
+    
+	public String getModel() {
+		return model;
+	}
+
+	/* 
+	 * (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "GenericPacket [model=" + model + ", providerId=" + providerId + ", serviceId=" + serviceId
+				+ ", resourceId=" + resourceId + ", payload=" + payload + "]";
+	}
+	
+	
 }
