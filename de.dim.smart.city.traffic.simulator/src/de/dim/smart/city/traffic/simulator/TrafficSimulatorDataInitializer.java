@@ -62,8 +62,8 @@ import de.dim.trafficos.model.device.PublicTransportLine;
 import de.dim.trafficos.model.device.Road;
 import de.dim.trafficos.model.device.TOSDeviceFactory;
 import de.dim.trafficos.model.device.TOSDevicePackage;
-import de.dim.trafficos.model.device.TrafficLightChannel;
-import de.dim.trafficos.model.device.TrafficLightModule;
+import de.dim.trafficos.model.device.TrafficLightModuleLML;
+import de.dim.trafficos.model.device.TrafficLightSignalTransmitter;
 import de.dim.trafficos.simulator.api.IntersectionConstants;
 import de.dim.trafficos.simulator.api.IntersectionService;
 
@@ -583,11 +583,11 @@ public class TrafficSimulatorDataInitializer {
 		return intersection;
 	}
 
-	private TrafficLightModule createTrafficLightModule() {
-		TrafficLightModule module = TOSDeviceFactory.eINSTANCE.createTrafficLightModule();
-		TrafficLightChannel channelA = TOSDeviceFactory.eINSTANCE.createTrafficLightChannel();
-		TrafficLightChannel channelB = TOSDeviceFactory.eINSTANCE.createTrafficLightChannel();
-		TrafficLightChannel channelC = TOSDeviceFactory.eINSTANCE.createTrafficLightChannel();
+	private TrafficLightModuleLML createTrafficLightModule() {
+		TrafficLightModuleLML module = TOSDeviceFactory.eINSTANCE.createTrafficLightModuleLML();
+		TrafficLightSignalTransmitter channelA = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
+		TrafficLightSignalTransmitter channelB = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
+		TrafficLightSignalTransmitter channelC = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
 		module.setAddress(12);
 		module.setA(channelA);
 		module.setB(channelB);
