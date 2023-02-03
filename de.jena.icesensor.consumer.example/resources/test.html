@@ -1,0 +1,51 @@
+tester.html
+<html>
+<body>
+
+<script>
+function openSocket(url) {
+  if (typeof ws !== 'undefined') {
+    ws.close();
+  }
+
+  ws = new WebSocket(url);
+  ws.binaryType = 'arraybuffer';
+
+  ws.onopen = function() {
+    document.getElementById('output').innerHTML = 'connected!<br>';
+  };
+
+  ws.onmessage = function(e){
+    document.getElementById('output').innerHTML += 'in :' + e.data + '<br>';
+  };
+
+  ws.onclose = function() {
+    document.getElementById('output').innerHTML = 'closed!<br>';
+  };
+  return false;
+}
+
+function send(data) {
+  if (typeof ws === 'undefined') {
+    document.getElementById('output').innerHTML = 'not connected!<br>';
+  } else {
+    document.getElementById('output').innerHTML += 'out:' + data + '<br>';
+    ws.send(data);
+  }
+}
+</script>
+
+<form>
+    <input id="url" type="input" value="ws://localhost:8083/socket" style="min-width: 100%;"/><br/>
+    <input type="submit" onclick="openSocket(document.getElementById('url').value); return false;" value="open"/>
+</form>
+
+<form>
+    <textarea id="json" rows="20" cols="100">boo!</textarea><br/>
+    <input type="submit" onclick="send(document.getElementById('json').value); return false;" value="send"/>
+</form>
+
+<code><div id="output">...</div></code>
+
+</body>
+</html>

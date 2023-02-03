@@ -16,9 +16,9 @@ import java.util.Optional;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.rest.tlc.control.model.control.Control;
+import de.jena.sensinact.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.rest.tlc.control.model.control.Tlc;
 
 
 @ProviderType

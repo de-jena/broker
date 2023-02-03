@@ -1,10 +1,12 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
 import java.math.BigDecimal;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='ChargingSchedulePeriod' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface ChargingSchedulePeriod extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Start Period</b></em>' attribute.

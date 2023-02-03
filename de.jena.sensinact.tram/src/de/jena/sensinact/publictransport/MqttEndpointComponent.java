@@ -12,19 +12,14 @@
 package de.jena.sensinact.publictransport;
 
 import java.io.ByteArrayInputStream;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.sensinact.gateway.common.bundle.Mediator;
-import org.eclipse.sensinact.gateway.core.SensiNactResourceModelConfiguration.BuildPolicy;
-import org.eclipse.sensinact.gateway.generic.ExtModelConfiguration;
-import org.eclipse.sensinact.gateway.generic.ExtModelConfigurationBuilder;
-import org.eclipse.sensinact.gateway.generic.local.LocalProtocolStackEndpoint;
-import org.eclipse.sensinact.gateway.generic.packet.InvalidPacketException;
+import org.eclipse.sensinact.prototype.PrototypePush;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.framework.BundleContext;
@@ -49,7 +44,6 @@ import de.dim.trafficos.model.device.PublicTransportDataValueType;
 import de.dim.trafficos.model.device.PublicTransportDoorChange;
 import de.dim.trafficos.model.device.PublicTransportDoorChangeType;
 import de.dim.trafficos.model.device.PublicTransportPosition;
-import org.gecko.emf.json.annotation.RequireEMFJson;
 
 /**
  * 
@@ -60,36 +54,30 @@ import org.gecko.emf.json.annotation.RequireEMFJson;
 @Component(immediate = true)
 public class MqttEndpointComponent {
 
-	private Mediator mediator;
-	private LocalProtocolStackEndpoint<GenericPacket> tramConnector;
-	private ExtModelConfiguration<GenericPacket> tramManager;
-
-	private LocalProtocolStackEndpoint<GenericPacket> signalGroupConnector;
-	private ExtModelConfiguration<GenericPacket> signalGroupManager;
-
 	private MessagingService messaging;
 
 	private ResourceSet resourceSet;
 	private PushStream<Message> pTSubscribe;
 	private PushStream<Message> deSubscribe;
-	
-	
+
+	@Reference
+	private PrototypePush sensiNact;
+
 	public void handlePublicTransportMessage(Message message) {
-		
+
 		Resource resource = resourceSet.createResource(URI.createURI("temp.json"));
 		Map<String, Object> saveOptions = new HashMap<String, Object>();
 		saveOptions.put("OPTION_SERIALIZE_DEFAULT_VALUE", Boolean.TRUE);
 		try {
-			
+
 			byte[] content = message.payload().array();
 			System.out.println("Recieved Public Transport Message");
 			ByteArrayInputStream bais = new ByteArrayInputStream(content);
 			resource.load(bais, saveOptions);
 			PublicTransportDataEntry ptde = (PublicTransportDataEntry) resource.getContents().get(0);
-			
+
 			ptde.getDataValue().forEach(this::handlePublicTransportDataValue);
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -99,20 +87,20 @@ public class MqttEndpointComponent {
 	}
 
 	public void handleDataEntryMessage(Message message) {
-		
+
 		Resource resource = resourceSet.createResource(URI.createURI("temp.json"));
 		Map<String, Object> saveOptions = new HashMap<String, Object>();
 		saveOptions.put("OPTION_SERIALIZE_DEFAULT_VALUE", Boolean.TRUE);
 		try {
-			
+
 			byte[] content = message.payload().array();
 			System.out.println("Recieved Data Entry");
 			ByteArrayInputStream bais = new ByteArrayInputStream(content);
 			resource.load(bais, saveOptions);
 			DataEntry de = (DataEntry) resource.getContents().get(0);
-			
+
 			de.getValue().forEach(this::handleDataValue);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -122,36 +110,18 @@ public class MqttEndpointComponent {
 	}
 
 	@Activate
-	public MqttEndpointComponent(BundleContext bctx, 
-			@Reference(target = "(id=dim)") MessagingService messaging,
-			@Reference(target="(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED) ResourceSet resourceSet) {
+	public MqttEndpointComponent(BundleContext bctx, @Reference(target = "(id=dim)") MessagingService messaging,
+			@Reference(target = "(&(emf.model.name=device)(emf.resource.configurator.name=EMFJson))", scope = ReferenceScope.PROTOTYPE_REQUIRED) ResourceSet resourceSet) {
 		this.messaging = messaging;
 		this.resourceSet = resourceSet;
-		mediator = new Mediator(bctx);
 		try {
-			tramManager = ExtModelConfigurationBuilder.instance(mediator, GenericPacket.class
-	            	).withResourceBuildPolicy((byte) (BuildPolicy.BUILD_NON_DESCRIBED.getPolicy() | BuildPolicy.BUILD_COMPLETE_ON_DESCRIPTION.getPolicy())
-							).withServiceBuildPolicy((byte) (BuildPolicy.BUILD_NON_DESCRIBED.getPolicy() | BuildPolicy.BUILD_ON_DESCRIPTION.getPolicy())
-									).withStartAtInitializationTime(true
-	                    	).build("publictransport-resource.xml", Collections.<String, String>emptyMap());
-			tramConnector = new LocalProtocolStackEndpoint<GenericPacket>(mediator);
-			tramConnector.connect(tramManager);
-
-			signalGroupManager = ExtModelConfigurationBuilder.instance(mediator, GenericPacket.class
-					).withResourceBuildPolicy((byte) (BuildPolicy.BUILD_NON_DESCRIBED.getPolicy() | BuildPolicy.BUILD_COMPLETE_ON_DESCRIPTION.getPolicy())
-							).withServiceBuildPolicy((byte) (BuildPolicy.BUILD_NON_DESCRIBED.getPolicy() | BuildPolicy.BUILD_ON_DESCRIPTION.getPolicy())
-									).withStartAtInitializationTime(true
-											).build("signalGroup-resource.xml", Collections.<String, String>emptyMap());
-			signalGroupConnector = new LocalProtocolStackEndpoint<GenericPacket>(mediator);
-			signalGroupConnector.connect(signalGroupManager);
-			
 			pTSubscribe = messaging.subscribe("public/transport/data/entry");
 			pTSubscribe.forEach(this::handlePublicTransportMessage);
 
 			deSubscribe = messaging.subscribe("intersection/data/entry");
 			deSubscribe.forEach(this::handleDataEntryMessage);
-			
-		} catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -159,33 +129,24 @@ public class MqttEndpointComponent {
 	@Deactivate
 	public void deactivate() {
 		pTSubscribe.close();
-		if (tramConnector != null) {
-			tramConnector.stop();
-		}
-
 		deSubscribe.close();
-		if (signalGroupConnector != null) {
-			signalGroupConnector.stop();
-		}
 	}
-	
-	
+
 	/**
 	 * @param de
 	 */
 	private void handleDataValue(DataValue dv) {
 		IdNameElement element = dv.getElement();
-		if(element instanceof Output) {
+		if (element instanceof Output) {
 			Output out = (Output) element;
 			GenericPacket packet = new GenericPacket(out.getId(), out.getType(), "value", dv.getValue());
-			try {
-				signalGroupConnector.process(packet);
+			sensiNact.pushUpdate(packet);
 			switch (out.getType()) {
 			case "SGR":
-				String icon = getSignalIcon(dv.getValue(), out.getName().startsWith("K")); 
-				if(icon != null) {
+				String icon = getSignalIcon(dv.getValue(), out.getName().startsWith("K"));
+				if (icon != null) {
 					packet = new GenericPacket(out.getId(), "admin", "icon", icon);
-					signalGroupConnector.process(packet);
+					sensiNact.pushUpdate(packet);
 				}
 				break;
 			case "DET":
@@ -199,13 +160,8 @@ public class MqttEndpointComponent {
 			default:
 				break;
 			}
-			} catch (InvalidPacketException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 		}
 	}
-	
 
 	/**
 	 * @param value
@@ -215,70 +171,64 @@ public class MqttEndpointComponent {
 	private String getSignalIcon(String value, boolean car) {
 		switch (value) {
 		case "RED":
-			return car ? "carRed" : "pedRed"; 
+			return car ? "carRed" : "pedRed";
 		case "GREEN":
-			return car ? "carGreen" : "pedGreen"; 
+			return car ? "carGreen" : "pedGreen";
 		case "AMBER":
-			return car ? "carAmber" : null; 
+			return car ? "carAmber" : null;
 		case "RED_AMBER":
-			return car ? "carRedAmber" : null; 
+			return car ? "carRedAmber" : null;
 		default:
-			return car ? "car" : "ped"; 
+			return car ? "car" : "ped";
 		}
 	}
 
 	private void handlePublicTransportDataValue(PublicTransportDataValue value) {
 		String name = value.getValue().getName();
-		try {
-			if(value.getType() == PublicTransportDataValueType.GEO_INFO) {
-				PublicTransportPosition position = (PublicTransportPosition) value.getValue();
-				
-				GenericPacket packet = new GenericPacket(name, "admin", "location", position.getPosition().getLatitude() + ":" + position.getPosition().getLongitude());
-				tramConnector.process(packet);
-			} else if (value.getType() == PublicTransportDataValueType.DOOR_CHANGE) {
-				PublicTransportDoorChange doorChange = (PublicTransportDoorChange) value.getValue();
-				GenericPacket packet = new GenericPacket(name, "vehicle", "door_status", doorChange.getType().toString());
-				tramConnector.process(packet);
-				GenericPacket doorStatus = new GenericPacket(name, "admin", "icon", doorChange.getType() == PublicTransportDoorChangeType.DOOR_OPEN ? "tram_open" : "tram_closed");
-				tramConnector.process(doorStatus);
-			}
-		} catch (InvalidPacketException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (value.getType() == PublicTransportDataValueType.GEO_INFO) {
+			PublicTransportPosition position = (PublicTransportPosition) value.getValue();
+
+			GenericPacket packet = new GenericPacket(name, "admin", "location",
+					position.getPosition().getLatitude() + ":" + position.getPosition().getLongitude());
+			sensiNact.pushUpdate(packet);
+		} else if (value.getType() == PublicTransportDataValueType.DOOR_CHANGE) {
+			PublicTransportDoorChange doorChange = (PublicTransportDoorChange) value.getValue();
+			GenericPacket packet = new GenericPacket(name, "vehicle", "door_status",
+					doorChange.getType().toString());
+			sensiNact.pushUpdate(packet);
+			GenericPacket doorStatus = new GenericPacket(name, "admin", "icon",
+					doorChange.getType() == PublicTransportDoorChangeType.DOOR_OPEN ? "tram_open" : "tram_closed");
+			sensiNact.pushUpdate(doorStatus);
 		}
 	}
-	
+
 	/**
 	 */
 	@Reference(cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC, unbind = "removeIntersection")
 	public void addIntersection(Intersection intersection) {
-		intersection.getOutput().stream().filter(o -> "SGR".equals(o.getType()) || "DET".equals(o.getType())).forEach(this::handleOutput);
+		intersection.getOutput().stream().filter(o -> "SGR".equals(o.getType()) || "DET".equals(o.getType()))
+				.forEach(this::handleOutput);
 	}
 
 	public void removeIntersection(Intersection intersection) {
-		
+
 	}
-	
 
 	private void handleOutput(Output out) {
 		System.out.println("Creating Intersection");
 		GenericPacket packet = new GenericPacket(out.getId(), "admin", "friendlyName", out.getName());
-		try {
-			signalGroupConnector.process(packet);
-			// TODO Auto-generated catch block
-			if(!out.getLocation().isEmpty()) {
-				Position p = (Position) out.getLocation().get(0);
-				packet = new GenericPacket(out.getId(), "admin", "location", p.getLatitude() + ":" + p.getLongitude());
-				signalGroupConnector.process(packet);
-			}
-			packet = new GenericPacket(out.getId(), out.getType(), "description", out.getDescription());
-			signalGroupConnector.process(packet);
-			String icon = determinIcon(out);
-			packet = new GenericPacket(out.getId(), "admin", "icon", icon);
-			signalGroupConnector.process(packet);
-		} catch (InvalidPacketException e) {
-			e.printStackTrace();
+		sensiNact.pushUpdate(packet);
+		// TODO Auto-generated catch block
+		if (!out.getLocation().isEmpty()) {
+			Position p = (Position) out.getLocation().get(0);
+			packet = new GenericPacket(out.getId(), "admin", "location", p.getLatitude() + ":" + p.getLongitude());
+			sensiNact.pushUpdate(packet);
 		}
+		packet = new GenericPacket(out.getId(), out.getType(), "description", out.getDescription());
+		sensiNact.pushUpdate(packet);
+		String icon = determinIcon(out);
+		packet = new GenericPacket(out.getId(), "admin", "icon", icon);
+		sensiNact.pushUpdate(packet);
 	}
 
 	/**
@@ -286,12 +236,12 @@ public class MqttEndpointComponent {
 	 * @return
 	 */
 	private String determinIcon(Output out) {
-		if(out.getType().equals("DET"))
+		if (out.getType().equals("DET"))
 			return "default";
-		if(out.getName().startsWith("S")) {
+		if (out.getName().startsWith("S")) {
 			return "default";
 		}
-		if(out.getName().startsWith("K")) {
+		if (out.getName().startsWith("K")) {
 			return "car";
 		} else {
 			return "ped";

@@ -1,0 +1,4 @@
+-include: base.bndrun
+
+-runbundles.docker:\
+	 de.jena.sensinact.runtime.config.docker

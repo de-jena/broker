@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,5 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='MeterValuesResponse' kind='empty'"
  * @generated
  */
+@ProviderType
 public interface MeterValuesResponse extends EObject {
 } // MeterValuesResponse

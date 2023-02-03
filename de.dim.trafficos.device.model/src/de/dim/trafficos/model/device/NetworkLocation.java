@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.dim.trafficos.model.device;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ package de.dim.trafficos.model.device;
  * @model
  * @generated
  */
+@ProviderType
 public interface NetworkLocation extends Location {
 	/**
 	 * Returns the value of the '<em><b>Ip4 Address</b></em>' attribute.

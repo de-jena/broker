@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.model.device;
 
@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EReference;
  *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
  * @generated
  */
+@ProviderType
 public interface TOSDevicePackage extends EPackage {
 	/**
 	 * The package name.

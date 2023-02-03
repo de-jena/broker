@@ -1,0 +1,17 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "Sensinact Jena REST Config",
+		"org.apache.felix.http~mdoHttp": {
+		"org.osgi.service.http.port": "8080",
+		"org.osgi.service.http.host": "0.0.0.0",
+		"org.apache.felix.http.context_path": "sensinact/",
+		"org.apache.felix.http.name": "sensinact",
+		"org.apache.felix.http.runtime.init.id": "sensinactHttp"
+	},
+	"JakartarsServletWhiteboardRuntimeComponent~snarest": {
+		"jersey.jakartars.whiteboard.name": "",
+		"jersey.context.path": "rest",
+		"osgi.http.whiteboard.target": "(id=sensinactHttp)"
+	}
+}

@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='AuthorizationData' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface AuthorizationData extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id Tag</b></em>' attribute.

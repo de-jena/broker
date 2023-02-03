@@ -8,9 +8,6 @@
 #
 # this will be replaced with `bnd-workspace-extensions` to solve the caching problem and use fixed versions. 
 -include: \
-	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_header.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/gecko_defaults_release.bnd,\
-	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/osgiR8.bnd,\
 	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/slf4j.bnd,\
 	https://gitlab.com/gecko.io/geckoMongoEMF/-/raw/master/cnf/geckoMongoEMF/geckoMongoEMF.bnd
 	

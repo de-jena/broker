@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='BootNotificationRequest' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface BootNotificationRequest extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Charge Point Vendor</b></em>' attribute.

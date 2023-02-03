@@ -54,7 +54,7 @@ public class OcppStructuresConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		OcppStructuresPackage ePackage = OcppStructuresPackageImpl.init();
+		OcppStructuresPackage ePackage = OcppStructuresPackageImpl.eINSTANCE;
 		
 		OcppStructuresEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +82,7 @@ public class OcppStructuresConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(OcppStructuresPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(OcppStructuresPackage ePackage, OcppStructuresEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {OcppStructuresPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +94,14 @@ public class OcppStructuresConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(OcppStructuresPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(OcppStructuresPackage ePackage, OcppStructuresEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {OcppStructuresFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getOcppStructuresFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(OcppStructuresEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +110,7 @@ public class OcppStructuresConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

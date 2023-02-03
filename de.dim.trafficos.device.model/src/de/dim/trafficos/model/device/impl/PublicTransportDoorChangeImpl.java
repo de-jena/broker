@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.model.device.impl;
 

@@ -31,12 +31,12 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Phase;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlFactory;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcHolder;
+import de.jena.sensinact.rest.tlc.control.model.control.Control;
+import de.jena.sensinact.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlFactory;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcHolder;
 import de.jena.sensinact.tlc.control.service.api.TlcControl;
 
 @Component(reference = {

@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.structures;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +20,7 @@ package de.jena.sensinact.ocpp.structures;
  * @model
  * @generated
  */
+@ProviderType
 public interface StateNotification extends Notification {
 	/**
 	 * Returns the value of the '<em><b>State</b></em>' attribute.

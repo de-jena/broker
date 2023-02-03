@@ -1,15 +1,17 @@
 -buildpath: \
-	osgi.annotation;version='7.0',\
-	osgi.core;version='7.0',\
-	osgi.cmpn;version='7.0',\
 	com.opencsv,\
 	org.gecko.emf.repository.api,\
-	org.eclipse.emf.common,\
-	org.eclipse.emf.ecore,\
-	org.eclipse.emf.ecore.xmi,\
+	org.eclipse.emf.common;version=latest,\
+	org.eclipse.emf.ecore;version=latest,\
+	org.eclipse.emf.ecore.xmi;version=latest,\
 	org.gecko.emf.mongo.api,\
 	de.dim.trafficos.device.model,\
-	org.gecko.emf.repository.api
+	org.gecko.emf.repository.api,\
+	org.osgi.annotation.versioning,\
+	org.osgi.annotation.bundle,\
+	org.osgi.service.component.annotations,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise
 
 Bundle-Version: 1.0.0.SNAPSHOT
 

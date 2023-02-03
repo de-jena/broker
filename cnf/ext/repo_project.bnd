@@ -6,49 +6,26 @@
 #
 # SPDX-License-Identifier: EPL-2.0
 
-#-plugin.broker_test: \
-#	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
-#		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-#		snapshotUrl			= "https://oss.sonatype.org/content/repositories/snapshots/";\
-#		revision            = "${dependencies.project}";\
-#		transitive          = false;\
-#		name                = "Project Dependencies"
-
 -plugin.maven_central:\
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
 		releaseUrl=https://repo.maven.apache.org/maven2/;\
 		index=${.}/central.maven;\
 		name='Maven Central'
 
-
-##  All Project Deps
-dependencies.project:\
-
-	
-emfjson_old:\
-	com.fasterxml.jackson.core:jackson-annotations:2.9.7,\
-	com.fasterxml.jackson.core:jackson-core:2.9.7,\
-	com.fasterxml.jackson.core:jackson-databind:2.9.7,\
-	com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.9.7,\
-	com.fasterxml.jackson.dataformat:jackson-dataformat-properties:2.9.7,\
-	org.emfjson:emfjson-jackson:1.1.0
-
--plugin.sensinact: \
-	aQute.bnd.repository.maven.pom.provider.BndPomRepository;\
-		releaseUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/,https://repo.maven.apache.org/maven2/";\
-		snapshotUrl			= "https://repo.eclipse.org/content/repositories/sensinact-snapshots,https://oss.sonatype.org/content/repositories/snapshots/";\
-		revision            = "org.eclipse.sensinact.gateway.distribution:sdk:pom:2.0-SNAPSHOT";\
-		transitive          = true;\
-		readOnly			= true;\
-		name                = "SensiNact SDK"
-
 -plugin.sensinact.template: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
-		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/sensinact/;\
-		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/sensinact/;\
+		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
+		snapshotUrl="https://repo.eclipse.org/content/repositories/sensinact-snapshots,https://repository.apache.org/snapshots/";\
 		index="${.}/sensinact.maven";\
 		readOnly			= true;\
-		name='SensiNact Template'
+		name='SensiNact SDK'
+
+-plugin.osgi: \
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
+		index="${.}/osgi.maven";\
+		readOnly			= true;\
+		name='OSGi Deps'
 
 -plugin.Local: \
 	aQute.bnd.deployer.repository.LocalIndexedRepo; \
@@ -58,11 +35,16 @@ emfjson_old:\
 
 -plugin.gecko: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
-		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/dim-release/;\
+		releaseUrl="https://devel.data-in-motion.biz/nexus/repository/dim-release/,https://devel.data-in-motion.biz/nexus/repository/maven-public/";\
 		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/;\
 		index=${.}/dim_release.maven;\
-		name='DIM_Nexus_Release',\
+		name='DIM_Nexus_Release'
+
+-plugin.emf: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
-		releaseUrl=https://devel.data-in-motion.biz/nexus/repository/maven-public/;\
-		index=${.}/dim_nexus.maven;\
-		name='DIM_Nexus'
+		releaseUrl			= "https://ci.eclipse.org/emf/job/maven-publish/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.releng/publish/target/repository/final/";\
+		snapshotUrl			= "https://ci.eclipse.org/emf/job/maven-publish/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.releng/publish/target/repository/final/";\
+		index               = ${.}/eclipse_emf.maven;\
+		transitive          = false;\
+		readOnly            = true;\
+		name                = "EMF Milestone Dependendencies"

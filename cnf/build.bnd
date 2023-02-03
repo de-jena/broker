@@ -1,4 +1,4 @@
--groupid: de.jena.broker
+-groupid: de.jena.sensinact
 -fixupmessages: \
 	'No metadata for revision';\
 		restrict:=error;\
@@ -12,12 +12,16 @@ javac.debug:  on
 
 -library:\
 	geckoEMF,\
-	geckoEMFUtil,\
-	geckoJersey,\
 	geckoOSGi-Test
+#We need to use it again, when we have release the jakarta Version
+#	geckoJersey,\
+#	geckoEMFUtil,\
 
-
-
+sensinact.version: 0.0.1-SNAPSHOT
+jackson.version: 2.14.0
+jersey.version: 3.0.8
+jakarta.ws.rs-api.version: 3.1.0
+geckoJersey.version: 6.0.0.RC2
 	
 # Find out if the current Bundle Version is already deployed in any repository (excluding the Workspace)
 releaseNotNeeded: ${findproviders;osgi.identity;(&(osgi.identity=${bsn})(version=${version}));REPOS}
@@ -28,7 +32,5 @@ releaseNotNeeded: ${findproviders;osgi.identity;(&(osgi.identity=${bsn})(version
 -maven-release: pom
 -pom: true
 -digest: sha256
-
-Bundle-Version: 1.0.0
 	
 

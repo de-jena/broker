@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EReference;
  * @model kind="package"
  * @generated
  */
+@ProviderType
 public interface OcppCentralSystemPackage extends EPackage {
 	/**
 	 * The package name.

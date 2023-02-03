@@ -1,10 +1,12 @@
 -buildpath: \
-	osgi.annotation;version='7.0',\
-	osgi.core;version='7.0',\
-	osgi.cmpn;version='7.0',\
-	org.eclipse.emf.common,\
-	org.eclipse.emf.ecore,\
-	org.eclipse.emf.ecore.xmi,\
+	org.osgi.annotation.versioning,\
+	org.osgi.annotation.bundle,\
+	org.osgi.service.component.annotations,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.eclipse.emf.common;version=latest,\
+	org.eclipse.emf.ecore;version=latest,\
+	org.eclipse.emf.ecore.xmi;version=latest,\
 	org.gecko.emf.repository.api,\
 	de.dim.trafficos.device.model,\
 	org.osgi.service.component

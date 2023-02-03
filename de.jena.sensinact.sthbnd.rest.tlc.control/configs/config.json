@@ -1,8 +1,0 @@
-{
-	":configurator:resource-version": 1,
-
-	"JaxRsHttpWhiteboardRuntimeComponent~snarest": {
-		"jersey.jaxrs.whiteboard.name": "TLC Control",
-		"jersey.context.path": "sensinact/rest"
-	}
-}

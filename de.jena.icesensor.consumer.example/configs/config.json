@@ -1,0 +1,14 @@
+{
+  ":configurator:resource-version": 1,
+  ":configurator:symbolicname" : "de.jena.icesensor.web",
+  ":configurator:version" : "0.0.0",
+
+	"org.apache.felix.http~httpIceId": 
+  	{
+  		"org.osgi.service.http.port": "8083",
+		"org.osgi.service.http.host": "0.0.0.0",
+		"org.apache.felix.http.context_path": "/",
+		"org.apache.felix.http.name": "iceWeb",
+		"org.apache.felix.http.runtime.init.id": "iceWebHttp"
+	}
+}

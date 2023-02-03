@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model extendedMetaData="name='ChargePointErrorCode'"
  * @generated
  */
+@ProviderType
 public enum ChargePointErrorCode implements Enumerator {
 	/**
 	 * The '<em><b>Connector Lock Failure</b></em>' literal object.
