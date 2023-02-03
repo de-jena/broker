@@ -10,6 +10,7 @@
 	de.jena.icesensor.model;version=latest,\
 	org.osgi.util.pushstream,\
 	org.osgi.util.promise,\
+	org.osgi.resource,\
 	org.eclipse.emf.ecore;version=latest,\
 	org.osgi.service.component,\
 	org.gecko.emf.json,\
@@ -25,6 +26,6 @@
 
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 
--includeresource: \
+-includeresource.config: \
 	OSGI-INF/configurator/=configs/,\
 	web/resources/=resources/
