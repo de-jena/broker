@@ -18,11 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.osgi.messaging.Message;
@@ -36,7 +34,6 @@ import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushStream;
 
 import de.jena.sensinact.ocpp.structures.MeasurementNotification;
-import de.jena.sensinact.ocpp.structures.impl.OcppStructuresPackageImpl;
 
 @Component
 @RequireEMFJson

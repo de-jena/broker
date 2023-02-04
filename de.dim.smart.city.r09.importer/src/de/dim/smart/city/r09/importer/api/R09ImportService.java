@@ -12,7 +12,6 @@
 package de.dim.smart.city.r09.importer.api;
 
 import java.io.IOException;
-import java.net.URL;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.Map;
