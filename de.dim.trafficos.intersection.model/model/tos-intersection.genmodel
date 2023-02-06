@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.dim.trafficos.intersection.model/src" modelPluginID="de.dim.trafficos.intersection.model"
+    modelName="tos-intersection" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" usedGenPackages="../../de.dim.trafficos.common.model/model/tos-common.genmodel#//common ../../de.dim.trafficos.trafficlight.model/model/tos-trafficlight.genmodel#//trafficlight"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>tos-intersection.ecore</foreignModel>
+  <genPackages prefix="TOSIntersection" basePackage="de.dim.trafficos.intersection.model"
+      resource="XMI" disposableProviderFactory="true" literalsInterface="false" ecorePackage="tos-intersection.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-intersection.ecore#//TimeTableModeType">
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//TimeTableModeType/OFF"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-intersection.ecore#//IntersectionStateType">
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/UNKNOWN"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/ENABLED"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/DISABLED_DARK"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/DISABLED_FLASH_SECONDARY"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/DISABLED_FLASH_ALL"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//IntersectionStateType/DISABLED_DEFAULT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-intersection.ecore#//ClearAreaType">
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//ClearAreaType/ClearPedestrian"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//ClearAreaType/ClearMain"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-intersection.ecore#//ClearAreaType/ClearSecondary"/>
+    </genEnums>
+    <genClasses ecoreClass="tos-intersection.ecore#//Intersection">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/road"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/link"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/phase"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/phaseGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/timeTable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/program"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Intersection/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Intersection/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Intersection/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Intersection/description"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//Road">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Road/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Road/mainRoad"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/incomingLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/outgoingLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/pedestrianLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/cycleLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/publicTransportLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Road/trafficLightModule"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//Lane">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Lane/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Lane/refRoadId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Lane/link"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Lane/road"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Lane/subLane"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference tos-intersection.ecore#//Lane/parentLane"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Lane/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Lane/direction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Lane/detector"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//ConflictingLane">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ConflictingLane/conflictingLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ConflictingLane/conflictingLink"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ConflictingLane/signalGroup"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ConflictingLane/signalGroups"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//IncomingLane"/>
+    <genClasses ecoreClass="tos-intersection.ecore#//OutgoingLane"/>
+    <genClasses ecoreClass="tos-intersection.ecore#//PedestrianLane"/>
+    <genClasses ecoreClass="tos-intersection.ecore#//PublicTransportLane"/>
+    <genClasses ecoreClass="tos-intersection.ecore#//CycleLane"/>
+    <genClasses ecoreClass="tos-intersection.ecore#//Link">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Link/index"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Link/refIncomingLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Link/refOutgoingLane"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//Phase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Phase/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Phase/lane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Phase/transition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Phase/weightMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Phase/weightMax"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//ProgramEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//ProgramEntry/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//ProgramEntry/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//ProgramEntry/duration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ProgramEntry/refPhase"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Program/length"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Program/outputEntry"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Program/signalTable"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Transition/refNextPhase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//Transition/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Transition/unchangedLane"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Transition/changedLane"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//Transition/clearArea"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//ProgramTransition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//ProgramTransition/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//ClearArea">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//ClearArea/type"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//PhaseGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//PhaseGroup/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//PhaseGroup/penalty"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//PhaseGroup/phase"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//TimeTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//TimeTable/entry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersection.ecore#//TimeTable/defaultMode"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//TimeTableEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//TimeTableEntry/program"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//SignalTable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-intersection.ecore#//SignalTable/cacheDataEntry"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-intersection.ecore#//CacheDataEntry"/>
+  </genPackages>
+</genmodel:GenModel>

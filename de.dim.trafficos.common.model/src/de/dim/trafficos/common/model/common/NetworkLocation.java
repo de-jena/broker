@@ -1,0 +1,91 @@
+/**
+ */
+package de.dim.trafficos.common.model.common;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Network Location</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link de.dim.trafficos.common.model.common.NetworkLocation#getIp4Address <em>Ip4 Address</em>}</li>
+ *   <li>{@link de.dim.trafficos.common.model.common.NetworkLocation#getIp6Address <em>Ip6 Address</em>}</li>
+ *   <li>{@link de.dim.trafficos.common.model.common.NetworkLocation#getHostname <em>Hostname</em>}</li>
+ * </ul>
+ *
+ * @see de.dim.trafficos.common.model.common.TOSCommonPackage#getNetworkLocation()
+ * @model
+ * @generated
+ */
+public interface NetworkLocation extends Location {
+	/**
+	 * Returns the value of the '<em><b>Ip4 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ip4 Address</em>' attribute.
+	 * @see #setIp4Address(String)
+	 * @see de.dim.trafficos.common.model.common.TOSCommonPackage#getNetworkLocation_Ip4Address()
+	 * @model
+	 * @generated
+	 */
+	String getIp4Address();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.common.model.common.NetworkLocation#getIp4Address <em>Ip4 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ip4 Address</em>' attribute.
+	 * @see #getIp4Address()
+	 * @generated
+	 */
+	void setIp4Address(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ip6 Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ip6 Address</em>' attribute.
+	 * @see #setIp6Address(String)
+	 * @see de.dim.trafficos.common.model.common.TOSCommonPackage#getNetworkLocation_Ip6Address()
+	 * @model
+	 * @generated
+	 */
+	String getIp6Address();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.common.model.common.NetworkLocation#getIp6Address <em>Ip6 Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ip6 Address</em>' attribute.
+	 * @see #getIp6Address()
+	 * @generated
+	 */
+	void setIp6Address(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Hostname</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hostname</em>' attribute.
+	 * @see #setHostname(String)
+	 * @see de.dim.trafficos.common.model.common.TOSCommonPackage#getNetworkLocation_Hostname()
+	 * @model
+	 * @generated
+	 */
+	String getHostname();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.common.model.common.NetworkLocation#getHostname <em>Hostname</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hostname</em>' attribute.
+	 * @see #getHostname()
+	 * @generated
+	 */
+	void setHostname(String value);
+
+} // NetworkLocation
