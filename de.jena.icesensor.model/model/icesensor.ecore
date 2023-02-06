@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="icesensor" nsURI="https://jena.de/models/icesensor/1.0" nsPrefix="icesensor">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="IceSENSOR">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ice_id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coords" eType="#//Coords"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Data" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="has_beacon" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="h2sugm3" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="h2s-ugm3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cougm3" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="co-ugm3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nougm3" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="no-ugm3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="o3ugm3" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="o3-ugm3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_1p" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="1.0p"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aqi_criteria" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="aqu-criteria"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="temperature" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="humidity" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_10p" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="10p"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pressure" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="no2ugm3" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="no2-ugm3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aqi" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_2_5p" eType="#//SensorData"
+        containment="true">
+      <eAnnotations source="JsonAlias">
+        <details key="value" value="2.5p"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Coords">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="longitude" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateway" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avg" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="created_at" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="str_data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorMessage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stream" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//SensorData"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

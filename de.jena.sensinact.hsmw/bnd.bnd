@@ -1,15 +1,12 @@
 -buildpath: \
-	osgi.annotation;version='7.0',\
-	osgi.core;version='7.0',\
-	osgi.cmpn;version='7.0',\
-	org.eclipse.sensinact.gateway.sensinact-generic,\
-	org.eclipse.sensinact.gateway.sensinact-common,\
-	org.eclipse.sensinact.gateway.sensinact-core,\
 	org.gecko.osgi.messaging,\
 	de.jena.sensinact.ocpp.structures.model,\
-	org.gecko.emf.json
+	org.gecko.emf.json,\
+	org.osgi.util.pushstream,\
+	org.eclipse.sensinact.gateway.core.api,\
+	org.osgi.util.promise,\
+	org.eclipse.sensinact.gateway.core.annotation
 
 -library: enable-emf
 
-Bundle-Version: 1.0.0.SNAPSHOT
 Private-Package: de.jena.sensinact.hsmw

@@ -1,0 +1,26 @@
+-library: enable-emf
+-buildpath: \
+	de.jena.sensinact.tlc.control.service.api,\
+	de.jena.sensinact.rest.tlc.control.model,\
+	io.swagger.core.v3.swagger-core.jakarta,\
+	io.swagger.core.v3.swagger-annotations.jakarta,\
+	io.swagger.core.v3.swagger-integration.jakarta,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.core.jackson-core,\
+	org.gecko.emf.rest,\
+	org.gecko.emf.json,\
+	org.osgi.service.jakartars,\
+	org.osgi.service.http.whiteboard,\
+	org.osgi.service.component,\
+	jakarta.ws.rs-api;version=latest,\
+	io.swagger.core.v3.swagger-jaxrs2.jakarta,\
+	io.swagger.core.v3.swagger-models.jakarta,\
+	jakarta.servlet-api,\
+	org.apache.felix.gogo.commands;version=latest,\
+	org.apache.felix.gogo.runtime,\
+	org.osgi.dto
+	
+#-includeresource.swagger: \
+#	swagger=@https://github.com/swagger-api/swagger-ui/archive/refs/tags/v3.52.3.zip!/swagger-ui-3.52.3/dist/(*);rename:=$1,\
+#	swagger=swagger,\
+	

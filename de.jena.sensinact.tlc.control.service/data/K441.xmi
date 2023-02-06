@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tlcControl:TlcHolder
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:tlcControl="https://jena.de/models/tlc/control/1.0"
+    xsi:schemaLocation="https://jena.de/models/tlc/control/1.0 tlc-control-api.ecore"
+    id="K441">
+  <tlc id="K434"
+      name="Am Volksbad"
+      description="Am Volksbad">
+    <location
+        latitude="50.925157"
+        longitude="11.5866551"/>
+  </tlc>
+  <phases id="1"
+      name="Phase 1"
+      description="K1, K3, A1ge, F1, VT1, F3, VT3, F4, VT4, F7, VT7, F8, VT8, BL8"/>
+  <phases id="2"
+      name="Phase 2"
+      description="A1gn,F1,VT1, F3, VT3, F4, F7, VT7, F8, VT8, BL8"
+      code="1"/>
+  <phases id="3"
+      name="Phase 3"
+      description="F1,VT1, F2, VT2, F3, VT3, F5, VT5, F6, VT6, BL6, F7, VT7, F8, VT8, BL8"
+      code="2"/>
+  <phases id="4"
+      name="Phase 4"
+      description="K2, F1,VT1, F2, VT2, F3, VT3, F7, VT7, F8, VT8, BL8"
+      code="3"/>
+  <phases id="5"
+      name="Phase 5"
+      description="K3, K4, F1, VT1, F3, VT3, F4, VT4, F7, VT7"
+      code="4"/>
+  <phases id="6"
+      name="Phase 10"
+      description="S1G, S6G,  F2, VT2, F3, VT3, F5, VT5, F6, VT6, BL6, F8, VT8, BL8"
+      code="5"/>
+  <phases id="7"
+      name="Phase 11"
+      description="S2L, S3R, F2, VT2, F5, VT5, F6, VT6, BL6, F7, VT7, F8, VT8, BL8"
+      code="6"/>
+  <phases id="8"
+      name="Phase 12"
+      description="S4L, S5R, F1,VT1, F2, VT2, F5, VT5, F6, VT6, BL6,  F8, VT8, BL8"
+      code="7"/>
+  <phases id="9"
+      name="Phase 13"
+      description="K2, S1G, S6G,  F2, VT2, F3, VT3, F8, VT8, BL8"
+      code="8"/>
+  <phases id="10"
+      name="Phase 14"
+      description="K2, S2L, S3R, F2, VT2, F7, VT7, F8, VT8, BL8"
+      code="8"/>
+  <phases id="11"
+      name="Phase 15"
+      description="K2, S4L, S5R, F1,VT1, F2, VT2, F8, VT8, BL8"
+      code="10"/>
+  <phases id="12"
+      name="Phase 16"
+      description="K4, S2L, S3R F2, VT2, F4, VT4, F7, VT7"
+      code="11"/>
+</tlcControl:TlcHolder>

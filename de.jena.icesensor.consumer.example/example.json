@@ -1,0 +1,518 @@
+[
+	{
+		"ice_id": "ICE-025-049-000-001",
+		"coords": {
+			"latitude": 50.93115286,
+			"longitude": 11.60392726
+		},
+		"sensors": [
+			"h2s-ugm3",
+			"co-ugm3",
+			"no-ugm3",
+			"o3-ugm3",
+			"1.0p",
+			"aqi criteria",
+			"temperature",
+			"humidity",
+			"10p",
+			"pressure",
+			"no2-ugm3",
+			"aqi",
+			"2.5p"
+		],
+		"has_beacon": false,
+		"data": {
+			"h2s-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"co-ugm3": {
+				"max": 19.6,
+				"min": 19.6,
+				"avg": 19.6,
+				"str_value": "19.6000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"no-ugm3": {
+				"max": 56.8,
+				"min": 56.8,
+				"avg": 56.8,
+				"str_value": "56.8000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"o3-ugm3": {
+				"max": 1.2,
+				"min": 1.2,
+				"avg": 1.2,
+				"str_value": "1.2000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"1.0p": {
+				"max": 3.1,
+				"min": 3.1,
+				"avg": 3.1,
+				"str_value": "3.1000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"aqi-criteria": {
+				"max": 2.0,
+				"min": 2.0,
+				"avg": 2.0,
+				"str_value": "PM₂.₅ - 24h average",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"temperature": {
+				"max": 26.2,
+				"min": 26.2,
+				"avg": 26.2,
+				"str_value": "26.2000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"humidity": {
+				"max": 62.0,
+				"min": 62.0,
+				"avg": 62.0,
+				"str_value": "62.0000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"10p": {
+				"max": 57.7,
+				"min": 57.7,
+				"avg": 57.7,
+				"str_value": "57.7000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"pressure": {
+				"max": 997.1,
+				"min": 997.1,
+				"avg": 997.1,
+				"str_value": "997.1000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"no2-ugm3": {
+				"max": 87.9,
+				"min": 87.9,
+				"avg": 87.9,
+				"str_value": "87.9000",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"aqi": {
+				"max": 53.0,
+				"min": 53.0,
+				"avg": 53.0,
+				"str_value": "53 (moderate)",
+				"validity": 0,
+				"created_at": 1661504808
+			},
+			"2.5p": {
+				"max": 17.2,
+				"min": 17.2,
+				"avg": 17.2,
+				"str_value": "17.2000",
+				"validity": 0,
+				"created_at": 1661504808
+			}
+		}
+	},
+	{
+		"ice_id": "ICE-025-049-000-002",
+		"coords": {
+			"latitude": 50.92905212,
+			"longitude": 11.57466419
+		},
+		"sensors": [
+			"h2s-ugm3",
+			"no2-ugm3",
+			"aqi criteria",
+			"co-ugm3",
+			"aqi",
+			"o3-ugm3",
+			"pressure",
+			"1.0p",
+			"no-ugm3",
+			"10p",
+			"2.5p",
+			"temperature",
+			"humidity"
+		],
+		"has_beacon": false,
+		"data": {
+			"h2s-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"no2-ugm3": {
+				"max": 39.1,
+				"min": 39.1,
+				"avg": 39.1,
+				"str_value": "39.1000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"aqi-criteria": {
+				"max": 2.0,
+				"min": 2.0,
+				"avg": 2.0,
+				"str_value": "PM₂.₅ - 24h average",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"co-ugm3": {
+				"max": 12.6,
+				"min": 12.6,
+				"avg": 12.6,
+				"str_value": "12.6000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"aqi": {
+				"max": 59.0,
+				"min": 59.0,
+				"avg": 59.0,
+				"str_value": "59 (moderate)",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"o3-ugm3": {
+				"max": 26.9,
+				"min": 26.9,
+				"avg": 26.9,
+				"str_value": "26.9000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"pressure": {
+				"max": 994.6,
+				"min": 994.6,
+				"avg": 994.6,
+				"str_value": "994.6000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"1.0p": {
+				"max": 1.6,
+				"min": 1.6,
+				"avg": 1.6,
+				"str_value": "1.6000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"no-ugm3": {
+				"max": 36.7,
+				"min": 36.7,
+				"avg": 36.7,
+				"str_value": "36.7000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"10p": {
+				"max": 65.2,
+				"min": 65.2,
+				"avg": 65.2,
+				"str_value": "65.2000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"2.5p": {
+				"max": 16.9,
+				"min": 16.9,
+				"avg": 16.9,
+				"str_value": "16.9000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"temperature": {
+				"max": 25.7,
+				"min": 25.7,
+				"avg": 25.7,
+				"str_value": "25.7000",
+				"validity": 0,
+				"created_at": 1661504928
+			},
+			"humidity": {
+				"max": 63.2,
+				"min": 63.2,
+				"avg": 63.2,
+				"str_value": "63.2000",
+				"validity": 0,
+				"created_at": 1661504928
+			}
+		}
+	},
+	{
+		"ice_id": "ICE-025-049-000-003",
+		"coords": {
+			"latitude": 50.92391022,
+			"longitude": 11.57179837
+		},
+		"sensors": [
+			"2.5p",
+			"temperature",
+			"pressure",
+			"no-ugm3",
+			"humidity",
+			"no2-ugm3",
+			"aqi criteria",
+			"o3-ugm3",
+			"1.0p",
+			"aqi",
+			"10p",
+			"co-ugm3",
+			"h2s-ugm3"
+		],
+		"has_beacon": false,
+		"data": {
+			"2.5p": {
+				"max": 17.6,
+				"min": 17.6,
+				"avg": 17.6,
+				"str_value": "17.6000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"temperature": {
+				"max": 26.3,
+				"min": 26.3,
+				"avg": 26.3,
+				"str_value": "26.3000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"pressure": {
+				"max": 993.4,
+				"min": 993.4,
+				"avg": 993.4,
+				"str_value": "993.4000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"no-ugm3": {
+				"max": 42.6,
+				"min": 42.6,
+				"avg": 42.6,
+				"str_value": "42.6000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"humidity": {
+				"max": 60.2,
+				"min": 60.2,
+				"avg": 60.2,
+				"str_value": "60.2000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"no2-ugm3": {
+				"max": 60.7,
+				"min": 60.7,
+				"avg": 60.7,
+				"str_value": "60.7000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"aqi-criteria": {
+				"max": 2.0,
+				"min": 2.0,
+				"avg": 2.0,
+				"str_value": "PM₂.₅ - 24h average",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"o3-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 4,
+				"created_at": 1661504498
+			},
+			"1.0p": {
+				"max": 2.3,
+				"min": 2.3,
+				"avg": 2.3,
+				"str_value": "2.3000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"aqi": {
+				"max": 64.0,
+				"min": 64.0,
+				"avg": 64.0,
+				"str_value": "64 (moderate)",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"10p": {
+				"max": 63.4,
+				"min": 63.4,
+				"avg": 63.4,
+				"str_value": "63.4000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"co-ugm3": {
+				"max": 13.9,
+				"min": 13.9,
+				"avg": 13.9,
+				"str_value": "13.9000",
+				"validity": 0,
+				"created_at": 1661504498
+			},
+			"h2s-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 0,
+				"created_at": 1661504498
+			}
+		}
+	},
+	{
+		"ice_id": "ICE-025-049-000-004",
+		"coords": {
+			"latitude": 50.91534196,
+			"longitude": 11.5701641
+		},
+		"sensors": [
+			"temperature",
+			"10p",
+			"no-ugm3",
+			"aqi",
+			"h2s-ugm3",
+			"1.0p",
+			"aqi criteria",
+			"co-ugm3",
+			"no2-ugm3",
+			"pressure",
+			"2.5p",
+			"humidity",
+			"o3-ugm3"
+		],
+		"has_beacon": false,
+		"data": {
+			"temperature": {
+				"max": 26.0,
+				"min": 26.0,
+				"avg": 26.0,
+				"str_value": "26.0000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"10p": {
+				"max": 50.9,
+				"min": 50.9,
+				"avg": 50.9,
+				"str_value": "50.9000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"no-ugm3": {
+				"max": 35.9,
+				"min": 35.9,
+				"avg": 35.9,
+				"str_value": "35.9000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"aqi": {
+				"max": 55.0,
+				"min": 55.0,
+				"avg": 55.0,
+				"str_value": "55 (moderate)",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"h2s-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"1.0p": {
+				"max": 1.3,
+				"min": 1.3,
+				"avg": 1.3,
+				"str_value": "1.3000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"aqi-criteria": {
+				"max": 2.0,
+				"min": 2.0,
+				"avg": 2.0,
+				"str_value": "PM₂.₅ - 24h average",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"co-ugm3": {
+				"max": 8.3,
+				"min": 8.3,
+				"avg": 8.3,
+				"str_value": "8.3000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"no2-ugm3": {
+				"max": 83.1,
+				"min": 83.1,
+				"avg": 83.1,
+				"str_value": "83.1000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"pressure": {
+				"max": 992.9,
+				"min": 992.9,
+				"avg": 992.9,
+				"str_value": "992.9000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"2.5p": {
+				"max": 14.6,
+				"min": 14.6,
+				"avg": 14.6,
+				"str_value": "14.6000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"humidity": {
+				"max": 61.6,
+				"min": 61.6,
+				"avg": 61.6,
+				"str_value": "61.6000",
+				"validity": 0,
+				"created_at": 1661504494
+			},
+			"o3-ugm3": {
+				"max": 0.0,
+				"min": 0.0,
+				"avg": 0.0,
+				"str_value": "0.0000",
+				"validity": 4,
+				"created_at": 1661504494
+			}
+		}
+	}
+]

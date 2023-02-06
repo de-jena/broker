@@ -1,23 +1,7 @@
 -include: base.bndrun
 
--exporttype: bnd.runbundles;targetDir=bundle;template=${repo;de.jena.sensinact.runtime};name=de.jena.sensinact.runtime-distro.zip;version=1.0.0
-
--runproperties.local:\
-	org.eclipse.sensinact.gateway.security.jks.filename=datastore/keystore/keystore.jks,\
-	org.eclipse.sensinact.gateway.security.jks.password=sensiNact_team,\
-	sensinact.log.mode=info,\
-	sensinact.log.service.filter.property.key=description,\
-	sensinact.log.service.filter.property.value=An SLF4J LogService implementation.,\
-	org.eclipse.sensinact.gateway.location.latitude=45.19334890078532d,\
-	org.eclipse.sensinact.gateway.location.longitude=5.706474781036377d,\
-	org.eclipse.sensinact.simulated.gui.enabled=false,\
-	org.eclipse.sensinact.http.corsheader=true,\
-	org.eclipse.sensinact.gateway.northbound.mqtt.host=datainmotion.de,\
-	org.eclipse.sensinact.gateway.northbound.mqtt.port=1883,\
-	org.eclipse.sensinact.gateway.northbound.mqtt.qos=1,\
-	org.eclipse.sensinact.gateway.northbound.mqtt.username=demo,\
-	org.eclipse.sensinact.gateway.northbound.mqtt.password=1234
-	
+-runbundles.local:\
+	 de.jena.sensinact.runtime.config.local
  	
 
 	
