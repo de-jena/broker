@@ -4,15 +4,15 @@
 	"MQTTService~read":
 	{
 		"brokerUrl" : "ssl://$[env:MQTT_READ_HOST;default=;default=]$[prop:MQTT_READ_HOST;default=mqttbr.jena.de]:$[env:MQTT_READ_PORT;default=]$[prop:MQTT_READ_PORT;default=8883]",
-		"username" : "$[env:MQTT_READ_USER;default=]$[prop:MQTT_READ_USER;default=]",
-		"password" : "$[env:MQTT_READ_PWD;default=]$[prop:MQTT_READ_PWD;default=]",
+		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
+		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
 		"id" : "read"
 	},
 	"MQTTService~write":
 	{
 		"brokerUrl" : "ssl://$[env:MQTT_WRITE_HOST;default=]$[prop:MQTT_WRITE_HOST;default=mqttbr.jena.de]:$[env:MQTT_WRITE_PORT;default=]$[prop:MQTT_WRITE_PORT;default=8883]",
-		"username" : "$[env:MQTT_WRITE_USER;default=]$[prop:MQTT_WRITE_USER;default=]",
-		"password" : "$[env:MQTT_WRITE_PWD;default=]$[prop:MQTT_WRITE_PWD;default=]",
+		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
+		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
 		"id" : "write"
 	},
 	"MQTTService~full":
