@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +20,7 @@ package de.dim.trafficos.intersection.model.intersection;
  * @model
  * @generated
  */
+@ProviderType
 public interface ProgramTransition extends ProgramEntry {
 	/**
 	 * Returns the value of the '<em><b>Transition</b></em>' reference.

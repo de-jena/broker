@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.trafficlight.model.trafficlight;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface LightSignal extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Bliking</b></em>' attribute.

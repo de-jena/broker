@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
@@ -9,6 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.EReference;
  * @model kind="package"
  * @generated
  */
+@ProviderType
 public interface TOSIntersectionPackage extends EPackage {
 	/**
 	 * The package name.
@@ -260,7 +263,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	int ROAD__PUBLIC_TRANSPORT_LANE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Traffic Light Module</b></em>' reference.
+	 * The feature id for the '<em><b>Traffic Light Module</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2238,10 +2241,10 @@ public interface TOSIntersectionPackage extends EPackage {
 	EReference getRoad_PublicTransportLane();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dim.trafficos.intersection.model.intersection.Road#getTrafficLightModule <em>Traffic Light Module</em>}'.
+	 * Returns the meta object for the reference list '{@link de.dim.trafficos.intersection.model.intersection.Road#getTrafficLightModule <em>Traffic Light Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Traffic Light Module</em>'.
+	 * @return the meta object for the reference list '<em>Traffic Light Module</em>'.
 	 * @see de.dim.trafficos.intersection.model.intersection.Road#getTrafficLightModule()
 	 * @see #getRoad()
 	 * @generated

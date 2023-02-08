@@ -1,10 +1,12 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
 import de.dim.trafficos.common.model.common.Output;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
+@ProviderType
 public interface ConflictingLane extends Lane {
 	/**
 	 * Returns the value of the '<em><b>Conflicting Lane</b></em>' reference list.

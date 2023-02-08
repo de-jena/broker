@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common.impl;
 

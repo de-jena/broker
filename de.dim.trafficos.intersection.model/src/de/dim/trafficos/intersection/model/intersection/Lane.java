@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
@@ -8,6 +8,8 @@ import de.dim.trafficos.common.model.common.Output;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface Lane extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

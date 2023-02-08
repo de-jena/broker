@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
 import de.dim.trafficos.common.model.common.DataEntry;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +16,6 @@ import de.dim.trafficos.common.model.common.DataEntry;
  * @model
  * @generated
  */
+@ProviderType
 public interface CacheDataEntry extends DataEntry {
 } // CacheDataEntry

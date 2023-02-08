@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface Location extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

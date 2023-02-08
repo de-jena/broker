@@ -1,10 +1,12 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
 import de.dim.trafficos.common.model.common.IdNameElement;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
+@ProviderType
 public interface Program extends IdNameElement {
 	/**
 	 * Returns the value of the '<em><b>Length</b></em>' attribute.

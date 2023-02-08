@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.model.device;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface PublicTransportStop extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Station</b></em>' containment reference.

@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.model.device;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
+@ProviderType
 public interface PublicTransportDataEntry extends AbstractDataEntry {
 	/**
 	 * Returns the value of the '<em><b>Data Value</b></em>' containment reference list.

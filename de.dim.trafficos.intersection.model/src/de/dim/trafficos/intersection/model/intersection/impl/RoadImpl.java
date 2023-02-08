@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection.impl;
 
@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -140,14 +141,14 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	protected EList<PublicTransportLane> publicTransportLane;
 
 	/**
-	 * The cached value of the '{@link #getTrafficLightModule() <em>Traffic Light Module</em>}' reference.
+	 * The cached value of the '{@link #getTrafficLightModule() <em>Traffic Light Module</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTrafficLightModule()
 	 * @generated
 	 * @ordered
 	 */
-	protected TLModule trafficLightModule;
+	protected EList<TLModule> trafficLightModule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,38 +286,11 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	 * @generated
 	 */
 	@Override
-	public TLModule getTrafficLightModule() {
-		if (trafficLightModule != null && trafficLightModule.eIsProxy()) {
-			InternalEObject oldTrafficLightModule = (InternalEObject)trafficLightModule;
-			trafficLightModule = (TLModule)eResolveProxy(oldTrafficLightModule);
-			if (trafficLightModule != oldTrafficLightModule) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE, oldTrafficLightModule, trafficLightModule));
-			}
+	public EList<TLModule> getTrafficLightModule() {
+		if (trafficLightModule == null) {
+			trafficLightModule = new EObjectResolvingEList<TLModule>(TLModule.class, this, TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE);
 		}
 		return trafficLightModule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TLModule basicGetTrafficLightModule() {
-		return trafficLightModule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTrafficLightModule(TLModule newTrafficLightModule) {
-		TLModule oldTrafficLightModule = trafficLightModule;
-		trafficLightModule = newTrafficLightModule;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE, oldTrafficLightModule, trafficLightModule));
 	}
 
 	/**
@@ -364,8 +338,7 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 			case TOSIntersectionPackage.ROAD__PUBLIC_TRANSPORT_LANE:
 				return getPublicTransportLane();
 			case TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE:
-				if (resolve) return getTrafficLightModule();
-				return basicGetTrafficLightModule();
+				return getTrafficLightModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -406,7 +379,8 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				getPublicTransportLane().addAll((Collection<? extends PublicTransportLane>)newValue);
 				return;
 			case TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE:
-				setTrafficLightModule((TLModule)newValue);
+				getTrafficLightModule().clear();
+				getTrafficLightModule().addAll((Collection<? extends TLModule>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -442,7 +416,7 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				getPublicTransportLane().clear();
 				return;
 			case TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE:
-				setTrafficLightModule((TLModule)null);
+				getTrafficLightModule().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -471,7 +445,7 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 			case TOSIntersectionPackage.ROAD__PUBLIC_TRANSPORT_LANE:
 				return publicTransportLane != null && !publicTransportLane.isEmpty();
 			case TOSIntersectionPackage.ROAD__TRAFFIC_LIGHT_MODULE:
-				return trafficLightModule != null;
+				return trafficLightModule != null && !trafficLightModule.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

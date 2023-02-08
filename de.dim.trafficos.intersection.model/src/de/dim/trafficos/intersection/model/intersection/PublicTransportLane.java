@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +14,6 @@ package de.dim.trafficos.intersection.model.intersection;
  * @model
  * @generated
  */
+@ProviderType
 public interface PublicTransportLane extends ConflictingLane {
 } // PublicTransportLane

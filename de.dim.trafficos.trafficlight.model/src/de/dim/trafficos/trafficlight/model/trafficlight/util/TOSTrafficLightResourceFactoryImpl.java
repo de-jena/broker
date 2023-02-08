@@ -32,7 +32,7 @@ import org.osgi.service.component.annotations.ServiceScope;
 	fileExtension = {
 	"tostrafficlight"
  	},  
-	version = "1.0.0"
+	version = "1.0"
 )
 public class TOSTrafficLightResourceFactoryImpl extends ResourceFactoryImpl {
 	/**

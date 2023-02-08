@@ -32,7 +32,7 @@ import org.osgi.service.component.annotations.ServiceScope;
 	fileExtension = {
 	"tos"
  	},  
-	version = "1.0.0"
+	version = "1.0"
 )
 public class TOSDeviceResourceFactoryImpl extends ResourceFactoryImpl {
 	/**

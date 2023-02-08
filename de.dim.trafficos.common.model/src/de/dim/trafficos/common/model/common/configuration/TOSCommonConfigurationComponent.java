@@ -54,7 +54,7 @@ public class TOSCommonConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		TOSCommonPackage ePackage = TOSCommonPackageImpl.init();
+		TOSCommonPackage ePackage = TOSCommonPackageImpl.eINSTANCE;
 		
 		TOSCommonEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +82,7 @@ public class TOSCommonConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(TOSCommonPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(TOSCommonPackage ePackage, TOSCommonEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSCommonPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +94,14 @@ public class TOSCommonConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(TOSCommonPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(TOSCommonPackage ePackage, TOSCommonEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSCommonFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getTOSCommonFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(TOSCommonEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +110,7 @@ public class TOSCommonConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

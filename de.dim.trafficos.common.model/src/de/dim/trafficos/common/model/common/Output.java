@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,7 @@ package de.dim.trafficos.common.model.common;
  * @model
  * @generated
  */
+@ProviderType
 public interface Output extends IdNameElement, Localizable {
 	/**
 	 * Returns the value of the '<em><b>Description</b></em>' attribute.

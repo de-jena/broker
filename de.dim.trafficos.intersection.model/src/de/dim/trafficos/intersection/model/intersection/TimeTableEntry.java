@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
 import de.dim.trafficos.common.model.common.AbstractTimeTableEntry;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import de.dim.trafficos.common.model.common.AbstractTimeTableEntry;
  * @model
  * @generated
  */
+@ProviderType
 public interface TimeTableEntry extends AbstractTimeTableEntry {
 	/**
 	 * Returns the value of the '<em><b>Program</b></em>' reference.

@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common;
 
 import org.eclipse.emf.ecore.EFactory;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @see de.dim.trafficos.common.model.common.TOSCommonPackage
  * @generated
  */
+@ProviderType
 public interface TOSCommonFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.

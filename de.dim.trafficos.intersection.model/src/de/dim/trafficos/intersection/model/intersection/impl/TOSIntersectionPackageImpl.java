@@ -1342,7 +1342,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		getRoad_CycleLane().getEKeys().add(this.getLane_Id());
 		initEReference(getRoad_PublicTransportLane(), this.getPublicTransportLane(), null, "publicTransportLane", null, 0, -1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRoad_PublicTransportLane().getEKeys().add(this.getLane_Id());
-		initEReference(getRoad_TrafficLightModule(), theTOSTrafficLightPackage.getTLModule(), null, "trafficLightModule", null, 0, 1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoad_TrafficLightModule(), theTOSTrafficLightPackage.getTLModule(), null, "trafficLightModule", null, 0, -1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(laneEClass, Lane.class, "Lane", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLane_Id(), ecorePackage.getEString(), "id", null, 1, 1, Lane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

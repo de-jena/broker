@@ -1,7 +1,8 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common;
 
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +24,7 @@ package de.dim.trafficos.common.model.common;
  * @model
  * @generated
  */
+@ProviderType
 public interface Position extends Location {
 	/**
 	 * Returns the value of the '<em><b>Latitude</b></em>' attribute.

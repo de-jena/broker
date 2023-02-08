@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.common.model.common;
 
@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model
  * @generated
  */
+@ProviderType
 public enum ParameterDataType implements Enumerator {
 	/**
 	 * The '<em><b>STRING</b></em>' literal object.

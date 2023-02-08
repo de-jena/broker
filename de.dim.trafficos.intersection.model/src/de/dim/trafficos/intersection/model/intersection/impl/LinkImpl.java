@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection.impl;
 

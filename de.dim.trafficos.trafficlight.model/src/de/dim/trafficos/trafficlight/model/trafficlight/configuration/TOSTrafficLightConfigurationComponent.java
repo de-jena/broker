@@ -54,7 +54,7 @@ public class TOSTrafficLightConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		TOSTrafficLightPackage ePackage = TOSTrafficLightPackageImpl.init();
+		TOSTrafficLightPackage ePackage = TOSTrafficLightPackageImpl.eINSTANCE;
 		
 		TOSTrafficLightEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +82,7 @@ public class TOSTrafficLightConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(TOSTrafficLightPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(TOSTrafficLightPackage ePackage, TOSTrafficLightEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSTrafficLightPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +94,14 @@ public class TOSTrafficLightConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(TOSTrafficLightPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(TOSTrafficLightPackage ePackage, TOSTrafficLightEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSTrafficLightFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getTOSTrafficLightFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(TOSTrafficLightEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +110,7 @@ public class TOSTrafficLightConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

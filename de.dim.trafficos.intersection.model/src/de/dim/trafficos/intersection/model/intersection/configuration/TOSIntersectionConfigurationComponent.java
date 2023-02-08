@@ -54,7 +54,7 @@ public class TOSIntersectionConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		TOSIntersectionPackage ePackage = TOSIntersectionPackageImpl.init();
+		TOSIntersectionPackage ePackage = TOSIntersectionPackageImpl.eINSTANCE;
 		
 		TOSIntersectionEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +82,7 @@ public class TOSIntersectionConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(TOSIntersectionPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(TOSIntersectionPackage ePackage, TOSIntersectionEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSIntersectionPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +94,14 @@ public class TOSIntersectionConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(TOSIntersectionPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(TOSIntersectionPackage ePackage, TOSIntersectionEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TOSIntersectionFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getTOSIntersectionFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(TOSIntersectionEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +110,7 @@ public class TOSIntersectionConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

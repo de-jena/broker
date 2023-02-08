@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.trafficlight.model.trafficlight.impl;
 

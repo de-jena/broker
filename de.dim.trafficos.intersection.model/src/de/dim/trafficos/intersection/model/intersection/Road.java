@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.dim.trafficos.intersection.model.intersection;
 
@@ -7,6 +7,8 @@ import de.dim.trafficos.trafficlight.model.trafficlight.TLModule;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,6 +33,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface Road extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
@@ -137,25 +140,15 @@ public interface Road extends EObject {
 	EList<PublicTransportLane> getPublicTransportLane();
 
 	/**
-	 * Returns the value of the '<em><b>Traffic Light Module</b></em>' reference.
+	 * Returns the value of the '<em><b>Traffic Light Module</b></em>' reference list.
+	 * The list contents are of type {@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Traffic Light Module</em>' reference.
-	 * @see #setTrafficLightModule(TLModule)
+	 * @return the value of the '<em>Traffic Light Module</em>' reference list.
 	 * @see de.dim.trafficos.intersection.model.intersection.TOSIntersectionPackage#getRoad_TrafficLightModule()
 	 * @model
 	 * @generated
 	 */
-	TLModule getTrafficLightModule();
-
-	/**
-	 * Sets the value of the '{@link de.dim.trafficos.intersection.model.intersection.Road#getTrafficLightModule <em>Traffic Light Module</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Traffic Light Module</em>' reference.
-	 * @see #getTrafficLightModule()
-	 * @generated
-	 */
-	void setTrafficLightModule(TLModule value);
+	EList<TLModule> getTrafficLightModule();
 
 } // Road
