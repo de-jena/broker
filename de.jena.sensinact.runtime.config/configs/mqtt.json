@@ -1,27 +1,6 @@
 {
   ":configurator:resource-version": 1,
 
-	"MQTTService~read":
-	{
-		"brokerUrl" : "ssl://$[env:MQTT_READ_HOST;default=;default=]$[prop:MQTT_READ_HOST;default=mqttbr.jena.de]:$[env:MQTT_READ_PORT;default=]$[prop:MQTT_READ_PORT;default=8883]",
-		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
-		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
-		"id" : "read"
-	},
-	"MQTTService~write":
-	{
-		"brokerUrl" : "ssl://$[env:MQTT_WRITE_HOST;default=]$[prop:MQTT_WRITE_HOST;default=mqttbr.jena.de]:$[env:MQTT_WRITE_PORT;default=]$[prop:MQTT_WRITE_PORT;default=8883]",
-		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
-		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
-		"id" : "write"
-	},
-	"MQTTService~full":
-	{
-		"brokerUrl" : "ssl://$[env:MQTT_FULL_HOST;default=]$[prop:MQTT_FULL_HOST;default=mqttbr.jena.de]:$[env:MQTT_FULL_PORT;default=]$[prop:MQTT_FULL_PORT;default=8883]",
-		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
-		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
-		"id" : "full"
-	},
 	"MQTTService~ttn":
 	{
 		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",

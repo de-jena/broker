@@ -20,10 +20,8 @@
 	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
 	org.osgi.util.function;version='[1.1.0,1.1.1)',\
 	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
-	org.gecko.emf.mongo.component;version='[6.0.4,6.0.5)',\
 	org.gecko.emf.repository.api;version='[9.2.2,9.2.3)',\
 	org.gecko.emf.repository.mongo;version='[3.1.0,3.1.1)',\
-	org.gecko.mongo.osgi.component;version='[6.0.4,6.0.5)',\
 	org.osgi.service.log;version='[1.4.0,1.4.1)',\
 	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
 	org.osgi.util.converter;version='[1.0.8,1.0.9)',\
@@ -121,7 +119,9 @@
 	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)',\
 	de.jena.sensinact.rest.tlc.control;version=snapshot,\
 	de.jena.sensinact.rest.tlc.control.model;version=snapshot,\
-	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)'
+	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)',\
+	org.gecko.emf.mongo.component;version='[6.0.5,6.0.6)',\
+	org.gecko.mongo.osgi.component;version='[6.0.5,6.0.6)'
 
 -runrequires: \
 	bnd.identity;id='org.apache.felix.gogo.runtime',\

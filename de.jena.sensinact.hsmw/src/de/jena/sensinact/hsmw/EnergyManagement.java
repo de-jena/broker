@@ -12,6 +12,8 @@
 package de.jena.sensinact.hsmw;
 
 import java.io.ByteArrayInputStream;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,6 +41,11 @@ import de.jena.sensinact.ocpp.structures.MeasurementNotification;
 @RequireEMFJson
 public class EnergyManagement {
 
+	/** _5G_DEVICES */
+	private static final String TOPIC = "5g/devices/#";
+
+	private static final Logger logger = System.getLogger(EnergyManagement.class.getName());
+	
 	private MessagingService messaging;
 
 	private ResourceSet resourceSet;
@@ -60,7 +67,7 @@ public class EnergyManagement {
 			resource.getContents().stream().findFirst().map(o -> (MeasurementNotification)  o).ifPresent(o -> handleMeasurementNotification(message.topic(), o));
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.log(Level.ERROR, "Could not parse event for topic " + message.topic(), e);
 		} finally {
 			resourceSet.getResources().remove(resource);
 			resource.getContents().clear();
@@ -74,12 +81,12 @@ public class EnergyManagement {
 		this.messaging = messaging;
 		this.resourceSet = resourceSet;
 		try {
-			System.out.println("Connecting to hsmw/#");
-			emSubscribe = this.messaging.subscribe("5g/devices/#");
+			logger.log(Level.INFO, "Connecting to 5g/devices/#");
+			emSubscribe = this.messaging.subscribe(TOPIC);
 			emSubscribe.forEach(this::handleDataEntryMessage);
 			
 		} catch(Exception e) {
-			e.printStackTrace();
+			logger.log(Level.ERROR, "Could not connect to topic " + TOPIC, e);
 		}
 	}
 
@@ -89,11 +96,9 @@ public class EnergyManagement {
 	}
 	
 	private void handleMeasurementNotification(String topic, MeasurementNotification notification) {
-//		System.out.println("Topic topic " + topic);
 		String[] parts = topic.split("/");
 		List<GenericPacket> packets = transform(notification, parts[parts.length -2], parts[parts.length -1]);
 		packets.forEach(sensiNact::pushUpdate);
-		packets.forEach(p -> System.out.println("Published " + p));
 	}
 
 	/**
