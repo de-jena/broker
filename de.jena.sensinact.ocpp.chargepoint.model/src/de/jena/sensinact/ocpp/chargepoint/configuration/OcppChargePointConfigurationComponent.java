@@ -1,4 +1,14 @@
 /*
+ * Copyright (c) 2022 Contributors to the Eclipse Foundation.
+ * 
+ * This program and the accompanying materials are made
+ * available under the terms of the Eclipse Public License 2.0
+ * which is available at https://www.eclipse.org/legal/epl-2.0/
+ * 
+ * SPDX-License-Identifier: EPL-2.0
+ * 
+ * Contributors:
+ *   Data In Motion - initial API and implementation 
  */
 package de.jena.sensinact.ocpp.chargepoint.configuration;
 
@@ -54,7 +64,7 @@ public class OcppChargePointConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		OcppChargePointPackage ePackage = OcppChargePointPackageImpl.init();
+		OcppChargePointPackage ePackage = OcppChargePointPackageImpl.eINSTANCE;
 		
 		OcppChargePointEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +92,7 @@ public class OcppChargePointConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(OcppChargePointPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(OcppChargePointPackage ePackage, OcppChargePointEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {OcppChargePointPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +104,14 @@ public class OcppChargePointConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(OcppChargePointPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(OcppChargePointPackage ePackage, OcppChargePointEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {OcppChargePointFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getOcppChargePointFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(OcppChargePointEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +120,7 @@ public class OcppChargePointConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

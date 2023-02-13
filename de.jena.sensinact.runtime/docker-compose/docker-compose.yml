@@ -10,15 +10,4 @@ services:
         ports:
             - "27017:27017"
             - "28017:28017"
-        networks:
-            - mongo
-            
-    sensinact:
-        image: jena/sensinact:latest
-        ports:
-            - "8080:8080"
-        networks:
-            - mongo
-networks:    
-    mongo:
-
+       

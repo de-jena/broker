@@ -1,2 +1,11 @@
 org.geckoprojects.repository:org.gecko.emf.repository.api:9.2.2
 org.geckoprojects.repository:org.gecko.emf.repository.mongo:3.1.0
+
+org.gecko.core:org.gecko.core.pushstream:1.1.0
+org.gecko.core:org.gecko.core.api:1.0.5
+
+org.gecko.ma:org.gecko.adapter.amqp:2.2.0-SNAPSHOT
+org.gecko.ma:org.gecko.adapter.mqtt:1.0.6-SNAPSHOT
+org.gecko.ma:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
+
+com.rabbitmq:amqp-client:5.6.0

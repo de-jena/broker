@@ -18,8 +18,8 @@
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="49748" type="Long"/>
-      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
       <attribute name="osgi.content" value="72CC0CA0E31026E7F3EFAC49B58236DF9DFBF95AA8D212F82B269B9407597BE9"/>
     </capability>
     <capability namespace="osgi.service">
@@ -89,8 +89,8 @@
       <directive name="uses" value="de.dim.trafficos.model.device"/>
       <attribute name="bundle-symbolic-name" value="de.dim.trafficos.simulator.api"/>
       <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.simulator.api"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="-1625443176,164544046,-180972947,178692262,-1523597364,-1926349250,-1078860956,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
@@ -103,8 +103,8 @@
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="27483" type="Long"/>
-      <attribute name="url" value="de.dim.trafficos.simulator.api/de.dim.trafficos.simulator.api-1.1.1.jar"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.simulator.api/de.dim.trafficos.simulator.api-1.1.1.jar"/>
       <attribute name="osgi.content" value="EED06DBE94D1AE28F2D04B406A0035A05F0708EC59E36D0360A1A9B2E1DADEED"/>
     </capability>
     <requirement namespace="osgi.wiring.package">

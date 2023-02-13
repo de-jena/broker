@@ -1,20 +1,6 @@
 -buildpath: \
-	org.eclipse.sensinact.gateway.sensinact-common,\
-	org.eclipse.sensinact.gateway.sensinact-generic,\
-	org.eclipse.sensinact.gateway.sensinact-core,\
-	org.eclipse.paho.client.mqttv3,\
 	org.osgi.annotation.bundle,\
-	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-utils,\
-	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-device,\
-	osgi.cmpn,\
-	org.osgi.framework,\
-	org.eclipse.sensinact.gateway.sensinact-utils
-
-
-javac.source: 17
-javac.target: 17
-
-Bundle-Version: 1.0.0.${tstamp}
+	org.osgi.framework
 
 -includeresource.config: \
 	OSGI-INF/configurator/=config/

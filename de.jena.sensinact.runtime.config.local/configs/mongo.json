@@ -1,0 +1,11 @@
+{
+  ":configurator:resource-version": 1,
+  
+	"EMFMongoRepositoryConfigurator~sensinact": 
+  	{
+	    "mongo.instances": "sensinact",
+		"sensinact.baseUris" : "mongodb://mongodb/",
+		"sensinact.databases" : "sensinact", 
+		"sensinact.sensinact.repoType" : "PROTOTYPE" 
+	}
+}

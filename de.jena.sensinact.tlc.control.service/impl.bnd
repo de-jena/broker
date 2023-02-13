@@ -1,1 +1,4 @@
 Private-Package: de.jena.sensinact.tlc.control.service.impl
+
+-includeresource: \
+	data=data

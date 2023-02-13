@@ -1,0 +1,17 @@
+-buildpath: \
+	org.apache.felix.http.jetty,\
+	org.apache.commons.io,\
+	jakarta.ws.rs-api,\
+	org.gecko.emf.rest,\
+	org.gecko.emf.json,\
+	de.jena.icesensor.model;version=latest,\
+	org.eclipse.emfcloud.emfjson-jackson;version=latest,\
+	org.osgi.service.component,\
+	org.osgi.util.pushstream,\
+	org.osgi.service.cdi,\
+	de.jena.icesensor.api
+#	osgi.cmpn;version=7.0
+
+-library: enable-emf
+
+Private-Package: de.jena.icesensor.rest

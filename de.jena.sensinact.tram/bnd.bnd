@@ -1,34 +1,16 @@
 -buildpath: \
-	org.eclipse.sensinact.gateway.sensinact-common,\
-	org.eclipse.sensinact.gateway.sensinact-generic,\
-	org.eclipse.sensinact.gateway.sensinact-core,\
-	org.eclipse.paho.client.mqttv3,\
 	org.osgi.annotation.bundle,\
-	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-utils,\
-	org.eclipse.sensinact.gateway.sthbnd.mqtt.mqtt-device,\
-	osgi.cmpn;version='7.0',\
 	org.osgi.framework,\
-	org.eclipse.sensinact.gateway.sensinact-utils,\
 	org.gecko.osgi.messaging,\
 	org.osgi.util.pushstream,\
 	de.dim.trafficos.device.model;version=snapshot,\
 	org.gecko.emf.util.annotations,\
 	de.dim.trafficos.device.model,\
-	org.gecko.emf.json
-
-
-javac.source: 17
-javac.target: 17
-
+	org.gecko.emf.json,\
+	org.eclipse.sensinact.gateway.core.api,\
+	org.osgi.util.promise,\
+	org.eclipse.sensinact.gateway.core.annotation
 
 -library: enable-emf
 
-Bundle-Version: 1.0.0.${tstamp}
-
--includeresource.config: \
-	publictransport-resource.xml
-
 -privatepackage: de.jena.sensinact.publictransport
-#TEST: ${repo;org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template}
-#-export: assembly.bndrun;version=1.0.0
-#;type=bnd.runbundles;name=test.zip
