@@ -9,6 +9,7 @@ com.fasterxml.jackson.core:jackson-core:${def;jackson.version;2.13.3}
 com.fasterxml.jackson.core:jackson-databind:${def;jackson.version;2.13.3}
 com.fasterxml.jackson.dataformat:jackson-dataformat-properties:${def;jackson.version;2.13.3}
 com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:${def;jackson.version;2.13.3}
+com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${def;jackson.version;2.13.3}
 de.undercouch:bson4jackson:2.13.1
 org.apache.felix:org.apache.felix.converter:1.0.18
 org.apache.felix:org.apache.felix.scr:2.1.30

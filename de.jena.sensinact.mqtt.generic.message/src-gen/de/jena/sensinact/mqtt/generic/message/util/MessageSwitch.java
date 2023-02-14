@@ -100,6 +100,20 @@ public class MessageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagePackage.BOOLEAN_VALUE_UPDATE: {
+				BooleanValueUpdate booleanValueUpdate = (BooleanValueUpdate)theEObject;
+				T result = caseBooleanValueUpdate(booleanValueUpdate);
+				if (result == null) result = caseUpdateMessage(booleanValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.OBJECT_VALUE_UPDATE: {
+				ObjectValueUpdate objectValueUpdate = (ObjectValueUpdate)theEObject;
+				T result = caseObjectValueUpdate(objectValueUpdate);
+				if (result == null) result = caseUpdateMessage(objectValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -176,6 +190,36 @@ public class MessageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLongValueUpdate(LongValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanValueUpdate(BooleanValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Object Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Object Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObjectValueUpdate(ObjectValueUpdate object) {
 		return null;
 	}
 

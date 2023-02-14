@@ -61,6 +61,24 @@ public interface MessageFactory extends EFactory {
 	LongValueUpdate createLongValueUpdate();
 
 	/**
+	 * Returns a new object of class '<em>Boolean Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Value Update</em>'.
+	 * @generated
+	 */
+	BooleanValueUpdate createBooleanValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Object Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Object Value Update</em>'.
+	 * @generated
+	 */
+	ObjectValueUpdate createObjectValueUpdate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

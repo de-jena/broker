@@ -1,0 +1,8 @@
+-library: enable-emf
+-buildpath: \
+	org.eclipse.sensinact.gateway.core.api,\
+	org.gecko.osgi.messaging,\
+	org.gecko.emf.json,\
+	org.osgi.service.component,\
+	org.osgi.service.typedevent,\
+	de.jena.sensinact.mqtt.generic.message

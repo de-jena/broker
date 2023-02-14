@@ -42,7 +42,7 @@ public interface MessagePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "https://jena.de/models/mqtt/message/1.0";
+	String eNS_URI = "https://upd.jena.de/model/sensinact/mqtt/message/1.0";
 
 	/**
 	 * The package namespace name.
@@ -363,6 +363,134 @@ public interface MessagePackage extends EPackage {
 	int LONG_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl <em>Boolean Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getBooleanValueUpdate()
+	 * @generated
+	 */
+	int BOOLEAN_VALUE_UPDATE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Boolean Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.ObjectValueUpdateImpl <em>Object Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.ObjectValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getObjectValueUpdate()
+	 * @generated
+	 */
+	int OBJECT_VALUE_UPDATE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Object Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Object Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBJECT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>EInstant</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,7 +498,7 @@ public interface MessagePackage extends EPackage {
 	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEInstant()
 	 * @generated
 	 */
-	int EINSTANT = 5;
+	int EINSTANT = 7;
 
 
 	/**
@@ -532,6 +660,70 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLongValueUpdate_NewValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate <em>Boolean Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate
+	 * @generated
+	 */
+	EClass getBooleanValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue()
+	 * @see #getBooleanValueUpdate()
+	 * @generated
+	 */
+	EAttribute getBooleanValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue()
+	 * @see #getBooleanValueUpdate()
+	 * @generated
+	 */
+	EAttribute getBooleanValueUpdate_NewValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate <em>Object Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Object Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate
+	 * @generated
+	 */
+	EClass getObjectValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate#getOldValue()
+	 * @see #getObjectValueUpdate()
+	 * @generated
+	 */
+	EAttribute getObjectValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate#getNewValue()
+	 * @see #getObjectValueUpdate()
+	 * @generated
+	 */
+	EAttribute getObjectValueUpdate_NewValue();
 
 	/**
 	 * Returns the meta object for data type '{@link java.time.Instant <em>EInstant</em>}'.
@@ -696,6 +888,58 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LONG_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getLongValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl <em>Boolean Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getBooleanValueUpdate()
+		 * @generated
+		 */
+		EClass BOOLEAN_VALUE_UPDATE = eINSTANCE.getBooleanValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getBooleanValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getBooleanValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.ObjectValueUpdateImpl <em>Object Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.ObjectValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getObjectValueUpdate()
+		 * @generated
+		 */
+		EClass OBJECT_VALUE_UPDATE = eINSTANCE.getObjectValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECT_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getObjectValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBJECT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getObjectValueUpdate_NewValue();
 
 		/**
 		 * The meta object literal for the '<em>EInstant</em>' data type.

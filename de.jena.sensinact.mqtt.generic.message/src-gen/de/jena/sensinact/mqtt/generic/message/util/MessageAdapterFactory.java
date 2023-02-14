@@ -88,6 +88,14 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createLongValueUpdateAdapter();
 			}
 			@Override
+			public Adapter caseBooleanValueUpdate(BooleanValueUpdate object) {
+				return createBooleanValueUpdateAdapter();
+			}
+			@Override
+			public Adapter caseObjectValueUpdate(ObjectValueUpdate object) {
+				return createObjectValueUpdateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -174,6 +182,34 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLongValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate <em>Boolean Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate
+	 * @generated
+	 */
+	public Adapter createBooleanValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate <em>Object Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate
+	 * @generated
+	 */
+	public Adapter createObjectValueUpdateAdapter() {
 		return null;
 	}
 

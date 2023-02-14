@@ -93,7 +93,6 @@ com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:${jackson.version}
 com.fasterxml.jackson.core:jackson-databind:${jackson.version}
 com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:${jackson.version}
 com.fasterxml.jackson.module:jackson-module-jaxb-annotations:${jackson.version}
-com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jackson.version}
 com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-base:${jackson.version}
 com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider:${jackson.version}
 

@@ -1,4 +1,3 @@
--include: -secrets.bndrun
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runprovidedcapabilities: ${native_capability}
 
@@ -20,10 +19,7 @@
 	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
 	org.osgi.util.function;version='[1.1.0,1.1.1)',\
 	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
-	org.gecko.emf.repository.api;version='[9.2.2,9.2.3)',\
-	org.gecko.emf.repository.mongo;version='[3.1.0,3.1.1)',\
 	org.osgi.service.log;version='[1.4.0,1.4.1)',\
-	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
 	org.osgi.util.converter;version='[1.0.8,1.0.9)',\
 	de.jena.sensinact.hsmw;version=snapshot,\
 	de.jena.sensinact.ocpp.structures.model;version=snapshot,\
@@ -50,13 +46,12 @@
 	org.eclipse.sensinact.gateway.core.api;version='[0.0.1,0.0.2)',\
 	org.eclipse.sensinact.gateway.core.impl;version='[0.0.1,0.0.2)',\
 	org.eclipse.sensinact.gateway.core.models;version='[0.0.1,0.0.2)',\
-	org.gecko.emf.collections;version='[2.1.1,2.1.2)',\
 	org.gecko.emf.osgi.component;version='[4.5.0,4.5.1)',\
-	org.mongodb.mongo-java-driver;version='[3.9.1,3.9.2)',\
 	org.osgi.service.typedevent;version='[1.0.0,1.0.1)',\
 	org.osgi.util.promise;version='[1.3.0,1.3.1)',\
 	slf4j.api;version='[1.7.25,1.7.26)',\
 	slf4j.simple;version='[1.7.25,1.7.26)',\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.14.0,2.14.1)',\
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.14.0,2.14.1)',\
 	com.fasterxml.jackson.core.jackson-core;version='[2.14.0,2.14.1)',\
 	com.fasterxml.jackson.core.jackson-databind;version='[2.14.0,2.14.1)',\
@@ -120,8 +115,9 @@
 	de.jena.sensinact.rest.tlc.control;version=snapshot,\
 	de.jena.sensinact.rest.tlc.control.model;version=snapshot,\
 	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)',\
-	org.gecko.emf.mongo.component;version='[6.0.5,6.0.6)',\
-	org.gecko.mongo.osgi.component;version='[6.0.5,6.0.6)'
+	de.jena.sensinact.mqtt.generic.message;version=snapshot,\
+	de.jena.sensinact.mqtt.generic.bridge;version=snapshot
+	
 
 -runrequires: \
 	bnd.identity;id='org.apache.felix.gogo.runtime',\
@@ -139,7 +135,9 @@
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory',\
 	bnd.identity;id='de.jena.icesensor.sensinact',\
 	bnd.identity;id='de.jena.sensinact.rest.tlc.control',\
-	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation'
+	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
+	bnd.identity;id='com.fasterxml.jackson.datatype.jackson-datatype-jsr310',\
+	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge'
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
 -runblacklist: \

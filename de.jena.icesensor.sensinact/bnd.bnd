@@ -9,6 +9,9 @@
 	org.osgi.util.pushstream,\
 	org.osgi.util.promise,\
 	org.eclipse.sensinact.gateway.core.annotation,\
-	org.gecko.osgi.messaging
+	org.gecko.osgi.messaging,\
+	de.jena.sensinact.mqtt.generic.message,\
+	org.osgi.service.component,\
+	org.gecko.emf.json
 	
 -library: enable-emf

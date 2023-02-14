@@ -84,7 +84,6 @@ public class EnergyManagement {
 			logger.log(Level.INFO, "Connecting to 5g/devices/#");
 			emSubscribe = this.messaging.subscribe(TOPIC);
 			emSubscribe.forEach(this::handleDataEntryMessage);
-			
 		} catch(Exception e) {
 			logger.log(Level.ERROR, "Could not connect to topic " + TOPIC, e);
 		}
@@ -97,8 +96,8 @@ public class EnergyManagement {
 	
 	private void handleMeasurementNotification(String topic, MeasurementNotification notification) {
 		String[] parts = topic.split("/");
-		List<GenericPacket> packets = transform(notification, parts[parts.length -2], parts[parts.length -1]);
-		packets.forEach(sensiNact::pushUpdate);
+//		List<DoublePacket> packets = transform(notification, parts[parts.length -2], parts[parts.length -1]);
+//		packets.forEach(sensiNact::pushUpdate);
 	}
 
 	/**
@@ -106,12 +105,12 @@ public class EnergyManagement {
 	 * @param idValue 
 	 * @return
 	 */
-	private List<GenericPacket> transform(EObject notification, String provider, String service) {
-		
-		List<GenericPacket> packages = new ArrayList<GenericPacket>();
-		notification.eClass().getEAllAttributes().stream()
-		.map(a -> new GenericPacket(notification.eClass().getName(), provider, service, a.getName(),notification.eGet(a)))
-		.forEach(packages::add);
-		return packages;
-	}
+//	private List<DoublePacket> transform(EObject notification, String provider, String service) {
+//		
+//		List<DoublePacket> packages = new ArrayList<DoublePacket>();
+//		notification.eClass().getEAllAttributes().stream()
+//		.map(a -> new DoublePacket(notification.eClass().getName(), provider, service, a.getName(),notification.eGet(a)))
+//		.forEach(packages::add);
+//		return packages;
+//	}
 }

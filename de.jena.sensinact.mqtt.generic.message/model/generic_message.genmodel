@@ -29,5 +29,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//LongValueUpdate/oldValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//LongValueUpdate/newValue"/>
     </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//BooleanValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BooleanValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BooleanValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//ObjectValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/newValue"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
