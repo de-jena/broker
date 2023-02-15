@@ -1,10 +1,12 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='GetConfigurationRequest' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface GetConfigurationRequest extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute list.

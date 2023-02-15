@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -17,6 +19,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model extendedMetaData="name='RecurrencyKindType'"
  * @generated
  */
+@ProviderType
 public enum RecurrencyKindType implements Enumerator {
 	/**
 	 * The '<em><b>Daily</b></em>' literal object.

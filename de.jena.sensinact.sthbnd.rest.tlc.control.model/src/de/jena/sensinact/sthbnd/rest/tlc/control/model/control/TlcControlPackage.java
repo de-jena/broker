@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control;
 
@@ -6,6 +6,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +25,7 @@ import org.eclipse.emf.ecore.EReference;
  * @model kind="package"
  * @generated
  */
+@ProviderType
 public interface TlcControlPackage extends EPackage {
 	/**
 	 * The package name.

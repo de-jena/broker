@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.structures;
 
 import org.eclipse.emf.ecore.EFactory;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @see de.jena.sensinact.ocpp.structures.OcppStructuresPackage
  * @generated
  */
+@ProviderType
 public interface OcppStructuresFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.

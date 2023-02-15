@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='CancelReservationResponse' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface CancelReservationResponse extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Status</b></em>' attribute.

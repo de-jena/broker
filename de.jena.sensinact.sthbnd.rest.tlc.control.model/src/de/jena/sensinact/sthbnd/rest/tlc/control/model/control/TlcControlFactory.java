@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control;
 
 import org.eclipse.emf.ecore.EFactory;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,6 +14,7 @@ import org.eclipse.emf.ecore.EFactory;
  * @see de.jena.sensinact.sthbnd.rest.tlc.control.model.control.TlcControlPackage
  * @generated
  */
+@ProviderType
 public interface TlcControlFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.

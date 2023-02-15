@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='StartTransactionResponse' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface StartTransactionResponse extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Transaction Id</b></em>' attribute.

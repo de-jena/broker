@@ -1,4 +1,4 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * @model extendedMetaData="name='FirmwareStatus'"
  * @generated
  */
+@ProviderType
 public enum FirmwareStatus implements Enumerator {
 	/**
 	 * The '<em><b>Downloaded</b></em>' literal object.

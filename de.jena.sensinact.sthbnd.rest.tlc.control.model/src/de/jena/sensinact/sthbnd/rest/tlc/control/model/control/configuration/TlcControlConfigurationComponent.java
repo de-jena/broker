@@ -54,7 +54,7 @@ public class TlcControlConfigurationComponent {
 	 */
 	@Activate
 	public void activate(BundleContext ctx) {
-		TlcControlPackage ePackage = TlcControlPackageImpl.init();
+		TlcControlPackage ePackage = TlcControlPackageImpl.eINSTANCE;
 		
 		TlcControlEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
@@ -82,7 +82,7 @@ public class TlcControlConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEPackageService(TlcControlPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEPackageService(TlcControlPackage ePackage, TlcControlEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TlcControlPackage.class.getName(), EPackage.class.getName()};
@@ -94,14 +94,14 @@ public class TlcControlConfigurationComponent {
 	 *
 	 * @generated
 	 */
-	private void registerEFactoryService(TlcControlPackage ePackage, EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerEFactoryService(TlcControlPackage ePackage, TlcControlEPackageConfigurator packageConfigurator, BundleContext ctx){
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
 		String[] serviceClasses = new String[] {TlcControlFactory.class.getName(), EFactory.class.getName()};
 		eFactoryRegistration = ctx.registerService(serviceClasses, ePackage.getTlcControlFactory(), properties);
 	}
 
-	private void registerConditionService(EPackageConfigurator packageConfigurator, BundleContext ctx){
+	private void registerConditionService(TlcControlEPackageConfigurator packageConfigurator, BundleContext ctx){
 		// register the EPackage
 		Hashtable<String, Object> properties = new Hashtable<String, Object>();
 		properties.putAll(packageConfigurator.getServiceProperties());
@@ -110,7 +110,7 @@ public class TlcControlConfigurationComponent {
 	}
 
 	/**
-	 * Deactivates and unregisteres everything.
+	 * Deactivates and unregisters everything.
 	 *
 	 * @generated
 	 */

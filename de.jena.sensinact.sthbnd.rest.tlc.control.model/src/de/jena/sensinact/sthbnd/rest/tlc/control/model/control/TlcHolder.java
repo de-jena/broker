@@ -1,10 +1,12 @@
-/**
+/*
  */
 package de.jena.sensinact.sthbnd.rest.tlc.control.model.control;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
+@ProviderType
 public interface TlcHolder extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.

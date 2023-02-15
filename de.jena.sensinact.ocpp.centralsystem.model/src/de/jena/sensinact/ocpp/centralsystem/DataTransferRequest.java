@@ -1,8 +1,10 @@
-/**
+/*
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.osgi.annotation.versioning.ProviderType;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model extendedMetaData="name='DataTransferRequest' kind='elementOnly'"
  * @generated
  */
+@ProviderType
 public interface DataTransferRequest extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Vendor Id</b></em>' attribute.
