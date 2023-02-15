@@ -44,7 +44,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://example.de/example/1.0";
+	String eNS_URI = "http://datainmotion.de/trafficos/trafficlight/1.0";
 
 	/**
 	 * The package namespace name.
@@ -73,13 +73,22 @@ public interface TOSTrafficLightPackage extends EPackage {
 	int TL_MODULE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_MODULE__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TL_MODULE__ADDRESS = 0;
+	int TL_MODULE__ADDRESS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -88,7 +97,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TL_MODULE__TYPE = 1;
+	int TL_MODULE__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Signal Transmitter</b></em>' containment reference list.
@@ -97,7 +106,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TL_MODULE__SIGNAL_TRANSMITTER = 2;
+	int TL_MODULE__SIGNAL_TRANSMITTER = 3;
 
 	/**
 	 * The number of structural features of the '<em>TL Module</em>' class.
@@ -106,7 +115,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TL_MODULE_FEATURE_COUNT = 3;
+	int TL_MODULE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>TL Module</em>' class.
@@ -182,7 +191,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	int TL_SIGNAL_TRANSMITTER__DEFAULT_VALUE = TOSCommonPackage.OUTPUT__DEFAULT_VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Signal Group</b></em>' reference.
+	 * The feature id for the '<em><b>Signal Group</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -341,6 +350,17 @@ public interface TOSTrafficLightPackage extends EPackage {
 	EClass getTLModule();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getId()
+	 * @see #getTLModule()
+	 * @generated
+	 */
+	EAttribute getTLModule_Id();
+
+	/**
 	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getAddress <em>Address</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -384,10 +404,10 @@ public interface TOSTrafficLightPackage extends EPackage {
 	EClass getTLSignalTransmitter();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter#getSignalGroup <em>Signal Group</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter#getSignalGroup <em>Signal Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Signal Group</em>'.
+	 * @return the meta object for the containment reference '<em>Signal Group</em>'.
 	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter#getSignalGroup()
 	 * @see #getTLSignalTransmitter()
 	 * @generated

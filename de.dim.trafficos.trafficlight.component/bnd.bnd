@@ -1,0 +1,9 @@
+-library: enable-emf
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.dim.trafficos.trafficlight.component
+-buildpath: \
+	de.dim.trafficos.apis;version=latest,\
+	de.dim.trafficos.trafficlight.model;version=latest,\
+	org.gecko.emf.repository.api,\
+	org.gecko.emf.mongo.api

@@ -17,6 +17,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getAddress <em>Address</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getType <em>Type</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getSignalTransmitter <em>Signal Transmitter</em>}</li>
@@ -28,6 +29,28 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 public interface TLModule extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getTLModule_Id()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModule#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Address</b></em>' attribute.
 	 * <!-- begin-user-doc -->

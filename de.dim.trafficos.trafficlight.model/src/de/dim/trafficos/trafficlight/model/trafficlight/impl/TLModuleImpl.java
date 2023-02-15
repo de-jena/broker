@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLModuleImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLModuleImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLModuleImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLModuleImpl#getSignalTransmitter <em>Signal Transmitter</em>}</li>
@@ -39,6 +40,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModule {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -106,6 +127,29 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 	@Override
 	protected EClass eStaticClass() {
 		return TOSTrafficLightPackage.eINSTANCE.getTLModule();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.TL_MODULE__ID, oldId, id));
 	}
 
 	/**
@@ -189,6 +233,8 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case TOSTrafficLightPackage.TL_MODULE__ID:
+				return getId();
 			case TOSTrafficLightPackage.TL_MODULE__ADDRESS:
 				return getAddress();
 			case TOSTrafficLightPackage.TL_MODULE__TYPE:
@@ -208,6 +254,9 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TOSTrafficLightPackage.TL_MODULE__ID:
+				setId((String)newValue);
+				return;
 			case TOSTrafficLightPackage.TL_MODULE__ADDRESS:
 				setAddress((Integer)newValue);
 				return;
@@ -230,6 +279,9 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TOSTrafficLightPackage.TL_MODULE__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case TOSTrafficLightPackage.TL_MODULE__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
@@ -251,6 +303,8 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case TOSTrafficLightPackage.TL_MODULE__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case TOSTrafficLightPackage.TL_MODULE__ADDRESS:
 				return address != ADDRESS_EDEFAULT;
 			case TOSTrafficLightPackage.TL_MODULE__TYPE:
@@ -271,7 +325,9 @@ public class TLModuleImpl extends MinimalEObjectImpl.Container implements TLModu
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (address: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", address: ");
 		result.append(address);
 		result.append(", type: ");
 		result.append(type);

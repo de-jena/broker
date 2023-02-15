@@ -73,13 +73,22 @@ public interface TOSIntersectionPackage extends EPackage {
 	int INTERSECTION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERSECTION__ID = 0;
+
+	/**
 	 * The feature id for the '<em><b>Road</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__ROAD = 0;
+	int INTERSECTION__ROAD = 1;
 
 	/**
 	 * The feature id for the '<em><b>Link</b></em>' containment reference list.
@@ -88,7 +97,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__LINK = 1;
+	int INTERSECTION__LINK = 2;
 
 	/**
 	 * The feature id for the '<em><b>Phase</b></em>' containment reference list.
@@ -97,7 +106,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__PHASE = 2;
+	int INTERSECTION__PHASE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Phase Group</b></em>' containment reference list.
@@ -106,7 +115,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__PHASE_GROUP = 3;
+	int INTERSECTION__PHASE_GROUP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Time Table</b></em>' containment reference.
@@ -115,7 +124,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__TIME_TABLE = 4;
+	int INTERSECTION__TIME_TABLE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Output</b></em>' containment reference list.
@@ -124,7 +133,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__OUTPUT = 5;
+	int INTERSECTION__OUTPUT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Program</b></em>' containment reference list.
@@ -133,7 +142,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__PROGRAM = 6;
+	int INTERSECTION__PROGRAM = 7;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' containment reference list.
@@ -142,7 +151,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__PARAMETER = 7;
+	int INTERSECTION__PARAMETER = 8;
 
 	/**
 	 * The feature id for the '<em><b>State</b></em>' attribute.
@@ -151,7 +160,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__STATE = 8;
+	int INTERSECTION__STATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -160,7 +169,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__NAME = 9;
+	int INTERSECTION__NAME = 10;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -169,7 +178,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION__DESCRIPTION = 10;
+	int INTERSECTION__DESCRIPTION = 11;
 
 	/**
 	 * The number of structural features of the '<em>Intersection</em>' class.
@@ -178,7 +187,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION_FEATURE_COUNT = 11;
+	int INTERSECTION_FEATURE_COUNT = 12;
 
 	/**
 	 * The number of operations of the '<em>Intersection</em>' class.
@@ -218,13 +227,22 @@ public interface TOSIntersectionPackage extends EPackage {
 	int ROAD__MAIN_ROAD = 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROAD__TYPE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Incoming Lane</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__INCOMING_LANE = 2;
+	int ROAD__INCOMING_LANE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lane</b></em>' containment reference list.
@@ -233,7 +251,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__OUTGOING_LANE = 3;
+	int ROAD__OUTGOING_LANE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Pedestrian Lane</b></em>' containment reference list.
@@ -242,7 +260,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__PEDESTRIAN_LANE = 4;
+	int ROAD__PEDESTRIAN_LANE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Cycle Lane</b></em>' containment reference list.
@@ -251,7 +269,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__CYCLE_LANE = 5;
+	int ROAD__CYCLE_LANE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Public Transport Lane</b></em>' containment reference list.
@@ -260,7 +278,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__PUBLIC_TRANSPORT_LANE = 6;
+	int ROAD__PUBLIC_TRANSPORT_LANE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Traffic Light Module</b></em>' reference list.
@@ -269,7 +287,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD__TRAFFIC_LIGHT_MODULE = 7;
+	int ROAD__TRAFFIC_LIGHT_MODULE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Road</em>' class.
@@ -278,7 +296,7 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD_FEATURE_COUNT = 8;
+	int ROAD_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Road</em>' class.
@@ -2021,6 +2039,16 @@ public interface TOSIntersectionPackage extends EPackage {
 	 */
 	int CLEAR_AREA_TYPE = 23;
 
+	/**
+	 * The meta object id for the '{@link de.dim.trafficos.intersection.model.intersection.RoadType <em>Road Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.intersection.model.intersection.RoadType
+	 * @see de.dim.trafficos.intersection.model.intersection.impl.TOSIntersectionPackageImpl#getRoadType()
+	 * @generated
+	 */
+	int ROAD_TYPE = 24;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.dim.trafficos.intersection.model.intersection.Intersection <em>Intersection</em>}'.
@@ -2031,6 +2059,17 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIntersection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.intersection.model.intersection.Intersection#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.dim.trafficos.intersection.model.intersection.Intersection#getId()
+	 * @see #getIntersection()
+	 * @generated
+	 */
+	EAttribute getIntersection_Id();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.dim.trafficos.intersection.model.intersection.Intersection#getRoad <em>Road</em>}'.
@@ -2184,6 +2223,17 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoad_MainRoad();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.intersection.model.intersection.Road#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see de.dim.trafficos.intersection.model.intersection.Road#getType()
+	 * @see #getRoad()
+	 * @generated
+	 */
+	EAttribute getRoad_Type();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link de.dim.trafficos.intersection.model.intersection.Road#getIncomingLane <em>Incoming Lane</em>}'.
@@ -2932,6 +2982,16 @@ public interface TOSIntersectionPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getClearAreaType();
+
+	/**
+	 * Returns the meta object for enum '{@link de.dim.trafficos.intersection.model.intersection.RoadType <em>Road Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Road Type</em>'.
+	 * @see de.dim.trafficos.intersection.model.intersection.RoadType
+	 * @generated
+	 */
+	EEnum getRoadType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.

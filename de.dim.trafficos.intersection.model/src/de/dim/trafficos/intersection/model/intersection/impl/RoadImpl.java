@@ -8,6 +8,7 @@ import de.dim.trafficos.intersection.model.intersection.OutgoingLane;
 import de.dim.trafficos.intersection.model.intersection.PedestrianLane;
 import de.dim.trafficos.intersection.model.intersection.PublicTransportLane;
 import de.dim.trafficos.intersection.model.intersection.Road;
+import de.dim.trafficos.intersection.model.intersection.RoadType;
 import de.dim.trafficos.intersection.model.intersection.TOSIntersectionPackage;
 
 import de.dim.trafficos.trafficlight.model.trafficlight.TLModule;
@@ -39,6 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#isMainRoad <em>Main Road</em>}</li>
+ *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#getIncomingLane <em>Incoming Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#getOutgoingLane <em>Outgoing Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.RoadImpl#getPedestrianLane <em>Pedestrian Lane</em>}</li>
@@ -89,6 +91,26 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	 * @ordered
 	 */
 	protected boolean mainRoad = MAIN_ROAD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RoadType TYPE_EDEFAULT = RoadType.MAIN_STRAIGHT;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoadType type = TYPE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getIncomingLane() <em>Incoming Lane</em>}' containment reference list.
@@ -221,6 +243,29 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 	 * @generated
 	 */
 	@Override
+	public RoadType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setType(RoadType newType) {
+		RoadType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSIntersectionPackage.ROAD__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<IncomingLane> getIncomingLane() {
 		if (incomingLane == null) {
 			incomingLane = new EObjectContainmentEList<IncomingLane>(IncomingLane.class, this, TOSIntersectionPackage.ROAD__INCOMING_LANE);
@@ -327,6 +372,8 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				return getId();
 			case TOSIntersectionPackage.ROAD__MAIN_ROAD:
 				return isMainRoad();
+			case TOSIntersectionPackage.ROAD__TYPE:
+				return getType();
 			case TOSIntersectionPackage.ROAD__INCOMING_LANE:
 				return getIncomingLane();
 			case TOSIntersectionPackage.ROAD__OUTGOING_LANE:
@@ -357,6 +404,9 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				return;
 			case TOSIntersectionPackage.ROAD__MAIN_ROAD:
 				setMainRoad((Boolean)newValue);
+				return;
+			case TOSIntersectionPackage.ROAD__TYPE:
+				setType((RoadType)newValue);
 				return;
 			case TOSIntersectionPackage.ROAD__INCOMING_LANE:
 				getIncomingLane().clear();
@@ -400,6 +450,9 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 			case TOSIntersectionPackage.ROAD__MAIN_ROAD:
 				setMainRoad(MAIN_ROAD_EDEFAULT);
 				return;
+			case TOSIntersectionPackage.ROAD__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
 			case TOSIntersectionPackage.ROAD__INCOMING_LANE:
 				getIncomingLane().clear();
 				return;
@@ -434,6 +487,8 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case TOSIntersectionPackage.ROAD__MAIN_ROAD:
 				return mainRoad != MAIN_ROAD_EDEFAULT;
+			case TOSIntersectionPackage.ROAD__TYPE:
+				return type != TYPE_EDEFAULT;
 			case TOSIntersectionPackage.ROAD__INCOMING_LANE:
 				return incomingLane != null && !incomingLane.isEmpty();
 			case TOSIntersectionPackage.ROAD__OUTGOING_LANE:
@@ -464,6 +519,8 @@ public class RoadImpl extends MinimalEObjectImpl.Container implements Road {
 		result.append(id);
 		result.append(", mainRoad: ");
 		result.append(mainRoad);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

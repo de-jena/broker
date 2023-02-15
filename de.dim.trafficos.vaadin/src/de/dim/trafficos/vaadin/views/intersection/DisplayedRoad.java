@@ -11,6 +11,8 @@
  */
 package de.dim.trafficos.vaadin.views.intersection;
 
+import de.dim.trafficos.intersection.model.intersection.RoadType;
+
 /**
  * 
  * @author ilenia
@@ -19,9 +21,9 @@ package de.dim.trafficos.vaadin.views.intersection;
 class DisplayedRoad implements Comparable<DisplayedRoad>{
 	
 	private Integer index;
-	private String type;
+	private RoadType type;
 	
-	DisplayedRoad(Integer index, String type) {
+	DisplayedRoad(Integer index, RoadType type) {
 		this.index = index;
 		this.type = type;
 	}
@@ -34,7 +36,7 @@ class DisplayedRoad implements Comparable<DisplayedRoad>{
 		this.index = index;
 	}
 	
-	String getType() {
+	RoadType getType() {
 		return type;
 	}
 

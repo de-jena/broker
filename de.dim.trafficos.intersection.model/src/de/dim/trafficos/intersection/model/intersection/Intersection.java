@@ -20,6 +20,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link de.dim.trafficos.intersection.model.intersection.Intersection#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Intersection#getRoad <em>Road</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Intersection#getLink <em>Link</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Intersection#getPhase <em>Phase</em>}</li>
@@ -39,6 +40,28 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 public interface Intersection extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id</em>' attribute.
+	 * @see #setId(String)
+	 * @see de.dim.trafficos.intersection.model.intersection.TOSIntersectionPackage#getIntersection_Id()
+	 * @model id="true" required="true"
+	 * @generated
+	 */
+	String getId();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.intersection.model.intersection.Intersection#getId <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id</em>' attribute.
+	 * @see #getId()
+	 * @generated
+	 */
+	void setId(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Road</b></em>' containment reference list.
 	 * The list contents are of type {@link de.dim.trafficos.intersection.model.intersection.Road}.

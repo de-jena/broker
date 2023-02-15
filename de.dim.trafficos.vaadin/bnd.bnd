@@ -24,10 +24,11 @@
 	de.dim.trafficos.trafficlight.model;version=latest,\
 	com.vaadin.flow.component.grid,\
 	com.vaadin.flow.component.combobox,\
-	de.dim.trafficos.simulator.api,\
 	org.gecko.vaadin.whiteboard,\
 	org.apache.felix.framework;version='7.0',\
-	com.vaadin.flow.component.dialog
+	com.vaadin.flow.component.dialog,\
+	de.dim.trafficos.intersectionsystem.model;version=latest,\
+	de.dim.trafficos.apis;version=latest
 
 Bundle-Version: 1.0.0.SNAPSHOT
 
@@ -42,4 +43,5 @@ Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 Export-Package: \
 	de.dim.trafficos.vaadin.views.intersection,\
 	de.dim.trafficos.vaadin,\
-	de.dim.trafficos.vaadin.views.main
+	de.dim.trafficos.vaadin.views.main,\
+	de.dim.trafficos.vaadin.helper

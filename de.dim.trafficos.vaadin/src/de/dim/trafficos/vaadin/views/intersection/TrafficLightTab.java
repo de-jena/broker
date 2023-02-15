@@ -11,7 +11,6 @@
  */
 package de.dim.trafficos.vaadin.views.intersection;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,43 +29,59 @@ import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 
+import de.dim.trafficos.common.model.common.Position;
+import de.dim.trafficos.common.model.common.TOSCommonPackage;
 import de.dim.trafficos.trafficlight.model.trafficlight.LightSignal;
 import de.dim.trafficos.trafficlight.model.trafficlight.SignalValueType;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLModule;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLModuleType;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter;
 import de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage;
+import de.dim.trafficos.vaadin.helper.GeneralTab;
+import de.dim.trafficos.vaadin.helper.MapComponent;
 
 /**
  * 
  * @author ilenia
  * @since Feb 7, 2023
  */
-public class TrafficLightTab extends VerticalLayout {
+public class TrafficLightTab extends GeneralTab<TLModule> {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = -6803804657172881530L;
 	private static final List<String> TL_MODULE_OPTIONS = List.of(TLModuleType.FDL.toString(), TLModuleType.LML.toString());
 	
 	private Grid<TLModule> moduleGrid;
-	private List<TLModule> moduleList = new ArrayList<>();
 	private TOSTrafficLightPackage tlPackage;
+	private TOSCommonPackage commonPackage;
+	private ComboBox<String> addModuleComboBox;
+	private Button addModuleBtn;
 	
-	public TrafficLightTab(TOSTrafficLightPackage tlPackage) {
+	public TrafficLightTab(TOSTrafficLightPackage tlPackage, TOSCommonPackage commonPackage) {
 		this.tlPackage = tlPackage;
+		this.commonPackage = commonPackage;
+		fillLayout();
+	}
+	
+	/* 
+	 * (non-Javadoc)
+	 * @see de.dim.trafficos.vaadin.views.intersection.GeneralTab#fillLayout()
+	 */
+	@Override
+	protected void fillLayout() {
 		setSizeFull();
-		
 		HorizontalLayout addModuleLayout = new HorizontalLayout();
-		ComboBox<String> addModuleComboBox = new ComboBox<String>();
+		addModuleComboBox = new ComboBox<String>();
 		addModuleComboBox.setItems(TL_MODULE_OPTIONS);
 		addModuleComboBox.setHelperText("Select Module Type");
-		Button addModuleBtn = new Button("Add Module", evt -> {
+		addModuleBtn = new Button("Add Module", evt -> {
 			TLModule module = tlPackage.getTOSTrafficLightFactory().createTLModule();
 			module.setType(TLModuleType.valueOf(addModuleComboBox.getValue()));
-			moduleList.add(module);
-			moduleList.sort((m1, m2) -> Integer.valueOf(m1.getAddress()).compareTo(Integer.valueOf(m2.getAddress())));
-			moduleGrid.setItems(moduleList);
+			result.add(module);
+			result.sort((m1, m2) -> Integer.valueOf(m1.getAddress()).compareTo(Integer.valueOf(m2.getAddress())));
+			moduleGrid.setItems(result);
 			moduleGrid.setVisible(true);
+			submitBtn.setEnabled(true);
 		});
 		addModuleBtn.setEnabled(false);
 		addModuleComboBox.addValueChangeListener(evt -> {
@@ -77,6 +92,19 @@ public class TrafficLightTab extends VerticalLayout {
 		add(addModuleLayout);
 		
 		createModuleGrid();
+		createBtnLayout();		
+	}
+
+	/* 
+	 * (non-Javadoc)
+	 * @see de.dim.trafficos.vaadin.views.intersection.GeneralTab#clearTab()
+	 */
+	@Override
+	public void clearTab() {
+		result.clear();		
+		moduleGrid.setItems(result);
+		moduleGrid.setVisible(false);
+		addModuleComboBox.setValue(null);
 	}
 	
 	private void createModuleGrid() {
@@ -113,13 +141,13 @@ public class TrafficLightTab extends VerticalLayout {
 	}
 
 	private void removeModule(TLModule module) {
-		if(moduleList.remove(module)) {
-			if(moduleList.isEmpty()) {
+		if(result.remove(module)) {
+			result.sort((m1, m2) -> Integer.valueOf(m1.getAddress()).compareTo(Integer.valueOf(m2.getAddress())));
+			moduleGrid.setItems(result);
+			if(result.isEmpty()) {
 				moduleGrid.setVisible(false);
-			} else {
-				moduleList.sort((m1, m2) -> Integer.valueOf(m1.getAddress()).compareTo(Integer.valueOf(m2.getAddress())));
-			}
-			moduleGrid.setItems(moduleList);
+				submitBtn.setEnabled(false);
+			} 		
 		}
 	}
 	
@@ -141,12 +169,19 @@ public class TrafficLightTab extends VerticalLayout {
         signalGroupField.addValueChangeListener(evt -> transmitter.getSignalGroup().setId(evt.getValue()));
         namesLayout.add(nameField, signalGroupField);
         
-//        TODO: we need the common package to be able to add a Position to the transmitter
+        Position position = commonPackage.getTOSCommonFactory().createPosition();
+        transmitter.getLocation().add(position);
         HorizontalLayout geoLayout = new HorizontalLayout();
+        geoLayout.setAlignItems(Alignment.BASELINE);
         NumberField latField = new NumberField("Latitude");
+        latField.addValueChangeListener(evt -> position.setLatitude(evt.getValue()));
         NumberField lngField = new NumberField("Longitude");
+        lngField.addValueChangeListener(evt -> position.setLongitude(evt.getValue()));
         NumberField altField = new NumberField("Altitude");
-        geoLayout.add(latField, lngField, altField);
+        Button geoPickerBtn = new Button(new Icon(VaadinIcon.LOCATION_ARROW_CIRCLE_O), evt -> {
+        	createMapDialog(latField, lngField).open();
+        });
+        geoLayout.add(latField, lngField, altField, geoPickerBtn);
         
         TLLightSignalGrid lightSignalGrid = new TLLightSignalGrid(transmitter);
 
@@ -176,6 +211,25 @@ public class TrafficLightTab extends VerticalLayout {
 		dialog.getFooter().add(saveButton);
 
         return dialog;
+    }
+    
+    private Dialog createMapDialog(NumberField latField, NumberField lngField) {
+    	
+    	Dialog dialog = new Dialog();
+    	dialog.setWidth("70%");
+    	dialog.setHeight("70%");
+    	dialog.setHeaderTitle("Geo Picker");
+    	MapComponent mapComponent = new MapComponent();
+    	dialog.add(mapComponent);
+    	Button saveButton = new Button("Save", e -> {
+        	latField.setValue(mapComponent.getLatitude());
+        	lngField.setValue(mapComponent.getLongitude());
+        	dialog.close();
+        });
+		Button cancelButton = new Button("Cancel", e -> dialog.close());
+		dialog.getFooter().add(cancelButton);
+		dialog.getFooter().add(saveButton);
+    	return dialog;
     }
     
     private Dialog createLightSignalDialog(TLSignalTransmitter transmitter) {
@@ -211,6 +265,4 @@ public class TrafficLightTab extends VerticalLayout {
 		dialog.getFooter().add(saveButton);
         return dialog;
     }
-
-   
 }

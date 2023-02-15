@@ -21,6 +21,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * <ul>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#isMainRoad <em>Main Road</em>}</li>
+ *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#getType <em>Type</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#getIncomingLane <em>Incoming Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#getOutgoingLane <em>Outgoing Lane</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.Road#getPedestrianLane <em>Pedestrian Lane</em>}</li>
@@ -78,6 +79,31 @@ public interface Road extends EObject {
 	 * @generated
 	 */
 	void setMainRoad(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link de.dim.trafficos.intersection.model.intersection.RoadType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see de.dim.trafficos.intersection.model.intersection.RoadType
+	 * @see #setType(RoadType)
+	 * @see de.dim.trafficos.intersection.model.intersection.TOSIntersectionPackage#getRoad_Type()
+	 * @model
+	 * @generated
+	 */
+	RoadType getType();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.intersection.model.intersection.Road#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see de.dim.trafficos.intersection.model.intersection.RoadType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(RoadType value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Lane</b></em>' containment reference list.

@@ -3,6 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intersection" nsURI="http://datainmotion.de/trafficos/intersection/1.0"
     nsPrefix="intersection">
   <eClassifiers xsi:type="ecore:EClass" name="Intersection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="road" lowerBound="1" upperBound="-1"
         eType="#//Road" containment="true" eKeys="#//Road/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
@@ -30,6 +32,7 @@
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainRoad" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RoadType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLane" upperBound="-1"
         eType="#//IncomingLane" containment="true" eKeys="#//Lane/id"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLane" upperBound="-1"
@@ -167,5 +170,92 @@
     <eLiterals name="ClearPedestrian"/>
     <eLiterals name="ClearMain" value="1"/>
     <eLiterals name="ClearSecondary" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoadType">
+    <eLiterals name="MAIN_STRAIGHT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. There is just one lane and it is for going straight. No other direction is possible."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_RIGHT_SEP" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_RIGHT_MERGE" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_LEFT_SEP" value="3" literal="MAIN_STRAIGHT_LEFT_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn left, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_LEFT_MERGE" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn left, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_LEFT_RIGHT_SEP" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_LEFT_RIGHT_MERGE" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_TURNS_SEP" value="7" literal="MAIN_STRAIGHT_TURNS_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_TURNS_MERGE" value="8">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go straight or turn either right or left and there is just a common lane for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_RIGHT_SEP" value="9">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_RIGHT_MERGE" value="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn right, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_LEFT_SEP" value="11" literal="SEC_STRAIGHT_LEFT_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn left, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_LEFT_MERGE" value="12">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn left, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_LEFT_RIGHT_SEP" value="13">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_LEFT_RIGHT_MERGE" value="14">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_TURNS_SEP" value="15" literal="SEC_STRAIGHT_TURNS_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_TURNS_MERGE" value="16">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go straight or turn either right or left and there is just a common lane for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
 </ecore:EPackage>

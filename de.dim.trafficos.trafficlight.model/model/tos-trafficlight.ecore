@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="trafficlight" nsURI="http://example.de/example/1.0" nsPrefix="trafficlight">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="trafficlight" nsURI="http://datainmotion.de/trafficos/trafficlight/1.0"
+    nsPrefix="trafficlight">
   <eClassifiers xsi:type="ecore:EClass" name="TLModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TLModuleType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="signalTransmitter" upperBound="-1"
         eType="#//TLSignalTransmitter" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TLSignalTransmitter" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="#//TLSignalGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="#//TLSignalGroup"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="lightSignal" upperBound="-1"
         eType="#//LightSignal" containment="true"/>
   </eClassifiers>

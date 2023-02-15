@@ -44,7 +44,6 @@ com.vaadin:vaadin-lumo-theme:23.3.0
 com.vaadin:vaadin-material-theme:23.3.0
 com.vaadin:vaadin-flow-components-base:23.3.0
 com.vaadin:vaadin-renderer-flow:23.3.0
-org.vaadin.addons:wizards-for-vaadin:2.0.1
 
 com.vaadin:flow-html-components:23.3.0
 com.vaadin:flow-server:23.3.0
@@ -59,6 +58,7 @@ com.vaadin:flow-plugin-base:23.3.0
 
 com.vaadin:license-checker:1.11.2
 com.vaadin:open:8.4.0.3
+
 
 # ASM
 org.ow2.asm:asm-commons:9.4

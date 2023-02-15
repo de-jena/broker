@@ -34,7 +34,7 @@ import com.vaadin.flow.component.tabs.TabsVariant;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 
-import de.dim.trafficos.vaadin.views.intersection.IntersectionCreationView;
+import de.dim.trafficos.vaadin.views.intersection.IntersectionSystemCreationView;
 
 /**
  * 
@@ -101,7 +101,7 @@ public class MainView extends AppLayout {
 
     private com.vaadin.flow.component.Component[] createMenuItems() {
         return new Tab[]{        		
-        		createTab("Intersection", IntersectionCreationView.class)
+        		createTab("Intersection System", IntersectionSystemCreationView.class)
         		};
     }
 

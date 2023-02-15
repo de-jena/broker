@@ -1,0 +1,11 @@
+-library: enable-emf
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.dim.trafficos.intersection.component
+-buildpath: \
+	de.dim.trafficos.apis;version=latest,\
+	de.dim.trafficos.intersection.model;version=latest,\
+	org.gecko.emf.repository.api,\
+	de.dim.trafficos.common.model,\
+	org.gecko.emf.mongo.api
+-privatepackage: de.dim.trafficos.intersection.component.helper

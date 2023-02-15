@@ -20,6 +20,7 @@
       <genEnumLiterals ecoreEnumLiteral="tos-trafficlight.ecore#//SignalValueType/ORIENTATION_SOUND"/>
     </genEnums>
     <genClasses ecoreClass="tos-trafficlight.ecore#//TLModule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLModule/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLModule/address"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLModule/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-trafficlight.ecore#//TLModule/signalTransmitter"/>

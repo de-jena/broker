@@ -23,6 +23,7 @@ import de.dim.trafficos.intersection.model.intersection.ProgramEntry;
 import de.dim.trafficos.intersection.model.intersection.ProgramTransition;
 import de.dim.trafficos.intersection.model.intersection.PublicTransportLane;
 import de.dim.trafficos.intersection.model.intersection.Road;
+import de.dim.trafficos.intersection.model.intersection.RoadType;
 import de.dim.trafficos.intersection.model.intersection.SignalTable;
 import de.dim.trafficos.intersection.model.intersection.TOSIntersectionFactory;
 import de.dim.trafficos.intersection.model.intersection.TOSIntersectionPackage;
@@ -217,6 +218,13 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	private EEnum clearAreaTypeEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roadTypeEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -297,8 +305,8 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Road() {
-		return (EReference)intersectionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getIntersection_Id() {
+		return (EAttribute)intersectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -307,7 +315,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Link() {
+	public EReference getIntersection_Road() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -317,7 +325,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Phase() {
+	public EReference getIntersection_Link() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -327,7 +335,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_PhaseGroup() {
+	public EReference getIntersection_Phase() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -337,7 +345,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_TimeTable() {
+	public EReference getIntersection_PhaseGroup() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -347,7 +355,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Output() {
+	public EReference getIntersection_TimeTable() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -357,7 +365,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Program() {
+	public EReference getIntersection_Output() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -367,7 +375,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getIntersection_Parameter() {
+	public EReference getIntersection_Program() {
 		return (EReference)intersectionEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -377,8 +385,8 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIntersection_State() {
-		return (EAttribute)intersectionEClass.getEStructuralFeatures().get(8);
+	public EReference getIntersection_Parameter() {
+		return (EReference)intersectionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -387,7 +395,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIntersection_Name() {
+	public EAttribute getIntersection_State() {
 		return (EAttribute)intersectionEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -397,8 +405,18 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIntersection_Description() {
+	public EAttribute getIntersection_Name() {
 		return (EAttribute)intersectionEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIntersection_Description() {
+		return (EAttribute)intersectionEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -437,8 +455,8 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_IncomingLane() {
-		return (EReference)roadEClass.getEStructuralFeatures().get(2);
+	public EAttribute getRoad_Type() {
+		return (EAttribute)roadEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -447,7 +465,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_OutgoingLane() {
+	public EReference getRoad_IncomingLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -457,7 +475,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_PedestrianLane() {
+	public EReference getRoad_OutgoingLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -467,7 +485,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_CycleLane() {
+	public EReference getRoad_PedestrianLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -477,7 +495,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_PublicTransportLane() {
+	public EReference getRoad_CycleLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -487,8 +505,18 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
-	public EReference getRoad_TrafficLightModule() {
+	public EReference getRoad_PublicTransportLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRoad_TrafficLightModule() {
+		return (EReference)roadEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -1137,6 +1165,16 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 	 * @generated
 	 */
 	@Override
+	public EEnum getRoadType() {
+		return roadTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TOSIntersectionFactory getTOSIntersectionFactory() {
 		return (TOSIntersectionFactory)getEFactoryInstance();
 	}
@@ -1161,6 +1199,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 
 		// Create classes and their features
 		intersectionEClass = createEClass(INTERSECTION);
+		createEAttribute(intersectionEClass, INTERSECTION__ID);
 		createEReference(intersectionEClass, INTERSECTION__ROAD);
 		createEReference(intersectionEClass, INTERSECTION__LINK);
 		createEReference(intersectionEClass, INTERSECTION__PHASE);
@@ -1176,6 +1215,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		roadEClass = createEClass(ROAD);
 		createEAttribute(roadEClass, ROAD__ID);
 		createEAttribute(roadEClass, ROAD__MAIN_ROAD);
+		createEAttribute(roadEClass, ROAD__TYPE);
 		createEReference(roadEClass, ROAD__INCOMING_LANE);
 		createEReference(roadEClass, ROAD__OUTGOING_LANE);
 		createEReference(roadEClass, ROAD__PEDESTRIAN_LANE);
@@ -1267,6 +1307,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		timeTableModeTypeEEnum = createEEnum(TIME_TABLE_MODE_TYPE);
 		intersectionStateTypeEEnum = createEEnum(INTERSECTION_STATE_TYPE);
 		clearAreaTypeEEnum = createEEnum(CLEAR_AREA_TYPE);
+		roadTypeEEnum = createEEnum(ROAD_TYPE);
 	}
 
 	/**
@@ -1315,6 +1356,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(intersectionEClass, Intersection.class, "Intersection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIntersection_Id(), ecorePackage.getEString(), "id", null, 1, 1, Intersection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIntersection_Road(), this.getRoad(), null, "road", null, 1, -1, Intersection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getIntersection_Road().getEKeys().add(this.getRoad_Id());
 		initEReference(getIntersection_Link(), this.getLink(), null, "link", null, 0, -1, Intersection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1332,6 +1374,7 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		initEClass(roadEClass, Road.class, "Road", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoad_Id(), ecorePackage.getEString(), "id", null, 1, 1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRoad_MainRoad(), ecorePackage.getEBoolean(), "mainRoad", null, 1, 1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRoad_Type(), this.getRoadType(), "type", null, 0, 1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoad_IncomingLane(), this.getIncomingLane(), null, "incomingLane", null, 0, -1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRoad_IncomingLane().getEKeys().add(this.getLane_Id());
 		initEReference(getRoad_OutgoingLane(), this.getOutgoingLane(), null, "outgoingLane", null, 0, -1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1448,6 +1491,25 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		addEEnumLiteral(clearAreaTypeEEnum, ClearAreaType.CLEAR_MAIN);
 		addEEnumLiteral(clearAreaTypeEEnum, ClearAreaType.CLEAR_SECONDARY);
 
+		initEEnum(roadTypeEEnum, RoadType.class, "RoadType");
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_RIGHT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_RIGHT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_LEFT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_LEFT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_LEFT_RIGHT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_LEFT_RIGHT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_TURNS_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.MAIN_STRAIGHT_TURNS_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_RIGHT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_RIGHT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_LEFT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_LEFT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_LEFT_RIGHT_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_LEFT_RIGHT_MERGE);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_TURNS_SEP);
+		addEEnumLiteral(roadTypeEEnum, RoadType.SEC_STRAIGHT_TURNS_MERGE);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -1475,6 +1537,108 @@ public class TOSIntersectionPackageImpl extends EPackageImpl implements TOSInter
 		   source,
 		   new String[] {
 			   "documentation", "This is a value which takes into account how many times the same lane is present in more than a Phase of the group. A penalty term of 0 means no lane is repeated more than once, a penalty term of 1 means a lane is present in two phases of the group, a penalty term of 2 means a lane is present in three phases or two lanes are present in two phases, etc."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(0),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. There is just one lane and it is for going straight. No other direction is possible."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(1),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go both straight and turn right, and there are separated lanes for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(2),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go both straight and turn right, and there is just one common lane for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(3),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go both straight and turn left, and there are separated lanes for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(4),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go both straight and turn left, and there is just one common lane for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(5),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(6),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(7),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(8),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go straight or turn either right or left and there is just a common lane for the three directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(9),
+		   source,
+		   new String[] {
+			   "documentation", "Main road. You can go both straight and turn right, and there are separated lanes for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(10),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can go both straight and turn right, and there is just one common lane for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(11),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can go both straight and turn left, and there are separated lanes for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(12),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can go both straight and turn left, and there is just one common lane for the two directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(13),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(14),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(15),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."
+		   });
+		addAnnotation
+		  (roadTypeEEnum.getELiterals().get(16),
+		   source,
+		   new String[] {
+			   "documentation", "Secondary road. You can go straight or turn either right or left and there is just a common lane for the three directions."
 		   });
 	}
 

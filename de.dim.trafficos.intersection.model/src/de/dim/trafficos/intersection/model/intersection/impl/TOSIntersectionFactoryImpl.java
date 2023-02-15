@@ -97,6 +97,8 @@ public class TOSIntersectionFactoryImpl extends EFactoryImpl implements TOSInter
 				return createIntersectionStateTypeFromString(eDataType, initialValue);
 			case TOSIntersectionPackage.CLEAR_AREA_TYPE:
 				return createClearAreaTypeFromString(eDataType, initialValue);
+			case TOSIntersectionPackage.ROAD_TYPE:
+				return createRoadTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -116,6 +118,8 @@ public class TOSIntersectionFactoryImpl extends EFactoryImpl implements TOSInter
 				return convertIntersectionStateTypeToString(eDataType, instanceValue);
 			case TOSIntersectionPackage.CLEAR_AREA_TYPE:
 				return convertClearAreaTypeToString(eDataType, instanceValue);
+			case TOSIntersectionPackage.ROAD_TYPE:
+				return convertRoadTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -409,6 +413,26 @@ public class TOSIntersectionFactoryImpl extends EFactoryImpl implements TOSInter
 	 * @generated
 	 */
 	public String convertClearAreaTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoadType createRoadTypeFromString(EDataType eDataType, String initialValue) {
+		RoadType result = RoadType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoadTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -150,7 +150,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTLModule_Address() {
+	public EAttribute getTLModule_Id() {
 		return (EAttribute)tlModuleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -160,7 +160,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTLModule_Type() {
+	public EAttribute getTLModule_Address() {
 		return (EAttribute)tlModuleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -170,8 +170,18 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTLModule_Type() {
+		return (EAttribute)tlModuleEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getTLModule_SignalTransmitter() {
-		return (EReference)tlModuleEClass.getEStructuralFeatures().get(2);
+		return (EReference)tlModuleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -314,6 +324,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 
 		// Create classes and their features
 		tlModuleEClass = createEClass(TL_MODULE);
+		createEAttribute(tlModuleEClass, TL_MODULE__ID);
 		createEAttribute(tlModuleEClass, TL_MODULE__ADDRESS);
 		createEAttribute(tlModuleEClass, TL_MODULE__TYPE);
 		createEReference(tlModuleEClass, TL_MODULE__SIGNAL_TRANSMITTER);
@@ -370,12 +381,13 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(tlModuleEClass, TLModule.class, "TLModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTLModule_Id(), ecorePackage.getEString(), "id", null, 1, 1, TLModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTLModule_Address(), ecorePackage.getEInt(), "address", null, 0, 1, TLModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTLModule_Type(), this.getTLModuleType(), "type", null, 0, 1, TLModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTLModule_SignalTransmitter(), this.getTLSignalTransmitter(), null, "signalTransmitter", null, 0, -1, TLModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tlSignalTransmitterEClass, TLSignalTransmitter.class, "TLSignalTransmitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTLSignalTransmitter_SignalGroup(), this.getTLSignalGroup(), null, "signalGroup", null, 0, 1, TLSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTLSignalTransmitter_SignalGroup(), this.getTLSignalGroup(), null, "signalGroup", null, 0, 1, TLSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTLSignalTransmitter_LightSignal(), this.getLightSignal(), null, "lightSignal", null, 0, -1, TLSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tlSignalGroupEClass, TLSignalGroup.class, "TLSignalGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

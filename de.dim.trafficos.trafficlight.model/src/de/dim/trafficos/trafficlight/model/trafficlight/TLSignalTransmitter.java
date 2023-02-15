@@ -28,22 +28,22 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 public interface TLSignalTransmitter extends Output {
 	/**
-	 * Returns the value of the '<em><b>Signal Group</b></em>' reference.
+	 * Returns the value of the '<em><b>Signal Group</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Signal Group</em>' reference.
+	 * @return the value of the '<em>Signal Group</em>' containment reference.
 	 * @see #setSignalGroup(TLSignalGroup)
 	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getTLSignalTransmitter_SignalGroup()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	TLSignalGroup getSignalGroup();
 
 	/**
-	 * Sets the value of the '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter#getSignalGroup <em>Signal Group</em>}' reference.
+	 * Sets the value of the '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter#getSignalGroup <em>Signal Group</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Signal Group</em>' reference.
+	 * @param value the new value of the '<em>Signal Group</em>' containment reference.
 	 * @see #getSignalGroup()
 	 * @generated
 	 */

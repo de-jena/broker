@@ -39,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.IntersectionImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.IntersectionImpl#getRoad <em>Road</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.IntersectionImpl#getLink <em>Link</em>}</li>
  *   <li>{@link de.dim.trafficos.intersection.model.intersection.impl.IntersectionImpl#getPhase <em>Phase</em>}</li>
@@ -55,6 +56,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class IntersectionImpl extends MinimalEObjectImpl.Container implements Intersection {
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getRoad() <em>Road</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -212,6 +233,29 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 	@Override
 	protected EClass eStaticClass() {
 		return TOSIntersectionPackage.eINSTANCE.getIntersection();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSIntersectionPackage.INTERSECTION__ID, oldId, id));
 	}
 
 	/**
@@ -455,6 +499,8 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case TOSIntersectionPackage.INTERSECTION__ID:
+				return getId();
 			case TOSIntersectionPackage.INTERSECTION__ROAD:
 				return getRoad();
 			case TOSIntersectionPackage.INTERSECTION__LINK:
@@ -490,6 +536,9 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TOSIntersectionPackage.INTERSECTION__ID:
+				setId((String)newValue);
+				return;
 			case TOSIntersectionPackage.INTERSECTION__ROAD:
 				getRoad().clear();
 				getRoad().addAll((Collection<? extends Road>)newValue);
@@ -542,6 +591,9 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TOSIntersectionPackage.INTERSECTION__ID:
+				setId(ID_EDEFAULT);
+				return;
 			case TOSIntersectionPackage.INTERSECTION__ROAD:
 				getRoad().clear();
 				return;
@@ -587,6 +639,8 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case TOSIntersectionPackage.INTERSECTION__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case TOSIntersectionPackage.INTERSECTION__ROAD:
 				return road != null && !road.isEmpty();
 			case TOSIntersectionPackage.INTERSECTION__LINK:
@@ -623,7 +677,9 @@ public class IntersectionImpl extends MinimalEObjectImpl.Container implements In
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (state: ");
+		result.append(" (id: ");
+		result.append(id);
+		result.append(", state: ");
 		result.append(state);
 		result.append(", name: ");
 		result.append(name);

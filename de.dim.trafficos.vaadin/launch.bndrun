@@ -36,6 +36,8 @@
 	com.vaadin.external.gentyref;version='[1.2.0,1.2.1)',\
 	com.vaadin.external.gwt;version='[2.8.2,2.8.3)',\
 	com.vaadin.flow.client;version='[23.3.0,23.3.1)',\
+	com.vaadin.flow.push;version='[23.3.0,23.3.1)',\
+	com.vaadin.flow.server;version='[23.3.0,23.3.1)',\
 	org.apache.felix.http.servlet-api;version='[1.2.0,1.2.1)',\
 	org.apache.felix.http.whiteboard;version='[4.0.0,4.0.1)',\
 	org.apache.felix.scr;version='[2.2.4,2.2.5)',\
@@ -56,8 +58,6 @@
 	com.vaadin.flow.data;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.data.renderer;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.html.components;version='[23.3.0,23.3.1)',\
-	com.vaadin.flow.push;version='[23.3.0,23.3.1)',\
-	com.vaadin.flow.server;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.theme.lumo;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.theme.material;version='[23.3.0,23.3.1)',\
 	com.vaadin.license-checker;version='[1.11.2,1.11.3)',\
@@ -120,10 +120,16 @@
 	org.objectweb.asm.tree.analysis;version='[9.4.0,9.4.1)',\
 	org.objectweb.asm.util;version='[9.4.0,9.4.1)',\
 	slf4j.simple;version='[1.7.25,1.7.26)',\
-	org.gecko.emf.bson;version='[1.2.1,1.2.2)',\
 	org.gecko.emf.repository.mongo;version='[3.1.0,3.1.1)',\
 	org.gecko.emf.osgi.api;version='[4.5.0,4.5.1)',\
 	org.gecko.emf.osgi.component;version='[4.5.0,4.5.1)',\
 	com.vaadin.flow.component.dialog;version='[23.3.0,23.3.1)',\
 	de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model;version=snapshot,\
-	com.vaadin.flow.component.checkbox;version='[23.3.0,23.3.1)'
+	com.vaadin.flow.component.checkbox;version='[23.3.0,23.3.1)',\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.13.2,2.13.3)',\
+	com.vaadin.flow.component.notification;version='[23.3.0,23.3.1)',\
+	de.dim.trafficos.apis;version=snapshot,\
+	de.dim.trafficos.intersection.component;version=snapshot,\
+	de.dim.trafficos.intersectionsystem.component;version=snapshot,\
+	de.dim.trafficos.intersectionsystem.model;version=snapshot,\
+	de.dim.trafficos.trafficlight.component;version=snapshot

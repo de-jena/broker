@@ -40,7 +40,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTransmitter {
 	/**
-	 * The cached value of the '{@link #getSignalGroup() <em>Signal Group</em>}' reference.
+	 * The cached value of the '{@link #getSignalGroup() <em>Signal Group</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSignalGroup()
@@ -85,14 +85,6 @@ public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTrans
 	 */
 	@Override
 	public TLSignalGroup getSignalGroup() {
-		if (signalGroup != null && signalGroup.eIsProxy()) {
-			InternalEObject oldSignalGroup = (InternalEObject)signalGroup;
-			signalGroup = (TLSignalGroup)eResolveProxy(oldSignalGroup);
-			if (signalGroup != oldSignalGroup) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, oldSignalGroup, signalGroup));
-			}
-		}
 		return signalGroup;
 	}
 
@@ -101,8 +93,14 @@ public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTrans
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TLSignalGroup basicGetSignalGroup() {
-		return signalGroup;
+	public NotificationChain basicSetSignalGroup(TLSignalGroup newSignalGroup, NotificationChain msgs) {
+		TLSignalGroup oldSignalGroup = signalGroup;
+		signalGroup = newSignalGroup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, oldSignalGroup, newSignalGroup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -112,10 +110,17 @@ public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTrans
 	 */
 	@Override
 	public void setSignalGroup(TLSignalGroup newSignalGroup) {
-		TLSignalGroup oldSignalGroup = signalGroup;
-		signalGroup = newSignalGroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, oldSignalGroup, signalGroup));
+		if (newSignalGroup != signalGroup) {
+			NotificationChain msgs = null;
+			if (signalGroup != null)
+				msgs = ((InternalEObject)signalGroup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, null, msgs);
+			if (newSignalGroup != null)
+				msgs = ((InternalEObject)newSignalGroup).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, null, msgs);
+			msgs = basicSetSignalGroup(newSignalGroup, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP, newSignalGroup, newSignalGroup));
 	}
 
 	/**
@@ -139,6 +144,8 @@ public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTrans
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP:
+				return basicSetSignalGroup(null, msgs);
 			case TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__LIGHT_SIGNAL:
 				return ((InternalEList<?>)getLightSignal()).basicRemove(otherEnd, msgs);
 		}
@@ -154,8 +161,7 @@ public class TLSignalTransmitterImpl extends OutputImpl implements TLSignalTrans
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__SIGNAL_GROUP:
-				if (resolve) return getSignalGroup();
-				return basicGetSignalGroup();
+				return getSignalGroup();
 			case TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER__LIGHT_SIGNAL:
 				return getLightSignal();
 		}
