@@ -4,12 +4,14 @@ package de.dim.trafficos.trafficlight.model.trafficlight.impl;
 
 import de.dim.trafficos.common.model.common.TOSCommonPackage;
 
+import de.dim.trafficos.trafficlight.model.trafficlight.ChangedState;
 import de.dim.trafficos.trafficlight.model.trafficlight.LightSignal;
 import de.dim.trafficos.trafficlight.model.trafficlight.SignalValueType;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLModule;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLModuleType;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLSignalGroup;
 import de.dim.trafficos.trafficlight.model.trafficlight.TLSignalTransmitter;
+import de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate;
 import de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightFactory;
 import de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage;
 
@@ -55,6 +57,20 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	private EClass lightSignalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tlUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass changedStateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -280,6 +296,86 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
+	public EClass getTLUpdate() {
+		return tlUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTLUpdate_Address() {
+		return (EAttribute)tlUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTLUpdate_Timestamp() {
+		return (EAttribute)tlUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTLUpdate_ChangedStates() {
+		return (EReference)tlUpdateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getChangedState() {
+		return changedStateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getChangedState_Channel() {
+		return (EAttribute)changedStateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getChangedState_Color() {
+		return (EAttribute)changedStateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getChangedState_On() {
+		return (EAttribute)changedStateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getTLModuleType() {
 		return tlModuleTypeEEnum;
 	}
@@ -341,6 +437,16 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__VALUE);
 		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__ON);
 
+		tlUpdateEClass = createEClass(TL_UPDATE);
+		createEAttribute(tlUpdateEClass, TL_UPDATE__ADDRESS);
+		createEAttribute(tlUpdateEClass, TL_UPDATE__TIMESTAMP);
+		createEReference(tlUpdateEClass, TL_UPDATE__CHANGED_STATES);
+
+		changedStateEClass = createEClass(CHANGED_STATE);
+		createEAttribute(changedStateEClass, CHANGED_STATE__CHANNEL);
+		createEAttribute(changedStateEClass, CHANGED_STATE__COLOR);
+		createEAttribute(changedStateEClass, CHANGED_STATE__ON);
+
 		// Create enums
 		tlModuleTypeEEnum = createEEnum(TL_MODULE_TYPE);
 		signalValueTypeEEnum = createEEnum(SIGNAL_VALUE_TYPE);
@@ -397,6 +503,16 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		initEAttribute(getLightSignal_Bliking(), ecorePackage.getEBoolean(), "bliking", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLightSignal_Value(), this.getSignalValueType(), "value", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLightSignal_On(), ecorePackage.getEBoolean(), "on", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tlUpdateEClass, TLUpdate.class, "TLUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTLUpdate_Address(), ecorePackage.getEInt(), "address", null, 0, 1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTLUpdate_Timestamp(), ecorePackage.getEString(), "timestamp", null, 0, 1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTLUpdate_ChangedStates(), this.getChangedState(), null, "changedStates", null, 0, -1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(changedStateEClass, ChangedState.class, "ChangedState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChangedState_Channel(), ecorePackage.getEString(), "channel", null, 0, 1, ChangedState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangedState_Color(), ecorePackage.getEString(), "color", null, 0, 1, ChangedState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangedState_On(), ecorePackage.getEBoolean(), "on", null, 0, 1, ChangedState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(tlModuleTypeEEnum, TLModuleType.class, "TLModuleType");

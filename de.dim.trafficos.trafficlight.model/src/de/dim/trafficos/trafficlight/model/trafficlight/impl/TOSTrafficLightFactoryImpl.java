@@ -61,6 +61,8 @@ public class TOSTrafficLightFactoryImpl extends EFactoryImpl implements TOSTraff
 			case TOSTrafficLightPackage.TL_SIGNAL_TRANSMITTER: return createTLSignalTransmitter();
 			case TOSTrafficLightPackage.TL_SIGNAL_GROUP: return createTLSignalGroup();
 			case TOSTrafficLightPackage.LIGHT_SIGNAL: return createLightSignal();
+			case TOSTrafficLightPackage.TL_UPDATE: return createTLUpdate();
+			case TOSTrafficLightPackage.CHANGED_STATE: return createChangedState();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -142,6 +144,28 @@ public class TOSTrafficLightFactoryImpl extends EFactoryImpl implements TOSTraff
 	public LightSignal createLightSignal() {
 		LightSignalImpl lightSignal = new LightSignalImpl();
 		return lightSignal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TLUpdate createTLUpdate() {
+		TLUpdateImpl tlUpdate = new TLUpdateImpl();
+		return tlUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ChangedState createChangedState() {
+		ChangedStateImpl changedState = new ChangedStateImpl();
+		return changedState;
 	}
 
 	/**

@@ -37,5 +37,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/on"/>
     </genClasses>
+    <genClasses ecoreClass="tos-trafficlight.ecore#//TLUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLUpdate/address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLUpdate/timestamp"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-trafficlight.ecore#//TLUpdate/changedStates"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-trafficlight.ecore#//ChangedState">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//ChangedState/channel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//ChangedState/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//ChangedState/on"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -319,6 +319,116 @@ public interface TOSTrafficLightPackage extends EPackage {
 	int LIGHT_SIGNAL_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl <em>TL Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.TOSTrafficLightPackageImpl#getTLUpdate()
+	 * @generated
+	 */
+	int TL_UPDATE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE__ADDRESS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE__TIMESTAMP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Changed States</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE__CHANGED_STATES = 2;
+
+	/**
+	 * The number of structural features of the '<em>TL Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>TL Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.ChangedStateImpl <em>Changed State</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.ChangedStateImpl
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.TOSTrafficLightPackageImpl#getChangedState()
+	 * @generated
+	 */
+	int CHANGED_STATE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Channel</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGED_STATE__CHANNEL = 0;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGED_STATE__COLOR = 1;
+
+	/**
+	 * The feature id for the '<em><b>On</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGED_STATE__ON = 2;
+
+	/**
+	 * The number of structural features of the '<em>Changed State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGED_STATE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Changed State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGED_STATE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModuleType <em>TL Module Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -326,7 +436,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.TOSTrafficLightPackageImpl#getTLModuleType()
 	 * @generated
 	 */
-	int TL_MODULE_TYPE = 4;
+	int TL_MODULE_TYPE = 6;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.trafficlight.model.trafficlight.SignalValueType <em>Signal Value Type</em>}' enum.
@@ -336,7 +446,7 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @see de.dim.trafficos.trafficlight.model.trafficlight.impl.TOSTrafficLightPackageImpl#getSignalValueType()
 	 * @generated
 	 */
-	int SIGNAL_VALUE_TYPE = 5;
+	int SIGNAL_VALUE_TYPE = 7;
 
 
 	/**
@@ -488,6 +598,92 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLightSignal_On();
+
+	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate <em>TL Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>TL Update</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate
+	 * @generated
+	 */
+	EClass getTLUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getAddress()
+	 * @see #getTLUpdate()
+	 * @generated
+	 */
+	EAttribute getTLUpdate_Address();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getTimestamp <em>Timestamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timestamp</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getTimestamp()
+	 * @see #getTLUpdate()
+	 * @generated
+	 */
+	EAttribute getTLUpdate_Timestamp();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getChangedStates <em>Changed States</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Changed States</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getChangedStates()
+	 * @see #getTLUpdate()
+	 * @generated
+	 */
+	EReference getTLUpdate_ChangedStates();
+
+	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState <em>Changed State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Changed State</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.ChangedState
+	 * @generated
+	 */
+	EClass getChangedState();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#getChannel <em>Channel</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Channel</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#getChannel()
+	 * @see #getChangedState()
+	 * @generated
+	 */
+	EAttribute getChangedState_Channel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#getColor()
+	 * @see #getChangedState()
+	 * @generated
+	 */
+	EAttribute getChangedState_Color();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#isOn <em>On</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>On</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.ChangedState#isOn()
+	 * @see #getChangedState()
+	 * @generated
+	 */
+	EAttribute getChangedState_On();
 
 	/**
 	 * Returns the meta object for enum '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLModuleType <em>TL Module Type</em>}'.

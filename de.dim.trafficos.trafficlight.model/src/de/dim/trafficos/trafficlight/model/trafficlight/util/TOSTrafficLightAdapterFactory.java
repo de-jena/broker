@@ -88,6 +88,14 @@ public class TOSTrafficLightAdapterFactory extends AdapterFactoryImpl {
 				return createLightSignalAdapter();
 			}
 			@Override
+			public Adapter caseTLUpdate(TLUpdate object) {
+				return createTLUpdateAdapter();
+			}
+			@Override
+			public Adapter caseChangedState(ChangedState object) {
+				return createChangedStateAdapter();
+			}
+			@Override
 			public Adapter caseIdNameElement(IdNameElement object) {
 				return createIdNameElementAdapter();
 			}
@@ -172,6 +180,34 @@ public class TOSTrafficLightAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLightSignalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate <em>TL Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate
+	 * @generated
+	 */
+	public Adapter createTLUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState <em>Changed State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.ChangedState
+	 * @generated
+	 */
+	public Adapter createChangedStateAdapter() {
 		return null;
 	}
 

@@ -61,6 +61,24 @@ public interface TOSTrafficLightFactory extends EFactory {
 	LightSignal createLightSignal();
 
 	/**
+	 * Returns a new object of class '<em>TL Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>TL Update</em>'.
+	 * @generated
+	 */
+	TLUpdate createTLUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Changed State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Changed State</em>'.
+	 * @generated
+	 */
+	ChangedState createChangedState();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

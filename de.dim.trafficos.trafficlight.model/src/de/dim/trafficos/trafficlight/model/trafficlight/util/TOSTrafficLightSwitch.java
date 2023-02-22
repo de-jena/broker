@@ -97,6 +97,18 @@ public class TOSTrafficLightSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TOSTrafficLightPackage.TL_UPDATE: {
+				TLUpdate tlUpdate = (TLUpdate)theEObject;
+				T result = caseTLUpdate(tlUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TOSTrafficLightPackage.CHANGED_STATE: {
+				ChangedState changedState = (ChangedState)theEObject;
+				T result = caseChangedState(changedState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -158,6 +170,36 @@ public class TOSTrafficLightSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLightSignal(LightSignal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>TL Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>TL Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTLUpdate(TLUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Changed State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Changed State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChangedState(ChangedState object) {
 		return null;
 	}
 
