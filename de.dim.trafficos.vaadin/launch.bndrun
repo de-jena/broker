@@ -5,7 +5,7 @@
 
 -runproperties: \
 	osgi.console=,\
-	org.osgi.service.http.port=8086,\
+	org.osgi.service.http.port=8080,\
 	osgi.console.enable.builtin=false,\
 	base.path=${.}
 	
@@ -23,7 +23,8 @@
 	bnd.identity;id='org.apache.felix.gogo.command',\
 	bnd.identity;id='org.apache.felix.gogo.shell',\
 	bnd.identity;id='org.apache.felix.http.whiteboard',\
-	bnd.identity;id='de.dim.trafficos.intersection.model'
+	bnd.identity;id='de.dim.trafficos.intersection.model',\
+	bnd.identity;id='org.gecko.adapter.mqtt'
 	
 -runee: JavaSE-17
 -runblacklist: \
@@ -132,4 +133,9 @@
 	de.dim.trafficos.intersection.component;version=snapshot,\
 	de.dim.trafficos.intersectionsystem.component;version=snapshot,\
 	de.dim.trafficos.intersectionsystem.model;version=snapshot,\
-	de.dim.trafficos.trafficlight.component;version=snapshot
+	de.dim.trafficos.trafficlight.component;version=snapshot,\
+	org.eclipse.paho.client.mqttv3;version='[1.2.2,1.2.3)',\
+	org.gecko.adapter.mqtt;version='[1.0.5,1.0.6)',\
+	org.gecko.core.api;version='[1.0.5,1.0.6)',\
+	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
+	org.gecko.osgi.messaging;version='[3.1.0,3.1.1)'

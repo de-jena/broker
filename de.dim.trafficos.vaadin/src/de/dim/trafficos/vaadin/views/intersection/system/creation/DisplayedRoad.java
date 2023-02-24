@@ -9,7 +9,7 @@
  * Contributors:
  *     Data In Motion - initial API and implementation
  */
-package de.dim.trafficos.vaadin.views.intersection;
+package de.dim.trafficos.vaadin.views.intersection.system.creation;
 
 import de.dim.trafficos.intersection.model.intersection.RoadType;
 

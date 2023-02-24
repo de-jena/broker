@@ -123,7 +123,7 @@ public class TOSIntersectionSystemPackageImpl extends EPackageImpl implements TO
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIntersectionSystem_TlModuleIds() {
+	public EAttribute getIntersectionSystem_IntersectionName() {
 		return (EAttribute)intersectionSystemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -133,8 +133,18 @@ public class TOSIntersectionSystemPackageImpl extends EPackageImpl implements TO
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIntersectionSystem_DetectorIds() {
+	public EAttribute getIntersectionSystem_TlModuleIds() {
 		return (EAttribute)intersectionSystemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getIntersectionSystem_DetectorIds() {
+		return (EAttribute)intersectionSystemEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -169,6 +179,7 @@ public class TOSIntersectionSystemPackageImpl extends EPackageImpl implements TO
 		intersectionSystemEClass = createEClass(INTERSECTION_SYSTEM);
 		createEAttribute(intersectionSystemEClass, INTERSECTION_SYSTEM__ID);
 		createEAttribute(intersectionSystemEClass, INTERSECTION_SYSTEM__INTERSECTION_ID);
+		createEAttribute(intersectionSystemEClass, INTERSECTION_SYSTEM__INTERSECTION_NAME);
 		createEAttribute(intersectionSystemEClass, INTERSECTION_SYSTEM__TL_MODULE_IDS);
 		createEAttribute(intersectionSystemEClass, INTERSECTION_SYSTEM__DETECTOR_IDS);
 	}
@@ -206,6 +217,7 @@ public class TOSIntersectionSystemPackageImpl extends EPackageImpl implements TO
 		initEClass(intersectionSystemEClass, IntersectionSystem.class, "IntersectionSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntersectionSystem_Id(), ecorePackage.getEString(), "id", null, 1, 1, IntersectionSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntersectionSystem_IntersectionId(), ecorePackage.getEString(), "intersectionId", null, 1, 1, IntersectionSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntersectionSystem_IntersectionName(), ecorePackage.getEString(), "intersectionName", null, 0, 1, IntersectionSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntersectionSystem_TlModuleIds(), ecorePackage.getEString(), "tlModuleIds", null, 0, -1, IntersectionSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIntersectionSystem_DetectorIds(), ecorePackage.getEString(), "detectorIds", null, 0, -1, IntersectionSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

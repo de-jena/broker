@@ -9,7 +9,7 @@
  * Contributors:
  *     Data In Motion - initial API and implementation
  */
-package de.dim.trafficos.vaadin.views.intersection;
+package de.dim.trafficos.vaadin.views.intersection.system.creation;
 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox;
@@ -33,7 +33,7 @@ public class TLLightSignalGrid extends Grid<LightSignal> {
 
 	public TLLightSignalGrid(TLSignalTransmitter transmitter) {
 		addColumn(new ComponentRenderer<>(Checkbox::new, (box, light) -> {
-			box.setValue(light.isBliking());
+			box.setValue(light.isBlinking());
 			box.setEnabled(false);
 		})).setHeader("Blinking").setAutoWidth(true);
 		addColumn(LightSignal::getValue).setHeader("Type").setAutoWidth(true);

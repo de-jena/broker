@@ -15,7 +15,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBliking <em>Bliking</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBlinking <em>Blinking</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#getValue <em>Value</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isOn <em>On</em>}</li>
  * </ul>
@@ -27,26 +27,26 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 public interface LightSignal extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Bliking</b></em>' attribute.
+	 * Returns the value of the '<em><b>Blinking</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bliking</em>' attribute.
-	 * @see #setBliking(boolean)
-	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getLightSignal_Bliking()
+	 * @return the value of the '<em>Blinking</em>' attribute.
+	 * @see #setBlinking(boolean)
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getLightSignal_Blinking()
 	 * @model
 	 * @generated
 	 */
-	boolean isBliking();
+	boolean isBlinking();
 
 	/**
-	 * Sets the value of the '{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBliking <em>Bliking</em>}' attribute.
+	 * Sets the value of the '{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBlinking <em>Blinking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bliking</em>' attribute.
-	 * @see #isBliking()
+	 * @param value the new value of the '<em>Blinking</em>' attribute.
+	 * @see #isBlinking()
 	 * @generated
 	 */
-	void setBliking(boolean value);
+	void setBlinking(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.

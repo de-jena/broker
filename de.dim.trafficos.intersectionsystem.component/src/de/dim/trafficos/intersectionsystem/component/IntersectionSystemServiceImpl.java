@@ -11,6 +11,7 @@
  */
 package de.dim.trafficos.intersectionsystem.component;
 
+import java.util.List;
 import java.util.Objects;
 
 import org.gecko.emf.repository.query.IQuery;
@@ -54,6 +55,15 @@ public class IntersectionSystemServiceImpl implements IntersectionSystemService{
 		Objects.requireNonNull(intersectionId, "Canno retrieve IntersectionSystem by null intersection id!");
 		IQuery query = repo.createQueryBuilder().column(intersectionSystemPackage.getIntersectionSystem_IntersectionId()).simpleValue(intersectionId).build();
 		return repo.getEObjectByQuery(intersectionSystemPackage.getIntersectionSystem(), query, null);
+	}
+
+	/* 
+	 * (non-Javadoc)
+	 * @see de.dim.trafficos.apis.IntersectionSystemService#getAllIntersectionSystems()
+	 */
+	@Override
+	public List<IntersectionSystem> getAllIntersectionSystems() {
+		return repo.getAllEObjects(intersectionSystemPackage.getIntersectionSystem(), null);
 	}
 
 

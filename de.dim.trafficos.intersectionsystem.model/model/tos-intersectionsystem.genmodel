@@ -15,6 +15,7 @@
     <genClasses ecoreClass="tos-intersectionsystem.ecore#//IntersectionSystem">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersectionsystem.ecore#//IntersectionSystem/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersectionsystem.ecore#//IntersectionSystem/intersectionId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersectionsystem.ecore#//IntersectionSystem/intersectionName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersectionsystem.ecore#//IntersectionSystem/tlModuleIds"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-intersectionsystem.ecore#//IntersectionSystem/detectorIds"/>
     </genClasses>

@@ -28,6 +28,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  * <ul>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.impl.IntersectionSystemImpl#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.impl.IntersectionSystemImpl#getIntersectionId <em>Intersection Id</em>}</li>
+ *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.impl.IntersectionSystemImpl#getIntersectionName <em>Intersection Name</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.impl.IntersectionSystemImpl#getTlModuleIds <em>Tl Module Ids</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.impl.IntersectionSystemImpl#getDetectorIds <em>Detector Ids</em>}</li>
  * </ul>
@@ -74,6 +75,26 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 	 * @ordered
 	 */
 	protected String intersectionId = INTERSECTION_ID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIntersectionName() <em>Intersection Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntersectionName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String INTERSECTION_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIntersectionName() <em>Intersection Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntersectionName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String intersectionName = INTERSECTION_NAME_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTlModuleIds() <em>Tl Module Ids</em>}' attribute list.
@@ -166,6 +187,29 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 	 * @generated
 	 */
 	@Override
+	public String getIntersectionName() {
+		return intersectionName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIntersectionName(String newIntersectionName) {
+		String oldIntersectionName = intersectionName;
+		intersectionName = newIntersectionName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_NAME, oldIntersectionName, intersectionName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<String> getTlModuleIds() {
 		if (tlModuleIds == null) {
 			tlModuleIds = new EDataTypeUniqueEList<String>(String.class, this, TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__TL_MODULE_IDS);
@@ -198,6 +242,8 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 				return getId();
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_ID:
 				return getIntersectionId();
+			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_NAME:
+				return getIntersectionName();
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__TL_MODULE_IDS:
 				return getTlModuleIds();
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__DETECTOR_IDS:
@@ -220,6 +266,9 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 				return;
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_ID:
 				setIntersectionId((String)newValue);
+				return;
+			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_NAME:
+				setIntersectionName((String)newValue);
 				return;
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__TL_MODULE_IDS:
 				getTlModuleIds().clear();
@@ -247,6 +296,9 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_ID:
 				setIntersectionId(INTERSECTION_ID_EDEFAULT);
 				return;
+			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_NAME:
+				setIntersectionName(INTERSECTION_NAME_EDEFAULT);
+				return;
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__TL_MODULE_IDS:
 				getTlModuleIds().clear();
 				return;
@@ -269,6 +321,8 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_ID:
 				return INTERSECTION_ID_EDEFAULT == null ? intersectionId != null : !INTERSECTION_ID_EDEFAULT.equals(intersectionId);
+			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__INTERSECTION_NAME:
+				return INTERSECTION_NAME_EDEFAULT == null ? intersectionName != null : !INTERSECTION_NAME_EDEFAULT.equals(intersectionName);
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__TL_MODULE_IDS:
 				return tlModuleIds != null && !tlModuleIds.isEmpty();
 			case TOSIntersectionSystemPackage.INTERSECTION_SYSTEM__DETECTOR_IDS:
@@ -291,6 +345,8 @@ public class IntersectionSystemImpl extends MinimalEObjectImpl.Container impleme
 		result.append(id);
 		result.append(", intersectionId: ");
 		result.append(intersectionId);
+		result.append(", intersectionName: ");
+		result.append(intersectionName);
 		result.append(", tlModuleIds: ");
 		result.append(tlModuleIds);
 		result.append(", detectorIds: ");

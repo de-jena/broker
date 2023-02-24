@@ -11,4 +11,4 @@
  */
 @org.osgi.annotation.versioning.Version("1.0.0")
 @org.osgi.annotation.bundle.Export
-package de.dim.trafficos.vaadin.views.intersection;
+package de.dim.trafficos.vaadin.views.intersection.system.search;

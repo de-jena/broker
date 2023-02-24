@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.LightSignalImpl#isBliking <em>Bliking</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.LightSignalImpl#isBlinking <em>Blinking</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.LightSignalImpl#getValue <em>Value</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.LightSignalImpl#isOn <em>On</em>}</li>
  * </ul>
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class LightSignalImpl extends MinimalEObjectImpl.Container implements LightSignal {
 	/**
-	 * The default value of the '{@link #isBliking() <em>Bliking</em>}' attribute.
+	 * The default value of the '{@link #isBlinking() <em>Blinking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isBliking()
+	 * @see #isBlinking()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean BLIKING_EDEFAULT = false;
+	protected static final boolean BLINKING_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isBliking() <em>Bliking</em>}' attribute.
+	 * The cached value of the '{@link #isBlinking() <em>Blinking</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isBliking()
+	 * @see #isBlinking()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean bliking = BLIKING_EDEFAULT;
+	protected boolean blinking = BLINKING_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -114,8 +114,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	 * @generated
 	 */
 	@Override
-	public boolean isBliking() {
-		return bliking;
+	public boolean isBlinking() {
+		return blinking;
 	}
 
 	/**
@@ -124,11 +124,11 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	 * @generated
 	 */
 	@Override
-	public void setBliking(boolean newBliking) {
-		boolean oldBliking = bliking;
-		bliking = newBliking;
+	public void setBlinking(boolean newBlinking) {
+		boolean oldBlinking = blinking;
+		blinking = newBlinking;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.LIGHT_SIGNAL__BLIKING, oldBliking, bliking));
+			eNotify(new ENotificationImpl(this, Notification.SET, TOSTrafficLightPackage.LIGHT_SIGNAL__BLINKING, oldBlinking, blinking));
 	}
 
 	/**
@@ -185,8 +185,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLIKING:
-				return isBliking();
+			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLINKING:
+				return isBlinking();
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__VALUE:
 				return getValue();
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__ON:
@@ -203,8 +203,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLIKING:
-				setBliking((Boolean)newValue);
+			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLINKING:
+				setBlinking((Boolean)newValue);
 				return;
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__VALUE:
 				setValue((SignalValueType)newValue);
@@ -224,8 +224,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLIKING:
-				setBliking(BLIKING_EDEFAULT);
+			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLINKING:
+				setBlinking(BLINKING_EDEFAULT);
 				return;
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__VALUE:
 				setValue(VALUE_EDEFAULT);
@@ -245,8 +245,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLIKING:
-				return bliking != BLIKING_EDEFAULT;
+			case TOSTrafficLightPackage.LIGHT_SIGNAL__BLINKING:
+				return blinking != BLINKING_EDEFAULT;
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__VALUE:
 				return value != VALUE_EDEFAULT;
 			case TOSTrafficLightPackage.LIGHT_SIGNAL__ON:
@@ -265,8 +265,8 @@ public class LightSignalImpl extends MinimalEObjectImpl.Container implements Lig
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (bliking: ");
-		result.append(bliking);
+		result.append(" (blinking: ");
+		result.append(blinking);
 		result.append(", value: ");
 		result.append(value);
 		result.append(", on: ");

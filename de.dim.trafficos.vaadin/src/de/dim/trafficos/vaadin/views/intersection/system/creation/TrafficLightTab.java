@@ -9,7 +9,7 @@
  * Contributors:
  *     Data In Motion - initial API and implementation
  */
-package de.dim.trafficos.vaadin.views.intersection;
+package de.dim.trafficos.vaadin.views.intersection.system.creation;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -250,7 +250,7 @@ public class TrafficLightTab extends GeneralTab<TLModule> {
         
         Button saveButton = new Button("Add", e -> {
         	LightSignal lightSignal = tlPackage.getTOSTrafficLightFactory().createLightSignal();
-        	lightSignal.setBliking(blinkBox.getValue());
+        	lightSignal.setBlinking(blinkBox.getValue());
         	lightSignal.setValue(SignalValueType.valueOf(typeComboBox.getValue()));
         	transmitter.getLightSignal().add(lightSignal);
         	dialog.close();

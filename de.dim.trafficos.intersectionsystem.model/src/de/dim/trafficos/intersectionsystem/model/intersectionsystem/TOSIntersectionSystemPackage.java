@@ -87,13 +87,22 @@ public interface TOSIntersectionSystemPackage extends EPackage {
 	int INTERSECTION_SYSTEM__INTERSECTION_ID = 1;
 
 	/**
+	 * The feature id for the '<em><b>Intersection Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERSECTION_SYSTEM__INTERSECTION_NAME = 2;
+
+	/**
 	 * The feature id for the '<em><b>Tl Module Ids</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION_SYSTEM__TL_MODULE_IDS = 2;
+	int INTERSECTION_SYSTEM__TL_MODULE_IDS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Detector Ids</b></em>' attribute list.
@@ -102,7 +111,7 @@ public interface TOSIntersectionSystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION_SYSTEM__DETECTOR_IDS = 3;
+	int INTERSECTION_SYSTEM__DETECTOR_IDS = 4;
 
 	/**
 	 * The number of structural features of the '<em>Intersection System</em>' class.
@@ -111,7 +120,7 @@ public interface TOSIntersectionSystemPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERSECTION_SYSTEM_FEATURE_COUNT = 4;
+	int INTERSECTION_SYSTEM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Intersection System</em>' class.
@@ -154,6 +163,17 @@ public interface TOSIntersectionSystemPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getIntersectionSystem_IntersectionId();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getIntersectionName <em>Intersection Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Intersection Name</em>'.
+	 * @see de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getIntersectionName()
+	 * @see #getIntersectionSystem()
+	 * @generated
+	 */
+	EAttribute getIntersectionSystem_IntersectionName();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getTlModuleIds <em>Tl Module Ids</em>}'.
@@ -225,6 +245,14 @@ public interface TOSIntersectionSystemPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute INTERSECTION_SYSTEM__INTERSECTION_ID = eINSTANCE.getIntersectionSystem_IntersectionId();
+
+		/**
+		 * The meta object literal for the '<em><b>Intersection Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERSECTION_SYSTEM__INTERSECTION_NAME = eINSTANCE.getIntersectionSystem_IntersectionName();
 
 		/**
 		 * The meta object literal for the '<em><b>Tl Module Ids</b></em>' attribute list feature.

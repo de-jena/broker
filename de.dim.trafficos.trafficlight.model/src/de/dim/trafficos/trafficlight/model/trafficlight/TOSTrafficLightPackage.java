@@ -274,13 +274,13 @@ public interface TOSTrafficLightPackage extends EPackage {
 	int LIGHT_SIGNAL = 3;
 
 	/**
-	 * The feature id for the '<em><b>Bliking</b></em>' attribute.
+	 * The feature id for the '<em><b>Blinking</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LIGHT_SIGNAL__BLIKING = 0;
+	int LIGHT_SIGNAL__BLINKING = 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -567,15 +567,15 @@ public interface TOSTrafficLightPackage extends EPackage {
 	EClass getLightSignal();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBliking <em>Bliking</em>}'.
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBlinking <em>Blinking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Bliking</em>'.
-	 * @see de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBliking()
+	 * @return the meta object for the attribute '<em>Blinking</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#isBlinking()
 	 * @see #getLightSignal()
 	 * @generated
 	 */
-	EAttribute getLightSignal_Bliking();
+	EAttribute getLightSignal_Blinking();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.dim.trafficos.trafficlight.model.trafficlight.LightSignal#getValue <em>Value</em>}'.

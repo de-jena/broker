@@ -9,7 +9,7 @@
  * Contributors:
  *     Data In Motion - initial API and implementation
  */
-package de.dim.trafficos.vaadin.views.intersection;
+package de.dim.trafficos.vaadin.views.intersection.system.creation;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -134,6 +134,7 @@ public class IntersectionSystemCreationView extends VerticalLayout {
 		saveBtn.addClickListener(evt -> {
 			IntersectionSystem intersectionSystem = intersectionSysPackage.getTOSIntersectionSystemFactory().createIntersectionSystem();
 			intersectionSystem.setIntersectionId(intersection.getId());
+			intersectionSystem.setIntersectionName(intersection.getName());
 			intersectionSystem.getTlModuleIds().addAll(tlModules.stream().map(m -> m.getId()).collect(Collectors.toList()));
 			intersectionSystemService.saveIntersectionSystem(intersectionSystem);
 			Notification.show("Intersection System saved successfully!").addThemeVariants(NotificationVariant.LUMO_SUCCESS);

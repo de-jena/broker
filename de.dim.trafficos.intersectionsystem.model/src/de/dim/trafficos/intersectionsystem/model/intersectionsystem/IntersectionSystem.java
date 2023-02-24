@@ -19,6 +19,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * <ul>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getId <em>Id</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getIntersectionId <em>Intersection Id</em>}</li>
+ *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getIntersectionName <em>Intersection Name</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getTlModuleIds <em>Tl Module Ids</em>}</li>
  *   <li>{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getDetectorIds <em>Detector Ids</em>}</li>
  * </ul>
@@ -72,6 +73,28 @@ public interface IntersectionSystem extends EObject {
 	 * @generated
 	 */
 	void setIntersectionId(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Intersection Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Intersection Name</em>' attribute.
+	 * @see #setIntersectionName(String)
+	 * @see de.dim.trafficos.intersectionsystem.model.intersectionsystem.TOSIntersectionSystemPackage#getIntersectionSystem_IntersectionName()
+	 * @model
+	 * @generated
+	 */
+	String getIntersectionName();
+
+	/**
+	 * Sets the value of the '{@link de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem#getIntersectionName <em>Intersection Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intersection Name</em>' attribute.
+	 * @see #getIntersectionName()
+	 * @generated
+	 */
+	void setIntersectionName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Tl Module Ids</b></em>' attribute list.

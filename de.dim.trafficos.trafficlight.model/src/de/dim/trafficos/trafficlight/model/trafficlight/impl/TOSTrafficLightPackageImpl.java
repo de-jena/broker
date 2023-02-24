@@ -266,7 +266,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
-	public EAttribute getLightSignal_Bliking() {
+	public EAttribute getLightSignal_Blinking() {
 		return (EAttribute)lightSignalEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -433,7 +433,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		createEAttribute(tlSignalGroupEClass, TL_SIGNAL_GROUP__ID);
 
 		lightSignalEClass = createEClass(LIGHT_SIGNAL);
-		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__BLIKING);
+		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__BLINKING);
 		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__VALUE);
 		createEAttribute(lightSignalEClass, LIGHT_SIGNAL__ON);
 
@@ -500,7 +500,7 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		initEAttribute(getTLSignalGroup_Id(), ecorePackage.getEString(), "id", null, 1, 1, TLSignalGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lightSignalEClass, LightSignal.class, "LightSignal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getLightSignal_Bliking(), ecorePackage.getEBoolean(), "bliking", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLightSignal_Blinking(), ecorePackage.getEBoolean(), "blinking", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLightSignal_Value(), this.getSignalValueType(), "value", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLightSignal_On(), ecorePackage.getEBoolean(), "on", null, 0, 1, LightSignal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

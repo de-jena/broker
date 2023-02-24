@@ -11,6 +11,8 @@
  */
 package de.dim.trafficos.apis;
 
+import java.util.List;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 import de.dim.trafficos.intersectionsystem.model.intersectionsystem.IntersectionSystem;
@@ -26,5 +28,7 @@ public interface IntersectionSystemService {
 	IntersectionSystem saveIntersectionSystem(IntersectionSystem intersectionSystem);
 	
 	IntersectionSystem getIntersectionSystemByIntersection(String intersectionId);
+	
+	List<IntersectionSystem> getAllIntersectionSystems();
 
 }

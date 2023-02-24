@@ -33,7 +33,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLSignalGroup/id"/>
     </genClasses>
     <genClasses ecoreClass="tos-trafficlight.ecore#//LightSignal">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/bliking"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/blinking"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/value"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//LightSignal/on"/>
     </genClasses>
