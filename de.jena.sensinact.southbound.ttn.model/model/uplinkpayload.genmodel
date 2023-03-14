@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model/src"
+    modelPluginID="de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model" modelName="uplinkpayload"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>uplinkpayload.ecore</foreignModel>
+  <genPackages prefix="UplinkPayload" basePackage="org.eclipse.sensinact.southbound.ttn.uplinkpayload.model"
+      resource="XMI" disposableProviderFactory="true" literalsInterface="false" ecorePackage="uplinkpayload.ecore#/">
+    <genClasses ecoreClass="uplinkpayload.ecore#//TtnUplinkPayload">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//TtnUplinkPayload/endDeviceIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//TtnUplinkPayload/correlationIds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//TtnUplinkPayload/uplinkMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//TtnUplinkPayload/confirmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//TtnUplinkPayload/retry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//TtnUplinkPayload/receivedAt"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//EndDeviceIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//EndDeviceIds/deviceId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//EndDeviceIds/applicationIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//EndDeviceIds/devEui"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//EndDeviceIds/joinEui"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//EndDeviceIds/devAddr"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//ApplicationIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//ApplicationIds/applicationId"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//NetworkIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//NetworkIds/netId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//NetworkIds/tenantId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//NetworkIds/clusterId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//NetworkIds/clusterAddress"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//UplinkMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/sessionKeyId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/fPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/fCnt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/frmPayload"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//UplinkMessage/rxMetadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//UplinkMessage/settings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/gatewayChannelIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/deviceChannelIndex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//UplinkMessage/decodedPayload"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//UplinkMessage/networkIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/consumedAirtime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//UplinkMessage/receivedAt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//UplinkMessage/versionIds"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//GatewayIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//GatewayIds/gatewayId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//GatewayIds/eui"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//RxMetadata">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//RxMetadata/gatewayIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/rssi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/channelRssi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/snr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/uplinkToken"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//RxMetadata/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/receivedAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//RxMetadata/channelIndex"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//DataRate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//DataRate/lora"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//Lora">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Lora/bandwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Lora/spreadingFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Lora/codingRate"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Location/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Location/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Location/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Location/source"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//StringToObjectMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//StringToObjectMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//StringToObjectMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//VersionIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//VersionIds/brandId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//VersionIds/modelId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//VersionIds/hardwareVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//VersionIds/firmwareVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//VersionIds/bandId"/>
+    </genClasses>
+    <genClasses ecoreClass="uplinkpayload.ecore#//Settings">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uplinkpayload.ecore#//Settings/dataRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Settings/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Settings/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uplinkpayload.ecore#//Settings/frequency"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

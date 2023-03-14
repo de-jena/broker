@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="iceprovider" nsURI="https://jena.de/models/icesensor/sensinact/1.0"
+    nsPrefix="iceprovider">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="IceSensore" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models/model/sensinact.ecore#//Provider">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="has_beacon" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="h2sugm3" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cougm3" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nougm3" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="o3ugm3" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_1p" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aqi_criteria" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="temperature" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="humidity" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_10p" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pressure" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="no2ugm3" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="aqi" eType="#//SensorData"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="_2_5p" eType="#//SensorData"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SensorData" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models/model/sensinact.ecore#//Service">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateway" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avg" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="validity" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="created_at" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="str_data" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -34,4 +34,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InsantValueUpdate" eSuperTypes="#//UpdateMessage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="#//EInstant"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="#//EInstant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateValueUpdate" eSuperTypes="#//UpdateMessage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
 </ecore:EPackage>

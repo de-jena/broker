@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.gecko.core.pool.Pool;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.emf.osgi.EMFUriHandlerConstants;
@@ -45,6 +46,9 @@ import de.jena.model.icesensor.Data;
 import de.jena.model.icesensor.IceSENSOR;
 import de.jena.model.icesensor.IcesensorPackage;
 import de.jena.model.icesensor.SensorData;
+import org.eclipse.sensinact.prototype.PrototypePush;
+import org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool;
+import org.gecko.qvt.osgi.api.ModelTransformator;
 
 @Component(service = IceSensorService.class, name = "IceSensorServiceRest", configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
 @RequireEMFJson
@@ -62,6 +66,9 @@ public class IceSensorRestService implements IceSensorService {
 	@Reference
 	IcesensorPackage iceSensorepackage;
 
+	@Reference
+	PrototypePush sensinact;
+	
 	private ScheduledExecutorService executor;
 	private PushStreamProvider provider;
 	private List<SimplePushEventSource<SensorData>> eventSources = new ArrayList<>();
@@ -128,29 +135,22 @@ public class IceSensorRestService implements IceSensorService {
 		return headers;
 	}
 
+	@Reference(target = ("(pool.componentName=modelTransformatorService)"))
+	private ConfigurableModelTransformatorPool poolComponent;
+	
 	private void publish(List<EObject> sensors) {
-		for (EObject sensor : sensors) {
-			Iterator<SimplePushEventSource<SensorData>> it = eventSources.iterator();
-			while (it.hasNext()) {
-				SimplePushEventSource<SensorData> source = it.next();
-				if (source.isConnected()) {
-					IceSENSOR iceSensor = (IceSENSOR) EcoreUtil.copy(sensor);
-					Data data = iceSensor.getData();
-					pub(source, iceSensor, data.getTemperature());
-					pub(source, iceSensor, data.getHumidity());
-					pub(source, iceSensor, data.getNo2ugm3());
-					pub(source, iceSensor, data.getO3ugm3());
-					pub(source, iceSensor, data.getPressure());
-				} else
-					it.remove();
+		Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
+		Pool<ModelTransformator> pool = poolMap.get("modelTransformatorService-sensinactPool");
+		ModelTransformator transformator = pool.poll();
+		try {
+			for (EObject sensor : sensors) {
+	
+				EObject push = transformator.startTransformation(sensor);
+				logger.log(Level.INFO, "Pushing: {0}", push);
+				sensinact.pushUpdate(push);
 			}
+		} finally {
+			pool.release(transformator);
 		}
 	}
-
-	private void pub(SimplePushEventSource<SensorData> source, IceSENSOR iceSensor, SensorData data) {
-		data.setGateway(iceSensor.getIce_id());
-		data.setSensor_type(data.eContainingFeature().getName());
-		source.publish(data);
-	}
-
 }

@@ -1,0 +1,22 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MMTMainConfig",
+	
+	"ConfigurableModelTransformatorPool": {
+		"pool.componentName": "modelTransformatorService",
+		"pool.size": 100,
+		"pool.timeout": 100,
+		"poolRef.target": "(pool.group=sensinactPool)"
+	},
+	
+	"PrototypeConfigurableTransformationService~icecat": {
+		"name": "icecat",
+		"qvt.templatePath": "de.jena.icesensor.sensinact.mmt/transformations/icesensore.qvto",
+		"qvt.transformatorName": "project2projectApi",
+		"qvt.model.target": "(&(emf.model.name=icesensor)(emf.model.name=iceprovider))",
+		"pool.name": "sensinactPool",
+		"pool.group": "sensinactPool",
+		"pool.asService": false
+	}
+}

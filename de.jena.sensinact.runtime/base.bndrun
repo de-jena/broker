@@ -43,8 +43,6 @@
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
 	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)',\
 	org.eclipse.sensinact.gateway.core.annotation;version='[0.0.1,0.0.2)',\
-	org.eclipse.sensinact.gateway.core.api;version='[0.0.1,0.0.2)',\
-	org.eclipse.sensinact.gateway.core.impl;version='[0.0.1,0.0.2)',\
 	org.eclipse.sensinact.gateway.core.models;version='[0.0.1,0.0.2)',\
 	org.gecko.emf.osgi.component;version='[4.5.0,4.5.1)',\
 	org.osgi.service.typedevent;version='[1.0.0,1.0.1)',\
@@ -116,7 +114,34 @@
 	de.jena.sensinact.rest.tlc.control.model;version=snapshot,\
 	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)',\
 	de.jena.sensinact.mqtt.generic.message;version=snapshot,\
-	de.jena.sensinact.mqtt.generic.bridge;version=snapshot
+	de.jena.sensinact.mqtt.generic.bridge;version=snapshot,\
+	de.jena.sensinact.southbound.ttn.connector;version=snapshot,\
+	de.jena.sensinact.southbound.ttn.model;version=snapshot,\
+	com.google.guava;version='[15.0.0,15.0.1)',\
+	log4j.over.slf4j;version='[1.7.25,1.7.26)',\
+	org.eclipse.emf.compare;version='[3.5.3,3.5.4)',\
+	org.eclipse.sensinact.gateway.core.api;version=snapshot,\
+	org.eclipse.sensinact.gateway.core.impl;version=snapshot,\
+	de.dim.eclipse.core.runtime;version='[3.14.0,3.14.1)',\
+	de.dim.eclipse.osgi;version='[3.12.50,3.12.51)',\
+	de.dim.equinox.common;version='[3.9.0,3.9.1)',\
+	de.jena.icesensor.sensinact.model;version=snapshot,\
+	lpg.runtime.java;version='[2.0.17,2.0.18)',\
+	org.eclipse.core.runtime;version='[3.14.0,3.14.1)',\
+	org.eclipse.emf.ecore.change;version='[2.14.0,2.14.1)',\
+	org.eclipse.m2m.qvt.oml;version='[3.10.0,3.10.1)',\
+	org.eclipse.m2m.qvt.oml.common;version='[3.9.0,3.9.1)',\
+	org.eclipse.m2m.qvt.oml.cst.parser;version='[3.9.0,3.9.1)',\
+	org.eclipse.m2m.qvt.oml.ecore.imperativeocl;version='[3.9.0,3.9.1)',\
+	org.eclipse.m2m.qvt.oml.emf.util;version='[3.9.0,3.9.1)',\
+	org.eclipse.m2m.qvt.oml.ocl;version='[3.9.0,3.9.1)',\
+	org.eclipse.ocl;version='[3.10.400,3.10.401)',\
+	org.eclipse.ocl.common;version='[1.8.400,1.8.401)',\
+	org.eclipse.ocl.ecore;version='[3.14.0,3.14.1)',\
+	org.gecko.core.pool;version='[1.1.0,1.1.1)',\
+	org.gecko.qvt.osgi.api;version='[4.1.1,4.1.2)',\
+	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)',\
+	de.jena.icesensor.sensinact.mmt;version=snapshot
 	
 
 -runrequires: \
@@ -137,7 +162,10 @@
 	bnd.identity;id='de.jena.sensinact.rest.tlc.control',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='com.fasterxml.jackson.datatype.jackson-datatype-jsr310',\
-	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge'
+	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
+	bnd.identity;id='de.jena.sensinact.southbound.ttn.connector',\
+	bnd.identity;id='org.gecko.qvt.osgi.component',\
+	bnd.identity;id='de.jena.icesensor.sensinact.mmt'
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
 -runblacklist: \

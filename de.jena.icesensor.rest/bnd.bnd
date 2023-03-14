@@ -7,11 +7,15 @@
 	de.jena.icesensor.model;version=latest,\
 	org.eclipse.emfcloud.emfjson-jackson;version=latest,\
 	org.osgi.service.component,\
-	org.osgi.util.pushstream,\
+	org.osgi.util.pushstream;version=latest,\
+	org.osgi.util.promise;version=latest,\
+	org.osgi.util.function;version=latest,\
 	org.osgi.service.cdi,\
 	de.jena.icesensor.api,\
-	com.fasterxml.jackson.core.jackson-databind
-#	osgi.cmpn;version=7.0
+	com.fasterxml.jackson.core.jackson-databind,\
+	org.eclipse.sensinact.gateway.core.api,\
+	org.gecko.qvt.osgi.api,\
+	org.gecko.core.pool;version=latest
 
 -library: enable-emf
 

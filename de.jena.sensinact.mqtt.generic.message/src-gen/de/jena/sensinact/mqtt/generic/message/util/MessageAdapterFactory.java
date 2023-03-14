@@ -96,6 +96,14 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createObjectValueUpdateAdapter();
 			}
 			@Override
+			public Adapter caseInsantValueUpdate(InsantValueUpdate object) {
+				return createInsantValueUpdateAdapter();
+			}
+			@Override
+			public Adapter caseDateValueUpdate(DateValueUpdate object) {
+				return createDateValueUpdateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -210,6 +218,34 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createObjectValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.InsantValueUpdate <em>Insant Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.InsantValueUpdate
+	 * @generated
+	 */
+	public Adapter createInsantValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.DateValueUpdate <em>Date Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.DateValueUpdate
+	 * @generated
+	 */
+	public Adapter createDateValueUpdateAdapter() {
 		return null;
 	}
 

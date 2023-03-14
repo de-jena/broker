@@ -114,6 +114,20 @@ public class MessageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagePackage.INSANT_VALUE_UPDATE: {
+				InsantValueUpdate insantValueUpdate = (InsantValueUpdate)theEObject;
+				T result = caseInsantValueUpdate(insantValueUpdate);
+				if (result == null) result = caseUpdateMessage(insantValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.DATE_VALUE_UPDATE: {
+				DateValueUpdate dateValueUpdate = (DateValueUpdate)theEObject;
+				T result = caseDateValueUpdate(dateValueUpdate);
+				if (result == null) result = caseUpdateMessage(dateValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -220,6 +234,36 @@ public class MessageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseObjectValueUpdate(ObjectValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Insant Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Insant Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInsantValueUpdate(InsantValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Date Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Date Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDateValueUpdate(DateValueUpdate object) {
 		return null;
 	}
 

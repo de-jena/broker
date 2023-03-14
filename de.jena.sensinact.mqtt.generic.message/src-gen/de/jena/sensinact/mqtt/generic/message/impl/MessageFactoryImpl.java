@@ -65,6 +65,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 			case MessagePackage.LONG_VALUE_UPDATE: return createLongValueUpdate();
 			case MessagePackage.BOOLEAN_VALUE_UPDATE: return createBooleanValueUpdate();
 			case MessagePackage.OBJECT_VALUE_UPDATE: return createObjectValueUpdate();
+			case MessagePackage.INSANT_VALUE_UPDATE: return createInsantValueUpdate();
+			case MessagePackage.DATE_VALUE_UPDATE: return createDateValueUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +160,26 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	public ObjectValueUpdate createObjectValueUpdate() {
 		ObjectValueUpdateImpl objectValueUpdate = new ObjectValueUpdateImpl();
 		return objectValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InsantValueUpdate createInsantValueUpdate() {
+		InsantValueUpdateImpl insantValueUpdate = new InsantValueUpdateImpl();
+		return insantValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateValueUpdate createDateValueUpdate() {
+		DateValueUpdateImpl dateValueUpdate = new DateValueUpdateImpl();
+		return dateValueUpdate;
 	}
 
 	/**

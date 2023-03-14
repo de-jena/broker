@@ -70,11 +70,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="aqi" eType="#//SensorData"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="_2_5p" eType="#//SensorData"
-        containment="true">
-      <eAnnotations source="JsonAlias">
-        <details key="value" value="2.5p"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Coords">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"
@@ -84,7 +80,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SensorData">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateway" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gateway" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_model" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="avg" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>

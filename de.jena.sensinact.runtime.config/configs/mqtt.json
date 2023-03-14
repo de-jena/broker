@@ -16,5 +16,15 @@
 		"password" : "$[env:MQTT_TTN2_PWD;default=]$[prop:MQTT_TTN2_PWD;default=]",
 		"type" : "ttn",
 		"id" : "ttn2"
+	},
+	"MqttEndpointComponent~ttn1" : 
+	{
+		"deviceIds" : ["#"],
+		"ttn.target" : "(id=ttn)"
+	},
+	"MqttEndpointComponent~ttn2" : 
+	{
+		"deviceIds" : ["#"],
+		"ttn.target" : "(id=ttn2)"
 	}
 }

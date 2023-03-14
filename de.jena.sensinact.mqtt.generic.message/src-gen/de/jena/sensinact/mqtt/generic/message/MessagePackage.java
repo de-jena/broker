@@ -491,6 +491,134 @@ public interface MessagePackage extends EPackage {
 	int OBJECT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.InsantValueUpdateImpl <em>Insant Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.InsantValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getInsantValueUpdate()
+	 * @generated
+	 */
+	int INSANT_VALUE_UPDATE = 7;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Insant Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Insant Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSANT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.DateValueUpdateImpl <em>Date Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.DateValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getDateValueUpdate()
+	 * @generated
+	 */
+	int DATE_VALUE_UPDATE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Date Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Date Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DATE_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>EInstant</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -498,7 +626,7 @@ public interface MessagePackage extends EPackage {
 	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEInstant()
 	 * @generated
 	 */
-	int EINSTANT = 7;
+	int EINSTANT = 9;
 
 
 	/**
@@ -726,6 +854,70 @@ public interface MessagePackage extends EPackage {
 	EAttribute getObjectValueUpdate_NewValue();
 
 	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.InsantValueUpdate <em>Insant Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Insant Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.InsantValueUpdate
+	 * @generated
+	 */
+	EClass getInsantValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.InsantValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.InsantValueUpdate#getOldValue()
+	 * @see #getInsantValueUpdate()
+	 * @generated
+	 */
+	EAttribute getInsantValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.InsantValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.InsantValueUpdate#getNewValue()
+	 * @see #getInsantValueUpdate()
+	 * @generated
+	 */
+	EAttribute getInsantValueUpdate_NewValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.DateValueUpdate <em>Date Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Date Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.DateValueUpdate
+	 * @generated
+	 */
+	EClass getDateValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.DateValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.DateValueUpdate#getOldValue()
+	 * @see #getDateValueUpdate()
+	 * @generated
+	 */
+	EAttribute getDateValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.DateValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.DateValueUpdate#getNewValue()
+	 * @see #getDateValueUpdate()
+	 * @generated
+	 */
+	EAttribute getDateValueUpdate_NewValue();
+
+	/**
 	 * Returns the meta object for data type '{@link java.time.Instant <em>EInstant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -940,6 +1132,58 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute OBJECT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getObjectValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.InsantValueUpdateImpl <em>Insant Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.InsantValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getInsantValueUpdate()
+		 * @generated
+		 */
+		EClass INSANT_VALUE_UPDATE = eINSTANCE.getInsantValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSANT_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getInsantValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INSANT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getInsantValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.DateValueUpdateImpl <em>Date Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.DateValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getDateValueUpdate()
+		 * @generated
+		 */
+		EClass DATE_VALUE_UPDATE = eINSTANCE.getDateValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getDateValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DATE_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getDateValueUpdate_NewValue();
 
 		/**
 		 * The meta object literal for the '<em>EInstant</em>' data type.

@@ -79,6 +79,24 @@ public interface MessageFactory extends EFactory {
 	ObjectValueUpdate createObjectValueUpdate();
 
 	/**
+	 * Returns a new object of class '<em>Insant Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Insant Value Update</em>'.
+	 * @generated
+	 */
+	InsantValueUpdate createInsantValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Date Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Value Update</em>'.
+	 * @generated
+	 */
+	DateValueUpdate createDateValueUpdate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

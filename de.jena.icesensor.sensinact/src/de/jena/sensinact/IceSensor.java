@@ -52,7 +52,7 @@ public class IceSensor {
 			// e.g. Typed Events
 //			bus.deliver("sensiNact/push/event", dto);
 			// e.g. Direct to core
-			sensiNact.pushUpdate(dto);
+			sensiNact.pushUpdate(iceSENSOR);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -79,10 +79,10 @@ public class IceSensor {
 	IceSensorDto toDTO(SensorData data) {
 		IceSensorDto dto = new IceSensorDto();
 		dto.model = "ICESensor";
-		dto.data = data.getAvg();
 		dto.service = data.getSensor_type();
 		dto.provider = data.getGateway();
 		dto.timestamp = data.getCreated_at().getTime();
+		dto.data = data.getAvg();
 		return dto;
 	}
 }

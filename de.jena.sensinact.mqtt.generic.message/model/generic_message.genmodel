@@ -37,5 +37,13 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/oldValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/newValue"/>
     </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//InsantValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//InsantValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//InsantValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//DateValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DateValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DateValueUpdate/newValue"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

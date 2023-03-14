@@ -3,7 +3,9 @@
 package de.jena.sensinact.mqtt.generic.message.impl;
 
 import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.IntegerValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.LongValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.MessageFactory;
@@ -76,6 +78,20 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EClass objectValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass insantValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateValueUpdateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -339,6 +355,60 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInsantValueUpdate() {
+		return insantValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInsantValueUpdate_OldValue() {
+		return (EAttribute)insantValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInsantValueUpdate_NewValue() {
+		return (EAttribute)insantValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDateValueUpdate() {
+		return dateValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDateValueUpdate_OldValue() {
+		return (EAttribute)dateValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDateValueUpdate_NewValue() {
+		return (EAttribute)dateValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getEInstant() {
 		return eInstantEDataType;
 	}
@@ -399,6 +469,14 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(objectValueUpdateEClass, OBJECT_VALUE_UPDATE__OLD_VALUE);
 		createEAttribute(objectValueUpdateEClass, OBJECT_VALUE_UPDATE__NEW_VALUE);
 
+		insantValueUpdateEClass = createEClass(INSANT_VALUE_UPDATE);
+		createEAttribute(insantValueUpdateEClass, INSANT_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(insantValueUpdateEClass, INSANT_VALUE_UPDATE__NEW_VALUE);
+
+		dateValueUpdateEClass = createEClass(DATE_VALUE_UPDATE);
+		createEAttribute(dateValueUpdateEClass, DATE_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(dateValueUpdateEClass, DATE_VALUE_UPDATE__NEW_VALUE);
+
 		// Create data types
 		eInstantEDataType = createEDataType(EINSTANT);
 	}
@@ -437,6 +515,8 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		longValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		booleanValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		objectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		insantValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		dateValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(updateMessageEClass, UpdateMessage.class, "UpdateMessage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -466,6 +546,14 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEClass(objectValueUpdateEClass, ObjectValueUpdate.class, "ObjectValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObjectValueUpdate_OldValue(), ecorePackage.getEJavaObject(), "oldValue", null, 0, 1, ObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectValueUpdate_NewValue(), ecorePackage.getEJavaObject(), "newValue", null, 0, 1, ObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(insantValueUpdateEClass, InsantValueUpdate.class, "InsantValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInsantValueUpdate_OldValue(), this.getEInstant(), "oldValue", null, 0, 1, InsantValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInsantValueUpdate_NewValue(), this.getEInstant(), "newValue", null, 0, 1, InsantValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dateValueUpdateEClass, DateValueUpdate.class, "DateValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDateValueUpdate_OldValue(), ecorePackage.getEDate(), "oldValue", null, 0, 1, DateValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDateValueUpdate_NewValue(), ecorePackage.getEDate(), "newValue", null, 0, 1, DateValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize data types
 		initEDataType(eInstantEDataType, Instant.class, "EInstant", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
