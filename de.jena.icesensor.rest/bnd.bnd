@@ -9,7 +9,8 @@
 	org.osgi.service.component,\
 	org.osgi.util.pushstream,\
 	org.osgi.service.cdi,\
-	de.jena.icesensor.api
+	de.jena.icesensor.api,\
+	com.fasterxml.jackson.core.jackson-databind
 #	osgi.cmpn;version=7.0
 
 -library: enable-emf

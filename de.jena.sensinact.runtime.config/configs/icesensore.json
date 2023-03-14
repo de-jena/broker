@@ -4,7 +4,7 @@
 	":configurator:symbolic-name": "Sensinact Jena REST Config",
 
 	"IceSensorServiceRest": {
-		"token": "$[prop:ICESENSORE_TOKEN;default=$[prop:ICESENSORE_TOKEN]]",
+		"token": "$[env:ICESENSORE_TOKEN;default=]$[prop:ICESENSORE_TOKEN;default=]",
 		"intervall": 1
 	}
 }

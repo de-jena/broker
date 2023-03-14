@@ -8,8 +8,7 @@
 #
 # this will be replaced with `bnd-workspace-extensions` to solve the caching problem and use fixed versions. 
 -include: \
-	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/slf4j.bnd,\
-	https://gitlab.com/gecko.io/geckoMongoEMF/-/raw/master/cnf/geckoMongoEMF/geckoMongoEMF.bnd
+	https://raw.githubusercontent.com/geckoprojects-org/org.geckoprojects.bndincludes/main/slf4j.bnd
 	
 -require-bnd: "(version>=6.4.0)"
 	

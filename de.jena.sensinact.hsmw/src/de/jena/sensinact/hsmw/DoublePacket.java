@@ -22,7 +22,7 @@ import org.eclipse.sensinact.prototype.annotation.dto.Service;
  * @author Juergen Albert
  * @since 22 Oct 2021
  */
-public class GenericPacket {
+public class DoublePacket {
 
 	@Model
 	public String model;
@@ -33,9 +33,9 @@ public class GenericPacket {
 	@Resource
     public String resourceId;
 	@Data
-    public Object payload;
+    public Double payload;
     
-    public GenericPacket(String model, String providerId, String serviceId, String resourceId, Object data) {
+    public DoublePacket(String model, String providerId, String serviceId, String resourceId, Double data) {
         this.model = model;
 		this.providerId = providerId;
         this.serviceId = serviceId.replace("_", "");
@@ -55,7 +55,7 @@ public class GenericPacket {
         return resourceId;
     }
 
-    public Object getPayload() {
+    public Double getPayload() {
         return payload;
     }
     

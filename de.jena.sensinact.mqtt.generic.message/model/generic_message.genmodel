@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.mqtt.generic.message/src" modelPluginID="de.jena.sensinact.mqtt.generic.message"
+    modelName="Generic_message" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>generic_message.ecore</foreignModel>
+  <genPackages prefix="Message" basePackage="de.jena.sensinact.mqtt.generic" disposableProviderFactory="true"
+      ecorePackage="generic_message.ecore#/">
+    <genDataTypes ecoreDataType="generic_message.ecore#//EInstant" create="return Instant.parse(it);"
+        convert="return it.toString();"/>
+    <genClasses image="false" ecoreClass="generic_message.ecore#//UpdateMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/resource"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//StringValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//StringValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//StringValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//DoubleValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DoubleValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DoubleValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//IntegerValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//IntegerValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//IntegerValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//LongValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//LongValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//LongValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//BooleanValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BooleanValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BooleanValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//ObjectValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/newValue"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

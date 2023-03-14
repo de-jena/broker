@@ -1,4 +1,5 @@
--include: base.bndrun
+-include: 	base.bndrun,\
+			-secrets.bndrun
 
 -runbundles.local:\
 	 de.jena.sensinact.runtime.config.local

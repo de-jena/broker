@@ -22,7 +22,8 @@
 	jakarta.servlet-api,\
 	org.eclipse.jetty.websocket.api,\
 	org.eclipse.jetty.client,\
-	org.apache.commons.io
+	org.apache.commons.io,\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='2.14'
 
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 
