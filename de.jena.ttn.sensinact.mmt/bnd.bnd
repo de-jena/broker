@@ -1,0 +1,9 @@
+-includeresource.tranformation: transformations=transformations
+-buildpath: \
+	org.eclipse.m2m.qvt.oml,\
+	org.osgi.service.component.annotations;version=latest,\
+	de.jena.ttn.sensinact.model,\
+	de.jena.ttn.model,\
+	org.gecko.qvt.osgi.api,\
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.osgi.service.condition

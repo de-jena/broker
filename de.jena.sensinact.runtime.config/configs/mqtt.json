@@ -17,14 +17,30 @@
 		"type" : "ttn",
 		"id" : "ttn2"
 	},
+	"MQTTService~ttn3":
+	{
+		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
+		"username" : "bosch-parking-01@ttn",
+		"password" : "$[env:MQTT_TTN3_PWD;default=]$[prop:MQTT_TTN3_PWD;default=]",
+		"type" : "ttn",
+		"id" : "ttn3"
+	},
 	"MqttEndpointComponent~ttn1" : 
 	{
 		"deviceIds" : ["#"],
-		"ttn.target" : "(id=ttn)"
+		"ttn.target" : "(id=ttn)",
+		"topic": "v3/scj-simple-sensors/devices/"
 	},
 	"MqttEndpointComponent~ttn2" : 
 	{
 		"deviceIds" : ["#"],
-		"ttn.target" : "(id=ttn2)"
+		"ttn.target" : "(id=ttn2)",
+		"topic": "v3/scj-sensors-01@ttn/devices/"
+	},
+	"MqttEndpointComponent~ttn3" : 
+	{
+		"deviceIds" : ["#"],
+		"ttn.target" : "(id=ttn3)",
+		"topic": "v3/bosch-parking-01@ttn/devices/"
 	}
 }

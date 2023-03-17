@@ -1,0 +1,40 @@
+//import de.jena.ttn.sensinact.util.LocationToGeoJsonBlackbox;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype TTN uses "https://jena.de/models/ttn/1.0";
+modeltype SENSINACT uses "https://jena.de/models/ttn/sensinact/1.0";
+modeltype PROVIDER uses "https://eclipse.org/sensinact/core/1.0";
+
+transformation TTN2SensinactTTNApi(in sensor : TTN, out sensinact : SENSINACT);
+
+main() {
+	sensor.rootObjects()[TTN::TtnUplinkPayload] -> map sensoreToProvider(); 
+}
+
+mapping TTN::TtnUplinkPayload::sensoreToProvider(): SENSINACT::TtnSensor {
+
+	id := self.endDeviceIds.devAddr;
+	admin := self.uplinkMessage.map uplinkToAdmin();
+	data := self.uplinkMessage.map uplinkToData(); 
+}
+
+	
+mapping TTN::UplinkMessage::uplinkToAdmin(): PROVIDER::Admin {
+	metadata := self.rxMetadata.map rxMetaToMeta();
+//	location := self.rxMetadata.location.toGeoJson();
+}
+
+mapping TTN::RxMetadata::rxMetaToMeta(): PROVIDER::FeatureMetadata {
+//key := self.???;
+//value := self.???;
+}
+
+mapping TTN::UplinkMessage::uplinkToData(): SENSINACT::SensorData {
+	rawPayload := self.frmPayload;
+	payload := self.decodedPayload.map mapToMap();
+}
+mapping  StringToObjectMap::mapToMap(): SENSINACT::StringToObjectMap {
+	key := self.key;
+	value := self.value;				
+};
+	

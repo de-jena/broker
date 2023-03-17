@@ -15,7 +15,8 @@
 	com.fasterxml.jackson.core.jackson-databind,\
 	org.eclipse.sensinact.gateway.core.api,\
 	org.gecko.qvt.osgi.api,\
-	org.gecko.core.pool;version=latest
+	org.gecko.core.pool;version=latest,\
+	biz.aQute.bnd.annotation
 
 -library: enable-emf
 

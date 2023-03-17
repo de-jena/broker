@@ -7,6 +7,9 @@ org.eclipse.sensinact.gateway.core:geo-json:${sensinact.version}
 
 # northbound
 org.eclipse.sensinact.gateway.northbound:rest:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound:query-handler:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.filters:filters.core:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.filters:ldap:${sensinact.version}
 ## sensorethings
 org.eclipse.sensinact.gateway.northbound.sensorthings:dto:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.api:${sensinact.version}
