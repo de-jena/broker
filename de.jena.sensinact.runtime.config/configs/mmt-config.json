@@ -15,8 +15,20 @@
 		"qvt.templatePath": "de.jena.icesensor.sensinact.mmt/transformations/icesensore.qvto",
 		"qvt.transformatorName": "project2projectApi",
 		"qvt.model.target": "(&(emf.model.name=icesensor)(emf.model.name=iceprovider))",
-		"pool.name": "sensinactPool",
+		"pool.name": "iceCatPool",
 		"pool.group": "sensinactPool",
 		"pool.asService": false
+	},
+	
+	"PrototypeConfigurableTransformationService~ttncat": {
+		"name": "ttncat",
+		"qvt.templatePath": "de.jena.ttn.sensinact.mmt/transformations/ttn.qvto",
+		"qvt.transformatorName": "TTN2SensinactTTNApi",
+		"qvt.model.target": "(&(emf.model.name=ttn)(emf.model.name=ttnprovider))",
+		"pool.name": "ttnPool",
+		"pool.group": "sensinactPool",
+		"pool.asService": false,
+		"osgi.ds.satisfying.condition.target": "(osgi.condition.id=ttnBlackboxes)"
+		
 	}
 }

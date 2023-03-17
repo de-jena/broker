@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model/src"
+    modelPluginID="de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model" modelName="ttn"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>ttn.ecore</foreignModel>
+  <genPackages prefix="TTN" basePackage="de.jena.model"
+      resource="XMI" disposableProviderFactory="true" literalsInterface="false" ecorePackage="ttn.ecore#/">
+    <genClasses ecoreClass="ttn.ecore#//TtnUplinkPayload">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnUplinkPayload/endDeviceIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnUplinkPayload/correlationIds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnUplinkPayload/uplinkMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnUplinkPayload/confirmed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnUplinkPayload/retry"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnUplinkPayload/receivedAt"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//EndDeviceIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/deviceId"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//EndDeviceIds/applicationIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/devEui"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/joinEui"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/devAddr"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//ApplicationIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//ApplicationIds/applicationId"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//NetworkIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NetworkIds/netId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NetworkIds/tenantId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NetworkIds/clusterId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NetworkIds/clusterAddress"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//UplinkMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/sessionKeyId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/fPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/fCnt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/frmPayload"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//UplinkMessage/rxMetadata"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//UplinkMessage/settings"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/gatewayChannelIndex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/deviceChannelIndex"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//UplinkMessage/decodedPayload"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//UplinkMessage/networkIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/consumedAirtime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//UplinkMessage/receivedAt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//UplinkMessage/versionIds"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//GatewayIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//GatewayIds/gatewayId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//GatewayIds/eui"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//RxMetadata">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//RxMetadata/gatewayIds"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/rssi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/channelRssi"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/snr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/uplinkToken"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//RxMetadata/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/receivedAt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//RxMetadata/channelIndex"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//DataRate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//DataRate/lora"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//Lora">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Lora/bandwidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Lora/spreadingFactor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Lora/codingRate"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Location/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Location/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Location/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Location/source"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//StringToObjectMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//StringToObjectMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//StringToObjectMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//VersionIds">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//VersionIds/brandId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//VersionIds/modelId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//VersionIds/hardwareVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//VersionIds/firmwareVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//VersionIds/bandId"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//Settings">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//Settings/dataRate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Settings/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Settings/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//Settings/frequency"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

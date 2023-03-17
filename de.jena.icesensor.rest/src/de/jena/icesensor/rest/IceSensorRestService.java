@@ -15,7 +15,6 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -26,11 +25,13 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sensinact.prototype.PrototypePush;
 import org.gecko.core.pool.Pool;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.emf.osgi.EMFUriHandlerConstants;
+import org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool;
+import org.gecko.qvt.osgi.api.ModelTransformator;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -41,17 +42,14 @@ import org.osgi.util.pushstream.PushStream;
 import org.osgi.util.pushstream.PushStreamProvider;
 import org.osgi.util.pushstream.SimplePushEventSource;
 
+import aQute.bnd.annotation.service.ServiceCapability;
 import de.jena.icesensor.api.IceSensorService;
-import de.jena.model.icesensor.Data;
-import de.jena.model.icesensor.IceSENSOR;
 import de.jena.model.icesensor.IcesensorPackage;
 import de.jena.model.icesensor.SensorData;
-import org.eclipse.sensinact.prototype.PrototypePush;
-import org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool;
-import org.gecko.qvt.osgi.api.ModelTransformator;
 
 @Component(service = IceSensorService.class, name = "IceSensorServiceRest", configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
 @RequireEMFJson
+@ServiceCapability(value = Pool.class)
 public class IceSensorRestService implements IceSensorService {
 
 	/** ICE_SENSOR_TOKEN */
@@ -140,7 +138,7 @@ public class IceSensorRestService implements IceSensorService {
 	
 	private void publish(List<EObject> sensors) {
 		Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
-		Pool<ModelTransformator> pool = poolMap.get("modelTransformatorService-sensinactPool");
+		Pool<ModelTransformator> pool = poolMap.get("modelTransformatorService-iceCatPool");
 		ModelTransformator transformator = pool.poll();
 		try {
 			for (EObject sensor : sensors) {
