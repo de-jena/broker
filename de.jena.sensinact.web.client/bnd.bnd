@@ -1,0 +1,7 @@
+-includeresource.content: \
+	content=dist
+-buildpath: \
+	org.osgi.service.http.whiteboard,\
+	org.osgi.annotation.bundle,\
+	biz.aQute.bnd.annotation,\
+	org.osgi.service.component.annotations

@@ -81,8 +81,8 @@ public class IcesensoreSensinactAdapterFactory extends AdapterFactoryImpl {
 	protected IcesensoreSensinactSwitch<Adapter> modelSwitch =
 		new IcesensoreSensinactSwitch<Adapter>() {
 			@Override
-			public Adapter caseIceSensore(IceSensore object) {
-				return createIceSensoreAdapter();
+			public Adapter caseIceSensor(IceSensor object) {
+				return createIceSensorAdapter();
 			}
 			@Override
 			public Adapter caseSensorData(SensorData object) {
@@ -117,16 +117,16 @@ public class IcesensoreSensinactAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.iceprovider.IceSensore <em>Ice Sensore</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.iceprovider.IceSensor <em>Ice Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor
 	 * @generated
 	 */
-	public Adapter createIceSensoreAdapter() {
+	public Adapter createIceSensorAdapter() {
 		return null;
 	}
 

@@ -79,10 +79,10 @@ public class IcesensoreSensinactSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case IcesensoreSensinactPackage.ICE_SENSORE: {
-				IceSensore iceSensore = (IceSensore)theEObject;
-				T result = caseIceSensore(iceSensore);
-				if (result == null) result = caseProvider(iceSensore);
+			case IcesensoreSensinactPackage.ICE_SENSOR: {
+				IceSensor iceSensor = (IceSensor)theEObject;
+				T result = caseIceSensor(iceSensor);
+				if (result == null) result = caseProvider(iceSensor);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -98,17 +98,17 @@ public class IcesensoreSensinactSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Ice Sensore</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Ice Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Ice Sensore</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Ice Sensor</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIceSensore(IceSensore object) {
+	public T caseIceSensor(IceSensor object) {
 		return null;
 	}
 

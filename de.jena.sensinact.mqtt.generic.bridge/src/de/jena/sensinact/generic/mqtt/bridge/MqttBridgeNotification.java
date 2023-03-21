@@ -45,7 +45,7 @@ public class MqttBridgeNotification implements TypedEventHandler<ResourceDataNot
 			logger.log(Level.DEBUG, "received event on topic %s", topic);
 		}
 		try {
-			UpdateMessage update = MessageUtil.createUpdateMessageForType(event.type);
+			UpdateMessage update = MessageUtil.createUpdateMessageForType(event.newValue != null ? event.newValue.getClass() :  event.type);
 			update.setTimestamp(event.timestamp);
 			update.setResource(event.resource);
 			setValue(update, event.oldValue, "oldValue");

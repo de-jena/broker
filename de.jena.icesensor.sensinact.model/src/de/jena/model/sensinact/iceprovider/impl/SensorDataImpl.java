@@ -264,7 +264,7 @@ public class SensorDataImpl extends ServiceImpl implements SensorData {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensoreSensinactPackage.eINSTANCE.getSensorData();
+		return IcesensoreSensinactPackage.Literals.SENSOR_DATA;
 	}
 
 	/**

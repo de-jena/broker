@@ -12,7 +12,7 @@
  */
 package de.jena.model.sensinact.iceprovider.impl;
 
-import de.jena.model.sensinact.iceprovider.IceSensore;
+import de.jena.model.sensinact.iceprovider.IceSensor;
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactFactory;
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 import de.jena.model.sensinact.iceprovider.SensorData;
@@ -38,7 +38,7 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass iceSensoreEClass = null;
+	private EClass iceSensorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,8 +117,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EClass getIceSensore() {
-		return iceSensoreEClass;
+	public EClass getIceSensor() {
+		return iceSensorEClass;
 	}
 
 	/**
@@ -127,8 +127,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EAttribute getIceSensore_Has_beacon() {
-		return (EAttribute)iceSensoreEClass.getEStructuralFeatures().get(0);
+	public EReference getIceSensor_H2sugm3() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -137,8 +137,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_H2sugm3() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(1);
+	public EReference getIceSensor_Cougm3() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Cougm3() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(2);
+	public EReference getIceSensor_Nougm3() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Nougm3() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(3);
+	public EReference getIceSensor_O3ugm3() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -167,8 +167,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_O3ugm3() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(4);
+	public EReference getIceSensor__1p() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -177,8 +177,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore__1p() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(5);
+	public EReference getIceSensor_Aqi_criteria() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -187,8 +187,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Aqi_criteria() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(6);
+	public EReference getIceSensor_Temperature() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -197,8 +197,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Temperature() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(7);
+	public EReference getIceSensor_Humidity() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -207,8 +207,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Humidity() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(8);
+	public EReference getIceSensor__10p() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -217,8 +217,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore__10p() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(9);
+	public EReference getIceSensor_Pressure() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -227,8 +227,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Pressure() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(10);
+	public EReference getIceSensor_No2ugm3() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -237,8 +237,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_No2ugm3() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(11);
+	public EReference getIceSensor_Aqi() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -247,18 +247,8 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public EReference getIceSensore_Aqi() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(12);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getIceSensore__2_5p() {
-		return (EReference)iceSensoreEClass.getEStructuralFeatures().get(13);
+	public EReference getIceSensor__2_5p() {
+		return (EReference)iceSensorEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -400,21 +390,20 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 		isCreated = true;
 
 		// Create classes and their features
-		iceSensoreEClass = createEClass(ICE_SENSORE);
-		createEAttribute(iceSensoreEClass, ICE_SENSORE__HAS_BEACON);
-		createEReference(iceSensoreEClass, ICE_SENSORE__H2SUGM3);
-		createEReference(iceSensoreEClass, ICE_SENSORE__COUGM3);
-		createEReference(iceSensoreEClass, ICE_SENSORE__NOUGM3);
-		createEReference(iceSensoreEClass, ICE_SENSORE__O3UGM3);
-		createEReference(iceSensoreEClass, ICE_SENSORE__1P);
-		createEReference(iceSensoreEClass, ICE_SENSORE__AQI_CRITERIA);
-		createEReference(iceSensoreEClass, ICE_SENSORE__TEMPERATURE);
-		createEReference(iceSensoreEClass, ICE_SENSORE__HUMIDITY);
-		createEReference(iceSensoreEClass, ICE_SENSORE__10P);
-		createEReference(iceSensoreEClass, ICE_SENSORE__PRESSURE);
-		createEReference(iceSensoreEClass, ICE_SENSORE__NO2UGM3);
-		createEReference(iceSensoreEClass, ICE_SENSORE__AQI);
-		createEReference(iceSensoreEClass, ICE_SENSORE__25P);
+		iceSensorEClass = createEClass(ICE_SENSOR);
+		createEReference(iceSensorEClass, ICE_SENSOR__H2SUGM3);
+		createEReference(iceSensorEClass, ICE_SENSOR__COUGM3);
+		createEReference(iceSensorEClass, ICE_SENSOR__NOUGM3);
+		createEReference(iceSensorEClass, ICE_SENSOR__O3UGM3);
+		createEReference(iceSensorEClass, ICE_SENSOR__1P);
+		createEReference(iceSensorEClass, ICE_SENSOR__AQI_CRITERIA);
+		createEReference(iceSensorEClass, ICE_SENSOR__TEMPERATURE);
+		createEReference(iceSensorEClass, ICE_SENSOR__HUMIDITY);
+		createEReference(iceSensorEClass, ICE_SENSOR__10P);
+		createEReference(iceSensorEClass, ICE_SENSOR__PRESSURE);
+		createEReference(iceSensorEClass, ICE_SENSOR__NO2UGM3);
+		createEReference(iceSensorEClass, ICE_SENSOR__AQI);
+		createEReference(iceSensorEClass, ICE_SENSOR__25P);
 
 		sensorDataEClass = createEClass(SENSOR_DATA);
 		createEAttribute(sensorDataEClass, SENSOR_DATA__SENSOR_TYPE);
@@ -460,25 +449,24 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		iceSensoreEClass.getESuperTypes().add(theSensiNactPackage.getProvider());
+		iceSensorEClass.getESuperTypes().add(theSensiNactPackage.getProvider());
 		sensorDataEClass.getESuperTypes().add(theSensiNactPackage.getService());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(iceSensoreEClass, IceSensore.class, "IceSensore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIceSensore_Has_beacon(), ecorePackage.getEBoolean(), "has_beacon", null, 1, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_H2sugm3(), this.getSensorData(), null, "h2sugm3", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Cougm3(), this.getSensorData(), null, "cougm3", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Nougm3(), this.getSensorData(), null, "nougm3", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_O3ugm3(), this.getSensorData(), null, "o3ugm3", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore__1p(), this.getSensorData(), null, "_1p", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Aqi_criteria(), this.getSensorData(), null, "aqi_criteria", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Temperature(), this.getSensorData(), null, "temperature", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Humidity(), this.getSensorData(), null, "humidity", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore__10p(), this.getSensorData(), null, "_10p", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Pressure(), this.getSensorData(), null, "pressure", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_No2ugm3(), this.getSensorData(), null, "no2ugm3", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore_Aqi(), this.getSensorData(), null, "aqi", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIceSensore__2_5p(), this.getSensorData(), null, "_2_5p", null, 0, 1, IceSensore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(iceSensorEClass, IceSensor.class, "IceSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIceSensor_H2sugm3(), this.getSensorData(), null, "h2sugm3", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Cougm3(), this.getSensorData(), null, "cougm3", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Nougm3(), this.getSensorData(), null, "nougm3", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_O3ugm3(), this.getSensorData(), null, "o3ugm3", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor__1p(), this.getSensorData(), null, "_1p", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Aqi_criteria(), this.getSensorData(), null, "aqi_criteria", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Temperature(), this.getSensorData(), null, "temperature", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Humidity(), this.getSensorData(), null, "humidity", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor__10p(), this.getSensorData(), null, "_10p", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Pressure(), this.getSensorData(), null, "pressure", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_No2ugm3(), this.getSensorData(), null, "no2ugm3", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor_Aqi(), this.getSensorData(), null, "aqi", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIceSensor__2_5p(), this.getSensorData(), null, "_2_5p", null, 0, 1, IceSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorDataEClass, SensorData.class, "SensorData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensorData_Sensor_type(), ecorePackage.getEString(), "sensor_type", null, 0, 1, SensorData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

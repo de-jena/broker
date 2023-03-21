@@ -73,14 +73,14 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	IcesensoreSensinactPackage eINSTANCE = de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.jena.model.sensinact.iceprovider.impl.IceSensoreImpl <em>Ice Sensore</em>}' class.
+	 * The meta object id for the '{@link de.jena.model.sensinact.iceprovider.impl.IceSensorImpl <em>Ice Sensor</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.jena.model.sensinact.iceprovider.impl.IceSensoreImpl
-	 * @see de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl#getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.impl.IceSensorImpl
+	 * @see de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl#getIceSensor()
 	 * @generated
 	 */
-	int ICE_SENSORE = 0;
+	int ICE_SENSOR = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -89,7 +89,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__ID = SensiNactPackage.PROVIDER__ID;
+	int ICE_SENSOR__ID = SensiNactPackage.PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' containment reference.
@@ -98,7 +98,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__ADMIN = SensiNactPackage.PROVIDER__ADMIN;
+	int ICE_SENSOR__ADMIN = SensiNactPackage.PROVIDER__ADMIN;
 
 	/**
 	 * The feature id for the '<em><b>Linked Providers</b></em>' reference list.
@@ -107,16 +107,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__LINKED_PROVIDERS = SensiNactPackage.PROVIDER__LINKED_PROVIDERS;
-
-	/**
-	 * The feature id for the '<em><b>Has beacon</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ICE_SENSORE__HAS_BEACON = SensiNactPackage.PROVIDER_FEATURE_COUNT + 0;
+	int ICE_SENSOR__LINKED_PROVIDERS = SensiNactPackage.PROVIDER__LINKED_PROVIDERS;
 
 	/**
 	 * The feature id for the '<em><b>H2sugm3</b></em>' containment reference.
@@ -125,7 +116,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__H2SUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 1;
+	int ICE_SENSOR__H2SUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cougm3</b></em>' containment reference.
@@ -134,7 +125,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__COUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 2;
+	int ICE_SENSOR__COUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Nougm3</b></em>' containment reference.
@@ -143,7 +134,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__NOUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 3;
+	int ICE_SENSOR__NOUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>O3ugm3</b></em>' containment reference.
@@ -152,7 +143,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__O3UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 4;
+	int ICE_SENSOR__O3UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>1p</b></em>' containment reference.
@@ -161,7 +152,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__1P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 5;
+	int ICE_SENSOR__1P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Aqi criteria</b></em>' containment reference.
@@ -170,7 +161,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__AQI_CRITERIA = SensiNactPackage.PROVIDER_FEATURE_COUNT + 6;
+	int ICE_SENSOR__AQI_CRITERIA = SensiNactPackage.PROVIDER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' containment reference.
@@ -179,7 +170,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__TEMPERATURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 7;
+	int ICE_SENSOR__TEMPERATURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Humidity</b></em>' containment reference.
@@ -188,7 +179,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__HUMIDITY = SensiNactPackage.PROVIDER_FEATURE_COUNT + 8;
+	int ICE_SENSOR__HUMIDITY = SensiNactPackage.PROVIDER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>10p</b></em>' containment reference.
@@ -197,7 +188,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__10P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 9;
+	int ICE_SENSOR__10P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Pressure</b></em>' containment reference.
@@ -206,7 +197,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__PRESSURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 10;
+	int ICE_SENSOR__PRESSURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>No2ugm3</b></em>' containment reference.
@@ -215,7 +206,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__NO2UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 11;
+	int ICE_SENSOR__NO2UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Aqi</b></em>' containment reference.
@@ -224,7 +215,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__AQI = SensiNactPackage.PROVIDER_FEATURE_COUNT + 12;
+	int ICE_SENSOR__AQI = SensiNactPackage.PROVIDER_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>25p</b></em>' containment reference.
@@ -233,25 +224,25 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE__25P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 13;
+	int ICE_SENSOR__25P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 12;
 
 	/**
-	 * The number of structural features of the '<em>Ice Sensore</em>' class.
+	 * The number of structural features of the '<em>Ice Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE_FEATURE_COUNT = SensiNactPackage.PROVIDER_FEATURE_COUNT + 14;
+	int ICE_SENSOR_FEATURE_COUNT = SensiNactPackage.PROVIDER_FEATURE_COUNT + 13;
 
 	/**
-	 * The number of operations of the '<em>Ice Sensore</em>' class.
+	 * The number of operations of the '<em>Ice Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSORE_OPERATION_COUNT = SensiNactPackage.PROVIDER_OPERATION_COUNT + 0;
+	int ICE_SENSOR_OPERATION_COUNT = SensiNactPackage.PROVIDER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.model.sensinact.iceprovider.impl.SensorDataImpl <em>Sensor Data</em>}' class.
@@ -382,168 +373,157 @@ public interface IcesensoreSensinactPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link de.jena.model.sensinact.iceprovider.IceSensore <em>Ice Sensore</em>}'.
+	 * Returns the meta object for class '{@link de.jena.model.sensinact.iceprovider.IceSensor <em>Ice Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Ice Sensore</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore
+	 * @return the meta object for class '<em>Ice Sensor</em>'.
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor
 	 * @generated
 	 */
-	EClass getIceSensore();
+	EClass getIceSensor();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.model.sensinact.iceprovider.IceSensore#isHas_beacon <em>Has beacon</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Has beacon</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#isHas_beacon()
-	 * @see #getIceSensore()
-	 * @generated
-	 */
-	EAttribute getIceSensore_Has_beacon();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getH2sugm3 <em>H2sugm3</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getH2sugm3 <em>H2sugm3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>H2sugm3</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getH2sugm3()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getH2sugm3()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_H2sugm3();
+	EReference getIceSensor_H2sugm3();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getCougm3 <em>Cougm3</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getCougm3 <em>Cougm3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Cougm3</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getCougm3()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getCougm3()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Cougm3();
+	EReference getIceSensor_Cougm3();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getNougm3 <em>Nougm3</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getNougm3 <em>Nougm3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Nougm3</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getNougm3()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getNougm3()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Nougm3();
+	EReference getIceSensor_Nougm3();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getO3ugm3 <em>O3ugm3</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getO3ugm3 <em>O3ugm3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>O3ugm3</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getO3ugm3()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getO3ugm3()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_O3ugm3();
+	EReference getIceSensor_O3ugm3();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#get_1p <em>1p</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#get_1p <em>1p</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>1p</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#get_1p()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#get_1p()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore__1p();
+	EReference getIceSensor__1p();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getAqi_criteria <em>Aqi criteria</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getAqi_criteria <em>Aqi criteria</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Aqi criteria</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getAqi_criteria()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getAqi_criteria()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Aqi_criteria();
+	EReference getIceSensor_Aqi_criteria();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getTemperature <em>Temperature</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getTemperature <em>Temperature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Temperature</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getTemperature()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getTemperature()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Temperature();
+	EReference getIceSensor_Temperature();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getHumidity <em>Humidity</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getHumidity <em>Humidity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Humidity</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getHumidity()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getHumidity()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Humidity();
+	EReference getIceSensor_Humidity();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#get_10p <em>10p</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#get_10p <em>10p</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>10p</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#get_10p()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#get_10p()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore__10p();
+	EReference getIceSensor__10p();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getPressure <em>Pressure</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getPressure <em>Pressure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Pressure</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getPressure()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getPressure()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Pressure();
+	EReference getIceSensor_Pressure();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getNo2ugm3 <em>No2ugm3</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getNo2ugm3 <em>No2ugm3</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>No2ugm3</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getNo2ugm3()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getNo2ugm3()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_No2ugm3();
+	EReference getIceSensor_No2ugm3();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#getAqi <em>Aqi</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#getAqi <em>Aqi</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Aqi</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#getAqi()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#getAqi()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore_Aqi();
+	EReference getIceSensor_Aqi();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensore#get_2_5p <em>25p</em>}'.
+	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.iceprovider.IceSensor#get_2_5p <em>25p</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>25p</em>'.
-	 * @see de.jena.model.sensinact.iceprovider.IceSensore#get_2_5p()
-	 * @see #getIceSensore()
+	 * @see de.jena.model.sensinact.iceprovider.IceSensor#get_2_5p()
+	 * @see #getIceSensor()
 	 * @generated
 	 */
-	EReference getIceSensore__2_5p();
+	EReference getIceSensor__2_5p();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.model.sensinact.iceprovider.SensorData <em>Sensor Data</em>}'.
@@ -673,5 +653,225 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 */
 	IcesensoreSensinactFactory getIcesensoreSensinactFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link de.jena.model.sensinact.iceprovider.impl.IceSensorImpl <em>Ice Sensor</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.sensinact.iceprovider.impl.IceSensorImpl
+		 * @see de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl#getIceSensor()
+		 * @generated
+		 */
+		EClass ICE_SENSOR = eINSTANCE.getIceSensor();
+
+		/**
+		 * The meta object literal for the '<em><b>H2sugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__H2SUGM3 = eINSTANCE.getIceSensor_H2sugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Cougm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__COUGM3 = eINSTANCE.getIceSensor_Cougm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Nougm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__NOUGM3 = eINSTANCE.getIceSensor_Nougm3();
+
+		/**
+		 * The meta object literal for the '<em><b>O3ugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__O3UGM3 = eINSTANCE.getIceSensor_O3ugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>1p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__1P = eINSTANCE.getIceSensor__1p();
+
+		/**
+		 * The meta object literal for the '<em><b>Aqi criteria</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__AQI_CRITERIA = eINSTANCE.getIceSensor_Aqi_criteria();
+
+		/**
+		 * The meta object literal for the '<em><b>Temperature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__TEMPERATURE = eINSTANCE.getIceSensor_Temperature();
+
+		/**
+		 * The meta object literal for the '<em><b>Humidity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__HUMIDITY = eINSTANCE.getIceSensor_Humidity();
+
+		/**
+		 * The meta object literal for the '<em><b>10p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__10P = eINSTANCE.getIceSensor__10p();
+
+		/**
+		 * The meta object literal for the '<em><b>Pressure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__PRESSURE = eINSTANCE.getIceSensor_Pressure();
+
+		/**
+		 * The meta object literal for the '<em><b>No2ugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__NO2UGM3 = eINSTANCE.getIceSensor_No2ugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Aqi</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__AQI = eINSTANCE.getIceSensor_Aqi();
+
+		/**
+		 * The meta object literal for the '<em><b>25p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__25P = eINSTANCE.getIceSensor__2_5p();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.model.sensinact.iceprovider.impl.SensorDataImpl <em>Sensor Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.sensinact.iceprovider.impl.SensorDataImpl
+		 * @see de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl#getSensorData()
+		 * @generated
+		 */
+		EClass SENSOR_DATA = eINSTANCE.getSensorData();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__SENSOR_TYPE = eINSTANCE.getSensorData_Sensor_type();
+
+		/**
+		 * The meta object literal for the '<em><b>Gateway</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__GATEWAY = eINSTANCE.getSensorData_Gateway();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__SENSOR_MODEL = eINSTANCE.getSensorData_Sensor_model();
+
+		/**
+		 * The meta object literal for the '<em><b>Avg</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__AVG = eINSTANCE.getSensorData_Avg();
+
+		/**
+		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__MIN = eINSTANCE.getSensorData_Min();
+
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__MAX = eINSTANCE.getSensorData_Max();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__UNIT = eINSTANCE.getSensorData_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Validity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__VALIDITY = eINSTANCE.getSensorData_Validity();
+
+		/**
+		 * The meta object literal for the '<em><b>Created at</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__CREATED_AT = eINSTANCE.getSensorData_Created_at();
+
+		/**
+		 * The meta object literal for the '<em><b>Str data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__STR_DATA = eINSTANCE.getSensorData_Str_data();
+
+	}
 
 } //IcesensoreSensinactPackage

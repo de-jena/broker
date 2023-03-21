@@ -3,7 +3,7 @@
 	":configurator:version": "1.0.0",
 	":configurator:symbolic-name": "MMTMainConfig",
 	
-	"ConfigurableModelTransformatorPool": {
+	"ConfigurableModelTransformatorPool~icecat": {
 		"pool.componentName": "modelTransformatorService",
 		"pool.size": 100,
 		"pool.timeout": 100,
@@ -20,13 +20,20 @@
 		"pool.asService": false
 	},
 	
+	"ConfigurableModelTransformatorPool~ttn": {
+		"pool.componentName": "ttn",
+		"pool.size": 100,
+		"pool.timeout": 100,
+		"poolRef.target": "(pool.group=ttnPool)"
+	},
+	
 	"PrototypeConfigurableTransformationService~ttncat": {
 		"name": "ttncat",
 		"qvt.templatePath": "de.jena.ttn.sensinact.mmt/transformations/ttn.qvto",
 		"qvt.transformatorName": "TTN2SensinactTTNApi",
 		"qvt.model.target": "(&(emf.model.name=ttn)(emf.model.name=ttnprovider))",
 		"pool.name": "ttnPool",
-		"pool.group": "sensinactPool",
+		"pool.group": "ttnPool",
 		"pool.asService": false,
 		"osgi.ds.satisfying.condition.target": "(osgi.condition.id=ttnBlackboxes)"
 		

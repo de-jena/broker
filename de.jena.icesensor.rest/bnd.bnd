@@ -16,7 +16,10 @@
 	org.eclipse.sensinact.gateway.core.api,\
 	org.gecko.qvt.osgi.api,\
 	org.gecko.core.pool;version=latest,\
-	biz.aQute.bnd.annotation
+	biz.aQute.bnd.annotation,\
+	de.jena.icesensor.sensinact.model;version=latest,\
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.eclipse.sensinact.gateway.core.models
 
 -library: enable-emf
 

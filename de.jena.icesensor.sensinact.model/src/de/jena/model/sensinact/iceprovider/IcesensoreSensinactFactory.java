@@ -35,13 +35,13 @@ public interface IcesensoreSensinactFactory extends EFactory {
 	IcesensoreSensinactFactory eINSTANCE = de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Ice Sensore</em>'.
+	 * Returns a new object of class '<em>Ice Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Ice Sensore</em>'.
+	 * @return a new object of class '<em>Ice Sensor</em>'.
 	 * @generated
 	 */
-	IceSensore createIceSensore();
+	IceSensor createIceSensor();
 
 	/**
 	 * Returns a new object of class '<em>Sensor Data</em>'.

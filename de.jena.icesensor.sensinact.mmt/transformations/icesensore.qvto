@@ -1,16 +1,16 @@
 modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
-modeltype SENSORE uses "https://jena.de/models/icesensor/1.0";
+modeltype SENSOR uses "https://jena.de/models/icesensor/1.0";
 modeltype SENSINACT uses "https://jena.de/models/icesensor/sensinact/1.0";
 
-transformation project2projectApi(in sensor : SENSORE, out sensinact : SENSINACT);
+transformation project2projectApi(in sensor : SENSOR, out sensinact : SENSINACT);
 
 main() {
-	sensor.rootObjects()[SENSORE::IceSENSOR] -> map sensoreToProvider(); 
+	sensor.rootObjects()[SENSOR::IceSENSOR] -> map sensoreToProvider(); 
 	
 }
 
 
-mapping SENSORE::IceSENSOR::sensoreToProvider(): SENSINACT::IceSensore {
+mapping SENSOR::IceSENSOR::sensoreToProvider(): SENSINACT::IceSensor {
 
 	id := self.ice_id;
 	h2sugm3 := self.data.h2sugm3.map sensoreToProvider();
@@ -29,7 +29,7 @@ mapping SENSORE::IceSENSOR::sensoreToProvider(): SENSINACT::IceSensore {
 	_2_5p := self.data._2_5p.map sensoreToProvider();
 }
 
-mapping SENSORE::SensorData::sensoreToProvider(): SENSINACT::SensorData {
+mapping SENSOR::SensorData::sensoreToProvider(): SENSINACT::SensorData {
 
 	sensor_type := self.sensor_type;
 	gateway := gateway;

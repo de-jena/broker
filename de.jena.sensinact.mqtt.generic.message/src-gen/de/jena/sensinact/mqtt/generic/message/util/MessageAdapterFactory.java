@@ -104,6 +104,18 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createDateValueUpdateAdapter();
 			}
 			@Override
+			public Adapter caseBigDecimalValueUpdate(BigDecimalValueUpdate object) {
+				return createBigDecimalValueUpdateAdapter();
+			}
+			@Override
+			public Adapter caseGeoJsonObjectValueUpdate(GeoJsonObjectValueUpdate object) {
+				return createGeoJsonObjectValueUpdateAdapter();
+			}
+			@Override
+			public Adapter casePointValueUpdate(PointValueUpdate object) {
+				return createPointValueUpdateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +258,48 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDateValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate <em>Big Decimal Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate
+	 * @generated
+	 */
+	public Adapter createBigDecimalValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate <em>Geo Json Object Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate
+	 * @generated
+	 */
+	public Adapter createGeoJsonObjectValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.PointValueUpdate <em>Point Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.PointValueUpdate
+	 * @generated
+	 */
+	public Adapter createPointValueUpdateAdapter() {
 		return null;
 	}
 

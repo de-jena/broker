@@ -66,7 +66,7 @@ public class IcesensoreSensinactFactoryImpl extends EFactoryImpl implements Ices
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case IcesensoreSensinactPackage.ICE_SENSORE: return createIceSensore();
+			case IcesensoreSensinactPackage.ICE_SENSOR: return createIceSensor();
 			case IcesensoreSensinactPackage.SENSOR_DATA: return createSensorData();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -79,9 +79,9 @@ public class IcesensoreSensinactFactoryImpl extends EFactoryImpl implements Ices
 	 * @generated
 	 */
 	@Override
-	public IceSensore createIceSensore() {
-		IceSensoreImpl iceSensore = new IceSensoreImpl();
-		return iceSensore;
+	public IceSensor createIceSensor() {
+		IceSensorImpl iceSensor = new IceSensorImpl();
+		return iceSensor;
 	}
 
 	/**

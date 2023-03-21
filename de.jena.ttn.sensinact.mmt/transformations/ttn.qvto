@@ -13,14 +13,15 @@ main() {
 
 mapping TTN::TtnUplinkPayload::sensoreToProvider(): SENSINACT::TtnSensor {
 
-	id := self.endDeviceIds.devAddr;
-	admin := self.uplinkMessage.map uplinkToAdmin();
+	id := self.endDeviceIds.deviceId;
+	admin := self.map uplinkToAdmin();
 	data := self.uplinkMessage.map uplinkToData(); 
 }
 
 	
-mapping TTN::UplinkMessage::uplinkToAdmin(): PROVIDER::Admin {
-	metadata := self.rxMetadata.map rxMetaToMeta();
+mapping TTN::TtnUplinkPayload::uplinkToAdmin(): PROVIDER::Admin {
+	friendlyName := self.endDeviceIds.deviceId;
+//	metadata := self.rxMetadata.map rxMetaToMeta();
 //	location := self.rxMetadata.location.toGeoJson();
 }
 

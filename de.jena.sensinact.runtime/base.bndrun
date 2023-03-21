@@ -117,9 +117,6 @@
 	de.jena.ttn.sensinact;version=snapshot,\
 	de.jena.ttn.sensinact.mmt;version=snapshot,\
 	de.jena.ttn.model;version=snapshot,\
-	com.google.guava;version='[15.0.0,15.0.1)',\
-	log4j.over.slf4j;version='[1.7.25,1.7.26)',\
-	org.eclipse.emf.compare;version='[3.5.3,3.5.4)',\
 	de.dim.eclipse.core.runtime;version='[3.14.0,3.14.1)',\
 	de.dim.eclipse.osgi;version='[3.12.50,3.12.51)',\
 	de.dim.equinox.common;version='[3.9.0,3.9.1)',\
@@ -139,7 +136,6 @@
 	org.gecko.qvt.osgi.api;version='[4.1.1,4.1.2)',\
 	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)',\
 	de.jena.icesensor.sensinact.mmt;version=snapshot,\
-	org.eclipse.equinox.supplement;version='[1.10.100,1.10.101)',\
 	org.eclipse.jetty.alpn.client;version='[11.0.13,11.0.14)',\
 	org.eclipse.jetty.client;version='[11.0.13,11.0.14)',\
 	org.eclipse.sensinact.gateway.core.api;version='[0.0.1,0.0.2)',\
@@ -149,7 +145,18 @@
 	org.eclipse.sensinact.gateway.southbound.device-factory.parser-json;version='[0.0.1,0.0.2)',\
 	org.eclipse.sensinact.gateway.southbound.http.http-device-factory;version='[0.0.1,0.0.2)',\
 	de.jena.icesensor.sensinact.model;version=snapshot,\
-	de.jena.ttn.sensinact.model;version=snapshot
+	de.jena.ttn.sensinact.model;version=snapshot,\
+	de.jena.sensinact.web.client;version=snapshot,\
+	org.antlr.antlr4-runtime-osgi;version='[4.5.0,4.5.1)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.dto;version='[0.0.1,0.0.2)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.filter;version='[0.0.1,0.0.2)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.api;version='[0.0.1,0.0.2)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway;version='[0.0.1,0.0.2)',\
+	org.locationtech.spatial4j;version='[0.8.0,0.8.1)',\
+	org.osgi.service.http;version='[1.2.1,1.2.2)',\
+	com.google.guava;version='[15.0.0,15.0.1)',\
+	log4j.over.slf4j;version='[1.7.25,1.7.26)',\
+	org.eclipse.emf.compare;version='[3.5.3,3.5.4)'
 	
 
 -runrequires: \
@@ -178,7 +185,8 @@
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.http.http-device-factory',\
 	bnd.identity;id='de.jena.ttn.sensinact.mmt',\
 	bnd.identity;id='de.jena.icesensor.sensinact.model',\
-	bnd.identity;id='de.jena.ttn.sensinact.model'
+	bnd.identity;id='de.jena.ttn.sensinact.model',\
+	bnd.identity;id='de.jena.sensinact.web.client'
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
 -runblacklist: \

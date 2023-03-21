@@ -619,6 +619,198 @@ public interface MessagePackage extends EPackage {
 	int DATE_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.BigDecimalValueUpdateImpl <em>Big Decimal Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.BigDecimalValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getBigDecimalValueUpdate()
+	 * @generated
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Big Decimal Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Big Decimal Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BIG_DECIMAL_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.GeoJsonObjectValueUpdateImpl <em>Geo Json Object Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.GeoJsonObjectValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getGeoJsonObjectValueUpdate()
+	 * @generated
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Geo Json Object Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Geo Json Object Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GEO_JSON_OBJECT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.PointValueUpdateImpl <em>Point Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.PointValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getPointValueUpdate()
+	 * @generated
+	 */
+	int POINT_VALUE_UPDATE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Point Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Point Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int POINT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>EInstant</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -626,7 +818,17 @@ public interface MessagePackage extends EPackage {
 	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEInstant()
 	 * @generated
 	 */
-	int EINSTANT = 9;
+	int EINSTANT = 12;
+
+	/**
+	 * The meta object id for the '<em>EPoint</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.sensinact.gateway.geojson.Point
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEPoint()
+	 * @generated
+	 */
+	int EPOINT = 13;
 
 
 	/**
@@ -918,6 +1120,102 @@ public interface MessagePackage extends EPackage {
 	EAttribute getDateValueUpdate_NewValue();
 
 	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate <em>Big Decimal Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Big Decimal Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate
+	 * @generated
+	 */
+	EClass getBigDecimalValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate#getOldValue()
+	 * @see #getBigDecimalValueUpdate()
+	 * @generated
+	 */
+	EAttribute getBigDecimalValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate#getNewValue()
+	 * @see #getBigDecimalValueUpdate()
+	 * @generated
+	 */
+	EAttribute getBigDecimalValueUpdate_NewValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate <em>Geo Json Object Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Geo Json Object Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate
+	 * @generated
+	 */
+	EClass getGeoJsonObjectValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate#getOldValue()
+	 * @see #getGeoJsonObjectValueUpdate()
+	 * @generated
+	 */
+	EAttribute getGeoJsonObjectValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate#getNewValue()
+	 * @see #getGeoJsonObjectValueUpdate()
+	 * @generated
+	 */
+	EAttribute getGeoJsonObjectValueUpdate_NewValue();
+
+	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.PointValueUpdate <em>Point Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Point Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.PointValueUpdate
+	 * @generated
+	 */
+	EClass getPointValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.PointValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.PointValueUpdate#getOldValue()
+	 * @see #getPointValueUpdate()
+	 * @generated
+	 */
+	EAttribute getPointValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.PointValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.PointValueUpdate#getNewValue()
+	 * @see #getPointValueUpdate()
+	 * @generated
+	 */
+	EAttribute getPointValueUpdate_NewValue();
+
+	/**
 	 * Returns the meta object for data type '{@link java.time.Instant <em>EInstant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -927,6 +1225,17 @@ public interface MessagePackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getEInstant();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.sensinact.gateway.geojson.Point <em>EPoint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>EPoint</em>'.
+	 * @see org.eclipse.sensinact.gateway.geojson.Point
+	 * @model instanceClass="org.eclipse.sensinact.gateway.geojson.Point"
+	 * @generated
+	 */
+	EDataType getEPoint();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1186,6 +1495,84 @@ public interface MessagePackage extends EPackage {
 		EAttribute DATE_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getDateValueUpdate_NewValue();
 
 		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.BigDecimalValueUpdateImpl <em>Big Decimal Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.BigDecimalValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getBigDecimalValueUpdate()
+		 * @generated
+		 */
+		EClass BIG_DECIMAL_VALUE_UPDATE = eINSTANCE.getBigDecimalValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BIG_DECIMAL_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getBigDecimalValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BIG_DECIMAL_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getBigDecimalValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.GeoJsonObjectValueUpdateImpl <em>Geo Json Object Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.GeoJsonObjectValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getGeoJsonObjectValueUpdate()
+		 * @generated
+		 */
+		EClass GEO_JSON_OBJECT_VALUE_UPDATE = eINSTANCE.getGeoJsonObjectValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GEO_JSON_OBJECT_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getGeoJsonObjectValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GEO_JSON_OBJECT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getGeoJsonObjectValueUpdate_NewValue();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.PointValueUpdateImpl <em>Point Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.PointValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getPointValueUpdate()
+		 * @generated
+		 */
+		EClass POINT_VALUE_UPDATE = eINSTANCE.getPointValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POINT_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getPointValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute POINT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getPointValueUpdate_NewValue();
+
+		/**
 		 * The meta object literal for the '<em>EInstant</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1194,6 +1581,16 @@ public interface MessagePackage extends EPackage {
 		 * @generated
 		 */
 		EDataType EINSTANT = eINSTANCE.getEInstant();
+
+		/**
+		 * The meta object literal for the '<em>EPoint</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.sensinact.gateway.geojson.Point
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEPoint()
+		 * @generated
+		 */
+		EDataType EPOINT = eINSTANCE.getEPoint();
 
 	}
 

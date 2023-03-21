@@ -25,19 +25,19 @@
 		"type" : "ttn",
 		"id" : "ttn3"
 	},
-	"MqttEndpointComponent~ttn1" : 
+	"TTNConnectionComponent~ttn1" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn)",
 		"topic": "v3/scj-simple-sensors/devices/"
 	},
-	"MqttEndpointComponent~ttn2" : 
+	"TTNConnectionComponent~ttn2" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn2)",
 		"topic": "v3/scj-sensors-01@ttn/devices/"
 	},
-	"MqttEndpointComponent~ttn3" : 
+	"TTNConnectionComponent~ttn3" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn3)",
