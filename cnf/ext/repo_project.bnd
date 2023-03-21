@@ -13,11 +13,11 @@
 		poll_time 			= -1;\
 		name='Maven Central'
 
--plugin.sensinact.template: \
+-plugin.sensinact: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
 		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-		snapshotUrl="https://devel.data-in-motion.biz/nexus/repository/sensinact/";\
-		index="${.}/sensinact.maven";\
+		snapshotUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/, https://repository.apache.org/snapshots/";\
+		index				= "${.}/sensinact.maven";\
 		readOnly			= true;\
 		poll_time 			= -1;\
 		name='SensiNact SDK'
@@ -44,16 +44,6 @@
 		poll_time 			= -1;\
 		name='DIM_Nexus_Release'
 
--plugin.emf: \
-	aQute.bnd.repository.maven.provider.MavenBndRepository;\
-		releaseUrl			= "https://ci.eclipse.org/emf/job/maven-publish/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.releng/publish/target/repository/final/";\
-		snapshotUrl			= "https://ci.eclipse.org/emf/job/maven-publish/lastSuccessfulBuild/artifact/releng/org.eclipse.emf.releng/publish/target/repository/final/";\
-		index               = ${.}/eclipse_emf.maven;\
-		transitive          = false;\
-		readOnly            = true;\
-		poll_time 			= -1;\
-		name                = "EMF Milestone Dependendencies"
-		
 -plugin.modeling:\
 	aQute.bnd.repository.osgi.OSGiRepository;\
 		name=DIM_Eclipse_Runtime;\

@@ -5,7 +5,7 @@
 	{
 		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
 		"username" : "scj-simple-sensors@ttn",
-		"password" : "$[env:MQTT_TTN_PWD;default=]$[prop:MQTT_TTN_PWD;default=]",
+		"password" : "$[env:TTN_APP_SCJ_Simple_Sensors;default=]$[prop:TTN_APP_SCJ_Simple_Sensors;default=]",
 		"type" : "ttn",
 		"id" : "ttn"
 	},
@@ -13,7 +13,7 @@
 	{
 		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
 		"username" : "scj-sensors-01@ttn",
-		"password" : "$[env:MQTT_TTN2_PWD;default=]$[prop:MQTT_TTN2_PWD;default=]",
+		"password" : "$[env:TTN_APP_SCJ_Sensors_01;default=]$[prop:TTN_APP_SCJ_Sensors_01;default=]",
 		"type" : "ttn",
 		"id" : "ttn2"
 	},
@@ -21,7 +21,7 @@
 	{
 		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
 		"username" : "bosch-parking-01@ttn",
-		"password" : "$[env:MQTT_TTN3_PWD;default=]$[prop:MQTT_TTN3_PWD;default=]",
+		"password" : "$[env:TTN_APP_Bosch_Parking;default=]$[prop:TTN_APP_Bosch_Parking;default=]",
 		"type" : "ttn",
 		"id" : "ttn3"
 	},

@@ -1,5 +1,5 @@
-org.eclipse.emf:org.eclipse.emf.common:2.28.0
-org.eclipse.emf:org.eclipse.emf.ecore:2.33.0
-org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.18.0
-org.eclipse.emf:org.eclipse.emf.codegen.ecore:2.33.0
-org.eclipse.emf:org.eclipse.emf.codegen:2.23.0
+#org.eclipse.emf:org.eclipse.emf.common:2.28.0
+#org.eclipse.emf:org.eclipse.emf.ecore:2.33.0
+#org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.18.0
+#org.eclipse.emf:org.eclipse.emf.codegen.ecore:2.33.0
+#org.eclipse.emf:org.eclipse.emf.codegen:2.23.0

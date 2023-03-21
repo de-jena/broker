@@ -77,12 +77,12 @@ public class TTNConnectionComponent {
 	PrototypePush sensinact;
 
 	private List<PushStream<Message>> subscriptions = new ArrayList<>();
-	private Map<String, GenericDto> deviceRegistrationMap = new HashMap<>();
+//	private Map<String, GenericDto> deviceRegistrationMap = new HashMap<>();
 
 	@Activate
 	public void activate(BundleContext bctx, Config config) {
-		ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-		executorService.scheduleAtFixedRate(this::dummy, 0, 1, TimeUnit.MINUTES);
+//		ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
+//		executorService.scheduleAtFixedRate(this::dummy, 0, 1, TimeUnit.MINUTES);
 		String[] deviceIds = config.deviceIds();
 		String topic = config.topic();
 		try {
@@ -138,40 +138,40 @@ public class TTNConnectionComponent {
 		}
 	}
 	
-	private void dummy() {
-		ResourceSet resourceSet = resourceSetServiceObjects.getService();
-		Resource res = resourceSet.createResource(URI.createFileURI("../../example.json"));
-		Map<?, ?> options = Collections.singletonMap(EMFJs.OPTION_ROOT_ELEMENT, ttnPackage.getTtnUplinkPayload());
-		try {
-			res.load(options);
-		EList<EObject> contents = res.getContents();
-		if (!contents.isEmpty() && contents.get(0) instanceof TtnUplinkPayload) {
-			TtnUplinkPayload payload = (TtnUplinkPayload) contents.get(0);
-			transformAndPublish(payload);
-		}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
+//	private void dummy() {
+//		ResourceSet resourceSet = resourceSetServiceObjects.getService();
+//		Resource res = resourceSet.createResource(URI.createFileURI("../../example.json"));
+//		Map<?, ?> options = Collections.singletonMap(EMFJs.OPTION_ROOT_ELEMENT, ttnPackage.getTtnUplinkPayload());
+//		try {
+//			res.load(options);
+//		EList<EObject> contents = res.getContents();
+//		if (!contents.isEmpty() && contents.get(0) instanceof TtnUplinkPayload) {
+//			TtnUplinkPayload payload = (TtnUplinkPayload) contents.get(0);
+//			transformAndPublish(payload);
+//		}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		
+//	}
 
 	private void transformAndPublish(TtnUplinkPayload payload) {
-		if (deviceRegistrationMap.get(payload.getEndDeviceIds().getDeviceId()) == null) {
 			
-			Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
-			Pool<ModelTransformator> pool = poolMap.get("ttn-ttnPool");
+		Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
+		Pool<ModelTransformator> pool = poolMap.get("ttn-ttnPool");
+		if(pool != null) {
 			ModelTransformator transformator = pool.poll();
 			try {
 //					Provider push = (Provider) transformator.startTransformation(payload);
 //					fixLocation(payload, push);
-					sensinact.pushUpdate(createDTO(payload))
-									.onFailure(t -> logger.error("Error registering device "
-											+ payload.getEndDeviceIds().getDeviceId() + " " + t.getMessage(), t));
+				sensinact.pushUpdate(createDTO(payload))
+				.onFailure(t -> logger.error("Error registering device "
+						+ payload.getEndDeviceIds().getDeviceId() + " " + t.getMessage(), t));
 			} finally {
 				pool.release(transformator);
 			}
 		}
-	}
+}
 
 	private BulkGenericDto createDTO(TtnUplinkPayload payload) {
 		List<GenericDto> model = new ArrayList<>();
@@ -183,8 +183,6 @@ public class TTNConnectionComponent {
 		location.coordinates.longitude = ttnLocation.getLongitude();
 		location.coordinates.elevation = ttnLocation.getAltitude();
 
-//		SensiNactFactory.eINSTANCE.convertToString(SensiNactPackage.Literals.EGEO_JSON_OBJECT, location);
-		
 		Instant timestamp = Instant.parse(rxMetadata.getReceivedAt());
 
 		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp));
