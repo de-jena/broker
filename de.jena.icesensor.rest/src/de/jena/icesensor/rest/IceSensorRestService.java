@@ -13,9 +13,9 @@ package de.jena.icesensor.rest;
 
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Executors;
@@ -26,10 +26,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sensinact.prototype.PrototypePush;
+import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
+import org.gecko.core.pool.Pool;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.emf.osgi.EMFUriHandlerConstants;
+import org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool;
+import org.gecko.qvt.osgi.api.ModelTransformator;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -40,14 +44,22 @@ import org.osgi.util.pushstream.PushStream;
 import org.osgi.util.pushstream.PushStreamProvider;
 import org.osgi.util.pushstream.SimplePushEventSource;
 
+import aQute.bnd.annotation.service.ServiceCapability;
 import de.jena.icesensor.api.IceSensorService;
-import de.jena.model.icesensor.Data;
 import de.jena.model.icesensor.IceSENSOR;
 import de.jena.model.icesensor.IcesensorPackage;
 import de.jena.model.icesensor.SensorData;
+import de.jena.model.sensinact.iceprovider.IceSensor;
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+
+import org.eclipse.sensinact.gateway.geojson.Coordinates;
+import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
+import org.eclipse.sensinact.gateway.geojson.Point;
+import org.eclipse.sensinact.model.core.SensiNactFactory;
 
 @Component(service = IceSensorService.class, name = "IceSensorServiceRest", configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
 @RequireEMFJson
+@ServiceCapability(value = Pool.class)
 public class IceSensorRestService implements IceSensorService {
 
 	/** ICE_SENSOR_TOKEN */
@@ -62,6 +74,9 @@ public class IceSensorRestService implements IceSensorService {
 	@Reference
 	IcesensorPackage iceSensorepackage;
 
+	@Reference
+	PrototypePush sensinact;
+	
 	private ScheduledExecutorService executor;
 	private PushStreamProvider provider;
 	private List<SimplePushEventSource<SensorData>> eventSources = new ArrayList<>();
@@ -128,29 +143,46 @@ public class IceSensorRestService implements IceSensorService {
 		return headers;
 	}
 
+	@Reference(target = ("(pool.componentName=modelTransformatorService)"))
+	private ConfigurableModelTransformatorPool poolComponent;
+	
 	private void publish(List<EObject> sensors) {
-		for (EObject sensor : sensors) {
-			Iterator<SimplePushEventSource<SensorData>> it = eventSources.iterator();
-			while (it.hasNext()) {
-				SimplePushEventSource<SensorData> source = it.next();
-				if (source.isConnected()) {
-					IceSENSOR iceSensor = (IceSENSOR) EcoreUtil.copy(sensor);
-					Data data = iceSensor.getData();
-					pub(source, iceSensor, data.getTemperature());
-					pub(source, iceSensor, data.getHumidity());
-					pub(source, iceSensor, data.getNo2ugm3());
-					pub(source, iceSensor, data.getO3ugm3());
-					pub(source, iceSensor, data.getPressure());
-				} else
-					it.remove();
+		Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
+		Pool<ModelTransformator> pool = poolMap.get("modelTransformatorService-iceCatPool");
+		if(pool != null) {
+			ModelTransformator transformator = pool.poll();
+			try {
+				for (EObject eObject : sensors) {
+					IceSENSOR sensor = (IceSENSOR) eObject;
+					IceSensor push = (IceSensor) transformator.startTransformation(sensor);
+					
+					
+					logger.log(Level.INFO, "Pushing: {0}", push);
+					sensinact.pushUpdate(push);
+
+					Point point = new Point();
+					point.coordinates = new Coordinates();
+					point.coordinates.latitude = sensor.getCoords().getLatitude();
+					point.coordinates.longitude = sensor.getCoords().getLongitude();
+					GenericDto dto = createGenericDto(IcesensoreSensinactPackage.Literals.ICE_SENSOR.getName(), sensor.getIce_id(), "admin", "location", GeoJsonObject.class, point, Instant.now());
+					sensinact.pushUpdate(dto);
+					logger.log(Level.INFO, "updated Location of: {0}", push.getId());
+				}
+			} finally {
+				pool.release(transformator);
 			}
 		}
 	}
-
-	private void pub(SimplePushEventSource<SensorData> source, IceSENSOR iceSensor, SensorData data) {
-		data.setGateway(iceSensor.getIce_id());
-		data.setSensor_type(data.eContainingFeature().getName());
-		source.publish(data);
+	
+	private GenericDto createGenericDto(String model, String provider, String service, String resource, Class<?> type, Object value, Instant timestamp) {
+		GenericDto dto = new GenericDto();
+		dto.model = model;
+		dto.provider = provider;
+		dto.service = service;
+		dto.resource = resource;
+		dto.type = type;
+		dto.value = value;
+		dto.timestamp = timestamp;
+		return dto;	
 	}
-
 }

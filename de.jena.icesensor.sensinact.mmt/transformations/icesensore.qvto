@@ -1,0 +1,45 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype SENSOR uses "https://jena.de/models/icesensor/1.0";
+modeltype SENSINACT uses "https://jena.de/models/icesensor/sensinact/1.0";
+
+transformation project2projectApi(in sensor : SENSOR, out sensinact : SENSINACT);
+
+main() {
+	sensor.rootObjects()[SENSOR::IceSENSOR] -> map sensoreToProvider(); 
+	
+}
+
+
+mapping SENSOR::IceSENSOR::sensoreToProvider(): SENSINACT::IceSensor {
+
+	id := self.ice_id;
+	h2sugm3 := self.data.h2sugm3.map sensoreToProvider();
+	cougm3 := self.data.cougm3.map sensoreToProvider();
+	nougm3 := self.data.nougm3.map sensoreToProvider();
+	o3ugm3 := self.data.o3ugm3.map sensoreToProvider();
+	_1p := self.data._1p.map sensoreToProvider();
+	aqi_criteria := self.data.aqi_criteria.map sensoreToProvider();
+	temperature := self.data.temperature.map sensoreToProvider();
+	humidity := self.data.humidity.map sensoreToProvider();
+	humidity := self.data.humidity.map sensoreToProvider();
+	_10p := self.data._10p.map sensoreToProvider();
+	pressure := self.data.pressure.map sensoreToProvider();
+	no2ugm3 := self.data.no2ugm3.map sensoreToProvider();
+	aqi := self.data.aqi.map sensoreToProvider();
+	_2_5p := self.data._2_5p.map sensoreToProvider();
+}
+
+mapping SENSOR::SensorData::sensoreToProvider(): SENSINACT::SensorData {
+
+	sensor_type := self.sensor_type;
+	gateway := gateway;
+	sensor_model := self.sensor_model;
+	avg := self.avg;
+	min := self.min;
+	max := max;
+	unit := self.unit;
+	validity := self.validity;
+	created_at := self.created_at;
+	str_data := self.str_data;
+	
+}

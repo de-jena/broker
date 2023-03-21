@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.eclipse.sensinact.gateway.geojson.Point;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
@@ -65,6 +67,11 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 			case MessagePackage.LONG_VALUE_UPDATE: return createLongValueUpdate();
 			case MessagePackage.BOOLEAN_VALUE_UPDATE: return createBooleanValueUpdate();
 			case MessagePackage.OBJECT_VALUE_UPDATE: return createObjectValueUpdate();
+			case MessagePackage.INSANT_VALUE_UPDATE: return createInsantValueUpdate();
+			case MessagePackage.DATE_VALUE_UPDATE: return createDateValueUpdate();
+			case MessagePackage.BIG_DECIMAL_VALUE_UPDATE: return createBigDecimalValueUpdate();
+			case MessagePackage.GEO_JSON_OBJECT_VALUE_UPDATE: return createGeoJsonObjectValueUpdate();
+			case MessagePackage.POINT_VALUE_UPDATE: return createPointValueUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -80,6 +87,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 		switch (eDataType.getClassifierID()) {
 			case MessagePackage.EINSTANT:
 				return createEInstantFromString(eDataType, initialValue);
+			case MessagePackage.EPOINT:
+				return createEPointFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +104,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 		switch (eDataType.getClassifierID()) {
 			case MessagePackage.EINSTANT:
 				return convertEInstantToString(eDataType, instanceValue);
+			case MessagePackage.EPOINT:
+				return convertEPointToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -165,6 +176,56 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public InsantValueUpdate createInsantValueUpdate() {
+		InsantValueUpdateImpl insantValueUpdate = new InsantValueUpdateImpl();
+		return insantValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DateValueUpdate createDateValueUpdate() {
+		DateValueUpdateImpl dateValueUpdate = new DateValueUpdateImpl();
+		return dateValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BigDecimalValueUpdate createBigDecimalValueUpdate() {
+		BigDecimalValueUpdateImpl bigDecimalValueUpdate = new BigDecimalValueUpdateImpl();
+		return bigDecimalValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GeoJsonObjectValueUpdate createGeoJsonObjectValueUpdate() {
+		GeoJsonObjectValueUpdateImpl geoJsonObjectValueUpdate = new GeoJsonObjectValueUpdateImpl();
+		return geoJsonObjectValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PointValueUpdate createPointValueUpdate() {
+		PointValueUpdateImpl pointValueUpdate = new PointValueUpdateImpl();
+		return pointValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Instant createEInstant(final String it) {
 		return Instant.parse(it);
 	}
@@ -194,6 +255,42 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 */
 	public String convertEInstantToString(EDataType eDataType, Object instanceValue) {
 		return convertEInstant((Instant)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Point createEPoint(final String it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Point.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Point createEPointFromString(EDataType eDataType, String initialValue) {
+		return createEPoint(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEPoint(final Point it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEPointToString(EDataType eDataType, Object instanceValue) {
+		return convertEPoint((Point)instanceValue);
 	}
 
 	/**

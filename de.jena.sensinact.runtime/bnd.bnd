@@ -9,4 +9,7 @@
 	org.gecko.rest.jersey.config,\
 	org.eclipse.paho.client.mqttv3;version=latest,\
 	org.apache.felix.configadmin.plugin.interpolation,\
-	org.gecko.adapter.mqtt
+	org.gecko.adapter.mqtt,\
+	org.gecko.core.pool,\
+	org.gecko.qvt.osgi.component,\
+	org.gecko.qvt.osgi.api

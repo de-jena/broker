@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="https://jena.de/models/ttn/sensinact/1.0" targetURI="platform:/resource/de.jena.ttn.sensinact.model/model/ttn.ecore"/>
+  <mapping sourceURI="https://jena.de/models/ttn/1.0" targetURI="platform:/resource/de.jena.ttn.model/model/ttn.ecore"/>
+  <mapping sourceURI="https://eclipse.org/sensinact/core/1.0" targetURI="platform:/resource/org.eclipse.sensinact.gateway.core.models/model/sensinact.ecore"/>
+  
+</uriMap:MappingContainer>

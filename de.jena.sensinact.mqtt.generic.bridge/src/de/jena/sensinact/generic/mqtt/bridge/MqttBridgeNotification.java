@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.sensinact.prototype.model.SensinactModelManager;
 import org.eclipse.sensinact.prototype.notification.ResourceDataNotification;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.osgi.messaging.MessagingService;
@@ -38,20 +39,18 @@ public class MqttBridgeNotification implements TypedEventHandler<ResourceDataNot
 	@Reference
 	ComponentServiceObjects<ResourceSet> setObjects;
 	
-	
 	@Override
 	public void notify(String topic, ResourceDataNotification event) {
 		if(logger.isLoggable(Level.DEBUG)) {
 			logger.log(Level.DEBUG, "received event on topic %s", topic);
 		}
 		try {
-			UpdateMessage update = MessageUtil.createUpdateMessageForType(event.type);
+			UpdateMessage update = MessageUtil.createUpdateMessageForType(event.newValue != null ? event.newValue.getClass() :  event.type);
 			update.setTimestamp(event.timestamp);
 			update.setResource(event.resource);
 			setValue(update, event.oldValue, "oldValue");
 			setValue(update, event.newValue, "newValue");
-			
-			send(String.format("5g/sensinact/event/data/%s/%s/%s", event.model, event.provider, event.service), update );
+			send(String.format("5g/sensinact/event/data/%s/%s/%s/%s", event.model, event.provider, event.service, event.resource), update );
 		} catch (Throwable e) {
 			System.err.println("Could not send update message: " + e.getMessage());
 			e.printStackTrace();
