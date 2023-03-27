@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl#getChangedStates <em>Changed States</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl#getResponse <em>Response</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.impl.TLUpdateImpl#getRequested <em>Requested</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +89,26 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 	 * @ordered
 	 */
 	protected EList<ChangedState> changedStates;
+
+	/**
+	 * The cached value of the '{@link #getResponse() <em>Response</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getResponse()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ChangedState> response;
+
+	/**
+	 * The cached value of the '{@link #getRequested() <em>Requested</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRequested()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ChangedState> requested;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,10 +194,40 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 	 * @generated
 	 */
 	@Override
+	public EList<ChangedState> getResponse() {
+		if (response == null) {
+			response = new EObjectContainmentEList<ChangedState>(ChangedState.class, this, TOSTrafficLightPackage.TL_UPDATE__RESPONSE);
+		}
+		return response;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ChangedState> getRequested() {
+		if (requested == null) {
+			requested = new EObjectContainmentEList<ChangedState>(ChangedState.class, this, TOSTrafficLightPackage.TL_UPDATE__REQUESTED);
+		}
+		return requested;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TOSTrafficLightPackage.TL_UPDATE__CHANGED_STATES:
 				return ((InternalEList<?>)getChangedStates()).basicRemove(otherEnd, msgs);
+			case TOSTrafficLightPackage.TL_UPDATE__RESPONSE:
+				return ((InternalEList<?>)getResponse()).basicRemove(otherEnd, msgs);
+			case TOSTrafficLightPackage.TL_UPDATE__REQUESTED:
+				return ((InternalEList<?>)getRequested()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -194,6 +246,10 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 				return getTimestamp();
 			case TOSTrafficLightPackage.TL_UPDATE__CHANGED_STATES:
 				return getChangedStates();
+			case TOSTrafficLightPackage.TL_UPDATE__RESPONSE:
+				return getResponse();
+			case TOSTrafficLightPackage.TL_UPDATE__REQUESTED:
+				return getRequested();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,6 +273,14 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 				getChangedStates().clear();
 				getChangedStates().addAll((Collection<? extends ChangedState>)newValue);
 				return;
+			case TOSTrafficLightPackage.TL_UPDATE__RESPONSE:
+				getResponse().clear();
+				getResponse().addAll((Collection<? extends ChangedState>)newValue);
+				return;
+			case TOSTrafficLightPackage.TL_UPDATE__REQUESTED:
+				getRequested().clear();
+				getRequested().addAll((Collection<? extends ChangedState>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -238,6 +302,12 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 			case TOSTrafficLightPackage.TL_UPDATE__CHANGED_STATES:
 				getChangedStates().clear();
 				return;
+			case TOSTrafficLightPackage.TL_UPDATE__RESPONSE:
+				getResponse().clear();
+				return;
+			case TOSTrafficLightPackage.TL_UPDATE__REQUESTED:
+				getRequested().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -256,6 +326,10 @@ public class TLUpdateImpl extends MinimalEObjectImpl.Container implements TLUpda
 				return TIMESTAMP_EDEFAULT == null ? timestamp != null : !TIMESTAMP_EDEFAULT.equals(timestamp);
 			case TOSTrafficLightPackage.TL_UPDATE__CHANGED_STATES:
 				return changedStates != null && !changedStates.isEmpty();
+			case TOSTrafficLightPackage.TL_UPDATE__RESPONSE:
+				return response != null && !response.isEmpty();
+			case TOSTrafficLightPackage.TL_UPDATE__REQUESTED:
+				return requested != null && !requested.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

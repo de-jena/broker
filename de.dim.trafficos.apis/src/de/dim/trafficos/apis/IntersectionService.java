@@ -31,4 +31,6 @@ public interface IntersectionService {
 	Intersection saveIntersection(Intersection intersection);
 	
 	Intersection getIntersectionById(String intersectionId);
+	
+	Intersection getIntersectionByName(String intersectionName);
 }

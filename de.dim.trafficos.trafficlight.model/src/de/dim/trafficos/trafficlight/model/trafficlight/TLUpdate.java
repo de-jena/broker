@@ -20,6 +20,8 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getAddress <em>Address</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getChangedStates <em>Changed States</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getResponse <em>Response</em>}</li>
+ *   <li>{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getRequested <em>Requested</em>}</li>
  * </ul>
  *
  * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getTLUpdate()
@@ -83,5 +85,29 @@ public interface TLUpdate extends EObject {
 	 * @generated
 	 */
 	EList<ChangedState> getChangedStates();
+
+	/**
+	 * Returns the value of the '<em><b>Response</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Response</em>' containment reference list.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getTLUpdate_Response()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ChangedState> getResponse();
+
+	/**
+	 * Returns the value of the '<em><b>Requested</b></em>' containment reference list.
+	 * The list contents are of type {@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Requested</em>' containment reference list.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TOSTrafficLightPackage#getTLUpdate_Requested()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ChangedState> getRequested();
 
 } // TLUpdate

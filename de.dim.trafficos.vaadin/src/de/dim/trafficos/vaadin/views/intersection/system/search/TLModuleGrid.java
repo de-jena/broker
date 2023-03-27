@@ -21,7 +21,7 @@ import com.vaadin.flow.component.grid.Grid;
  * @author ilenia
  * @since Feb 23, 2023
  */
-public class TLModuleGrid extends Grid<DisplayedTLModule> {
+public class TLModuleGrid extends Grid<DisplayedTLTransmitter> {
 
 	/** serialVersionUID */
 	private static final long serialVersionUID = 8339762587419646724L;
@@ -29,13 +29,13 @@ public class TLModuleGrid extends Grid<DisplayedTLModule> {
 	Map<String, SignalLightGrid> signalLightGridsMap = new HashMap<>();;
 	
 	public TLModuleGrid() {
-		addColumn(DisplayedTLModule::getAddress).setHeader("Address").setAutoWidth(true);
-		addColumn(DisplayedTLModule::getSignalGroup).setHeader("Signal Group").setAutoWidth(true);
-		addComponentColumn(module -> {
+		addColumn(DisplayedTLTransmitter::getAddress).setHeader("Address").setAutoWidth(true);
+		addColumn(DisplayedTLTransmitter::getSignalGroup).setHeader("Signal Group").setAutoWidth(true);
+		addComponentColumn(transmitter -> {
 			SignalLightGrid lightGrid = new SignalLightGrid();			
-			lightGrid.setItems(module.getLights());
+			lightGrid.setItems(transmitter.getLights());
 			lightGrid.setVisible(true);
-			signalLightGridsMap.put(module.getAddress(), lightGrid);
+			signalLightGridsMap.put(transmitter.getName(), lightGrid);
 			return lightGrid;
 		}).setHeader("Lights").setAutoWidth(true).setKey("light-column");
 	}

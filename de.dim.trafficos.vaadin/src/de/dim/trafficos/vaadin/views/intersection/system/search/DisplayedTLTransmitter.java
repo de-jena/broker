@@ -20,16 +20,22 @@ import de.dim.trafficos.trafficlight.model.trafficlight.LightSignal;
  * @author ilenia
  * @since Feb 23, 2023
  */
-public class DisplayedTLModule {
+public class DisplayedTLTransmitter {
 	
-	String address;
-	String signalGroup;
+	String name; //channel
+	String address; //module address
+	String signalGroup; //SG
 	List<LightSignal> lights;
 	
-	public DisplayedTLModule(String address, String signalGroup, List<LightSignal> lights) {
+	public DisplayedTLTransmitter(String name, String address, String signalGroup, List<LightSignal> lights) {
+		this.name = name;
 		this.address = address;
 		this.signalGroup = signalGroup;
 		this.lights = lights;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	public String getAddress() {

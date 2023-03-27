@@ -41,6 +41,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLUpdate/address"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//TLUpdate/timestamp"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-trafficlight.ecore#//TLUpdate/changedStates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-trafficlight.ecore#//TLUpdate/response"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-trafficlight.ecore#//TLUpdate/requested"/>
     </genClasses>
     <genClasses ecoreClass="tos-trafficlight.ecore#//ChangedState">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-trafficlight.ecore#//ChangedState/channel"/>

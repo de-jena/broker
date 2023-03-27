@@ -18,6 +18,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -88,7 +89,7 @@ public class IntersectionSystemSearchView extends VerticalLayout {
 	private Grid<IntersectionSystem> intersectionSystemGrid;
 	private TLModuleGrid moduleGrid = new TLModuleGrid();
 	private Map<String, PushStream<Message>> subscriptionsMap = new HashMap<>();
-	private List<DisplayedTLModule> displayedModules = new ArrayList<>();
+	private List<DisplayedTLTransmitter> displayedTransmitters = new ArrayList<>();
 	private UI currentUI;
 
 	@Activate
@@ -98,7 +99,8 @@ public class IntersectionSystemSearchView extends VerticalLayout {
 		Button showBtn = new Button("Show All", evt -> {
 			List<IntersectionSystem> intersectionSystems = intersectionSystemService.getAllIntersectionSystems();			
 			intersectionSystemGrid.setItems(intersectionSystems);
-			intersectionSystemGrid.setVisible(true);			
+			intersectionSystemGrid.setVisible(true);		
+			intersectionSystemGrid.setMaxHeight("10%");
 		});
 
 		createIntersectionSystemGrid(); 
@@ -144,64 +146,55 @@ public class IntersectionSystemSearchView extends VerticalLayout {
 			Notification.show("Error while subscribing to topic " + TOPIC_ROOT+intersectionSystem.getIntersectionName()+"/#").addThemeVariants(NotificationVariant.LUMO_ERROR);
 		}
 		List<TLModule> modules = tlService.getTLModulesById(intersectionSystem.getTlModuleIds().toArray(new String[0]));
-		displayedModules = new ArrayList<>();
+		displayedTransmitters = new ArrayList<>();
 		modules.forEach(m -> {
 			m.getSignalTransmitter().forEach(st -> {
-				DisplayedTLModule displayedModule = new DisplayedTLModule(String.valueOf(m.getAddress()), st.getSignalGroup().getId(), st.getLightSignal());
-				displayedModules.add(displayedModule);
+				DisplayedTLTransmitter displayedModule = new DisplayedTLTransmitter(st.getName(), String.valueOf(m.getAddress()), st.getSignalGroup().getId(), st.getLightSignal());
+				displayedTransmitters.add(displayedModule);
 			});
 		});
-		moduleGrid.setItems(displayedModules);
+		moduleGrid.setItems(displayedTransmitters);
 		moduleGrid.setVisible(true);	
 		currentUI.setPollInterval(500);
 	}
 
 	private void handleTrafficLightMessage(Message message) {
 		String topic = message.topic();
-		System.out.println("Message arrived! " + topic);
 		String[] topicSegments = topic.split("/");
 		if(topicSegments.length != 3) return;
 		String moduleAddress = topicSegments[2];
 
-		DisplayedTLModule module = displayedModules.stream().filter(m -> moduleAddress.equals(m.getAddress())).findFirst().orElse(null);
-		if(module == null) return;
+		List<DisplayedTLTransmitter> transmittersToBeUpdated = displayedTransmitters.stream().filter(m -> moduleAddress.equals(m.getAddress())).collect(Collectors.toList());
+		if(transmittersToBeUpdated.isEmpty()) return;
 
 		byte[] content = message.payload().array();
 		if (content.length == 0)
 			return;
-
+		System.out.println("Message arrived! " + topic);
 		Resource res = resourceSet.createResource(URI.createFileURI("temp.json"), "application/json");
 		try {
 			res.load(new ByteArrayInputStream(content),
 					Collections.singletonMap(EMFJs.OPTION_ROOT_ELEMENT, tosTLPackage.getTLUpdate()));
 			EList<EObject> contents = res.getContents();
 			TLUpdate update = (TLUpdate) contents.get(0);
-			for (ChangedState state : update.getChangedStates()) {
+			for (ChangedState state : update.getRequested()) {
+				String channel = state.getChannel();
 				String color = state.getColor();
 				boolean on = state.isOn();
-				SignalValueType value = getLightSignalFromColor(color);
-				LightSignal light = module.getLights().stream().filter(l -> value.equals(l.getValue())).findFirst().orElse(null);
+				SignalValueType value = SignalValueType.valueOf(color.toUpperCase());
+				DisplayedTLTransmitter transmitterToBeUpdated = displayedTransmitters.stream()
+						.filter(m -> moduleAddress.equals(m.getAddress()) && channel.equals(m.getName())).findFirst().orElse(null);
+				if(transmitterToBeUpdated == null) continue;
+				System.out.println("Light " + color + " on SG " + transmitterToBeUpdated.getName() + " is on? " + on);
+				LightSignal light = transmitterToBeUpdated.getLights().stream().filter(l -> value.equals(l.getValue())).findFirst().orElse(null);
 				if(light != null) light.setOn(on);
 				currentUI.access(() -> {
-					moduleGrid.getSignalLightGridsMap().get(module.getAddress()).getDataCommunicator().refresh(light);
+					moduleGrid.getSignalLightGridsMap().get(transmitterToBeUpdated.getName()).getDataProvider().refreshAll();
 				});
 			}
 		} catch (IOException e) {
 			Notification.show("Error while decoding message from MQTT").addThemeVariants(NotificationVariant.LUMO_ERROR);
 			e.printStackTrace();
-		}
-	}
-
-	private SignalValueType getLightSignalFromColor(String color) {
-		switch(color) {
-		case "red":
-			return SignalValueType.RED;
-		case "green":
-			return SignalValueType.GREEN;
-		case "yellow":
-			return SignalValueType.AMBER;
-		default:
-			throw new IllegalArgumentException("Color " + color + " not known!");
 		}
 	}
 }

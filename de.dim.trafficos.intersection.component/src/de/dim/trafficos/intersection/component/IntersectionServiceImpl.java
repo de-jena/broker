@@ -81,4 +81,18 @@ public class IntersectionServiceImpl implements IntersectionService {
 		return repo.getEObject(intersectionPackage.getIntersection(), intersectionId);
 	}
 
+	/* 
+	 * (non-Javadoc)
+	 * @see de.dim.trafficos.apis.IntersectionService#getIntersectionByName(java.lang.String)
+	 */
+	@Override
+	public Intersection getIntersectionByName(String intersectionName) {
+		Objects.requireNonNull(intersectionName, "Cannot retrieve Intersection by null name!");
+		QueryRepository queryRepo = (QueryRepository) repo;
+		return queryRepo.getEObjectByQuery(intersectionPackage.getIntersection(), 
+						queryRepo.createQueryBuilder().column(intersectionPackage.getIntersection_Name())
+						.simpleValue(intersectionName).build(), null);
+	
+	}
+
 }

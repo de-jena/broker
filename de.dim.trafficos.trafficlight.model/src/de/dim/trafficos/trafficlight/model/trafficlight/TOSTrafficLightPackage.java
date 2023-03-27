@@ -356,13 +356,31 @@ public interface TOSTrafficLightPackage extends EPackage {
 	int TL_UPDATE__CHANGED_STATES = 2;
 
 	/**
+	 * The feature id for the '<em><b>Response</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE__RESPONSE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Requested</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TL_UPDATE__REQUESTED = 4;
+
+	/**
 	 * The number of structural features of the '<em>TL Update</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TL_UPDATE_FEATURE_COUNT = 3;
+	int TL_UPDATE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>TL Update</em>' class.
@@ -641,6 +659,28 @@ public interface TOSTrafficLightPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTLUpdate_ChangedStates();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getResponse <em>Response</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Response</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getResponse()
+	 * @see #getTLUpdate()
+	 * @generated
+	 */
+	EReference getTLUpdate_Response();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getRequested <em>Requested</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Requested</em>'.
+	 * @see de.dim.trafficos.trafficlight.model.trafficlight.TLUpdate#getRequested()
+	 * @see #getTLUpdate()
+	 * @generated
+	 */
+	EReference getTLUpdate_Requested();
 
 	/**
 	 * Returns the meta object for class '{@link de.dim.trafficos.trafficlight.model.trafficlight.ChangedState <em>Changed State</em>}'.

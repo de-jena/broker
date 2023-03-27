@@ -336,6 +336,26 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 	 * @generated
 	 */
 	@Override
+	public EReference getTLUpdate_Response() {
+		return (EReference)tlUpdateEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTLUpdate_Requested() {
+		return (EReference)tlUpdateEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getChangedState() {
 		return changedStateEClass;
 	}
@@ -441,6 +461,8 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		createEAttribute(tlUpdateEClass, TL_UPDATE__ADDRESS);
 		createEAttribute(tlUpdateEClass, TL_UPDATE__TIMESTAMP);
 		createEReference(tlUpdateEClass, TL_UPDATE__CHANGED_STATES);
+		createEReference(tlUpdateEClass, TL_UPDATE__RESPONSE);
+		createEReference(tlUpdateEClass, TL_UPDATE__REQUESTED);
 
 		changedStateEClass = createEClass(CHANGED_STATE);
 		createEAttribute(changedStateEClass, CHANGED_STATE__CHANNEL);
@@ -508,6 +530,8 @@ public class TOSTrafficLightPackageImpl extends EPackageImpl implements TOSTraff
 		initEAttribute(getTLUpdate_Address(), ecorePackage.getEInt(), "address", null, 0, 1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTLUpdate_Timestamp(), ecorePackage.getEString(), "timestamp", null, 0, 1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTLUpdate_ChangedStates(), this.getChangedState(), null, "changedStates", null, 0, -1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTLUpdate_Response(), this.getChangedState(), null, "response", null, 0, -1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTLUpdate_Requested(), this.getChangedState(), null, "requested", null, 0, -1, TLUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(changedStateEClass, ChangedState.class, "ChangedState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChangedState_Channel(), ecorePackage.getEString(), "channel", null, 0, 1, ChangedState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

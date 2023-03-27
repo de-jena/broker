@@ -1,0 +1,14 @@
+-library: enable-emf
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.dim.trafficos.example.intersectionsystem.component
+-buildpath: \
+	de.dim.trafficos.apis;version=latest,\
+	de.dim.trafficos.common.model;version=latest,\
+	de.dim.trafficos.intersection.model;version=latest,\
+	de.dim.trafficos.intersectionsystem.model;version=latest,\
+	de.dim.trafficos.trafficlight.model;version=latest
+	
+-includeresource: \
+	OSGI-INF/configurator/=configs/	
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

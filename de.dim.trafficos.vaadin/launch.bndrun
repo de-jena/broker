@@ -84,7 +84,6 @@
 	org.osgi.util.function;version='[1.1.0,1.1.1)',\
 	org.osgi.util.promise;version='[1.2.0,1.2.1)',\
 	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
-	slf4j.api;version='[1.7.25,1.7.26)',\
 	com.vaadin.flow.component.combobox;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.component.contextmenu;version='[23.3.0,23.3.1)',\
 	com.vaadin.flow.component.grid;version='[23.3.0,23.3.1)',\
@@ -102,7 +101,6 @@
 	org.eclipse.emf.ecore;version='[2.25.0,2.25.1)',\
 	org.eclipse.emf.ecore.xmi;version='[2.16.0,2.16.1)',\
 	org.eclipse.emfcloud.emfjson-jackson;version='[2.1.0,2.1.1)',\
-	org.gecko.emf.collections;version='[2.0.16,2.0.17)',\
 	org.gecko.emf.json;version='[1.4.1,1.4.2)',\
 	org.gecko.emf.mongo.component;version='[6.0.5,6.0.6)',\
 	org.gecko.emf.repository.api;version='[9.2.2,9.2.3)',\
@@ -123,9 +121,7 @@
 	slf4j.simple;version='[1.7.25,1.7.26)',\
 	org.gecko.emf.repository.mongo;version='[3.1.0,3.1.1)',\
 	org.gecko.emf.osgi.api;version='[4.5.0,4.5.1)',\
-	org.gecko.emf.osgi.component;version='[4.5.0,4.5.1)',\
 	com.vaadin.flow.component.dialog;version='[23.3.0,23.3.1)',\
-	de.jena.sensinact.gateway.sthbnd.ttn.uplinkpayload.model;version=snapshot,\
 	com.vaadin.flow.component.checkbox;version='[23.3.0,23.3.1)',\
 	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.13.2,2.13.3)',\
 	com.vaadin.flow.component.notification;version='[23.3.0,23.3.1)',\
@@ -138,4 +134,8 @@
 	org.gecko.adapter.mqtt;version='[1.0.5,1.0.6)',\
 	org.gecko.core.api;version='[1.0.5,1.0.6)',\
 	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
-	org.gecko.osgi.messaging;version='[3.1.0,3.1.1)'
+	org.gecko.osgi.messaging;version='[3.1.0,3.1.1)',\
+	org.gecko.emf.collections;version='[2.1.1,2.1.2)',\
+	org.gecko.emf.osgi.component;version='[4.1.1,4.1.2)',\
+	org.osgi.service.cm;version='[1.6.0,1.6.1)',\
+	slf4j.api;version='[1.7.36,1.7.37)'
