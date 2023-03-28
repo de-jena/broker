@@ -35,7 +35,8 @@ public class TLModuleGrid extends Grid<DisplayedTLTransmitter> {
 			SignalLightGrid lightGrid = new SignalLightGrid();			
 			lightGrid.setItems(transmitter.getLights());
 			lightGrid.setVisible(true);
-			signalLightGridsMap.put(transmitter.getName(), lightGrid);
+			String key = transmitter.getAddress() +"_"+ transmitter.getName();
+			signalLightGridsMap.put(key, lightGrid);
 			return lightGrid;
 		}).setHeader("Lights").setAutoWidth(true).setKey("light-column");
 	}

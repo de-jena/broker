@@ -63,8 +63,9 @@ public class ExampleIntersectionSystemComponent {
 	
 	private void buildAndSaveSampleIntersectionSystem() {
 		Intersection intersection = createIntersection();
-		TLModule module = createTLModule();	
-		IntersectionSystem intersectionSystem = createIntersectionSystem(intersection, module);
+		TLModule moduleK3 = createTLModule(6, "K3");	
+		TLModule moduleRF2 = createTLModule(7, "RF2");	
+		IntersectionSystem intersectionSystem = createIntersectionSystem(intersection, moduleK3, moduleRF2);
 		System.out.println("IntersectionSystem properly saved with id " + intersectionSystem.getId());		
 	}
 	
@@ -77,11 +78,11 @@ public class ExampleIntersectionSystemComponent {
 		return intersectionSystem;
 	}
 	
-	private TLModule createTLModule() {
+	private TLModule createTLModule(int address, String signalGroupName) {
 		TLModule module = tlPackage.getTOSTrafficLightFactory().createTLModule();
-		module.setAddress(6);
+		module.setAddress(address);
 		TLSignalGroup signalGroup = tlPackage.getTOSTrafficLightFactory().createTLSignalGroup();
-		signalGroup.setId("SK");
+		signalGroup.setId(signalGroupName);
 		
 		TLSignalTransmitter channelA = createTransmitter("a", EcoreUtil.copy(signalGroup));
 		channelA.getLightSignal().add(createLightSignal(SignalValueType.RED, false));
@@ -89,17 +90,15 @@ public class ExampleIntersectionSystemComponent {
 		channelA.getLightSignal().add(createLightSignal(SignalValueType.GREEN, false));
 		
 		TLSignalTransmitter channelB = createTransmitter("b", EcoreUtil.copy(signalGroup));
-		channelB.getLightSignal().add(createLightSignal(SignalValueType.RED, false));
-		channelB.getLightSignal().add(createLightSignal(SignalValueType.AMBER, false));
-		channelB.getLightSignal().add(createLightSignal(SignalValueType.GREEN, false));
+		channelB.getLightSignal().add(createLightSignal(SignalValueType.AMBER, true));
 		
-		TLSignalTransmitter channelC = createTransmitter("c", EcoreUtil.copy(signalGroup));
-		channelC.getLightSignal().add(createLightSignal(SignalValueType.RED, false));
-		channelC.getLightSignal().add(createLightSignal(SignalValueType.GREEN, false));
+//		TLSignalTransmitter channelC = createTransmitter("c", EcoreUtil.copy(signalGroup));
+//		channelC.getLightSignal().add(createLightSignal(SignalValueType.RED, false));
+//		channelC.getLightSignal().add(createLightSignal(SignalValueType.GREEN, false));
 		
 		module.getSignalTransmitter().add(channelA);
 		module.getSignalTransmitter().add(channelB);
-		module.getSignalTransmitter().add(channelC);
+//		module.getSignalTransmitter().add(channelC);
 		
 		module = tlService.saveTLModule(module);
 		return module;

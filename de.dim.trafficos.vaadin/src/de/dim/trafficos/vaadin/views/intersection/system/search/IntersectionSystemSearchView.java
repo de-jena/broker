@@ -185,11 +185,13 @@ public class IntersectionSystemSearchView extends VerticalLayout {
 				DisplayedTLTransmitter transmitterToBeUpdated = displayedTransmitters.stream()
 						.filter(m -> moduleAddress.equals(m.getAddress()) && channel.equals(m.getName())).findFirst().orElse(null);
 				if(transmitterToBeUpdated == null) continue;
-				System.out.println("Light " + color + " on SG " + transmitterToBeUpdated.getName() + " is on? " + on);
+				String signalGroup = transmitterToBeUpdated.getSignalGroup();
+				System.out.println("Light " + color + " on "+signalGroup+" " + transmitterToBeUpdated.getName() + " is on? " + on);
 				LightSignal light = transmitterToBeUpdated.getLights().stream().filter(l -> value.equals(l.getValue())).findFirst().orElse(null);
 				if(light != null) light.setOn(on);
 				currentUI.access(() -> {
-					moduleGrid.getSignalLightGridsMap().get(transmitterToBeUpdated.getName()).getDataProvider().refreshAll();
+					String key = transmitterToBeUpdated.getAddress() + "_"+ transmitterToBeUpdated.getName();
+					moduleGrid.getSignalLightGridsMap().get(key).getDataProvider().refreshAll();
 				});
 			}
 		} catch (IOException e) {
