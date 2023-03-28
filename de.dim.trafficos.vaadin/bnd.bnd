@@ -24,7 +24,6 @@
 	de.dim.trafficos.trafficlight.model;version=latest,\
 	com.vaadin.flow.component.grid,\
 	com.vaadin.flow.component.combobox,\
-	org.gecko.vaadin.whiteboard,\
 	org.apache.felix.framework;version='7.0',\
 	com.vaadin.flow.component.dialog,\
 	de.dim.trafficos.intersectionsystem.model;version=latest,\
