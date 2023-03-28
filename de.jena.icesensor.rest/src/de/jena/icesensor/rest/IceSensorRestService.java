@@ -11,6 +11,7 @@
  */
 package de.jena.icesensor.rest;
 
+import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.time.Instant;
@@ -26,9 +27,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
+import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.core.pool.Pool;
@@ -154,10 +157,11 @@ public class IceSensorRestService implements IceSensorService {
 					IceSENSOR sensor = (IceSENSOR) eObject;
 					IceSensor push = (IceSensor) transformator.startTransformation(sensor);
 					
-					
 					logger.log(Level.INFO, "Pushing: {0}", push);
 					sensinact.pushUpdate(push);
 
+					
+					
 					Point point = new Point();
 					point.coordinates = new Coordinates();
 					point.coordinates.latitude = sensor.getCoords().getLatitude();
@@ -171,6 +175,21 @@ public class IceSensorRestService implements IceSensorService {
 			}
 		}
 	}
+	
+	private void printProvider(EObject eObject) {
+		ResourceSet resourceSet = serviceObjects.getService();
+        Resource resource = resourceSet.createResource(URI.createURI("file://temp.xmi"));
+        resource.getContents().add(EcoreUtil.copy(eObject));
+        try {
+            resource.save(System.out, null);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            resourceSet.getResources().remove(resource);
+            serviceObjects.ungetService(resourceSet);
+        }
+    }
 	
 	private GenericDto createGenericDto(String model, String provider, String service, String resource, Class<?> type, Object value, Instant timestamp) {
 		GenericDto dto = new GenericDto();

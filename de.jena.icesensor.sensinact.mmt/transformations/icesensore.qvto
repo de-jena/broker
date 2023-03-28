@@ -21,7 +21,7 @@ mapping SENSOR::IceSENSOR::sensoreToRervice(): SENSINACT::IceSensor {
 	nougm3 := self.data.nougm3.map sensoreToRervice("nougm3", "NO");
 	o3ugm3 := self.data.o3ugm3.map sensoreToRervice("o3ugm3", "O3");
 	_1p := self.data._1p.map sensoreToRervice("1p", "PM_1");
-	aqi_criteria := self.data.aqi_criteria.map sensoreToRervice("Air Qualaity Index Kriterien", null);
+	aqi_criteria := self.data.aqi_criteria.map sensoreToRervice("Air Qualaity Index Kriterien", "air_qi");
 	temperature := self.data.temperature.map sensoreToRervice("Temperatur", "air_temprature" );
 	humidity := self.data.humidity.map sensoreToRervice("Luftfeuchtigkeit", "air_humidity");
 	_10p := self.data._10p.map sensoreToRervice("10p", "PM_10");
@@ -37,45 +37,69 @@ mapping SENSOR::IceSENSOR::toAdmin(): PROVIDER::Admin{
 mapping SENSOR::SensorData::sensoreToRervice(friendlyServiceName : String, type : String): SENSINACT::SensorData {
 	var eClass := SENSINACT::SensorData.oclAsType(ECORE::EClass);
 	sensor_type := self.sensor_type;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("sensor_type"), friendlyServiceName, "" , "true", null);
+	if(self.sensor_type.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_type"), friendlyServiceName, "" , "true", null);
+	};
 	gateway := self.gateway;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("gateway"), friendlyServiceName, "" , "true", null);
+	if(self.gateway.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("gateway"), friendlyServiceName, "" , "true", null);
+	};
 	sensor_model := self.sensor_model;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("sensor_model"), friendlyServiceName, "" , "true", null);
+	if(self.sensor_model.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_model"), friendlyServiceName, "" , "true", null);
+	};
 	avg := self.avg;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("avg"), friendlyServiceName, self.unit , null, type);
+	if(self.avg.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("avg"), friendlyServiceName, self.unit , null, type);
+	};
 	min := self.min;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("min"), friendlyServiceName, self.unit , null, type);
+	if(self.min.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("min"), friendlyServiceName, self.unit , null, type);
+	};
 	max := self.max;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("max"), friendlyServiceName, self.unit , null, type);
+	if(self.max.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("max"), friendlyServiceName, self.unit , null, type);
+	};
 	unit := self.unit;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("unit"), friendlyServiceName, "" , "true", null);
+	if(self.unit.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("unit"), friendlyServiceName, "" , "true", null);
+	};
 	validity := self.validity;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("validity"), friendlyServiceName, "" , "true", null);
+	if(self.validity != 0 ){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("validity"), friendlyServiceName, "" , "true", null);
+	};
 	created_at := self.created_at;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("created_at"), friendlyServiceName, "" , "true", null);
+	if(self.created_at.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("created_at"), friendlyServiceName, "" , "true", null);
+	};
 	str_data := self.str_data;
-	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("str_data"), friendlyServiceName, "" , "true", null);
+	if(self.str_data.oclIsUndefined().not()){
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("str_data"), friendlyServiceName, "" , "true", null);
+	};
 }
 
 mapping SENSOR::SensorData::toMetadataEntry(feature : ECORE::EStructuralFeature, friendlyServiceName : String, unit : String, hide : String, type : String): PROVIDER::FeatureMetadata {
 	key := feature;
 	value := self.map toMetadata(friendlyServiceName + "-" + feature.name, unit, hide, type); 
 }
+
 mapping SENSOR::SensorData::toMetadata(friendlyNameParam : String, unit : String, hide : String, type : String): PROVIDER::Metadata{
-	extra += self.map toCustomMetadata("friendlyName", friendlyNameParam);
-	if(unit != null){
-		extra += self.map toCustomMetadata("unit", unit);
-		extra += self.map toCustomMetadata("sensorthings.unit.name", unit);
+	extra += self.toCustomMetadata("friendlyName", friendlyNameParam);
+	if(unit != null and unit != ""){
+		extra += self.toCustomMetadata("unit", unit);
+		extra += self.toCustomMetadata("sensorthings.unit.name", unit);
 	};
-	if(hide != null){
-		extra += self.map toCustomMetadata("sensorthings.hide", hide);
+	if(hide.oclIsUndefined().not()){
+		extra += self.toCustomMetadata("sensorthings.hide", hide);
 	};
-	if(type != null){
-		extra += self.map toCustomMetadata("sensorthings.datastream.type", type);
+	if(type.oclIsUndefined().not()){
+		extra += self.toCustomMetadata("sensorthings.datastream.type", type);
 	};
 }
-mapping SENSOR::SensorData::toCustomMetadata(key : String, theValue : String): PROVIDER::FeatureCustomMetadata{
-	name := key;
-	value := theValue;
+helper SENSOR::SensorData::toCustomMetadata(key : String, theValue : String): PROVIDER::FeatureCustomMetadata{
+	var entry := object PROVIDER::FeatureCustomMetadata{
+		name := key;
+		value := theValue;
+	};
+	return entry;
 }

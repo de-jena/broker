@@ -196,7 +196,7 @@ public class SensorDataImpl extends ServiceImpl implements SensorData {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALIDITY_EDEFAULT = 0;
+	protected static final int VALIDITY_EDEFAULT = -1;
 
 	/**
 	 * The cached value of the '{@link #getValidity() <em>Validity</em>}' attribute.

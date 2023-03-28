@@ -50,9 +50,11 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensor type</em>' attribute.
+	 * @see #isSetSensor_type()
+	 * @see #unsetSensor_type()
 	 * @see #setSensor_type(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Sensor_type()
-	 * @model
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	String getSensor_type();
@@ -62,19 +64,46 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Sensor type</em>' attribute.
+	 * @see #isSetSensor_type()
+	 * @see #unsetSensor_type()
 	 * @see #getSensor_type()
 	 * @generated
 	 */
 	void setSensor_type(String value);
 
 	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getSensor_type <em>Sensor type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetSensor_type()
+	 * @see #getSensor_type()
+	 * @see #setSensor_type(String)
+	 * @generated
+	 */
+	void unsetSensor_type();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getSensor_type <em>Sensor type</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Sensor type</em>' attribute is set.
+	 * @see #unsetSensor_type()
+	 * @see #getSensor_type()
+	 * @see #setSensor_type(String)
+	 * @generated
+	 */
+	boolean isSetSensor_type();
+
+	/**
 	 * Returns the value of the '<em><b>Gateway</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gateway</em>' attribute.
+	 * @see #isSetGateway()
+	 * @see #unsetGateway()
 	 * @see #setGateway(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Gateway()
-	 * @model required="true"
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	String getGateway();
@@ -84,19 +113,46 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Gateway</em>' attribute.
+	 * @see #isSetGateway()
+	 * @see #unsetGateway()
 	 * @see #getGateway()
 	 * @generated
 	 */
 	void setGateway(String value);
 
 	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getGateway <em>Gateway</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetGateway()
+	 * @see #getGateway()
+	 * @see #setGateway(String)
+	 * @generated
+	 */
+	void unsetGateway();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getGateway <em>Gateway</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Gateway</em>' attribute is set.
+	 * @see #unsetGateway()
+	 * @see #getGateway()
+	 * @see #setGateway(String)
+	 * @generated
+	 */
+	boolean isSetGateway();
+
+	/**
 	 * Returns the value of the '<em><b>Sensor model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Sensor model</em>' attribute.
+	 * @see #isSetSensor_model()
+	 * @see #unsetSensor_model()
 	 * @see #setSensor_model(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Sensor_model()
-	 * @model
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	String getSensor_model();
@@ -106,10 +162,35 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Sensor model</em>' attribute.
+	 * @see #isSetSensor_model()
+	 * @see #unsetSensor_model()
 	 * @see #getSensor_model()
 	 * @generated
 	 */
 	void setSensor_model(String value);
+
+	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getSensor_model <em>Sensor model</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetSensor_model()
+	 * @see #getSensor_model()
+	 * @see #setSensor_model(String)
+	 * @generated
+	 */
+	void unsetSensor_model();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getSensor_model <em>Sensor model</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Sensor model</em>' attribute is set.
+	 * @see #unsetSensor_model()
+	 * @see #getSensor_model()
+	 * @see #setSensor_model(String)
+	 * @generated
+	 */
+	boolean isSetSensor_model();
 
 	/**
 	 * Returns the value of the '<em><b>Avg</b></em>' attribute.
@@ -182,9 +263,11 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Unit</em>' attribute.
+	 * @see #isSetUnit()
+	 * @see #unsetUnit()
 	 * @see #setUnit(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Unit()
-	 * @model
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	String getUnit();
@@ -194,19 +277,47 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Unit</em>' attribute.
+	 * @see #isSetUnit()
+	 * @see #unsetUnit()
 	 * @see #getUnit()
 	 * @generated
 	 */
 	void setUnit(String value);
 
 	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getUnit <em>Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetUnit()
+	 * @see #getUnit()
+	 * @see #setUnit(String)
+	 * @generated
+	 */
+	void unsetUnit();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getUnit <em>Unit</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Unit</em>' attribute is set.
+	 * @see #unsetUnit()
+	 * @see #getUnit()
+	 * @see #setUnit(String)
+	 * @generated
+	 */
+	boolean isSetUnit();
+
+	/**
 	 * Returns the value of the '<em><b>Validity</b></em>' attribute.
+	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validity</em>' attribute.
+	 * @see #isSetValidity()
+	 * @see #unsetValidity()
 	 * @see #setValidity(int)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Validity()
-	 * @model required="true"
+	 * @model default="0" unsettable="true"
 	 * @generated
 	 */
 	int getValidity();
@@ -216,19 +327,46 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Validity</em>' attribute.
+	 * @see #isSetValidity()
+	 * @see #unsetValidity()
 	 * @see #getValidity()
 	 * @generated
 	 */
 	void setValidity(int value);
 
 	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getValidity <em>Validity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetValidity()
+	 * @see #getValidity()
+	 * @see #setValidity(int)
+	 * @generated
+	 */
+	void unsetValidity();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getValidity <em>Validity</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Validity</em>' attribute is set.
+	 * @see #unsetValidity()
+	 * @see #getValidity()
+	 * @see #setValidity(int)
+	 * @generated
+	 */
+	boolean isSetValidity();
+
+	/**
 	 * Returns the value of the '<em><b>Created at</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Created at</em>' attribute.
+	 * @see #isSetCreated_at()
+	 * @see #unsetCreated_at()
 	 * @see #setCreated_at(Date)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Created_at()
-	 * @model
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	Date getCreated_at();
@@ -238,19 +376,46 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Created at</em>' attribute.
+	 * @see #isSetCreated_at()
+	 * @see #unsetCreated_at()
 	 * @see #getCreated_at()
 	 * @generated
 	 */
 	void setCreated_at(Date value);
 
 	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getCreated_at <em>Created at</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetCreated_at()
+	 * @see #getCreated_at()
+	 * @see #setCreated_at(Date)
+	 * @generated
+	 */
+	void unsetCreated_at();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getCreated_at <em>Created at</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Created at</em>' attribute is set.
+	 * @see #unsetCreated_at()
+	 * @see #getCreated_at()
+	 * @see #setCreated_at(Date)
+	 * @generated
+	 */
+	boolean isSetCreated_at();
+
+	/**
 	 * Returns the value of the '<em><b>Str data</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Str data</em>' attribute.
+	 * @see #isSetStr_data()
+	 * @see #unsetStr_data()
 	 * @see #setStr_data(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Str_data()
-	 * @model
+	 * @model unsettable="true"
 	 * @generated
 	 */
 	String getStr_data();
@@ -260,9 +425,34 @@ public interface SensorData extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Str data</em>' attribute.
+	 * @see #isSetStr_data()
+	 * @see #unsetStr_data()
 	 * @see #getStr_data()
 	 * @generated
 	 */
 	void setStr_data(String value);
+
+	/**
+	 * Unsets the value of the '{@link de.jena.model.icesensor.SensorData#getStr_data <em>Str data</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSetStr_data()
+	 * @see #getStr_data()
+	 * @see #setStr_data(String)
+	 * @generated
+	 */
+	void unsetStr_data();
+
+	/**
+	 * Returns whether the value of the '{@link de.jena.model.icesensor.SensorData#getStr_data <em>Str data</em>}' attribute is set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return whether the value of the '<em>Str data</em>' attribute is set.
+	 * @see #unsetStr_data()
+	 * @see #getStr_data()
+	 * @see #setStr_data(String)
+	 * @generated
+	 */
+	boolean isSetStr_data();
 
 } // SensorData

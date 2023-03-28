@@ -68,6 +68,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	protected String sensor_type = SENSOR_TYPE_EDEFAULT;
 
 	/**
+	 * This is true if the Sensor type attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean sensor_typeESet;
+
+	/**
 	 * The default value of the '{@link #getGateway() <em>Gateway</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,6 +97,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	protected String gateway = GATEWAY_EDEFAULT;
 
 	/**
+	 * This is true if the Gateway attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean gatewayESet;
+
+	/**
 	 * The default value of the '{@link #getSensor_model() <em>Sensor model</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +124,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	 * @ordered
 	 */
 	protected String sensor_model = SENSOR_MODEL_EDEFAULT;
+
+	/**
+	 * This is true if the Sensor model attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean sensor_modelESet;
 
 	/**
 	 * The default value of the '{@link #getAvg() <em>Avg</em>}' attribute.
@@ -188,6 +215,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	protected String unit = UNIT_EDEFAULT;
 
 	/**
+	 * This is true if the Unit attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean unitESet;
+
+	/**
 	 * The default value of the '{@link #getValidity() <em>Validity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -206,6 +242,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	 * @ordered
 	 */
 	protected int validity = VALIDITY_EDEFAULT;
+
+	/**
+	 * This is true if the Validity attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean validityESet;
 
 	/**
 	 * The default value of the '{@link #getCreated_at() <em>Created at</em>}' attribute.
@@ -228,6 +273,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	protected Date created_at = CREATED_AT_EDEFAULT;
 
 	/**
+	 * This is true if the Created at attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean created_atESet;
+
+	/**
 	 * The default value of the '{@link #getStr_data() <em>Str data</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -246,6 +300,15 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	 * @ordered
 	 */
 	protected String str_data = STR_DATA_EDEFAULT;
+
+	/**
+	 * This is true if the Str data attribute has been set.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean str_dataESet;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -285,8 +348,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setSensor_type(String newSensor_type) {
 		String oldSensor_type = sensor_type;
 		sensor_type = newSensor_type;
+		boolean oldSensor_typeESet = sensor_typeESet;
+		sensor_typeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__SENSOR_TYPE, oldSensor_type, sensor_type));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__SENSOR_TYPE, oldSensor_type, sensor_type, !oldSensor_typeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetSensor_type() {
+		String oldSensor_type = sensor_type;
+		boolean oldSensor_typeESet = sensor_typeESet;
+		sensor_type = SENSOR_TYPE_EDEFAULT;
+		sensor_typeESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__SENSOR_TYPE, oldSensor_type, SENSOR_TYPE_EDEFAULT, oldSensor_typeESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetSensor_type() {
+		return sensor_typeESet;
 	}
 
 	/**
@@ -308,8 +398,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setGateway(String newGateway) {
 		String oldGateway = gateway;
 		gateway = newGateway;
+		boolean oldGatewayESet = gatewayESet;
+		gatewayESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__GATEWAY, oldGateway, gateway));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__GATEWAY, oldGateway, gateway, !oldGatewayESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetGateway() {
+		String oldGateway = gateway;
+		boolean oldGatewayESet = gatewayESet;
+		gateway = GATEWAY_EDEFAULT;
+		gatewayESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__GATEWAY, oldGateway, GATEWAY_EDEFAULT, oldGatewayESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetGateway() {
+		return gatewayESet;
 	}
 
 	/**
@@ -331,8 +448,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setSensor_model(String newSensor_model) {
 		String oldSensor_model = sensor_model;
 		sensor_model = newSensor_model;
+		boolean oldSensor_modelESet = sensor_modelESet;
+		sensor_modelESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__SENSOR_MODEL, oldSensor_model, sensor_model));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__SENSOR_MODEL, oldSensor_model, sensor_model, !oldSensor_modelESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetSensor_model() {
+		String oldSensor_model = sensor_model;
+		boolean oldSensor_modelESet = sensor_modelESet;
+		sensor_model = SENSOR_MODEL_EDEFAULT;
+		sensor_modelESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__SENSOR_MODEL, oldSensor_model, SENSOR_MODEL_EDEFAULT, oldSensor_modelESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetSensor_model() {
+		return sensor_modelESet;
 	}
 
 	/**
@@ -423,8 +567,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setUnit(String newUnit) {
 		String oldUnit = unit;
 		unit = newUnit;
+		boolean oldUnitESet = unitESet;
+		unitESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__UNIT, oldUnit, unit));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__UNIT, oldUnit, unit, !oldUnitESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetUnit() {
+		String oldUnit = unit;
+		boolean oldUnitESet = unitESet;
+		unit = UNIT_EDEFAULT;
+		unitESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__UNIT, oldUnit, UNIT_EDEFAULT, oldUnitESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetUnit() {
+		return unitESet;
 	}
 
 	/**
@@ -446,8 +617,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setValidity(int newValidity) {
 		int oldValidity = validity;
 		validity = newValidity;
+		boolean oldValidityESet = validityESet;
+		validityESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__VALIDITY, oldValidity, validity));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__VALIDITY, oldValidity, validity, !oldValidityESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetValidity() {
+		int oldValidity = validity;
+		boolean oldValidityESet = validityESet;
+		validity = VALIDITY_EDEFAULT;
+		validityESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__VALIDITY, oldValidity, VALIDITY_EDEFAULT, oldValidityESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetValidity() {
+		return validityESet;
 	}
 
 	/**
@@ -469,8 +667,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setCreated_at(Date newCreated_at) {
 		Date oldCreated_at = created_at;
 		created_at = newCreated_at;
+		boolean oldCreated_atESet = created_atESet;
+		created_atESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__CREATED_AT, oldCreated_at, created_at));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__CREATED_AT, oldCreated_at, created_at, !oldCreated_atESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetCreated_at() {
+		Date oldCreated_at = created_at;
+		boolean oldCreated_atESet = created_atESet;
+		created_at = CREATED_AT_EDEFAULT;
+		created_atESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__CREATED_AT, oldCreated_at, CREATED_AT_EDEFAULT, oldCreated_atESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetCreated_at() {
+		return created_atESet;
 	}
 
 	/**
@@ -492,8 +717,35 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void setStr_data(String newStr_data) {
 		String oldStr_data = str_data;
 		str_data = newStr_data;
+		boolean oldStr_dataESet = str_dataESet;
+		str_dataESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__STR_DATA, oldStr_data, str_data));
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.SENSOR_DATA__STR_DATA, oldStr_data, str_data, !oldStr_dataESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void unsetStr_data() {
+		String oldStr_data = str_data;
+		boolean oldStr_dataESet = str_dataESet;
+		str_data = STR_DATA_EDEFAULT;
+		str_dataESet = false;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.UNSET, IcesensorPackage.SENSOR_DATA__STR_DATA, oldStr_data, STR_DATA_EDEFAULT, oldStr_dataESet));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetStr_data() {
+		return str_dataESet;
 	}
 
 	/**
@@ -579,13 +831,13 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case IcesensorPackage.SENSOR_DATA__SENSOR_TYPE:
-				setSensor_type(SENSOR_TYPE_EDEFAULT);
+				unsetSensor_type();
 				return;
 			case IcesensorPackage.SENSOR_DATA__GATEWAY:
-				setGateway(GATEWAY_EDEFAULT);
+				unsetGateway();
 				return;
 			case IcesensorPackage.SENSOR_DATA__SENSOR_MODEL:
-				setSensor_model(SENSOR_MODEL_EDEFAULT);
+				unsetSensor_model();
 				return;
 			case IcesensorPackage.SENSOR_DATA__AVG:
 				setAvg(AVG_EDEFAULT);
@@ -597,16 +849,16 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 				setMax(MAX_EDEFAULT);
 				return;
 			case IcesensorPackage.SENSOR_DATA__UNIT:
-				setUnit(UNIT_EDEFAULT);
+				unsetUnit();
 				return;
 			case IcesensorPackage.SENSOR_DATA__VALIDITY:
-				setValidity(VALIDITY_EDEFAULT);
+				unsetValidity();
 				return;
 			case IcesensorPackage.SENSOR_DATA__CREATED_AT:
-				setCreated_at(CREATED_AT_EDEFAULT);
+				unsetCreated_at();
 				return;
 			case IcesensorPackage.SENSOR_DATA__STR_DATA:
-				setStr_data(STR_DATA_EDEFAULT);
+				unsetStr_data();
 				return;
 		}
 		super.eUnset(featureID);
@@ -621,11 +873,11 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case IcesensorPackage.SENSOR_DATA__SENSOR_TYPE:
-				return SENSOR_TYPE_EDEFAULT == null ? sensor_type != null : !SENSOR_TYPE_EDEFAULT.equals(sensor_type);
+				return isSetSensor_type();
 			case IcesensorPackage.SENSOR_DATA__GATEWAY:
-				return GATEWAY_EDEFAULT == null ? gateway != null : !GATEWAY_EDEFAULT.equals(gateway);
+				return isSetGateway();
 			case IcesensorPackage.SENSOR_DATA__SENSOR_MODEL:
-				return SENSOR_MODEL_EDEFAULT == null ? sensor_model != null : !SENSOR_MODEL_EDEFAULT.equals(sensor_model);
+				return isSetSensor_model();
 			case IcesensorPackage.SENSOR_DATA__AVG:
 				return avg != AVG_EDEFAULT;
 			case IcesensorPackage.SENSOR_DATA__MIN:
@@ -633,13 +885,13 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 			case IcesensorPackage.SENSOR_DATA__MAX:
 				return max != MAX_EDEFAULT;
 			case IcesensorPackage.SENSOR_DATA__UNIT:
-				return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
+				return isSetUnit();
 			case IcesensorPackage.SENSOR_DATA__VALIDITY:
-				return validity != VALIDITY_EDEFAULT;
+				return isSetValidity();
 			case IcesensorPackage.SENSOR_DATA__CREATED_AT:
-				return CREATED_AT_EDEFAULT == null ? created_at != null : !CREATED_AT_EDEFAULT.equals(created_at);
+				return isSetCreated_at();
 			case IcesensorPackage.SENSOR_DATA__STR_DATA:
-				return STR_DATA_EDEFAULT == null ? str_data != null : !STR_DATA_EDEFAULT.equals(str_data);
+				return isSetStr_data();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -655,11 +907,11 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (sensor_type: ");
-		result.append(sensor_type);
+		if (sensor_typeESet) result.append(sensor_type); else result.append("<unset>");
 		result.append(", gateway: ");
-		result.append(gateway);
+		if (gatewayESet) result.append(gateway); else result.append("<unset>");
 		result.append(", sensor_model: ");
-		result.append(sensor_model);
+		if (sensor_modelESet) result.append(sensor_model); else result.append("<unset>");
 		result.append(", avg: ");
 		result.append(avg);
 		result.append(", min: ");
@@ -667,13 +919,13 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 		result.append(", max: ");
 		result.append(max);
 		result.append(", unit: ");
-		result.append(unit);
+		if (unitESet) result.append(unit); else result.append("<unset>");
 		result.append(", validity: ");
-		result.append(validity);
+		if (validityESet) result.append(validity); else result.append("<unset>");
 		result.append(", created_at: ");
-		result.append(created_at);
+		if (created_atESet) result.append(created_at); else result.append("<unset>");
 		result.append(", str_data: ");
-		result.append(str_data);
+		if (str_dataESet) result.append(str_data); else result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}

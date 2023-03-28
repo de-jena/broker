@@ -201,12 +201,13 @@ public interface SensorData extends Service {
 
 	/**
 	 * Returns the value of the '<em><b>Validity</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Validity</em>' attribute.
 	 * @see #setValidity(int)
 	 * @see de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage#getSensorData_Validity()
-	 * @model required="true"
+	 * @model default="-1"
 	 * @generated
 	 */
 	int getValidity();
