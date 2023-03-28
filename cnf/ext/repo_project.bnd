@@ -13,11 +13,11 @@
 		poll_time 			= -1;\
 		name='Maven Central'
 
--plugin.sensinact.template: \
+-plugin.sensinact: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
 		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-		snapshotUrl="https://repo.eclipse.org/content/repositories/sensinact-snapshots,https://repository.apache.org/snapshots/";\
-		index="${.}/sensinact.maven";\
+		snapshotUrl			= "https://devel.data-in-motion.biz/nexus/repository/sensinact/, https://repository.apache.org/snapshots/";\
+		index				= "${.}/sensinact.maven";\
 		readOnly			= true;\
 		poll_time 			= -1;\
 		name='SensiNact SDK'
@@ -52,3 +52,10 @@
         readOnly=true; \
         poll.time=-1; \
         name="Vadin23"
+
+-plugin.modeling:\
+	aQute.bnd.repository.osgi.OSGiRepository;\
+		name=DIM_Eclipse_Runtime;\
+		locations=https://devel.data-in-motion.biz/public/update/repository/p2/obr/dim-core-runtime/index.xml;\
+		cache=${build}/cache/dim-core-runtime;\
+		poll.time=-1		

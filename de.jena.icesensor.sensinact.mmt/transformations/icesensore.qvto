@@ -1,0 +1,81 @@
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype SENSOR uses "https://jena.de/models/icesensor/1.0";
+modeltype SENSINACT uses "https://jena.de/models/icesensor/sensinact/1.0";
+modeltype PROVIDER uses "https://eclipse.org/sensinact/core/provider/1.0";
+
+transformation project2projectApi(in sensor : SENSOR, out sensinact : SENSINACT);
+
+main() {
+	sensor.rootObjects()[SENSOR::IceSENSOR] -> map sensoreToRervice(); 
+	
+}
+
+
+mapping SENSOR::IceSENSOR::sensoreToRervice(): SENSINACT::IceSensor {
+	var eClass := SENSINACT::SensorData.oclAsType(ECORE::EClass);
+	
+	id := self.ice_id;
+	admin := self.map toAdmin();
+	h2sugm3 := self.data.h2sugm3.map sensoreToRervice("h2sugm3", "H2S");
+	cougm3 := self.data.cougm3.map sensoreToRervice("cougm3", "CO");
+	nougm3 := self.data.nougm3.map sensoreToRervice("nougm3", "NO");
+	o3ugm3 := self.data.o3ugm3.map sensoreToRervice("o3ugm3", "O3");
+	_1p := self.data._1p.map sensoreToRervice("1p", "PM_1");
+	aqi_criteria := self.data.aqi_criteria.map sensoreToRervice("Air Qualaity Index Kriterien", null);
+	temperature := self.data.temperature.map sensoreToRervice("Temperatur", "air_temprature" );
+	humidity := self.data.humidity.map sensoreToRervice("Luftfeuchtigkeit", "air_humidity");
+	_10p := self.data._10p.map sensoreToRervice("10p", "PM_10");
+	pressure := self.data.pressure.map sensoreToRervice("Luftdruck", "air_pressure");
+	no2ugm3 := self.data.no2ugm3.map sensoreToRervice("NO2", "NO2");
+	aqi := self.data.aqi.map sensoreToRervice("Air Qualaity Index ", "air_qi");
+	_2_5p := self.data._2_5p.map sensoreToRervice("2.5P", "PM_2_5");
+}
+
+mapping SENSOR::IceSENSOR::toAdmin(): PROVIDER::Admin{
+	friendlyName := "ICECat Sensore - " + self.ice_id;
+}
+mapping SENSOR::SensorData::sensoreToRervice(friendlyServiceName : String, type : String): SENSINACT::SensorData {
+	var eClass := SENSINACT::SensorData.oclAsType(ECORE::EClass);
+	sensor_type := self.sensor_type;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("sensor_type"), friendlyServiceName, "" , "true", null);
+	gateway := self.gateway;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("gateway"), friendlyServiceName, "" , "true", null);
+	sensor_model := self.sensor_model;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("sensor_model"), friendlyServiceName, "" , "true", null);
+	avg := self.avg;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("avg"), friendlyServiceName, self.unit , null, type);
+	min := self.min;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("min"), friendlyServiceName, self.unit , null, type);
+	max := self.max;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("max"), friendlyServiceName, self.unit , null, type);
+	unit := self.unit;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("unit"), friendlyServiceName, "" , "true", null);
+	validity := self.validity;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("validity"), friendlyServiceName, "" , "true", null);
+	created_at := self.created_at;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("created_at"), friendlyServiceName, "" , "true", null);
+	str_data := self.str_data;
+	metadata += self.map toMetadataEntry(eClass.getEStructuralFeature("str_data"), friendlyServiceName, "" , "true", null);
+}
+
+mapping SENSOR::SensorData::toMetadataEntry(feature : ECORE::EStructuralFeature, friendlyServiceName : String, unit : String, hide : String, type : String): PROVIDER::FeatureMetadata {
+	key := feature;
+	value := self.map toMetadata(friendlyServiceName + "-" + feature.name, unit, hide, type); 
+}
+mapping SENSOR::SensorData::toMetadata(friendlyNameParam : String, unit : String, hide : String, type : String): PROVIDER::Metadata{
+	extra += self.map toCustomMetadata("friendlyName", friendlyNameParam);
+	if(unit != null){
+		extra += self.map toCustomMetadata("unit", unit);
+		extra += self.map toCustomMetadata("sensorthings.unit.name", unit);
+	};
+	if(hide != null){
+		extra += self.map toCustomMetadata("sensorthings.hide", hide);
+	};
+	if(type != null){
+		extra += self.map toCustomMetadata("sensorthings.datastream.type", type);
+	};
+}
+mapping SENSOR::SensorData::toCustomMetadata(key : String, theValue : String): PROVIDER::FeatureCustomMetadata{
+	name := key;
+	value := theValue;
+}

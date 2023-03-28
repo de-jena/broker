@@ -16,6 +16,11 @@
 # Bundle Annotations		
 -includeresource.model: model=model
 
--buildpath: org.osgi.service.condition
+-buildpath: \
+	org.osgi.service.condition,\
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.core.jackson-core
 
 src: ${^src},src-gen

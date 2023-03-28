@@ -74,7 +74,7 @@ public interface SensorData extends EObject {
 	 * @return the value of the '<em>Gateway</em>' attribute.
 	 * @see #setGateway(String)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getSensorData_Gateway()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getGateway();

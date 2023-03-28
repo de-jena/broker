@@ -498,7 +498,6 @@ public class OcppCentralSystemPackageImpl extends EPackageImpl implements OcppCe
 	private OcppCentralSystemPackageImpl() {
 		super(eNS_URI, OcppCentralSystemFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

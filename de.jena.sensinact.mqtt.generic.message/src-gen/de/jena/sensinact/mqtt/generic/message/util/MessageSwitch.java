@@ -114,6 +114,41 @@ public class MessageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagePackage.INSANT_VALUE_UPDATE: {
+				InsantValueUpdate insantValueUpdate = (InsantValueUpdate)theEObject;
+				T result = caseInsantValueUpdate(insantValueUpdate);
+				if (result == null) result = caseUpdateMessage(insantValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.DATE_VALUE_UPDATE: {
+				DateValueUpdate dateValueUpdate = (DateValueUpdate)theEObject;
+				T result = caseDateValueUpdate(dateValueUpdate);
+				if (result == null) result = caseUpdateMessage(dateValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.BIG_DECIMAL_VALUE_UPDATE: {
+				BigDecimalValueUpdate bigDecimalValueUpdate = (BigDecimalValueUpdate)theEObject;
+				T result = caseBigDecimalValueUpdate(bigDecimalValueUpdate);
+				if (result == null) result = caseUpdateMessage(bigDecimalValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.GEO_JSON_OBJECT_VALUE_UPDATE: {
+				GeoJsonObjectValueUpdate geoJsonObjectValueUpdate = (GeoJsonObjectValueUpdate)theEObject;
+				T result = caseGeoJsonObjectValueUpdate(geoJsonObjectValueUpdate);
+				if (result == null) result = caseUpdateMessage(geoJsonObjectValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MessagePackage.POINT_VALUE_UPDATE: {
+				PointValueUpdate pointValueUpdate = (PointValueUpdate)theEObject;
+				T result = casePointValueUpdate(pointValueUpdate);
+				if (result == null) result = caseUpdateMessage(pointValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -220,6 +255,81 @@ public class MessageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseObjectValueUpdate(ObjectValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Insant Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Insant Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInsantValueUpdate(InsantValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Date Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Date Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDateValueUpdate(DateValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Big Decimal Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Big Decimal Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBigDecimalValueUpdate(BigDecimalValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Geo Json Object Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Geo Json Object Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGeoJsonObjectValueUpdate(GeoJsonObjectValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Point Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Point Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePointValueUpdate(PointValueUpdate object) {
 		return null;
 	}
 

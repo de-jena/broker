@@ -616,7 +616,6 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 	private TOSDevicePackageImpl() {
 		super(eNS_URI, TOSDeviceFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -87,7 +87,6 @@ public class OcppStructuresPackageImpl extends EPackageImpl implements OcppStruc
 	private OcppStructuresPackageImpl() {
 		super(eNS_URI, OcppStructuresFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

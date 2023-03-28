@@ -3,12 +3,15 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.mqtt.generic.message/src" modelPluginID="de.jena.sensinact.mqtt.generic.message"
     modelName="Generic_message" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
     operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>generic_message.ecore</foreignModel>
   <genPackages prefix="Message" basePackage="de.jena.sensinact.mqtt.generic" disposableProviderFactory="true"
       ecorePackage="generic_message.ecore#/">
     <genDataTypes ecoreDataType="generic_message.ecore#//EInstant" create="return Instant.parse(it);"
         convert="return it.toString();"/>
+    <genDataTypes ecoreDataType="generic_message.ecore#//EPoint" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Point.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
+        convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
     <genClasses image="false" ecoreClass="generic_message.ecore#//UpdateMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/timestamp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/resource"/>
@@ -36,6 +39,26 @@
     <genClasses ecoreClass="generic_message.ecore#//ObjectValueUpdate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/oldValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//ObjectValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//InsantValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//InsantValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//InsantValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//DateValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DateValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//DateValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//BigDecimalValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BigDecimalValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//BigDecimalValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//GeoJsonObjectValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//GeoJsonObjectValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//GeoJsonObjectValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//PointValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//PointValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//PointValueUpdate/newValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

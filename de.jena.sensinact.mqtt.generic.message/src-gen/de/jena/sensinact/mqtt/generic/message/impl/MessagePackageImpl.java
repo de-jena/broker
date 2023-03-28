@@ -2,13 +2,18 @@
  */
 package de.jena.sensinact.mqtt.generic.message.impl;
 
+import de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.IntegerValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.LongValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.MessageFactory;
 import de.jena.sensinact.mqtt.generic.message.MessagePackage;
 import de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.StringValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.UpdateMessage;
 
@@ -20,6 +25,10 @@ import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.sensinact.gateway.geojson.Point;
+
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,7 +91,49 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass insantValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dateValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bigDecimalValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass geoJsonObjectValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pointValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType eInstantEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType ePointEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -102,7 +153,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	private MessagePackageImpl() {
 		super(eNS_URI, MessageFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,6 +180,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		MessagePackageImpl theMessagePackage = registeredMessagePackage instanceof MessagePackageImpl ? (MessagePackageImpl)registeredMessagePackage : new MessagePackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		ProviderPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theMessagePackage.createPackageContents();
@@ -339,8 +392,152 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInsantValueUpdate() {
+		return insantValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInsantValueUpdate_OldValue() {
+		return (EAttribute)insantValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getInsantValueUpdate_NewValue() {
+		return (EAttribute)insantValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDateValueUpdate() {
+		return dateValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDateValueUpdate_OldValue() {
+		return (EAttribute)dateValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDateValueUpdate_NewValue() {
+		return (EAttribute)dateValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBigDecimalValueUpdate() {
+		return bigDecimalValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBigDecimalValueUpdate_OldValue() {
+		return (EAttribute)bigDecimalValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBigDecimalValueUpdate_NewValue() {
+		return (EAttribute)bigDecimalValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGeoJsonObjectValueUpdate() {
+		return geoJsonObjectValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeoJsonObjectValueUpdate_OldValue() {
+		return (EAttribute)geoJsonObjectValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGeoJsonObjectValueUpdate_NewValue() {
+		return (EAttribute)geoJsonObjectValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPointValueUpdate() {
+		return pointValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPointValueUpdate_OldValue() {
+		return (EAttribute)pointValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPointValueUpdate_NewValue() {
+		return (EAttribute)pointValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getEInstant() {
 		return eInstantEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEPoint() {
+		return ePointEDataType;
 	}
 
 	/**
@@ -399,8 +596,29 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(objectValueUpdateEClass, OBJECT_VALUE_UPDATE__OLD_VALUE);
 		createEAttribute(objectValueUpdateEClass, OBJECT_VALUE_UPDATE__NEW_VALUE);
 
+		insantValueUpdateEClass = createEClass(INSANT_VALUE_UPDATE);
+		createEAttribute(insantValueUpdateEClass, INSANT_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(insantValueUpdateEClass, INSANT_VALUE_UPDATE__NEW_VALUE);
+
+		dateValueUpdateEClass = createEClass(DATE_VALUE_UPDATE);
+		createEAttribute(dateValueUpdateEClass, DATE_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(dateValueUpdateEClass, DATE_VALUE_UPDATE__NEW_VALUE);
+
+		bigDecimalValueUpdateEClass = createEClass(BIG_DECIMAL_VALUE_UPDATE);
+		createEAttribute(bigDecimalValueUpdateEClass, BIG_DECIMAL_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(bigDecimalValueUpdateEClass, BIG_DECIMAL_VALUE_UPDATE__NEW_VALUE);
+
+		geoJsonObjectValueUpdateEClass = createEClass(GEO_JSON_OBJECT_VALUE_UPDATE);
+		createEAttribute(geoJsonObjectValueUpdateEClass, GEO_JSON_OBJECT_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(geoJsonObjectValueUpdateEClass, GEO_JSON_OBJECT_VALUE_UPDATE__NEW_VALUE);
+
+		pointValueUpdateEClass = createEClass(POINT_VALUE_UPDATE);
+		createEAttribute(pointValueUpdateEClass, POINT_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(pointValueUpdateEClass, POINT_VALUE_UPDATE__NEW_VALUE);
+
 		// Create data types
 		eInstantEDataType = createEDataType(EINSTANT);
+		ePointEDataType = createEDataType(EPOINT);
 	}
 
 	/**
@@ -426,6 +644,9 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		ProviderPackage theProviderPackage = (ProviderPackage)EPackage.Registry.INSTANCE.getEPackage(ProviderPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -437,6 +658,11 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		longValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		booleanValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		objectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		insantValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		dateValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		bigDecimalValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		geoJsonObjectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		pointValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(updateMessageEClass, UpdateMessage.class, "UpdateMessage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -467,8 +693,29 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getObjectValueUpdate_OldValue(), ecorePackage.getEJavaObject(), "oldValue", null, 0, 1, ObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObjectValueUpdate_NewValue(), ecorePackage.getEJavaObject(), "newValue", null, 0, 1, ObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(insantValueUpdateEClass, InsantValueUpdate.class, "InsantValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getInsantValueUpdate_OldValue(), this.getEInstant(), "oldValue", null, 0, 1, InsantValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getInsantValueUpdate_NewValue(), this.getEInstant(), "newValue", null, 0, 1, InsantValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dateValueUpdateEClass, DateValueUpdate.class, "DateValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDateValueUpdate_OldValue(), ecorePackage.getEDate(), "oldValue", null, 0, 1, DateValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDateValueUpdate_NewValue(), ecorePackage.getEDate(), "newValue", null, 0, 1, DateValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bigDecimalValueUpdateEClass, BigDecimalValueUpdate.class, "BigDecimalValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBigDecimalValueUpdate_OldValue(), ecorePackage.getEBigDecimal(), "oldValue", null, 0, 1, BigDecimalValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBigDecimalValueUpdate_NewValue(), ecorePackage.getEBigDecimal(), "newValue", null, 0, 1, BigDecimalValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(geoJsonObjectValueUpdateEClass, GeoJsonObjectValueUpdate.class, "GeoJsonObjectValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGeoJsonObjectValueUpdate_OldValue(), theProviderPackage.getEGeoJsonObject(), "oldValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeoJsonObjectValueUpdate_NewValue(), theProviderPackage.getEGeoJsonObject(), "newValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pointValueUpdateEClass, PointValueUpdate.class, "PointValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPointValueUpdate_OldValue(), this.getEPoint(), "oldValue", null, 0, 1, PointValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPointValueUpdate_NewValue(), this.getEPoint(), "newValue", null, 0, 1, PointValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(eInstantEDataType, Instant.class, "EInstant", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(ePointEDataType, Point.class, "EPoint", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

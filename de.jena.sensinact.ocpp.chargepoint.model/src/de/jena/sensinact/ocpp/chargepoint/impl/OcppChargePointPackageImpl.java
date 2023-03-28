@@ -810,7 +810,6 @@ public class OcppChargePointPackageImpl extends EPackageImpl implements OcppChar
 	private OcppChargePointPackageImpl() {
 		super(eNS_URI, OcppChargePointFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

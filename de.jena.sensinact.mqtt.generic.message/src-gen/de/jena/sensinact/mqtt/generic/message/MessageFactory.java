@@ -79,6 +79,51 @@ public interface MessageFactory extends EFactory {
 	ObjectValueUpdate createObjectValueUpdate();
 
 	/**
+	 * Returns a new object of class '<em>Insant Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Insant Value Update</em>'.
+	 * @generated
+	 */
+	InsantValueUpdate createInsantValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Date Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Date Value Update</em>'.
+	 * @generated
+	 */
+	DateValueUpdate createDateValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Big Decimal Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Big Decimal Value Update</em>'.
+	 * @generated
+	 */
+	BigDecimalValueUpdate createBigDecimalValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Geo Json Object Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Geo Json Object Value Update</em>'.
+	 * @generated
+	 */
+	GeoJsonObjectValueUpdate createGeoJsonObjectValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Point Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Point Value Update</em>'.
+	 * @generated
+	 */
+	PointValueUpdate createPointValueUpdate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

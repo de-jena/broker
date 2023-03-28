@@ -1,0 +1,2 @@
+-includeresource: transformations=transformations
+#Require-Capability: osgi.identity;filter:="(osgi.identity=de.jena.icesensor.sensinact.model)"

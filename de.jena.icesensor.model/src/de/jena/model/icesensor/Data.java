@@ -326,7 +326,6 @@ public interface Data extends EObject {
 	 * @see #set_2_5p(SensorData)
 	 * @see de.jena.model.icesensor.IcesensorPackage#getData__2_5p()
 	 * @model containment="true"
-	 *        annotation="JsonAlias value='2.5p'"
 	 * @generated
 	 */
 	SensorData get_2_5p();

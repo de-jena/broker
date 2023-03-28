@@ -2,15 +2,20 @@
 org.eclipse.sensinact.gateway.core:impl:${sensinact.version}
 org.eclipse.sensinact.gateway.core:annotation:${sensinact.version}
 org.eclipse.sensinact.gateway.core:api:${sensinact.version}
-org.eclipse.sensinact.gateway.core:models:${sensinact.version}
+org.eclipse.sensinact.gateway.core.models:provider:${sensinact.version}
+org.eclipse.sensinact.gateway.core.models:metadata:${sensinact.version}
 org.eclipse.sensinact.gateway.core:geo-json:${sensinact.version}
 
 # northbound
 org.eclipse.sensinact.gateway.northbound:rest:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound:query-handler:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.filters:filters.core:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.filters:ldap:${sensinact.version}
 ## sensorethings
 org.eclipse.sensinact.gateway.northbound.sensorthings:dto:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.api:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.gateway:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.sensorthings:filter:${sensinact.version}
 
 # southbound
 ## devicefactory
@@ -27,4 +32,5 @@ org.eclipse.sensinact.gateway.southbound.virtual:virtual-temperature-sensor:${se
 
 org.apache.aries.typedevent:org.apache.aries.typedevent.bus:0.0.2-SNAPSHOT
 org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2
-
+org.antlr:antlr4-runtime:4.5
+org.locationtech.spatial4j:spatial4j:0.8

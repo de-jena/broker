@@ -29,10 +29,10 @@ public class IceSensor {
 
 	@Activate
 	public void activate() {
-		
+
 		subcribtion = service.subcribe();
 		subcribtion.forEachEvent(this::handle);
-		logger.log(Level.INFO, "Sensinect IceSensor started.");
+		logger.log(Level.INFO, "Sensinact IceSensor started.");
 	}
 
 	@Deactivate
@@ -40,19 +40,9 @@ public class IceSensor {
 		subcribtion.close();
 	}
 
-	/**
-	 * Message coming in from the sensor, just like a custom model
-	 */
-	public void onMessage(SensorData iceSENSOR) {
-		// Create the DTO
-		IceSensorDto dto = toDTO(iceSENSOR);
-
+	private void onMessage(SensorData iceSENSOR) {
 		try {
-			// Send the dto data to sensiNact core somehow?
-			// e.g. Typed Events
-//			bus.deliver("sensiNact/push/event", dto);
-			// e.g. Direct to core
-			sensiNact.pushUpdate(dto);
+			sensiNact.pushUpdate(iceSENSOR);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -76,13 +66,4 @@ public class IceSensor {
 		return 0;
 	}
 
-	IceSensorDto toDTO(SensorData data) {
-		IceSensorDto dto = new IceSensorDto();
-		dto.model = "ICESensor";
-		dto.data = data.getAvg();
-		dto.service = data.getSensor_type();
-		dto.provider = data.getGateway();
-		dto.timestamp = data.getCreated_at().getTime();
-		return dto;
-	}
 }
