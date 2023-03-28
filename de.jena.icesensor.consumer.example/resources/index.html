@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Jena Temperaturen</title>
+</head>
+<body>
+
+    <div>
+        <h2>Jena Temperaturen</h2>
+        <canvas id="myChart" width="1000" height="400"></canvas>
+    </div>
+    
+    <script>
+		const ctx = document.getElementById('myChart').getContext('2d');
+	    const chartData = {
+	        labels: [],
+	        datasets: [{
+	            label: 'Temperaturen',
+				fill: false,
+    			borderColor: 'rgb(75, 192, 192)',
+    			tension: 0.1,
+                data: []
+	        }]
+	    }
+
+		const myChart = new Chart(ctx, {
+		    type: 'line',
+			data: chartData,
+		    options: {
+		        responsive: true,
+		        xAxis: {
+		        	type: 'time'
+		        }
+		    }
+		});
+	</script>
+	<script>
+        var wsHost = "ws://localhost:8083/socket";
+		var ws = new WebSocket(wsHost);
+		var value = "an example message";
+		//onmessage : Event Listener - Triggered when we receive message form server
+		ws.onmessage = function(message) {
+				var sensor = JSON.parse(message.data)
+                var id = sensor.ice_id;
+                var dataset = chartData.datasets[0];
+                var today = new Date();
+				var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+				var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+				var dateTime = date+' '+time;
+                
+                chartData.labels.push(time);
+                dataset.data.push(sensor.data.avg);
+                myChart.update();
+		};
+		
+		//onopen : Event Listener - event is triggered when websockets readyState changes to open which means now we are ready to send and receives messages from server
+/*		ws.onopen = function() {
+		    //send is used to send the message to server
+		    ws.send(value);
+		};*/
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  ":configurator:resource-version": 1,
+
+	"MQTTService~ttn":
+	{
+		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
+		"username" : "scj-simple-sensors@ttn",
+		"password" : "$[env:MQTT_TTN_PWD;default=]$[prop:MQTT_TTN_PWD;default=]",
+		"type" : "ttn",
+		"id" : "ttn"
+	},
+	"MQTTService~ttn2":
+	{
+		"brokerUrl" : "tcp://eu1.cloud.thethings.network:1883",
+		"username" : "scj-sensors-01@ttn",
+		"password" : "$[env:MQTT_TTN2_PWD;default=]$[prop:MQTT_TTN2_PWD;default=]",
+		"type" : "ttn",
+		"id" : "ttn2"
+	}
+}

@@ -11,82 +11,48 @@
  */
 package de.jena.sensinact.publictransport;
 
-import org.eclipse.sensinact.gateway.generic.packet.Packet;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.Data;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.GoodbyeMessage;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.HelloMessage;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.ResourceID;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.ServiceID;
-import org.eclipse.sensinact.gateway.generic.packet.annotation.ServiceProviderID;
+import org.eclipse.sensinact.prototype.annotation.dto.Data;
+import org.eclipse.sensinact.prototype.annotation.dto.Provider;
+import org.eclipse.sensinact.prototype.annotation.dto.Resource;
+import org.eclipse.sensinact.prototype.annotation.dto.Service;
 
 /**
  * 
  * @author ungei
  * @since 22 Oct 2021
  */
-public class GenericPacket implements Packet {
+public class GenericPacket {
 
 
+	@Provider
 	protected String providerId;
+	@Service
     protected String serviceId;
+	@Resource
     protected String resourceId;
-    protected String payload;
+	@Data
+    protected Object payload;
     
-    @HelloMessage
-    private boolean helloMessage;
-    @GoodbyeMessage
-    private boolean goodbyeMessage;
-
-    /**
-     * Creates a new instance.
-     * @param providerId
-     * @param serviceId
-     * @param resourceId
-     * @param data
-     */
-    public GenericPacket(String providerId) {
-    	this.providerId = providerId;
-    	helloMessage = true;
-    }
-    
-    public GenericPacket(String providerId, String serviceId, String resourceId, String data) {
+    public GenericPacket(String providerId, String serviceId, String resourceId, Object data) {
         this.providerId = providerId;
         this.serviceId = serviceId;
         this.resourceId = resourceId;
         this.payload = data;
     }
 
-    @ServiceProviderID
     public String getProviderId() {
         return providerId;
     }
 
-    @ServiceID
     public String getServiceId() {
         return serviceId;
     }
 
-    @ResourceID
     public String getResourceId() {
         return resourceId;
     }
 
-    @Data
-    public String getPayload() {
+    public Object getPayload() {
         return payload;
     }
-
-    @Override
-    public byte[] getBytes() {
-        return null;
-    }
-
-    public void setHelloMessage(boolean helloMessage) {
-        this.helloMessage = helloMessage;
-    }
-
-    public void setGoodbyeMessage(boolean goodbyeMessage) {
-        this.goodbyeMessage = goodbyeMessage;
-    }
-	
 }

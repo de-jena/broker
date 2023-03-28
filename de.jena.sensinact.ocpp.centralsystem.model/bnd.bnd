@@ -16,6 +16,4 @@
 # Bundle Annotations		
 -includeresource.model: model=model
 
-Bundle-Version: 1.0.0.SNAPSHOT
-
 -buildpath: org.osgi.service.condition

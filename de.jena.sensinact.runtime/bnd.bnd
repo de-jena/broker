@@ -1,17 +1,12 @@
-Bundle-Version: 1.0.0.${tstamp}-SNAPSHOT
-
--dependson: \
-	de.jena.sensinact.tram,\
-	org.eclipse.sensinact.gateway.sthbnd.mqtt.thethingsnetwork-device
-
--resourceonly: true
--includeresource: \
-	@${repo;org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template}!/sensinact-distribution-template-2.0-SNAPSHOT/(*);rename:=$1,\
-	bin/felix.jar=${repo;org.apache.felix.main},\
-	data=data,\
-	conf=conf
+#-includeresource: \
+#	@${repo;org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template}!/sensinact-distribution-template-2.0-SNAPSHOT/(*);rename:=$1,\
+#	bin/felix.jar=${repo;org.apache.felix.main},\
 	
-	
--export: assembly.bndrun;type=bnd.runbundles;name=distro.zip	
-
--buildpath: org.eclipse.sensinact.gateway.nthbnd.mqtt-agent
+#-export: assembly.bndrun;type=bnd.runbundles;name=distro.zip	
+-buildpath: \
+	org.gecko.rest.jersey,\
+	org.gecko.rest.jersey.servlet.whiteboard,\
+	org.gecko.rest.jersey.config,\
+	org.eclipse.paho.client.mqttv3;version=latest,\
+	org.apache.felix.configadmin.plugin.interpolation,\
+	org.gecko.adapter.mqtt

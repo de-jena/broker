@@ -1,1 +1,30 @@
-org.eclipse.sensinact.gateway.distribution:sensinact-distribution-template:zip:2.0-SNAPSHOT
+# core 
+org.eclipse.sensinact.gateway.core:impl:${sensinact.version}
+org.eclipse.sensinact.gateway.core:annotation:${sensinact.version}
+org.eclipse.sensinact.gateway.core:api:${sensinact.version}
+org.eclipse.sensinact.gateway.core:models:${sensinact.version}
+org.eclipse.sensinact.gateway.core:geo-json:${sensinact.version}
+
+# northbound
+org.eclipse.sensinact.gateway.northbound:rest:${sensinact.version}
+## sensorethings
+org.eclipse.sensinact.gateway.northbound.sensorthings:dto:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.sensorthings:rest.api:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.sensorthings:rest.gateway:${sensinact.version}
+
+# southbound
+## devicefactory
+org.eclipse.sensinact.gateway.southbound.device-factory:device-factory-core:${sensinact.version}
+org.eclipse.sensinact.gateway.southbound.device-factory:parser-csv:${sensinact.version}
+org.eclipse.sensinact.gateway.southbound.device-factory:parser-json:${sensinact.version}
+## http
+org.eclipse.sensinact.gateway.southbound.http:http-device-factory:${sensinact.version}
+## mqtt
+org.eclipse.sensinact.gateway.southbound.mqtt:mqtt-client:${sensinact.version}
+org.eclipse.sensinact.gateway.southbound.mqtt:mqtt-device-factory:${sensinact.version}
+## virtual
+org.eclipse.sensinact.gateway.southbound.virtual:virtual-temperature-sensor:${sensinact.version}
+
+org.apache.aries.typedevent:org.apache.aries.typedevent.bus:0.0.2-SNAPSHOT
+org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2
+

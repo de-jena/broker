@@ -16,9 +16,10 @@ import java.util.Optional;
 
 import org.osgi.annotation.versioning.ProviderType;
 
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Mode;
-import de.jena.sensinact.sthbnd.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.rest.tlc.control.model.control.Control;
+import de.jena.sensinact.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.rest.tlc.control.model.control.Tlc;
+
 
 @ProviderType
 public interface TlcControl{
@@ -39,7 +40,7 @@ public interface TlcControl{
 	 * @param tlcId
 	 * @return
 	 */
-	List<Mode> getModes(String tlcId);
+	List<Phase> getPhases(String tlcId);
 
 	/**
 	 * @param tlcId
@@ -49,35 +50,35 @@ public interface TlcControl{
 
 	/**
 	 * @param tlcId
-	 * @param mode
+	 * @param Phase
 	 */
-	void saveMode(String tlcId, Mode mode);
+	void savePhase(String tlcId, Phase Phase);
 
 	/**
 	 * @param tlcId
-	 * @param modeId
-	 * return <code>false</code> if no mode existed with the given id. <code>true</code> if delete was successful. 
+	 * @param PhaseId
+	 * return <code>false</code> if no Phase existed with the given id. <code>true</code> if delete was successful. 
 	 */
-	boolean removeMode(String tlcId, String modeId);
+	boolean removePhase(String tlcId, String PhaseId);
 
 	/**
 	 * @param tlcId
 	 */
-	Optional<Control> getControlMode(String tlcId);
+	Optional<Control> getControlPhase(String tlcId);
 
 	/**
 	 * @param tlcId
-	 * @param modeId
+	 * @param PhaseId
 	 * @return
 	 */
-	Optional<Mode> getMode(String tlcId, String modeId);
+	Optional<Phase> getPhase(String tlcId, String PhaseId);
 
 	/**
 	 * @param tlcId
 	 * @param control
 	 * @return
 	 */
-	void setControlMode(String tlcId, Control control);
+	void setControlPhase(String tlcId, Control control);
 
 	// TODO: class provided by template
 

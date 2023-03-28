@@ -1,4 +1,0 @@
--include: base.bndrun
-
--exporttype: bnd.runbundles;targetDir=bundle;template=${repo;de.jena.sensinact.runtime};name=de.jena.sensinact.runtime-distro.zip;version=1.0.0
-

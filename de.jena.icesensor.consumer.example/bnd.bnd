@@ -1,0 +1,32 @@
+
+-buildpath: \
+	org.osgi.service.component.annotations,\
+	org.osgi.service.http.whiteboard,\
+	org.osgi.service.cm,\
+	org.apache.felix.http.jetty;version=latest,\
+	com.fasterxml.jackson.core.jackson-core,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	de.jena.icesensor.api;version=latest,\
+	de.jena.icesensor.model;version=latest,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.osgi.resource,\
+	org.eclipse.emf.ecore;version=latest,\
+	org.osgi.service.component,\
+	org.gecko.emf.json,\
+	org.eclipse.emf.common;version=latest,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	org.osgi.framework,\
+	org.eclipse.jetty.websocket.server;version=latest,\
+	org.eclipse.jetty.websocket.servlet;version=latest,\
+	jakarta.servlet-api,\
+	org.eclipse.jetty.websocket.api,\
+	org.eclipse.jetty.client,\
+	org.apache.commons.io,\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='2.14'
+
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+
+-includeresource.config: \
+	OSGI-INF/configurator/=configs/,\
+	web/resources/=resources/
