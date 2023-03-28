@@ -154,7 +154,8 @@
 	org.eclipse.sensinact.gateway.southbound.device-factory.parser-json;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.http.http-device-factory;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory;version='[0.0.2,0.0.3)'
+	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory;version='[0.0.2,0.0.3)',\
+	de.jena.sensinact.ocpp.centralsystem.model;version=snapshot
 	
 
 -runrequires: \
