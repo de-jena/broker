@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.sensinact.mqtt.generic.message/src" modelPluginID="de.jena.sensinact.mqtt.generic.message"
     modelName="Generic_message" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models/model/sensinact.genmodel#//core"
+    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
     operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>generic_message.ecore</foreignModel>
   <genPackages prefix="Message" basePackage="de.jena.sensinact.mqtt.generic" disposableProviderFactory="true"

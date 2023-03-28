@@ -5,26 +5,19 @@ import java.io.IOException;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
-import org.eclipse.sensinact.model.core.Admin;
-import org.eclipse.sensinact.model.core.Provider;
-import org.eclipse.sensinact.model.core.SensiNactFactory;
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.Admin;
+import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.eclipse.sensinact.prototype.generic.dto.BulkGenericDto;
 import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
@@ -58,6 +51,7 @@ public class TTNConnectionComponent {
 	public @interface Config {
 		String[] deviceIds() default {};
 		String topic();
+		String sensorThings_category() default "";
 	}
 
 	private Logger logger = LoggerFactory.getLogger(TTNConnectionComponent.class.getName());
@@ -74,17 +68,22 @@ public class TTNConnectionComponent {
 	private TTNPackage ttnPackage;
 	
 	@Reference
-	PrototypePush sensinact;
+	private PrototypePush sensinact;
 
 	private List<PushStream<Message>> subscriptions = new ArrayList<>();
 //	private Map<String, GenericDto> deviceRegistrationMap = new HashMap<>();
 
+	private Map<String, Object> category = null;
+	
 	@Activate
 	public void activate(BundleContext bctx, Config config) {
-//		ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
-//		executorService.scheduleAtFixedRate(this::dummy, 0, 1, TimeUnit.MINUTES);
 		String[] deviceIds = config.deviceIds();
 		String topic = config.topic();
+		
+		if(!config.sensorThings_category().isEmpty()) {
+			category = Map.of("sensorthings.datastream.type", config.sensorThings_category());
+		}
+		
 		try {
 			for (String deviceId : deviceIds) {
 				if ("#".equals(deviceId) || "*".equals(deviceId)) {
@@ -185,14 +184,14 @@ public class TTNConnectionComponent {
 
 		Instant timestamp = Instant.parse(rxMetadata.getReceivedAt());
 
-		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp));
+		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp, null));
 		
 		UplinkMessage uplinkMessage = payload.getUplinkMessage();
 		
-		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", "payloadRaw", String.class, uplinkMessage.getFrmPayload(), timestamp));
+		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", "payloadRaw", String.class, uplinkMessage.getFrmPayload(), timestamp, null));
 		
 		uplinkMessage.getDecodedPayload().forEach(e -> {
-			model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", e.getKey(), e.getValue().getClass(), e.getValue(), timestamp));
+			model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", e.getKey(), e.getValue().getClass(), e.getValue(), timestamp, category));
 		});
 		
 		BulkGenericDto result = new BulkGenericDto();
@@ -200,7 +199,7 @@ public class TTNConnectionComponent {
 		return result;
 	}
 	
-	private GenericDto createGenericDto(String model, String provider, String service, String resource, Class<?> type, Object value, Instant timestamp) {
+	private GenericDto createGenericDto(String model, String provider, String service, String resource, Class<?> type, Object value, Instant timestamp, Map<String, Object> metadata) {
 		GenericDto dto = new GenericDto();
 		dto.model = model;
 		dto.provider = provider;
@@ -209,6 +208,7 @@ public class TTNConnectionComponent {
 		dto.type = type;
 		dto.value = value;
 		dto.timestamp = timestamp;
+		dto.metadata = metadata;
 		return dto;	
 	}
 	

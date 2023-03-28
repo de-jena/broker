@@ -25,22 +25,25 @@
 		"type" : "ttn",
 		"id" : "ttn3"
 	},
+/*	
 	"TTNConnectionComponent~ttn1" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn)",
 		"topic": "v3/scj-simple-sensors/devices/"
-	},
+	},*/
 	"TTNConnectionComponent~ttn2" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn2)",
-		"topic": "v3/scj-sensors-01@ttn/devices/"
+		"topic": "v3/scj-sensors-01@ttn/devices/",
+		"sensorThings.category" : "soil_moisture"
 	},
 	"TTNConnectionComponent~ttn3" : 
 	{
 		"deviceIds" : ["#"],
 		"ttn.target" : "(id=ttn3)",
-		"topic": "v3/bosch-parking-01@ttn/devices/"
+		"topic": "v3/bosch-parking-01@ttn/devices/",
+		"sensorThings.category" : "parking_slot"
 	}
 }

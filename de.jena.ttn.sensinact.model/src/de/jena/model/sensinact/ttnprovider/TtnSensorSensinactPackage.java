@@ -14,10 +14,11 @@ package de.jena.model.sensinact.ttnprovider;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
+
+import org.gecko.emf.osgi.annotation.provide.EPackage;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -39,7 +40,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-public interface TtnSensorSensinactPackage extends EPackage {
+@EPackage(uri = TtnSensorSensinactPackage.eNS_URI, genModel = "/model/ttn.genmodel")
+public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -89,7 +91,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__ID = SensiNactPackage.PROVIDER__ID;
+	int TTN_SENSOR__ID = ProviderPackage.PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' containment reference.
@@ -98,7 +100,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__ADMIN = SensiNactPackage.PROVIDER__ADMIN;
+	int TTN_SENSOR__ADMIN = ProviderPackage.PROVIDER__ADMIN;
 
 	/**
 	 * The feature id for the '<em><b>Linked Providers</b></em>' reference list.
@@ -107,7 +109,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__LINKED_PROVIDERS = SensiNactPackage.PROVIDER__LINKED_PROVIDERS;
+	int TTN_SENSOR__LINKED_PROVIDERS = ProviderPackage.PROVIDER__LINKED_PROVIDERS;
 
 	/**
 	 * The feature id for the '<em><b>Has beacon</b></em>' attribute.
@@ -116,7 +118,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__HAS_BEACON = SensiNactPackage.PROVIDER_FEATURE_COUNT + 0;
+	int TTN_SENSOR__HAS_BEACON = ProviderPackage.PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Data</b></em>' containment reference.
@@ -125,7 +127,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__DATA = SensiNactPackage.PROVIDER_FEATURE_COUNT + 1;
+	int TTN_SENSOR__DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -134,7 +136,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR__LOCATION = SensiNactPackage.PROVIDER_FEATURE_COUNT + 2;
+	int TTN_SENSOR__LOCATION = ProviderPackage.PROVIDER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Ttn Sensor</em>' class.
@@ -143,7 +145,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR_FEATURE_COUNT = SensiNactPackage.PROVIDER_FEATURE_COUNT + 3;
+	int TTN_SENSOR_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Ttn Sensor</em>' class.
@@ -152,7 +154,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TTN_SENSOR_OPERATION_COUNT = SensiNactPackage.PROVIDER_OPERATION_COUNT + 0;
+	int TTN_SENSOR_OPERATION_COUNT = ProviderPackage.PROVIDER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.model.sensinact.ttnprovider.impl.SensorDataImpl <em>Sensor Data</em>}' class.
@@ -171,7 +173,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__METADATA = SensiNactPackage.SERVICE__METADATA;
+	int SENSOR_DATA__METADATA = ProviderPackage.SERVICE__METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Raw Payload</b></em>' attribute.
@@ -180,7 +182,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__RAW_PAYLOAD = SensiNactPackage.SERVICE_FEATURE_COUNT + 0;
+	int SENSOR_DATA__RAW_PAYLOAD = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Gateway</b></em>' attribute.
@@ -189,7 +191,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__GATEWAY = SensiNactPackage.SERVICE_FEATURE_COUNT + 1;
+	int SENSOR_DATA__GATEWAY = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Payload</b></em>' map.
@@ -198,7 +200,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__PAYLOAD = SensiNactPackage.SERVICE_FEATURE_COUNT + 2;
+	int SENSOR_DATA__PAYLOAD = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Data</em>' class.
@@ -207,7 +209,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA_FEATURE_COUNT = SensiNactPackage.SERVICE_FEATURE_COUNT + 3;
+	int SENSOR_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Sensor Data</em>' class.
@@ -216,7 +218,7 @@ public interface TtnSensorSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA_OPERATION_COUNT = SensiNactPackage.SERVICE_OPERATION_COUNT + 0;
+	int SENSOR_DATA_OPERATION_COUNT = ProviderPackage.SERVICE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.model.sensinact.ttnprovider.impl.StringToObjectMapImpl <em>String To Object Map</em>}' class.

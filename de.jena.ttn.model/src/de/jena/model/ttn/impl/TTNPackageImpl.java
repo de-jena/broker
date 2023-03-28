@@ -142,7 +142,6 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 	private TTNPackageImpl() {
 		super(eNS_URI, TTNFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

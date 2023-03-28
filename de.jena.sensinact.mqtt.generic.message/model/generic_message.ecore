@@ -47,8 +47,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GeoJsonObjectValueUpdate" eSuperTypes="#//UpdateMessage">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models/model/sensinact.ecore#//EGeoJsonObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models/model/sensinact.ecore#//EGeoJsonObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EPoint" instanceClassName="org.eclipse.sensinact.gateway.geojson.Point"/>
   <eClassifiers xsi:type="ecore:EClass" name="PointValueUpdate" eSuperTypes="#//UpdateMessage">

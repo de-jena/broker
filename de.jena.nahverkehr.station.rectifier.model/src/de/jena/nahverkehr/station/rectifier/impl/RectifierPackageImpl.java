@@ -165,7 +165,6 @@ public class RectifierPackageImpl extends EPackageImpl implements RectifierPacka
 	private RectifierPackageImpl() {
 		super(eNS_URI, RectifierFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,5 +15,5 @@
 	org.gecko.core.pool,\
 	org.osgi.service.condition,\
 	de.jena.ttn.sensinact.model,\
-	org.eclipse.sensinact.gateway.core.models,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
 	org.eclipse.sensinact.gateway.core.geo-json

@@ -28,7 +28,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.sensinact.gateway.geojson.Point;
 
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -153,7 +153,6 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	private MessagePackageImpl() {
 		super(eNS_URI, MessageFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,7 +182,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		isInited = true;
 
 		// Initialize simple dependencies
-		SensiNactPackage.eINSTANCE.eClass();
+		ProviderPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theMessagePackage.createPackageContents();
@@ -646,7 +645,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SensiNactPackage theSensiNactPackage = (SensiNactPackage)EPackage.Registry.INSTANCE.getEPackage(SensiNactPackage.eNS_URI);
+		ProviderPackage theProviderPackage = (ProviderPackage)EPackage.Registry.INSTANCE.getEPackage(ProviderPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -707,8 +706,8 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getBigDecimalValueUpdate_NewValue(), ecorePackage.getEBigDecimal(), "newValue", null, 0, 1, BigDecimalValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(geoJsonObjectValueUpdateEClass, GeoJsonObjectValueUpdate.class, "GeoJsonObjectValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGeoJsonObjectValueUpdate_OldValue(), theSensiNactPackage.getEGeoJsonObject(), "oldValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGeoJsonObjectValueUpdate_NewValue(), theSensiNactPackage.getEGeoJsonObject(), "newValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeoJsonObjectValueUpdate_OldValue(), theProviderPackage.getEGeoJsonObject(), "oldValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGeoJsonObjectValueUpdate_NewValue(), theProviderPackage.getEGeoJsonObject(), "newValue", null, 0, 1, GeoJsonObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pointValueUpdateEClass, PointValueUpdate.class, "PointValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPointValueUpdate_OldValue(), this.getEPoint(), "oldValue", null, 0, 1, PointValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

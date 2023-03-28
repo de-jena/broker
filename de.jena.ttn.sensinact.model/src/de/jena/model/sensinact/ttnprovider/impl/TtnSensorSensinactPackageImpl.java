@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,6 @@ public class TtnSensorSensinactPackageImpl extends EPackageImpl implements TtnSe
 	private TtnSensorSensinactPackageImpl() {
 		super(eNS_URI, TtnSensorSensinactFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,7 +103,7 @@ public class TtnSensorSensinactPackageImpl extends EPackageImpl implements TtnSe
 		isInited = true;
 
 		// Initialize simple dependencies
-		SensiNactPackage.eINSTANCE.eClass();
+		ProviderPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTtnSensorSensinactPackage.createPackageContents();
@@ -298,21 +297,21 @@ public class TtnSensorSensinactPackageImpl extends EPackageImpl implements TtnSe
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SensiNactPackage theSensiNactPackage = (SensiNactPackage)EPackage.Registry.INSTANCE.getEPackage(SensiNactPackage.eNS_URI);
+		ProviderPackage theProviderPackage = (ProviderPackage)EPackage.Registry.INSTANCE.getEPackage(ProviderPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		ttnSensorEClass.getESuperTypes().add(theSensiNactPackage.getProvider());
-		sensorDataEClass.getESuperTypes().add(theSensiNactPackage.getService());
+		ttnSensorEClass.getESuperTypes().add(theProviderPackage.getProvider());
+		sensorDataEClass.getESuperTypes().add(theProviderPackage.getService());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ttnSensorEClass, TtnSensor.class, "TtnSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTtnSensor_Has_beacon(), ecorePackage.getEBoolean(), "has_beacon", null, 1, 1, TtnSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTtnSensor_Data(), this.getSensorData(), null, "data", null, 0, 1, TtnSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTtnSensor_Location(), theSensiNactPackage.getEGeoJsonObject(), "location", null, 0, 1, TtnSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTtnSensor_Location(), theProviderPackage.getEGeoJsonObject(), "location", null, 0, 1, TtnSensor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sensorDataEClass, SensorData.class, "SensorData", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSensorData_RawPayload(), ecorePackage.getEString(), "rawPayload", null, 0, 1, SensorData.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

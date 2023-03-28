@@ -18,5 +18,5 @@
 
 -buildpath: \
 	org.osgi.service.condition,\
-	org.eclipse.sensinact.gateway.core.models;version=latest,\
+	org.eclipse.sensinact.gateway.core.models.provider;version=latest,\
 	org.eclipse.sensinact.gateway.core.geo-json

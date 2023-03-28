@@ -87,7 +87,6 @@ public class IcesensorPackageImpl extends EPackageImpl implements IcesensorPacka
 	private IcesensorPackageImpl() {
 		super(eNS_URI, IcesensorFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

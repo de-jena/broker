@@ -4,7 +4,7 @@
     modelDirectory="/de.jena.ttn.model/src" modelPluginID="de.jena.ttn.model" modelName="ttn"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
     complianceLevel="17.0" suppressGenModelAnnotations="false" copyrightFields="false"
-    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models/model/sensinact.genmodel#//core"
+    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
     operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>ttn.ecore</foreignModel>
   <genPackages prefix="TtnSensorSensinact" basePackage="de.jena.model.sensinact" resource="XMI"

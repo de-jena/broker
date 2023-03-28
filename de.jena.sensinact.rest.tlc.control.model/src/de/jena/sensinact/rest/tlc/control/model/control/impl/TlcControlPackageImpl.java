@@ -103,7 +103,6 @@ public class TlcControlPackageImpl extends EPackageImpl implements TlcControlPac
 	private TlcControlPackageImpl() {
 		super(eNS_URI, TlcControlFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

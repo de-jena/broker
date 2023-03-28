@@ -14,10 +14,11 @@ package de.jena.model.sensinact.iceprovider;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
+
+import org.gecko.emf.osgi.annotation.provide.EPackage;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -39,7 +40,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-public interface IcesensoreSensinactPackage extends EPackage {
+@EPackage(uri = IcesensoreSensinactPackage.eNS_URI, genModel = "/model/icesensor.genmodel")
+public interface IcesensoreSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -89,7 +91,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__ID = SensiNactPackage.PROVIDER__ID;
+	int ICE_SENSOR__ID = ProviderPackage.PROVIDER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' containment reference.
@@ -98,7 +100,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__ADMIN = SensiNactPackage.PROVIDER__ADMIN;
+	int ICE_SENSOR__ADMIN = ProviderPackage.PROVIDER__ADMIN;
 
 	/**
 	 * The feature id for the '<em><b>Linked Providers</b></em>' reference list.
@@ -107,7 +109,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__LINKED_PROVIDERS = SensiNactPackage.PROVIDER__LINKED_PROVIDERS;
+	int ICE_SENSOR__LINKED_PROVIDERS = ProviderPackage.PROVIDER__LINKED_PROVIDERS;
 
 	/**
 	 * The feature id for the '<em><b>H2sugm3</b></em>' containment reference.
@@ -116,7 +118,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__H2SUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 0;
+	int ICE_SENSOR__H2SUGM3 = ProviderPackage.PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Cougm3</b></em>' containment reference.
@@ -125,7 +127,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__COUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 1;
+	int ICE_SENSOR__COUGM3 = ProviderPackage.PROVIDER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Nougm3</b></em>' containment reference.
@@ -134,7 +136,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__NOUGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 2;
+	int ICE_SENSOR__NOUGM3 = ProviderPackage.PROVIDER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>O3ugm3</b></em>' containment reference.
@@ -143,7 +145,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__O3UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 3;
+	int ICE_SENSOR__O3UGM3 = ProviderPackage.PROVIDER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>1p</b></em>' containment reference.
@@ -152,7 +154,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__1P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 4;
+	int ICE_SENSOR__1P = ProviderPackage.PROVIDER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Aqi criteria</b></em>' containment reference.
@@ -161,7 +163,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__AQI_CRITERIA = SensiNactPackage.PROVIDER_FEATURE_COUNT + 5;
+	int ICE_SENSOR__AQI_CRITERIA = ProviderPackage.PROVIDER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Temperature</b></em>' containment reference.
@@ -170,7 +172,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__TEMPERATURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 6;
+	int ICE_SENSOR__TEMPERATURE = ProviderPackage.PROVIDER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Humidity</b></em>' containment reference.
@@ -179,7 +181,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__HUMIDITY = SensiNactPackage.PROVIDER_FEATURE_COUNT + 7;
+	int ICE_SENSOR__HUMIDITY = ProviderPackage.PROVIDER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>10p</b></em>' containment reference.
@@ -188,7 +190,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__10P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 8;
+	int ICE_SENSOR__10P = ProviderPackage.PROVIDER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Pressure</b></em>' containment reference.
@@ -197,7 +199,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__PRESSURE = SensiNactPackage.PROVIDER_FEATURE_COUNT + 9;
+	int ICE_SENSOR__PRESSURE = ProviderPackage.PROVIDER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>No2ugm3</b></em>' containment reference.
@@ -206,7 +208,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__NO2UGM3 = SensiNactPackage.PROVIDER_FEATURE_COUNT + 10;
+	int ICE_SENSOR__NO2UGM3 = ProviderPackage.PROVIDER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Aqi</b></em>' containment reference.
@@ -215,7 +217,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__AQI = SensiNactPackage.PROVIDER_FEATURE_COUNT + 11;
+	int ICE_SENSOR__AQI = ProviderPackage.PROVIDER_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>25p</b></em>' containment reference.
@@ -224,7 +226,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR__25P = SensiNactPackage.PROVIDER_FEATURE_COUNT + 12;
+	int ICE_SENSOR__25P = ProviderPackage.PROVIDER_FEATURE_COUNT + 12;
 
 	/**
 	 * The number of structural features of the '<em>Ice Sensor</em>' class.
@@ -233,7 +235,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR_FEATURE_COUNT = SensiNactPackage.PROVIDER_FEATURE_COUNT + 13;
+	int ICE_SENSOR_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 13;
 
 	/**
 	 * The number of operations of the '<em>Ice Sensor</em>' class.
@@ -242,7 +244,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR_OPERATION_COUNT = SensiNactPackage.PROVIDER_OPERATION_COUNT + 0;
+	int ICE_SENSOR_OPERATION_COUNT = ProviderPackage.PROVIDER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.model.sensinact.iceprovider.impl.SensorDataImpl <em>Sensor Data</em>}' class.
@@ -261,7 +263,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__METADATA = SensiNactPackage.SERVICE__METADATA;
+	int SENSOR_DATA__METADATA = ProviderPackage.SERVICE__METADATA;
 
 	/**
 	 * The feature id for the '<em><b>Sensor type</b></em>' attribute.
@@ -270,7 +272,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__SENSOR_TYPE = SensiNactPackage.SERVICE_FEATURE_COUNT + 0;
+	int SENSOR_DATA__SENSOR_TYPE = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Gateway</b></em>' attribute.
@@ -279,7 +281,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__GATEWAY = SensiNactPackage.SERVICE_FEATURE_COUNT + 1;
+	int SENSOR_DATA__GATEWAY = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Sensor model</b></em>' attribute.
@@ -288,7 +290,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__SENSOR_MODEL = SensiNactPackage.SERVICE_FEATURE_COUNT + 2;
+	int SENSOR_DATA__SENSOR_MODEL = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Avg</b></em>' attribute.
@@ -297,7 +299,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__AVG = SensiNactPackage.SERVICE_FEATURE_COUNT + 3;
+	int SENSOR_DATA__AVG = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
@@ -306,7 +308,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__MIN = SensiNactPackage.SERVICE_FEATURE_COUNT + 4;
+	int SENSOR_DATA__MIN = ProviderPackage.SERVICE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
@@ -315,7 +317,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__MAX = SensiNactPackage.SERVICE_FEATURE_COUNT + 5;
+	int SENSOR_DATA__MAX = ProviderPackage.SERVICE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
@@ -324,7 +326,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__UNIT = SensiNactPackage.SERVICE_FEATURE_COUNT + 6;
+	int SENSOR_DATA__UNIT = ProviderPackage.SERVICE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Validity</b></em>' attribute.
@@ -333,7 +335,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__VALIDITY = SensiNactPackage.SERVICE_FEATURE_COUNT + 7;
+	int SENSOR_DATA__VALIDITY = ProviderPackage.SERVICE_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Created at</b></em>' attribute.
@@ -342,7 +344,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__CREATED_AT = SensiNactPackage.SERVICE_FEATURE_COUNT + 8;
+	int SENSOR_DATA__CREATED_AT = ProviderPackage.SERVICE_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Str data</b></em>' attribute.
@@ -351,7 +353,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA__STR_DATA = SensiNactPackage.SERVICE_FEATURE_COUNT + 9;
+	int SENSOR_DATA__STR_DATA = ProviderPackage.SERVICE_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Sensor Data</em>' class.
@@ -360,7 +362,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA_FEATURE_COUNT = SensiNactPackage.SERVICE_FEATURE_COUNT + 10;
+	int SENSOR_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Sensor Data</em>' class.
@@ -369,7 +371,7 @@ public interface IcesensoreSensinactPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SENSOR_DATA_OPERATION_COUNT = SensiNactPackage.SERVICE_OPERATION_COUNT + 0;
+	int SENSOR_DATA_OPERATION_COUNT = ProviderPackage.SERVICE_OPERATION_COUNT + 0;
 
 
 	/**

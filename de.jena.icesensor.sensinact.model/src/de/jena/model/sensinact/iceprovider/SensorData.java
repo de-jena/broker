@@ -14,7 +14,7 @@ package de.jena.model.sensinact.iceprovider;
 
 import java.util.Date;
 
-import org.eclipse.sensinact.model.core.Service;
+import org.eclipse.sensinact.model.core.provider.Service;
 
 import org.osgi.annotation.versioning.ProviderType;
 

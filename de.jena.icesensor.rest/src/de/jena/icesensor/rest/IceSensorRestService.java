@@ -26,6 +26,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.sensinact.gateway.geojson.Coordinates;
+import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
+import org.eclipse.sensinact.gateway.geojson.Point;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.core.pool.Pool;
@@ -51,11 +54,6 @@ import de.jena.model.icesensor.IcesensorPackage;
 import de.jena.model.icesensor.SensorData;
 import de.jena.model.sensinact.iceprovider.IceSensor;
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
-
-import org.eclipse.sensinact.gateway.geojson.Coordinates;
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-import org.eclipse.sensinact.gateway.geojson.Point;
-import org.eclipse.sensinact.model.core.SensiNactFactory;
 
 @Component(service = IceSensorService.class, name = "IceSensorServiceRest", configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
 @RequireEMFJson

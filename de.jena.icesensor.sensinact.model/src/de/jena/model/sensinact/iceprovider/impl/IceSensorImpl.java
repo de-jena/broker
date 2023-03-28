@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.sensinact.model.core.impl.ProviderImpl;
+import org.eclipse.sensinact.model.core.provider.impl.ProviderImpl;
 
 /**
  * <!-- begin-user-doc -->

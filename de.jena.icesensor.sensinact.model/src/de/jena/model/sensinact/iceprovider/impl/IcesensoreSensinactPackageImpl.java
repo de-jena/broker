@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.eclipse.sensinact.model.core.SensiNactPackage;
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,7 +65,6 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 	private IcesensoreSensinactPackageImpl() {
 		super(eNS_URI, IcesensoreSensinactFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -95,7 +94,7 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 		isInited = true;
 
 		// Initialize simple dependencies
-		SensiNactPackage.eINSTANCE.eClass();
+		ProviderPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theIcesensoreSensinactPackage.createPackageContents();
@@ -442,15 +441,15 @@ public class IcesensoreSensinactPackageImpl extends EPackageImpl implements Ices
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		SensiNactPackage theSensiNactPackage = (SensiNactPackage)EPackage.Registry.INSTANCE.getEPackage(SensiNactPackage.eNS_URI);
+		ProviderPackage theProviderPackage = (ProviderPackage)EPackage.Registry.INSTANCE.getEPackage(ProviderPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		iceSensorEClass.getESuperTypes().add(theSensiNactPackage.getProvider());
-		sensorDataEClass.getESuperTypes().add(theSensiNactPackage.getService());
+		iceSensorEClass.getESuperTypes().add(theProviderPackage.getProvider());
+		sensorDataEClass.getESuperTypes().add(theProviderPackage.getService());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(iceSensorEClass, IceSensor.class, "IceSensor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

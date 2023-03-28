@@ -14,7 +14,7 @@ package de.jena.model.sensinact.ttnprovider;
 
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 
-import org.eclipse.sensinact.model.core.Provider;
+import org.eclipse.sensinact.model.core.provider.Provider;
 
 import org.osgi.annotation.versioning.ProviderType;
 
@@ -89,7 +89,7 @@ public interface TtnSensor extends Provider {
 	 * @return the value of the '<em>Location</em>' attribute.
 	 * @see #setLocation(GeoJsonObject)
 	 * @see de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage#getTtnSensor_Location()
-	 * @model dataType="org.eclipse.sensinact.model.core.EGeoJsonObject"
+	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
 	 * @generated
 	 */
 	GeoJsonObject getLocation();

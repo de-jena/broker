@@ -44,7 +44,7 @@ javac.debug:  on
 #	geckoJersey,\
 #	geckoEMFUtil,\
 
-sensinact.version: 0.0.1-SNAPSHOT
+sensinact.version: 0.0.2-SNAPSHOT
 jackson.version: 2.14.0
 jersey.version: 3.0.8
 jakarta.ws.rs-api.version: 3.1.0

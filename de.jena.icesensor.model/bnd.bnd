@@ -16,5 +16,4 @@
 # Bundle Annotations		
 -includeresource.model: model=model
 
--buildpath: org.osgi.service.condition,\
-	org.eclipse.sensinact.gateway.core.models;version=latest
+-buildpath: org.osgi.service.condition

@@ -23,8 +23,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.sensinact.model.core.Provider;
-import org.eclipse.sensinact.model.core.Service;
+import org.eclipse.sensinact.model.core.provider.Provider;
+import org.eclipse.sensinact.model.core.provider.Service;
 
 /**
  * <!-- begin-user-doc -->
@@ -165,13 +165,13 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.Provider <em>Provider</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Provider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.sensinact.model.core.Provider
+	 * @see org.eclipse.sensinact.model.core.provider.Provider
 	 * @generated
 	 */
 	public Adapter createProviderAdapter() {
@@ -179,13 +179,13 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.Service <em>Service</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.eclipse.sensinact.model.core.Service
+	 * @see org.eclipse.sensinact.model.core.provider.Service
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {

@@ -2,7 +2,8 @@
 org.eclipse.sensinact.gateway.core:impl:${sensinact.version}
 org.eclipse.sensinact.gateway.core:annotation:${sensinact.version}
 org.eclipse.sensinact.gateway.core:api:${sensinact.version}
-org.eclipse.sensinact.gateway.core:models:${sensinact.version}
+org.eclipse.sensinact.gateway.core.models:provider:${sensinact.version}
+org.eclipse.sensinact.gateway.core.models:metadata:${sensinact.version}
 org.eclipse.sensinact.gateway.core:geo-json:${sensinact.version}
 
 # northbound

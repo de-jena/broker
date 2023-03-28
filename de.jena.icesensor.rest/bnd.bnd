@@ -19,7 +19,7 @@
 	biz.aQute.bnd.annotation,\
 	de.jena.icesensor.sensinact.model;version=latest,\
 	org.eclipse.sensinact.gateway.core.geo-json,\
-	org.eclipse.sensinact.gateway.core.models
+	org.eclipse.sensinact.gateway.core.models.provider
 
 -library: enable-emf
 

@@ -12,4 +12,28 @@
 	org.gecko.adapter.mqtt,\
 	org.gecko.core.pool,\
 	org.gecko.qvt.osgi.component,\
-	org.gecko.qvt.osgi.api
+	org.gecko.qvt.osgi.api,\
+	org.antlr.antlr4-runtime-osgi,\
+	org.apache.aries.component-dsl.component-dsl,\
+	org.apache.aries.typedevent.bus,\
+	org.eclipse.sensinact.gateway.core.annotation,\
+	org.eclipse.sensinact.gateway.core.api,\
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.eclipse.sensinact.gateway.core.impl,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.eclipse.sensinact.gateway.northbound.filters.filters.core,\
+	org.eclipse.sensinact.gateway.northbound.filters.ldap,\
+	org.eclipse.sensinact.gateway.northbound.query-handler,\
+	org.eclipse.sensinact.gateway.northbound.rest,\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.dto,\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.filter,\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.api,\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway,\
+	org.eclipse.sensinact.gateway.southbound.device-factory.device-factory-core,\
+	org.eclipse.sensinact.gateway.southbound.device-factory.parser-csv,\
+	org.eclipse.sensinact.gateway.southbound.device-factory.parser-json,\
+	org.eclipse.sensinact.gateway.southbound.http.http-device-factory,\
+	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client,\
+	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory,\
+	org.eclipse.sensinact.gateway.southbound.virtual.virtual-temperature-sensor,\
+	org.locationtech.spatial4j
