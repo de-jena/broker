@@ -14,10 +14,12 @@
 |Kohlenstoffmonoxid| CO |
 |Ladestationen| chargingstation |
 |Lärmmessung| noice_measurement |
-|Luftdruck| airpressure |
+|Luftdruck| air_pressure |
 |Luftfeuchtigkeit|  air_humidity |
 |Lufttemperatur| air_temprature | 
+|Luftqualitätsindex| air_qi |
 |Sensor Manager| XXX |
+|Schwefeldioxid | H2S |
 |Stickstoffmonoxid| NO |
 |Mülleimer| trash | 
 |Ozon| O3 |

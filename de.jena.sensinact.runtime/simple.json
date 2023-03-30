@@ -1,0 +1,70 @@
+{
+	"end_device_ids": {
+		"device_id": "eui-70b3d57ed004e8ff",
+		"application_ids": {
+			"application_id": "scj-simple-sensors"
+		},
+		"dev_eui": "70B3D57ED004E8FF",
+		"join_eui": "0000000000000000",
+		"dev_addr": "260B7EE4"
+	},
+	"correlation_ids": [
+		"as:up:01GVXDM2G4HM1PQVV5DBH21G3C",
+		"gs:conn:01GV0MEAGEKP26TATZTFGQKR1E",
+		"gs:up:host:01GV0MEAHBEAGE5X2H8GEN7AQT",
+		"gs:uplink:01GVXDM29N22B1SNJNVGFDJCW1",
+		"ns:uplink:01GVXDM29PT87FB9CYVTZG96D8",
+		"rpc:/ttn.lorawan.v3.GsNs/HandleUplink:01GVXDM29P0ATKPAJ69Z0M9DMP",
+		"rpc:/ttn.lorawan.v3.NsAs/HandleUplink:01GVXDM2G41C7STG0YXF8SMMKC"
+	],
+	"received_at": "2023-03-19T17:10:38.852462248Z",
+	"uplink_message": {
+		"session_key_id": "AYbKuJFdGiHw7Iz7KtgFSw==",
+		"f_port": 3,
+		"f_cnt": 1655,
+		"frm_payload": "AAAaQg==",
+		"decoded_payload": {
+			"humidity": 38.5
+		},
+		"rx_metadata": [
+			{
+				"gateway_ids": {
+					"gateway_id": "rak7249-8-01",
+					"eui": "AC1F09FFFE01662D"
+				},
+				"timestamp": 1387416108,
+				"rssi": -125,
+				"channel_rssi": -125,
+				"snr": -12.3,
+				"location": {
+					"latitude": 50.943419968509325,
+					"longitude": 11.60517007112503,
+					"altitude": 239,
+					"source": "SOURCE_REGISTRY"
+				},
+				"uplink_token": "ChoKGAoMcmFrNzI0OS04LTAxEgisHwn//gFmLRCslMmVBRoMCI6E3aAGEIzr6rMCIOD3xsOwhdwB",
+				"channel_index": 4,
+				"received_at": "2023-03-19T17:10:38.603871692Z"
+			}
+		],
+		"settings": {
+			"data_rate": {
+				"lora": {
+					"bandwidth": 125000,
+					"spreading_factor": 10,
+					"coding_rate": "4/5"
+				}
+			},
+			"frequency": "867300000",
+			"timestamp": 1387416108
+		},
+		"received_at": "2023-03-19T17:10:38.646569983Z",
+		"consumed_airtime": "0.329728s",
+		"network_ids": {
+			"net_id": "000013",
+			"tenant_id": "ttn",
+			"cluster_id": "eu1",
+			"cluster_address": "eu1.cloud.thethings.network"
+		}
+	}
+}

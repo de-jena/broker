@@ -38,43 +38,43 @@ mapping SENSOR::SensorData::sensoreToRervice(friendlyServiceName : String, type 
 	var eClass := SENSINACT::SensorData.oclAsType(ECORE::EClass);
 	sensor_type := self.sensor_type;
 	if(self.sensor_type.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_type"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_type"), friendlyServiceName, null , "true", null);
 	};
 	gateway := self.gateway;
 	if(self.gateway.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("gateway"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("gateway"), friendlyServiceName, null , "true", null);
 	};
 	sensor_model := self.sensor_model;
 	if(self.sensor_model.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_model"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("sensor_model"), friendlyServiceName, null , "true", null);
 	};
 	avg := self.avg;
 	if(self.avg.oclIsUndefined().not()){
 		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("avg"), friendlyServiceName, self.unit , null, type);
 	};
-	min := self.min;
-	if(self.min.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("min"), friendlyServiceName, self.unit , null, type);
-	};
-	max := self.max;
-	if(self.max.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("max"), friendlyServiceName, self.unit , null, type);
-	};
+//	min := self.min;
+//	if(self.min.oclIsUndefined().not()){
+//		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("min"), friendlyServiceName, self.unit , null, type);
+//	};
+//	max := self.max;
+//	if(self.max.oclIsUndefined().not()){
+//		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("max"), friendlyServiceName, self.unit , null, type);
+//	};
 	unit := self.unit;
 	if(self.unit.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("unit"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("unit"), friendlyServiceName, null , "true", null);
 	};
 	validity := self.validity;
 	if(self.validity != 0 ){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("validity"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("validity"), friendlyServiceName, null , "true", null);
 	};
 	created_at := self.created_at;
 	if(self.created_at.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("created_at"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("created_at"), friendlyServiceName, null , "true", null);
 	};
 	str_data := self.str_data;
 	if(self.str_data.oclIsUndefined().not()){
-		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("str_data"), friendlyServiceName, "" , "true", null);
+		metadata += self->map toMetadataEntry(eClass.getEStructuralFeature("str_data"), friendlyServiceName, null , "true", null);
 	};
 }
 

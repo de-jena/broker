@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
-import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.core.pool.Pool;
@@ -159,8 +158,6 @@ public class IceSensorRestService implements IceSensorService {
 					
 					logger.log(Level.INFO, "Pushing: {0}", push);
 					sensinact.pushUpdate(push);
-
-					
 					
 					Point point = new Point();
 					point.coordinates = new Coordinates();
