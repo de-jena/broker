@@ -80,6 +80,10 @@ import de.dim.trafficos.model.device.TOSDevicePackage;
 import de.dim.trafficos.model.device.TimeTable;
 import de.dim.trafficos.model.device.TimeTableEntry;
 import de.dim.trafficos.model.device.TimeTableModeType;
+import de.dim.trafficos.model.device.TrafficLightModuleFDL;
+import de.dim.trafficos.model.device.TrafficLightModuleLML;
+import de.dim.trafficos.model.device.TrafficLightSignalGroup;
+import de.dim.trafficos.model.device.TrafficLightSignalTransmitter;
 import de.dim.trafficos.model.device.Transition;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -481,6 +485,34 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 	 * @generated
 	 */
 	private EClass publicTransportLocMsgEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trafficLightModuleLMLEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trafficLightSignalTransmitterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trafficLightSignalGroupEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trafficLightModuleFDLEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1074,6 +1106,16 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 	@Override
 	public EReference getRoad_PublicTransportLane() {
 		return (EReference)roadEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRoad_TrafficLightModule() {
+		return (EReference)roadEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -2732,6 +2774,166 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 	 * @generated
 	 */
 	@Override
+	public EClass getTrafficLightModuleLML() {
+		return trafficLightModuleLMLEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightModuleLML_Address() {
+		return (EAttribute)trafficLightModuleLMLEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrafficLightModuleLML_A() {
+		return (EReference)trafficLightModuleLMLEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrafficLightModuleLML_B() {
+		return (EReference)trafficLightModuleLMLEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrafficLightModuleLML_C() {
+		return (EReference)trafficLightModuleLMLEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTrafficLightSignalTransmitter() {
+		return trafficLightSignalTransmitterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalTransmitter_Id() {
+		return (EAttribute)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrafficLightSignalTransmitter_SignalGroup() {
+		return (EReference)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalTransmitter_Red() {
+		return (EAttribute)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalTransmitter_Yellow() {
+		return (EAttribute)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalTransmitter_Green() {
+		return (EAttribute)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalTransmitter_Switch() {
+		return (EAttribute)trafficLightSignalTransmitterEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTrafficLightSignalGroup() {
+		return trafficLightSignalGroupEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTrafficLightSignalGroup_Id() {
+		return (EAttribute)trafficLightSignalGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTrafficLightModuleFDL() {
+		return trafficLightModuleFDLEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTrafficLightModuleFDL_D() {
+		return (EReference)trafficLightModuleFDLEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getDeviceActivationType() {
 		return deviceActivationTypeEEnum;
 	}
@@ -2926,6 +3128,7 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 		createEReference(roadEClass, ROAD__PEDESTRIAN_LANE);
 		createEReference(roadEClass, ROAD__CYCLE_LANE);
 		createEReference(roadEClass, ROAD__PUBLIC_TRANSPORT_LANE);
+		createEReference(roadEClass, ROAD__TRAFFIC_LIGHT_MODULE);
 
 		laneEClass = createEClass(LANE);
 		createEAttribute(laneEClass, LANE__ID);
@@ -3140,6 +3343,26 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 		createEAttribute(publicTransportLocMsgEClass, PUBLIC_TRANSPORT_LOC_MSG__ODO);
 		createEAttribute(publicTransportLocMsgEClass, PUBLIC_TRANSPORT_LOC_MSG__DOOR);
 
+		trafficLightModuleLMLEClass = createEClass(TRAFFIC_LIGHT_MODULE_LML);
+		createEAttribute(trafficLightModuleLMLEClass, TRAFFIC_LIGHT_MODULE_LML__ADDRESS);
+		createEReference(trafficLightModuleLMLEClass, TRAFFIC_LIGHT_MODULE_LML__A);
+		createEReference(trafficLightModuleLMLEClass, TRAFFIC_LIGHT_MODULE_LML__B);
+		createEReference(trafficLightModuleLMLEClass, TRAFFIC_LIGHT_MODULE_LML__C);
+
+		trafficLightSignalTransmitterEClass = createEClass(TRAFFIC_LIGHT_SIGNAL_TRANSMITTER);
+		createEAttribute(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__ID);
+		createEReference(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SIGNAL_GROUP);
+		createEAttribute(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__RED);
+		createEAttribute(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__YELLOW);
+		createEAttribute(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__GREEN);
+		createEAttribute(trafficLightSignalTransmitterEClass, TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SWITCH);
+
+		trafficLightSignalGroupEClass = createEClass(TRAFFIC_LIGHT_SIGNAL_GROUP);
+		createEAttribute(trafficLightSignalGroupEClass, TRAFFIC_LIGHT_SIGNAL_GROUP__ID);
+
+		trafficLightModuleFDLEClass = createEClass(TRAFFIC_LIGHT_MODULE_FDL);
+		createEReference(trafficLightModuleFDLEClass, TRAFFIC_LIGHT_MODULE_FDL__D);
+
 		// Create enums
 		deviceActivationTypeEEnum = createEEnum(DEVICE_ACTIVATION_TYPE);
 		clearAreaTypeEEnum = createEEnum(CLEAR_AREA_TYPE);
@@ -3216,6 +3439,7 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 		publicTransportPositionEClass.getESuperTypes().add(this.getPublicTransportDataValueObject());
 		publicTransportDoorChangeEClass.getESuperTypes().add(this.getPublicTransportPosition());
 		publicTransportLocMsgEClass.getESuperTypes().add(this.getPublicTransportDataValueObject());
+		trafficLightModuleFDLEClass.getESuperTypes().add(this.getTrafficLightModuleLML());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(deviceGroupEClass, DeviceGroup.class, "DeviceGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3278,6 +3502,7 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 		getRoad_CycleLane().getEKeys().add(this.getLane_Id());
 		initEReference(getRoad_PublicTransportLane(), this.getPublicTransportLane(), null, "publicTransportLane", null, 0, -1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		getRoad_PublicTransportLane().getEKeys().add(this.getLane_Id());
+		initEReference(getRoad_TrafficLightModule(), this.getTrafficLightModuleLML(), null, "trafficLightModule", null, 0, 1, Road.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(laneEClass, Lane.class, "Lane", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLane_Id(), ecorePackage.getEString(), "id", null, 1, 1, Lane.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3498,6 +3723,26 @@ public class TOSDevicePackageImpl extends EPackageImpl implements TOSDevicePacka
 		initEAttribute(getPublicTransportLocMsg_Gps(), ecorePackage.getEString(), "gps", null, 0, 1, PublicTransportLocMsg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPublicTransportLocMsg_Odo(), ecorePackage.getEString(), "odo", null, 0, 1, PublicTransportLocMsg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPublicTransportLocMsg_Door(), ecorePackage.getEString(), "door", null, 0, 1, PublicTransportLocMsg.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trafficLightModuleLMLEClass, TrafficLightModuleLML.class, "TrafficLightModuleLML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrafficLightModuleLML_Address(), ecorePackage.getEInt(), "address", null, 0, 1, TrafficLightModuleLML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrafficLightModuleLML_A(), this.getTrafficLightSignalTransmitter(), null, "a", null, 0, 1, TrafficLightModuleLML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrafficLightModuleLML_B(), this.getTrafficLightSignalTransmitter(), null, "b", null, 0, 1, TrafficLightModuleLML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrafficLightModuleLML_C(), this.getTrafficLightSignalTransmitter(), null, "c", null, 0, 1, TrafficLightModuleLML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trafficLightSignalTransmitterEClass, TrafficLightSignalTransmitter.class, "TrafficLightSignalTransmitter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrafficLightSignalTransmitter_Id(), ecorePackage.getEString(), "id", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrafficLightSignalTransmitter_SignalGroup(), this.getTrafficLightSignalGroup(), null, "signalGroup", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrafficLightSignalTransmitter_Red(), ecorePackage.getEBoolean(), "red", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrafficLightSignalTransmitter_Yellow(), ecorePackage.getEBoolean(), "yellow", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrafficLightSignalTransmitter_Green(), ecorePackage.getEBoolean(), "green", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrafficLightSignalTransmitter_Switch(), ecorePackage.getEBoolean(), "switch", null, 0, 1, TrafficLightSignalTransmitter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trafficLightSignalGroupEClass, TrafficLightSignalGroup.class, "TrafficLightSignalGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTrafficLightSignalGroup_Id(), ecorePackage.getEString(), "id", null, 0, 1, TrafficLightSignalGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trafficLightModuleFDLEClass, TrafficLightModuleFDL.class, "TrafficLightModuleFDL", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrafficLightModuleFDL_D(), this.getTrafficLightSignalTransmitter(), null, "d", null, 0, 1, TrafficLightModuleFDL.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(deviceActivationTypeEEnum, DeviceActivationType.class, "DeviceActivationType");

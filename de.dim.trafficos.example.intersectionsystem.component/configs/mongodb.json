@@ -1,0 +1,9 @@
+{
+	":configurator:resource-version": 1,
+	"EMFMongoRepositoryConfigurator~test": {
+		"mongo.instances": "test",
+		"test.baseUris": "mongodb://mongodb",
+		"test.databases": "test",
+		"test.test.repoType": "PROTOTYPE"
+	}
+}

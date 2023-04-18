@@ -1,0 +1,51 @@
+-library: enable-emf
+
+-buildpath: \
+	com.vaadin.flow.server,\
+	org.gecko.vaadin.whiteboard.api,\
+	com.vaadin.flow.component.applayout,\
+	com.vaadin.flow.component.avatar,\
+	com.vaadin.flow.html.components,\
+	com.vaadin.flow.component.orderedlayout,\
+	com.vaadin.flow.component.tabs,\
+	com.vaadin.flow.component.button,\
+	com.vaadin.flow.component.shared,\
+	com.vaadin.flow.component.radiobutton,\
+	com.vaadin.flow.data,\
+	com.vaadin.flow.data.renderer,\
+	com.vaadin.flow.component.upload,\
+	com.vaadin.external.gwt,\
+	com.vaadin.flow.component.textfield,\
+	com.vaadin.flow.component.checkbox,\
+	com.vaadin.flow.component.icon,\
+	com.vaadin.flow.component.notification,\
+	de.dim.trafficos.common.model;version=latest,\
+	de.dim.trafficos.intersection.model;version=latest,\
+	de.dim.trafficos.trafficlight.model;version=latest,\
+	com.vaadin.flow.component.grid,\
+	com.vaadin.flow.component.combobox,\
+	org.apache.felix.framework;version='7.0',\
+	com.vaadin.flow.component.dialog,\
+	de.dim.trafficos.intersectionsystem.model;version=latest,\
+	de.dim.trafficos.apis;version=latest,\
+	org.gecko.osgi.messaging,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.gecko.emf.json
+
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-includeresource: \
+	OSGI-INF/configurator/=configs/,\
+	META-INF/resources=resources,\
+	META-INF/resources=frontend,\
+	META-INF/frontend=frontend,\
+	data=data/
+	
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+Export-Package: \
+	de.dim.trafficos.vaadin.views.intersection.system.creation,\
+	de.dim.trafficos.vaadin,\
+	de.dim.trafficos.vaadin.views.main,\
+	de.dim.trafficos.vaadin.helper,\
+	de.dim.trafficos.vaadin.views.intersection.system.search

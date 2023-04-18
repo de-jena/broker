@@ -450,6 +450,31 @@ public class TOSDeviceSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TOSDevicePackage.TRAFFIC_LIGHT_MODULE_LML: {
+				TrafficLightModuleLML trafficLightModuleLML = (TrafficLightModuleLML)theEObject;
+				T result = caseTrafficLightModuleLML(trafficLightModuleLML);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TOSDevicePackage.TRAFFIC_LIGHT_SIGNAL_TRANSMITTER: {
+				TrafficLightSignalTransmitter trafficLightSignalTransmitter = (TrafficLightSignalTransmitter)theEObject;
+				T result = caseTrafficLightSignalTransmitter(trafficLightSignalTransmitter);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TOSDevicePackage.TRAFFIC_LIGHT_SIGNAL_GROUP: {
+				TrafficLightSignalGroup trafficLightSignalGroup = (TrafficLightSignalGroup)theEObject;
+				T result = caseTrafficLightSignalGroup(trafficLightSignalGroup);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TOSDevicePackage.TRAFFIC_LIGHT_MODULE_FDL: {
+				TrafficLightModuleFDL trafficLightModuleFDL = (TrafficLightModuleFDL)theEObject;
+				T result = caseTrafficLightModuleFDL(trafficLightModuleFDL);
+				if (result == null) result = caseTrafficLightModuleLML(trafficLightModuleFDL);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1276,6 +1301,66 @@ public class TOSDeviceSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePublicTransportLocMsg(PublicTransportLocMsg object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traffic Light Module LML</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traffic Light Module LML</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrafficLightModuleLML(TrafficLightModuleLML object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traffic Light Signal Transmitter</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traffic Light Signal Transmitter</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrafficLightSignalTransmitter(TrafficLightSignalTransmitter object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traffic Light Signal Group</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traffic Light Signal Group</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrafficLightSignalGroup(TrafficLightSignalGroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Traffic Light Module FDL</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Traffic Light Module FDL</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTrafficLightModuleFDL(TrafficLightModuleFDL object) {
 		return null;
 	}
 

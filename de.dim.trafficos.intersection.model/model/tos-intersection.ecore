@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="intersection" nsURI="http://datainmotion.de/trafficos/intersection/1.0"
+    nsPrefix="intersection">
+  <eClassifiers xsi:type="ecore:EClass" name="Intersection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="road" lowerBound="1" upperBound="-1"
+        eType="#//Road" containment="true" eKeys="#//Road/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        containment="true" eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phase" upperBound="-1"
+        eType="#//Phase" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phaseGroup" upperBound="-1"
+        eType="#//PhaseGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timeTable" eType="#//TimeTable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1"
+        eType="ecore:EClass ../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" upperBound="-1"
+        eType="#//Program" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
+        eType="ecore:EClass ../../de.dim.trafficos.common.model/model/tos-common.ecore#//Parameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//IntersectionStateType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Road">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mainRoad" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RoadType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomingLane" upperBound="-1"
+        eType="#//IncomingLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingLane" upperBound="-1"
+        eType="#//OutgoingLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pedestrianLane" upperBound="-1"
+        eType="#//PedestrianLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cycleLane" upperBound="-1"
+        eType="#//CycleLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="publicTransportLane" upperBound="-1"
+        eType="#//PublicTransportLane" containment="true" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trafficLightModule" upperBound="-1"
+        eType="ecore:EClass ../../de.dim.trafficos.trafficlight.model/model/tos-trafficlight.ecore#//TLModule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Lane">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refRoadId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="link" upperBound="-1" eType="#//Link"
+        eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="road" eType="#//Road" eKeys="#//Road/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subLane" upperBound="-1"
+        eType="#//Lane" containment="true" eOpposite="#//Lane/parentLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentLane" eType="#//Lane"
+        eOpposite="#//Lane/subLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="ecore:EEnum ../../de.dim.trafficos.common.model/model/tos-common.ecore#//DirectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detector" upperBound="-1"
+        eType="ecore:EClass ../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConflictingLane" eSuperTypes="#//Lane">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflictingLane" upperBound="-1"
+        eType="#//ConflictingLane" eKeys="#//Lane/id"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflictingLink" upperBound="-1"
+        eType="#//Link" eKeys="#//Link/index"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="ecore:EClass ../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroups" upperBound="-1"
+        eType="ecore:EClass ../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingLane" eSuperTypes="#//Lane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PedestrianLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PublicTransportLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CycleLane" eSuperTypes="#//ConflictingLane"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Link">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refIncomingLane" eType="#//Lane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refOutgoingLane" eType="#//OutgoingLane"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Phase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lane" lowerBound="1" upperBound="-1"
+        eType="#//ConflictingLane">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="These are all the lanes which have the green at the same time, namely non-conflicting with each other."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weightMin" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weightMax" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramEntry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="begin" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refPhase" lowerBound="1"
+        eType="#//Phase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Program" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputEntry" upperBound="-1"
+        eType="#//ProgramEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalTable" eType="#//SignalTable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refNextPhase" lowerBound="1"
+        eType="#//Phase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unchangedLane" upperBound="-1"
+        eType="#//ConflictingLane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changedLane" upperBound="-1"
+        eType="#//ConflictingLane"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clearArea" upperBound="-1"
+        eType="#//ClearArea" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProgramTransition" eSuperTypes="#//ProgramEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="#//Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClearArea">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ClearAreaType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhaseGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="penalty" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is a value which takes into account how many times the same lane is present in more than a Phase of the group. A penalty term of 0 means no lane is repeated more than once, a penalty term of 1 means a lane is present in two phases of the group, a penalty term of 2 means a lane is present in three phases or two lanes are present in two phases, etc."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="phase" lowerBound="1" upperBound="-1"
+        eType="#//Phase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeTable" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//IdNameElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" upperBound="-1"
+        eType="#//TimeTableEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultMode" eType="#//TimeTableModeType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeTableEntry" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//AbstractTimeTableEntry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="program" lowerBound="1"
+        eType="#//Program"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalTable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cacheDataEntry" upperBound="-1"
+        eType="#//CacheDataEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CacheDataEntry" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//DataEntry"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeTableModeType">
+    <eLiterals name="OFF"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="IntersectionStateType">
+    <eLiterals name="UNKNOWN"/>
+    <eLiterals name="NONE" value="1"/>
+    <eLiterals name="ENABLED" value="2"/>
+    <eLiterals name="DISABLED_DARK" value="3"/>
+    <eLiterals name="DISABLED_FLASH_SECONDARY" value="4"/>
+    <eLiterals name="DISABLED_FLASH_ALL" value="5"/>
+    <eLiterals name="DISABLED_DEFAULT" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ClearAreaType">
+    <eLiterals name="ClearPedestrian"/>
+    <eLiterals name="ClearMain" value="1"/>
+    <eLiterals name="ClearSecondary" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoadType">
+    <eLiterals name="MAIN_STRAIGHT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. There is just one lane and it is for going straight. No other direction is possible."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_RIGHT_SEP" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_RIGHT_MERGE" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_LEFT_SEP" value="3" literal="MAIN_STRAIGHT_LEFT_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn left, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_LEFT_MERGE" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn left, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_LEFT_RIGHT_SEP" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_LEFT_RIGHT_MERGE" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_TURNS_SEP" value="7" literal="MAIN_STRAIGHT_TURNS_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MAIN_STRAIGHT_TURNS_MERGE" value="8">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go straight or turn either right or left and there is just a common lane for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_RIGHT_SEP" value="9">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Main road. You can go both straight and turn right, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_RIGHT_MERGE" value="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn right, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_LEFT_SEP" value="11" literal="SEC_STRAIGHT_LEFT_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn left, and there are separated lanes for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_LEFT_MERGE" value="12">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go both straight and turn left, and there is just one common lane for the two directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_LEFT_RIGHT_SEP" value="13">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can turn either right or left and there are two separated lanes for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_LEFT_RIGHT_MERGE" value="14">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can turn either right or left and there is just a common lane for the two directions. You cannot go straight."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_TURNS_SEP" value="15" literal="SEC_STRAIGHT_TURNS_SEP">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go straight and turn either right or left and there are threee separated lanes for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SEC_STRAIGHT_TURNS_MERGE" value="16">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Secondary road. You can go straight or turn either right or left and there is just a common lane for the three directions."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+</ecore:EPackage>

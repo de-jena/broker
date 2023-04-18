@@ -1,0 +1,19 @@
+-buildpath: \
+	org.gecko.emf.json,\
+	de.dim.trafficos.trafficlight.model,\
+	org.gecko.osgi.messaging,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	slf4j.api,\
+	org.osgi.util.promise,\
+	org.osgi.util.function,\
+	org.osgi.util.pushstream
+
+Bundle-Version: 1.0.0.${tstamp}
+
+Private-Package: de.dim.trafficos.trafficlight.mqtt
+
+javac.source: 17
+javac.target: 17
+
+
+-library: enable-emf

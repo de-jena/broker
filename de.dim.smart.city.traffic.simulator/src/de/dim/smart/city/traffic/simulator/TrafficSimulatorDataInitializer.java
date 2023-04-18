@@ -62,6 +62,8 @@ import de.dim.trafficos.model.device.PublicTransportLine;
 import de.dim.trafficos.model.device.Road;
 import de.dim.trafficos.model.device.TOSDeviceFactory;
 import de.dim.trafficos.model.device.TOSDevicePackage;
+import de.dim.trafficos.model.device.TrafficLightModuleLML;
+import de.dim.trafficos.model.device.TrafficLightSignalTransmitter;
 import de.dim.trafficos.simulator.api.IntersectionConstants;
 import de.dim.trafficos.simulator.api.IntersectionService;
 
@@ -217,6 +219,7 @@ public class TrafficSimulatorDataInitializer {
 		List<ConflictingLane> lanes = new LinkedList<>();
 		OutgoingLane out00 = null;
 		for(Road r : intersection.getRoad()) {
+			r.setTrafficLightModule(createTrafficLightModule());
 			if("0".equals(r.getId())) { //ADD Bike lane and PT lane
 				out00 = r.getOutgoingLane().get(0);
 
@@ -578,6 +581,18 @@ public class TrafficSimulatorDataInitializer {
 		repoObjects.ungetService(repo);
 		
 		return intersection;
+	}
+
+	private TrafficLightModuleLML createTrafficLightModule() {
+		TrafficLightModuleLML module = TOSDeviceFactory.eINSTANCE.createTrafficLightModuleLML();
+		TrafficLightSignalTransmitter channelA = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
+		TrafficLightSignalTransmitter channelB = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
+		TrafficLightSignalTransmitter channelC = TOSDeviceFactory.eINSTANCE.createTrafficLightSignalTransmitter();
+		module.setAddress(12);
+		module.setA(channelA);
+		module.setB(channelB);
+		module.setC(channelC);
+		return module;
 	}
 
 	private Position createPosition(String id, double lon, double lat) {

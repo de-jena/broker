@@ -1,0 +1,10 @@
+-library: enable-emf
+
+Bundle-Version: 1.0.0.SNAPSHOT
+
+
+-buildpath: \
+	de.dim.trafficos.trafficlight.model;version=latest,\
+	de.dim.trafficos.intersectionsystem.model;version=latest,\
+	de.dim.trafficos.common.model;version=latest,\
+	de.dim.trafficos.intersection.model;version=latest

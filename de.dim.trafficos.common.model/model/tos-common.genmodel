@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.dim.trafficos.common.model/src" modelPluginID="de.dim.trafficos.common.model"
+    modelName="tos-common" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>tos-common.ecore</foreignModel>
+  <genPackages prefix="TOSCommon" basePackage="de.dim.trafficos.common.model" resource="XMI"
+      disposableProviderFactory="true" literalsInterface="false" ecorePackage="tos-common.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-common.ecore#//ParameterDataType">
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ParameterDataType/STRING"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ParameterDataType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ParameterDataType/DATE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-common.ecore#//DirectionType">
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/STRAIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/TURN_RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/TURN_LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/OTHER"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/STRAIGHT_TURNS"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/STRAIGHT_LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/STRAIGHT_RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//DirectionType/LEFT_RIGHT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tos-common.ecore#//ScheduleModeType">
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ScheduleModeType/EVERY_DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ScheduleModeType/WEEKEND"/>
+      <genEnumLiterals ecoreEnumLiteral="tos-common.ecore#//ScheduleModeType/WORKING_DAY"/>
+    </genEnums>
+    <genClasses ecoreClass="tos-common.ecore#//IdNameElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//IdNameElement/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//IdNameElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//AbstractDataEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractDataEntry/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractDataEntry/timestamp"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractDataEntry/index"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//AbstractTimeTableEntry">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractTimeTableEntry/index"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractTimeTableEntry/mode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractTimeTableEntry/begin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AbstractTimeTableEntry/end"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//Localizable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-common.ecore#//Localizable/location"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//Location">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Location/id"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//NetworkLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//NetworkLocation/ip4Address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//NetworkLocation/ip6Address"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//NetworkLocation/hostname"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//Position">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Position/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Position/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Position/altitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Position/orientation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Position/bearing"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//AddressLocation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AddressLocation/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AddressLocation/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AddressLocation/zip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//AddressLocation/district"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//DataEntry">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-common.ecore#//DataEntry/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//DataEntry/configuration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//DataEntry/device"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//DataValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//DataValue/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tos-common.ecore#//DataValue/element"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tos-common.ecore#//DataValue/elementRef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//DataValue/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Output/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Output/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Output/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="tos-common.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tos-common.ecore#//Parameter/dataType"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

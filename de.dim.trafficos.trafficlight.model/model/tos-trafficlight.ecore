@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="trafficlight" nsURI="http://datainmotion.de/trafficos/trafficlight/1.0"
+    nsPrefix="trafficlight">
+  <eClassifiers xsi:type="ecore:EClass" name="TLModule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TLModuleType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalTransmitter" upperBound="-1"
+        eType="#//TLSignalTransmitter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TLSignalTransmitter" eSuperTypes="../../de.dim.trafficos.common.model/model/tos-common.ecore#//Output">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signalGroup" eType="#//TLSignalGroup"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lightSignal" upperBound="-1"
+        eType="#//LightSignal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TLSignalGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LightSignal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="blinking" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//SignalValueType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="on" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TLModuleType">
+    <eLiterals name="LML"/>
+    <eLiterals name="FDL" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SignalValueType">
+    <eLiterals name="RED"/>
+    <eLiterals name="AMBER" value="1"/>
+    <eLiterals name="GREEN" value="2"/>
+    <eLiterals name="SIGNAL_IS_COMING" value="3"/>
+    <eLiterals name="ORIENTATION_SOUND" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TLUpdate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changedStates" upperBound="-1"
+        eType="#//ChangedState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="response" upperBound="-1"
+        eType="#//ChangedState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requested" upperBound="-1"
+        eType="#//ChangedState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangedState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="channel" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="on" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+</ecore:EPackage>

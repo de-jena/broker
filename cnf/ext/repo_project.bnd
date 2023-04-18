@@ -43,6 +43,15 @@
 		index=${.}/dim_release.maven;\
 		poll_time 			= -1;\
 		name='DIM_Nexus_Release'
+		
+-plugin.vaadin: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        snapshotUrl="https://oss.sonatype.org/content/repositories/snapshots/,https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/"; \
+        releaseUrl=https://repo.maven.apache.org/maven2/; \
+        index=${.}/vaadin23.maven; \
+        readOnly=true; \
+        poll.time=-1; \
+        name="Vadin23"
 
 -plugin.modeling:\
 	aQute.bnd.repository.osgi.OSGiRepository;\

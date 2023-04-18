@@ -122,6 +122,10 @@ public class TOSDeviceFactoryImpl extends EFactoryImpl implements TOSDeviceFacto
 			case TOSDevicePackage.PUBLIC_TRANSPORT_DOOR_CHANGE: return createPublicTransportDoorChange();
 			case TOSDevicePackage.PUBLIC_TRANSPORT_STOP: return createPublicTransportStop();
 			case TOSDevicePackage.PUBLIC_TRANSPORT_LOC_MSG: return createPublicTransportLocMsg();
+			case TOSDevicePackage.TRAFFIC_LIGHT_MODULE_LML: return createTrafficLightModuleLML();
+			case TOSDevicePackage.TRAFFIC_LIGHT_SIGNAL_TRANSMITTER: return createTrafficLightSignalTransmitter();
+			case TOSDevicePackage.TRAFFIC_LIGHT_SIGNAL_GROUP: return createTrafficLightSignalGroup();
+			case TOSDevicePackage.TRAFFIC_LIGHT_MODULE_FDL: return createTrafficLightModuleFDL();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -804,6 +808,50 @@ public class TOSDeviceFactoryImpl extends EFactoryImpl implements TOSDeviceFacto
 	public PublicTransportLocMsg createPublicTransportLocMsg() {
 		PublicTransportLocMsgImpl publicTransportLocMsg = new PublicTransportLocMsgImpl();
 		return publicTransportLocMsg;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TrafficLightModuleLML createTrafficLightModuleLML() {
+		TrafficLightModuleLMLImpl trafficLightModuleLML = new TrafficLightModuleLMLImpl();
+		return trafficLightModuleLML;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TrafficLightSignalTransmitter createTrafficLightSignalTransmitter() {
+		TrafficLightSignalTransmitterImpl trafficLightSignalTransmitter = new TrafficLightSignalTransmitterImpl();
+		return trafficLightSignalTransmitter;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TrafficLightSignalGroup createTrafficLightSignalGroup() {
+		TrafficLightSignalGroupImpl trafficLightSignalGroup = new TrafficLightSignalGroupImpl();
+		return trafficLightSignalGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TrafficLightModuleFDL createTrafficLightModuleFDL() {
+		TrafficLightModuleFDLImpl trafficLightModuleFDL = new TrafficLightModuleFDLImpl();
+		return trafficLightModuleFDL;
 	}
 
 	/**

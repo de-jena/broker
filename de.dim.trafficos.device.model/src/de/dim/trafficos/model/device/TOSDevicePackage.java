@@ -793,13 +793,22 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	int ROAD__PUBLIC_TRANSPORT_LANE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Traffic Light Module</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROAD__TRAFFIC_LIGHT_MODULE = 7;
+
+	/**
 	 * The number of structural features of the '<em>Road</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROAD_FEATURE_COUNT = 7;
+	int ROAD_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Road</em>' class.
@@ -4259,6 +4268,262 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	int PUBLIC_TRANSPORT_LOC_MSG_OPERATION_COUNT = PUBLIC_TRANSPORT_DATA_VALUE_OBJECT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.dim.trafficos.model.device.impl.TrafficLightModuleLMLImpl <em>Traffic Light Module LML</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.model.device.impl.TrafficLightModuleLMLImpl
+	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightModuleLML()
+	 * @generated
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML = 55;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML__ADDRESS = 0;
+
+	/**
+	 * The feature id for the '<em><b>A</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML__A = 1;
+
+	/**
+	 * The feature id for the '<em><b>B</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML__B = 2;
+
+	/**
+	 * The feature id for the '<em><b>C</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML__C = 3;
+
+	/**
+	 * The number of structural features of the '<em>Traffic Light Module LML</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Traffic Light Module LML</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_LML_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dim.trafficos.model.device.impl.TrafficLightSignalTransmitterImpl <em>Traffic Light Signal Transmitter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.model.device.impl.TrafficLightSignalTransmitterImpl
+	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER = 56;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Signal Group</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SIGNAL_GROUP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Red</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__RED = 2;
+
+	/**
+	 * The feature id for the '<em><b>Yellow</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__YELLOW = 3;
+
+	/**
+	 * The feature id for the '<em><b>Green</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__GREEN = 4;
+
+	/**
+	 * The feature id for the '<em><b>Switch</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SWITCH = 5;
+
+	/**
+	 * The number of structural features of the '<em>Traffic Light Signal Transmitter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER_FEATURE_COUNT = 6;
+
+	/**
+	 * The number of operations of the '<em>Traffic Light Signal Transmitter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_TRANSMITTER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dim.trafficos.model.device.impl.TrafficLightSignalGroupImpl <em>Traffic Light Signal Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.model.device.impl.TrafficLightSignalGroupImpl
+	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightSignalGroup()
+	 * @generated
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_GROUP = 57;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_GROUP__ID = 0;
+
+	/**
+	 * The number of structural features of the '<em>Traffic Light Signal Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_GROUP_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Traffic Light Signal Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_SIGNAL_GROUP_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link de.dim.trafficos.model.device.impl.TrafficLightModuleFDLImpl <em>Traffic Light Module FDL</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.dim.trafficos.model.device.impl.TrafficLightModuleFDLImpl
+	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightModuleFDL()
+	 * @generated
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL = 58;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL__ADDRESS = TRAFFIC_LIGHT_MODULE_LML__ADDRESS;
+
+	/**
+	 * The feature id for the '<em><b>A</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL__A = TRAFFIC_LIGHT_MODULE_LML__A;
+
+	/**
+	 * The feature id for the '<em><b>B</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL__B = TRAFFIC_LIGHT_MODULE_LML__B;
+
+	/**
+	 * The feature id for the '<em><b>C</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL__C = TRAFFIC_LIGHT_MODULE_LML__C;
+
+	/**
+	 * The feature id for the '<em><b>D</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL__D = TRAFFIC_LIGHT_MODULE_LML_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Traffic Light Module FDL</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL_FEATURE_COUNT = TRAFFIC_LIGHT_MODULE_LML_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Traffic Light Module FDL</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFFIC_LIGHT_MODULE_FDL_OPERATION_COUNT = TRAFFIC_LIGHT_MODULE_LML_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.DeviceActivationType <em>Device Activation Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4266,7 +4531,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getDeviceActivationType()
 	 * @generated
 	 */
-	int DEVICE_ACTIVATION_TYPE = 55;
+	int DEVICE_ACTIVATION_TYPE = 59;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.ClearAreaType <em>Clear Area Type</em>}' enum.
@@ -4276,7 +4541,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getClearAreaType()
 	 * @generated
 	 */
-	int CLEAR_AREA_TYPE = 56;
+	int CLEAR_AREA_TYPE = 60;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.DirectionType <em>Direction Type</em>}' enum.
@@ -4286,7 +4551,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getDirectionType()
 	 * @generated
 	 */
-	int DIRECTION_TYPE = 57;
+	int DIRECTION_TYPE = 61;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.ScheduleModeType <em>Schedule Mode Type</em>}' enum.
@@ -4296,7 +4561,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getScheduleModeType()
 	 * @generated
 	 */
-	int SCHEDULE_MODE_TYPE = 58;
+	int SCHEDULE_MODE_TYPE = 62;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.TimeTableModeType <em>Time Table Mode Type</em>}' enum.
@@ -4306,7 +4571,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTimeTableModeType()
 	 * @generated
 	 */
-	int TIME_TABLE_MODE_TYPE = 59;
+	int TIME_TABLE_MODE_TYPE = 63;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.ParameterDataType <em>Parameter Data Type</em>}' enum.
@@ -4316,7 +4581,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getParameterDataType()
 	 * @generated
 	 */
-	int PARAMETER_DATA_TYPE = 60;
+	int PARAMETER_DATA_TYPE = 64;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.IntersectionStateType <em>Intersection State Type</em>}' enum.
@@ -4326,7 +4591,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getIntersectionStateType()
 	 * @generated
 	 */
-	int INTERSECTION_STATE_TYPE = 61;
+	int INTERSECTION_STATE_TYPE = 65;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.LifeCycleDeviceType <em>Life Cycle Device Type</em>}' enum.
@@ -4336,7 +4601,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getLifeCycleDeviceType()
 	 * @generated
 	 */
-	int LIFE_CYCLE_DEVICE_TYPE = 62;
+	int LIFE_CYCLE_DEVICE_TYPE = 66;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.OutputElementType <em>Output Element Type</em>}' enum.
@@ -4346,7 +4611,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getOutputElementType()
 	 * @generated
 	 */
-	int OUTPUT_ELEMENT_TYPE = 63;
+	int OUTPUT_ELEMENT_TYPE = 67;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.PublicTransportType <em>Public Transport Type</em>}' enum.
@@ -4356,7 +4621,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getPublicTransportType()
 	 * @generated
 	 */
-	int PUBLIC_TRANSPORT_TYPE = 64;
+	int PUBLIC_TRANSPORT_TYPE = 68;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.PublicTransportDataValueType <em>Public Transport Data Value Type</em>}' enum.
@@ -4366,7 +4631,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getPublicTransportDataValueType()
 	 * @generated
 	 */
-	int PUBLIC_TRANSPORT_DATA_VALUE_TYPE = 65;
+	int PUBLIC_TRANSPORT_DATA_VALUE_TYPE = 69;
 
 	/**
 	 * The meta object id for the '{@link de.dim.trafficos.model.device.PublicTransportDoorChangeType <em>Public Transport Door Change Type</em>}' enum.
@@ -4376,7 +4641,7 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getPublicTransportDoorChangeType()
 	 * @generated
 	 */
-	int PUBLIC_TRANSPORT_DOOR_CHANGE_TYPE = 66;
+	int PUBLIC_TRANSPORT_DOOR_CHANGE_TYPE = 70;
 
 
 	/**
@@ -4866,6 +5131,17 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 */
 	EReference getRoad_PublicTransportLane();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.Road#getTrafficLightModule <em>Traffic Light Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Traffic Light Module</em>'.
+	 * @see de.dim.trafficos.model.device.Road#getTrafficLightModule()
+	 * @see #getRoad()
+	 * @generated
+	 */
+	EReference getRoad_TrafficLightModule();
 
 	/**
 	 * Returns the meta object for class '{@link de.dim.trafficos.model.device.Lane <em>Lane</em>}'.
@@ -6635,6 +6911,178 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getPublicTransportLocMsg_Door();
 
 	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.model.device.TrafficLightModuleLML <em>Traffic Light Module LML</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traffic Light Module LML</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML
+	 * @generated
+	 */
+	EClass getTrafficLightModuleLML();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightModuleLML#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML#getAddress()
+	 * @see #getTrafficLightModuleLML()
+	 * @generated
+	 */
+	EAttribute getTrafficLightModuleLML_Address();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.TrafficLightModuleLML#getA <em>A</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>A</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML#getA()
+	 * @see #getTrafficLightModuleLML()
+	 * @generated
+	 */
+	EReference getTrafficLightModuleLML_A();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.TrafficLightModuleLML#getB <em>B</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>B</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML#getB()
+	 * @see #getTrafficLightModuleLML()
+	 * @generated
+	 */
+	EReference getTrafficLightModuleLML_B();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.TrafficLightModuleLML#getC <em>C</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>C</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleLML#getC()
+	 * @see #getTrafficLightModuleLML()
+	 * @generated
+	 */
+	EReference getTrafficLightModuleLML_C();
+
+	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter <em>Traffic Light Signal Transmitter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traffic Light Signal Transmitter</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter
+	 * @generated
+	 */
+	EClass getTrafficLightSignalTransmitter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#getId()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalTransmitter_Id();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#getSignalGroup <em>Signal Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Signal Group</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#getSignalGroup()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EReference getTrafficLightSignalTransmitter_SignalGroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isRed <em>Red</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Red</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isRed()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalTransmitter_Red();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isYellow <em>Yellow</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Yellow</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isYellow()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalTransmitter_Yellow();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isGreen <em>Green</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Green</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isGreen()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalTransmitter_Green();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isSwitch <em>Switch</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Switch</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalTransmitter#isSwitch()
+	 * @see #getTrafficLightSignalTransmitter()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalTransmitter_Switch();
+
+	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.model.device.TrafficLightSignalGroup <em>Traffic Light Signal Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traffic Light Signal Group</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalGroup
+	 * @generated
+	 */
+	EClass getTrafficLightSignalGroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.dim.trafficos.model.device.TrafficLightSignalGroup#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightSignalGroup#getId()
+	 * @see #getTrafficLightSignalGroup()
+	 * @generated
+	 */
+	EAttribute getTrafficLightSignalGroup_Id();
+
+	/**
+	 * Returns the meta object for class '{@link de.dim.trafficos.model.device.TrafficLightModuleFDL <em>Traffic Light Module FDL</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Traffic Light Module FDL</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleFDL
+	 * @generated
+	 */
+	EClass getTrafficLightModuleFDL();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.dim.trafficos.model.device.TrafficLightModuleFDL#getD <em>D</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>D</em>'.
+	 * @see de.dim.trafficos.model.device.TrafficLightModuleFDL#getD()
+	 * @see #getTrafficLightModuleFDL()
+	 * @generated
+	 */
+	EReference getTrafficLightModuleFDL_D();
+
+	/**
 	 * Returns the meta object for enum '{@link de.dim.trafficos.model.device.DeviceActivationType <em>Device Activation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7150,6 +7598,14 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EReference ROAD__PUBLIC_TRANSPORT_LANE = eINSTANCE.getRoad_PublicTransportLane();
+
+		/**
+		 * The meta object literal for the '<em><b>Traffic Light Module</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROAD__TRAFFIC_LIGHT_MODULE = eINSTANCE.getRoad_TrafficLightModule();
 
 		/**
 		 * The meta object literal for the '{@link de.dim.trafficos.model.device.impl.LaneImpl <em>Lane</em>}' class.
@@ -8566,6 +9022,142 @@ public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EAttribute PUBLIC_TRANSPORT_LOC_MSG__DOOR = eINSTANCE.getPublicTransportLocMsg_Door();
+
+		/**
+		 * The meta object literal for the '{@link de.dim.trafficos.model.device.impl.TrafficLightModuleLMLImpl <em>Traffic Light Module LML</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dim.trafficos.model.device.impl.TrafficLightModuleLMLImpl
+		 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightModuleLML()
+		 * @generated
+		 */
+		EClass TRAFFIC_LIGHT_MODULE_LML = eINSTANCE.getTrafficLightModuleLML();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_MODULE_LML__ADDRESS = eINSTANCE.getTrafficLightModuleLML_Address();
+
+		/**
+		 * The meta object literal for the '<em><b>A</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAFFIC_LIGHT_MODULE_LML__A = eINSTANCE.getTrafficLightModuleLML_A();
+
+		/**
+		 * The meta object literal for the '<em><b>B</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAFFIC_LIGHT_MODULE_LML__B = eINSTANCE.getTrafficLightModuleLML_B();
+
+		/**
+		 * The meta object literal for the '<em><b>C</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAFFIC_LIGHT_MODULE_LML__C = eINSTANCE.getTrafficLightModuleLML_C();
+
+		/**
+		 * The meta object literal for the '{@link de.dim.trafficos.model.device.impl.TrafficLightSignalTransmitterImpl <em>Traffic Light Signal Transmitter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dim.trafficos.model.device.impl.TrafficLightSignalTransmitterImpl
+		 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightSignalTransmitter()
+		 * @generated
+		 */
+		EClass TRAFFIC_LIGHT_SIGNAL_TRANSMITTER = eINSTANCE.getTrafficLightSignalTransmitter();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__ID = eINSTANCE.getTrafficLightSignalTransmitter_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Signal Group</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SIGNAL_GROUP = eINSTANCE.getTrafficLightSignalTransmitter_SignalGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Red</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__RED = eINSTANCE.getTrafficLightSignalTransmitter_Red();
+
+		/**
+		 * The meta object literal for the '<em><b>Yellow</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__YELLOW = eINSTANCE.getTrafficLightSignalTransmitter_Yellow();
+
+		/**
+		 * The meta object literal for the '<em><b>Green</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__GREEN = eINSTANCE.getTrafficLightSignalTransmitter_Green();
+
+		/**
+		 * The meta object literal for the '<em><b>Switch</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_TRANSMITTER__SWITCH = eINSTANCE.getTrafficLightSignalTransmitter_Switch();
+
+		/**
+		 * The meta object literal for the '{@link de.dim.trafficos.model.device.impl.TrafficLightSignalGroupImpl <em>Traffic Light Signal Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dim.trafficos.model.device.impl.TrafficLightSignalGroupImpl
+		 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightSignalGroup()
+		 * @generated
+		 */
+		EClass TRAFFIC_LIGHT_SIGNAL_GROUP = eINSTANCE.getTrafficLightSignalGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFFIC_LIGHT_SIGNAL_GROUP__ID = eINSTANCE.getTrafficLightSignalGroup_Id();
+
+		/**
+		 * The meta object literal for the '{@link de.dim.trafficos.model.device.impl.TrafficLightModuleFDLImpl <em>Traffic Light Module FDL</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.dim.trafficos.model.device.impl.TrafficLightModuleFDLImpl
+		 * @see de.dim.trafficos.model.device.impl.TOSDevicePackageImpl#getTrafficLightModuleFDL()
+		 * @generated
+		 */
+		EClass TRAFFIC_LIGHT_MODULE_FDL = eINSTANCE.getTrafficLightModuleFDL();
+
+		/**
+		 * The meta object literal for the '<em><b>D</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRAFFIC_LIGHT_MODULE_FDL__D = eINSTANCE.getTrafficLightModuleFDL_D();
 
 		/**
 		 * The meta object literal for the '{@link de.dim.trafficos.model.device.DeviceActivationType <em>Device Activation Type</em>}' enum.
