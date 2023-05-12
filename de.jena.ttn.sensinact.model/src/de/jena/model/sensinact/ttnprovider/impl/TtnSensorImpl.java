@@ -24,8 +24,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-
 import org.eclipse.sensinact.model.core.provider.impl.ProviderImpl;
 
 /**
@@ -38,7 +36,6 @@ import org.eclipse.sensinact.model.core.provider.impl.ProviderImpl;
  * <ul>
  *   <li>{@link de.jena.model.sensinact.ttnprovider.impl.TtnSensorImpl#isHas_beacon <em>Has beacon</em>}</li>
  *   <li>{@link de.jena.model.sensinact.ttnprovider.impl.TtnSensorImpl#getData <em>Data</em>}</li>
- *   <li>{@link de.jena.model.sensinact.ttnprovider.impl.TtnSensorImpl#getLocation <em>Location</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,26 +70,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 	 * @ordered
 	 */
 	protected SensorData data;
-
-	/**
-	 * The default value of the '{@link #getLocation() <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final GeoJsonObject LOCATION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getLocation() <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLocation()
-	 * @generated
-	 * @ordered
-	 */
-	protected GeoJsonObject location = LOCATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,29 +164,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 	 * @generated
 	 */
 	@Override
-	public GeoJsonObject getLocation() {
-		return location;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLocation(GeoJsonObject newLocation) {
-		GeoJsonObject oldLocation = location;
-		location = newLocation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TtnSensorSensinactPackage.TTN_SENSOR__LOCATION, oldLocation, location));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TtnSensorSensinactPackage.TTN_SENSOR__DATA:
@@ -230,8 +184,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 				return isHas_beacon();
 			case TtnSensorSensinactPackage.TTN_SENSOR__DATA:
 				return getData();
-			case TtnSensorSensinactPackage.TTN_SENSOR__LOCATION:
-				return getLocation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -249,9 +201,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 				return;
 			case TtnSensorSensinactPackage.TTN_SENSOR__DATA:
 				setData((SensorData)newValue);
-				return;
-			case TtnSensorSensinactPackage.TTN_SENSOR__LOCATION:
-				setLocation((GeoJsonObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -271,9 +220,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 			case TtnSensorSensinactPackage.TTN_SENSOR__DATA:
 				setData((SensorData)null);
 				return;
-			case TtnSensorSensinactPackage.TTN_SENSOR__LOCATION:
-				setLocation(LOCATION_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -290,8 +236,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 				return has_beacon != HAS_BEACON_EDEFAULT;
 			case TtnSensorSensinactPackage.TTN_SENSOR__DATA:
 				return data != null;
-			case TtnSensorSensinactPackage.TTN_SENSOR__LOCATION:
-				return LOCATION_EDEFAULT == null ? location != null : !LOCATION_EDEFAULT.equals(location);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -308,8 +252,6 @@ public class TtnSensorImpl extends ProviderImpl implements TtnSensor {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (has_beacon: ");
 		result.append(has_beacon);
-		result.append(", location: ");
-		result.append(location);
 		result.append(')');
 		return result.toString();
 	}

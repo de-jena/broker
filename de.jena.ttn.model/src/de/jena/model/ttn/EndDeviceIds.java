@@ -55,13 +55,13 @@ public interface EndDeviceIds extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Application Ids</em>' containment reference.
-	 * @see #setApplicationIds(ApplicationIds)
+	 * @see #setApplicationIds(ApplicationId)
 	 * @see de.jena.model.ttn.TTNPackage#getEndDeviceIds_ApplicationIds()
 	 * @model containment="true"
 	 *        extendedMetaData="name='application_ids' kind='element'"
 	 * @generated
 	 */
-	ApplicationIds getApplicationIds();
+	ApplicationId getApplicationIds();
 
 	/**
 	 * Sets the value of the '{@link de.jena.model.ttn.EndDeviceIds#getApplicationIds <em>Application Ids</em>}' containment reference.
@@ -71,7 +71,7 @@ public interface EndDeviceIds extends EObject {
 	 * @see #getApplicationIds()
 	 * @generated
 	 */
-	void setApplicationIds(ApplicationIds value);
+	void setApplicationIds(ApplicationId value);
 
 	/**
 	 * Returns the value of the '<em><b>Dev Eui</b></em>' attribute.

@@ -78,8 +78,8 @@ public class TTNAdapterFactory extends AdapterFactoryImpl {
 				return createEndDeviceIdsAdapter();
 			}
 			@Override
-			public Adapter caseApplicationIds(ApplicationIds object) {
-				return createApplicationIdsAdapter();
+			public Adapter caseApplicationId(ApplicationId object) {
+				return createApplicationIdAdapter();
 			}
 			@Override
 			public Adapter caseNetworkIds(NetworkIds object) {
@@ -170,16 +170,16 @@ public class TTNAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.model.ttn.ApplicationIds <em>Application Ids</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.model.ttn.ApplicationId <em>Application Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.model.ttn.ApplicationIds
+	 * @see de.jena.model.ttn.ApplicationId
 	 * @generated
 	 */
-	public Adapter createApplicationIdsAdapter() {
+	public Adapter createApplicationIdAdapter() {
 		return null;
 	}
 

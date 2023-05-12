@@ -83,6 +83,10 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 	protected TtnSensorSensinactSwitch<Adapter> modelSwitch =
 		new TtnSensorSensinactSwitch<Adapter>() {
 			@Override
+			public Adapter caseAbstractTtnProvider(AbstractTtnProvider object) {
+				return createAbstractTtnProviderAdapter();
+			}
+			@Override
 			public Adapter caseTtnSensor(TtnSensor object) {
 				return createTtnSensorAdapter();
 			}
@@ -91,8 +95,40 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 				return createSensorDataAdapter();
 			}
 			@Override
+			public Adapter caseTtnService(TtnService object) {
+				return createTtnServiceAdapter();
+			}
+			@Override
+			public Adapter caseGatewayData(GatewayData object) {
+				return createGatewayDataAdapter();
+			}
+			@Override
 			public Adapter caseStringToObjectMap(Map.Entry<String, Object> object) {
 				return createStringToObjectMapAdapter();
+			}
+			@Override
+			public Adapter caseTtnNoiseSensor(TtnNoiseSensor object) {
+				return createTtnNoiseSensorAdapter();
+			}
+			@Override
+			public Adapter caseNoiseData(NoiseData object) {
+				return createNoiseDataAdapter();
+			}
+			@Override
+			public Adapter caseTtnTemperatureSensor(TtnTemperatureSensor object) {
+				return createTtnTemperatureSensorAdapter();
+			}
+			@Override
+			public Adapter caseTemperaturData(TemperaturData object) {
+				return createTemperaturDataAdapter();
+			}
+			@Override
+			public Adapter caseTtnSoilMoistureSensor(TtnSoilMoistureSensor object) {
+				return createTtnSoilMoistureSensorAdapter();
+			}
+			@Override
+			public Adapter caseSoilMoistureData(SoilMoistureData object) {
+				return createSoilMoistureDataAdapter();
 			}
 			@Override
 			public Adapter caseProvider(Provider object) {
@@ -123,6 +159,20 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.AbstractTtnProvider <em>Abstract Ttn Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.AbstractTtnProvider
+	 * @generated
+	 */
+	public Adapter createAbstractTtnProviderAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TtnSensor <em>Ttn Sensor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -151,6 +201,34 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TtnService <em>Ttn Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.TtnService
+	 * @generated
+	 */
+	public Adapter createTtnServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.GatewayData <em>Gateway Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.GatewayData
+	 * @generated
+	 */
+	public Adapter createGatewayDataAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>String To Object Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -161,6 +239,90 @@ public class TtnSensorSensinactAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStringToObjectMapAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TtnNoiseSensor <em>Ttn Noise Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.TtnNoiseSensor
+	 * @generated
+	 */
+	public Adapter createTtnNoiseSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.NoiseData <em>Noise Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.NoiseData
+	 * @generated
+	 */
+	public Adapter createNoiseDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TtnTemperatureSensor <em>Ttn Temperature Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.TtnTemperatureSensor
+	 * @generated
+	 */
+	public Adapter createTtnTemperatureSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TemperaturData <em>Temperatur Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.TemperaturData
+	 * @generated
+	 */
+	public Adapter createTemperaturDataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.TtnSoilMoistureSensor <em>Ttn Soil Moisture Sensor</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.TtnSoilMoistureSensor
+	 * @generated
+	 */
+	public Adapter createTtnSoilMoistureSensorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.model.sensinact.ttnprovider.SoilMoistureData <em>Soil Moisture Data</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.model.sensinact.ttnprovider.SoilMoistureData
+	 * @generated
+	 */
+	public Adapter createSoilMoistureDataAdapter() {
 		return null;
 	}
 

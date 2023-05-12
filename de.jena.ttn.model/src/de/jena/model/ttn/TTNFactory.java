@@ -43,13 +43,13 @@ public interface TTNFactory extends EFactory {
 	EndDeviceIds createEndDeviceIds();
 
 	/**
-	 * Returns a new object of class '<em>Application Ids</em>'.
+	 * Returns a new object of class '<em>Application Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Application Ids</em>'.
+	 * @return a new object of class '<em>Application Id</em>'.
 	 * @generated
 	 */
-	ApplicationIds createApplicationIds();
+	ApplicationId createApplicationId();
 
 	/**
 	 * Returns a new object of class '<em>Network Ids</em>'.

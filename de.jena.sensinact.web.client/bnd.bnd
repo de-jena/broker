@@ -5,4 +5,5 @@
 	org.osgi.annotation.bundle,\
 	biz.aQute.bnd.annotation,\
 	org.osgi.service.component.annotations,\
-	org.osgi.framework
+	org.osgi.framework,\
+	jakarta.servlet-api

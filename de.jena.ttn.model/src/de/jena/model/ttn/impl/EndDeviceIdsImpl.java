@@ -2,7 +2,7 @@
  */
 package de.jena.model.ttn.impl;
 
-import de.jena.model.ttn.ApplicationIds;
+import de.jena.model.ttn.ApplicationId;
 import de.jena.model.ttn.EndDeviceIds;
 import de.jena.model.ttn.TTNPackage;
 
@@ -61,7 +61,7 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 * @ordered
 	 */
-	protected ApplicationIds applicationIds;
+	protected ApplicationId applicationIds;
 
 	/**
 	 * The default value of the '{@link #getDevEui() <em>Dev Eui</em>}' attribute.
@@ -171,7 +171,7 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	@Override
-	public ApplicationIds getApplicationIds() {
+	public ApplicationId getApplicationIds() {
 		return applicationIds;
 	}
 
@@ -180,8 +180,8 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetApplicationIds(ApplicationIds newApplicationIds, NotificationChain msgs) {
-		ApplicationIds oldApplicationIds = applicationIds;
+	public NotificationChain basicSetApplicationIds(ApplicationId newApplicationIds, NotificationChain msgs) {
+		ApplicationId oldApplicationIds = applicationIds;
 		applicationIds = newApplicationIds;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TTNPackage.END_DEVICE_IDS__APPLICATION_IDS, oldApplicationIds, newApplicationIds);
@@ -196,7 +196,7 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 	 * @generated
 	 */
 	@Override
-	public void setApplicationIds(ApplicationIds newApplicationIds) {
+	public void setApplicationIds(ApplicationId newApplicationIds) {
 		if (newApplicationIds != applicationIds) {
 			NotificationChain msgs = null;
 			if (applicationIds != null)
@@ -327,7 +327,7 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 				setDeviceId((String)newValue);
 				return;
 			case TTNPackage.END_DEVICE_IDS__APPLICATION_IDS:
-				setApplicationIds((ApplicationIds)newValue);
+				setApplicationIds((ApplicationId)newValue);
 				return;
 			case TTNPackage.END_DEVICE_IDS__DEV_EUI:
 				setDevEui((String)newValue);
@@ -354,7 +354,7 @@ public class EndDeviceIdsImpl extends MinimalEObjectImpl.Container implements En
 				setDeviceId(DEVICE_ID_EDEFAULT);
 				return;
 			case TTNPackage.END_DEVICE_IDS__APPLICATION_IDS:
-				setApplicationIds((ApplicationIds)null);
+				setApplicationIds((ApplicationId)null);
 				return;
 			case TTNPackage.END_DEVICE_IDS__DEV_EUI:
 				setDevEui(DEV_EUI_EDEFAULT);

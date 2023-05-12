@@ -217,14 +217,14 @@ public interface TTNPackage extends org.eclipse.emf.ecore.EPackage {
 	int END_DEVICE_IDS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link de.jena.model.ttn.impl.ApplicationIdsImpl <em>Application Ids</em>}' class.
+	 * The meta object id for the '{@link de.jena.model.ttn.impl.ApplicationIdImpl <em>Application Id</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.jena.model.ttn.impl.ApplicationIdsImpl
-	 * @see de.jena.model.ttn.impl.TTNPackageImpl#getApplicationIds()
+	 * @see de.jena.model.ttn.impl.ApplicationIdImpl
+	 * @see de.jena.model.ttn.impl.TTNPackageImpl#getApplicationId()
 	 * @generated
 	 */
-	int APPLICATION_IDS = 2;
+	int APPLICATION_ID = 2;
 
 	/**
 	 * The feature id for the '<em><b>Application Id</b></em>' attribute.
@@ -233,25 +233,25 @@ public interface TTNPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_IDS__APPLICATION_ID = 0;
+	int APPLICATION_ID__APPLICATION_ID = 0;
 
 	/**
-	 * The number of structural features of the '<em>Application Ids</em>' class.
+	 * The number of structural features of the '<em>Application Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_IDS_FEATURE_COUNT = 1;
+	int APPLICATION_ID_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Application Ids</em>' class.
+	 * The number of operations of the '<em>Application Id</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int APPLICATION_IDS_OPERATION_COUNT = 0;
+	int APPLICATION_ID_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link de.jena.model.ttn.impl.NetworkIdsImpl <em>Network Ids</em>}' class.
@@ -1108,25 +1108,25 @@ public interface TTNPackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getEndDeviceIds_DevAddr();
 
 	/**
-	 * Returns the meta object for class '{@link de.jena.model.ttn.ApplicationIds <em>Application Ids</em>}'.
+	 * Returns the meta object for class '{@link de.jena.model.ttn.ApplicationId <em>Application Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Application Ids</em>'.
-	 * @see de.jena.model.ttn.ApplicationIds
+	 * @return the meta object for class '<em>Application Id</em>'.
+	 * @see de.jena.model.ttn.ApplicationId
 	 * @generated
 	 */
-	EClass getApplicationIds();
+	EClass getApplicationId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.model.ttn.ApplicationIds#getApplicationId <em>Application Id</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.model.ttn.ApplicationId#getApplicationId <em>Application Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Application Id</em>'.
-	 * @see de.jena.model.ttn.ApplicationIds#getApplicationId()
-	 * @see #getApplicationIds()
+	 * @see de.jena.model.ttn.ApplicationId#getApplicationId()
+	 * @see #getApplicationId()
 	 * @generated
 	 */
-	EAttribute getApplicationIds_ApplicationId();
+	EAttribute getApplicationId_ApplicationId();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.model.ttn.NetworkIds <em>Network Ids</em>}'.

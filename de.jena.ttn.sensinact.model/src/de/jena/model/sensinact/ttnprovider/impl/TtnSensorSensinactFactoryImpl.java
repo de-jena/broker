@@ -68,12 +68,32 @@ public class TtnSensorSensinactFactoryImpl extends EFactoryImpl implements TtnSe
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case TtnSensorSensinactPackage.ABSTRACT_TTN_PROVIDER: return createAbstractTtnProvider();
 			case TtnSensorSensinactPackage.TTN_SENSOR: return createTtnSensor();
 			case TtnSensorSensinactPackage.SENSOR_DATA: return createSensorData();
+			case TtnSensorSensinactPackage.TTN_SERVICE: return createTtnService();
+			case TtnSensorSensinactPackage.GATEWAY_DATA: return createGatewayData();
 			case TtnSensorSensinactPackage.STRING_TO_OBJECT_MAP: return (EObject)createStringToObjectMap();
+			case TtnSensorSensinactPackage.TTN_NOISE_SENSOR: return createTtnNoiseSensor();
+			case TtnSensorSensinactPackage.NOISE_DATA: return createNoiseData();
+			case TtnSensorSensinactPackage.TTN_TEMPERATURE_SENSOR: return createTtnTemperatureSensor();
+			case TtnSensorSensinactPackage.TEMPERATUR_DATA: return createTemperaturData();
+			case TtnSensorSensinactPackage.TTN_SOIL_MOISTURE_SENSOR: return createTtnSoilMoistureSensor();
+			case TtnSensorSensinactPackage.SOIL_MOISTURE_DATA: return createSoilMoistureData();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AbstractTtnProvider createAbstractTtnProvider() {
+		AbstractTtnProviderImpl abstractTtnProvider = new AbstractTtnProviderImpl();
+		return abstractTtnProvider;
 	}
 
 	/**
@@ -103,9 +123,97 @@ public class TtnSensorSensinactFactoryImpl extends EFactoryImpl implements TtnSe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TtnService createTtnService() {
+		TtnServiceImpl ttnService = new TtnServiceImpl();
+		return ttnService;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public GatewayData createGatewayData() {
+		GatewayDataImpl gatewayData = new GatewayDataImpl();
+		return gatewayData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Map.Entry<String, Object> createStringToObjectMap() {
 		StringToObjectMapImpl stringToObjectMap = new StringToObjectMapImpl();
 		return stringToObjectMap;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TtnNoiseSensor createTtnNoiseSensor() {
+		TtnNoiseSensorImpl ttnNoiseSensor = new TtnNoiseSensorImpl();
+		return ttnNoiseSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NoiseData createNoiseData() {
+		NoiseDataImpl noiseData = new NoiseDataImpl();
+		return noiseData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TtnTemperatureSensor createTtnTemperatureSensor() {
+		TtnTemperatureSensorImpl ttnTemperatureSensor = new TtnTemperatureSensorImpl();
+		return ttnTemperatureSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TemperaturData createTemperaturData() {
+		TemperaturDataImpl temperaturData = new TemperaturDataImpl();
+		return temperaturData;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TtnSoilMoistureSensor createTtnSoilMoistureSensor() {
+		TtnSoilMoistureSensorImpl ttnSoilMoistureSensor = new TtnSoilMoistureSensorImpl();
+		return ttnSoilMoistureSensor;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SoilMoistureData createSoilMoistureData() {
+		SoilMoistureDataImpl soilMoistureData = new SoilMoistureDataImpl();
+		return soilMoistureData;
 	}
 
 	/**

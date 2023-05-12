@@ -80,9 +80,9 @@ public class TTNSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TTNPackage.APPLICATION_IDS: {
-				ApplicationIds applicationIds = (ApplicationIds)theEObject;
-				T result = caseApplicationIds(applicationIds);
+			case TTNPackage.APPLICATION_ID: {
+				ApplicationId applicationId = (ApplicationId)theEObject;
+				T result = caseApplicationId(applicationId);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -181,17 +181,17 @@ public class TTNSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Application Ids</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Application Id</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Application Ids</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Application Id</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseApplicationIds(ApplicationIds object) {
+	public T caseApplicationId(ApplicationId object) {
 		return null;
 	}
 

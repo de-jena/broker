@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="https://jena.de/models/icesensor/sensinact/1.0" targetURI="platform:/resource/de.jena.icesensor.sensinact.model/model/icesensor.ecore"/>
+  <mapping sourceURI="https://jena.de/models/icesensor/1.0" targetURI="platform:/resource/de.jena.icesensor.model/model/icesensor.ecore"/>
+  <mapping sourceURI="https://eclipse.org/sensinact/core/provider/1.0" targetURI="platform:/resource/org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore"/>
+</uriMap:MappingContainer>

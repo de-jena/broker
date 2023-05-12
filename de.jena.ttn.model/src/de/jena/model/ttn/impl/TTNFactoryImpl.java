@@ -60,7 +60,7 @@ public class TTNFactoryImpl extends EFactoryImpl implements TTNFactory {
 		switch (eClass.getClassifierID()) {
 			case TTNPackage.TTN_UPLINK_PAYLOAD: return createTtnUplinkPayload();
 			case TTNPackage.END_DEVICE_IDS: return createEndDeviceIds();
-			case TTNPackage.APPLICATION_IDS: return createApplicationIds();
+			case TTNPackage.APPLICATION_ID: return createApplicationId();
 			case TTNPackage.NETWORK_IDS: return createNetworkIds();
 			case TTNPackage.UPLINK_MESSAGE: return createUplinkMessage();
 			case TTNPackage.GATEWAY_IDS: return createGatewayIds();
@@ -104,9 +104,9 @@ public class TTNFactoryImpl extends EFactoryImpl implements TTNFactory {
 	 * @generated
 	 */
 	@Override
-	public ApplicationIds createApplicationIds() {
-		ApplicationIdsImpl applicationIds = new ApplicationIdsImpl();
-		return applicationIds;
+	public ApplicationId createApplicationId() {
+		ApplicationIdImpl applicationId = new ApplicationIdImpl();
+		return applicationId;
 	}
 
 	/**

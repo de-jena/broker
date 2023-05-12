@@ -52,6 +52,7 @@ public class TTNConnectionComponent {
 		String[] deviceIds() default {};
 		String topic();
 		String sensorThings_category() default "";
+		String modelname() default "TTNSensor";
 	}
 
 	private Logger logger = LoggerFactory.getLogger(TTNConnectionComponent.class.getName());
@@ -74,12 +75,13 @@ public class TTNConnectionComponent {
 //	private Map<String, GenericDto> deviceRegistrationMap = new HashMap<>();
 
 	private Map<String, Object> category = null;
+	private String modelname = null;
 	
 	@Activate
 	public void activate(BundleContext bctx, Config config) {
 		String[] deviceIds = config.deviceIds();
 		String topic = config.topic();
-		
+		modelname = config.modelname();
 		if(!config.sensorThings_category().isEmpty()) {
 			category = Map.of("sensorthings.datastream.type", config.sensorThings_category());
 		}
@@ -183,20 +185,48 @@ public class TTNConnectionComponent {
 		location.coordinates.elevation = ttnLocation.getAltitude();
 
 		Instant timestamp = Instant.parse(rxMetadata.getReceivedAt());
-
-		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp, null));
-		
 		UplinkMessage uplinkMessage = payload.getUplinkMessage();
+
+		String theModelName = determineModelName(uplinkMessage);
 		
-		model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", "payloadRaw", String.class, uplinkMessage.getFrmPayload(), timestamp, null));
+		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp, null));
+		
+		
+		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "data", "payloadRaw", String.class, uplinkMessage.getFrmPayload(), timestamp, null));
+		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "gateway", "applicationId", String.class, payload.getEndDeviceIds().getApplicationIds().getApplicationId(), timestamp, null));
+
+		
 		
 		uplinkMessage.getDecodedPayload().forEach(e -> {
-			model.add(createGenericDto("TTNSensor", payload.getEndDeviceIds().getDeviceId(), "data", e.getKey(), e.getValue().getClass(), e.getValue(), timestamp, category));
+			model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "data", e.getKey(), e.getValue().getClass(), e.getValue(), timestamp, category));
 		});
 		
 		BulkGenericDto result = new BulkGenericDto();
 		result.dtos = model;
 		return result;
+	}
+	
+	private String determineModelName(UplinkMessage uplinkMessage) {
+		for (String key : uplinkMessage.getDecodedPayload().keySet()) {
+			switch (key) {
+			case "decibel": 
+				return "TtnNoiseSensor";
+			case "temp_SOIL": 
+				return "TtnSoilMoistureSensor";
+			case "PH1_SOIL": 
+				return "TtnSoilMoistureAndPhSensor";
+			case "TEMP_SOIL": 
+				return "TtnSoilMoistureAndPhSensor";
+			case "water_soil": 
+				return "TtnSoilSensor";
+			case "state": 
+				return "TtnStateSensor";
+			case "temperature": 
+				return "TtnTemperatureSensor";
+			default:
+			}
+		}
+		return modelname;
 	}
 	
 	private GenericDto createGenericDto(String model, String provider, String service, String resource, Class<?> type, Object value, Instant timestamp, Map<String, Object> metadata) {
@@ -208,8 +238,36 @@ public class TTNConnectionComponent {
 		dto.type = type;
 		dto.value = value;
 		dto.timestamp = timestamp;
-		dto.metadata = metadata;
+		dto.metadata = getMetadata(resource);
 		return dto;	
+	}
+	
+	private Map<String, Object> getMetadata(String key){
+		switch (key) {
+		case "battery": 
+			return Map.of("unit", "%", "sensorthings.unit.name", "%", "sensorthings.hide", "false", "sensorthings.datastream.type", "nois");
+		case "decible": 
+			return Map.of("unit", "dB", "sensorthings.unit.name", "dB", "sensorthings.hide", "false", "sensorthings.datastream.type", "nois");
+		case "temperatureBoard": 
+			return Map.of("unit", "°C", "sensorthings.unit.name", "°C", "sensorthings.hide", "false", "sensorthings.datastream.type", "nois");
+		case "TEMP_SOIL": 
+		case "temp_SOIL": 
+			return Map.of("unit", "°C", "sensorthings.unit.name", "°C", "sensorthings.hide", "false", "sensorthings.datastream.type", "soil_moisture");
+		case "PH1_SOIL": 
+			return Map.of("unit", "pH", "sensorthings.unit.name", "pH", "sensorthings.hide", "false", "sensorthings.datastream.type", "soil_moisture");
+		case "water_soil": 
+			return Map.of("unit", "%", "sensorthings.unit.name", "%", "sensorthings.hide", "false", "sensorthings.datastream.type", "soil_moisture");
+		case "conduct_soil": 
+			return Map.of("unit", "EC", "sensorthings.unit.name", "EC", "sensorthings.hide", "false", "sensorthings.datastream.type", "soil_moisture");
+		case "state": 
+			return Map.of("sensorthings.hide", "false");
+		case "temperature": 
+			return Map.of("unit", "°C", "sensorthings.unit.name", "°C", "sensorthings.hide", "false", "sensorthings.datastream.type", "air_temprature");
+		case "humidity ": 
+			return Map.of("unit", "%", "sensorthings.unit.name", "%", "sensorthings.hide", "false", "sensorthings.datastream.type", "air_humidity");
+		default:
+			return Map.of("sensorthings.hide", "true");
+		}
 	}
 	
 	private void fixLocation(TtnUplinkPayload payload, Provider push) {

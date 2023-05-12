@@ -35,6 +35,15 @@ public interface TtnSensorSensinactFactory extends EFactory {
 	TtnSensorSensinactFactory eINSTANCE = de.jena.model.sensinact.ttnprovider.impl.TtnSensorSensinactFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Abstract Ttn Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract Ttn Provider</em>'.
+	 * @generated
+	 */
+	AbstractTtnProvider createAbstractTtnProvider();
+
+	/**
 	 * Returns a new object of class '<em>Ttn Sensor</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -51,6 +60,78 @@ public interface TtnSensorSensinactFactory extends EFactory {
 	 * @generated
 	 */
 	SensorData createSensorData();
+
+	/**
+	 * Returns a new object of class '<em>Ttn Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ttn Service</em>'.
+	 * @generated
+	 */
+	TtnService createTtnService();
+
+	/**
+	 * Returns a new object of class '<em>Gateway Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Gateway Data</em>'.
+	 * @generated
+	 */
+	GatewayData createGatewayData();
+
+	/**
+	 * Returns a new object of class '<em>Ttn Noise Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ttn Noise Sensor</em>'.
+	 * @generated
+	 */
+	TtnNoiseSensor createTtnNoiseSensor();
+
+	/**
+	 * Returns a new object of class '<em>Noise Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Noise Data</em>'.
+	 * @generated
+	 */
+	NoiseData createNoiseData();
+
+	/**
+	 * Returns a new object of class '<em>Ttn Temperature Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ttn Temperature Sensor</em>'.
+	 * @generated
+	 */
+	TtnTemperatureSensor createTtnTemperatureSensor();
+
+	/**
+	 * Returns a new object of class '<em>Temperatur Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Temperatur Data</em>'.
+	 * @generated
+	 */
+	TemperaturData createTemperaturData();
+
+	/**
+	 * Returns a new object of class '<em>Ttn Soil Moisture Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Ttn Soil Moisture Sensor</em>'.
+	 * @generated
+	 */
+	TtnSoilMoistureSensor createTtnSoilMoistureSensor();
+
+	/**
+	 * Returns a new object of class '<em>Soil Moisture Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Soil Moisture Data</em>'.
+	 * @generated
+	 */
+	SoilMoistureData createSoilMoistureData();
 
 	/**
 	 * Returns the package supported by this factory.

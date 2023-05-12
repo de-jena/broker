@@ -2,7 +2,7 @@
  */
 package de.jena.model.ttn.impl;
 
-import de.jena.model.ttn.ApplicationIds;
+import de.jena.model.ttn.ApplicationId;
 import de.jena.model.ttn.DataRate;
 import de.jena.model.ttn.EndDeviceIds;
 import de.jena.model.ttn.GatewayIds;
@@ -52,7 +52,7 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass applicationIdsEClass = null;
+	private EClass applicationIdEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -320,8 +320,8 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getApplicationIds() {
-		return applicationIdsEClass;
+	public EClass getApplicationId() {
+		return applicationIdEClass;
 	}
 
 	/**
@@ -330,8 +330,8 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getApplicationIds_ApplicationId() {
-		return (EAttribute)applicationIdsEClass.getEStructuralFeatures().get(0);
+	public EAttribute getApplicationId_ApplicationId() {
+		return (EAttribute)applicationIdEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -958,8 +958,8 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 		createEAttribute(endDeviceIdsEClass, END_DEVICE_IDS__JOIN_EUI);
 		createEAttribute(endDeviceIdsEClass, END_DEVICE_IDS__DEV_ADDR);
 
-		applicationIdsEClass = createEClass(APPLICATION_IDS);
-		createEAttribute(applicationIdsEClass, APPLICATION_IDS__APPLICATION_ID);
+		applicationIdEClass = createEClass(APPLICATION_ID);
+		createEAttribute(applicationIdEClass, APPLICATION_ID__APPLICATION_ID);
 
 		networkIdsEClass = createEClass(NETWORK_IDS);
 		createEAttribute(networkIdsEClass, NETWORK_IDS__NET_ID);
@@ -1070,13 +1070,13 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 
 		initEClass(endDeviceIdsEClass, EndDeviceIds.class, "EndDeviceIds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEndDeviceIds_DeviceId(), ecorePackage.getEString(), "deviceId", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEndDeviceIds_ApplicationIds(), this.getApplicationIds(), null, "applicationIds", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEndDeviceIds_ApplicationIds(), this.getApplicationId(), null, "applicationIds", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndDeviceIds_DevEui(), ecorePackage.getEString(), "devEui", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndDeviceIds_JoinEui(), ecorePackage.getEString(), "joinEui", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEndDeviceIds_DevAddr(), ecorePackage.getEString(), "devAddr", null, 0, 1, EndDeviceIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(applicationIdsEClass, ApplicationIds.class, "ApplicationIds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getApplicationIds_ApplicationId(), ecorePackage.getEString(), "applicationId", null, 0, 1, ApplicationIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(applicationIdEClass, ApplicationId.class, "ApplicationId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getApplicationId_ApplicationId(), ecorePackage.getEString(), "applicationId", null, 0, 1, ApplicationId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkIdsEClass, NetworkIds.class, "NetworkIds", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNetworkIds_NetId(), ecorePackage.getEString(), "netId", null, 0, 1, NetworkIds.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1233,7 +1233,7 @@ public class TTNPackageImpl extends EPackageImpl implements TTNPackage {
 			   "kind", "element"
 		   });
 		addAnnotation
-		  (getApplicationIds_ApplicationId(),
+		  (getApplicationId_ApplicationId(),
 		   source,
 		   new String[] {
 			   "name", "application_id",

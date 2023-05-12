@@ -12,8 +12,6 @@
  */
 package de.jena.model.sensinact.ttnprovider;
 
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-
 import org.eclipse.sensinact.model.core.provider.Provider;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -29,7 +27,6 @@ import org.osgi.annotation.versioning.ProviderType;
  * <ul>
  *   <li>{@link de.jena.model.sensinact.ttnprovider.TtnSensor#isHas_beacon <em>Has beacon</em>}</li>
  *   <li>{@link de.jena.model.sensinact.ttnprovider.TtnSensor#getData <em>Data</em>}</li>
- *   <li>{@link de.jena.model.sensinact.ttnprovider.TtnSensor#getLocation <em>Location</em>}</li>
  * </ul>
  *
  * @see de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage#getTtnSensor()
@@ -81,27 +78,5 @@ public interface TtnSensor extends Provider {
 	 * @generated
 	 */
 	void setData(SensorData value);
-
-	/**
-	 * Returns the value of the '<em><b>Location</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Location</em>' attribute.
-	 * @see #setLocation(GeoJsonObject)
-	 * @see de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage#getTtnSensor_Location()
-	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
-	 * @generated
-	 */
-	GeoJsonObject getLocation();
-
-	/**
-	 * Sets the value of the '{@link de.jena.model.sensinact.ttnprovider.TtnSensor#getLocation <em>Location</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Location</em>' attribute.
-	 * @see #getLocation()
-	 * @generated
-	 */
-	void setLocation(GeoJsonObject value);
 
 } // TtnSensor

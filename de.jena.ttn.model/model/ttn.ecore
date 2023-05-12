@@ -44,7 +44,7 @@
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationIds" eType="#//ApplicationIds"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationIds" eType="#//ApplicationId"
         containment="true">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="application_ids"/>
@@ -70,7 +70,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ApplicationIds">
+  <eClassifiers xsi:type="ecore:EClass" name="ApplicationId">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="applicationId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="name" value="application_id"/>

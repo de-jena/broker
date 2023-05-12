@@ -9,19 +9,53 @@
   <foreignModel>ttn.ecore</foreignModel>
   <genPackages prefix="TtnSensorSensinact" basePackage="de.jena.model.sensinact" resource="XMI"
       disposableProviderFactory="true" literalsInterface="false" ecorePackage="ttn.ecore#/">
+    <genClasses ecoreClass="ttn.ecore#//AbstractTtnProvider">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//AbstractTtnProvider/gateway"/>
+    </genClasses>
     <genClasses ecoreClass="ttn.ecore#//TtnSensor">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnSensor/has_beacon"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnSensor/data"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnSensor/location"/>
     </genClasses>
     <genClasses ecoreClass="ttn.ecore#//SensorData">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SensorData/rawPayload"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SensorData/gateway"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//SensorData/payload"/>
     </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//TtnService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnService/rawPayload"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//GatewayData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//GatewayData/gateway"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//GatewayData/applicationId"/>
+    </genClasses>
     <genClasses ecoreClass="ttn.ecore#//StringToObjectMap">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//StringToObjectMap/key"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//StringToObjectMap/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//TtnNoiseSensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnNoiseSensor/data"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//NoiseData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NoiseData/battery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NoiseData/decible"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NoiseData/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NoiseData/temperatureBoard"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//TtnTemperatureSensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnTemperatureSensor/data"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//TemperaturData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TemperaturData/temperature"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//TtnSoilMoistureSensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnSoilMoistureSensor/data"/>
+    </genClasses>
+    <genClasses ecoreClass="ttn.ecore#//SoilMoistureData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SoilMoistureData/temperature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SoilMoistureData/battery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SoilMoistureData/ph"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SoilMoistureData/water"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//SoilMoistureData/conductivity"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

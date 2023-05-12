@@ -16,4 +16,7 @@
 	org.osgi.service.condition,\
 	de.jena.ttn.sensinact.model,\
 	org.eclipse.sensinact.gateway.core.models.provider,\
-	org.eclipse.sensinact.gateway.core.geo-json
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.osgi.namespace.implementation,\
+	org.apache.felix.eventadmin,\
+	org.osgi.service.event

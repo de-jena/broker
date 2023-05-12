@@ -6,8 +6,8 @@
     complianceLevel="8.0" suppressGenModelAnnotations="false" copyrightFields="false"
     operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>ttn.ecore</foreignModel>
-  <genPackages prefix="TTN" basePackage="de.jena.model"
-      resource="XMI" disposableProviderFactory="true" literalsInterface="false" ecorePackage="ttn.ecore#/">
+  <genPackages prefix="TTN" basePackage="de.jena.model" resource="XMI" disposableProviderFactory="true"
+      literalsInterface="false" ecorePackage="ttn.ecore#/">
     <genClasses ecoreClass="ttn.ecore#//TtnUplinkPayload">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ttn.ecore#//TtnUplinkPayload/endDeviceIds"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//TtnUplinkPayload/correlationIds"/>
@@ -23,8 +23,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/joinEui"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//EndDeviceIds/devAddr"/>
     </genClasses>
-    <genClasses ecoreClass="ttn.ecore#//ApplicationIds">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//ApplicationIds/applicationId"/>
+    <genClasses ecoreClass="ttn.ecore#//ApplicationId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//ApplicationId/applicationId"/>
     </genClasses>
     <genClasses ecoreClass="ttn.ecore#//NetworkIds">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ttn.ecore#//NetworkIds/netId"/>

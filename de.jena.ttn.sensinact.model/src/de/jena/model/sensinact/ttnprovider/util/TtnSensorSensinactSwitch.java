@@ -81,6 +81,13 @@ public class TtnSensorSensinactSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case TtnSensorSensinactPackage.ABSTRACT_TTN_PROVIDER: {
+				AbstractTtnProvider abstractTtnProvider = (AbstractTtnProvider)theEObject;
+				T result = caseAbstractTtnProvider(abstractTtnProvider);
+				if (result == null) result = caseProvider(abstractTtnProvider);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TtnSensorSensinactPackage.TTN_SENSOR: {
 				TtnSensor ttnSensor = (TtnSensor)theEObject;
 				T result = caseTtnSensor(ttnSensor);
@@ -95,14 +102,91 @@ public class TtnSensorSensinactSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TtnSensorSensinactPackage.TTN_SERVICE: {
+				TtnService ttnService = (TtnService)theEObject;
+				T result = caseTtnService(ttnService);
+				if (result == null) result = caseService(ttnService);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.GATEWAY_DATA: {
+				GatewayData gatewayData = (GatewayData)theEObject;
+				T result = caseGatewayData(gatewayData);
+				if (result == null) result = caseService(gatewayData);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TtnSensorSensinactPackage.STRING_TO_OBJECT_MAP: {
 				@SuppressWarnings("unchecked") Map.Entry<String, Object> stringToObjectMap = (Map.Entry<String, Object>)theEObject;
 				T result = caseStringToObjectMap(stringToObjectMap);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TtnSensorSensinactPackage.TTN_NOISE_SENSOR: {
+				TtnNoiseSensor ttnNoiseSensor = (TtnNoiseSensor)theEObject;
+				T result = caseTtnNoiseSensor(ttnNoiseSensor);
+				if (result == null) result = caseAbstractTtnProvider(ttnNoiseSensor);
+				if (result == null) result = caseProvider(ttnNoiseSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.NOISE_DATA: {
+				NoiseData noiseData = (NoiseData)theEObject;
+				T result = caseNoiseData(noiseData);
+				if (result == null) result = caseTtnService(noiseData);
+				if (result == null) result = caseService(noiseData);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.TTN_TEMPERATURE_SENSOR: {
+				TtnTemperatureSensor ttnTemperatureSensor = (TtnTemperatureSensor)theEObject;
+				T result = caseTtnTemperatureSensor(ttnTemperatureSensor);
+				if (result == null) result = caseAbstractTtnProvider(ttnTemperatureSensor);
+				if (result == null) result = caseProvider(ttnTemperatureSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.TEMPERATUR_DATA: {
+				TemperaturData temperaturData = (TemperaturData)theEObject;
+				T result = caseTemperaturData(temperaturData);
+				if (result == null) result = caseTtnService(temperaturData);
+				if (result == null) result = caseService(temperaturData);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.TTN_SOIL_MOISTURE_SENSOR: {
+				TtnSoilMoistureSensor ttnSoilMoistureSensor = (TtnSoilMoistureSensor)theEObject;
+				T result = caseTtnSoilMoistureSensor(ttnSoilMoistureSensor);
+				if (result == null) result = caseAbstractTtnProvider(ttnSoilMoistureSensor);
+				if (result == null) result = caseProvider(ttnSoilMoistureSensor);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TtnSensorSensinactPackage.SOIL_MOISTURE_DATA: {
+				SoilMoistureData soilMoistureData = (SoilMoistureData)theEObject;
+				T result = caseSoilMoistureData(soilMoistureData);
+				if (result == null) result = caseTtnService(soilMoistureData);
+				if (result == null) result = caseService(soilMoistureData);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Ttn Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Ttn Provider</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractTtnProvider(AbstractTtnProvider object) {
+		return null;
 	}
 
 	/**
@@ -136,6 +220,36 @@ public class TtnSensorSensinactSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ttn Service</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ttn Service</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTtnService(TtnService object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Gateway Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Gateway Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGatewayData(GatewayData object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>String To Object Map</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -147,6 +261,96 @@ public class TtnSensorSensinactSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStringToObjectMap(Map.Entry<String, Object> object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ttn Noise Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ttn Noise Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTtnNoiseSensor(TtnNoiseSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Noise Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Noise Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNoiseData(NoiseData object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ttn Temperature Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ttn Temperature Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTtnTemperatureSensor(TtnTemperatureSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temperatur Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temperatur Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemperaturData(TemperaturData object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Ttn Soil Moisture Sensor</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Ttn Soil Moisture Sensor</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTtnSoilMoistureSensor(TtnSoilMoistureSensor object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Soil Moisture Data</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Soil Moisture Data</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSoilMoistureData(SoilMoistureData object) {
 		return null;
 	}
 
