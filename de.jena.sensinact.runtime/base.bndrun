@@ -185,8 +185,7 @@
 	bnd.identity;id='de.jena.icesensor.sensinact.model',\
 	bnd.identity;id='de.jena.ttn.sensinact.model',\
 	bnd.identity;id='de.jena.sensinact.web.client',\
-	bnd.identity;id='de.jena.ilsa.sensinact',\
-	bnd.identity;id='de.jena.ilsa.sensinact.model'
+	bnd.identity;id='de.jena.ilsa.sensinact'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
