@@ -365,6 +365,15 @@ public interface IcesensoreSensinactPackage extends org.eclipse.emf.ecore.EPacka
 	int SENSOR_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 10;
 
 	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DATA___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.SERVICE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
 	 * The number of operations of the '<em>Sensor Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

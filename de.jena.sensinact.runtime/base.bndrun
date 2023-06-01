@@ -153,7 +153,6 @@
 	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory;version='[0.0.2,0.0.3)',\
 	de.jena.ilsa.sensinact;version=snapshot,\
-	de.jena.ilsa.sensinact.model;version=snapshot,\
 	org.apache.felix.http.bridge;version='[4.1.2,4.1.3)'
 	
 
