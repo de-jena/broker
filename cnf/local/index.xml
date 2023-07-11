@@ -1,79 +1,296 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1680000044989">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1689076874468">
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="license" value="Eclipse Public License 1.0"/>
-      <attribute name="copyright" value="Data In Motion GmbH all rights reserved"/>
-      <attribute name="osgi.identity" value="de.dim.trafficos.simulator.impl"/>
+      <attribute name="osgi.identity" value="de.jena.udp.trafficos.publictransport.api.model"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.1.SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
+      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-1520311600,-761089258,881511081,-1993091330,812449097,1694975858,-275679135,-335402064,-633276745,-1842365445,1003702741,-1202792239,468391850,1371340312,1425955268,1656160596,-2045966994,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport_api,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
+      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api.impl"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="126231657,198051593,2020938930,1603221025,1003363515,1326160247,2080770282,277022808,1108413844,70481070,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport_api,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.ecore,org.eclipse.emf.ecore.util"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
+      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api.util"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="848602605,1129648230,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.simulator.impl"/>
+      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.publictransport.api.model"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
-      <attribute name="osgi.wiring.host" value="de.dim.trafficos.simulator.impl"/>
+      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.publictransport.api.model"/>
+    </capability>
+    <capability namespace="de.jena.udp.model.trafficos.publictransport_api"/>
+    <capability namespace="org.eclipse.emf.ecore.generated_package">
+      <attribute name="class" value="de.jena.udp.model.trafficos.publictransport_api.TOSPublicTransportApiPackage"/>
+      <attribute name="uri" value="http://jena.de/udp/trafficos/publictransport-api/1.0"/>
+      <attribute name="genModel" value="/model/tos-publictransport-api.genmodel"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="49748" type="Long"/>
+      <attribute name="size" value="122485" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
-      <attribute name="osgi.content" value="72CC0CA0E31026E7F3EFAC49B58236DF9DFBF95AA8D212F82B269B9407597BE9"/>
+      <attribute name="url" value="de.jena.udp.trafficos.publictransport.api.model/de.jena.udp.trafficos.publictransport.api.model-1.0.0.jar"/>
+      <attribute name="osgi.content" value="58C6B7131BA6EAA42D263095182CB6329EB4A346F2EA4369A559D48174CB36E1"/>
     </capability>
     <capability namespace="osgi.service">
-      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
-      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.IntersectionService" type="List&lt;String&gt;"/>
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.publictransport_api.TOSPublicTransportApiFactory, org.eclipse.emf.ecore.EFactory" type="List&lt;String&gt;"/>
     </capability>
     <capability namespace="osgi.service">
-      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
-      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.SignalPlanService" type="List&lt;String&gt;"/>
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.publictransport_api.TOSPublicTransportApiPackage, org.eclipse.emf.ecore.EPackage" type="List&lt;String&gt;"/>
     </capability>
     <capability namespace="osgi.service">
-      <directive name="uses" value="org.osgi.service.event"/>
-      <attribute name="objectClass" value="org.osgi.service.event.EventHandler" type="List&lt;String&gt;"/>
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="org.gecko.emf.osgi.EPackageConfigurator" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.osgi.service.condition"/>
+      <attribute name="objectClass" value="org.osgi.service.condition.Condition" type="List&lt;String&gt;"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.model.device)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="de.dim.trafficos.model.device"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.simulator.api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
-      <attribute name="osgi.wiring.package" value="de.dim.trafficos.simulator.api"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport_api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.common.util)"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport_api.impl)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify.impl)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.util)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
       <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore)"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
       <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore.util)"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.impl)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.plugin)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.plugin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.resource)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.util)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
       <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository)(version&gt;=7.1.0)(!(version&gt;=8.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.osgi)(version&gt;=3.0.0)(!(version&gt;=3.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.osgi"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository.query)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository.query"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.9.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.event)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.osgi.service.event"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.condition)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.condition"/>
     </requirement>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
     </requirement>
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
     </requirement>
     <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=org.gecko.emf.repository.EMFRepository)"/>
+      <directive name="filter" value="(objectClass=org.gecko.emf.osgi.ResourceSetFactory)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="de.jena.udp.trafficos.publictransport.model"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-18121604,-215032437,-1211949178,1599615807,1975766819,-1833433326,-1749061230,1313903994,1587247734,469850789,822182783,-927061660,-1924471770,-219401007,-1814494475,1809748368,-929342862,-1924437154,1766759405,1341157764,398201566,-488533880,-1897038017,397991298,1425955268,682811582,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.common,de.jena.udp.model.trafficos.common.impl,de.jena.udp.model.trafficos.publictransport,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport.impl"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-566102453,-627129658,1458578870,821843557,-2128237148,1735604070,-2057946479,690443957,-37247054,-1481133139,397862340,2134434504,1370529279,-1387453758,-556062722,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.common,de.jena.udp.model.trafficos.publictransport,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.ecore,org.eclipse.emf.ecore.util"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport.util"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-175342781,-1811244100,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.publictransport.model"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.publictransport.model"/>
+    </capability>
+    <capability namespace="de.jena.udp.model.trafficos.publictransport"/>
+    <capability namespace="org.eclipse.emf.ecore.generated_package">
+      <attribute name="class" value="de.jena.udp.model.trafficos.publictransport.TOSPublicTransportPackage"/>
+      <attribute name="uri" value="http://jena.de/udp/trafficos/publictransport/1.0"/>
+      <attribute name="genModel" value="/model/tos-publictransport.genmodel"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="167016" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.jena.udp.trafficos.publictransport.model/de.jena.udp.trafficos.publictransport.model-1.1.0.jar"/>
+      <attribute name="osgi.content" value="15434DDBB70A116B225D281170E3F9DFF1D0A79F235AE47F5568F1529268AC9D"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.publictransport.TOSPublicTransportFactory, org.eclipse.emf.ecore.EFactory" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.publictransport.TOSPublicTransportPackage, org.eclipse.emf.ecore.EPackage" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="org.gecko.emf.osgi.EPackageConfigurator" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.osgi.service.condition"/>
+      <attribute name="objectClass" value="org.osgi.service.condition.Condition" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common.impl)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport.impl)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify.impl)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.util)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.impl)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.plugin)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.plugin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.resource)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.util)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.osgi)(version&gt;=3.0.0)(!(version&gt;=3.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.osgi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.9.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.condition)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.condition"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.osgi.ResourceSetFactory)"/>
       <directive name="effective" value="active"/>
     </requirement>
   </resource>
@@ -161,6 +378,819 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.api.mmt"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="description" value="Model2Model transformation from publictransport to publictransport-api"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.api.mmt"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.api.mmt"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="9307" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.api.mmt/de.dim.trafficos.publictransport.api.mmt-1.0.0.jar"/>
+      <attribute name="osgi.content" value="63ADCAAF38EF0C574BAD8F6590786BA4071DD69A80145C27B248730B0E81AC6E"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport,de.jena.udp.model.trafficos.publictransport_api"/>
+      <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="821843912,-2008829872,-1672109137,475860480,2114973192,1536952950,5809421,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
+      <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.gtfs"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="1813941520,-623233424,-1852074779,1891003702,-966679453,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
+      <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-1880890168,-1439812407,-2106485480,-1422820848,-1521787349,-393481630,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
+      <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.search"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-573667993,234303224,1797815022,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.apis"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.apis"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="39336" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.apis/de.dim.trafficos.publictransport.apis-1.0.0.jar"/>
+      <attribute name="osgi.content" value="1AF1AC44284A5CFCE2F4E87F88169B6F8C87D5D5667B39C56AA70F805C62FFB7"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport_api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.config"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.config"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.config"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="9199" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.config/de.dim.trafficos.publictransport.config-1.0.0.jar"/>
+      <attribute name="osgi.content" value="73C9A5CC6E1FE0514D00A40D9BA32922084F25742F382AA196410659355EBF50"/>
+    </capability>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.configurator)"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.value.converter"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.202307111201-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.202307111201-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.value.converter"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.202307111201-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.value.converter"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="15596" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.value.converter/de.dim.trafficos.publictransport.value.converter-1.0.0.jar"/>
+      <attribute name="osgi.content" value="1BAA611118174BBC462EC832D362E9C404D95947AE1DA7CB78AF2231107338D2"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.gecko.emf.mongo"/>
+      <attribute name="objectClass" value="org.gecko.emf.mongo.ValueConverter" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time.format)"/>
+      <attribute name="osgi.wiring.package" value="java.time.format"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.mongo)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.mongo"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.api.component"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.api.component"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.api.component"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="16592" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.api.component/de.dim.trafficos.publictransport.api.component-1.0.0.jar"/>
+      <attribute name="osgi.content" value="59E12FB3AF595C2CBC357E9659A785C27383534F5B050640BD1875DFAE7F1A7C"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTApiScheduleService" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis.search)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.search"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport_api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.util)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.core.pool)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.core.pool"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.qvt.osgi.api)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.qvt.osgi.api"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTStopSearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTTimetableEntrySearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTVehicleScheduleSearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Apache License 2.0"/>
+      <attribute name="copyright" value="Data In Motion Consuling GmbH - All rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.component"/>
+      <attribute name="documentation" value="https://github.com/de-jena/broker"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.component"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0.202307111058-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.component"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="100177" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.publictransport.component/de.dim.trafficos.publictransport.component-1.0.0.jar"/>
+      <attribute name="osgi.content" value="464B00C0CD5C4CD44A8C0D20457540B68CE0FFC32962C79A3726BFB1E7950A25"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTRouteService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTStopService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTTimetableEntryService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTUpdateService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTVehicleScheduleService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTVehicleService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.index.PTRouteIndexService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.index.PTStopIndexService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.index.PTTimetableEntryIndexService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.index.PTVehicleIndexService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.index"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.index.PTVehicleScheduleIndexService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.search.PTStopSearchService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.search.PTTimetableEntrySearchService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.search.PTVehicleScheduleSearchService" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis.index)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.index"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis.search)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.search"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time.format)"/>
+      <attribute name="osgi.wiring.package" value="java.time.format"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time.temporal)"/>
+      <attribute name="osgi.wiring.package" value="java.time.temporal"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.lucene.document)(version&gt;=9.6.0)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.lucene.document"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.lucene.index)(version&gt;=9.6.0)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.lucene.index"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.lucene.search)(version&gt;=9.6.0)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.lucene.search"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.util)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.pushstream)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.pushstream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository)(version&gt;=7.2.0)(!(version&gt;=8.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository.query)(version&gt;=4.0.0)(!(version&gt;=5.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository.query"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.search.document)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.search.document"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.search)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.search"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.search.document)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.search.document"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.search.document.context)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.search.document.context"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.util.pushstreams)(version&gt;=4.0.0)(!(version&gt;=5.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.util.pushstreams"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.function)(version&gt;=1.2.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.promise)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.promise"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.util.pushstream)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.util.pushstream"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.PTVehicleScheduleService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTRouteIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTStopIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTTimetableEntryIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTUpdateIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTVehicleIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.index.PTVehicleScheduleIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTStopSearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTTimetableEntrySearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.jena.udp.model.trafficos.publictransport.TOSPublicTransportPackage)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.apache.lucene.search.IndexSearcher)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.repository.EMFRepository)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.repository.query.QueryRepository)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.search.document.LuceneIndexService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Eclipse Public License 1.0"/>
+      <attribute name="copyright" value="Data In Motion GmbH all rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.simulator.impl"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.1.SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.simulator.impl"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.simulator.impl"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="49748" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
+      <attribute name="osgi.content" value="72CC0CA0E31026E7F3EFAC49B58236DF9DFBF95AA8D212F82B269B9407597BE9"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
+      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.IntersectionService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
+      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.SignalPlanService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.osgi.service.event"/>
+      <attribute name="objectClass" value="org.osgi.service.event.EventHandler" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.model.device)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.model.device"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.simulator.api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.simulator.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.common.util)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore.util)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository)(version&gt;=7.1.0)(!(version&gt;=8.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository.query)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository.query"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.event)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.event"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.repository.EMFRepository)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="de.jena.udp.trafficos.common.model"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="1371658438,-539522893,784540585,1616413384,1631718343,269050681,-610998975,257521078,-575099626,1965687765,-370145309,-1921645279,-336538743,713731245,812449097,-999647937,855823943,1140644227,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.impl"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="2015288326,-1563374221,199884137,-1486047992,-1772378489,-1873726719,901677302,-923596714,105703317,-516541277,719282913,419216713,198051593,-1380765433,-549374397,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.resource,org.eclipse.emf.ecore.resource.impl,org.eclipse.emf.ecore.util,org.eclipse.emf.ecore.xmi.impl"/>
+      <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
+      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.util"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="1508051678,-741502183,1662057521,-1796475305,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.common.model"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.common.model"/>
+    </capability>
+    <capability namespace="de.jena.udp.model.trafficos.common"/>
+    <capability namespace="emf.configurator">
+      <attribute name="emf.configurator.name" value="common"/>
+      <attribute name="emf.configurator.contentType" value="" type="List&lt;String&gt;"/>
+      <attribute name="emf.configurator.fileExtension" value="toscommon" type="List&lt;String&gt;"/>
+      <attribute name="emf.configurator" value="resourceSet"/>
+    </capability>
+    <capability namespace="org.eclipse.emf.ecore.generated_package">
+      <attribute name="class" value="de.jena.udp.model.trafficos.common.TOSCommonPackage"/>
+      <attribute name="uri" value="http://jena.de/udp/trafficos/common/1.0"/>
+      <attribute name="genModel" value="/model/tos-common.genmodel"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="119778" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.jena.udp.trafficos.common.model/de.jena.udp.trafficos.common.model-1.1.0.jar"/>
+      <attribute name="osgi.content" value="98B342B2C526A89AD02FA188416764FB70E51AB37D095BFF820EA5D28E71931D"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore.resource"/>
+      <attribute name="objectClass" value="org.eclipse.emf.ecore.resource.Resource$Factory" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.common.TOSCommonFactory, org.eclipse.emf.ecore.EFactory" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="de.jena.udp.model.trafficos.common.TOSCommonPackage, org.eclipse.emf.ecore.EPackage" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.eclipse.emf.ecore"/>
+      <attribute name="objectClass" value="org.gecko.emf.osgi.EPackageConfigurator" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.osgi.service.condition"/>
+      <attribute name="objectClass" value="org.osgi.service.condition.Condition" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common.impl)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.common.util)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time.format)"/>
+      <attribute name="osgi.wiring.package" value="java.time.format"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.notify.impl)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.notify.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.common.util)(version&gt;=2.28.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.impl)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.plugin)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.plugin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.resource)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.resource.impl)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.resource.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.util)(version&gt;=2.33.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.emf.ecore.xmi.impl)(version&gt;=2.18.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.xmi.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.osgi)(version&gt;=3.0.0)(!(version&gt;=3.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.osgi"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.framework)(version&gt;=1.9.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.framework"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.condition)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.condition"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=17))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.jena.udp.model.trafficos.common.TOSCommonPackage)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.osgi.ResourceSetFactory)"/>
+      <directive name="effective" value="active"/>
     </requirement>
   </resource>
 </repository>
