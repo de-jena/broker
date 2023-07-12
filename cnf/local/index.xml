@@ -1,41 +1,41 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1689148941796">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1689169699254">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="de.jena.udp.trafficos.publictransport.api.model"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
-      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-1520311600,-761089258,881511081,-1993091330,812449097,1694975858,-275679135,-335402064,-633276745,-1842365445,1003702741,-1202792239,468391850,1371340312,1425955268,1656160596,-2045966994,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="-1520311600,-761089258,881511081,-1993091330,812449097,1694975858,-275679135,-335402064,-633276745,-1842365445,1003702741,-1202792239,468391850,697532299,1371340312,1425955268,1656160596,-2045966994,-1754979095,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport_api,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
-      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api.impl"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="126231657,198051593,2020938930,1603221025,1003363515,1326160247,2080770282,277022808,1108413844,70481070,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="126231657,198051593,2020938930,1603221025,1003363515,1326160247,2080770282,763729995,277022808,1108413844,70481070,1697210025,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport_api,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.ecore,org.eclipse.emf.ecore.util"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.api.model"/>
-      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport_api.util"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="848602605,1129648230,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.publictransport.api.model"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0.202307101339-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.publictransport.api.model"/>
     </capability>
     <capability namespace="de.jena.udp.model.trafficos.publictransport_api"/>
@@ -45,10 +45,10 @@
       <attribute name="genModel" value="/model/tos-publictransport-api.genmodel"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="122485" type="Long"/>
+      <attribute name="size" value="136806" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.jena.udp.trafficos.publictransport.api.model/de.jena.udp.trafficos.publictransport.api.model-1.0.0.jar"/>
-      <attribute name="osgi.content" value="58C6B7131BA6EAA42D263095182CB6329EB4A346F2EA4369A559D48174CB36E1"/>
+      <attribute name="osgi.content" value="E9466B8BB1575D58D948D85A98B96CB41F11363A6DABB0EEBD917F6022FB1E83"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="org.eclipse.emf.ecore"/>
@@ -149,38 +149,38 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="de.jena.udp.trafficos.publictransport.model"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-18121604,-215032437,-1211949178,1599615807,1975766819,-1833433326,-1749061230,1313903994,1587247734,469850789,822182783,-927061660,-1924471770,-219401007,-1814494475,1809748368,-929342862,-1924437154,1766759405,1341157764,398201566,-488533880,-1897038017,397991298,1425955268,682811582,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="-18121604,-215032437,-1211949178,1599615807,1975766819,-1833433326,-1749061230,1313903994,1587247734,469850789,822182783,-927061660,-1924471770,-219401007,1814156431,-1814494475,1809748368,-929342862,-1924437154,1766759405,1341157764,398201566,-488533880,-1897038017,397991298,1425955268,682811582,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.common,de.jena.udp.model.trafficos.common.impl,de.jena.udp.model.trafficos.publictransport,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport.impl"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-566102453,-627129658,1458578870,821843557,-2128237148,1735604070,-2057946479,690443957,-37247054,-1481133139,397862340,2134434504,1370529279,-1387453758,-556062722,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="-566102453,-627129658,1458578870,821843557,-2128237148,1735604070,-2057946479,656001871,690443957,-37247054,-1481133139,397862340,2134434504,1370529279,-1387453758,-556062722,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.common,de.jena.udp.model.trafficos.publictransport,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.ecore,org.eclipse.emf.ecore.util"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.publictransport.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.publictransport.util"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="-175342781,-1811244100,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.publictransport.model"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.0.202307101140-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307121005-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.publictransport.model"/>
     </capability>
     <capability namespace="de.jena.udp.model.trafficos.publictransport"/>
@@ -190,10 +190,10 @@
       <attribute name="genModel" value="/model/tos-publictransport.genmodel"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="167016" type="Long"/>
+      <attribute name="size" value="178698" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.jena.udp.trafficos.publictransport.model/de.jena.udp.trafficos.publictransport.model-1.1.0.jar"/>
-      <attribute name="osgi.content" value="15434DDBB70A116B225D281170E3F9DFF1D0A79F235AE47F5568F1529268AC9D"/>
+      <attribute name="osgi.content" value="F4B800AFAC9173ABF89DE83AA5848699EF8E56A147989B4CB15C76F17E621134"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="org.eclipse.emf.ecore"/>
@@ -388,21 +388,21 @@
       <attribute name="documentation" value="https://github.com/de-jena/broker"/>
       <attribute name="description" value="Model2Model transformation from publictransport to publictransport-api"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.api.mmt"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0.202307110714-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121249-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.api.mmt"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="9307" type="Long"/>
+      <attribute name="size" value="9661" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.dim.trafficos.publictransport.api.mmt/de.dim.trafficos.publictransport.api.mmt-1.0.0.jar"/>
-      <attribute name="osgi.content" value="63ADCAAF38EF0C574BAD8F6590786BA4071DD69A80145C27B248730B0E81AC6E"/>
+      <attribute name="osgi.content" value="3E0A70844EDC75190772E2C542FCD71A4077A1FC3E360049EAA1AFF0DAF6496C"/>
     </capability>
   </resource>
   <resource>
@@ -412,20 +412,20 @@
       <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.apis"/>
       <attribute name="documentation" value="https://github.com/de-jena/broker"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport,de.jena.udp.model.trafficos.publictransport_api"/>
       <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="821843912,-2008829872,-1672109137,475860480,2114973192,1536952950,5809421,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="821843912,1812699094,-2008829872,-1672109137,475860480,2114973192,1536952950,5809421,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
       <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.gtfs"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="1813941520,-623233424,-1852074779,1891003702,-966679453,-1923478059" type="List&lt;Long&gt;"/>
@@ -433,7 +433,7 @@
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
       <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.index"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="-1880890168,-1439812407,-2106485480,-1422820848,-1521787349,-393481630,-1923478059" type="List&lt;Long&gt;"/>
@@ -441,24 +441,24 @@
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.publictransport"/>
       <attribute name="bundle-symbolic-name" value="de.dim.trafficos.publictransport.apis"/>
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis.search"/>
       <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-573667993,234303224,1797815022,-1923478059" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="-573667993,234303224,-46929664,1797815022,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.apis"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0.202307111056-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.apis"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="39336" type="Long"/>
+      <attribute name="size" value="41786" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.dim.trafficos.publictransport.apis/de.dim.trafficos.publictransport.apis-1.0.0.jar"/>
-      <attribute name="osgi.content" value="1AF1AC44284A5CFCE2F4E87F88169B6F8C87D5D5667B39C56AA70F805C62FFB7"/>
+      <attribute name="osgi.content" value="E699E5B4054404E8E52780238B60AA491320E612B601D18B03D22D1C06A138FF"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=de.jena.udp.model.trafficos.publictransport)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
@@ -572,28 +572,32 @@
       <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.api.component"/>
       <attribute name="documentation" value="https://github.com/de-jena/broker"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0.202307120755-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307121322-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0.202307120755-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121322-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.api.component"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0.202307120755-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121322-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.api.component"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="17342" type="Long"/>
+      <attribute name="size" value="22938" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.dim.trafficos.publictransport.api.component/de.dim.trafficos.publictransport.api.component-1.0.0.jar"/>
-      <attribute name="osgi.content" value="379B5836969220ED7D7F27047A9451F7695145390A72DD790F32B9D4FABBEFD1"/>
+      <attribute name="osgi.content" value="46B293180B72320F6F656AE0E9CABD2E7C19773056720C2944900FD1C0569C63"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
       <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTApiScheduleService" type="List&lt;String&gt;"/>
     </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.PTApiUpdateService" type="List&lt;String&gt;"/>
+    </capability>
     <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.publictransport.apis)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
       <attribute name="osgi.wiring.package" value="de.dim.trafficos.publictransport.apis"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
@@ -659,11 +663,19 @@
       <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
     </requirement>
     <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.PTApiScheduleService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
       <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTStopSearchService)"/>
       <directive name="effective" value="active"/>
     </requirement>
     <requirement namespace="osgi.service">
       <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTTimetableEntrySearchService)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=de.dim.trafficos.publictransport.apis.search.PTUpdateSearchService)"/>
       <directive name="effective" value="active"/>
     </requirement>
     <requirement namespace="osgi.service">
@@ -682,21 +694,21 @@
       <attribute name="osgi.identity" value="de.dim.trafficos.publictransport.component"/>
       <attribute name="documentation" value="https://github.com/de-jena/broker"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0.202307120701-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0.202307120701-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.publictransport.component"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0.202307120701-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.0.0.202307121315-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.dim.trafficos.publictransport.component"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="107871" type="Long"/>
+      <attribute name="size" value="112734" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.dim.trafficos.publictransport.component/de.dim.trafficos.publictransport.component-1.0.0.jar"/>
-      <attribute name="osgi.content" value="8FC171FD6140EC49E47DD44E94525AC4BA381313BE7A8F75DF4BA396CDC1CDB0"/>
+      <attribute name="osgi.content" value="AD13344E44E0A1187A69397EB6D2A3977C8E2C88F26349C4D0D5E4B5F2E04FC6"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="de.dim.trafficos.publictransport.apis"/>
@@ -753,6 +765,10 @@
     <capability namespace="osgi.service">
       <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
       <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.search.PTTimetableEntrySearchService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
+      <attribute name="objectClass" value="de.dim.trafficos.publictransport.apis.search.PTUpdateSearchService" type="List&lt;String&gt;"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="de.dim.trafficos.publictransport.apis.search"/>
@@ -1030,12 +1046,12 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="de.jena.udp.trafficos.common.model"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="org.eclipse.emf.common.util,org.eclipse.emf.ecore"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="1371658438,-539522893,784540585,1616413384,1631718343,269050681,-610998975,257521078,-575099626,1965687765,-370145309,-1921645279,-336538743,713731245,812449097,-999647937,855823943,1140644227,-1923478059" type="List&lt;Long&gt;"/>
@@ -1043,7 +1059,7 @@
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.notify,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.impl"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.impl"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="2015288326,-1563374221,199884137,-1486047992,-1772378489,-1873726719,901677302,-923596714,105703317,-516541277,719282913,419216713,198051593,-1380765433,-549374397,-1923478059" type="List&lt;Long&gt;"/>
@@ -1051,17 +1067,17 @@
     <capability namespace="osgi.wiring.package">
       <directive name="uses" value="de.jena.udp.model.trafficos.common,org.eclipse.emf.common.notify,org.eclipse.emf.common.notify.impl,org.eclipse.emf.common.util,org.eclipse.emf.ecore,org.eclipse.emf.ecore.resource,org.eclipse.emf.ecore.resource.impl,org.eclipse.emf.ecore.util,org.eclipse.emf.ecore.xmi.impl"/>
       <attribute name="bundle-symbolic-name" value="de.jena.udp.trafficos.common.model"/>
-      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.package" value="de.jena.udp.model.trafficos.common.util"/>
       <attribute name="version" value="1.0.0" type="Version"/>
       <attribute name="bnd.hashes" value="1508051678,-741502183,1662057521,-1796475305,-1923478059" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.bundle" value="de.jena.udp.trafficos.common.model"/>
     </capability>
     <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.0.202307101139-SNAPSHOT" type="Version"/>
+      <attribute name="bundle-version" value="1.1.0.202307120701-SNAPSHOT" type="Version"/>
       <attribute name="osgi.wiring.host" value="de.jena.udp.trafficos.common.model"/>
     </capability>
     <capability namespace="de.jena.udp.model.trafficos.common"/>
@@ -1077,10 +1093,10 @@
       <attribute name="genModel" value="/model/tos-common.genmodel"/>
     </capability>
     <capability namespace="osgi.content">
-      <attribute name="size" value="119778" type="Long"/>
+      <attribute name="size" value="119779" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
       <attribute name="url" value="de.jena.udp.trafficos.common.model/de.jena.udp.trafficos.common.model-1.1.0.jar"/>
-      <attribute name="osgi.content" value="98B342B2C526A89AD02FA188416764FB70E51AB37D095BFF820EA5D28E71931D"/>
+      <attribute name="osgi.content" value="9620B72E8D1762A2B923CE2F6F14F5B0032D5AE455753632FBD51B45FB307994"/>
     </capability>
     <capability namespace="osgi.service">
       <directive name="uses" value="org.eclipse.emf.ecore.resource"/>
