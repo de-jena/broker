@@ -12,7 +12,10 @@
 package de.jena.publictransport.rest;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -79,6 +82,8 @@ public class PTScheduleResource {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
 		LocalTime t1 = LocalTime.parse(startTime, TIME_FORMATTER);
 		LocalTime t2 = LocalTime.parse(endTime, TIME_FORMATTER);
+		t1 = adjustTimeToGermanZone(date, t1);
+		t2 = adjustTimeToGermanZone(date, t2);
 		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndTime(date, t1, t2);
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
@@ -105,6 +110,15 @@ public class PTScheduleResource {
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
 		return Response.ok(response).build();
+	}
+	
+	private LocalTime adjustTimeToGermanZone(LocalDate day, LocalTime time) {
+		if(time == null) return null;
+		LocalDateTime localDateTime = LocalDateTime.of(day, time);
+		ZoneId utcZone = ZoneId.of("UTC"); // request time zone
+		ZoneOffset currentOffsetForUTCZone = utcZone.getRules().getOffset(localDateTime);
+		LocalTime germanTime = LocalTime.ofInstant(localDateTime.toInstant(currentOffsetForUTCZone), ZoneId.of("Europe/Berlin"));
+		return germanTime;
 	}
 
 }
