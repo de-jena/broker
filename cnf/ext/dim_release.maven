@@ -37,3 +37,8 @@ org.geckoprojects.emfaddons:org.gecko.qvt.osgi.component:1.0.6
 
 org.gecko.core:org.gecko.core.pool:1.1.0
 
+org.gecko.addons:org.gecko.util.pushstream:6.0.0
+org.gecko.addons:org.gecko.util.common:2.0.0
+
+org.mongodb:mongo-java-driver:3.9.1
+org.geckoprojects.mongo:org.gecko.mongo.osgi.component:6.0.0

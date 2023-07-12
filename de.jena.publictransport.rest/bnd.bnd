@@ -1,0 +1,15 @@
+-library: enable-emf
+
+-buildpath: \
+	org.osgi.service.jakartars,\
+	org.osgi.service.servlet,\
+	jakarta.ws.rs-api,\
+	org.gecko.emf.rest;version=latest,\
+	de.dim.trafficos.publictransport.apis,\
+	de.dim.trafficos.publictransport.api.component,\
+	de.dim.trafficos.publictransport.component,\
+	de.jena.udp.trafficos.publictransport.api.model,\
+	de.jena.udp.trafficos.publictransport.model
+
+Bundle-Version: 1.0.0.SNAPSHOT
+Private-Package: de.jena.publictransport.rest

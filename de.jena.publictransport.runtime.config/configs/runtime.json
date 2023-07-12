@@ -1,0 +1,17 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:symbolicname": "de.jena.publictransport.runtime",
+	":configurator:version": "0.0.0",
+	"org.apache.felix.http~ptHttp": {
+		"org.osgi.service.http.port": "53000",
+		"org.osgi.service.http.host": "0.0.0.0",
+		"org.apache.felix.http.context_path": "publictransport/",
+		"org.apache.felix.http.name": "ptHttp",
+		"org.apache.felix.http.runtime.init.id": "ptHttp"
+	},
+	"JakartarsServletWhiteboardRuntimeComponent~ptRest": {
+		"jersey.jakartars.whiteboard.name": "ptRest",
+		"jersey.context.path": "rest",
+		"osgi.http.whiteboard.target": "(id=ptHttp)"
+	}
+}
