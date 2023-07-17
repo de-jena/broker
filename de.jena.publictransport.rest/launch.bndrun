@@ -102,7 +102,11 @@
 	org.osgi.util.promise;version='[1.3.0,1.3.1)',\
 	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
 	slf4j.api;version='[1.7.25,1.7.26)',\
-	slf4j.simple;version='[1.7.25,1.7.26)'
+	slf4j.simple;version='[1.7.25,1.7.26)',\
+	de.dim.trafficos.gtfs.component;version='[1.0.0,1.0.1)',\
+	de.dim.trafficos.gtfs.config;version='[1.0.0,1.0.1)',\
+	org.apache.httpcomponents.httpclient;version='[4.5.14,4.5.15)',\
+	org.apache.httpcomponents.httpcore;version='[4.4.16,4.4.17)'
 	
 -runblacklist: \
 	bnd.identity;id='org.gecko.emf.osgi.api';version='[4,5)',\
@@ -121,6 +125,8 @@
 	bnd.identity;id='org.gecko.emf.mongo.component',\
 	bnd.identity;id='org.gecko.emf.mongo.pushstream',\
 	bnd.identity;id='org.mongodb.mongo-java-driver',\
-	bnd.identity;id='slf4j.simple'
+	bnd.identity;id='slf4j.simple',\
+	bnd.identity;id='de.dim.trafficos.gtfs.config',\
+	bnd.identity;id='de.dim.trafficos.gtfs.component'
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runee: JavaSE-17

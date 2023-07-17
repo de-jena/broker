@@ -178,7 +178,11 @@
 	org.osgi.service.http.whiteboard;version='[1.1.0,1.1.1)',\
 	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
 	org.osgi.service.servlet;version='[2.0.0,2.0.1)',\
-	org.osgi.util.function;version='[1.2.0,1.2.1)'
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	de.dim.trafficos.gtfs.component;version='[1.0.0,1.0.1)',\
+	de.dim.trafficos.gtfs.config;version='[1.0.0,1.0.1)',\
+	org.apache.httpcomponents.httpclient;version='[4.5.14,4.5.15)',\
+	org.apache.httpcomponents.httpcore;version='[4.4.16,4.4.17)'
 	
 
 -runrequires: \
@@ -221,7 +225,9 @@
 	bnd.identity;id='org.gecko.emf.repository.mongo',\
 	bnd.identity;id='org.mongodb.mongo-java-driver',\
 	bnd.identity;id='org.gecko.emf.mongo.component',\
-	bnd.identity;id='org.gecko.emf.mongo.pushstream'
+	bnd.identity;id='org.gecko.emf.mongo.pushstream',\
+	bnd.identity;id='de.dim.trafficos.gtfs.component',\
+	bnd.identity;id='de.dim.trafficos.gtfs.config'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
