@@ -8,8 +8,11 @@
 	de.dim.trafficos.publictransport.apis,\
 	de.dim.trafficos.publictransport.api.component,\
 	de.dim.trafficos.publictransport.component,\
+	de.dim.trafficos.gtfs.component,\
 	de.jena.udp.trafficos.publictransport.api.model,\
-	de.jena.udp.trafficos.publictransport.model
-
+	de.jena.udp.trafficos.publictransport.model,\
+	org.osgi.util.promise;version=latest,\
+	org.osgi.util.function;version=latest,\
+	org.gecko.emf.json
 Bundle-Version: 1.0.0.SNAPSHOT
 Private-Package: de.jena.publictransport.rest

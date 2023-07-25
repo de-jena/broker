@@ -20,6 +20,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
+import org.gecko.emf.jakartars.annotations.json.EMFJSONConfig;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
@@ -39,10 +41,18 @@ import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+/**
+ * This resource is responsible for querying static information about public transport schedules
+ * 
+ * @author ilenia
+ * @since Jul 25, 2023
+ */
 @RequireJakartarsWhiteboard
 @RequireHttpWhiteboard
 @JakartarsResource
 @RequireEMFMessageBodyReaderWriter
+@Produces(MediaType.APPLICATION_JSON)
+@RequireEMFJson
 @Component(name = "PTScheduleResource", service = PTScheduleResource.class, scope = ServiceScope.PROTOTYPE)
 @Path("")
 public class PTScheduleResource {
@@ -54,7 +64,7 @@ public class PTScheduleResource {
 	private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/{day}")
 	public Response getSchedulesByDay(@PathParam("day") String day) {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
@@ -65,7 +75,7 @@ public class PTScheduleResource {
 	}
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/line/{day}")
 	public Response getSchedulesByDayAndLine(@PathParam("day") String day, @QueryParam("lines") int[] lines) {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
@@ -76,7 +86,7 @@ public class PTScheduleResource {
 	}
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/time/{day}")
 	public Response getSchedulesByDayAndTime(@PathParam("day") String day, @QueryParam("start") String startTime, @QueryParam("end") String endTime) {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
@@ -91,7 +101,7 @@ public class PTScheduleResource {
 	}
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/dhid/{day}")
 	public Response getSchedulesByDayAndStopDHIDs(@PathParam("day") String day, @QueryParam("DHID") String[] stopDHIDs) {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
@@ -102,7 +112,7 @@ public class PTScheduleResource {
 	}
 	
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
+	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/stop-name/{day}")
 	public Response getSchedulesByDayAndStopNames(@PathParam("day") String day, @QueryParam("stopName") String[] stopNames) {
 		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);

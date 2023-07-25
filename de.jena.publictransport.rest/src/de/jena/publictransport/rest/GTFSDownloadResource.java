@@ -11,13 +11,18 @@
  */
 package de.jena.publictransport.rest;
 
+import java.util.concurrent.Executors;
+import java.util.logging.Logger;
+
 import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;
 import org.osgi.service.jakartars.whiteboard.annotations.RequireJakartarsWhiteboard;
 import org.osgi.service.jakartars.whiteboard.propertytypes.JakartarsResource;
 import org.osgi.service.servlet.whiteboard.annotations.RequireHttpWhiteboard;
+import org.osgi.util.promise.PromiseFactory;
 
 import de.dim.trafficos.publictransport.apis.gtfs.GTFSDownloadService;
 import de.dim.trafficos.publictransport.apis.gtfs.GTFSToTOSPublicTransportConverter;
@@ -30,7 +35,7 @@ import jakarta.ws.rs.core.Response.Status;
 
 /**
  * This resource is responsible for trigger a download of the GTFS data from the open-data platform https://www.opendata-oepnv.de
- * where we can find information about PT stops and schedules periodically.
+ * where we can find information about PT stops and schedules periodically. Downloaded data are then converted and stored in the db.
  * 
  * @author ilenia
  * @since Jul 17, 2023
@@ -38,30 +43,75 @@ import jakarta.ws.rs.core.Response.Status;
 @RequireJakartarsWhiteboard
 @RequireHttpWhiteboard
 @JakartarsResource
+@Produces(MediaType.APPLICATION_JSON)
 @RequireEMFMessageBodyReaderWriter
+@RequireEMFJson
 @Component(name = "GTFSDownloadResource", service = GTFSDownloadResource.class, scope = ServiceScope.PROTOTYPE)
 @Path("")
 public class GTFSDownloadResource {
 
 	@Reference
 	GTFSDownloadService downloadService;
-	
+
 	@Reference
 	GTFSToTOSPublicTransportConverter converterService;
-	
+
+	private PromiseFactory factory = new PromiseFactory(Executors.newFixedThreadPool(4));
+	private static final Logger LOGGER = Logger.getLogger(GTFSDownloadResource.class.getName());
+
+
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML, "application/xmi"})
-	@Path("/gtfs-dowload")
+	@Path("/gtfs-hello")
+	public Response hello() {
+		return Response.ok("OK").build();
+	}
+
+	@GET
+	@Path("/gtfs-download/all")
 	public Response downloadGTFSData() {
 		try {
-			downloadService.downloadGermanStopsData();
-			downloadService.downloadGermanScheduleData();
-			converterService.importGTFSData();
+			factory.submit(() -> {
+				downloadService.downloadGermanStopsData();
+				downloadService.downloadGermanScheduleData();
+				converterService.importGTFSAllData();
+				return true;
+			}).onFailure(t -> t.printStackTrace())
+			.onSuccess(s -> LOGGER.fine("GTFS Data downloaded and imported successfully!"));	
 			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
 		} catch(Exception e) {
 			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
 		}
-		
 	}
 	
+	@GET
+	@Path("/gtfs-download/stops")
+	public Response downloadGTFSStopData() {
+		try {
+			factory.submit(() -> {
+				downloadService.downloadGermanStopsData();
+				converterService.importGTFSStopData();
+				return true;
+			}).onFailure(t -> t.printStackTrace())
+			.onSuccess(s -> LOGGER.fine("GTFS Stop Data downloaded and imported successfully!"));	
+			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
+		} catch(Exception e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+		}
+	}
+
+	@GET
+	@Path("/gtfs-download/schedules")
+	public Response downloadGTFSScheduleData() {
+		try {
+			factory.submit(() -> {
+				downloadService.downloadGermanScheduleData();
+				converterService.importGTFSScheduleData();
+				return true;
+			}).onFailure(t -> t.printStackTrace())
+			.onSuccess(s -> LOGGER.fine("GTFS Schedule Data downloaded and imported successfully!"));	
+			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
+		} catch(Exception e) {
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+		}
+	}
 }
