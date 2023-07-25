@@ -42,3 +42,10 @@ org.gecko.addons:org.gecko.util.common:2.0.0
 
 org.mongodb:mongo-java-driver:3.9.1
 org.geckoprojects.mongo:org.gecko.mongo.osgi.component:6.0.0
+
+de.jena:de.jena.udp.trafficos.common.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.trafficos.publictransport.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.trafficos.publictransport.api.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.trafficos.intersection.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.trafficos.intersectionsystem.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.trafficos.trafficlight.model:1.1.1-SNAPSHOT
