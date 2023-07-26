@@ -113,4 +113,5 @@ com.google.guava:guava:15.0
 org.eclipse.platform:org.eclipse.equinox.common:3.14.0
 org.eclipse.platform:org.eclipse.equinox.supplement:1.10.100
 
-
+org.apache.httpcomponents:httpcore-osgi:4.4.16
+org.apache.httpcomponents:httpclient-osgi:4.5.14

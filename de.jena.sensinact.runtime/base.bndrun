@@ -1,5 +1,6 @@
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 -runprovidedcapabilities: ${native_capability}
+-enable-slf4j-logback: true
 
 -resolve.effective: active
 -resolve.effective: active;skip:="osgi.service"
@@ -8,8 +9,8 @@
 	osgi.console=,\
 	org.osgi.service.http.port=-1,\
 	osgi.console.enable.builtin=false,\
-	felix.cm.config.plugins=org.apache.felix.configadmin.plugin.interpolation,\
-	org.apache.felix.configadmin.plugin.interpolation.secretsdir=${.}/runtime/secrets
+	felix.cm.config.plugins=org.apache.felix.configadmin.plugin.interpolation
+	
 
 -runbundles: \
 	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
@@ -155,10 +156,6 @@
 	de.dim.trafficos.publictransport.config;version='[1.0.0,1.0.1)',\
 	de.dim.trafficos.publictransport.value.converter;version='[1.0.0,1.0.1)',\
 	de.jena.publictransport.rest;version=snapshot,\
-	de.jena.publictransport.runtime.config;version=snapshot,\
-	de.jena.udp.trafficos.common.model;version='[1.1.0,1.1.1)',\
-	de.jena.udp.trafficos.publictransport.api.model;version='[1.0.0,1.0.1)',\
-	de.jena.udp.trafficos.publictransport.model;version='[1.1.0,1.1.1)',\
 	org.antlr.antlr4-runtime;version='[4.9.3,4.9.4)',\
 	org.apache.lucene.core;version='[9.6.0,9.6.1)',\
 	org.gecko.emf.collections;version='[2.1.1,2.1.2)',\
@@ -178,7 +175,14 @@
 	org.osgi.service.http.whiteboard;version='[1.1.0,1.1.1)',\
 	org.osgi.service.metatype;version='[1.4.0,1.4.1)',\
 	org.osgi.service.servlet;version='[2.0.0,2.0.1)',\
-	org.osgi.util.function;version='[1.2.0,1.2.1)'
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	de.dim.trafficos.gtfs.component;version='[1.0.0,1.0.1)',\
+	de.dim.trafficos.gtfs.config;version='[1.0.0,1.0.1)',\
+	org.apache.httpcomponents.httpclient;version='[4.5.14,4.5.15)',\
+	org.apache.httpcomponents.httpcore;version='[4.4.16,4.4.17)',\
+	de.jena.udp.trafficos.common.model;version='[1.1.1,1.1.2)',\
+	de.jena.udp.trafficos.publictransport.api.model;version='[1.1.1,1.1.2)',\
+	de.jena.udp.trafficos.publictransport.model;version='[1.1.1,1.1.2)'
 	
 
 -runrequires: \
@@ -212,7 +216,6 @@
 	bnd.identity;id='de.jena.sensinact.web.client',\
 	bnd.identity;id='de.jena.ilsa.sensinact',\
 	bnd.identity;id='de.jena.publictransport.rest',\
-	bnd.identity;id='de.jena.publictransport.runtime.config',\
 	bnd.identity;id='de.dim.trafficos.publictransport.api.component',\
 	bnd.identity;id='de.dim.trafficos.publictransport.api.mmt',\
 	bnd.identity;id='de.dim.trafficos.publictransport.component',\
@@ -221,7 +224,9 @@
 	bnd.identity;id='org.gecko.emf.repository.mongo',\
 	bnd.identity;id='org.mongodb.mongo-java-driver',\
 	bnd.identity;id='org.gecko.emf.mongo.component',\
-	bnd.identity;id='org.gecko.emf.mongo.pushstream'
+	bnd.identity;id='org.gecko.emf.mongo.pushstream',\
+	bnd.identity;id='de.dim.trafficos.gtfs.component',\
+	bnd.identity;id='de.dim.trafficos.gtfs.config'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
