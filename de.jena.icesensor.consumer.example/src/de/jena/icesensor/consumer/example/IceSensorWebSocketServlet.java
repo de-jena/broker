@@ -2,7 +2,6 @@ package de.jena.icesensor.consumer.example;
 
 import java.util.Hashtable;
 
-
 import org.eclipse.jetty.websocket.server.JettyWebSocketServlet;
 import org.eclipse.jetty.websocket.server.JettyWebSocketServletFactory;
 import org.osgi.framework.Bundle;
@@ -14,6 +13,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.http.whiteboard.HttpWhiteboardConstants;
 import org.osgi.service.http.whiteboard.annotations.RequireHttpWhiteboard;
+
 import jakarta.servlet.Servlet;
 
 @Component

@@ -13,6 +13,8 @@
 	de.jena.udp.trafficos.publictransport.model,\
 	org.osgi.util.promise;version=latest,\
 	org.osgi.util.function;version=latest,\
-	org.gecko.emf.json
+	org.gecko.emf.json,\
+	org.osgi.service.component.annotations,\
+	org.osgi.service.cdi
 Bundle-Version: 1.0.0.SNAPSHOT
 Private-Package: de.jena.publictransport.rest

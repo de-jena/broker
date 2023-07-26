@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.sensinact.prototype.model.SensinactModelManager;
 import org.eclipse.sensinact.prototype.notification.ResourceDataNotification;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.osgi.messaging.MessagingService;
@@ -25,13 +24,13 @@ import de.jena.sensinact.mqtt.generic.message.UpdateMessage;
 import de.jena.sensinact.mqtt.generic.message.util.MessageUtil;
 
 /**
- * Notified for all data events
+ * Default forward of any Sensinact events to MQTT
  */
 @Component
 @EventTopics("DATA/*")
-public class MqttBridgeNotification implements TypedEventHandler<ResourceDataNotification> {
+public class SensninactToMQTTBridgeNotification implements TypedEventHandler<ResourceDataNotification> {
 
-	private static final Logger logger = System.getLogger(MqttBridgeNotification.class.getName());
+	private static final Logger logger = System.getLogger(SensninactToMQTTBridgeNotification.class.getName());
 
 	@Reference(target = "(id=full)")
 	MessagingService messaging;
@@ -51,6 +50,7 @@ public class MqttBridgeNotification implements TypedEventHandler<ResourceDataNot
 			setValue(update, event.oldValue, "oldValue");
 			setValue(update, event.newValue, "newValue");
 			send(String.format("5g/sensinact/event/data/%s/%s/%s/%s", event.model, event.provider, event.service, event.resource), update );
+			send(String.format("5g/data/sensinact/event/%s/%s/%s/%s", event.model, event.provider, event.service, event.resource), update );
 		} catch (Throwable e) {
 			System.err.println("Could not send update message: " + e.getMessage());
 			e.printStackTrace();

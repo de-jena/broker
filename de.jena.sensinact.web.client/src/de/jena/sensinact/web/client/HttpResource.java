@@ -12,8 +12,8 @@
 package de.jena.sensinact.web.client;
 
 import org.osgi.annotation.bundle.Requirement;
-import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardResource;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardResource;
 
 /**
  * Webresource

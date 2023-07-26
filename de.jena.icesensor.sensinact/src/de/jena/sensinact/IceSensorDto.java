@@ -19,6 +19,7 @@ import org.eclipse.sensinact.prototype.annotation.dto.Provider;
 import org.eclipse.sensinact.prototype.annotation.dto.Service;
 import org.eclipse.sensinact.prototype.annotation.dto.Timestamp;
 
+
 @Service("data")
 public class IceSensorDto {
 
