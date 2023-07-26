@@ -114,7 +114,12 @@
 	de.jena.udp.trafficos.publictransport.api.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.common.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.model;version='[1.1.1,1.1.2)',\
-	de.jena.sensinact.runtime.config.local;version=snapshot
+	de.jena.sensinact.runtime.config.local;version=snapshot,\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-properties;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.14.0,2.14.1)',\
+	org.gecko.emf.json;version='[1.4.1,1.4.2)',\
+	org.yaml.snakeyaml;version='[1.33.0,1.33.1)'
 	
 -runblacklist: \
 	bnd.identity;id='org.gecko.emf.osgi.api';version='[4,5)',\
