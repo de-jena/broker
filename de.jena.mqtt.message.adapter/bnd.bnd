@@ -1,0 +1,11 @@
+-buildpath: \
+	org.eclipse.paho.client.mqttv3,\
+	org.gecko.core.pushstream,\
+	org.gecko.osgi.messaging,\
+	org.osgi.annotation.bundle,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.osgi.util.function,\
+	org.osgi.service.metatype.annotations,\
+	org.osgi.service.component.annotations,\
+	org.osgi.framework

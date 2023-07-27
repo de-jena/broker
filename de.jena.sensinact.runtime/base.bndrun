@@ -180,7 +180,7 @@
 	de.jena.udp.trafficos.common.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.api.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.model;version='[1.1.1,1.1.2)',\
-	org.gecko.adapter.mqtt;version='[1.0.6,1.0.7)'
+	de.jena.mqtt.message.adapter;version=snapshot
 	
 
 -runrequires: \
@@ -202,7 +202,6 @@
 	bnd.identity;id='de.jena.sensinact.rest.tlc.control',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='com.fasterxml.jackson.datatype.jackson-datatype-jsr310',\
-	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
 	bnd.identity;id='de.jena.ttn.sensinact',\
 	bnd.identity;id='org.gecko.qvt.osgi.component',\
 	bnd.identity;id='de.jena.icesensor.sensinact.mmt',\
@@ -225,7 +224,8 @@
 	bnd.identity;id='org.gecko.emf.mongo.pushstream',\
 	bnd.identity;id='de.dim.trafficos.gtfs.component',\
 	bnd.identity;id='de.dim.trafficos.gtfs.config',\
-	bnd.identity;id='org.gecko.adapter.mqtt'
+	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
+	bnd.identity;id='de.jena.mqtt.message.adapter'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
