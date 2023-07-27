@@ -25,6 +25,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.service.component.annotations.ServiceScope;
 import org.osgi.service.jakartars.whiteboard.annotations.RequireJakartarsWhiteboard;
+import org.osgi.service.jakartars.whiteboard.propertytypes.JakartarsApplicationSelect;
 import org.osgi.service.jakartars.whiteboard.propertytypes.JakartarsResource;
 import org.osgi.service.servlet.whiteboard.annotations.RequireHttpWhiteboard;
 
@@ -65,7 +66,8 @@ import jakarta.ws.rs.core.Response;
 @Produces(MediaType.APPLICATION_JSON)
 @RequireEMFJson
 @Component(name = "PTUpdateResource", service = PTUpdateResource.class, scope = ServiceScope.PROTOTYPE)
-@Path("")
+@Path("/ptu")
+@JakartarsApplicationSelect("(applicationId=pts)")
 public class PTUpdateResource {
 
 	@Reference(scope = ReferenceScope.PROTOTYPE_REQUIRED)

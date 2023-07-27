@@ -20,6 +20,7 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;
 import org.osgi.service.jakartars.whiteboard.annotations.RequireJakartarsWhiteboard;
+import org.osgi.service.jakartars.whiteboard.propertytypes.JakartarsApplicationSelect;
 import org.osgi.service.jakartars.whiteboard.propertytypes.JakartarsResource;
 import org.osgi.service.servlet.whiteboard.annotations.RequireHttpWhiteboard;
 import org.osgi.util.promise.PromiseFactory;
@@ -47,7 +48,8 @@ import jakarta.ws.rs.core.Response.Status;
 @RequireEMFMessageBodyReaderWriter
 @RequireEMFJson
 @Component(name = "GTFSDownloadResource", service = GTFSDownloadResource.class, scope = ServiceScope.PROTOTYPE)
-@Path("")
+@Path("/gtfs")
+@JakartarsApplicationSelect("(applicationId=pts)")
 public class GTFSDownloadResource {
 
 	@Reference
@@ -61,13 +63,13 @@ public class GTFSDownloadResource {
 
 
 	@GET
-	@Path("/gtfs-hello")
+	@Path("/hello")
 	public Response hello() {
 		return Response.ok("OK").build();
 	}
 
 	@GET
-	@Path("/gtfs-download/all")
+	@Path("/download/all")
 	public Response downloadGTFSData() {
 		try {
 			factory.submit(() -> {
@@ -84,7 +86,7 @@ public class GTFSDownloadResource {
 	}
 	
 	@GET
-	@Path("/gtfs-download/stops")
+	@Path("/download/stops")
 	public Response downloadGTFSStopData() {
 		try {
 			factory.submit(() -> {
@@ -100,7 +102,7 @@ public class GTFSDownloadResource {
 	}
 
 	@GET
-	@Path("/gtfs-download/schedules")
+	@Path("/download/schedules")
 	public Response downloadGTFSScheduleData() {
 		try {
 			factory.submit(() -> {
