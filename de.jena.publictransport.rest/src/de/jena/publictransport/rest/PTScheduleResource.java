@@ -60,10 +60,16 @@ import jakarta.ws.rs.core.Response;
 public class PTScheduleResource {
 
 	@Reference(scope = ReferenceScope.PROTOTYPE_REQUIRED)
-	PTApiScheduleService apiScheduleService;
+	private PTApiScheduleService apiScheduleService;
 	
 	private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");
 	private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm");
+	
+	@GET
+	@Path("/hello")
+	public Response hello() {
+		return Response.ok("OK").build();
+	}
 	
 	@GET
 	@EMFJSONConfig(serializeDefaultValues = true)

@@ -71,7 +71,13 @@ import jakarta.ws.rs.core.Response;
 public class PTUpdateResource {
 
 	@Reference(scope = ReferenceScope.PROTOTYPE_REQUIRED)
-	PTApiUpdateService apiUpdateService;
+	private PTApiUpdateService apiUpdateService;
+	
+	@GET
+	@Path("/hello")
+	public Response hello() {
+		return Response.ok("OK").build();
+	}
 	
 	@GET
 	@EMFJSONConfig(serializeDefaultValues = true)
