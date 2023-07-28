@@ -8,6 +8,5 @@
 	de.jena.sensinact.mqtt.generic.message,\
 	org.osgi.util.pushstream;version=latest,\
 	org.osgi.util.promise,\
-	org.gecko.adapter.mqtt,\
 	org.gecko.util.pushstream,\
 	org.gecko.core.pushstream
