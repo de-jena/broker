@@ -3,7 +3,6 @@
 -enable-slf4j-logback: true
 
 -resolve.effective: active
--resolve.effective: active;skip:="osgi.service"
 
 -runproperties: \
 	osgi.console=,\
@@ -156,17 +155,13 @@
 	de.dim.trafficos.publictransport.value.converter;version='[1.0.0,1.0.1)',\
 	de.jena.publictransport.rest;version=snapshot,\
 	org.antlr.antlr4-runtime;version='[4.9.3,4.9.4)',\
-	org.apache.lucene.core;version='[9.6.0,9.6.1)',\
 	org.gecko.emf.collections;version='[2.1.1,2.1.2)',\
 	org.gecko.emf.mongo.component;version='[6.0.5,6.0.6)',\
 	org.gecko.emf.mongo.pushstream;version='[6.0.5,6.0.6)',\
 	org.gecko.emf.pushstreams;version='[1.1.1,1.1.2)',\
 	org.gecko.emf.repository.api;version='[9.2.2,9.2.3)',\
 	org.gecko.emf.repository.mongo;version='[3.1.0,3.1.1)',\
-	org.gecko.emf.search;version='[1.2.0,1.2.1)',\
 	org.gecko.mongo.osgi.component;version='[6.0.0,6.0.1)',\
-	org.gecko.search;version='[1.2.0,1.2.1)',\
-	org.gecko.search.document;version='[1.2.0,1.2.1)',\
 	org.gecko.util.common;version='[2.0.0,2.0.1)',\
 	org.gecko.util.pushstream;version='[6.0.0,6.0.1)',\
 	org.mongodb.mongo-java-driver;version='[3.9.1,3.9.2)',\
@@ -180,7 +175,15 @@
 	de.jena.udp.trafficos.common.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.api.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.model;version='[1.1.1,1.1.2)',\
-	de.jena.mqtt.message.adapter;version=snapshot
+	de.jena.mqtt.message.adapter;version=snapshot,\
+	de.jena.icesensor.rest;version=snapshot,\
+	de.jena.sensinact.tlc.control.service.impl;version=snapshot,\
+	org.apache.lucene.core;version='[9.7.0,9.7.1)',\
+	org.eclipse.sensinact.gateway.core.impl;version='[0.0.2,0.0.3)',\
+	org.eclipse.sensinact.gateway.core.models.metadata;version='[0.0.2,0.0.3)',\
+	org.gecko.emf.search;version='[1.3.1,1.3.2)',\
+	org.gecko.search;version='[1.3.1,1.3.2)',\
+	org.gecko.search.document;version='[1.3.1,1.3.2)'
 	
 
 -runrequires: \
@@ -225,7 +228,8 @@
 	bnd.identity;id='de.dim.trafficos.gtfs.component',\
 	bnd.identity;id='de.dim.trafficos.gtfs.config',\
 	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
-	bnd.identity;id='de.jena.mqtt.message.adapter'
+	bnd.identity;id='de.jena.mqtt.message.adapter',\
+	bnd.identity;id='de.jena.icesensor.rest'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp

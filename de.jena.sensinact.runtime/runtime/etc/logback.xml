@@ -69,11 +69,13 @@
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="FILE" />
 	</logger>
-	<logger>
-	 name="LogService" level="ERROR">
+	<logger name="LogService" level="ERROR">
 		<appender-ref ref="CONSOLE" />
 		<appender-ref ref="FILE" />
 	</logger>
 	
-	
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
 </configuration>

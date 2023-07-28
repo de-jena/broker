@@ -3,4 +3,4 @@ org.geckoprojects.emf.utils:org.gecko.emf.util.bnd.library.workspace:1.0.0-SNAPS
 org.geckoprojects.jakartars:org.gecko.rest.bnd.library:6.0.0.RC1
 org.geckoprojects.bnd:org.gecko.bnd.osgitest.library:1.2.0-SNAPSHOT
 org.geckoprojects.search:org.gecko.emf.search.bnd.project.library:1.2.0
-org.geckoprojects.search:org.gecko.search.bnd.library:1.2.0
+org.geckoprojects.search:org.gecko.search.bnd.library:1.3.1-SNAPSHOT

@@ -39,8 +39,10 @@ javac.debug:  on
 
 -library:\
 	geckoEMF,\
-	geckoOSGi-Test,\
-	geckoSearch
+	geckoOSGi-Test
+	
+# This can be replaced, as soon as we have the latest release figuered out
+#	geckoSearch
 #We need to use it again, when we have release the jakarta Version
 #	geckoJersey,\
 #	geckoEMFUtil,\

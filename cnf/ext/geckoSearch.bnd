@@ -1,0 +1,10 @@
+-plugin.geckoSearch: \
+    aQute.bnd.repository.maven.provider.MavenBndRepository; \
+        snapshotUrl="https://oss.sonatype.org/content/repositories/snapshots/"; \
+        releaseUrl=https://repo.maven.apache.org/maven2/; \
+        index=${.}/gecko-search.mvn; \
+        readOnly=true; \
+        poll.time=-1; \
+        name="Gecko Search"
+        
+-require-bnd: "(version>=6.3.1)"
