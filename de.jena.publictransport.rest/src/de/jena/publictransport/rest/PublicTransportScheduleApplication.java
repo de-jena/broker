@@ -22,7 +22,7 @@ import jakarta.ws.rs.core.Application;
  * @author ungei
  * @since 27 Jul 2023
  */
-@Component(service = Application.class, property = "applicationId=pts")
+@Component(service = Application.class, property = {"applicationId=pts", "emf=true"})
 @JakartarsApplicationBase("/pt")
 @JakartarsName("Public Transport Schedule Application")
 public class PublicTransportScheduleApplication extends Application {
