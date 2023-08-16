@@ -9,6 +9,11 @@
 	logback.configurationFile=file:${.}/runtime/etc/logback.xml,\
 	gecko.log.dir=${.}/runtime/data/log,\
 	org.apache.felix.configadmin.plugin.interpolation.secretsdir=${.}/runtime/secrets
+	
+-runproperties.osgifx: \
+	osgi.fx.agent.socket.port=0.0.0.0:2000,\
+	osgi.fx.agent.mqtt.pubtopic=test/osgifx/send,\
+	osgi.fx.agent.mqtt.subtopic=test/osgifx/receive
 
 	
 -runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'

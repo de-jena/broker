@@ -1,0 +1,17 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "OSGi.fx MQTT Client Config",
+	
+		"in.bytehue.messaging.client~osgifx": {
+		"id": "full",
+		"server": "tcp://datainmotion.de",
+		"port": "1883",
+		"maximumPacketSize": 268435456,
+		"sendMaximumPacketSize": 268435456,
+		"username": "demo",
+		"password": "1234",
+		"staticAuthCred": true,
+		"topicPrefix": "test/osgifx/"
+	}
+}
