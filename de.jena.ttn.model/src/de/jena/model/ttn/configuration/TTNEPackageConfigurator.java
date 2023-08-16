@@ -47,7 +47,7 @@ public class TTNEPackageConfigurator implements EPackageConfigurator {
 	}
 	
 	/**
-	 * A method providing the Prperties the services around this Model should be registered with.
+	 * A method providing the Properties the services around this Model should be registered with.
 	 * @generated
 	 */
 	public Map<String, Object> getServiceProperties() {
