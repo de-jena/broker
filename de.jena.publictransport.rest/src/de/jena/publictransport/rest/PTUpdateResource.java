@@ -63,7 +63,7 @@ import jakarta.ws.rs.core.Response;
 @RequireHttpWhiteboard
 @JakartarsResource
 @RequireEMFMessageBodyReaderWriter
-@Produces(MediaType.APPLICATION_JSON)
+@Produces({MediaType.APPLICATION_JSON})
 @RequireEMFJson
 @Component(name = "PTUpdateResource", service = PTUpdateResource.class, scope = ServiceScope.PROTOTYPE)
 @Path("/ptu")
@@ -76,7 +76,9 @@ public class PTUpdateResource {
 	@GET
 	@Path("/hello")
 	public Response hello() {
-		return Response.ok("OK").build();
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.setMessage("OK");
+		return Response.ok(response).build();
 	}
 	
 	@GET

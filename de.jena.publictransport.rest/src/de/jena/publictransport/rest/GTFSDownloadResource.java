@@ -27,6 +27,7 @@ import org.osgi.util.promise.PromiseFactory;
 
 import de.dim.trafficos.publictransport.apis.gtfs.GTFSDownloadService;
 import de.dim.trafficos.publictransport.apis.gtfs.GTFSToTOSPublicTransportConverter;
+import de.jena.udp.model.trafficos.publictransport_api.TOSPublicTransportApiFactory;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -65,7 +66,9 @@ public class GTFSDownloadResource {
 	@GET
 	@Path("/hello")
 	public Response hello() {
-		return Response.ok("OK").build();
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.setMessage("OK");
+		return Response.ok(response).build();
 	}
 
 	@GET
@@ -79,9 +82,13 @@ public class GTFSDownloadResource {
 				return true;
 			}).onFailure(t -> t.printStackTrace())
 			.onSuccess(s -> LOGGER.fine("GTFS Data downloaded and imported successfully!"));	
-			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage("Download and conversion process have been triggered successfully!");
+			return Response.status(Status.OK).entity(response).build();
 		} catch(Exception e) {
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage(e.getMessage());
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(response).build();
 		}
 	}
 	
@@ -95,9 +102,13 @@ public class GTFSDownloadResource {
 				return true;
 			}).onFailure(t -> t.printStackTrace())
 			.onSuccess(s -> LOGGER.fine("GTFS Stop Data downloaded and imported successfully!"));	
-			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage("Download and conversion process have been triggered successfully!");
+			return Response.status(Status.OK).entity(response).build();
 		} catch(Exception e) {
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage(e.getMessage());
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(response).build();
 		}
 	}
 
@@ -111,9 +122,13 @@ public class GTFSDownloadResource {
 				return true;
 			}).onFailure(t -> t.printStackTrace())
 			.onSuccess(s -> LOGGER.fine("GTFS Schedule Data downloaded and imported successfully!"));	
-			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage("Download and conversion process have been triggered successfully!");
+			return Response.status(Status.OK).entity(response).build();
 		} catch(Exception e) {
-			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(e.getMessage()).build();
+			de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+			response.setMessage(e.getMessage());
+			return Response.status(Status.INTERNAL_SERVER_ERROR).entity(response).build();
 		}
 	}
 }
