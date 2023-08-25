@@ -1,0 +1,10 @@
+-library: enable-emf
+
+	
+#-includeresource.swagger: \
+#	swagger=@https://github.com/swagger-api/swagger-ui/archive/refs/tags/v3.52.3.zip!/swagger-ui-3.52.3/dist/(*);rename:=$1,\
+#	swagger=swagger,\
+	
+-buildpath: \
+	org.osgi.service.jakartars,\
+	jakarta.ws.rs-api

@@ -14,18 +14,16 @@ package de.jena.model.sensinact.iceprovider.util;
 
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFResourceConfigurator;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,16 +32,6 @@ import org.osgi.service.component.annotations.ServiceScope;
  * @see de.jena.model.sensinact.iceprovider.util.IcesensoreSensinactResourceImpl
  * @generated
  */
- @Component( name = IcesensoreSensinactPackage.eNAME + "Factory", service = Resource.Factory.class, scope = ServiceScope.SINGLETON,
- 	reference = @Reference( name = IcesensoreSensinactPackage.eNAME + "Package", service = IcesensoreSensinactPackage.class, cardinality = ReferenceCardinality.MANDATORY)
- )
- @ProvideEMFResourceConfigurator( name = IcesensoreSensinactPackage.eNAME,
-	contentType = { "" }, 
-	fileExtension = {
-	"icesensoresensinact"
- 	},  
-	version = "1.0"
-)
 public class IcesensoreSensinactResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
@@ -65,6 +53,18 @@ public class IcesensoreSensinactResourceFactoryImpl extends ResourceFactoryImpl 
 	public Resource createResource(URI uri) {
 		Resource result = new IcesensoreSensinactResourceImpl(uri);
 		return result;
+	}
+
+	/**
+	 * A method providing the Properties the services around this ResourceFactory should be registered with.
+	 * @generated
+	 */
+	public Map<String, Object> getServiceProperties() {
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, IcesensoreSensinactPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "icesensoresensinact");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		return properties;
 	}
 
 } //IcesensoreSensinactResourceFactoryImpl

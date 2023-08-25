@@ -22,20 +22,15 @@ import org.osgi.framework.ServiceRegistration;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
 
 import org.osgi.service.condition.Condition;
-
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
  * 
  * @generated
  */
-@Component(name = "MessageConfigurator",
- 	reference = @Reference( name = "ResourceSetFactory", service = org.gecko.emf.osgi.ResourceSetFactory.class, cardinality = ReferenceCardinality.MANDATORY)
- )
+@Component(name = "MessageConfigurator")
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessageFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessagePackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
@@ -76,6 +71,7 @@ public class MessageConfigurationComponent {
 
 		return packageConfigurator;
 	}
+
 
 	/**
 	 * Registers the MessagePackage as a service.
@@ -119,6 +115,7 @@ public class MessageConfigurationComponent {
 		conditionRegistration.unregister();
 		eFactoryRegistration.unregister();
 		packageRegistration.unregister();
+
 		ePackageConfiguratorRegistration.unregister();
 		EPackage.Registry.INSTANCE.remove(MessagePackage.eNS_URI);
 	}

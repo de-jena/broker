@@ -14,18 +14,16 @@ package de.jena.model.sensinact.ttnprovider.util;
 
 import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFResourceConfigurator;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,16 +32,6 @@ import org.osgi.service.component.annotations.ServiceScope;
  * @see de.jena.model.sensinact.ttnprovider.util.TtnSensorSensinactResourceImpl
  * @generated
  */
- @Component( name = TtnSensorSensinactPackage.eNAME + "Factory", service = Resource.Factory.class, scope = ServiceScope.SINGLETON,
- 	reference = @Reference( name = TtnSensorSensinactPackage.eNAME + "Package", service = TtnSensorSensinactPackage.class, cardinality = ReferenceCardinality.MANDATORY)
- )
- @ProvideEMFResourceConfigurator( name = TtnSensorSensinactPackage.eNAME,
-	contentType = { "" }, 
-	fileExtension = {
-	"ttnsensorsensinact"
- 	},  
-	version = "1.0"
-)
 public class TtnSensorSensinactResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
@@ -65,6 +53,18 @@ public class TtnSensorSensinactResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(URI uri) {
 		Resource result = new TtnSensorSensinactResourceImpl(uri);
 		return result;
+	}
+
+	/**
+	 * A method providing the Properties the services around this ResourceFactory should be registered with.
+	 * @generated
+	 */
+	public Map<String, Object> getServiceProperties() {
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, TtnSensorSensinactPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ttnsensorsensinact");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		return properties;
 	}
 
 } //TtnSensorSensinactResourceFactoryImpl

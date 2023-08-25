@@ -12,6 +12,7 @@
 package de.jena.publictransport.rest;
 
 import java.util.concurrent.Executors;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
@@ -65,6 +66,7 @@ public class GTFSDownloadResource {
 	@GET
 	@Path("/hello")
 	public Response hello() {
+		LOGGER.info("A Message");
 		return Response.ok("OK").build();
 	}
 
@@ -77,7 +79,8 @@ public class GTFSDownloadResource {
 				downloadService.downloadGermanScheduleData();
 				converterService.importGTFSAllData();
 				return true;
-			}).onFailure(t -> t.printStackTrace())
+			})
+			.onFailure(t -> LOGGER.log(Level.SEVERE, "Error while downloading and importing GFTS Data", t))
 			.onSuccess(s -> LOGGER.fine("GTFS Data downloaded and imported successfully!"));	
 			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
 		} catch(Exception e) {
@@ -93,7 +96,8 @@ public class GTFSDownloadResource {
 				downloadService.downloadGermanStopsData();
 				converterService.importGTFSStopData();
 				return true;
-			}).onFailure(t -> t.printStackTrace())
+			})
+			.onFailure(t -> LOGGER.log(Level.SEVERE, "Error while downloading and importing GTFS Stop Data", t))
 			.onSuccess(s -> LOGGER.fine("GTFS Stop Data downloaded and imported successfully!"));	
 			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
 		} catch(Exception e) {
@@ -109,7 +113,8 @@ public class GTFSDownloadResource {
 				downloadService.downloadGermanScheduleData();
 				converterService.importGTFSScheduleData();
 				return true;
-			}).onFailure(t -> t.printStackTrace())
+			})
+			.onFailure(t -> LOGGER.log(Level.SEVERE, "Error while downloading and importing GTFS Schedules", t))
 			.onSuccess(s -> LOGGER.fine("GTFS Schedule Data downloaded and imported successfully!"));	
 			return Response.status(Status.OK).entity("Download and conversion process have been triggered successfully!").build();
 		} catch(Exception e) {

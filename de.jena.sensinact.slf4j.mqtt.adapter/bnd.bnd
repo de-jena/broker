@@ -1,0 +1,9 @@
+-buildpath: \
+	slf4j.api,\
+	ch.qos.logback.core,\
+	ch.qos.logback.classic,\
+	org.osgi.service.component.annotations,\
+	org.gecko.osgi.messaging,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.function,\
+	org.osgi.util.promise

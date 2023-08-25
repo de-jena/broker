@@ -21,5 +21,13 @@
 		"username" : "demo",
 		"password" : "1234",
 		"id" : "full"
+	},
+
+	"MQTTService~logging":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234",
+		"id" : "logging"
 	}
 }

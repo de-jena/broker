@@ -4,18 +4,16 @@ package de.jena.model.ttn.util;
 
 import de.jena.model.ttn.TTNPackage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFResourceConfigurator;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,16 +22,6 @@ import org.osgi.service.component.annotations.ServiceScope;
  * @see de.jena.model.ttn.util.TTNResourceImpl
  * @generated
  */
- @Component( name = TTNPackage.eNAME + "Factory", service = Resource.Factory.class, scope = ServiceScope.SINGLETON,
- 	reference = @Reference( name = TTNPackage.eNAME + "Package", service = TTNPackage.class, cardinality = ReferenceCardinality.MANDATORY)
- )
- @ProvideEMFResourceConfigurator( name = TTNPackage.eNAME,
-	contentType = { "" }, 
-	fileExtension = {
-	"ttn"
- 	},  
-	version = "1.0"
-)
 public class TTNResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
@@ -55,6 +43,18 @@ public class TTNResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(URI uri) {
 		Resource result = new TTNResourceImpl(uri);
 		return result;
+	}
+
+	/**
+	 * A method providing the Properties the services around this ResourceFactory should be registered with.
+	 * @generated
+	 */
+	public Map<String, Object> getServiceProperties() {
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, TTNPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ttn");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		return properties;
 	}
 
 } //TTNResourceFactoryImpl
