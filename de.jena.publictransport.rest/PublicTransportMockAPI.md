@@ -12,7 +12,7 @@ The `GTFSDownloadResource` consists of three endpoints:
 
 + `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/gtfs/download/all`: triggers the download, conversion and saving mechanism for both stops and schedules data. **That is the endpoint to be triggered once the application is first started, in such a way to populate the db. Note that it might take a while to download and convert everything, so, after triggering it, please, wait around 20 minutes before querying another endpoint to check for data.**
 + `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/gtfs/download/stops`: triggers the download, conversion and saving mechanism for the stops data.
-+ `localhost:8080://sensinact/rest/pt/gtfs/download/schedules`: triggers the download, conversion and saving mechanism for the schedules data.
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/gtfs/download/schedules`: triggers the download, conversion and saving mechanism for the schedules data.
 
 ## `PTScheduleResource`
 

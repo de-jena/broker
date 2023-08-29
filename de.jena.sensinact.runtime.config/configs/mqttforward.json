@@ -1,0 +1,23 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MQTT Forward",
+	
+	"MQTTBridge~Actemium": {
+		"forwardClients": 5,
+		"topics" : [
+			"5g/Actemium/#"
+		]
+	},
+	"MQTTBridge~all": {
+		"forwardClients": 6,
+		"topics" : [
+			"5g/devices/#",
+			"5g/miv/#",
+			"5g/oev/#",
+			"5g/klsa/#",
+			"5g/vissim_simulation/#",
+			"5g/ilsa/#"
+		]
+	}
+}

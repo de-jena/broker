@@ -38,6 +38,7 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.ServiceScope;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushStream;
@@ -52,7 +53,7 @@ import org.osgi.util.pushstream.SimplePushEventSource;
  * @since 10.10.2017
  */
 @Capability(namespace=MessagingConstants.CAPABILITY_NAMESPACE, name="mqtt.adapter", version="1.0.0", attribute= {"vendor=Gecko.io", "implementation=Paho"})
-@Component(service=MessagingService.class, name="MQTTService", configurationPolicy=ConfigurationPolicy.REQUIRE, immediate=true)
+@Component(service=MessagingService.class, name="MQTTService", configurationPolicy=ConfigurationPolicy.REQUIRE, scope = ServiceScope.PROTOTYPE)
 public class MQTTService implements MessagingService, AutoCloseable, MqttCallback {
 
 	private MqttClient mqtt;
@@ -90,6 +91,7 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 				options.setPassword(config.password().toCharArray());
 			}
 			options.setMaxInflight(config.maxInflight());
+			options.setAutomaticReconnect(true);
 			mqtt = new MqttClient(config.brokerUrl(), id);
 			mqtt.connect(options);
 			mqtt.setCallback(this);
@@ -243,7 +245,8 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 	 */
 	public static Message fromPahoMessage(MqttMessage msg, String topic) {
 		ByteBuffer content = ByteBuffer.wrap(msg.getPayload());
-		return new SimpleMessage(topic, content);
+		MessagingContext context = new MQTTContextBuilder().setRetained(msg.isRetained()).withQoS(QoS.values()[msg.getQos()]).build();
+		return new SimpleMessage(topic, content, context);
 	}
 
 }

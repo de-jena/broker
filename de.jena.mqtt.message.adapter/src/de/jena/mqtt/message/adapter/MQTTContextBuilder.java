@@ -42,6 +42,15 @@ public class MQTTContextBuilder extends SimpleMessagingContextBuilder {
 		return this;
 	}
 
+	/**
+	 * Sets retained to true
+	 * @return the builder instance
+	 */
+	public MQTTContextBuilder setRetained(boolean retained) {
+		context.setRetained(retained);
+		return this;
+	}
+
 	/* 
 	 * (non-Javadoc)
 	 * @see org.gecko.osgi.messaging.MessageContextBuilder#build()
