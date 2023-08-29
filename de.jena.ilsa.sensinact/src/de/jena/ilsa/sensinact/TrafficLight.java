@@ -14,7 +14,6 @@ import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.util.promise.Promise;
@@ -24,7 +23,7 @@ import org.osgi.util.pushstream.PushStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component(immediate = true)
+//@Component(immediate = true)
 public class TrafficLight {
 	private static final Logger logger = System.getLogger(TrafficLight.class.getName());
 
