@@ -29,4 +29,4 @@ EXPOSE 8080 8081 8082 8083 8084 8085 8090
 WORKDIR ${OPT_DIR}
 USER ${USERNAME}
 
-CMD ["java", "-Dgosh.args=--nointeractive", "-Dgecko.data.dir=/opt/sensinact/runtime/data", "-Dgecko.conf.dir=/opt/sensinact/runtime/etc", "-Dgecko.base.dir=/sensinact/mdo", "-Dgecko.log.dir=/opt/sensinact/runtime/log", "-Dlogback.configurationFile=file:/opt/sensinact/runtime/etc/logback.xml",  "-jar", "de.jena.sensinact.runtime.jar"]
+CMD ["java", "-server", "-Xmx4000M", "-Xms2G", "-Dgosh.args=--nointeractive", "-Dgecko.data.dir=/opt/sensinact/runtime/data", "-Dgecko.conf.dir=/opt/sensinact/runtime/etc", "-Dgecko.base.dir=/sensinact/mdo", "-Dgecko.log.dir=/opt/sensinact/runtime/log", "-Dlogback.configurationFile=file:/opt/sensinact/runtime/etc/logback.xml",  "-jar", "de.jena.sensinact.runtime.jar"]
