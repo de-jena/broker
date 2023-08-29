@@ -5,6 +5,7 @@ import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,8 +39,15 @@ public class TrafficLight {
 
 	private Pattern topicPattern;
 
+	private ObjectMapper mapper;
+
+	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'z");
+
 	@Activate
 	public void activate() {
+
+		mapper = new ObjectMapper();
+		mapper.setDateFormat(df);
 		String topic = "5g/ilsa/";
 		topicPattern = Pattern.compile(topic + "(\\w+)/([A-Za-z0-9-]+)/([0-9])");
 		try {
@@ -64,7 +72,6 @@ public class TrafficLight {
 			String signalGroup = matcher.group(2);
 			String output = matcher.group(3);
 
-			ObjectMapper mapper = new ObjectMapper();
 			try {
 				TrafficTransmitter transmitter = mapper.readValue(message.payload().array(), TrafficTransmitter.class);
 				TrafficLightDto dto = new TrafficLightDto();
