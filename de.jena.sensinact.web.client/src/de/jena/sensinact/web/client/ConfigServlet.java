@@ -50,7 +50,6 @@ public class ConfigServlet extends HttpServlet {
 		resp.setContentType("application/json");
 		resp.setStatus(200);
 		String config = CONFIG_JSON.formatted(getEnv("INFO_CHECK_URI"),getEnv("INFO_BASE_URI"));
-		System.out.println(config);
 		resp.getOutputStream().print(config);
 	}
 
