@@ -15,7 +15,8 @@
 	com.fasterxml.jackson.core.jackson-databind,\
 	com.fasterxml.jackson.core.jackson-core,\
 	org.osgi.util.function,\
-	com.fasterxml.jackson.datatype.jackson-datatype-jsr310
-	
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310,\
+	de.jena.udp.trafficos.trafficlight.model;version=latest,\
+	org.eclipse.emfcloud.emfjson-jackson
 	
 -library: enable-emf
