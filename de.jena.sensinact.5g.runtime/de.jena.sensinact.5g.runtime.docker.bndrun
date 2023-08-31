@@ -6,4 +6,4 @@
 	org.apache.felix.configadmin.plugin.interpolation.secretsdir=/opt/sensinact/runtime/secrets
 
 -runbundles.docker:\
-	 de.jena.sensinact.runtime.config.docker
+	 de.jena.sensinact.5g.runtime.config.docker

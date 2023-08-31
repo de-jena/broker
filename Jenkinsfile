@@ -47,13 +47,13 @@ pipeline  {
 		}
 	
 	
-		stage('Resolve') {
+		stage('Resolve 5g Broker') {
 
 			steps {
 				echo "I am building app on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew :de.jena.sensinact.runtime:resolve.base --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew :de.jena.sensinact.5g.runtime:resolve.base --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 		}
@@ -66,7 +66,7 @@ pipeline  {
 				echo "I am building app on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew :de.jena.sensinact.runtime:export.de.jena.sensinact.runtime.docker --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew :de.jena.sensinact.5g.runtime:export.de.jena.sensinact.5g.runtime.docker --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 		}
@@ -94,7 +94,7 @@ pipeline  {
 				echo "I am building and publishing a docker image on branch: ${env.GIT_BRANCH}"
 
 				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'docker',
+				      dockerFileDirectory: 'docker_5g',
 							cloud: 'docker',
 							tagsString: """registry-git.jena.de/scj/dim-broker:latest
                                         registry-git.jena.de/scj/dim-broker:${VERSION}""",
@@ -102,7 +102,7 @@ pipeline  {
 							pushCredentialsId: 'github-jena'])
 
 				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'docker',
+				      dockerFileDirectory: 'docker_5g',
 							cloud: 'docker',
 							tagsString: """devel.data-in-motion.biz:6000/scj/dim-broker:latest
 							            devel.data-in-motion.biz:6000/scj/dim-broker:${VERSION}""",

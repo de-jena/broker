@@ -77,7 +77,6 @@
 	org.glassfish.jersey.media.jersey-media-sse;version='[3.0.8,3.0.9)',\
 	org.osgi.service.jakartars;version='[2.0.0,2.0.1)',\
 	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
-	de.jena.sensinact.runtime.config;version=snapshot,\
 	org.apache.commons.commons-fileupload;version='[1.4.0,1.4.1)',\
 	org.apache.commons.io;version='[2.6.0,2.6.1)',\
 	org.apache.felix.inventory;version='[1.0.6,1.0.7)',\
@@ -97,7 +96,6 @@
 	de.jena.sensinact.mqtt.generic.message;version=snapshot,\
 	de.jena.sensinact.mqtt.generic.bridge;version=snapshot,\
 	de.jena.ttn.sensinact;version=snapshot,\
-	de.jena.ttn.sensinact.mmt;version=snapshot,\
 	de.jena.ttn.model;version=snapshot,\
 	de.dim.eclipse.core.runtime;version='[3.14.0,3.14.1)',\
 	de.dim.eclipse.osgi;version='[3.12.50,3.12.51)',\
@@ -117,13 +115,9 @@
 	org.gecko.core.pool;version='[1.1.0,1.1.1)',\
 	org.gecko.qvt.osgi.api;version='[4.1.1,4.1.2)',\
 	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)',\
-	de.jena.icesensor.sensinact.mmt;version=snapshot,\
 	org.eclipse.jetty.alpn.client;version='[11.0.13,11.0.14)',\
 	org.eclipse.jetty.client;version='[11.0.13,11.0.14)',\
 	de.jena.icesensor.sensinact.model;version=snapshot,\
-	de.jena.ttn.sensinact.model;version=snapshot,\
-	de.jena.sensinact.web.client;version=snapshot,\
-	org.locationtech.spatial4j;version='[0.8.0,0.8.1)',\
 	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
 	org.gecko.emf.osgi.component;version='[5.0.0,5.0.1)',\
 	org.gecko.emf.osgi.model.info;version='[5.0.0,5.0.1)',\
@@ -134,10 +128,6 @@
 	org.eclipse.sensinact.gateway.northbound.filters.filters.core;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.northbound.query-handler;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.northbound.rest;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.northbound.sensorthings.dto;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.northbound.sensorthings.filter;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.api;version='[0.0.2,0.0.3)',\
-	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.device-factory.device-factory-core;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.device-factory.parser-json;version='[0.0.2,0.0.3)',\
 	org.eclipse.sensinact.gateway.southbound.http.http-device-factory;version='[0.0.2,0.0.3)',\
@@ -151,7 +141,6 @@
 	de.dim.trafficos.publictransport.config;version='[1.0.0,1.0.1)',\
 	de.dim.trafficos.publictransport.value.converter;version='[1.0.0,1.0.1)',\
 	de.jena.publictransport.rest;version=snapshot,\
-	org.antlr.antlr4-runtime;version='[4.9.3,4.9.4)',\
 	org.gecko.emf.collections;version='[2.1.1,2.1.2)',\
 	org.gecko.emf.mongo.component;version='[6.0.5,6.0.6)',\
 	org.gecko.emf.mongo.pushstream;version='[6.0.5,6.0.6)',\
@@ -184,7 +173,8 @@
 	org.apache.felix.log;version='[1.2.4,1.2.5)',\
 	org.apache.felix.logback;version='[1.0.6,1.0.7)',\
 	de.jena.sensinact.rest.log;version=snapshot,\
-	de.jena.udp.trafficos.trafficlight.model;version='[1.1.1,1.1.2)'
+	de.jena.udp.trafficos.trafficlight.model;version='[1.1.1,1.1.2)',\
+	de.jena.sensinact.5g.runtime.config;version=snapshot
 	
 
 -runrequires: \
@@ -198,7 +188,7 @@
 	bnd.identity;id='de.jena.sensinact.tram',\
 	bnd.identity;id='biz.aQute.gogo.commands.provider',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.northbound.rest',\
-	bnd.identity;id='de.jena.sensinact.runtime.config',\
+	bnd.identity;id='de.jena.sensinact.5g.runtime.config',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory',\
 	bnd.identity;id='de.jena.icesensor.sensinact',\
@@ -207,13 +197,8 @@
 	bnd.identity;id='com.fasterxml.jackson.datatype.jackson-datatype-jsr310',\
 	bnd.identity;id='de.jena.ttn.sensinact',\
 	bnd.identity;id='org.gecko.qvt.osgi.component',\
-	bnd.identity;id='de.jena.icesensor.sensinact.mmt',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.device-factory.parser-json',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.http.http-device-factory',\
-	bnd.identity;id='de.jena.ttn.sensinact.mmt',\
-	bnd.identity;id='de.jena.icesensor.sensinact.model',\
-	bnd.identity;id='de.jena.ttn.sensinact.model',\
-	bnd.identity;id='de.jena.sensinact.web.client',\
 	bnd.identity;id='de.jena.ilsa.sensinact',\
 	bnd.identity;id='de.jena.publictransport.rest',\
 	bnd.identity;id='de.dim.trafficos.publictransport.api.component',\
@@ -229,7 +214,6 @@
 	bnd.identity;id='de.dim.trafficos.gtfs.config',\
 	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
 	bnd.identity;id='de.jena.mqtt.message.adapter',\
-	bnd.identity;id='de.jena.icesensor.rest',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.log)(version>=1.2.4))',\
 	bnd.identity;id='org.apache.felix.logback',\
 	bnd.identity;id='de.jena.sensinact.rest.log'

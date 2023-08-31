@@ -2,7 +2,7 @@
 			-secrets.bndrun
 
 -runbundles.local:\
-	 de.jena.sensinact.runtime.config.local
+	 de.jena.sensinact.5g.runtime.config.local
  	
 -runproperties.local: \
 	base.path=${.},\
