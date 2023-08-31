@@ -79,7 +79,7 @@ pipeline  {
 			steps  {
 				echo "I am preparing docker: ${env.GIT_BRANCH}"
 
-				sh "./gradlew docker_5g:prepareDocker -x testOSGi --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew docker_5g:prepareDocker --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 
@@ -117,7 +117,7 @@ pipeline  {
 				echo "I am building app on branch: ${env.GIT_BRANCH}"
 
 
-				sh "./gradlew :de.jena.sensinact.udp.runtime:resolve.base --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew :de.jena.sensinact.udp.runtime:resolve.de.jena.sensinact.udp.runtime.base --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 		}
@@ -143,7 +143,7 @@ pipeline  {
 			steps  {
 				echo "I am preparing docker: ${env.GIT_BRANCH}"
 
-				sh "./gradlew docker_udp:prepareDocker -x testOSGi --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+				sh "./gradlew docker_udp:prepareDocker --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
 
 			}
 
