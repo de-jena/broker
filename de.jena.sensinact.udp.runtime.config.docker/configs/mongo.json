@@ -1,0 +1,15 @@
+{
+  ":configurator:resource-version": 1,
+  
+	"EMFMongoRepositoryConfigurator~sensinact": 
+  	{
+	    "mongo.instances": "sensinact",
+		"sensinact.baseUris": "mongodb://mongodb1:29019/,mongodb://mongodb2:29018/,mongodb://mongodb3:29017/",
+		"sensinact.baseUris.env": "MONGO_BASE_URI",
+		"sensinact.databases" : "sensinact", 
+		"sensinact.user.env": "MONGO_USERNAME",
+		"sensinact.password.env": "MONGO_PASSWORD",
+		"sensinact.authSource": "admin", 
+		"sensinact.sensinact.repoType" : "PROTOTYPE" 
+	}
+}

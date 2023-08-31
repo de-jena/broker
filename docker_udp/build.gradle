@@ -18,12 +18,12 @@ task prepareDocker(){
 		stageDir.mkdirs()
 	     // copy all necessary files to  build/docker/ dir
     	copy {
-	        from new File("../de.jena.sensinact.5g.runtime/generated/distributions/executable/de.jena.sensinact.5g.runtime.docker.jar")
+	        from new File("../de.jena.sensinact.udp.runtime/generated/distributions/executable/de.jena.sensinact.udp.runtime.docker.jar")
 	        into stageDir
-	        rename("de.jena.sensinact.5g.runtime.docker.jar", "de.jena.sensinact.5g.runtime.jar")
+	        rename("de.jena.sensinact.udp.runtime.docker.jar", "de.jena.sensinact.udp.runtime.jar")
 	    }
 	    copy {
-	        from new File("../de.jena.sensinact.5g.runtime/runtime/")
+	        from new File("../de.jena.sensinact.udp.runtime/runtime/")
 	        into new File(stageDir, "runtime")
 	    }
     }
@@ -35,7 +35,7 @@ task prepareDocker(){
 task buildDocker(type:Exec, dependsOn: prepareDocker){
 	
 	workingDir '.'
-    def tag = "scj/dim-broker:latest"
+    def tag = "scj/udp-broker:latest"
 	executable "docker"
 
 	args "build", "-f", "Dockerfile", ".", "-t", tag

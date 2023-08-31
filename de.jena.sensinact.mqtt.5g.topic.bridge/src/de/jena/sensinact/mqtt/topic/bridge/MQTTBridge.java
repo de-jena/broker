@@ -1,4 +1,4 @@
-package de.jena.sensinact.generic.mqtt.bridge;
+package de.jena.sensinact.mqtt.topic.bridge;
 
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
