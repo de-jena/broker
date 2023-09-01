@@ -131,7 +131,16 @@
 	org.apache.felix.log;version='[1.2.4,1.2.5)',\
 	org.apache.felix.logback;version='[1.0.6,1.0.7)',\
 	de.jena.sensinact.rest.log;version=snapshot,\
-	de.jena.sensinact.udp.runtime.config;version=snapshot
+	de.jena.sensinact.udp.runtime.config;version=snapshot,\
+	de.jena.icesensor.sensinact.mmt;version=snapshot,\
+	de.jena.ttn.sensinact.mmt;version=snapshot,\
+	de.jena.sensinact.web.client;version=snapshot,\
+	org.antlr.antlr4-runtime;version='[4.9.3,4.9.4)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.dto;version='[0.0.2,0.0.3)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.filter;version='[0.0.2,0.0.3)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.api;version='[0.0.2,0.0.3)',\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway;version='[0.0.2,0.0.3)',\
+	org.locationtech.spatial4j;version='[0.8.0,0.8.1)'
 	
 
 -runrequires: \
@@ -157,7 +166,11 @@
 	bnd.identity;id='de.jena.mqtt.message.adapter',\
 	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.log)(version>=1.2.4))',\
 	bnd.identity;id='org.apache.felix.logback',\
-	bnd.identity;id='de.jena.sensinact.rest.log'
+	bnd.identity;id='de.jena.sensinact.rest.log',\
+	bnd.identity;id='de.jena.icesensor.sensinact.mmt',\
+	bnd.identity;id='de.jena.ttn.sensinact.mmt',\
+	bnd.identity;id='de.jena.sensinact.web.client',\
+	bnd.identity;id='de.jena.icesensor.rest'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp

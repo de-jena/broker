@@ -83,9 +83,6 @@
 	org.apache.felix.webconsole;version='[4.6.0,4.6.1)',\
 	org.apache.felix.webconsole.plugins.ds;version='[2.1.0,2.1.1)',\
 	org.apache.felix.webconsole.plugins.event;version='[1.1.8,1.1.9)',\
-	de.jena.icesensor.api;version=snapshot,\
-	de.jena.icesensor.model;version=snapshot,\
-	de.jena.icesensor.sensinact;version=snapshot,\
 	org.eclipse.emf.common;version='[2.28.0,2.28.1)',\
 	org.eclipse.emf.ecore;version='[2.33.0,2.33.1)',\
 	org.eclipse.emf.ecore.xmi;version='[2.18.0,2.18.1)',\
@@ -95,7 +92,6 @@
 	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)',\
 	de.jena.sensinact.mqtt.generic.message;version=snapshot,\
 	de.jena.sensinact.mqtt.generic.bridge;version=snapshot,\
-	de.jena.ttn.sensinact;version=snapshot,\
 	de.jena.ttn.model;version=snapshot,\
 	de.dim.eclipse.core.runtime;version='[3.14.0,3.14.1)',\
 	de.dim.eclipse.osgi;version='[3.12.50,3.12.51)',\
@@ -117,7 +113,6 @@
 	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)',\
 	org.eclipse.jetty.alpn.client;version='[11.0.13,11.0.14)',\
 	org.eclipse.jetty.client;version='[11.0.13,11.0.14)',\
-	de.jena.icesensor.sensinact.model;version=snapshot,\
 	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
 	org.gecko.emf.osgi.component;version='[5.0.0,5.0.1)',\
 	org.gecko.emf.osgi.model.info;version='[5.0.0,5.0.1)',\
@@ -162,7 +157,6 @@
 	de.jena.udp.trafficos.publictransport.api.model;version='[1.1.1,1.1.2)',\
 	de.jena.udp.trafficos.publictransport.model;version='[1.1.1,1.1.2)',\
 	de.jena.mqtt.message.adapter;version=snapshot,\
-	de.jena.icesensor.rest;version=snapshot,\
 	de.jena.sensinact.tlc.control.service.impl;version=snapshot,\
 	org.apache.lucene.core;version='[9.7.0,9.7.1)',\
 	org.eclipse.sensinact.gateway.core.impl;version='[0.0.2,0.0.3)',\
@@ -192,11 +186,9 @@
 	bnd.identity;id='de.jena.sensinact.5g.runtime.config',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory',\
-	bnd.identity;id='de.jena.icesensor.sensinact',\
 	bnd.identity;id='de.jena.sensinact.rest.tlc.control',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='com.fasterxml.jackson.datatype.jackson-datatype-jsr310',\
-	bnd.identity;id='de.jena.ttn.sensinact',\
 	bnd.identity;id='org.gecko.qvt.osgi.component',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.device-factory.parser-json',\
 	bnd.identity;id='org.eclipse.sensinact.gateway.southbound.http.http-device-factory',\
