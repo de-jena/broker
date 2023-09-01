@@ -11,6 +11,8 @@
  */
 package de.jena.mqtt.message.adapter;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.Map;
@@ -56,12 +58,16 @@ import org.osgi.util.pushstream.SimplePushEventSource;
 @Component(service=MessagingService.class, name="MQTTService", configurationPolicy=ConfigurationPolicy.REQUIRE, scope = ServiceScope.PROTOTYPE)
 public class MQTTService implements MessagingService, AutoCloseable, MqttCallback {
 
+	private static final Logger logger = System.getLogger(MQTTService.class.getName());
+	
 	private MqttClient mqtt;
 
 	private PushStreamProvider provider = new PushStreamProvider();
 
 	private Map<String, SimplePushEventSource<Message>> subscriptions = new ConcurrentHashMap<>();
 
+	private String url;
+	
 	public MQTTService(){
 		// to be used with @Activate
 	}
@@ -82,7 +88,9 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 
 	@Activate	
 	void activate(MqttConfig config, BundleContext context) throws Exception {
-		String id = UUID.randomUUID().toString();
+		logger.log(Level.INFO,"Creating new MQTTService for " + config.brokerUrl());
+		url = config.brokerUrl();
+		String id = UUID.randomUUID().toString() + "-" + url;
 		try {
 			MqttConnectOptions options = new MqttConnectOptions();
 			if(config.username() != null && config.username().length() != 0) {
@@ -96,9 +104,10 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 			mqtt.connect(options);
 			mqtt.setCallback(this);
 		} catch(Exception e){
-			System.err.println("Error connecting to MQTT broker " + config.brokerUrl());
+			logger.log(Level.ERROR,"Error connecting to MQTT broker " + config.brokerUrl(), e);
 			throw e;
 		}
+		logger.log(Level.INFO,"Connected to " + config.brokerUrl());
 	}
 
 	/**
@@ -107,7 +116,9 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 	 */
 	@Deactivate
 	void deactivate() throws Exception {
+		logger.log(Level.INFO, "Deactivating MQTTService");
 		close();
+		logger.log(Level.INFO, "Closed MQTTService");
 	}
 
 	/* 
@@ -128,7 +139,7 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 	 */
 	@Override
 	public void connectionLost(Throwable ex) {
-		ex.printStackTrace();
+		logger.log(Level.ERROR, "Lost connection to " + url, ex);
 	}
 
 	/* 
@@ -160,15 +171,12 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 				continue;
 			}
 			SimplePushEventSource<Message> source = e.getValue();
-			if(!source.isConnected()){
-				source.close();
-				it.remove();
-			} else {
+			if(source.isConnected()){
 				try {
 					Message msg = fromPahoMessage(message, topic);
 					source.publish(msg);
 				} catch(Exception ex){
-					ex.printStackTrace();
+					logger.log(Level.ERROR,"Error receiving message", e);
 				}
 			}
 		}
@@ -205,6 +213,7 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 			PushStreamBuilder<Message,BlockingQueue<PushEvent<? extends Message>>> buildStream = PushStreamHelper.configurePushStreamBuilder(source, context);
 			return buildStream.build();
 		} catch(MqttException e){
+			logger.log(Level.ERROR,"Error subscribing to topic " + topic, e);
 			throw new Exception(e.getMessage(), e);
 		}
 	}
