@@ -20,7 +20,7 @@ task prepareDocker(){
     	copy {
 	        from new File("../de.jena.sensinact.5g.runtime/generated/distributions/executable/de.jena.sensinact.5g.runtime.docker.jar")
 	        into stageDir
-	        rename("de.jena.sensinact.5g.runtime.docker.jar", "de.jena.sensinact.5g.runtime.jar")
+	        rename("de.jena.sensinact.5g.runtime.docker.jar", "de.jena.sensinact.runtime.jar")
 	    }
 	    copy {
 	        from new File("../de.jena.sensinact.5g.runtime/runtime/")

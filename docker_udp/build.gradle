@@ -20,7 +20,7 @@ task prepareDocker(){
     	copy {
 	        from new File("../de.jena.sensinact.udp.runtime/generated/distributions/executable/de.jena.sensinact.udp.runtime.docker.jar")
 	        into stageDir
-	        rename("de.jena.sensinact.udp.runtime.docker.jar", "de.jena.sensinact.udp.runtime.jar")
+	        rename("de.jena.sensinact.udp.runtime.docker.jar", "de.jena.sensinact.runtime.jar")
 	    }
 	    copy {
 	        from new File("../de.jena.sensinact.udp.runtime/runtime/")
