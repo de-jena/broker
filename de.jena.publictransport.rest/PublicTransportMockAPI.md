@@ -26,7 +26,7 @@ The `PTScheduleResource` consists of five endpoints:
 
 ## `PTUpdateResource`
 
-**ATTENTION: the `PTUpdateResource` currently returns some fake data, since we are currently unable to test the IBIS-IP on a live system!**
+**ATTENTION: the `PTUpdateResource` currently returns some fake data, since we are currently unable to test the IBIS-IP on a live system! The methods to use once the IBIS IP is actually connected are already working and set up, we just have to substitute them to the ones that now return fake objects.**
 
 The `PTUpdateResource` consists of three endpoint:
 

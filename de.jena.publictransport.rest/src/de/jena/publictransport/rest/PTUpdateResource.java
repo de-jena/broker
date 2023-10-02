@@ -32,6 +32,7 @@ import org.osgi.service.servlet.whiteboard.annotations.RequireHttpWhiteboard;
 import de.dim.trafficos.publictransport.apis.PTApiUpdateService;
 import de.jena.udp.model.trafficos.publictransport.PTUpdateValueType;
 import de.jena.udp.model.trafficos.publictransport_api.LocationStateType;
+import de.jena.udp.model.trafficos.publictransport_api.OnlineUpdate;
 import de.jena.udp.model.trafficos.publictransport_api.OnlineVehicle;
 import de.jena.udp.model.trafficos.publictransport_api.PickUpDropOffType;
 import de.jena.udp.model.trafficos.publictransport_api.Position;
@@ -85,23 +86,10 @@ public class PTUpdateResource {
 	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/updates/online")
 	public Response getOnlineVehicles() {
-		OnlineVehicle vehicle1 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
-		vehicle1.setId("1");
-		vehicle1.setType(VehicleType.BUS);
+		return getFakeOnlineVehicles();
 		
-		OnlineVehicle vehicle2 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
-		vehicle2.setId("2");
-		vehicle2.setType(VehicleType.TRAM);
-		
-		OnlineVehicle vehicle3 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
-		vehicle3.setId("3");
-		vehicle3.setType(VehicleType.EBUS);
-		
-		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
-		response.getData().add(vehicle1);
-		response.getData().add(vehicle2);
-		response.getData().add(vehicle3);
-		return Response.ok(response).build();
+//		TODO: use this when IBIS IP is connected
+//		return doGetOnlineVehicles();
 	}
 
 	@GET
@@ -117,13 +105,52 @@ public class PTUpdateResource {
 	public Response getPositionUpdate(@PathParam("vehicleId") String vehicleId) {
 		return getFakeUpdate(vehicleId, PTUpdateValueType.GEO_INFO);
 	}
+	
+//	TODO: use this when IBIS IP is connected
+	private Response doGetOnlineVehicles() {
+		List<Update> updates = apiUpdateService.getLatestUpdatesByType(PTUpdateValueType.ONLINE);
+		List<OnlineVehicle> onlineVehicles = new ArrayList<>();
+		updates.forEach(update -> {
+			if(update instanceof OnlineUpdate onlineUpdate) {
+				if(onlineUpdate.isOnline()) {
+					OnlineVehicle vehicle = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
+					vehicle.setId(onlineUpdate.getRefVehicleId());
+					vehicle.setType(onlineUpdate.getType());
+					onlineVehicles.add(vehicle);
+				}
+			}
+		});
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.getData().addAll(onlineVehicles);
+		return Response.ok(response).build();
+	}
 
-//	TODO: use this when ibis IP has been tested
+//	TODO: use this when IBIS IP is connected
 	private Response getUpdate(String vehicleId, PTUpdateValueType updateType) {
-		Update update = apiUpdateService.getLatestUpdateByType(vehicleId, updateType);
+		Update update = apiUpdateService.getLatestUpdateByTypeAndVehicle(vehicleId, updateType);
 		if(update == null) return Response.noContent().build();
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().add(update);
+		return Response.ok(response).build();
+	}
+	
+	private Response getFakeOnlineVehicles() {
+		OnlineVehicle vehicle1 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
+		vehicle1.setId("1");
+		vehicle1.setType(VehicleType.CITY_BUS);
+		
+		OnlineVehicle vehicle2 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
+		vehicle2.setId("2");
+		vehicle2.setType(VehicleType.TRAM);
+		
+		OnlineVehicle vehicle3 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
+		vehicle3.setId("3");
+		vehicle3.setType(VehicleType.EBUS);
+		
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.getData().add(vehicle1);
+		response.getData().add(vehicle2);
+		response.getData().add(vehicle3);
 		return Response.ok(response).build();
 	}
 
@@ -146,6 +173,18 @@ public class PTUpdateResource {
 			update.setRefVehicleId(vehicleId);
 			update.setTimestamp(System.currentTimeMillis());
 			setTripUpdateFakeProperties((TripUpdate)update);
+			break;
+		case CURRENT_ANNOUNCEMENT:
+			break;
+		case CURRENT_STOP_INDEX:
+			break;
+		case CURRENT_STOP_POINT:
+			break;
+		case ONLINE:
+			break;
+		case VEHICLE_DATA:
+			break;
+		default:
 			break;
 		}
 		if(update == null) return Response.noContent().build();
