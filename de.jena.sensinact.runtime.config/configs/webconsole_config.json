@@ -5,6 +5,7 @@
 	
 	"org.apache.felix.webconsole.internal.servlet.OsgiManager": {
 		"username": "mdoAdmin",
-		"password": "mdoPassword"
+		"password": "mdoPassword",
+		"http.service.filter": "id=sensinactHttp"
 	}
 }
