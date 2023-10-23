@@ -13,6 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSENSOR/coords"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSENSOR/data"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//IceSENSOR/has_beacon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//IceSENSOR/detail"/>
     </genClasses>
     <genClasses ecoreClass="icesensor.ecore#//Data">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference icesensor.ecore#//Data/h2sugm3"/>

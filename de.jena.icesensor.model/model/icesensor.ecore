@@ -11,6 +11,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="#//Data" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="has_beacon" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="detail" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Data">
     <eStructuralFeatures xsi:type="ecore:EReference" name="h2sugm3" eType="#//SensorData"

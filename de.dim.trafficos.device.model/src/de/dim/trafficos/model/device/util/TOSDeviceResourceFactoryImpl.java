@@ -14,18 +14,16 @@ package de.dim.trafficos.model.device.util;
 
 import de.dim.trafficos.model.device.TOSDevicePackage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFResourceConfigurator;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,16 +32,6 @@ import org.osgi.service.component.annotations.ServiceScope;
  * @see de.dim.trafficos.model.device.util.TOSDeviceResourceImpl
  * @generated
  */
- @Component( name = TOSDevicePackage.eNAME + "Factory", service = Resource.Factory.class, scope = ServiceScope.SINGLETON,
- 	reference = @Reference( name = TOSDevicePackage.eNAME + "Package", service = TOSDevicePackage.class, cardinality = ReferenceCardinality.MANDATORY)
- )
- @ProvideEMFResourceConfigurator( name = TOSDevicePackage.eNAME,
-	contentType = { "device#1.0" }, 
-	fileExtension = {
-	"tos"
- 	},  
-	version = "1.0"
-)
 public class TOSDeviceResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
@@ -65,6 +53,19 @@ public class TOSDeviceResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(URI uri) {
 		Resource result = new TOSDeviceResourceImpl(uri);
 		return result;
+	}
+
+	/**
+	 * A method providing the Properties the services around this ResourceFactory should be registered with.
+	 * @generated
+	 */
+	public Map<String, Object> getServiceProperties() {
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_NAME, TOSDevicePackage.eNAME);
+		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_FILE_EXT, "tos");
+		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_CONTENT_TYPE, "device#1.0");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		return properties;
 	}
 
 } //TOSDeviceResourceFactoryImpl

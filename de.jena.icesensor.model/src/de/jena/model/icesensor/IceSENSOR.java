@@ -29,6 +29,7 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link de.jena.model.icesensor.IceSENSOR#getCoords <em>Coords</em>}</li>
  *   <li>{@link de.jena.model.icesensor.IceSENSOR#getData <em>Data</em>}</li>
  *   <li>{@link de.jena.model.icesensor.IceSENSOR#isHas_beacon <em>Has beacon</em>}</li>
+ *   <li>{@link de.jena.model.icesensor.IceSENSOR#getDetail <em>Detail</em>}</li>
  * </ul>
  *
  * @see de.jena.model.icesensor.IcesensorPackage#getIceSENSOR()
@@ -124,5 +125,27 @@ public interface IceSENSOR extends EObject {
 	 * @generated
 	 */
 	void setHas_beacon(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Detail</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Detail</em>' attribute.
+	 * @see #setDetail(String)
+	 * @see de.jena.model.icesensor.IcesensorPackage#getIceSENSOR_Detail()
+	 * @model
+	 * @generated
+	 */
+	String getDetail();
+
+	/**
+	 * Sets the value of the '{@link de.jena.model.icesensor.IceSENSOR#getDetail <em>Detail</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Detail</em>' attribute.
+	 * @see #getDetail()
+	 * @generated
+	 */
+	void setDetail(String value);
 
 } // IceSENSOR

@@ -14,18 +14,16 @@ package de.jena.sensinact.ocpp.centralsystem.util;
 
 import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.annotation.provide.ProvideEMFResourceConfigurator;
-
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceCardinality;
-import org.osgi.service.component.annotations.ServiceScope;
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,16 +32,6 @@ import org.osgi.service.component.annotations.ServiceScope;
  * @see de.jena.sensinact.ocpp.centralsystem.util.OcppCentralSystemResourceImpl
  * @generated
  */
- @Component( name = OcppCentralSystemPackage.eNAME + "Factory", service = Resource.Factory.class, scope = ServiceScope.SINGLETON,
- 	reference = @Reference( name = OcppCentralSystemPackage.eNAME + "Package", service = OcppCentralSystemPackage.class, cardinality = ReferenceCardinality.MANDATORY)
- )
- @ProvideEMFResourceConfigurator( name = OcppCentralSystemPackage.eNAME,
-	contentType = { "" }, 
-	fileExtension = {
-	"ocppcentralsystem"
- 	},  
-	version = "1.0"
-)
 public class OcppCentralSystemResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
@@ -65,6 +53,18 @@ public class OcppCentralSystemResourceFactoryImpl extends ResourceFactoryImpl {
 	public Resource createResource(URI uri) {
 		Resource result = new OcppCentralSystemResourceImpl(uri);
 		return result;
+	}
+
+	/**
+	 * A method providing the Properties the services around this ResourceFactory should be registered with.
+	 * @generated
+	 */
+	public Map<String, Object> getServiceProperties() {
+		Map<String, Object> properties = new HashMap<String, Object>();
+		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_NAME, OcppCentralSystemPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_FILE_EXT, "ocppcentralsystem");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		return properties;
 	}
 
 } //OcppCentralSystemResourceFactoryImpl

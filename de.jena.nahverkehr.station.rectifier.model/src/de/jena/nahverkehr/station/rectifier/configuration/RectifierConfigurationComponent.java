@@ -24,7 +24,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
 import org.osgi.service.condition.Condition;
-
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
@@ -73,6 +72,7 @@ public class RectifierConfigurationComponent {
 		return packageConfigurator;
 	}
 
+
 	/**
 	 * Registers the RectifierPackage as a service.
 	 *
@@ -115,6 +115,7 @@ public class RectifierConfigurationComponent {
 		conditionRegistration.unregister();
 		eFactoryRegistration.unregister();
 		packageRegistration.unregister();
+
 		ePackageConfiguratorRegistration.unregister();
 		EPackage.Registry.INSTANCE.remove(RectifierPackage.eNS_URI);
 	}

@@ -12,6 +12,7 @@
  */
 package de.jena.model.sensinact.iceprovider;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -40,7 +41,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = IcesensoreSensinactPackage.eNS_URI, genModel = "/model/icesensor.genmodel")
+@EPackage(uri = IcesensoreSensinactPackage.eNS_URI, genModel = "/model/icesensor.genmodel", genModelSourceLocations = {"model/icesensor.genmodel","de.jena.icesensor.sensinact.model/model/icesensor.genmodel"}, ecore="/model/icesensor.ecore", ecoreSourceLocations="/model/icesensor.ecore")
 public interface IcesensoreSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

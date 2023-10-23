@@ -12,6 +12,7 @@
  */
 package de.jena.model.icesensor;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -38,7 +39,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = IcesensorPackage.eNS_URI, genModel = "/model/icesensor.genmodel")
+@EPackage(uri = IcesensorPackage.eNS_URI, genModel = "/model/icesensor.genmodel", genModelSourceLocations = {"model/icesensor.genmodel","de.jena.icesensor.model/model/icesensor.genmodel"}, ecore="/model/icesensor.ecore", ecoreSourceLocations="/model/icesensor.ecore")
 public interface IcesensorPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.
@@ -119,13 +120,22 @@ public interface IcesensorPackage extends org.eclipse.emf.ecore.EPackage {
 	int ICE_SENSOR__HAS_BEACON = 3;
 
 	/**
+	 * The feature id for the '<em><b>Detail</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ICE_SENSOR__DETAIL = 4;
+
+	/**
 	 * The number of structural features of the '<em>Ice SENSOR</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ICE_SENSOR_FEATURE_COUNT = 4;
+	int ICE_SENSOR_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Ice SENSOR</em>' class.
@@ -554,6 +564,17 @@ public interface IcesensorPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 */
 	EAttribute getIceSENSOR_Has_beacon();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.model.icesensor.IceSENSOR#getDetail <em>Detail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Detail</em>'.
+	 * @see de.jena.model.icesensor.IceSENSOR#getDetail()
+	 * @see #getIceSENSOR()
+	 * @generated
+	 */
+	EAttribute getIceSENSOR_Detail();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.model.icesensor.Data <em>Data</em>}'.

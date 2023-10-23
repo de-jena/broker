@@ -2,6 +2,7 @@
  */
 package de.jena.sensinact.mqtt.generic.message;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -28,7 +29,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = MessagePackage.eNS_URI, genModel = "/model/generic_message.genmodel")
+@EPackage(uri = MessagePackage.eNS_URI, genModel = "/model/generic_message.genmodel", genModelSourceLocations = {"model/generic_message.genmodel","de.jena.sensinact.mqtt.generic.message/model/generic_message.genmodel"}, ecore="/model/generic_message.ecore", ecoreSourceLocations="/model/generic_message.ecore")
 public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

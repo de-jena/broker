@@ -17,10 +17,14 @@ import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 
 import de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl;
 
+import de.jena.model.sensinact.iceprovider.util.IcesensoreSensinactResourceFactoryImpl;
+
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.resource.Resource.Factory;
 
 import org.gecko.emf.osgi.EPackageConfigurator;
 
@@ -34,7 +38,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
 import org.osgi.service.condition.Condition;
-
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
@@ -52,6 +55,7 @@ public class IcesensoreSensinactConfigurationComponent {
 	private ServiceRegistration<EPackageConfigurator> ePackageConfiguratorRegistration = null;
 	private ServiceRegistration<?> eFactoryRegistration = null;
 	private ServiceRegistration<?> conditionRegistration = null;
+	private ServiceRegistration<?> resourceFactoryRegistration = null;
 
 	/**
 	 * Activates the Configuration Component.
@@ -63,6 +67,7 @@ public class IcesensoreSensinactConfigurationComponent {
 		IcesensoreSensinactPackage ePackage = IcesensoreSensinactPackageImpl.eINSTANCE;
 		
 		IcesensoreSensinactEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
+		registerResourceFactoryService(ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
 		registerEFactoryService(ePackage, packageConfigurator, ctx);
 		registerConditionService(packageConfigurator, ctx);
@@ -81,6 +86,19 @@ public class IcesensoreSensinactConfigurationComponent {
 		ePackageConfiguratorRegistration = ctx.registerService(EPackageConfigurator.class, packageConfigurator, properties);
 
 		return packageConfigurator;
+	}
+
+	/**
+	 * Registers the IcesensoreSensinactResourceFactoryImpl as a service.
+	 *
+	 * @generated
+	 */
+	private void registerResourceFactoryService(BundleContext ctx){
+		IcesensoreSensinactResourceFactoryImpl factory = new IcesensoreSensinactResourceFactoryImpl();
+		Hashtable<String, Object> properties = new Hashtable<String, Object>();
+		properties.putAll(factory.getServiceProperties());
+		String[] serviceClasses = new String[] {IcesensoreSensinactResourceFactoryImpl.class.getName(), Factory.class.getName()};
+		resourceFactoryRegistration = ctx.registerService(serviceClasses, factory, properties);
 	}
 
 	/**
@@ -125,6 +143,8 @@ public class IcesensoreSensinactConfigurationComponent {
 		conditionRegistration.unregister();
 		eFactoryRegistration.unregister();
 		packageRegistration.unregister();
+		resourceFactoryRegistration.unregister();
+
 		ePackageConfiguratorRegistration.unregister();
 		EPackage.Registry.INSTANCE.remove(IcesensoreSensinactPackage.eNS_URI);
 	}

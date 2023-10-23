@@ -12,6 +12,7 @@
  */
 package de.jena.sensinact.ocpp.structures;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -37,7 +38,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = OcppStructuresPackage.eNS_URI, genModel = "/model/structures.genmodel")
+@EPackage(uri = OcppStructuresPackage.eNS_URI, genModel = "/model/structures.genmodel", genModelSourceLocations = {"model/structures.genmodel","de.jena.sensinact.ocpp.structures.model/model/structures.genmodel"}, ecore="/model/structures.ecore", ecoreSourceLocations="/model/structures.ecore")
 public interface OcppStructuresPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

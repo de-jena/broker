@@ -12,6 +12,7 @@
  */
 package de.dim.trafficos.model.device;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -39,7 +40,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = TOSDevicePackage.eNS_URI, genModel = "/model/device.genmodel")
+@EPackage(uri = TOSDevicePackage.eNS_URI, genModel = "/model/device.genmodel", genModelSourceLocations = {"model/device.genmodel","de.dim.trafficos.device.model/model/device.genmodel"}, ecore="/model/device.ecore", ecoreSourceLocations="/model/device.ecore")
 public interface TOSDevicePackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.
