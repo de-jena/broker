@@ -22,6 +22,7 @@ import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
+import com.opencsv.exceptions.CsvException;
 
 /**
  * 
@@ -41,7 +42,7 @@ public class CSVUtil {
 					.withSkipLines(linesToSkip)
 					.build(); 
 			allData = csvReader.readAll(); 
-		} catch (IOException e) {
+		} catch (CsvException e) {
 			e.printStackTrace();
 		}		
 		return allData;
