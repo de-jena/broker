@@ -237,7 +237,8 @@
 	bnd.identity;id='com.osgifx.console.agent',\
 	bnd.identity;id='org.apache.felix.logback',\
 	bnd.identity;id='in.bytehue.messaging.mqtt5.provider',\
-	bnd.identity;id='de.jena.core.pushstream'
+	bnd.identity;id='de.jena.core.pushstream',\
+	bnd.identity;id='org.apache.felix.log'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp
