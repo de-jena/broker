@@ -1,0 +1,26 @@
+{
+  ":configurator:resource-version": 1,
+
+	"MQTTService~read":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234",
+		"id" : "read"
+	},
+	"MQTTService~write":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234",
+		"id" : "write"
+	},
+	"MQTTService~full":
+	{
+		"brokerUrl" : "tcp://datainmotion.de:1883",
+		"username" : "demo",
+		"password" : "1234",
+		"id" : "full",
+		"maxInflight" : 1000
+	}
+}

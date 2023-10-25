@@ -9,4 +9,5 @@
 	org.osgi.util.pushstream;version=latest,\
 	org.osgi.util.promise,\
 	org.gecko.util.pushstream,\
-	org.gecko.core.pushstream
+	org.gecko.core.pushstream,\
+	de.jena.mqtt.message.adapter

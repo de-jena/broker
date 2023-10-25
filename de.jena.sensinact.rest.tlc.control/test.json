@@ -1,14 +1,14 @@
 {
 	"serviceDTO": {
-		"id": 145,
-		"bundle": 94,
+		"id": 164,
+		"bundle": 49,
 		"properties": {
 			"osgi.jakartars.endpoint": [
 			],
 			"JakartarsExtension.target": "(osgi.jakartars.extension=true)",
 			"osgi.jakartars.name": "",
 			"component.name": "JakartarsServletWhiteboardRuntimeComponent",
-			"service.id": 145,
+			"service.id": 164,
 			"runtimeCondition.target": "(osgi.condition.id=jersey.runtime)",
 			"objectClass": [
 				"org.osgi.service.jakartars.runtime.JakartarsServiceRuntime",
@@ -18,89 +18,465 @@
 			"osgi.http.whiteboard.target": "(id=sensinactHttp)",
 			"service.factoryPid": "JakartarsServletWhiteboardRuntimeComponent",
 			"service.pid": "JakartarsServletWhiteboardRuntimeComponent~snarest",
-			"component.id": 59,
-			"service.changecount": 20,
+			"component.id": 12,
+			"service.changecount": 30,
 			"jersey.context.path": "rest",
 			"application.target": "(osgi.jakartars.application.base=*)",
 			"jersey.jakartars.whiteboard.name": "",
 			"service.scope": "singleton",
 			"JakartarsResource.target": "(osgi.jakartars.resource=true)",
-			"service.bundleid": 94
+			"service.bundleid": 49
 		},
 		"usingBundles": [
-			33
 		]
 	},
 	"defaultApplication": {
 		"resourceMethods": [
 			{
-				"method": "POST",
-				"consumingMimeType": [
-					"application/json"
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
 				],
-				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control"
+				"path": "{prop}/$value"
 			},
 			{
 				"method": "GET",
 				"consumingMimeType": null,
 				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}"
-			},
-			{
-				"method": "GET",
-				"consumingMimeType": null,
-				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//"
-			},
-			{
-				"method": "DELETE",
-				"consumingMimeType": null,
-				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control/phase/{phaseId}"
-			},
-			{
-				"method": "POST,PUT",
-				"consumingMimeType": [
-					"application/json"
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
 				],
-				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control/phase"
+				"path": "{prop}"
 			},
 			{
-				"method": "POST",
-				"consumingMimeType": [
-					"application/json"
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
 				],
+				"path": "Datastreams({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
 				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control/alive"
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Datastreams/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Datastreams/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Datastreams({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
 			},
 			{
 				"method": "GET",
 				"consumingMimeType": null,
 				"producingMimeType": null,
 				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control/phase"
+				"path": null
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Observations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Observations({id2})/{prop}"
 			},
 			{
 				"method": "GET",
 				"consumingMimeType": null,
 				"producingMimeType": null,
 				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control/phase/{phaseId}"
+				"path": "Observations({id2})/FeatureOfInterest"
 			},
 			{
 				"method": "GET",
 				"consumingMimeType": null,
 				"producingMimeType": null,
-				"nameBindings": null,
-				"path": "/tlc//{tlcId}/control"
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Datastreams/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "HistoricalLocations({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Datastreams({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Locations({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "HistoricalLocations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Locations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "HistoricalLocations({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "HistoricalLocations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Things/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Things({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Locations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Thing/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Thing/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Locations({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "FeatureOfInterest/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Datastream/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Datastream/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "FeatureOfInterest/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Thing/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Thing/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Sensor/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "Observations({id2})/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "ObservedProperty/{prop}"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "ObservedProperty/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.PropFilter"
+				],
+				"path": "{prop}/$value"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Observations/$ref"
+			},
+			{
+				"method": "GET",
+				"consumingMimeType": null,
+				"producingMimeType": null,
+				"nameBindings": [
+					"org.eclipse.sensinact.sensorthings.sensing.rest.annotation.RefFilter"
+				],
+				"path": "Sensor/$ref"
 			}
 		],
 		"base": "/",
@@ -118,7 +494,13 @@
 					},
 					{
 						"$ref": "#/defaultApplication/resourceMethods/3"
-					},
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.SensorsAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
 					{
 						"$ref": "#/defaultApplication/resourceMethods/4"
 					},
@@ -130,26 +512,602 @@
 					},
 					{
 						"$ref": "#/defaultApplication/resourceMethods/7"
-					},
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.ObservedPropertiesAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
 					{
 						"$ref": "#/defaultApplication/resourceMethods/8"
 					}
 				],
-				"name": "tlc",
-				"serviceId": 158
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.RootResourceAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/9"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/10"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/11"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/12"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/13"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.FeaturesOfInterestAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/14"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/15"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/16"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/17"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/18"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/19"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/20"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/21"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.ThingsAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/22"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/23"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/24"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/25"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/26"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/27"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.LocationsAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/28"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/29"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/30"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/31"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/32"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/33"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.HistoricalLocationsAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/34"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/35"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/36"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/37"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/38"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/39"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.ObservationsAccessImpl",
+				"serviceId": 0
+			},
+			{
+				"resourceMethods": [
+					{
+						"$ref": "#/defaultApplication/resourceMethods/40"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/41"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/42"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/43"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/44"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/45"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/46"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/47"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/48"
+					},
+					{
+						"$ref": "#/defaultApplication/resourceMethods/49"
+					}
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.DatastreamsAccessImpl",
+				"serviceId": 0
 			}
 		],
 		"extensionDTOs": [
+			{
+				"produces": null,
+				"consumes": null,
+				"nameBindings": null,
+				"filteredByName": null,
+				"extensionTypes": [
+					"jakarta.ws.rs.core.Feature"
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.SensorThingsFeature",
+				"serviceId": 0
+			},
+			{
+				"produces": null,
+				"consumes": null,
+				"nameBindings": null,
+				"filteredByName": null,
+				"extensionTypes": [
+					"jakarta.ws.rs.ext.ContextResolver"
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.SensinactSessionProvider",
+				"serviceId": 0
+			},
+			{
+				"produces": null,
+				"consumes": null,
+				"nameBindings": null,
+				"filteredByName": null,
+				"extensionTypes": [
+					"jakarta.ws.rs.ext.ContextResolver"
+				],
+				"name": "org.eclipse.sensinact.sensorthings.sensing.rest.impl.SensorthingsFilterProvider",
+				"serviceId": 0
+			},
+			{
+				"produces": null,
+				"consumes": null,
+				"nameBindings": null,
+				"filteredByName": null,
+				"extensionTypes": [
+					"jakarta.ws.rs.container.ContainerResponseFilter"
+				],
+				"name": "OptionalResponse Handler",
+				"serviceId": 99
+			},
+			{
+				"produces": null,
+				"consumes": null,
+				"nameBindings": null,
+				"filteredByName": null,
+				"extensionTypes": [
+					"jakarta.ws.rs.container.ContainerResponseFilter"
+				],
+				"name": "OptionalResponse Filter",
+				"serviceId": 91
+			}
 		],
-		"name": ".default",
-		"serviceId": -1
+		"name": "sensorthings",
+		"serviceId": 224
 	},
 	"applicationDTOs": [
+		{
+			"resourceMethods": [
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/ptu//hello"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/ptu//updates/trip/{vehicleId}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/ptu//updates/position/{vehicleId}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/ptu//updates/online"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//hello"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//schedules/{day}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//schedules/stop-name/{day}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//schedules/dhid/{day}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//schedules/line/{day}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/pts//schedules/time/{day}"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/gtfs//hello"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/gtfs//download/schedules"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/gtfs//download/stops"
+				},
+				{
+					"method": "GET",
+					"consumingMimeType": null,
+					"producingMimeType": null,
+					"nameBindings": null,
+					"path": "/gtfs//download/all"
+				}
+			],
+			"base": "/pt/",
+			"resourceDTOs": [
+				{
+					"resourceMethods": [
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/0"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/1"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/2"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/3"
+						}
+					],
+					"name": "sid_279",
+					"serviceId": 279
+				},
+				{
+					"resourceMethods": [
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/4"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/5"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/6"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/7"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/8"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/9"
+						}
+					],
+					"name": "sid_276",
+					"serviceId": 276
+				},
+				{
+					"resourceMethods": [
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/10"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/11"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/12"
+						},
+						{
+							"$ref": "#/applicationDTOs/0/resourceMethods/13"
+						}
+					],
+					"name": "sid_264",
+					"serviceId": 264
+				}
+			],
+			"extensionDTOs": [
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.container.ContainerResponseFilter"
+					],
+					"name": "OptionalResponse Handler",
+					"serviceId": 99
+				},
+				{
+					"produces": [
+						"*/*"
+					],
+					"consumes": [
+						"*/*"
+					],
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.ext.MessageBodyReader",
+						"jakarta.ws.rs.ext.MessageBodyWriter"
+					],
+					"name": "EMFEObjectMessagebodyReaderWriter",
+					"serviceId": 151
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.container.ContainerResponseFilter"
+					],
+					"name": "OptionalResponse Filter",
+					"serviceId": 91
+				},
+				{
+					"produces": [
+						"*/*"
+					],
+					"consumes": [
+						"*/*"
+					],
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.ext.MessageBodyReader",
+						"jakarta.ws.rs.ext.MessageBodyWriter"
+					],
+					"name": "EMFResourcesMessageBodyReaderWriter",
+					"serviceId": 150
+				}
+			],
+			"name": "Public Transport Schedule Application",
+			"serviceId": 169
+		},
+		{
+			"resourceMethods": [
+			],
+			"base": "/sensinact/",
+			"resourceDTOs": [
+			],
+			"extensionDTOs": [
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.container.ContainerResponseFilter"
+					],
+					"name": "org.eclipse.sensinact.northbound.rest.impl.StatusCodeFilter",
+					"serviceId": 0
+				},
+				{
+					"produces": [
+						"*/*"
+					],
+					"consumes": [
+						"*/*"
+					],
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+					],
+					"name": "com.fasterxml.jackson.jakarta.rs.json.JacksonJsonProvider",
+					"serviceId": 0
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.ext.ContextResolver"
+					],
+					"name": "org.eclipse.sensinact.northbound.rest.impl.QueryHandlerProvider",
+					"serviceId": 0
+				},
+				{
+					"produces": [
+						"*/*"
+					],
+					"consumes": [
+						"*/*"
+					],
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+					],
+					"name": "com.fasterxml.jackson.jakarta.rs.json.JacksonXmlBindJsonProvider",
+					"serviceId": 0
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+					],
+					"name": "org.eclipse.sensinact.northbound.rest.impl.RestNorthbound",
+					"serviceId": 0
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.ext.ContextResolver"
+					],
+					"name": "org.eclipse.sensinact.northbound.rest.impl.ObjectMapperProvider",
+					"serviceId": 0
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.ext.ContextResolver"
+					],
+					"name": "org.eclipse.sensinact.northbound.rest.impl.SensinactSessionProvider",
+					"serviceId": 0
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.container.ContainerResponseFilter"
+					],
+					"name": "OptionalResponse Handler",
+					"serviceId": 99
+				},
+				{
+					"produces": null,
+					"consumes": null,
+					"nameBindings": null,
+					"filteredByName": null,
+					"extensionTypes": [
+						"jakarta.ws.rs.container.ContainerResponseFilter"
+					],
+					"name": "OptionalResponse Filter",
+					"serviceId": 91
+				}
+			],
+			"name": "sensinact-rest",
+			"serviceId": 222
+		}
 	],
 	"failedResourceDTOs": [
+		{
+			"failureReason": 7,
+			"name": "tlc",
+			"serviceId": 215
+		},
+		{
+			"failureReason": 7,
+			"name": "logs",
+			"serviceId": 287
+		}
 	],
 	"failedExtensionDTOs": [
 	],
 	"failedApplicationDTOs": [
+		{
+			"failureReason": 1,
+			"base": "/*",
+			"resourceDTOs": null,
+			"extensionDTOs": null,
+			"name": ".default",
+			"serviceId": -1
+		}
 	]
 }

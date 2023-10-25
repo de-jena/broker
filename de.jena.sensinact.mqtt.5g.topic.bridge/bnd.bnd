@@ -1,0 +1,10 @@
+-buildpath: \
+	org.gecko.osgi.messaging,\
+	org.gecko.util.pushstream,\
+	org.osgi.framework,\
+	org.osgi.service.component,\
+	org.osgi.service.component.annotations,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.gecko.core.pushstream,\
+	de.jena.mqtt.message.adapter

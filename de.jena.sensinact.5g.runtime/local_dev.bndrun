@@ -1,0 +1,11 @@
+-include: 	base.bndrun,\
+			-secrets.bndrun
+
+-runbundles.local:\
+	 de.jena.sensinact.5g.runtime.config.local
+ 	
+-runproperties.local: \
+	base.path=${.},\
+	logback.configurationFile=file:${.}/runtime/etc/logback.xml,\
+	gecko.log.dir=${.}/runtime/data/log,\
+	org.apache.felix.configadmin.plugin.interpolation.secretsdir=${.}/runtime/secrets

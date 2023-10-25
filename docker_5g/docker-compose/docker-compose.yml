@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+
+    mongodb:
+        image: mongo:4.2
+        entrypoint: [ "/usr/bin/mongod", "--dbpath", "/data", "--journal", "--bind_ip", "0.0.0.0"]
+        ports:
+            - "27017:27017"
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=mdo
+            - MONGO_INITDB_ROOT_PASSWORD=init@mdo_
+        
+
+    sensinact:
+        image: devel.data-in-motion.biz:6000/scj/dim-broker:latest
+        ports:
+            - "8080:8080"
+        environment:
+            - MONGO_USERNAME=mdo
+            - MONGO_PASSWORD=init@mdo_
+            - ICESENSORE_TOKEN=57ca34a71a848fe755ce8f96cd852753f5f2e751
+            - MQTT_FULL_USER=iwoms
+            - MQTT_FULL_PWD=b2952fa553ad3ac2
+            - TTN_APP_SCJ_Simple_Sensors=NNSXS.GJPXYIS4AP5KAPD2GGENSAOMUOYBNJ7VCVE32EQ.KVA7G7XVVVL2YJJQDU4ROSORZ5QXKIKM7SSPWAO2L4BY2GYDG2GA
+            - TTN_APP_SCJ_Sensors_01=NNSXS.VJEX46C4Z7TQLGP6NFVT3TPZBC6TFHVJDEDIBKQ.J3M6FYM5334URGUH3UIIXPT2TLR3OOWQJWL62NT242ANJNCBPJ7Q
+            - TTN_APP_Bosch_Parking=NNSXS.KTFKOBBVM75OHB4UF5EN2KDVTXNQ7ZHNBBG52KQ.SRCBVAWP76SMQ5VS7JBHIBAG4SBJMUZI64UXS5MNZATHAIBUGJMQ
+
+

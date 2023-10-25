@@ -26,7 +26,7 @@ import de.jena.sensinact.mqtt.generic.message.util.MessageUtil;
 /**
  * Default forward of any Sensinact events to MQTT
  */
-@Component
+@Component(name = "SensninactToMQTTBridgeNotification")
 @EventTopics("DATA/*")
 public class SensninactToMQTTBridgeNotification implements TypedEventHandler<ResourceDataNotification> {
 

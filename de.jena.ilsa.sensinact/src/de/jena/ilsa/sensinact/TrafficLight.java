@@ -1,18 +1,26 @@
 package de.jena.ilsa.sensinact;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sensinact.prototype.PrototypePush;
 import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
+import org.gecko.emf.json.configuration.ConfigurableJsonResource;
+import org.gecko.emf.json.configuration.ConfigurableJsonResourceFactory;
+import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
+import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -24,25 +32,46 @@ import org.osgi.util.pushstream.PushStream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component(immediate = true)
+import de.jena.udp.model.trafficos.trafficlight.TLSignalState;
+import de.jena.udp.model.trafficos.trafficlight.TOSTrafficLightPackage;
+
+@Component
 public class TrafficLight {
 	private static final Logger logger = System.getLogger(TrafficLight.class.getName());
 
 	private static final String ILSA = "ilsa";
+	private static final URI TEMP_URI = URI.createFileURI("temp.json");
 
 	@Reference(target = "(id=full)")
 	private MessagingService messaging;
 
 	@Reference
 	private PrototypePush sensiNact;
+
+	@Reference
+	private TOSTrafficLightPackage tosPackage;
+
+	@Reference
+	private ComponentServiceObjects<ResourceSet> resourceSetServiceObjects;
+
 	private PushStream<Message> subcribtion;
 
 	private Pattern topicPattern;
 
+	private ConfigurableJsonResourceFactory rFactory;
+
 	@Activate
 	public void activate() {
+
 		String topic = "5g/ilsa/";
 		topicPattern = Pattern.compile(topic + "(\\w+)/([A-Za-z0-9-]+)/([0-9])");
+
+		ConfigurableJsonResource configurableJsonResource = new ConfigurableJsonResource(URI.createFileURI("/"));
+
+		ObjectMapper mapper = configurableJsonResource
+				.configureMapper(Collections.singletonMap(EMFJs.OPTION_DATE_FORMAT, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'z"));
+
+		this.rFactory = new ConfigurableJsonResourceFactory(mapper);
 		try {
 			subcribtion = messaging.subscribe(topic + "#");
 			subcribtion.forEachEvent(this::handle);
@@ -65,21 +94,30 @@ public class TrafficLight {
 			String signalGroup = matcher.group(2);
 			String output = matcher.group(3);
 
-			ObjectMapper mapper = new ObjectMapper();
+			ResourceSet set = resourceSetServiceObjects.getService();
 			try {
-				TrafficTransmitter transmitter = mapper.readValue(message.payload().array(), TrafficTransmitter.class);
+
+				Resource resource = rFactory.createResource(TEMP_URI);
+				set.getResources().add(resource);
+
+				resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
+
+				TLSignalState transmitter = (TLSignalState) resource.getContents().get(0);
+
 				TrafficLightDto dto = new TrafficLightDto();
 				dto.model = ILSA;
 				dto.intersection = intersectionId;
 				dto.signalGroup = signalGroup;
 				dto.resource = output;
-				dto.timestamp = transmitter.timestamp.getTime();
-				dto.data = TrafficLightState.parse(transmitter.state).toString();
+				dto.timestamp = transmitter.getTimestamp().getTime();
+				dto.data = TrafficLightState.parse(transmitter.getState()).toString();
 				logger.log(Level.DEBUG, "push {0} {1}", signalGroup, dto.data);
 				Promise<?> promise = sensiNact.pushUpdate(dto);
 				promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing to sensinact.", e));
 			} catch (IOException e) {
 				logger.log(Level.ERROR, "Error while parsing json.", e);
+			} finally {
+				resourceSetServiceObjects.ungetService(set);
 			}
 		} else if (topic.endsWith("thermal")) {
 			CharBuffer decode = StandardCharsets.UTF_8.decode(message.payload());
@@ -132,8 +170,5 @@ public class TrafficLight {
 			}
 			return Off;
 		}
-	}
-
-	public static record TrafficTransmitter(String state, Object states, String channel, Date timestamp) {
 	}
 }
