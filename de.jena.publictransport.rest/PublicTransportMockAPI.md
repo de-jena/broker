@@ -12,7 +12,7 @@ The `GTFSDownloadResource` consists of three endpoints:
 
 + `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/gtfs/download/all`: triggers the download, conversion and saving mechanism for both stops and schedules data. **That is the endpoint to be triggered once the application is first started, in such a way to populate the db. Note that it might take a while to download and convert everything, so, after triggering it, please, wait around 20 minutes before querying another endpoint to check for data.**
 + `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/gtfs/download/stops`: triggers the download, conversion and saving mechanism for the stops data.
-+ `localhost:8080://sensinact/rest/pt/gtfs/download/schedules`: triggers the download, conversion and saving mechanism for the schedules data.
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/gtfs/download/schedules`: triggers the download, conversion and saving mechanism for the schedules data.
 
 ## `PTScheduleResource`
 
@@ -26,10 +26,14 @@ The `PTScheduleResource` consists of five endpoints:
 
 ## `PTUpdateResource`
 
-**ATTENTION: the `PTUpdateResource` currently returns some fake data, since we are currently unable to test the IBIS-IP on a live system! The methods to use once the IBIS IP is actually connected are already working and set up, we just have to substitute them to the ones that now return fake objects.**
+**ATTENTION: for the `PTUpdateResource` we currently implemented two versions of the same endpoint: one returning some fake data and a second one which would return the actual live update from the IBIS-IP.** Since the IBIS-IP is not yet connected to the whole application, we suggest to use the fake version of the endpoints to see whether the data you are getting back are what you would expect.
 
-The `PTUpdateResource` consists of three endpoint:
+The `PTUpdateResource`consists of the following endpoints (for the "fake" version of each of them, please, append a `fake` segment to the URL after the `updates` segment):
 
-+ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/online`: retrieves the currently online vehicles (with the actual fake data you should get a list of 3 online vehicles);
-+ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/trip/{vehicleId}`: retrieves the trip information for the vehicle with the specified id. With the actual fake data you can specify whatever `vehicleId` you like, and you will get a `TripUpdate` linked to that vehicle id. (e.g. `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/trip/1234` will retrieve a trip update for the vehicle identified as `1234`);
-+ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/position/{vehicleId}`: retrieves the latest known position of the vehicle with the specified id. The actual fake data will always return the same position update.
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/online`: retrieves the currently online vehicles; the fake data will return a list of 3 devices;
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/trip/{vehicleId}`: retrieves the trip information for the vehicle with the specified id. With the fake data you can specify whatever `vehicleId` you like, and you will get a `TripUpdate` linked to that vehicle id. (e.g. `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/trip/1234` will retrieve a trip update for the vehicle identified as `1234`);
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/position/{vehicleId}`: retrieves the latest known position of the vehicle with the specified id. The fake data will always return the same position update;
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/announcement/{vehicleId}`: retrieves the latest announcement update for that `vrehicleId`. The fake endpoint will always return the same fake announcement update;
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/vehicle/{vehicleId}`: retrieves the latest vehicle update for that `vehicleId`. The fake endpoint will always return the same fake update.
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/stop/{vehicleId}`: retrieves the latest stop update for that `vehicleId`. The fake endpoint will always return the same fake update.
++ `https://udp-5g-broker.nomad-dmz.jena.de/sensinact/rest/pt/ptu/updates/stop-index/{vehicleId}`: retrieves the latest stop index update for that `vehicleId`. The fake endpoint will always return the same fake update.

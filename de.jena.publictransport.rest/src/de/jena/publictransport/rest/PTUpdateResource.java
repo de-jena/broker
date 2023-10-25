@@ -11,6 +11,7 @@
  */
 package de.jena.publictransport.rest;
 
+import java.util.Date;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -248,8 +249,6 @@ public class PTUpdateResource {
 			break;		
 		case GEO_INFO:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createPositionUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			Position position = TOSPublicTransportApiFactory.eINSTANCE.createPosition();
 			position.setLatitude(50.924969320696896);
 			position.setLongitude(11.587329016457586);
@@ -257,27 +256,19 @@ public class PTUpdateResource {
 			break;
 		case TRIP_DATA:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createTripUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			setTripUpdateFakeProperties((TripUpdate)update);
 			break;
 		case CURRENT_ANNOUNCEMENT:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createAnnouncementUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			((AnnouncementUpdate)update).setAnnouncementRef("annRef");
 			((AnnouncementUpdate)update).getAnnouncementText().add("This is an announcement!");
 			break;
 		case CURRENT_STOP_INDEX:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createStopIndexUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			((StopIndexUpdate)update).setCurrentStopIndex(7);
 			break;
 		case CURRENT_STOP_POINT:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createStopUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			((StopUpdate)update).setArrivalExpected(LocalTime.of(9, 30));
 			((StopUpdate)update).setDepartureExpected(LocalTime.of(9, 31));
 			((StopUpdate)update).setRefScheduleEntryIndex(3);
@@ -286,9 +277,7 @@ public class PTUpdateResource {
 			((StopUpdate)update).setRefStopId("de:16053:1234567");
 			break;
 		case VEHICLE_DATA:
-			update = TOSPublicTransportApiFactory.eINSTANCE.createVehicleUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
+			update = TOSPublicTransportApiFactory.eINSTANCE.createVehicleUpdate();			
 			((VehicleUpdate)update).setDoorState(DoorOpenStateType.DOORS_OPEN);
 			((VehicleUpdate)update).setExitSide(ExitSideType.LEFT);
 			((VehicleUpdate)update).setInPanic(false);
@@ -300,6 +289,9 @@ public class PTUpdateResource {
 			break;
 		}
 		if(update == null) return Response.noContent().build();
+		update.setRefVehicleId(vehicleId);
+		update.setTimestamp(System.currentTimeMillis());
+		update.setDataSource("FAKE");
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().add(update);
 		return Response.ok(response).build();
@@ -349,6 +341,8 @@ public class PTUpdateResource {
 	
 	private Schedule getFakeSchedule() {
 		Schedule schedule = TOSPublicTransportApiFactory.eINSTANCE.createSchedule();
+		schedule.setDataSource("FAKE");
+		schedule.setUpdateDate(new Date());
 		schedule.setStartDate(LocalDate.now().minusDays(2));
 		schedule.setEndDate(LocalDate.now().plusDays(3));
 		schedule.getFrequencyDays().addAll(ScheduleFrequencyDayType.VALUES);
