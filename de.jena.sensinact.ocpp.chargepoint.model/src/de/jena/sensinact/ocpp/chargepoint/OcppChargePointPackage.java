@@ -12,6 +12,7 @@
  */
 package de.jena.sensinact.ocpp.chargepoint;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -39,7 +40,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = OcppChargePointPackage.eNS_URI, genModel = "/model/ChargePoint.genmodel")
+@EPackage(uri = OcppChargePointPackage.eNS_URI, genModel = "/model/ChargePoint.genmodel", genModelSourceLocations = {"model/ChargePoint.genmodel","de.jena.sensinact.ocpp.chargepoint.model/model/ChargePoint.genmodel"}, ecore="/model/ChargePoint.ecore", ecoreSourceLocations="/model/ChargePoint.ecore")
 public interface OcppChargePointPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

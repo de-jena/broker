@@ -12,6 +12,7 @@
  */
 package de.jena.model.sensinact.ttnprovider;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -40,7 +41,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = TtnSensorSensinactPackage.eNS_URI, genModel = "/model/ttn.genmodel")
+@EPackage(uri = TtnSensorSensinactPackage.eNS_URI, genModel = "/model/ttn.genmodel", genModelSourceLocations = {"model/ttn.genmodel","de.jena.ttn.sensinact.model/model/ttn.genmodel"}, ecore="/model/ttn.ecore", ecoreSourceLocations="/model/ttn.ecore")
 public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

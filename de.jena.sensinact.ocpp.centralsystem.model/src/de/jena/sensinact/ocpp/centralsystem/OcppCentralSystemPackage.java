@@ -12,6 +12,7 @@
  */
 package de.jena.sensinact.ocpp.centralsystem;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -39,7 +40,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = OcppCentralSystemPackage.eNS_URI, genModel = "/model/CentralSystem.genmodel")
+@EPackage(uri = OcppCentralSystemPackage.eNS_URI, genModel = "/model/CentralSystem.genmodel", genModelSourceLocations = {"model/CentralSystem.genmodel","de.jena.sensinact.ocpp.centralsystem.model/model/CentralSystem.genmodel"}, ecore="/model/CentralSystem.ecore", ecoreSourceLocations="/model/CentralSystem.ecore")
 public interface OcppCentralSystemPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

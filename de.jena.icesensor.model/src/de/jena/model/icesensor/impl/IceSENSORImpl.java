@@ -38,6 +38,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link de.jena.model.icesensor.impl.IceSENSORImpl#getCoords <em>Coords</em>}</li>
  *   <li>{@link de.jena.model.icesensor.impl.IceSENSORImpl#getData <em>Data</em>}</li>
  *   <li>{@link de.jena.model.icesensor.impl.IceSENSORImpl#isHas_beacon <em>Has beacon</em>}</li>
+ *   <li>{@link de.jena.model.icesensor.impl.IceSENSORImpl#getDetail <em>Detail</em>}</li>
  * </ul>
  *
  * @generated
@@ -102,6 +103,26 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 	 * @ordered
 	 */
 	protected boolean has_beacon = HAS_BEACON_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDetail() <em>Detail</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDetail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DETAIL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDetail() <em>Detail</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDetail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String detail = DETAIL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -264,6 +285,29 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 	 * @generated
 	 */
 	@Override
+	public String getDetail() {
+		return detail;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDetail(String newDetail) {
+		String oldDetail = detail;
+		detail = newDetail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, IcesensorPackage.ICE_SENSOR__DETAIL, oldDetail, detail));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case IcesensorPackage.ICE_SENSOR__COORDS:
@@ -290,6 +334,8 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 				return getData();
 			case IcesensorPackage.ICE_SENSOR__HAS_BEACON:
 				return isHas_beacon();
+			case IcesensorPackage.ICE_SENSOR__DETAIL:
+				return getDetail();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,6 +359,9 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 				return;
 			case IcesensorPackage.ICE_SENSOR__HAS_BEACON:
 				setHas_beacon((Boolean)newValue);
+				return;
+			case IcesensorPackage.ICE_SENSOR__DETAIL:
+				setDetail((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -338,6 +387,9 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 			case IcesensorPackage.ICE_SENSOR__HAS_BEACON:
 				setHas_beacon(HAS_BEACON_EDEFAULT);
 				return;
+			case IcesensorPackage.ICE_SENSOR__DETAIL:
+				setDetail(DETAIL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +410,8 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 				return data != null;
 			case IcesensorPackage.ICE_SENSOR__HAS_BEACON:
 				return has_beacon != HAS_BEACON_EDEFAULT;
+			case IcesensorPackage.ICE_SENSOR__DETAIL:
+				return DETAIL_EDEFAULT == null ? detail != null : !DETAIL_EDEFAULT.equals(detail);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -376,6 +430,8 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 		result.append(ice_id);
 		result.append(", has_beacon: ");
 		result.append(has_beacon);
+		result.append(", detail: ");
+		result.append(detail);
 		result.append(')');
 		return result.toString();
 	}

@@ -11,6 +11,7 @@
  */
 package de.jena.publictransport.rest;
 
+import java.util.Date;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -31,21 +32,28 @@ import org.osgi.service.servlet.whiteboard.annotations.RequireHttpWhiteboard;
 
 import de.dim.trafficos.publictransport.apis.PTApiUpdateService;
 import de.jena.udp.model.trafficos.publictransport.PTUpdateValueType;
+import de.jena.udp.model.trafficos.publictransport_api.AnnouncementUpdate;
+import de.jena.udp.model.trafficos.publictransport_api.DoorOpenStateType;
+import de.jena.udp.model.trafficos.publictransport_api.ExitSideType;
 import de.jena.udp.model.trafficos.publictransport_api.LocationStateType;
+import de.jena.udp.model.trafficos.publictransport_api.OnlineUpdate;
 import de.jena.udp.model.trafficos.publictransport_api.OnlineVehicle;
 import de.jena.udp.model.trafficos.publictransport_api.PickUpDropOffType;
 import de.jena.udp.model.trafficos.publictransport_api.Position;
 import de.jena.udp.model.trafficos.publictransport_api.PositionUpdate;
+import de.jena.udp.model.trafficos.publictransport_api.RouteDeviationType;
 import de.jena.udp.model.trafficos.publictransport_api.RouteDirectionType;
 import de.jena.udp.model.trafficos.publictransport_api.Schedule;
 import de.jena.udp.model.trafficos.publictransport_api.ScheduleEntry;
 import de.jena.udp.model.trafficos.publictransport_api.ScheduleFrequencyDayType;
+import de.jena.udp.model.trafficos.publictransport_api.StopIndexUpdate;
 import de.jena.udp.model.trafficos.publictransport_api.StopInformation;
 import de.jena.udp.model.trafficos.publictransport_api.StopUpdate;
 import de.jena.udp.model.trafficos.publictransport_api.TOSPublicTransportApiFactory;
 import de.jena.udp.model.trafficos.publictransport_api.TripUpdate;
 import de.jena.udp.model.trafficos.publictransport_api.Update;
 import de.jena.udp.model.trafficos.publictransport_api.VehicleType;
+import de.jena.udp.model.trafficos.publictransport_api.VehicleUpdate;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
@@ -63,7 +71,7 @@ import jakarta.ws.rs.core.Response;
 @RequireHttpWhiteboard
 @JakartarsResource
 @RequireEMFMessageBodyReaderWriter
-@Produces(MediaType.APPLICATION_JSON)
+@Produces({MediaType.APPLICATION_JSON})
 @RequireEMFJson
 @Component(name = "PTUpdateResource", service = PTUpdateResource.class, scope = ServiceScope.PROTOTYPE)
 @Path("/ptu")
@@ -76,16 +84,148 @@ public class PTUpdateResource {
 	@GET
 	@Path("/hello")
 	public Response hello() {
-		return Response.ok("OK").build();
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.setMessage("OK");
+		return Response.ok(response).build();
 	}
 	
 	@GET
 	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/updates/online")
-	public Response getOnlineVehicles() {
+	public Response getOnlineVehicles() {		
+		return doGetOnlineVehicles();
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/online")
+	public Response getFakeOnlineVehicles() {
+		return doGetFakeOnlineVehicles();
+	}
+
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/trip/{vehicleId}")
+	public Response getTripUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.TRIP_DATA);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/trip/{vehicleId}")
+	public Response getFakeTripUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.TRIP_DATA);
+	}
+
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/position/{vehicleId}")
+	public Response getPositionUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.GEO_INFO);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/position/{vehicleId}")
+	public Response getFakePositionUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.GEO_INFO);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/announcement/{vehicleId}")
+	public Response getAnnouncementUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.CURRENT_ANNOUNCEMENT);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/announcement/{vehicleId}")
+	public Response getFakeAnnouncementUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.CURRENT_ANNOUNCEMENT);
+	}
+
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/vehicle/{vehicleId}")
+	public Response getVehicleUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.VEHICLE_DATA);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/vehicle/{vehicleId}")
+	public Response getFakeVehicleUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.VEHICLE_DATA);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/stop/{vehicleId}")
+	public Response getStopUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.CURRENT_STOP_POINT);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/stop/{vehicleId}")
+	public Response getFakeStopUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.CURRENT_STOP_POINT);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/stop-index/{vehicleId}")
+	public Response getStopIndexUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getUpdate(vehicleId, PTUpdateValueType.CURRENT_STOP_INDEX);
+	}
+	
+	@GET
+	@EMFJSONConfig(serializeDefaultValues = true)
+	@Path("/updates/fake/stop-index/{vehicleId}")
+	public Response getFakeStopIndexUpdate(@PathParam("vehicleId") String vehicleId) {
+		return getFakeUpdate(vehicleId, PTUpdateValueType.CURRENT_STOP_INDEX);
+	}
+	
+	private Response doGetOnlineVehicles() {
+		List<Update> updates = apiUpdateService.getLatestUpdatesByType(PTUpdateValueType.ONLINE);
+		if(updates.isEmpty()) {
+			return buildNoContentResponse();
+		}
+		List<OnlineVehicle> onlineVehicles = new ArrayList<>();
+		updates.forEach(update -> {
+			if(update instanceof OnlineUpdate onlineUpdate) {
+				if(onlineUpdate.isOnline()) {
+					OnlineVehicle vehicle = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
+					vehicle.setId(onlineUpdate.getRefVehicleId());
+					vehicle.setType(onlineUpdate.getType());
+					onlineVehicles.add(vehicle);
+				}
+			}
+		});
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.getData().addAll(onlineVehicles);
+		return Response.ok(response).build();
+	}
+
+	private Response getUpdate(String vehicleId, PTUpdateValueType updateType) {
+		Update update = apiUpdateService.getLatestUpdateByTypeAndVehicle(vehicleId, updateType);
+		if(update == null) return buildNoContentResponse();
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.getData().add(update);
+		return Response.ok(response).build();
+	}
+	
+	private Response buildNoContentResponse() {
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.setMessage("NO CONTENT");
+		return Response.ok(response).build();
+	}
+	
+	private Response doGetFakeOnlineVehicles() {
 		OnlineVehicle vehicle1 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
 		vehicle1.setId("1");
-		vehicle1.setType(VehicleType.BUS);
+		vehicle1.setType(VehicleType.CITY_BUS);
 		
 		OnlineVehicle vehicle2 = TOSPublicTransportApiFactory.eINSTANCE.createOnlineVehicle();
 		vehicle2.setId("2");
@@ -102,38 +242,13 @@ public class PTUpdateResource {
 		return Response.ok(response).build();
 	}
 
-	@GET
-	@EMFJSONConfig(serializeDefaultValues = true)
-	@Path("/updates/trip/{vehicleId}")
-	public Response getTripUpdate(@PathParam("vehicleId") String vehicleId) {
-		return getFakeUpdate(vehicleId, PTUpdateValueType.TRIP_DATA);
-	}
-
-	@GET
-	@EMFJSONConfig(serializeDefaultValues = true)
-	@Path("/updates/position/{vehicleId}")
-	public Response getPositionUpdate(@PathParam("vehicleId") String vehicleId) {
-		return getFakeUpdate(vehicleId, PTUpdateValueType.GEO_INFO);
-	}
-
-//	TODO: use this when ibis IP has been tested
-	private Response getUpdate(String vehicleId, PTUpdateValueType updateType) {
-		Update update = apiUpdateService.getLatestUpdateByType(vehicleId, updateType);
-		if(update == null) return Response.noContent().build();
-		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
-		response.getData().add(update);
-		return Response.ok(response).build();
-	}
-
 	private Response getFakeUpdate(String vehicleId, PTUpdateValueType updateType) {
 		Update update = null;
 		switch(updateType) {
-		case DOOR_CHANGE, DOOR_COUNT, LOCATION_MESSAGE,STOP_REQUESTED,TELEGRAM,TIMETABLE,UNKNOWN:
+		case DOOR_CHANGE, DOOR_COUNT, LOCATION_MESSAGE,STOP_REQUESTED,TELEGRAM,TIMETABLE,ONLINE,UNKNOWN:
 			break;		
 		case GEO_INFO:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createPositionUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			Position position = TOSPublicTransportApiFactory.eINSTANCE.createPosition();
 			position.setLatitude(50.924969320696896);
 			position.setLongitude(11.587329016457586);
@@ -141,12 +256,42 @@ public class PTUpdateResource {
 			break;
 		case TRIP_DATA:
 			update = TOSPublicTransportApiFactory.eINSTANCE.createTripUpdate();
-			update.setRefVehicleId(vehicleId);
-			update.setTimestamp(System.currentTimeMillis());
 			setTripUpdateFakeProperties((TripUpdate)update);
+			break;
+		case CURRENT_ANNOUNCEMENT:
+			update = TOSPublicTransportApiFactory.eINSTANCE.createAnnouncementUpdate();
+			((AnnouncementUpdate)update).setAnnouncementRef("annRef");
+			((AnnouncementUpdate)update).getAnnouncementText().add("This is an announcement!");
+			break;
+		case CURRENT_STOP_INDEX:
+			update = TOSPublicTransportApiFactory.eINSTANCE.createStopIndexUpdate();
+			((StopIndexUpdate)update).setCurrentStopIndex(7);
+			break;
+		case CURRENT_STOP_POINT:
+			update = TOSPublicTransportApiFactory.eINSTANCE.createStopUpdate();
+			((StopUpdate)update).setArrivalExpected(LocalTime.of(9, 30));
+			((StopUpdate)update).setDepartureExpected(LocalTime.of(9, 31));
+			((StopUpdate)update).setRefScheduleEntryIndex(3);
+			((StopUpdate)update).setDistanceFromNextStop(350);
+			((StopUpdate)update).setRecordedArrivalTime(LocalTime.of(9, 32));
+			((StopUpdate)update).setRefStopId("de:16053:1234567");
+			break;
+		case VEHICLE_DATA:
+			update = TOSPublicTransportApiFactory.eINSTANCE.createVehicleUpdate();			
+			((VehicleUpdate)update).setDoorState(DoorOpenStateType.DOORS_OPEN);
+			((VehicleUpdate)update).setExitSide(ExitSideType.LEFT);
+			((VehicleUpdate)update).setInPanic(false);
+			((VehicleUpdate)update).setMovingForward(true);
+			((VehicleUpdate)update).setRouteDeviation(RouteDeviationType.ON_ROUTE);
+			((VehicleUpdate)update).setSpeakerActive(true);
+			((VehicleUpdate)update).setStopInformationActive(true);
+			((VehicleUpdate)update).setStopRequested(false);
 			break;
 		}
 		if(update == null) return Response.noContent().build();
+		update.setRefVehicleId(vehicleId);
+		update.setTimestamp(System.currentTimeMillis());
+		update.setDataSource("FAKE");
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().add(update);
 		return Response.ok(response).build();
@@ -196,6 +341,8 @@ public class PTUpdateResource {
 	
 	private Schedule getFakeSchedule() {
 		Schedule schedule = TOSPublicTransportApiFactory.eINSTANCE.createSchedule();
+		schedule.setDataSource("FAKE");
+		schedule.setUpdateDate(new Date());
 		schedule.setStartDate(LocalDate.now().minusDays(2));
 		schedule.setEndDate(LocalDate.now().plusDays(3));
 		schedule.getFrequencyDays().addAll(ScheduleFrequencyDayType.VALUES);

@@ -185,6 +185,16 @@ public class IcesensorPackageImpl extends EPackageImpl implements IcesensorPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getIceSENSOR_Detail() {
+		return (EAttribute)iceSENSOREClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getData() {
 		return dataEClass;
 	}
@@ -533,6 +543,7 @@ public class IcesensorPackageImpl extends EPackageImpl implements IcesensorPacka
 		createEReference(iceSENSOREClass, ICE_SENSOR__COORDS);
 		createEReference(iceSENSOREClass, ICE_SENSOR__DATA);
 		createEAttribute(iceSENSOREClass, ICE_SENSOR__HAS_BEACON);
+		createEAttribute(iceSENSOREClass, ICE_SENSOR__DETAIL);
 
 		dataEClass = createEClass(DATA);
 		createEReference(dataEClass, DATA__H2SUGM3);
@@ -606,6 +617,7 @@ public class IcesensorPackageImpl extends EPackageImpl implements IcesensorPacka
 		initEReference(getIceSENSOR_Coords(), this.getCoords(), null, "coords", null, 0, 1, IceSENSOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIceSENSOR_Data(), this.getData(), null, "data", null, 0, 1, IceSENSOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIceSENSOR_Has_beacon(), ecorePackage.getEBoolean(), "has_beacon", null, 1, 1, IceSENSOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIceSENSOR_Detail(), ecorePackage.getEString(), "detail", null, 0, 1, IceSENSOR.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dataEClass, Data.class, "Data", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getData_H2sugm3(), this.getSensorData(), null, "h2sugm3", null, 0, 1, Data.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

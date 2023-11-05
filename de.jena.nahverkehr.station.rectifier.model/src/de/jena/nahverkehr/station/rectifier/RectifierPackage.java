@@ -2,6 +2,7 @@
  */
 package de.jena.nahverkehr.station.rectifier;
 
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -30,7 +31,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * @generated
  */
 @ProviderType
-@EPackage(uri = RectifierPackage.eNS_URI, genModel = "/model/rectifier.genmodel")
+@EPackage(uri = RectifierPackage.eNS_URI, genModel = "/model/rectifier.genmodel", genModelSourceLocations = {"model/rectifier.genmodel","de.jena.nahverkehr.station.rectifier.model/model/rectifier.genmodel"}, ecore="/model/rectifier.ecore", ecoreSourceLocations="/model/rectifier.ecore")
 public interface RectifierPackage extends org.eclipse.emf.ecore.EPackage {
 	/**
 	 * The package name.

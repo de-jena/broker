@@ -68,7 +68,9 @@ public class PTScheduleResource {
 	@GET
 	@Path("/hello")
 	public Response hello() {
-		return Response.ok("OK").build();
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.setMessage("OK");
+		return Response.ok(response).build();
 	}
 	
 	@GET
@@ -79,18 +81,30 @@ public class PTScheduleResource {
 		List<Schedule> schedules = apiScheduleService.getScheduleByDay(date);
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
+		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
 		return Response.ok(response).build();
 	}
 	
+	/**
+	 * TODO: when we figure out the meaning of the various line numbers, line ref ect we decide what to return here
+	 * @param day
+	 * @param lines
+	 * @return
+	 */
 	@GET
 	@EMFJSONConfig(serializeDefaultValues = true)
 	@Path("/schedules/line/{day}")
 	public Response getSchedulesByDayAndLine(@PathParam("day") String day, @QueryParam("lines") int[] lines) {
-		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
-		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndLine(date, lines);
+		
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
-		response.getData().addAll(schedules);
+		response.setMessage("NO CONTENT");
 		return Response.ok(response).build();
+//		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
+//		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndLine(date, lines);
+//		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+//		response.getData().addAll(schedules);
+//		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
+//		return Response.ok(response).build();
 	}
 	
 	@GET
@@ -105,6 +119,7 @@ public class PTScheduleResource {
 		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndTime(date, t1, t2);
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
+		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
 		return Response.ok(response).build();
 	}
 	
@@ -116,6 +131,7 @@ public class PTScheduleResource {
 		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndStopDHID(date, stopDHIDs);
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
+		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
 		return Response.ok(response).build();
 	}
 	
@@ -127,6 +143,7 @@ public class PTScheduleResource {
 		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndStopName(date, stopNames);
 		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
 		response.getData().addAll(schedules);
+		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
 		return Response.ok(response).build();
 	}
 	
