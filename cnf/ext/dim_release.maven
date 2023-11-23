@@ -50,6 +50,8 @@ de.jena:de.jena.udp.trafficos.publictransport.api.model:1.1.1-SNAPSHOT
 de.jena:de.jena.udp.trafficos.intersection.model:1.1.1-SNAPSHOT
 de.jena:de.jena.udp.trafficos.intersectionsystem.model:1.1.1-SNAPSHOT
 de.jena:de.jena.udp.trafficos.trafficlight.model:1.1.1-SNAPSHOT
+de.jena:de.jena.udp.sensinact.generic.message.model:1.1.1-SNAPSHOT
+
 
 de.dim.trafficos:de.dim.trafficos.gtfs.component:1.0.0-SNAPSHOT
 de.dim.trafficos:de.dim.trafficos.gtfs.config:1.0.0-SNAPSHOT
@@ -59,6 +61,7 @@ de.dim.trafficos:de.dim.trafficos.publictransport.apis:1.0.0-SNAPSHOT
 de.dim.trafficos:de.dim.trafficos.publictransport.component:1.0.0-SNAPSHOT
 de.dim.trafficos:de.dim.trafficos.publictransport.config:1.0.0-SNAPSHOT
 de.dim.trafficos:de.dim.trafficos.publictransport.value.converter:1.0.0-SNAPSHOT
+
 
 
 

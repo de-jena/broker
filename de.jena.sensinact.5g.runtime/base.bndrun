@@ -169,7 +169,30 @@
 	de.jena.core.pushstream;version=snapshot,\
 	org.apache.felix.log;version='[1.3.0,1.3.1)',\
 	org.osgi.service.servlet;version='[2.0.0,2.0.1)',\
-	org.osgi.util.pushstream;version='[1.1.0,1.1.1)'
+	org.osgi.util.pushstream;version='[1.1.0,1.1.1)',\
+	com.opencsv;version='[5.8.0,5.8.1)',\
+	de.jena.ibis.apis;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.common.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.customer.info.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.device.management.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.door.state.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.enumerations.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.event.handlers;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.gnss.location.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.passenger.counting.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.sensinact.mmt;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.sensinact.mmt.util;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.sensinact.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.ticket.validation.service.model;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.tos.mmt;version='[1.0.0,1.0.1)',\
+	de.jena.ibis.tos.mmt.util;version='[1.0.0,1.0.1)',\
+	de.jena.udp.sensinact.generic.message.model;version='[1.1.1,1.1.2)',\
+	org.apache.commons.collections;version='[3.2.2,3.2.3)',\
+	org.apache.commons.commons-beanutils;version='[1.9.4,1.9.5)',\
+	org.apache.commons.commons-collections4;version='[4.4.0,4.4.1)',\
+	org.apache.commons.commons-text;version='[1.10.0,1.10.1)',\
+	org.apache.commons.lang3;version='[3.13.0,3.13.1)',\
+	org.apache.felix.eventadmin;version='[1.6.2,1.6.3)'
 	
 
 -runrequires: \
@@ -210,7 +233,12 @@
 	osgi.identity;filter:='(&(osgi.identity=org.apache.felix.log)(version>=1.2.4))',\
 	bnd.identity;id='org.apache.felix.logback',\
 	bnd.identity;id='de.jena.sensinact.rest.log',\
-	bnd.identity;id='de.jena.sensinact.mqtt.5g.topic.bridge'
+	bnd.identity;id='de.jena.sensinact.mqtt.5g.topic.bridge',\
+	bnd.identity;id='de.jena.ibis.event.handlers',\
+	bnd.identity;id='de.jena.ibis.sensinact.mmt',\
+	bnd.identity;id='de.jena.ibis.sensinact.mmt.util',\
+	bnd.identity;id='de.jena.ibis.tos.mmt',\
+	bnd.identity;id='de.jena.ibis.tos.mmt.util'
 	
 -runee: JavaSE-17
 -runvm.localdev: -Duser.dir=${.}/generated/tmp

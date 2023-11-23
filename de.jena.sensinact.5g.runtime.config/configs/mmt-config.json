@@ -37,5 +37,39 @@
 		"pool.asService": false,
 		"osgi.ds.satisfying.condition.target": "(osgi.condition.id=ttnBlackboxes)"
 		
+	},
+	
+	"ConfigurableModelTransformatorPool~ibis": {
+		"pool.componentName": "ibisToSensinactPool",
+		"pool.size": 100,
+		"pool.timeout": 100,
+		"poolRef.target": "(pool.group=sensinactPoolGroup)"
+	},
+	
+	"PrototypeConfigurableTransformationService~ibis": {
+		"name": "ibis",
+		"qvt.templatePath": "de.jena.ibis.sensinact.mmt/transformations/ibisToSensinact.qvto",
+		"qvt.transformatorName": "ibisToSensinact",
+		"qvt.model.target": "(&(emf.model.name=ibis)(emf.model.name=common)(emf.model.name=enumerations)(emf.model.name=customerinformationservice)(emf.model.name=gnsslocationservice)(emf.model.name=ticketvalidationservice))",
+		"pool.name": "sensinactPool",
+		"pool.group": "sensinactPoolGroup",
+		"pool.asService": false
+	},
+	
+	"ConfigurableModelTransformatorPool~tos": {
+		"pool.componentName": "ibisToTOSPool",
+		"pool.size": 100,
+		"pool.timeout": 100,
+		"poolRef.target": "(pool.group=tosPoolGroup)"
+	},
+	
+	"PrototypeConfigurableTransformationService~tos": {
+		"name": "tos",
+		"qvt.templatePath": "de.jena.ibis.tos.mmt/transforms/IbisToTOS.qvto",
+		"qvt.transformatorName": "IbisToTOS",
+		"qvt.model.target": "(&(emf.model.name=common)(emf.model.name=enumerations)(emf.model.name=customerinformationservice)(emf.model.name=gnsslocationservice)(emf.model.name=publictransport))",
+		"pool.name": "tosPool",
+		"pool.group": "tosPoolGroup",
+		"pool.asService": false
 	}
 }
