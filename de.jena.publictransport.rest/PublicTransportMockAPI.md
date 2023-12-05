@@ -26,7 +26,7 @@ The `PTScheduleResource` consists of five endpoints:
 
 ## `PTUpdateResource`
 
-**ATTENTION: for the `PTUpdateResource` we currently implemented two versions of the same endpoint: one returning some fake data and a second one which would return the actual live update from the IBIS-IP.** Since the IBIS-IP is not yet connected to the whole application, we suggest to use the fake version of the endpoints to see whether the data you are getting back are what you would expect.
+**ATTENTION: for the `PTUpdateResource` we currently implemented two versions of the same endpoint: one returning some fake data and a second one which would return the actual live update from the IBIS-IP.** Once the IBIS-IP is connected, live updates should be stored automatically in the broker `sensinact` database and it should be possible to retrieve them via REST API. 
 
 The `PTUpdateResource`consists of the following endpoints (for the "fake" version of each of them, please, append a `fake` segment to the URL after the `updates` segment):
 
