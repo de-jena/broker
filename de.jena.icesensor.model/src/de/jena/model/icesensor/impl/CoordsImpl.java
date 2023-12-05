@@ -12,15 +12,13 @@
  */
 package de.jena.model.icesensor.impl;
 
-import de.jena.model.icesensor.Coords;
-import de.jena.model.icesensor.IcesensorPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import de.jena.model.icesensor.Coords;
+import de.jena.model.icesensor.IcesensorPackage;
 
 /**
  * <!-- begin-user-doc -->

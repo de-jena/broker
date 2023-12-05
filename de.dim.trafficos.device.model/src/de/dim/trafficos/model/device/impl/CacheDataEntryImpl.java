@@ -12,10 +12,10 @@
  */
 package de.dim.trafficos.model.device.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.dim.trafficos.model.device.CacheDataEntry;
 import de.dim.trafficos.model.device.TOSDevicePackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

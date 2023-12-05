@@ -12,12 +12,14 @@
  */
 package de.jena.sensinact.ocpp.structures.util;
 
-import de.jena.sensinact.ocpp.structures.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.jena.sensinact.ocpp.structures.MeasurementNotification;
+import de.jena.sensinact.ocpp.structures.Notification;
+import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
+import de.jena.sensinact.ocpp.structures.StateNotification;
 
 /**
  * <!-- begin-user-doc -->

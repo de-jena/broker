@@ -12,15 +12,19 @@
  */
 package de.jena.model.icesensor.impl;
 
-import de.jena.model.icesensor.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.jena.model.icesensor.Coords;
+import de.jena.model.icesensor.Data;
+import de.jena.model.icesensor.IceSENSOR;
+import de.jena.model.icesensor.IcesensorFactory;
+import de.jena.model.icesensor.IcesensorPackage;
+import de.jena.model.icesensor.SensorData;
+import de.jena.model.icesensor.SensorMessage;
 
 /**
  * <!-- begin-user-doc -->

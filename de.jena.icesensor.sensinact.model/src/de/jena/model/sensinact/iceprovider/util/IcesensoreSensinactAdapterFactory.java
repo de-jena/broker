@@ -12,17 +12,16 @@
  */
 package de.jena.model.sensinact.iceprovider.util;
 
-import de.jena.model.sensinact.iceprovider.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.model.core.provider.Service;
+
+import de.jena.model.sensinact.iceprovider.IceSensor;
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+import de.jena.model.sensinact.iceprovider.SensorData;
 
 /**
  * <!-- begin-user-doc -->

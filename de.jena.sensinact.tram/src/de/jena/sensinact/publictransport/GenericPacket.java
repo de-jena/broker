@@ -11,10 +11,10 @@
  */
 package de.jena.sensinact.publictransport;
 
-import org.eclipse.sensinact.prototype.annotation.dto.Data;
-import org.eclipse.sensinact.prototype.annotation.dto.Provider;
-import org.eclipse.sensinact.prototype.annotation.dto.Resource;
-import org.eclipse.sensinact.prototype.annotation.dto.Service;
+import org.eclipse.sensinact.core.annotation.dto.Data;
+import org.eclipse.sensinact.core.annotation.dto.Provider;
+import org.eclipse.sensinact.core.annotation.dto.Resource;
+import org.eclipse.sensinact.core.annotation.dto.Service;
 
 /**
  * 

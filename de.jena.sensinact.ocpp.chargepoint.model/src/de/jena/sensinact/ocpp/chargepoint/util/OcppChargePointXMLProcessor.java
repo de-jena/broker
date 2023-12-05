@@ -12,15 +12,13 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.util;
 
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
-
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
+
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 /**
  * This class contains helper methods to serialize and deserialize XML documents

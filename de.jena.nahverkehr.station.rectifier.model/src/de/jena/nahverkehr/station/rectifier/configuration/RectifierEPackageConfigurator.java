@@ -2,13 +2,13 @@
  */
 package de.jena.nahverkehr.station.rectifier.configuration;
 
-import de.jena.nahverkehr.station.rectifier.RectifierPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.nahverkehr.station.rectifier.RectifierPackage;
 
 /**
  * <!-- begin-user-doc -->

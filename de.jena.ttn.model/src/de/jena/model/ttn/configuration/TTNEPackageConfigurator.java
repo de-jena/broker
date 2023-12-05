@@ -2,13 +2,13 @@
  */
 package de.jena.model.ttn.configuration;
 
-import de.jena.model.ttn.TTNPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.model.ttn.TTNPackage;
 
 /**
  * <!-- begin-user-doc -->

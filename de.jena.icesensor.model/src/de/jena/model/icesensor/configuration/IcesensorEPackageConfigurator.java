@@ -12,13 +12,13 @@
  */
 package de.jena.model.icesensor.configuration;
 
-import de.jena.model.icesensor.IcesensorPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.model.icesensor.IcesensorPackage;
 
 /**
  * <!-- begin-user-doc -->

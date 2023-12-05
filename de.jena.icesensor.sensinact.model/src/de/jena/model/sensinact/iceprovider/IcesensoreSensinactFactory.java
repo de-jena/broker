@@ -13,7 +13,6 @@
 package de.jena.model.sensinact.iceprovider;
 
 import org.eclipse.emf.ecore.EFactory;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

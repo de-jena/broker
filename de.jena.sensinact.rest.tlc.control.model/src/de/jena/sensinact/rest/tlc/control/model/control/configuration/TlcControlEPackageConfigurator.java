@@ -12,13 +12,13 @@
  */
 package de.jena.sensinact.rest.tlc.control.model.control.configuration;
 
-import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
 
 /**
  * <!-- begin-user-doc -->

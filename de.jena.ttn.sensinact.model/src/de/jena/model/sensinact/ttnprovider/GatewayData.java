@@ -13,7 +13,6 @@
 package de.jena.model.sensinact.ttnprovider;
 
 import org.eclipse.sensinact.model.core.provider.Service;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

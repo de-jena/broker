@@ -12,12 +12,66 @@
  */
 package de.dim.trafficos.model.device.util;
 
-import de.dim.trafficos.model.device.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.dim.trafficos.model.device.AbstractDataEntry;
+import de.dim.trafficos.model.device.AbstractTimeTableEntry;
+import de.dim.trafficos.model.device.AddressLocation;
+import de.dim.trafficos.model.device.CacheDataEntry;
+import de.dim.trafficos.model.device.ClearArea;
+import de.dim.trafficos.model.device.ConflictingLane;
+import de.dim.trafficos.model.device.CycleLane;
+import de.dim.trafficos.model.device.DataEntry;
+import de.dim.trafficos.model.device.DataValue;
+import de.dim.trafficos.model.device.Device;
+import de.dim.trafficos.model.device.DeviceConfiguration;
+import de.dim.trafficos.model.device.DeviceGroup;
+import de.dim.trafficos.model.device.DeviceInfo;
+import de.dim.trafficos.model.device.HardwareConfiguration;
+import de.dim.trafficos.model.device.IdNameElement;
+import de.dim.trafficos.model.device.IncomingLane;
+import de.dim.trafficos.model.device.Intersection;
+import de.dim.trafficos.model.device.Lane;
+import de.dim.trafficos.model.device.Link;
+import de.dim.trafficos.model.device.Localizable;
+import de.dim.trafficos.model.device.Location;
+import de.dim.trafficos.model.device.NetworkLocation;
+import de.dim.trafficos.model.device.OutPinConfiguration;
+import de.dim.trafficos.model.device.OutgoingLane;
+import de.dim.trafficos.model.device.Output;
+import de.dim.trafficos.model.device.OutputConfiguration;
+import de.dim.trafficos.model.device.Parameter;
+import de.dim.trafficos.model.device.PedestrianLane;
+import de.dim.trafficos.model.device.Phase;
+import de.dim.trafficos.model.device.PhaseGroup;
+import de.dim.trafficos.model.device.Position;
+import de.dim.trafficos.model.device.Program;
+import de.dim.trafficos.model.device.ProgramEntry;
+import de.dim.trafficos.model.device.ProgramTransition;
+import de.dim.trafficos.model.device.PublicTransportConfiguration;
+import de.dim.trafficos.model.device.PublicTransportDataEntry;
+import de.dim.trafficos.model.device.PublicTransportDataValue;
+import de.dim.trafficos.model.device.PublicTransportDataValueObject;
+import de.dim.trafficos.model.device.PublicTransportDoorChange;
+import de.dim.trafficos.model.device.PublicTransportLane;
+import de.dim.trafficos.model.device.PublicTransportLine;
+import de.dim.trafficos.model.device.PublicTransportLocMsg;
+import de.dim.trafficos.model.device.PublicTransportPosition;
+import de.dim.trafficos.model.device.PublicTransportProgram;
+import de.dim.trafficos.model.device.PublicTransportStation;
+import de.dim.trafficos.model.device.PublicTransportStop;
+import de.dim.trafficos.model.device.PublicTransportTelegram;
+import de.dim.trafficos.model.device.PublicTransportTimeTable;
+import de.dim.trafficos.model.device.PublicTransportTimeTableEntry;
+import de.dim.trafficos.model.device.Road;
+import de.dim.trafficos.model.device.SignalTable;
+import de.dim.trafficos.model.device.SystemInfo;
+import de.dim.trafficos.model.device.TOSDevicePackage;
+import de.dim.trafficos.model.device.TimeTable;
+import de.dim.trafficos.model.device.TimeTableEntry;
+import de.dim.trafficos.model.device.Transition;
 
 /**
  * <!-- begin-user-doc -->

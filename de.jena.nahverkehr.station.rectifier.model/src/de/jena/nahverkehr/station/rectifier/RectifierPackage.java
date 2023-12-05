@@ -7,9 +7,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
-
 import org.gecko.emf.osgi.annotation.provide.EPackage;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

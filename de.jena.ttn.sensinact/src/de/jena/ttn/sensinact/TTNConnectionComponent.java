@@ -13,14 +13,14 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.sensinact.core.push.DataUpdate;
+import org.eclipse.sensinact.core.push.dto.BulkGenericDto;
+import org.eclipse.sensinact.core.push.dto.GenericDto;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
 import org.eclipse.sensinact.model.core.provider.Admin;
 import org.eclipse.sensinact.model.core.provider.Provider;
-import org.eclipse.sensinact.prototype.PrototypePush;
-import org.eclipse.sensinact.prototype.generic.dto.BulkGenericDto;
-import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.core.pool.Pool;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.osgi.messaging.Message;
@@ -69,7 +69,7 @@ public class TTNConnectionComponent {
 	private TTNPackage ttnPackage;
 	
 	@Reference
-	private PrototypePush sensinact;
+	private DataUpdate sensinact;
 
 	private List<PushStream<Message>> subscriptions = new ArrayList<>();
 //	private Map<String, GenericDto> deviceRegistrationMap = new HashMap<>();

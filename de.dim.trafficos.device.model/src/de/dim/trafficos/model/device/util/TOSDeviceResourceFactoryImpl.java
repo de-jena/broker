@@ -12,18 +12,15 @@
  */
 package de.dim.trafficos.model.device.util;
 
-import de.dim.trafficos.model.device.TOSDevicePackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-
 import org.gecko.emf.osgi.EMFNamespaces;
+
+import de.dim.trafficos.model.device.TOSDevicePackage;
 
 /**
  * <!-- begin-user-doc -->

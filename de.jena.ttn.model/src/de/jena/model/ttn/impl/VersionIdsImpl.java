@@ -2,15 +2,13 @@
  */
 package de.jena.model.ttn.impl;
 
-import de.jena.model.ttn.TTNPackage;
-import de.jena.model.ttn.VersionIds;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import de.jena.model.ttn.TTNPackage;
+import de.jena.model.ttn.VersionIds;
 
 /**
  * <!-- begin-user-doc -->

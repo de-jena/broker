@@ -12,15 +12,21 @@
  */
 package de.jena.sensinact.rest.tlc.control.model.control.impl;
 
-import de.jena.sensinact.rest.tlc.control.model.control.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.jena.sensinact.rest.tlc.control.model.control.Control;
+import de.jena.sensinact.rest.tlc.control.model.control.IdsListReponse;
+import de.jena.sensinact.rest.tlc.control.model.control.Location;
+import de.jena.sensinact.rest.tlc.control.model.control.Phase;
+import de.jena.sensinact.rest.tlc.control.model.control.PhasesListReponse;
+import de.jena.sensinact.rest.tlc.control.model.control.Tlc;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlFactory;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcHolder;
 
 /**
  * <!-- begin-user-doc -->

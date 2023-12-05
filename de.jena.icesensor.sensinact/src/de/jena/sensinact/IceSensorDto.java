@@ -13,11 +13,11 @@ package de.jena.sensinact;
 
 import java.time.temporal.ChronoUnit;
 
-import org.eclipse.sensinact.prototype.annotation.dto.Data;
-import org.eclipse.sensinact.prototype.annotation.dto.Model;
-import org.eclipse.sensinact.prototype.annotation.dto.Provider;
-import org.eclipse.sensinact.prototype.annotation.dto.Service;
-import org.eclipse.sensinact.prototype.annotation.dto.Timestamp;
+import org.eclipse.sensinact.core.annotation.dto.Data;
+import org.eclipse.sensinact.core.annotation.dto.Model;
+import org.eclipse.sensinact.core.annotation.dto.Provider;
+import org.eclipse.sensinact.core.annotation.dto.Service;
+import org.eclipse.sensinact.core.annotation.dto.Timestamp;
 
 
 @Service("data")

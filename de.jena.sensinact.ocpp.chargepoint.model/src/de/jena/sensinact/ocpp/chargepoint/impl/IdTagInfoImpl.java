@@ -12,18 +12,16 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import de.jena.sensinact.ocpp.chargepoint.AuthorizationStatus;
-import de.jena.sensinact.ocpp.chargepoint.IdTagInfo;
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
-
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import de.jena.sensinact.ocpp.chargepoint.AuthorizationStatus;
+import de.jena.sensinact.ocpp.chargepoint.IdTagInfo;
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 /**
  * <!-- begin-user-doc -->

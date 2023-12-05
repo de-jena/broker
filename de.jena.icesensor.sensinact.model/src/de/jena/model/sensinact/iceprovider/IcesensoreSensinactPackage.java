@@ -16,11 +16,8 @@ package de.jena.model.sensinact.iceprovider;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.sensinact.model.core.provider.ProviderPackage;
-
 import org.gecko.emf.osgi.annotation.provide.EPackage;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -364,6 +361,15 @@ public interface IcesensoreSensinactPackage extends org.eclipse.emf.ecore.EPacka
 	 * @ordered
 	 */
 	int SENSOR_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 10;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DATA___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.SERVICE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The number of operations of the '<em>Sensor Data</em>' class.

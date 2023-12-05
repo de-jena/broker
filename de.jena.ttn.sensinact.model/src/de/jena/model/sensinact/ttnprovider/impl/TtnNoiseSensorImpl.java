@@ -12,17 +12,15 @@
  */
 package de.jena.model.sensinact.ttnprovider.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import de.jena.model.sensinact.ttnprovider.NoiseData;
 import de.jena.model.sensinact.ttnprovider.TtnNoiseSensor;
 import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,6 +12,17 @@
  */
 package de.dim.trafficos.model.device.impl;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import de.dim.trafficos.model.device.Intersection;
 import de.dim.trafficos.model.device.IntersectionStateType;
 import de.dim.trafficos.model.device.Link;
@@ -23,21 +34,6 @@ import de.dim.trafficos.model.device.Program;
 import de.dim.trafficos.model.device.Road;
 import de.dim.trafficos.model.device.TOSDevicePackage;
 import de.dim.trafficos.model.device.TimeTable;
-
-import java.util.Collection;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->

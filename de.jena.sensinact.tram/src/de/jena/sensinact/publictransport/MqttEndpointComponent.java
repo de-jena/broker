@@ -18,7 +18,7 @@ import java.util.Map;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.sensinact.prototype.PrototypePush;
+import org.eclipse.sensinact.core.push.DataUpdate;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
@@ -61,7 +61,7 @@ public class MqttEndpointComponent {
 	private PushStream<Message> deSubscribe;
 
 	@Reference
-	private PrototypePush sensiNact;
+	private DataUpdate sensiNact;
 
 	public void handlePublicTransportMessage(Message message) {
 

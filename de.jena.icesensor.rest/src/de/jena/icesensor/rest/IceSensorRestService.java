@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.sensinact.core.push.DataUpdate;
+import org.eclipse.sensinact.core.push.dto.GenericDto;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
-import org.eclipse.sensinact.prototype.PrototypePush;
-import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
 import org.gecko.core.pool.Pool;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
@@ -75,7 +75,7 @@ public class IceSensorRestService implements IceSensorService {
 	IcesensorPackage iceSensorepackage;
 
 	@Reference
-	PrototypePush sensinact;
+	DataUpdate sensinact;
 	
 	private ScheduledExecutorService executor;
 	private PushStreamProvider provider;

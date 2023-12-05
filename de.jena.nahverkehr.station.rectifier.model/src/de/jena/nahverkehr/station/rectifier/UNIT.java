@@ -7,7 +7,6 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.Enumerator;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

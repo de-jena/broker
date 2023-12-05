@@ -12,6 +12,19 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EMap;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.EcoreEMap;
+import org.eclipse.emf.ecore.util.FeatureMap;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import de.jena.sensinact.ocpp.chargepoint.CancelReservationRequest;
 import de.jena.sensinact.ocpp.chargepoint.CancelReservationResponse;
 import de.jena.sensinact.ocpp.chargepoint.ChangeAvailabilityRequest;
@@ -52,23 +65,6 @@ import de.jena.sensinact.ocpp.chargepoint.UnlockConnectorRequest;
 import de.jena.sensinact.ocpp.chargepoint.UnlockConnectorResponse;
 import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareRequest;
 import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareResponse;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EMap;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.ecore.EcorePackage;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.BasicFeatureMap;
-import org.eclipse.emf.ecore.util.EcoreEMap;
-import org.eclipse.emf.ecore.util.FeatureMap;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->

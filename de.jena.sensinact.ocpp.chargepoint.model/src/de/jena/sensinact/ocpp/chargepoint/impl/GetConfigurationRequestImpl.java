@@ -12,18 +12,15 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import de.jena.sensinact.ocpp.chargepoint.GetConfigurationRequest;
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+
+import de.jena.sensinact.ocpp.chargepoint.GetConfigurationRequest;
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 /**
  * <!-- begin-user-doc -->

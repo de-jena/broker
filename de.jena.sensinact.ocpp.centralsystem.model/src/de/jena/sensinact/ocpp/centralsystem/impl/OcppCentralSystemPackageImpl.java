@@ -12,6 +12,16 @@
  */
 package de.jena.sensinact.ocpp.centralsystem.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
+
 import de.jena.sensinact.ocpp.centralsystem.AuthorizationStatus;
 import de.jena.sensinact.ocpp.centralsystem.AuthorizeRequest;
 import de.jena.sensinact.ocpp.centralsystem.AuthorizeResponse;
@@ -52,20 +62,7 @@ import de.jena.sensinact.ocpp.centralsystem.StopTransactionRequest;
 import de.jena.sensinact.ocpp.centralsystem.StopTransactionResponse;
 import de.jena.sensinact.ocpp.centralsystem.UnitOfMeasure;
 import de.jena.sensinact.ocpp.centralsystem.ValueFormat;
-
 import de.jena.sensinact.ocpp.centralsystem.util.OcppCentralSystemValidator;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->

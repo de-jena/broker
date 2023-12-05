@@ -12,15 +12,15 @@
  */
 package de.jena.model.sensinact.iceprovider.util;
 
-import de.jena.model.sensinact.iceprovider.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.model.core.provider.Service;
+
+import de.jena.model.sensinact.iceprovider.IceSensor;
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+import de.jena.model.sensinact.iceprovider.SensorData;
 
 /**
  * <!-- begin-user-doc -->

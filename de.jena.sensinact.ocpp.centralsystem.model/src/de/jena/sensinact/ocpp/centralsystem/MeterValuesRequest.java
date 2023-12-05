@@ -13,9 +13,7 @@
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

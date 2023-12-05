@@ -16,11 +16,8 @@ package de.jena.model.sensinact.ttnprovider;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.sensinact.model.core.provider.ProviderPackage;
-
 import org.gecko.emf.osgi.annotation.provide.EPackage;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -268,6 +265,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	int SENSOR_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SENSOR_DATA___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.SERVICE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
 	 * The number of operations of the '<em>Sensor Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,6 +318,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int TTN_SERVICE_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_SERVICE___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.SERVICE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The number of operations of the '<em>Ttn Service</em>' class.
@@ -367,6 +382,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int GATEWAY_DATA_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GATEWAY_DATA___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.SERVICE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The number of operations of the '<em>Gateway Data</em>' class.
@@ -570,6 +594,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	int NOISE_DATA_FEATURE_COUNT = TTN_SERVICE_FEATURE_COUNT + 4;
 
 	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOISE_DATA___EIS_SET__ESTRUCTURALFEATURE = TTN_SERVICE___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
 	 * The number of operations of the '<em>Noise Data</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -696,6 +729,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int TEMPERATUR_DATA_FEATURE_COUNT = TTN_SERVICE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEMPERATUR_DATA___EIS_SET__ESTRUCTURALFEATURE = TTN_SERVICE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The number of operations of the '<em>Temperatur Data</em>' class.
@@ -860,6 +902,15 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int SOIL_MOISTURE_DATA_FEATURE_COUNT = TTN_SERVICE_FEATURE_COUNT + 5;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SOIL_MOISTURE_DATA___EIS_SET__ESTRUCTURALFEATURE = TTN_SERVICE___EIS_SET__ESTRUCTURALFEATURE;
 
 	/**
 	 * The number of operations of the '<em>Soil Moisture Data</em>' class.

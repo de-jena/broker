@@ -16,6 +16,11 @@ org.eclipse.sensinact.gateway.northbound.sensorthings:dto:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.api:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.gateway:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:filter:${sensinact.version}
+## security
+org.eclipse.sensinact.gateway.northbound.security:authentication-api:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.security:openid-connect:${sensinact.version}
+## websockets
+org.eclipse.sensinact.gateway.northbound:websocket:${sensinact.version}
 
 # southbound
 ## devicefactory
@@ -23,12 +28,15 @@ org.eclipse.sensinact.gateway.southbound.device-factory:device-factory-core:${se
 org.eclipse.sensinact.gateway.southbound.device-factory:parser-csv:${sensinact.version}
 org.eclipse.sensinact.gateway.southbound.device-factory:parser-json:${sensinact.version}
 ## http
+org.eclipse.sensinact.gateway.southbound.http:http-callback-whiteboard:${sensinact.version}
 org.eclipse.sensinact.gateway.southbound.http:http-device-factory:${sensinact.version}
 ## mqtt
 org.eclipse.sensinact.gateway.southbound.mqtt:mqtt-client:${sensinact.version}
 org.eclipse.sensinact.gateway.southbound.mqtt:mqtt-device-factory:${sensinact.version}
 ## virtual
 org.eclipse.sensinact.gateway.southbound.virtual:virtual-temperature-sensor:${sensinact.version}
+
+
 
 org.apache.aries.typedevent:org.apache.aries.typedevent.bus:0.0.2-SNAPSHOT
 org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2

@@ -6,9 +6,7 @@ package de.jena.sensinact.mqtt.generic.message;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
-
 import org.gecko.emf.osgi.annotation.provide.EPackage;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

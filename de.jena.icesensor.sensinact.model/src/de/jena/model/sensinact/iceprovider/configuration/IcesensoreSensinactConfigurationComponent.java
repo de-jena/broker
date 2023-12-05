@@ -12,32 +12,24 @@
  */
 package de.jena.model.sensinact.iceprovider.configuration;
 
-import de.jena.model.sensinact.iceprovider.IcesensoreSensinactFactory;
-import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
-
-import de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl;
-
-import de.jena.model.sensinact.iceprovider.util.IcesensoreSensinactResourceFactoryImpl;
-
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.resource.Resource.Factory;
-
 import org.gecko.emf.osgi.EPackageConfigurator;
-
 import org.osgi.annotation.bundle.Capability;
-
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
-
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-
 import org.osgi.service.condition.Condition;
+
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactFactory;
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+import de.jena.model.sensinact.iceprovider.impl.IcesensoreSensinactPackageImpl;
+import de.jena.model.sensinact.iceprovider.util.IcesensoreSensinactResourceFactoryImpl;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.

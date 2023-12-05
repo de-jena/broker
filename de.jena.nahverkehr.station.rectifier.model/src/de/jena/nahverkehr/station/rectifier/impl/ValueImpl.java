@@ -2,17 +2,15 @@
  */
 package de.jena.nahverkehr.station.rectifier.impl;
 
-import de.jena.nahverkehr.station.rectifier.RectifierPackage;
-import de.jena.nahverkehr.station.rectifier.Value;
-
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import de.jena.nahverkehr.station.rectifier.RectifierPackage;
+import de.jena.nahverkehr.station.rectifier.Value;
 
 /**
  * <!-- begin-user-doc -->

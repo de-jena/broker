@@ -3,7 +3,7 @@ package de.jena.sensinact;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 
-import org.eclipse.sensinact.prototype.PrototypePush;
+import org.eclipse.sensinact.core.push.DataUpdate;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -23,7 +23,7 @@ public class IceSensor {
 	private IceSensorService service;
 
 	@Reference
-	private PrototypePush sensiNact;
+	private DataUpdate sensiNact;
 
 	private PushStream<SensorData> subcribtion;
 

@@ -2,20 +2,29 @@
  */
 package de.jena.sensinact.mqtt.generic.message.impl;
 
-import de.jena.sensinact.mqtt.generic.message.*;
-
 import java.time.Instant;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
 import org.eclipse.sensinact.gateway.geojson.Point;
+
+import de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.IntegerValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.LongValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.MessageFactory;
+import de.jena.sensinact.mqtt.generic.message.MessagePackage;
+import de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.StringValueUpdate;
 
 /**
  * <!-- begin-user-doc -->

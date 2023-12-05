@@ -12,12 +12,56 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.util;
 
-import de.jena.sensinact.ocpp.chargepoint.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.jena.sensinact.ocpp.chargepoint.AuthorizationData;
+import de.jena.sensinact.ocpp.chargepoint.CancelReservationRequest;
+import de.jena.sensinact.ocpp.chargepoint.CancelReservationResponse;
+import de.jena.sensinact.ocpp.chargepoint.ChangeAvailabilityRequest;
+import de.jena.sensinact.ocpp.chargepoint.ChangeAvailabilityResponse;
+import de.jena.sensinact.ocpp.chargepoint.ChangeConfigurationRequest;
+import de.jena.sensinact.ocpp.chargepoint.ChangeConfigurationResponse;
+import de.jena.sensinact.ocpp.chargepoint.ChargingProfile;
+import de.jena.sensinact.ocpp.chargepoint.ChargingSchedule;
+import de.jena.sensinact.ocpp.chargepoint.ChargingSchedulePeriod;
+import de.jena.sensinact.ocpp.chargepoint.ClearCacheRequest;
+import de.jena.sensinact.ocpp.chargepoint.ClearCacheResponse;
+import de.jena.sensinact.ocpp.chargepoint.ClearChargingProfileRequest;
+import de.jena.sensinact.ocpp.chargepoint.ClearChargingProfileResponse;
+import de.jena.sensinact.ocpp.chargepoint.DataTransferRequest;
+import de.jena.sensinact.ocpp.chargepoint.DataTransferResponse;
+import de.jena.sensinact.ocpp.chargepoint.DocumentRoot;
+import de.jena.sensinact.ocpp.chargepoint.GetCompositeScheduleRequest;
+import de.jena.sensinact.ocpp.chargepoint.GetCompositeScheduleResponse;
+import de.jena.sensinact.ocpp.chargepoint.GetConfigurationRequest;
+import de.jena.sensinact.ocpp.chargepoint.GetConfigurationResponse;
+import de.jena.sensinact.ocpp.chargepoint.GetDiagnosticsRequest;
+import de.jena.sensinact.ocpp.chargepoint.GetDiagnosticsResponse;
+import de.jena.sensinact.ocpp.chargepoint.GetLocalListVersionRequest;
+import de.jena.sensinact.ocpp.chargepoint.GetLocalListVersionResponse;
+import de.jena.sensinact.ocpp.chargepoint.IdTagInfo;
+import de.jena.sensinact.ocpp.chargepoint.KeyValue;
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
+import de.jena.sensinact.ocpp.chargepoint.RemoteStartTransactionRequest;
+import de.jena.sensinact.ocpp.chargepoint.RemoteStartTransactionResponse;
+import de.jena.sensinact.ocpp.chargepoint.RemoteStopTransactionRequest;
+import de.jena.sensinact.ocpp.chargepoint.RemoteStopTransactionResponse;
+import de.jena.sensinact.ocpp.chargepoint.ReserveNowRequest;
+import de.jena.sensinact.ocpp.chargepoint.ReserveNowResponse;
+import de.jena.sensinact.ocpp.chargepoint.ResetRequest;
+import de.jena.sensinact.ocpp.chargepoint.ResetResponse;
+import de.jena.sensinact.ocpp.chargepoint.SendLocalListRequest;
+import de.jena.sensinact.ocpp.chargepoint.SendLocalListResponse;
+import de.jena.sensinact.ocpp.chargepoint.SetChargingProfileRequest;
+import de.jena.sensinact.ocpp.chargepoint.SetChargingProfileResponse;
+import de.jena.sensinact.ocpp.chargepoint.TriggerMessageRequest;
+import de.jena.sensinact.ocpp.chargepoint.TriggerMessageResponse;
+import de.jena.sensinact.ocpp.chargepoint.UnlockConnectorRequest;
+import de.jena.sensinact.ocpp.chargepoint.UnlockConnectorResponse;
+import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareRequest;
+import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareResponse;
 
 /**
  * <!-- begin-user-doc -->

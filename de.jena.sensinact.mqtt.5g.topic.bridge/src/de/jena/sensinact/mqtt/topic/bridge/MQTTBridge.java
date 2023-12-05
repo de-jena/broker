@@ -23,6 +23,7 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushStream;
+
 import de.jena.mqtt.message.adapter.MQTTContext;
 
 /**

@@ -2,16 +2,26 @@
  */
 package de.jena.model.ttn.util;
 
-import de.jena.model.ttn.*;
-
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.jena.model.ttn.ApplicationId;
+import de.jena.model.ttn.DataRate;
+import de.jena.model.ttn.EndDeviceIds;
+import de.jena.model.ttn.GatewayIds;
+import de.jena.model.ttn.Location;
+import de.jena.model.ttn.Lora;
+import de.jena.model.ttn.NetworkIds;
+import de.jena.model.ttn.RxMetadata;
+import de.jena.model.ttn.Settings;
+import de.jena.model.ttn.TTNPackage;
+import de.jena.model.ttn.TtnUplinkPayload;
+import de.jena.model.ttn.UplinkMessage;
+import de.jena.model.ttn.VersionIds;
 
 /**
  * <!-- begin-user-doc -->

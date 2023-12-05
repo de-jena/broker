@@ -15,7 +15,6 @@ package de.dim.trafficos.model.device;
 import java.util.Date;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

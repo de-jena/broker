@@ -12,6 +12,12 @@
  */
 package de.dim.trafficos.model.device.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import de.dim.trafficos.model.device.Device;
 import de.dim.trafficos.model.device.DeviceActivationType;
 import de.dim.trafficos.model.device.DeviceConfiguration;
@@ -19,14 +25,6 @@ import de.dim.trafficos.model.device.DeviceInfo;
 import de.dim.trafficos.model.device.LifeCycleDeviceType;
 import de.dim.trafficos.model.device.SystemInfo;
 import de.dim.trafficos.model.device.TOSDevicePackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,18 +12,15 @@
  */
 package de.jena.sensinact.rest.tlc.control.model.control.impl;
 
-import de.jena.sensinact.rest.tlc.control.model.control.IdsListReponse;
-import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+
+import de.jena.sensinact.rest.tlc.control.model.control.IdsListReponse;
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
 
 /**
  * <!-- begin-user-doc -->

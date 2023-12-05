@@ -12,25 +12,21 @@
  */
 package de.jena.sensinact.ocpp.centralsystem.impl;
 
-import de.jena.sensinact.ocpp.centralsystem.DocumentRoot;
-import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.EStringToStringMapEntryImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.EcoreEMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.jena.sensinact.ocpp.centralsystem.DocumentRoot;
+import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
 
 /**
  * <!-- begin-user-doc -->

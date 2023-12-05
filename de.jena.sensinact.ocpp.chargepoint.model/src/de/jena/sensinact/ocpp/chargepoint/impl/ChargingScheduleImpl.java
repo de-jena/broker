@@ -12,30 +12,25 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import de.jena.sensinact.ocpp.chargepoint.ChargingRateUnitType;
-import de.jena.sensinact.ocpp.chargepoint.ChargingSchedule;
-import de.jena.sensinact.ocpp.chargepoint.ChargingSchedulePeriod;
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
-
 import java.math.BigDecimal;
-
 import java.util.Collection;
 
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import de.jena.sensinact.ocpp.chargepoint.ChargingRateUnitType;
+import de.jena.sensinact.ocpp.chargepoint.ChargingSchedule;
+import de.jena.sensinact.ocpp.chargepoint.ChargingSchedulePeriod;
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 /**
  * <!-- begin-user-doc -->

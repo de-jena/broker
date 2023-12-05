@@ -13,7 +13,6 @@
 package de.jena.sensinact.ocpp.centralsystem.util;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**

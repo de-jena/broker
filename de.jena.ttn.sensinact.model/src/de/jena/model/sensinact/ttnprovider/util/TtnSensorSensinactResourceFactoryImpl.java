@@ -12,18 +12,15 @@
  */
 package de.jena.model.sensinact.ttnprovider.util;
 
-import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.resource.Resource;
-
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-
 import org.gecko.emf.osgi.EMFNamespaces;
+
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
 
 /**
  * <!-- begin-user-doc -->

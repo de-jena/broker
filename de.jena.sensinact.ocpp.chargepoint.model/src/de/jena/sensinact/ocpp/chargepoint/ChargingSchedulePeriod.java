@@ -15,7 +15,6 @@ package de.jena.sensinact.ocpp.chargepoint;
 import java.math.BigDecimal;
 
 import org.eclipse.emf.ecore.EObject;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

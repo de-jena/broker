@@ -3,7 +3,6 @@
 package de.jena.sensinact.mqtt.generic.message;
 
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

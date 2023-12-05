@@ -12,14 +12,15 @@
  */
 package de.jena.sensinact.ocpp.structures.util;
 
-import de.jena.sensinact.ocpp.structures.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.jena.sensinact.ocpp.structures.MeasurementNotification;
+import de.jena.sensinact.ocpp.structures.Notification;
+import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
+import de.jena.sensinact.ocpp.structures.StateNotification;
 
 /**
  * <!-- begin-user-doc -->

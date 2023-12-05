@@ -13,8 +13,8 @@ import java.util.regex.Pattern;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.sensinact.prototype.PrototypePush;
-import org.eclipse.sensinact.prototype.generic.dto.GenericDto;
+import org.eclipse.sensinact.core.push.DataUpdate;
+import org.eclipse.sensinact.core.push.dto.GenericDto;
 import org.gecko.emf.json.configuration.ConfigurableJsonResource;
 import org.gecko.emf.json.configuration.ConfigurableJsonResourceFactory;
 import org.gecko.emf.json.constants.EMFJs;
@@ -46,7 +46,7 @@ public class TrafficLight {
 	private MessagingService messaging;
 
 	@Reference
-	private PrototypePush sensiNact;
+	private DataUpdate sensiNact;
 
 	@Reference
 	private TOSTrafficLightPackage tosPackage;

@@ -12,13 +12,13 @@
  */
 package de.jena.model.sensinact.ttnprovider.configuration;
 
-import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
 
 /**
  * <!-- begin-user-doc -->

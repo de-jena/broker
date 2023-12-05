@@ -2,7 +2,9 @@ package de.jena.ttn.sensinact.util;
 
 import org.eclipse.m2m.qvt.oml.blackbox.java.Module;
 import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
+import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
+import org.eclipse.sensinact.gateway.geojson.Point;
 import org.gecko.qvt.osgi.api.ModelTransformationConstants;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.condition.Condition;
@@ -27,8 +29,13 @@ public class LocationToGeoJsonBlackbox implements Condition {
 	 */
 	@Operation(contextual = true, description = "Converts from UTM into degree latitude")
 	public static GeoJsonObject toGeoJson(Location location) {
-		return new GeoJsonObject(null) {
-		};
+		Point point = new Point();
+		point.coordinates = new Coordinates();
+		point.coordinates.latitude = location.getLatitude();
+		point.coordinates.longitude = location.getLongitude();
+		point.coordinates.elevation = location.getAltitude();
+		
+		return point;
 	}
 
 }

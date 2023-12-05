@@ -2,13 +2,13 @@
  */
 package de.jena.sensinact.mqtt.generic.message.configuration;
 
-import de.jena.sensinact.mqtt.generic.message.MessagePackage;
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
+
+import de.jena.sensinact.mqtt.generic.message.MessagePackage;
 
 /**
  * <!-- begin-user-doc -->

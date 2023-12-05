@@ -3,7 +3,6 @@
 package de.jena.sensinact.mqtt.generic.message;
 
 import org.eclipse.emf.ecore.EFactory;
-
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
