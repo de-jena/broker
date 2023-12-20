@@ -1,0 +1,6 @@
+-buildpath: \
+	org.osgi.util.pushstream,\
+	org.osgi.annotation.versioning,\
+	org.osgi.annotation.bundle,\
+	de.jena.traficam.model
+Export-Package: de.jena.traficam.api

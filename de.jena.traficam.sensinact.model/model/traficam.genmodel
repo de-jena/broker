@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2022 Contributors to the Eclipse Foundation.&#xA;&#xA;This program and the accompanying materials are made&#xA;available under the terms of the Eclipse Public License 2.0&#xA;which is available at https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA;SPDX-License-Identifier: EPL-2.0&#xA;&#xA;Contributors:&#xA;  Data In Motion - initial API and implementation "
+    modelDirectory="/de.jena.icesensor.model/src" modelPluginID="de.jena.icesensor.model"
+    modelName="icesensor" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>icesensor.ecore</foreignModel>
+  <genPackages prefix="IcesensoreSensinact" basePackage="de.jena.model.sensinact"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="icesensor.ecore#/">
+    <genClasses ecoreClass="icesensor.ecore#//IceSensor">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/h2sugm3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/cougm3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/nougm3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/o3ugm3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/_1p"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/aqi_criteria"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/temperature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/humidity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/_10p"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/pressure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/no2ugm3"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/aqi"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSensor/_2_5p"/>
+    </genClasses>
+    <genClasses ecoreClass="icesensor.ecore#//SensorData">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/sensor_type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/gateway"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/sensor_model"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/avg"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/validity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/created_at"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//SensorData/str_data"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
