@@ -1,0 +1,243 @@
+[
+	{
+		"beginEventNumber": "7259",
+		"confidence": "10",
+		"eventNumber": "7260",
+		"frameCounter": "14420210",
+		"messageType": "Event",
+		"state": "End",
+		"time": "2023-09-04T11:03:53.669+02:00",
+		"type": "gg",
+		"worldCoordinates": [
+			{
+				"x": "-4.75",
+				"y": "30.17",
+				"z": "0.00"
+			}
+		],
+		"zoneId": "1"
+	},
+	{
+		"confidence": "10",
+		"eventNumber": "7299",
+		"frameCounter": "14484442",
+		"messageType": "Event",
+		"state": "Begin",
+		"time": "2023-09-04T11:21:44.194+02:00",
+		"type": "gg",
+		"worldCoordinates": [
+			{
+				"x": "-4.75",
+				"y": "30.17",
+				"z": "0.00"
+			}
+		],
+		"zoneId": "1"
+	},
+	{
+		"beginEventNumber": "7299",
+		"confidence": "10",
+		"eventNumber": "7300",
+		"frameCounter": "14484706",
+		"messageType": "Event",
+		"state": "End",
+		"time": "2023-09-04T11:21:48.595+02:00",
+		"type": "gg",
+		"worldCoordinates": [
+			{
+				"x": "-4.75",
+				"y": "30.17",
+				"z": "0.00"
+			}
+		],
+		"zoneId": "1"
+	},
+	{
+		"confidence": "10",
+		"eventNumber": "7301",
+		"frameCounter": "14484782",
+		"messageType": "Event",
+		"state": "Begin",
+		"time": "2023-09-04T11:21:49.861+02:00",
+		"type": "gg",
+		"worldCoordinates": [
+			{
+				"x": "-4.75",
+				"y": "30.17",
+				"z": "0.00"
+			}
+		],
+		"zoneId": "1"
+	},
+	{
+		"dataNumber": "2466889",
+		"intervalTime": "0.10",
+		"messageType": "Data",
+		"object": [
+			{
+				"classId": "7",
+				"gpsCoordinates": [
+					{
+						"heading": "58.494",
+						"latitude": "50.9211860",
+						"longitude": "11.5818936"
+					}
+				],
+				"id": "103820",
+				"imageCoordinates": [
+					{
+						"x": "0.540",
+						"y": "0.277"
+					}
+				],
+				"lifeTime": "2.199",
+				"speed": "55.578",
+				"speedConfidence": "100",
+				"time": "2023-09-04T11:56:24.560+02:00",
+				"worldCoordinates": [
+					{
+						"heading3d": "338.494",
+						"heading3dConfidence": "100",
+						"x": "6.376",
+						"xConfidence": "100",
+						"y": "80.348",
+						"yConfidence": "100",
+						"z": "0"
+					}
+				]
+			}
+		],
+		"time": "2023-09-04T11:56:24.629+02:00",
+		"type": "TrackUpdate"
+	},
+	{
+		"dataNumber": "2466890",
+		"messageType": "Data",
+		"object": [
+			{
+				"classId": "7",
+				"id": "103820",
+				"lifeTime": "2.199",
+				"trackMoment": [
+					{
+						"boxHeight": "0.044",
+						"boxWidth": "0.041",
+						"boxX": "0.669",
+						"boxY": "0.315",
+						"id": "0",
+						"imageX": "0.688",
+						"imageY": "0.348",
+						"latitude": "50.9210231",
+						"longitude": "11.5814744",
+						"time": "2023-09-04T11:56:22.361+02:00",
+						"worldX": "19.117",
+						"worldY": "48.258",
+						"worldZ": "0"
+					},
+					{
+						"boxHeight": "0.036",
+						"boxWidth": "0.039",
+						"boxX": "0.623",
+						"boxY": "0.296",
+						"id": "1",
+						"imageX": "0.641",
+						"imageY": "0.324",
+						"latitude": "50.9210615",
+						"longitude": "11.5815699",
+						"time": "2023-09-04T11:56:23.027+02:00",
+						"worldX": "16.074",
+						"worldY": "55.595",
+						"worldZ": "0"
+					},
+					{
+						"boxHeight": "0.034",
+						"boxWidth": "0.033",
+						"boxX": "0.549",
+						"boxY": "0.260",
+						"id": "2",
+						"imageX": "0.565",
+						"imageY": "0.289",
+						"latitude": "50.9211469",
+						"longitude": "11.5817923",
+						"time": "2023-09-04T11:56:24.027+02:00",
+						"worldX": "9.425",
+						"worldY": "72.596",
+						"worldZ": "0"
+					},
+					{
+						"boxHeight": "0.030",
+						"boxWidth": "0.029",
+						"boxX": "0.526",
+						"boxY": "0.252",
+						"id": "3",
+						"imageX": "0.540",
+						"imageY": "0.277",
+						"latitude": "50.9211860",
+						"longitude": "11.5818936",
+						"time": "2023-09-04T11:56:24.560+02:00",
+						"worldX": "6.376",
+						"worldY": "80.348",
+						"worldZ": "0"
+					}
+				]
+			}
+		],
+		"time": "2023-09-04T11:56:24.727+02:00",
+		"type": "TrackData"
+	},
+	{
+		"dataNumber": "2466891",
+		"intervalTime": "0.10",
+		"messageType": "Data",
+		"time": "2023-09-04T11:56:24.733+02:00",
+		"type": "TrackUpdate"
+	},
+	{
+		"dataNumber": "2466892",
+		"intervalTime": "0.10",
+		"messageType": "Data",
+		"time": "2023-09-04T11:56:24.828+02:00",
+		"type": "TrackUpdate"
+	},
+	{
+		"dataNumber": "2573983",
+		"intervalTime": "0.10",
+		"messageType": "Data",
+		"object": [
+			{
+				"classId": "7",
+				"gpsCoordinates": [
+					{
+						"heading": "331.120",
+						"latitude": "50.9212281",
+						"longitude": "11.5811047"
+					}
+				],
+				"id": "111886",
+				"imageCoordinates": [
+					{
+						"x": "0.362",
+						"y": "0.469"
+					}
+				],
+				"lifeTime": "2.733",
+				"speed": "30.171",
+				"speedConfidence": "100",
+				"time": "2023-09-04T14:50:07.660+02:00",
+				"worldCoordinates": [
+					{
+						"heading3d": "251.120",
+						"heading3dConfidence": "100",
+						"x": "-7.835",
+						"xConfidence": "100",
+						"y": "26.702",
+						"yConfidence": "100",
+						"z": "0"
+					}
+				]
+			}
+		],
+		"time": "2023-09-04T14:50:07.730+02:00",
+		"type": "TrackUpdate"
+	}
+]
