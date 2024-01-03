@@ -12,7 +12,6 @@
 package de.jena.traficam.api;
 
 public @interface TrafiCamConfig {
-//	String address() default "192.168.0.2";
-	String address() default "192.168.178.251:13218";
+	String address() default "192.168.128.251:13218";
 	String id();
 }

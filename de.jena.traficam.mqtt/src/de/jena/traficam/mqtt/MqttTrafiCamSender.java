@@ -15,14 +15,14 @@ import java.io.ByteArrayOutputStream;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.nio.ByteBuffer;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.Map;
 import java.util.UUID;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
 import org.gecko.osgi.messaging.MessagingService;
@@ -46,6 +46,8 @@ import traficam.TrafiCamObject;
 public class MqttTrafiCamSender {
 	private static final Logger logger = System.getLogger(MqttTrafiCamSender.class.getName());
 
+	Map<String, Object> config = Collections.singletonMap(EMFJs.OPTION_DATE_FORMAT, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'zzz");
+	
 	@Reference(target = "(emf.resource.configurator.name=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
 	private ComponentServiceObjects<ResourceSet> serviceObjects;
 
@@ -57,23 +59,13 @@ public class MqttTrafiCamSender {
 	private MessagingService messaging;
 	private String topic;
 
-//	private ObjectMapper mapper;
-
 	@Activate
 	public void activate(TrafiCamConfig config) {
 		String id = config.id();
 		topic = "5g/traficam/" + id + "/";
-//		initMapper();
 		refreshSubscribtion();
 		logger.log(Level.INFO, "MQTT TrafiCam sender started. {0}", id);
 	}
-
-//	private void initMapper() {
-//		mapper = new ObjectMapper();
-//		final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'zzz", Locale.ENGLISH);
-//		dateFormat.setTimeZone(TimeZone.getDefault());
-//		mapper.setDateFormat(dateFormat);
-//	}
 
 	private void refreshSubscribtion() {
 		if (subscribtion != null)
@@ -96,7 +88,7 @@ public class MqttTrafiCamSender {
 			logger.log(Level.WARNING, "PushStream closed.");
 			break;
 		case DATA:
-			send(event.getData());
+			event.getData().getObject().forEach(this::sendObject);
 			break;
 		case ERROR:
 			logger.log(Level.ERROR, "PushStream error.", event.getFailure());
@@ -109,23 +101,17 @@ public class MqttTrafiCamSender {
 		return 0;
 	}
 
-	private void send(TrafiCam data) {
+	private void sendObject(TrafiCamObject object) {
 		ResourceSet resourceSet = serviceObjects.getService();
 		try {
-					Resource res = resourceSet
-							.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));
-					res.getContents().add(data);
-//					String stateJson = mapper.writeValueAsString(state);
-//					ByteBuffer buffer = ByteBuffer.wrap(stateJson.getBytes());
-//					logger.log(Level.DEBUG, "Send signal transmitter via MQTT. {0}", stateJson);
-
-					ByteArrayOutputStream bao = new ByteArrayOutputStream();
-					Map<String, Object> config = new HashMap<>();
-					config.put(EMFJs.OPTION_DATE_FORMAT, "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'zzz");
-					res.save(bao, config);
-					logger.log(Level.DEBUG, "Send traficam data via MQTT. {0}", new String(bao.toByteArray()));
-					ByteBuffer buffer = ByteBuffer.wrap(bao.toByteArray());
-					messaging.publish(getTopic(data), buffer);
+			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));
+			res.getContents().add(EcoreUtil.copy(object));
+//			res.getContents().add(object);
+			ByteArrayOutputStream bao = new ByteArrayOutputStream();
+			res.save(bao, config);
+			logger.log(Level.DEBUG, "Send traficam data via MQTT. {0}", new String(bao.toByteArray()));
+			ByteBuffer buffer = ByteBuffer.wrap(bao.toByteArray());
+			messaging.publish(getTopic(object), buffer);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error while sending telegram via MQTT.", e);
 		} finally {
@@ -133,10 +119,9 @@ public class MqttTrafiCamSender {
 		}
 	}
 
-	private String getTopic(TrafiCam data) {
-		EList<TrafiCamObject> objects = data.getObject();
-		long id = objects.isEmpty()? 0: objects.get(0).getId();
-		return topic + "/" + id;
+	private String getTopic(TrafiCamObject object) {
+		short classId = object.getClassId();
+		long id = object.getId();
+		return topic + classId + "/" + id;
 	}
-
 }
