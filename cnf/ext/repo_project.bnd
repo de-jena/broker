@@ -16,7 +16,7 @@
 -plugin.sensinact: \
 	aQute.bnd.repository.maven.provider.MavenBndRepository;\
 		releaseUrl			= "https://repo.maven.apache.org/maven2/";\
-		snapshotUrl			= "https://repo.eclipse.org/content/groups/sensinact/";\
+		snapshotUrl			= "https://repo.eclipse.org/content/groups/sensinact/,https://repository.apache.org/snapshots/";\
 		index				= "${.}/sensinact.maven";\
 		readOnly			= true;\
 		poll_time 			= -1;\
