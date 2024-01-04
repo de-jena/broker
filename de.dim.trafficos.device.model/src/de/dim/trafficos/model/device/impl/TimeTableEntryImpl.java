@@ -12,14 +12,16 @@
  */
 package de.dim.trafficos.model.device.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import de.dim.trafficos.model.device.Program;
 import de.dim.trafficos.model.device.TOSDevicePackage;
 import de.dim.trafficos.model.device.TimeTableEntry;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

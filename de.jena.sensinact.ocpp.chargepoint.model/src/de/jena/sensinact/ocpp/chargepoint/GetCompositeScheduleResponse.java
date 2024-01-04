@@ -15,6 +15,7 @@ package de.jena.sensinact.ocpp.chargepoint;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

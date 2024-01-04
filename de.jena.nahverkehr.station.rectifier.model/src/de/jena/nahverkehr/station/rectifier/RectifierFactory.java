@@ -3,6 +3,7 @@
 package de.jena.nahverkehr.station.rectifier;
 
 import org.eclipse.emf.ecore.EFactory;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

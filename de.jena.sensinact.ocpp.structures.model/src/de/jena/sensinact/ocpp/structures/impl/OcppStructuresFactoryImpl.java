@@ -12,19 +12,16 @@
  */
 package de.jena.sensinact.ocpp.structures.impl;
 
+import de.jena.sensinact.ocpp.structures.*;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import de.jena.sensinact.ocpp.structures.MeasurementNotification;
-import de.jena.sensinact.ocpp.structures.OcppStructuresFactory;
-import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
-import de.jena.sensinact.ocpp.structures.State;
-import de.jena.sensinact.ocpp.structures.StateNotification;
-import de.jena.sensinact.ocpp.structures.Unit;
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
  * <!-- begin-user-doc -->

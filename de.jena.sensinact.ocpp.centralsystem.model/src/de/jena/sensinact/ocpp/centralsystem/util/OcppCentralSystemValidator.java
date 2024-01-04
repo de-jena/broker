@@ -12,53 +12,18 @@
  */
 package de.jena.sensinact.ocpp.centralsystem.util;
 
+import de.jena.sensinact.ocpp.centralsystem.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.EObjectValidator;
-import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
 
-import de.jena.sensinact.ocpp.centralsystem.AuthorizationStatus;
-import de.jena.sensinact.ocpp.centralsystem.AuthorizeRequest;
-import de.jena.sensinact.ocpp.centralsystem.AuthorizeResponse;
-import de.jena.sensinact.ocpp.centralsystem.BootNotificationRequest;
-import de.jena.sensinact.ocpp.centralsystem.BootNotificationResponse;
-import de.jena.sensinact.ocpp.centralsystem.ChargePointErrorCode;
-import de.jena.sensinact.ocpp.centralsystem.ChargePointStatus;
-import de.jena.sensinact.ocpp.centralsystem.DataTransferRequest;
-import de.jena.sensinact.ocpp.centralsystem.DataTransferResponse;
-import de.jena.sensinact.ocpp.centralsystem.DataTransferStatus;
-import de.jena.sensinact.ocpp.centralsystem.DiagnosticsStatus;
-import de.jena.sensinact.ocpp.centralsystem.DiagnosticsStatusNotificationRequest;
-import de.jena.sensinact.ocpp.centralsystem.DiagnosticsStatusNotificationResponse;
-import de.jena.sensinact.ocpp.centralsystem.DocumentRoot;
-import de.jena.sensinact.ocpp.centralsystem.FirmwareStatus;
-import de.jena.sensinact.ocpp.centralsystem.FirmwareStatusNotificationRequest;
-import de.jena.sensinact.ocpp.centralsystem.FirmwareStatusNotificationResponse;
-import de.jena.sensinact.ocpp.centralsystem.HeartbeatRequest;
-import de.jena.sensinact.ocpp.centralsystem.HeartbeatResponse;
-import de.jena.sensinact.ocpp.centralsystem.IdTagInfo;
-import de.jena.sensinact.ocpp.centralsystem.Location;
-import de.jena.sensinact.ocpp.centralsystem.Measurand;
-import de.jena.sensinact.ocpp.centralsystem.MeterValue;
-import de.jena.sensinact.ocpp.centralsystem.MeterValuesRequest;
-import de.jena.sensinact.ocpp.centralsystem.MeterValuesResponse;
-import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
-import de.jena.sensinact.ocpp.centralsystem.Phase;
-import de.jena.sensinact.ocpp.centralsystem.ReadingContext;
-import de.jena.sensinact.ocpp.centralsystem.Reason;
-import de.jena.sensinact.ocpp.centralsystem.RegistrationStatus;
-import de.jena.sensinact.ocpp.centralsystem.SampledValue;
-import de.jena.sensinact.ocpp.centralsystem.StartTransactionRequest;
-import de.jena.sensinact.ocpp.centralsystem.StartTransactionResponse;
-import de.jena.sensinact.ocpp.centralsystem.StatusNotificationRequest;
-import de.jena.sensinact.ocpp.centralsystem.StatusNotificationResponse;
-import de.jena.sensinact.ocpp.centralsystem.StopTransactionRequest;
-import de.jena.sensinact.ocpp.centralsystem.StopTransactionResponse;
-import de.jena.sensinact.ocpp.centralsystem.UnitOfMeasure;
-import de.jena.sensinact.ocpp.centralsystem.ValueFormat;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.util.EObjectValidator;
+
+import org.eclipse.emf.ecore.xml.type.util.XMLTypeValidator;
 
 /**
  * <!-- begin-user-doc -->

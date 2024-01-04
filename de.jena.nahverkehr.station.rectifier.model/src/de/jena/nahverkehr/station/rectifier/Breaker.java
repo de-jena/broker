@@ -3,7 +3,9 @@
 package de.jena.nahverkehr.station.rectifier;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
@@ -55,7 +57,7 @@ public interface Breaker extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * kï¿½nnen unterschiedlich je nach GUW und hersteller sein, Werden via bit und adresse direkt identifiziert
+	 * können unterschiedlich je nach GUW und hersteller sein, Werden via bit und adresse direkt identifiziert
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alarm</em>' containment reference list.
 	 * @see de.jena.nahverkehr.station.rectifier.RectifierPackage#getBreaker_Alarm()
@@ -70,7 +72,7 @@ public interface Breaker extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Auf, Zu, Undefeiniert, gestï¿½rt
+	 * Auf, Zu, Undefeiniert, gestört
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State</em>' containment reference.
 	 * @see #setState(StateValue)

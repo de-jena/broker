@@ -12,15 +12,18 @@
  */
 package de.jena.sensinact.rest.tlc.control.model.control.util;
 
+import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-import org.gecko.emf.osgi.EMFNamespaces;
 
-import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->

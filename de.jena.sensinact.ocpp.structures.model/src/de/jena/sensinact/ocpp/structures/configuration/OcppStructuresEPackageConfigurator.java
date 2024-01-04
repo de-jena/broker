@@ -12,13 +12,13 @@
  */
 package de.jena.sensinact.ocpp.structures.configuration;
 
+import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
-
-import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
 
 /**
  * <!-- begin-user-doc -->

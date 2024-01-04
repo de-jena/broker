@@ -1,5 +1,5 @@
 -buildpath: \
-	org.osgi.util.pushstream,\
+	org.osgi.util.pushstream;version=latest,\
 	de.jena.icesensor.model,\
 	org.osgi.annotation.versioning,\
 	org.osgi.annotation.bundle

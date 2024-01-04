@@ -12,13 +12,6 @@
  */
 package de.dim.trafficos.model.device.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.dim.trafficos.model.device.AbstractDataEntry;
 import de.dim.trafficos.model.device.AbstractTimeTableEntry;
 import de.dim.trafficos.model.device.AddressLocation;
@@ -88,6 +81,14 @@ import de.dim.trafficos.model.device.TimeTable;
 import de.dim.trafficos.model.device.TimeTableEntry;
 import de.dim.trafficos.model.device.TimeTableModeType;
 import de.dim.trafficos.model.device.Transition;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

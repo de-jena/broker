@@ -25,6 +25,7 @@ import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushStream;
 
 import de.jena.mqtt.message.adapter.MQTTContext;
+import de.jena.mqtt.message.adapter.MQTTContextBuilder;
 
 /**
  * Forwards messages from the incomming topics, to the ones that people are
@@ -101,7 +102,14 @@ public class MQTTBridge {
 			logger.log(Level.INFO, "New Topic: " + topic + " Retained: " + context.isRetained());
 		}
 		
-		String forwardTopic = "5g/data/" + topic.substring(3);
+		String baseTopic = topic.substring(3);
+		boolean retained = context.isRetained();
+		
+		if(!retained) {
+			retained = BridgeUtil.isRetained(baseTopic);
+		}
+		
+		String forwardTopic = "5g/data/" + baseTopic;
 //		System.out.println("Forwardning from  " + topic + " to " + forwardTopic);
 		try {
 			int sender = current.getAndUpdate(i -> {
@@ -110,10 +118,10 @@ public class MQTTBridge {
 				}
 				return 0;
 			});
+			context.setRetained(retained);
 			senders.get(sender).publish(forwardTopic, message.payload(), context);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Could not forward message from " + topic + " to " +  forwardTopic, e);
 		}
 	}
-
 }

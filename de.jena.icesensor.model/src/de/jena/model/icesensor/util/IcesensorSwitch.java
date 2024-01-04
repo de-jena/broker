@@ -12,16 +12,12 @@
  */
 package de.jena.model.icesensor.util;
 
+import de.jena.model.icesensor.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.jena.model.icesensor.Coords;
-import de.jena.model.icesensor.Data;
-import de.jena.model.icesensor.IceSENSOR;
-import de.jena.model.icesensor.IcesensorPackage;
-import de.jena.model.icesensor.SensorData;
-import de.jena.model.icesensor.SensorMessage;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

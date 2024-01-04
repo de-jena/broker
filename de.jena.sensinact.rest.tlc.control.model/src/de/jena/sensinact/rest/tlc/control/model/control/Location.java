@@ -13,6 +13,7 @@
 package de.jena.sensinact.rest.tlc.control.model.control;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

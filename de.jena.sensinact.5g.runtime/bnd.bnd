@@ -12,7 +12,7 @@
 	org.gecko.core.pool,\
 	org.gecko.qvt.osgi.component,\
 	org.gecko.qvt.osgi.api,\
-	org.antlr.antlr4-runtime-osgi,\
+	org.antlr.antlr4-runtime,\
 	org.apache.aries.component-dsl.component-dsl,\
 	org.apache.aries.typedevent.bus,\
 	org.eclipse.sensinact.gateway.core.annotation,\

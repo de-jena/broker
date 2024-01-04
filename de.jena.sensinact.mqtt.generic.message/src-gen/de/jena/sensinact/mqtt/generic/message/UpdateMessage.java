@@ -5,6 +5,7 @@ package de.jena.sensinact.mqtt.generic.message;
 import java.time.Instant;
 
 import org.eclipse.emf.ecore.EObject;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

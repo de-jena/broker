@@ -12,14 +12,16 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import de.jena.sensinact.ocpp.chargepoint.MessageTrigger;
 import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 import de.jena.sensinact.ocpp.chargepoint.TriggerMessageRequest;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -12,18 +12,6 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import java.math.BigDecimal;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EValidator;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
-
 import de.jena.sensinact.ocpp.chargepoint.AuthorizationData;
 import de.jena.sensinact.ocpp.chargepoint.AuthorizationStatus;
 import de.jena.sensinact.ocpp.chargepoint.AvailabilityStatus;
@@ -94,7 +82,22 @@ import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareRequest;
 import de.jena.sensinact.ocpp.chargepoint.UpdateFirmwareResponse;
 import de.jena.sensinact.ocpp.chargepoint.UpdateStatus;
 import de.jena.sensinact.ocpp.chargepoint.UpdateType;
+
 import de.jena.sensinact.ocpp.chargepoint.util.OcppChargePointValidator;
+
+import java.math.BigDecimal;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.emf.ecore.xml.type.XMLTypePackage;
 
 /**
  * <!-- begin-user-doc -->

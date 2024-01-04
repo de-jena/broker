@@ -13,6 +13,7 @@
 package de.jena.model.icesensor;
 
 import org.eclipse.emf.ecore.EFactory;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

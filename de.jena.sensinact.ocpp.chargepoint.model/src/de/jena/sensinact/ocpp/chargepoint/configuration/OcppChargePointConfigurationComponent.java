@@ -12,24 +12,32 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.configuration;
 
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointFactory;
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
+
+import de.jena.sensinact.ocpp.chargepoint.impl.OcppChargePointPackageImpl;
+
+import de.jena.sensinact.ocpp.chargepoint.util.OcppChargePointResourceFactoryImpl;
+
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource.Factory;
+
 import org.gecko.emf.osgi.EPackageConfigurator;
+
 import org.osgi.annotation.bundle.Capability;
+
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.condition.Condition;
 
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointFactory;
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
-import de.jena.sensinact.ocpp.chargepoint.impl.OcppChargePointPackageImpl;
-import de.jena.sensinact.ocpp.chargepoint.util.OcppChargePointResourceFactoryImpl;
+import org.osgi.service.condition.Condition;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
