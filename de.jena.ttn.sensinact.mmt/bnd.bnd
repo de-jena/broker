@@ -6,4 +6,7 @@
 	de.jena.ttn.model,\
 	org.gecko.qvt.osgi.api,\
 	org.eclipse.sensinact.gateway.core.geo-json,\
-	org.osgi.service.condition
+	org.osgi.service.condition,\
+	com.fasterxml.jackson.core.jackson-annotations;version=latest
+	
+-library: enable-emf
