@@ -1,6 +1,5 @@
 org.bndtools:org.bndtools.templates.osgi:5.3.0
 org.apiguardian:apiguardian-api:1.1.2
-org.gecko.runtime:org.gecko.templates:1.0.31
 
 biz.aQute.bnd:biz.aQute.remote.agent:6.4.0
 biz.aQute.bnd:biz.aQute.remote.launcher:6.4.0

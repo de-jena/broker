@@ -12,13 +12,13 @@
  */
 package de.dim.trafficos.model.device.configuration;
 
+import de.dim.trafficos.model.device.TOSDevicePackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
-
-import de.dim.trafficos.model.device.TOSDevicePackage;
 
 /**
  * <!-- begin-user-doc -->

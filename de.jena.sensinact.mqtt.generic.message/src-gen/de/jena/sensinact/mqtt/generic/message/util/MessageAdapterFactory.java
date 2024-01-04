@@ -2,24 +2,14 @@
  */
 package de.jena.sensinact.mqtt.generic.message.util;
 
+import de.jena.sensinact.mqtt.generic.message.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.IntegerValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.LongValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.MessagePackage;
-import de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.StringValueUpdate;
-import de.jena.sensinact.mqtt.generic.message.UpdateMessage;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

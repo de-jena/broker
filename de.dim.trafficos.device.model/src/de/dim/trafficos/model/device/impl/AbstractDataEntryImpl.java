@@ -12,15 +12,17 @@
  */
 package de.dim.trafficos.model.device.impl;
 
+import de.dim.trafficos.model.device.AbstractDataEntry;
+import de.dim.trafficos.model.device.TOSDevicePackage;
+
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import de.dim.trafficos.model.device.AbstractDataEntry;
-import de.dim.trafficos.model.device.TOSDevicePackage;
 
 /**
  * <!-- begin-user-doc -->

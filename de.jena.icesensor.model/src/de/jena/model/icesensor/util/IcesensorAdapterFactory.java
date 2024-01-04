@@ -12,17 +12,14 @@
  */
 package de.jena.model.icesensor.util;
 
+import de.jena.model.icesensor.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.jena.model.icesensor.Coords;
-import de.jena.model.icesensor.Data;
-import de.jena.model.icesensor.IceSENSOR;
-import de.jena.model.icesensor.IcesensorPackage;
-import de.jena.model.icesensor.SensorData;
-import de.jena.model.icesensor.SensorMessage;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

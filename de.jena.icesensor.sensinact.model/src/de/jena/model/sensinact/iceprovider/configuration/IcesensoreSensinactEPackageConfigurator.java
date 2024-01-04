@@ -12,13 +12,13 @@
  */
 package de.jena.model.sensinact.iceprovider.configuration;
 
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
-
-import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 
 /**
  * <!-- begin-user-doc -->

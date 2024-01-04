@@ -12,11 +12,12 @@
  */
 package de.jena.sensinact.ocpp.centralsystem.impl;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import de.jena.sensinact.ocpp.centralsystem.MeterValuesResponse;
 import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

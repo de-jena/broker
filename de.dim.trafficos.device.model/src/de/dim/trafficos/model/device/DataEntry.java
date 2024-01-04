@@ -13,6 +13,7 @@
 package de.dim.trafficos.model.device;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

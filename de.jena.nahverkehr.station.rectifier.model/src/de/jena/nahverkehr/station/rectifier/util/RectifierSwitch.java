@@ -2,25 +2,12 @@
  */
 package de.jena.nahverkehr.station.rectifier.util;
 
+import de.jena.nahverkehr.station.rectifier.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.jena.nahverkehr.station.rectifier.Alarm;
-import de.jena.nahverkehr.station.rectifier.BooleanValue;
-import de.jena.nahverkehr.station.rectifier.Breaker;
-import de.jena.nahverkehr.station.rectifier.Cabel;
-import de.jena.nahverkehr.station.rectifier.CircuitBreaker;
-import de.jena.nahverkehr.station.rectifier.Disconnector;
-import de.jena.nahverkehr.station.rectifier.MeasurementValue;
-import de.jena.nahverkehr.station.rectifier.Mittelspannungsfeld;
-import de.jena.nahverkehr.station.rectifier.OutgoingLine;
-import de.jena.nahverkehr.station.rectifier.OverGroundCabelDistribution;
-import de.jena.nahverkehr.station.rectifier.RectifierPackage;
-import de.jena.nahverkehr.station.rectifier.RegsiterMessage;
-import de.jena.nahverkehr.station.rectifier.StateValue;
-import de.jena.nahverkehr.station.rectifier.Substation;
-import de.jena.nahverkehr.station.rectifier.Value;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

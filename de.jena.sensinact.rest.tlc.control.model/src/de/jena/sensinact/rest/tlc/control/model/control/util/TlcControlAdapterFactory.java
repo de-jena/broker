@@ -12,19 +12,14 @@
  */
 package de.jena.sensinact.rest.tlc.control.model.control.util;
 
+import de.jena.sensinact.rest.tlc.control.model.control.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.jena.sensinact.rest.tlc.control.model.control.Control;
-import de.jena.sensinact.rest.tlc.control.model.control.IdsListReponse;
-import de.jena.sensinact.rest.tlc.control.model.control.Location;
-import de.jena.sensinact.rest.tlc.control.model.control.Phase;
-import de.jena.sensinact.rest.tlc.control.model.control.PhasesListReponse;
-import de.jena.sensinact.rest.tlc.control.model.control.Tlc;
-import de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage;
-import de.jena.sensinact.rest.tlc.control.model.control.TlcHolder;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

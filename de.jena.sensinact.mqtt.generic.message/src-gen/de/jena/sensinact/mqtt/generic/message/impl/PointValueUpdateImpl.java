@@ -2,16 +2,19 @@
  */
 package de.jena.sensinact.mqtt.generic.message.impl;
 
+import de.jena.sensinact.mqtt.generic.message.MessagePackage;
+import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
+
 import java.time.Instant;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.sensinact.gateway.geojson.Point;
 
-import de.jena.sensinact.mqtt.generic.message.MessagePackage;
-import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
+import org.eclipse.sensinact.gateway.geojson.Point;
 
 /**
  * <!-- begin-user-doc -->

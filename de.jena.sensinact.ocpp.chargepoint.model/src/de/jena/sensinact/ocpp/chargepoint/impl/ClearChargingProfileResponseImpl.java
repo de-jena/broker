@@ -12,14 +12,16 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import de.jena.sensinact.ocpp.chargepoint.ClearChargingProfileResponse;
 import de.jena.sensinact.ocpp.chargepoint.ClearChargingProfileStatus;
 import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -2,13 +2,6 @@
  */
 package de.jena.nahverkehr.station.rectifier.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.jena.nahverkehr.station.rectifier.Alarm;
 import de.jena.nahverkehr.station.rectifier.BooleanValue;
 import de.jena.nahverkehr.station.rectifier.Breaker;
@@ -26,6 +19,14 @@ import de.jena.nahverkehr.station.rectifier.State;
 import de.jena.nahverkehr.station.rectifier.StateValue;
 import de.jena.nahverkehr.station.rectifier.Substation;
 import de.jena.nahverkehr.station.rectifier.Value;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

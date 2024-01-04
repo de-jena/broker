@@ -12,13 +12,13 @@
  */
 package de.jena.sensinact.ocpp.chargepoint.configuration;
 
+import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.gecko.emf.osgi.EMFNamespaces;
 import org.gecko.emf.osgi.EPackageConfigurator;
-
-import de.jena.sensinact.ocpp.chargepoint.OcppChargePointPackage;
 
 /**
  * <!-- begin-user-doc -->

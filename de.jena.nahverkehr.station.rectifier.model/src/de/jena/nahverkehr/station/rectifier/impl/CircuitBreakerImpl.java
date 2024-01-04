@@ -2,10 +2,10 @@
  */
 package de.jena.nahverkehr.station.rectifier.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.jena.nahverkehr.station.rectifier.CircuitBreaker;
 import de.jena.nahverkehr.station.rectifier.RectifierPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

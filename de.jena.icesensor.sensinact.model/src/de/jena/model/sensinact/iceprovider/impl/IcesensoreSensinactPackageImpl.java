@@ -12,17 +12,19 @@
  */
 package de.jena.model.sensinact.iceprovider.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.sensinact.model.core.provider.ProviderPackage;
-
 import de.jena.model.sensinact.iceprovider.IceSensor;
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactFactory;
 import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 import de.jena.model.sensinact.iceprovider.SensorData;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->

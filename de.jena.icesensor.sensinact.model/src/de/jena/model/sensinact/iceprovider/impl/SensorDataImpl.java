@@ -12,15 +12,18 @@
  */
 package de.jena.model.sensinact.iceprovider.impl;
 
+import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
+import de.jena.model.sensinact.iceprovider.SensorData;
+
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
 
-import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
-import de.jena.model.sensinact.iceprovider.SensorData;
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
 
 /**
  * <!-- begin-user-doc -->

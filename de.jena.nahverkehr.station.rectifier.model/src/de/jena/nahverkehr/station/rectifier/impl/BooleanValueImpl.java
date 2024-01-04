@@ -2,12 +2,14 @@
  */
 package de.jena.nahverkehr.station.rectifier.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import de.jena.nahverkehr.station.rectifier.BooleanValue;
 import de.jena.nahverkehr.station.rectifier.RectifierPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

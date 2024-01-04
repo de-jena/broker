@@ -12,15 +12,18 @@
  */
 package de.jena.sensinact.ocpp.centralsystem.util;
 
+import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-import org.gecko.emf.osgi.EMFNamespaces;
 
-import de.jena.sensinact.ocpp.centralsystem.OcppCentralSystemPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+
+import org.gecko.emf.osgi.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->

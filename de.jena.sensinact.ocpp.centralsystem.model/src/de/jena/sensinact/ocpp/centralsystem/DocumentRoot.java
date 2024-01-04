@@ -13,8 +13,11 @@
 package de.jena.sensinact.ocpp.centralsystem;
 
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.emf.ecore.util.FeatureMap;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

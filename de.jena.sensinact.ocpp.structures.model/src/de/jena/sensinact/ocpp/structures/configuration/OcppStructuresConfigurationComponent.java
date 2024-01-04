@@ -12,24 +12,32 @@
  */
 package de.jena.sensinact.ocpp.structures.configuration;
 
+import de.jena.sensinact.ocpp.structures.OcppStructuresFactory;
+import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
+
+import de.jena.sensinact.ocpp.structures.impl.OcppStructuresPackageImpl;
+
+import de.jena.sensinact.ocpp.structures.util.OcppStructuresResourceFactoryImpl;
+
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource.Factory;
+
 import org.gecko.emf.osgi.EPackageConfigurator;
+
 import org.osgi.annotation.bundle.Capability;
+
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.condition.Condition;
 
-import de.jena.sensinact.ocpp.structures.OcppStructuresFactory;
-import de.jena.sensinact.ocpp.structures.OcppStructuresPackage;
-import de.jena.sensinact.ocpp.structures.impl.OcppStructuresPackageImpl;
-import de.jena.sensinact.ocpp.structures.util.OcppStructuresResourceFactoryImpl;
+import org.osgi.service.condition.Condition;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
