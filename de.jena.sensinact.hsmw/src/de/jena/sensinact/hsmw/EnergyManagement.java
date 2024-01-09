@@ -34,7 +34,7 @@ import org.osgi.util.pushstream.PushStream;
 
 import de.jena.sensinact.ocpp.structures.MeasurementNotification;
 
-@Component
+//@Component
 @RequireEMFJson
 public class EnergyManagement {
 
