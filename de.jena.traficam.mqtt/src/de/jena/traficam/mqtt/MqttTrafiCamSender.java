@@ -55,7 +55,7 @@ public class MqttTrafiCamSender {
 	private TrafiCamReader trafficReader;
 	private PushStream<TrafiCam> subscribtion;
 
-	@Reference(target = "(id=DIMC)")
+	@Reference(target = "(id=full)")
 	private MessagingService messaging;
 	private String topic;
 

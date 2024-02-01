@@ -10,11 +10,9 @@
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
 	org.gecko.core.api;version='[1.0.5,1.0.6)',\
-	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
 	org.gecko.emf.json;version='[1.4.1,1.4.2)',\
 	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)',\
 	org.osgi.util.converter;version='[1.0.8,1.0.9)',\
-	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
 	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)',\
 	org.gecko.adapter.mqtt;version='[1.0.6,1.0.7)',\
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.14.0,2.14.1)',\
@@ -52,7 +50,10 @@
 	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
 	slf4j.api;version='[1.7.25,1.7.26)',\
 	slf4j.simple;version='[1.7.25,1.7.26)',\
-	org.gecko.emf.osgi.api;version='[4.1.1,4.1.2)'
+	org.gecko.emf.osgi.api;version='[4.1.1,4.1.2)',\
+	de.jena.core.pushstream;version=snapshot,\
+	org.gecko.util.common;version='[2.0.0,2.0.1)',\
+	org.osgi.util.pushstream;version='[1.1.0,1.1.1)'
 
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\

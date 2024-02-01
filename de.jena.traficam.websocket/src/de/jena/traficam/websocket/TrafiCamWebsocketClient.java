@@ -1,5 +1,7 @@
 package de.jena.traficam.websocket;
 
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.net.URI;
 
 import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
@@ -21,8 +23,9 @@ import de.jena.traficam.api.TrafiCamConfig;
  * Contributors: Data In Motion - initial API and implementation
  */
 
-@Component(immediate = true)
+@Component(configurationPid = "TrafiCamConfig")
 public class TrafiCamWebsocketClient {
+	private static final Logger logger = System.getLogger(TrafiCamWebsocketClient.class.getName());
 
 	private WebSocketClient client;
 	@Reference
@@ -31,7 +34,9 @@ public class TrafiCamWebsocketClient {
 	@Activate
 	public void activate(TrafiCamConfig config) throws Exception {
 		client = new WebSocketClient();
-		URI dest = new URI("ws://" + config.address() + "/api/subscriptions");
+		String url = "ws://" + config.address() + "/api/subscriptions";
+		logger.log(Level.INFO, "Connect websocket " + url);
+		URI dest = new URI(url);
 
 		client.start();
 		TrafiCamWebsocket socket = new TrafiCamWebsocket(reader);
@@ -41,6 +46,7 @@ public class TrafiCamWebsocketClient {
 
 	@Deactivate
 	public void deactivate() throws Exception {
+		logger.log(Level.INFO, "Disconnect websocket");
 		client.stop();
 	}
 
