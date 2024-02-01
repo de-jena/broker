@@ -1,0 +1,82 @@
+-runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
+-runee: JavaSE-17
+-runrequires: \
+	bnd.identity;id='org.gecko.adapter.mqtt',\
+	bnd.identity;id='de.jena.traficam.websocket',\
+	bnd.identity;id='de.jena.traficam.mqtt',\
+	bnd.identity;id='org.eclipse.paho.client.mqttv3',\
+	bnd.identity;id='org.eclipse.jetty.webapp'
+-runbundles: \
+	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
+	org.gecko.core.api;version='[1.0.5,1.0.6)',\
+	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
+	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)',\
+	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)',\
+	org.gecko.adapter.mqtt;version='[1.0.6,1.0.7)',\
+	org.apache.felix.configadmin;version='[1.9.22,1.9.23)',\
+	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
+	org.eclipse.emf.common;version='[2.28.0,2.28.1)',\
+	org.eclipse.emf.ecore;version='[2.33.0,2.33.1)',\
+	org.eclipse.emf.ecore.xmi;version='[2.18.0,2.18.1)',\
+	org.osgi.service.component;version='[1.5.0,1.5.1)',\
+	org.gecko.emf.osgi.api;version='[4.1.1,4.1.2)',\
+	org.gecko.emf.json;version='[1.4.1,1.4.2)',\
+	org.gecko.emf.osgi.component;version='[5.0.0,5.0.1)',\
+	org.osgi.util.converter;version='[1.0.8,1.0.9)',\
+	com.fasterxml.jackson.core.jackson-annotations;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-properties;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.14.0,2.14.1)',\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.14.0,2.14.1)',\
+	de.jena.traficam.api;version=snapshot,\
+	de.jena.traficam.model;version=snapshot,\
+	de.jena.traficam.mqtt;version=snapshot,\
+	de.jena.traficam.websocket;version=snapshot,\
+	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.5,1.3.6)',\
+	org.apache.commons.logging;version='[1.2.0,1.2.1)',\
+	org.apache.felix.configurator;version='[1.0.6,1.0.7)',\
+	org.apache.felix.http.jetty;version='[5.0.0,5.0.1)',\
+	org.apache.felix.http.servlet-api;version='[2.1.0,2.1.1)',\
+	org.eclipse.emfcloud.emfjson-jackson;version='[2.2.0,2.2.1)',\
+	org.eclipse.jetty.alpn.client;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.client;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.websocket.api;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.websocket.client;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.websocket.common;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.websocket.core.client;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.websocket.core.common;version='[11.0.13,11.0.14)',\
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	org.osgi.util.promise;version='[1.3.0,1.3.1)',\
+	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
+	slf4j.api;version='[1.7.25,1.7.26)',\
+	org.eclipse.jetty.webapp;version='[11.0.13,11.0.14)',\
+	org.eclipse.jetty.xml;version='[11.0.13,11.0.14)'
+	
+revipicam = \
+	remote; \
+	jdb = 8999;\
+	shell = 4003;\
+	host = 10.8.0.10
+
+reviPi = \
+	remote; \
+	jdb = 8999;\
+	shell = 4003;\
+	host = 10.8.0.5
+	
+-runproperties: \
+	org.osgi.framework.processor=aarch64,\
+	org.osgi.framework.os.name=linux,\
+	gosh.args=--noshutdown,\
+	osgi.shell.telnet.port=4003
+-runremote: ${revipicam}
+
+-runpath: \
+	biz.aQute.remote.launcher,\
+	slf4j.api;version='[1.7.30,1.7.31)'
+	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
+	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
+	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)'
+-runblacklist: bnd.identity;id='org.osgi.service.cm';version:Version='1.6.0.201802012106'
+-runvm: -Djava.library.path=/tmp
