@@ -1,0 +1,16 @@
+Bundle-Name: PublicTransport Model 2 Model Transformation
+Bundle-Description: Model2Model transformation from publictransport to publictransport-api
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-library: enable-emf
+
+-includeresource: \
+	transforms/=transforms,\
+	OSGI-INF/configurator/=configs/
+
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+
+-buildpath: \
+	de.jena.udp.trafficos.publictransport.api.model,\
+	de.jena.udp.trafficos.publictransport.model,\
+	de.jena.udp.trafficos.common.model

@@ -1,0 +1,8 @@
+-library: enable-emf
+
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-buildpath: \
+	de.jena.udp.trafficos.common.model,\
+	de.jena.udp.trafficos.publictransport.api.model,\
+	de.jena.udp.trafficos.publictransport.model

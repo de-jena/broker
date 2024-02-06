@@ -1,0 +1,9 @@
+{
+	":configurator:resource-version": 1,
+	"EMFMongoRepositoryConfigurator~trafficos": {
+		"mongo.instances": "trafficos",
+		"trafficos.baseUris": "mongodb://mongodb",
+		"trafficos.databases": "trafficos",
+		"trafficos.trafficos.repoType": "PROTOTYPE"
+	}
+}

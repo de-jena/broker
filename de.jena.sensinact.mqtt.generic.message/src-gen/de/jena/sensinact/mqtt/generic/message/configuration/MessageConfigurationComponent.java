@@ -12,7 +12,7 @@ import java.util.Hashtable;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.gecko.emf.osgi.EPackageConfigurator;
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
 
 import org.osgi.annotation.bundle.Capability;
 
@@ -31,9 +31,10 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "MessageConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessageFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessagePackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.util.MessageResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.sensinact.mqtt.generic.message.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessageFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.mqtt.generic.message.MessagePackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.mqtt.generic.message\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class MessageConfigurationComponent {
 	
@@ -50,6 +51,7 @@ public class MessageConfigurationComponent {
 	@Activate
 	public void activate(BundleContext ctx) {
 		MessagePackage ePackage = MessagePackageImpl.eINSTANCE;
+		
 		
 		MessageEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);

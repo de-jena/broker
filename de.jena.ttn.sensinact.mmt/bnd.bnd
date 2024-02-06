@@ -1,4 +1,8 @@
--includeresource.tranformation: transformations=transformations
+-includeresource: \
+	transformations=transformations,\
+	OSGI-INF/configurator/=configs/
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+
 -buildpath: \
 	org.eclipse.m2m.qvt.oml,\
 	org.osgi.service.component.annotations;version=latest,\

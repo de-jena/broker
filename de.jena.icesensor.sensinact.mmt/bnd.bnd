@@ -1,2 +1,4 @@
--includeresource: transformations=transformations
-#Require-Capability: osgi.identity;filter:="(osgi.identity=de.jena.icesensor.sensinact.model)"
+-includeresource: \
+	transformations=transformations,\
+	OSGI-INF/configurator/=configs/
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

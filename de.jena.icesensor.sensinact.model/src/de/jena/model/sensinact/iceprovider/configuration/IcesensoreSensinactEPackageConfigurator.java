@@ -17,8 +17,9 @@ import de.jena.model.sensinact.iceprovider.IcesensoreSensinactPackage;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.gecko.emf.osgi.EMFNamespaces;
-import org.gecko.emf.osgi.EPackageConfigurator;
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
+
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,7 +66,7 @@ public class IcesensoreSensinactEPackageConfigurator implements EPackageConfigur
 		properties.put(EMFNamespaces.EMF_MODEL_NAME, IcesensoreSensinactPackage.eNAME);
 		properties.put(EMFNamespaces.EMF_MODEL_NSURI, IcesensoreSensinactPackage.eNS_URI);
 		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "icesensoresensinact");
-		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		properties.put(EMFNamespaces.EMF_MODEL_VERSION, "1.0");
 		return properties;
 	}
 }

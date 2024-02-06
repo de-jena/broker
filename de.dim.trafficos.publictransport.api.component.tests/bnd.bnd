@@ -1,0 +1,22 @@
+Test-Cases: ${classes;HIERARCHY_INDIRECTLY_ANNOTATED;org.junit.platform.commons.annotation.Testable;CONCRETE}
+
+-library: enableOSGi-Test,\
+	enable-emf
+
+# sets the usually required buildpath using the bnd library, you can extend it with the normal -buildpath to your liking
+	
+Private-Package: de.dim.trafficos.publictransport.api.component.tests
+
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-buildpath: \
+	de.dim.trafficos.publictransport.apis;version=latest,\
+	de.jena.udp.trafficos.publictransport.api.model,\
+	de.jena.udp.trafficos.common.model,\
+	de.jena.udp.trafficos.publictransport.model,\
+	org.gecko.emf.mongo.api,\
+	org.gecko.mongo.osgi.component,\
+	org.mongodb.mongo-java-driver
+	
+-privatepackage: de.dim.trafficos.publictransport.api.component.tests.helper
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'	

@@ -2,8 +2,6 @@
 	org.apache.felix.http.jetty,\
 	org.apache.commons.io,\
 	jakarta.ws.rs-api,\
-	org.gecko.emf.rest,\
-	org.gecko.emf.json,\
 	de.jena.icesensor.model;version=latest,\
 	org.eclipse.emfcloud.emfjson-jackson;version=latest,\
 	org.osgi.service.component,\
@@ -15,11 +13,12 @@
 	com.fasterxml.jackson.core.jackson-databind,\
 	org.eclipse.sensinact.gateway.core.api,\
 	org.gecko.qvt.osgi.api,\
-	org.gecko.core.pool;version=latest,\
 	biz.aQute.bnd.annotation,\
 	de.jena.icesensor.sensinact.model;version=latest,\
 	org.eclipse.sensinact.gateway.core.geo-json,\
-	org.eclipse.sensinact.gateway.core.models.provider
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.gecko.emf.osgi.component,\
+	org.gecko.emf.util.annotations
 
 -library: enable-emf
 

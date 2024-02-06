@@ -12,15 +12,18 @@
  */
 package de.jena.model.sensinact.ttnprovider.util;
 
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-import org.gecko.emf.osgi.EMFNamespaces;
 
-import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,9 +61,9 @@ public class TtnSensorSensinactResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	public Map<String, Object> getServiceProperties() {
 		Map<String, Object> properties = new HashMap<String, Object>();
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_NAME, TtnSensorSensinactPackage.eNAME);
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_FILE_EXT, "ttnsensorsensinact");
-		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, TtnSensorSensinactPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ttnsensorsensinact");
+		properties.put(EMFNamespaces.EMF_MODEL_VERSION, "1.0");
 		return properties;
 	}
 

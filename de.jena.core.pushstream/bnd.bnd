@@ -1,8 +1,0 @@
--buildpath:  \
-	org.gecko.core.pushstream,\
-	org.gecko.util.pushstream,\
-    org.osgi.util.pushstream;version=latest
-	
-Export-Package: \
-    org.gecko.core.pushstream.*,\
-    org.gecko.util.pushstreams.*

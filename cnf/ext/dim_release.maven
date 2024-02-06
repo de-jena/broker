@@ -1,68 +1,64 @@
-org.geckoprojects.repository:org.gecko.emf.repository.api:9.2.2
-org.geckoprojects.repository:org.gecko.emf.repository.mongo:3.1.0
-org.geckoprojects.jaxrs:org.gecko.rest.bnd.library:5.0.0-SNAPSHOT
-
-org.gecko.core:org.gecko.core.pushstream:1.1.0
-org.gecko.core:org.gecko.core.api:1.0.5
-
-org.gecko.ma:org.gecko.adapter.amqp:2.2.0-SNAPSHOT
-#org.gecko.ma:org.gecko.adapter.mqtt:1.0.6-SNAPSHOT
-org.gecko.ma:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
-
 com.rabbitmq:amqp-client:5.9.0
 
-org.eclipse.emf:org.eclipse.emf.ecore.change:2.14.0.v20190528-0725
-org.eclipse.emf:org.eclipse.emf.compare:3.5.3.201909101346
+#org.eclipse.emf:org.eclipse.emf.ecore.change:2.14.0.v20190528-0725
+#org.eclipse.emf:org.eclipse.emf.compare:3.5.3.201909101346
 
-com.ibm:com.ibm.icu:64.2.0.v20190507-1337
-lpg.runtime:lpg.runtime.java:2.0.17.v201004271640
+#com.ibm:com.ibm.icu:64.2.0.v20190507-1337
+#lpg.runtime:lpg.runtime.java:2.0.17.v201004271640
 
-org.eclipse.emf:org.eclipse.emf.ecore.change:2.14.0.v20190528-0725
-org.eclipse.emf:org.eclipse.emf.compare:3.5.3.201909101346
+#org.eclipse.emf:org.eclipse.emf.ecore.change:2.14.0.v20190528-0725
+#org.eclipse.emf:org.eclipse.emf.compare:3.5.3.201909101346
 
-org.eclipse.ocl:org.eclipse.ocl:3.10.400.201911041049
-org.eclipse.ocl:org.eclipse.ocl.common:1.8.400.v20190910-0937
-org.eclipse.ocl:org.eclipse.ocl.ecore:3.14.0.v20190910-0937
+#org.eclipse.ocl:org.eclipse.ocl:3.10.400.201911041049
+#org.eclipse.ocl:org.eclipse.ocl.common:1.8.400.v20190910-0937
+#org.eclipse.ocl:org.eclipse.ocl.ecore:3.14.0.v20190910-0937
 
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml.common:3.9.0.v20190909-1952
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml.cst.parser:3.9.0.v20190909-1952
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml.ecore.imperativeocl:3.9.0.v20190909-1952
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml.ocl:3.9.0.v20190909-1952
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml:3.10.0.201911041036
-org.eclipse.m2m:org.eclipse.m2m.qvt.oml.emf.util:3.9.0.201911041041
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml.common:3.9.0.v20190909-1952
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml.cst.parser:3.9.0.v20190909-1952
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml.ecore.imperativeocl:3.9.0.v20190909-1952
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml.ocl:3.9.0.v20190909-1952
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml:3.10.0.201911041036
+#org.eclipse.m2m:org.eclipse.m2m.qvt.oml.emf.util:3.9.0.201911041041
 
-org.eclipse.equinox:org.eclipse.equinox.preferences:3.7.500.v20190815-1535
+#org.eclipse.equinox:org.eclipse.equinox.preferences:3.7.500.v20190815-1535
 
-org.geckoprojects.emfaddons:org.gecko.qvt.osgi.api:4.1.1
-org.geckoprojects.emfaddons:org.gecko.qvt.osgi.component:1.0.6
+#org.geckoprojects.emfaddons:org.gecko.qvt.osgi.api:4.1.1
+#org.geckoprojects.emfaddons:org.gecko.qvt.osgi.component:1.0.6
 
-org.gecko.core:org.gecko.core.pool:1.1.0
+#org.gecko.core:org.gecko.core.pool:1.1.0
 
-org.gecko.addons:org.gecko.util.pushstream:6.0.0
-org.gecko.addons:org.gecko.util.common:2.0.0
-
-org.mongodb:mongo-java-driver:3.9.1
-org.geckoprojects.mongo:org.gecko.mongo.osgi.component:6.0.0
-
-de.jena:de.jena.udp.trafficos.common.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.trafficos.publictransport.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.trafficos.publictransport.api.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.trafficos.intersection.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.trafficos.intersectionsystem.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.trafficos.trafficlight.model:1.1.1-SNAPSHOT
-de.jena:de.jena.udp.sensinact.generic.message.model:1.1.1-SNAPSHOT
+#org.gecko.addons:org.gecko.util.pushstream:6.0.0
+#org.gecko.addons:org.gecko.util.common:2.0.0
 
 
-de.dim.trafficos:de.dim.trafficos.gtfs.component:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.gtfs.config:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.api.component:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.api.mmt:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.apis:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.component:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.config:1.0.0-SNAPSHOT
-de.dim.trafficos:de.dim.trafficos.publictransport.value.converter:1.0.0-SNAPSHOT
+de.jena:de.jena.udp.trafficos.common.model:${upd.models.version}
+de.jena:de.jena.udp.trafficos.publictransport.model:${upd.models.version}
+de.jena:de.jena.udp.trafficos.publictransport.api.model:${upd.models.version}
+de.jena:de.jena.udp.trafficos.intersection.model:${upd.models.version}
+de.jena:de.jena.udp.trafficos.intersectionsystem.model:${upd.models.version}
+de.jena:de.jena.udp.trafficos.trafficlight.model:${upd.models.version}
+de.jena:de.jena.udp.sensinact.generic.message.model:${upd.models.version}
 
-
+de.jena.ibis-ip:de.jena.ibis.apis:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.common.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.components:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.customer.info.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.device.management.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.door.state.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.enumerations.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.event.handlers:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.gnss.location.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.local.config:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.passenger.counting.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.raspberry.config:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.rest.application:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.runtime:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.sensinact.mmt:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.sensinact.mmt.tests:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.sensinact.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.tests:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.ticket.validation.service.model:1.0.0-SNAPSHOT
+de.jena.ibis-ip:de.jena.ibis.txw2:4.0.2
 
 
 

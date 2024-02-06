@@ -15,8 +15,8 @@ import java.util.concurrent.Executors;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
 import org.gecko.emf.json.annotation.RequireEMFJson;
+import org.gecko.emf.rest.annotations.RequireEMFMessageBodyReaderWriter;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;

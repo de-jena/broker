@@ -1,0 +1,2 @@
+"stop_id","stop_code","stop_name","stop_desc","stop_lat","stop_lon","location_type","parent_station","wheelchair_boarding","platform_code"
+"de:16053:153135::15313500","","Jena, Löbstedter Straße","Löbstedter Straße","50.940792000000","11.599214000000",0,,0,""

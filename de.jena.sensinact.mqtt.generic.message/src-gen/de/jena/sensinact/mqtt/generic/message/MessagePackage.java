@@ -1005,22 +1005,22 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	EClass getBooleanValueUpdate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue <em>Old Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getOldValue <em>Old Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Old Value</em>'.
-	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue()
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getOldValue()
 	 * @see #getBooleanValueUpdate()
 	 * @generated
 	 */
 	EAttribute getBooleanValueUpdate_OldValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue <em>New Value</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getNewValue <em>New Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>New Value</em>'.
-	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue()
+	 * @see de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getNewValue()
 	 * @see #getBooleanValueUpdate()
 	 * @generated
 	 */

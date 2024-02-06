@@ -39,36 +39,38 @@ javac.debug:  on
 
 -library:\
 	geckoEMF,\
-	geckoOSGi-Test
+	geckoOSGi-Test,\
+	geckoEMFRepository,\
+	geckoEMFUtil,\
+	geckoUtil,\
+	geckoUtilQVT,\
+	jakartaREST,\
+	geckoMessaging
 	
 # This can be replaced, as soon as we have the latest release figuered out
 #	geckoSearch
-#We need to use it again, when we have release the jakarta Version
-#	geckoJersey,\
-#	geckoEMFUtil,\
 
 sensinact.version: 0.0.2-SNAPSHOT
-jackson.version: 2.14.0
+jackson.version: 2.16.0
 jersey.version: 3.0.8
 jakarta.ws.rs-api.version: 3.1.0
-geckoJersey.version: 6.0.0.RC2
+upd.models.version: 1.2.0-SNAPSHOT
+bnd.version: 7.0.0
 	
 github-project: de-jena/broker
 base-version: 1.0.0
-broker-base-version: ${base-version}-SNAPSHOT
+broker-base-version: ${base-version}.SNAPSHOT
 Bundle-Version: ${broker-base-version}
-	
-# Find out if the current Bundle Version is already deployed in any repository (excluding the Workspace)
-releaseNotNeeded: ${findproviders;osgi.identity;(&(osgi.identity=${bsn})(version=${broker-base-version}));REPOS}
 
-
-
-# If release not needed is empty, no Bundle has been found and for maven we do a release to the remote Repo. If not, we only do a release to the local .m2 Repo
--maven-release.local: ${if;${def;releaseNotNeeded};local;remote}
 -removeheaders: Bnd-LastModified, Tool, Created-By, Private-Package
 -snapshot: ${tstamp}-SNAPSHOT
 -pom: version=${versionmask;===s;${@version}}	
 
 -digest: sha256
 	
-
+-workingset:  \
+  model;member=${filter;${p};.*\.model}, \
+  api;member=${filter;${p};.*\.api}, \
+  test;member=${filter;${p};.*\.*test*},\
+  upd_runtime;member=${filter;${p};.*\.udp\.runtime\.*},\
+  5g_runtime;member=${filter;${p};.*\.5g\.runtime\.*}

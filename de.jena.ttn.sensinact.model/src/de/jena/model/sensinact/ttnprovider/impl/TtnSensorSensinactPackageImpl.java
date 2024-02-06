@@ -12,15 +12,6 @@
  */
 package de.jena.model.sensinact.ttnprovider.impl;
 
-import java.util.Map;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-import org.eclipse.sensinact.model.core.provider.ProviderPackage;
-
 import de.jena.model.sensinact.ttnprovider.AbstractTtnProvider;
 import de.jena.model.sensinact.ttnprovider.GatewayData;
 import de.jena.model.sensinact.ttnprovider.NoiseData;
@@ -34,6 +25,17 @@ import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
 import de.jena.model.sensinact.ttnprovider.TtnService;
 import de.jena.model.sensinact.ttnprovider.TtnSoilMoistureSensor;
 import de.jena.model.sensinact.ttnprovider.TtnTemperatureSensor;
+
+import java.util.Map;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
 /**
  * <!-- begin-user-doc -->

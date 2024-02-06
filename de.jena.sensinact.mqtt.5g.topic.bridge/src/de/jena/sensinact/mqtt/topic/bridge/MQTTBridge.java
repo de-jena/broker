@@ -13,7 +13,6 @@ import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingContext;
 import org.gecko.osgi.messaging.MessagingService;
 import org.gecko.osgi.messaging.SimpleMessagingContextBuilder;
-import org.gecko.util.pushstreams.GeckoPushbackPolicyOption;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
@@ -23,9 +22,9 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushStream;
+import org.osgi.util.pushstream.ThresholdPushbackPolicy;
 
 import de.jena.mqtt.message.adapter.MQTTContext;
-import de.jena.mqtt.message.adapter.MQTTContextBuilder;
 
 /**
  * Forwards messages from the incomming topics, to the ones that people are
@@ -67,7 +66,7 @@ public class MQTTBridge {
 		}
 		emSubscribe = new ArrayList<>();
 		 MessagingContext messagingContext = new SimpleMessagingContextBuilder().
-			withPushbackPolicy(GeckoPushbackPolicyOption.LINEAR_AFTER_THRESHOLD.getPolicy(600))
+			withPushbackPolicy(ThresholdPushbackPolicy.createSimpleThresholdPushbackPolicy(600))
 			.withExecutor(Executors.newCachedThreadPool())
 			.withParallelism(4)
 			.withBufferQueue(new ArrayBlockingQueue<PushEvent<? extends Message>>(4000)).build();

@@ -2,15 +2,18 @@
  */
 package de.jena.model.ttn.util;
 
+import de.jena.model.ttn.TTNPackage;
+
 import java.util.HashMap;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
-import org.gecko.emf.osgi.EMFNamespaces;
 
-import de.jena.model.ttn.TTNPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
+
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,9 +51,9 @@ public class TTNResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	public Map<String, Object> getServiceProperties() {
 		Map<String, Object> properties = new HashMap<String, Object>();
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_NAME, TTNPackage.eNAME);
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_FILE_EXT, "ttn");
-		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, TTNPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ttn");
+		properties.put(EMFNamespaces.EMF_MODEL_VERSION, "1.0");
 		return properties;
 	}
 

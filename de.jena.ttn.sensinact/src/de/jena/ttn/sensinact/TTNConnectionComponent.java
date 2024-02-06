@@ -21,11 +21,12 @@ import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
 import org.eclipse.sensinact.model.core.provider.Admin;
 import org.eclipse.sensinact.model.core.provider.Provider;
-import org.gecko.core.pool.Pool;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingService;
-import org.gecko.qvt.osgi.api.ConfigurableModelTransformatorPool;
+import org.gecko.qvt.osgi.api.ModelTransformationConstants;
 import org.gecko.qvt.osgi.api.ModelTransformator;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.ComponentServiceObjects;
@@ -39,6 +40,7 @@ import org.osgi.util.pushstream.PushStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
 import de.jena.model.ttn.Location;
 import de.jena.model.ttn.RxMetadata;
 import de.jena.model.ttn.TTNPackage;
@@ -46,6 +48,7 @@ import de.jena.model.ttn.TtnUplinkPayload;
 import de.jena.model.ttn.UplinkMessage;
 
 @Component(immediate = true, configurationPolicy = ConfigurationPolicy.REQUIRE, configurationPid = "TTNConnectionComponent")
+@RequireEMFJson
 public class TTNConnectionComponent {
 
 	public @interface Config {
@@ -59,14 +62,18 @@ public class TTNConnectionComponent {
 
 	@Reference(name = "ttn", target = "(need=configuration)")
 	private MessagingService messagingTtnSensors;
-	@Reference(target = ("(pool.componentName=ttn)"))
-	private ConfigurableModelTransformatorPool poolComponent;
+	
+	@Reference(target = ("(" + ModelTransformationConstants.TRANSFORMATOR_ID + "=TTN2SensinactTTNApi)"))
+	private ModelTransformator transformator;
 
-	@Reference(target = "(emf.resource.configurator.name=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
+	@Reference(target = "(" + EMFNamespaces.EMF_CONFIGURATOR_NAME +  "=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
 	private ComponentServiceObjects<ResourceSet> resourceSetServiceObjects;
 
 	@Reference
 	private TTNPackage ttnPackage;
+	
+	@Reference
+	private TtnSensorSensinactPackage ttnSensorePackage;
 	
 	@Reference
 	private DataUpdate sensinact;
@@ -158,21 +165,12 @@ public class TTNConnectionComponent {
 
 	private void transformAndPublish(TtnUplinkPayload payload) {
 			
-		Map<String,Pool<ModelTransformator>> poolMap = poolComponent.getPoolMap();
-		Pool<ModelTransformator> pool = poolMap.get("ttn-ttnPool");
-		if(pool != null) {
-			ModelTransformator transformator = pool.poll();
-			try {
 //					Provider push = (Provider) transformator.startTransformation(payload);
 //					fixLocation(payload, push);
-				sensinact.pushUpdate(createDTO(payload))
+		sensinact.pushUpdate(createDTO(payload))
 				.onFailure(t -> logger.error("Error registering device "
 						+ payload.getEndDeviceIds().getDeviceId() + " " + t.getMessage(), t));
-			} finally {
-				pool.release(transformator);
-			}
-		}
-}
+	}
 
 	private BulkGenericDto createDTO(TtnUplinkPayload payload) {
 		List<GenericDto> model = new ArrayList<>();
@@ -190,12 +188,8 @@ public class TTNConnectionComponent {
 		String theModelName = determineModelName(uplinkMessage);
 		
 		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "admin", "location", GeoJsonObject.class, location, timestamp, null));
-		
-		
 		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "data", "payloadRaw", String.class, uplinkMessage.getFrmPayload(), timestamp, null));
 		model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "gateway", "applicationId", String.class, payload.getEndDeviceIds().getApplicationIds().getApplicationId(), timestamp, null));
-
-		
 		
 		uplinkMessage.getDecodedPayload().forEach(e -> {
 			model.add(createGenericDto(theModelName, payload.getEndDeviceIds().getDeviceId(), "data", e.getKey(), e.getValue().getClass(), e.getValue(), timestamp, category));

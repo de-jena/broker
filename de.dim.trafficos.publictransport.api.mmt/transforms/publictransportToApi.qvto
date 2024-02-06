@@ -1,0 +1,249 @@
+
+modeltype COMMON uses "http://jena.de/udp/trafficos/common/1.1.1";
+modeltype PTBACKEND uses "http://jena.de/udp/trafficos/publictransport/1.1.1";
+modeltype PTAPI uses "http://jena.de/udp/trafficos/publictransport-api/1.1.1";
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+
+
+
+transformation publicTransportToApi(in publicTransport: PTBACKEND, out api : PTAPI);
+
+main() {
+	
+	publicTransport.rootObjects()[PTBACKEND::PTSchedule] -> map scheduleToApi(); 
+	publicTransport.rootObjects()[PTBACKEND::PTTimetableEntry] -> map timetableEntryToApi(); 
+	publicTransport.rootObjects()[PTBACKEND::PTStop] -> map stopToApi(); 
+	publicTransport.rootObjects()[PTBACKEND::PTUpdate] -> map updateToApi(); 
+	
+
+}
+
+mapping PTBACKEND::PTSchedule::scheduleToApi() : PTAPI::Schedule {
+	
+	updateDate := self.updateDate;
+	dataSource := self.dataSource;
+	scheduleId := self.scheduleId;
+	startDate := self.startDate;
+	endDate := self.endDate;
+	includedDate += self.includedDate;
+	excludedDate += self.excludedDate;
+//	TODO: we have to understand how the enums relate with each other
+//	routeDirection := self.tripDirection.map toApiRouteDirection(); 
+	refRouteId := self.refRouteId;
+	refRouteNumber := self.refRouteNumber;
+	frequencyDays += self.frequencyDays.toApiScheduleFrequency();
+	
+}
+
+mapping PTBACKEND::PTTimetableEntry::timetableEntryToApi() : PTAPI::ScheduleEntry {
+	
+	updateDate := self.updateDate;
+	dataSource := self.dataSource;
+	refScheduleId := self.refScheduleId;
+	refStopId := self.refStopId;
+	entryIndex := self.entryIndex;
+	arrivalScheduled := self.scheduledArrivalTime;
+	departureScheduled := self.scheduledDepartureTime;
+	dwellTime := self.dwellTime;
+	pickUpType := self.pickUpType.toApiPickUpDropOffType();
+	dropOffType := self.dropOffType.toApiPickUpDropOffType();
+	arrivalDayAfterScheduleStart := self.arrivalDayAfterScheduleStart;
+	departureDayAfterScheduleStart := self.departureDayAfterScheduleStart;
+}
+
+mapping PTBACKEND::PTStop::stopToApi() : PTAPI::StopInformation {
+
+    updateDate := self.updateDate;
+	dataSource := self.dataSource;
+	stopId := self.stopId;
+	DHID := self.DHID;
+	stopName += self.name;
+	position := self.position.map toApiPosition();
+}
+
+mapping PTBACKEND::PTUpdate::updateToApi() : PTAPI::Update {
+	
+	init{		
+		if(self.value.oclIsTypeOf(PTBACKEND::PTTripUpdate)) {
+			result := self.map toTripUpdate();	
+		} else if(self.value.oclIsTypeOf(PTBACKEND::PTPositionUpdate)) {
+			result := self.map toPositionUpdate();	
+		} else if(self.value.oclIsTypeOf(PTBACKEND::PTVehicleUpdate)) {
+			result := self.map toVehicleUpdate();	
+		} else if(self.value.oclIsTypeOf(PTBACKEND::PTStopUpdate)) {
+			result := self.map toApiStopUpdate();	
+		} else if(self.value.oclIsTypeOf(PTBACKEND::PTStopIndexUpdate)) {
+			result := self.map toStopIndexUpdate();	
+		} else if(self.value.oclIsTypeOf(PTBACKEND::PTOnlineUpdate)) {
+			result := self.map toOnlineUpdate();	
+		}  else if(self.value.oclIsTypeOf(PTBACKEND::PTAnnouncementUpdate)) {
+			result := self.map toAnnouncementUpdate();	
+		}
+	}
+}
+
+
+mapping PTBACKEND::PTUpdate::toOnlineUpdate() : PTAPI::OnlineUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	type := self.value.oclAsType(PTBACKEND::PTOnlineUpdate).type.toApiVehicleType();
+	online := self.value.oclAsType(PTBACKEND::PTOnlineUpdate).online;
+}
+
+mapping PTBACKEND::PTUpdate::toAnnouncementUpdate() : PTAPI::AnnouncementUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	announcementRef := self.value.oclAsType(PTBACKEND::PTAnnouncementUpdate).annoucementRef;
+	announcementText += self.value.oclAsType(PTBACKEND::PTAnnouncementUpdate).annoucementText;
+	announcementTTSText += self.value.oclAsType(PTBACKEND::PTAnnouncementUpdate).annoucementTTSText;
+}
+
+mapping PTBACKEND::PTUpdate::toStopIndexUpdate() : PTAPI::StopIndexUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	currentStopIndex := self.value.oclAsType(PTBACKEND::PTStopIndexUpdate).currentStopIndex;
+}
+
+mapping PTBACKEND::PTUpdate::toVehicleUpdate() : PTAPI::VehicleUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	inPanic := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).inPanic;
+	stopRequested := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).vehicleStopRequested;
+	movingForward := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).movingForward;
+	speakerActive := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).speakerActive;
+	stopInformationActive := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).stopInformationActive;
+	routeDeviation := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).routeDeviation.toApiRouteDeviationType();
+	tripState := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).tripState.toApiTripStateType();
+	doorState := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).doorState.toApiDoorOpenStateType();
+	exitSide := self.value.oclAsType(PTBACKEND::PTVehicleUpdate).exitSide.toApiExitSideType();
+}
+
+mapping PTBACKEND::PTUpdate::toTripUpdate() : PTAPI::TripUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	
+	locationState := self.value.oclAsType(PTBACKEND::PTTripUpdate).locationState.toApiLocationState();
+	scheduleDelay := self.value.oclAsType(PTBACKEND::PTTripUpdate).timetableDelay;
+	currentStopIndex := self.value.oclAsType(PTBACKEND::PTTripUpdate).currentStopIndex;
+	runNumber := self.value.oclAsType(PTBACKEND::PTTripUpdate).runNumber;
+	patternNumber := self.value.oclAsType(PTBACKEND::PTTripUpdate).patternNumber;
+	pathDestinationNumber := self.value.oclAsType(PTBACKEND::PTTripUpdate).pathDestinationNumber;
+	stopUpdate += self.value.oclAsType(PTBACKEND::PTTripUpdate).stopUpdate -> map toApiStopUpdate();
+}
+
+mapping PTBACKEND::PTUpdate::toPositionUpdate() : PTAPI::PositionUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	position := self.value.oclAsType(PTBACKEND::PTPositionUpdate).position.map toApiPosition();
+}
+
+mapping PTBACKEND::PTStopUpdate::toApiStopUpdate() : PTAPI::StopUpdate {
+	refStopId := self.refStopId;
+	arrivalExpected := self.expectedArrivalTime;
+	departureExpected := self.expectedDepartureTime;
+	recordedArrivalTime := self.recordedArrivalTime;
+	distanceFromNextStop := self.distanceFromNextStop;
+}
+
+mapping PTBACKEND::PTUpdate::toApiStopUpdate() : PTAPI::StopUpdate {
+	dataSource := self.dataSource;
+	refVehicleId := self.refVehicleId;
+	timestamp := self.timestamp;
+	refStopId := self.value.oclAsType(PTBACKEND::PTStopUpdate).refStopId;
+	arrivalExpected := self.value.oclAsType(PTBACKEND::PTStopUpdate).expectedArrivalTime;
+	departureExpected := self.value.oclAsType(PTBACKEND::PTStopUpdate).expectedDepartureTime;
+	recordedArrivalTime := self.value.oclAsType(PTBACKEND::PTStopUpdate).recordedArrivalTime;
+	distanceFromNextStop := self.value.oclAsType(PTBACKEND::PTStopUpdate).distanceFromNextStop;
+}
+
+mapping COMMON::Position::toApiPosition() : PTAPI::Position {
+	latitude := self.latitude;
+	longitude := self.longitude;
+}
+
+query PTBACKEND::PTFrequencyType::toApiScheduleFrequency() : PTAPI::ScheduleFrequencyDayType {
+	return switch {
+		case(self = PTBACKEND::PTFrequencyType::MONDAY) return PTAPI::ScheduleFrequencyDayType::MONDAY;
+		case(self = PTBACKEND::PTFrequencyType::TUESDAY) return PTAPI::ScheduleFrequencyDayType::TUESDAY;
+		case(self = PTBACKEND::PTFrequencyType::WEDNESDAY) return PTAPI::ScheduleFrequencyDayType::WEDNESDAY;
+		case(self = PTBACKEND::PTFrequencyType::THURSDAY) return PTAPI::ScheduleFrequencyDayType::THURSDAY;
+		case(self = PTBACKEND::PTFrequencyType::FRIDAY) return PTAPI::ScheduleFrequencyDayType::FRIDAY;
+		case(self = PTBACKEND::PTFrequencyType::SATURDAY) return PTAPI::ScheduleFrequencyDayType::SATURDAY;
+		case(self = PTBACKEND::PTFrequencyType::SUNDAY) return PTAPI::ScheduleFrequencyDayType::SUNDAY;
+	}
+}
+
+query PTBACKEND::PTPickUpDropOffType::toApiPickUpDropOffType() : PTAPI::PickUpDropOffType {
+	return switch {
+		case(self = PTBACKEND::PTPickUpDropOffType::REGULARLY_SCHEDULED) return PTAPI::PickUpDropOffType::REGULARLY_SCHEDULED;
+		case(self = PTBACKEND::PTPickUpDropOffType::NOT_AVAILABLE) return PTAPI::PickUpDropOffType::NOT_AVAILABLE;
+		case(self = PTBACKEND::PTPickUpDropOffType::PHONE_TO_ARRANGE) return PTAPI::PickUpDropOffType::PHONE_TO_ARRANGE;
+		case(self = PTBACKEND::PTPickUpDropOffType::COORDINATE_WITH_DRIVER) return PTAPI::PickUpDropOffType::COORDINATE_WITH_DRIVER;
+	}
+}
+
+query PTBACKEND::PTLocationStateType::toApiLocationState() : PTAPI::LocationStateType {
+	return switch {
+		case(self = PTBACKEND::PTLocationStateType::AFTER_STOP) return PTAPI::LocationStateType::AFTER_STOP;
+		case(self = PTBACKEND::PTLocationStateType::AT_STOP) return PTAPI::LocationStateType::AT_STOP;
+		case(self = PTBACKEND::PTLocationStateType::BEFORE_STOP) return PTAPI::LocationStateType::BEFORE_STOP;
+		case(self = PTBACKEND::PTLocationStateType::BETWEEN_STOP) return PTAPI::LocationStateType::BETWEEN_STOP;
+	}
+}
+
+query PTBACKEND::PTRouteDeviationType::toApiRouteDeviationType() : PTAPI::RouteDeviationType {
+	return switch {
+		case(self = PTBACKEND::PTRouteDeviationType::ON_ROUTE) return PTAPI::RouteDeviationType::ON_ROUTE;
+		case(self = PTBACKEND::PTRouteDeviationType::OFF_ROUTE) return PTAPI::RouteDeviationType::OFF_ROUTE;
+		case(self = PTBACKEND::PTRouteDeviationType::UNKNOWN) return PTAPI::RouteDeviationType::UNKNOWN;
+	}
+}
+
+query PTBACKEND::PTTripStateType::toApiTripStateType() : PTAPI::TripStateType {
+	return switch {
+		case(self = PTBACKEND::PTTripStateType::EMPTY_RUN) return PTAPI::TripStateType::EMPTY_RUN;
+		case(self = PTBACKEND::PTTripStateType::ON_TRIP) return PTAPI::TripStateType::ON_TRIP;
+		case(self = PTBACKEND::PTTripStateType::OFF_TRIP) return PTAPI::TripStateType::OFF_TRIP;
+		case(self = PTBACKEND::PTTripStateType::TRIP_BREAK) return PTAPI::TripStateType::TRIP_BREAK;
+		case(self = PTBACKEND::PTTripStateType::OFF_DUTY) return PTAPI::TripStateType::OFF_DUTY;
+		case(self = PTBACKEND::PTTripStateType::UNKNOWN) return PTAPI::TripStateType::UNKNOWN;
+	}
+}
+
+query PTBACKEND::PTDoorOpenStateType::toApiDoorOpenStateType() : PTAPI::DoorOpenStateType {
+	return switch {
+		case(self = PTBACKEND::PTDoorOpenStateType::DOORS_OPEN) return PTAPI::DoorOpenStateType::DOORS_OPEN;
+		case(self = PTBACKEND::PTDoorOpenStateType::ALL_DOORS_CLOSED) return PTAPI::DoorOpenStateType::ALL_DOORS_CLOSED;
+		case(self = PTBACKEND::PTDoorOpenStateType::SINGLE_DOOR_OPEN) return PTAPI::DoorOpenStateType::SINGLE_DOOR_OPEN;
+		case(self = PTBACKEND::PTDoorOpenStateType::SINGLE_DOOR_CLOSED) return PTAPI::DoorOpenStateType::SINGLE_DOOR_CLOSED;
+	}
+}
+
+query PTBACKEND::PTExitSideType::toApiExitSideType() : PTAPI::ExitSideType {
+	return switch {
+		case(self = PTBACKEND::PTExitSideType::BOTH) return PTAPI::ExitSideType::BOTH;
+		case(self = PTBACKEND::PTExitSideType::LEFT) return PTAPI::ExitSideType::LEFT;
+		case(self = PTBACKEND::PTExitSideType::RIGHT) return PTAPI::ExitSideType::RIGHT;
+		case(self = PTBACKEND::PTExitSideType::UNKNOWN) return PTAPI::ExitSideType::UNKNOWN;
+	}
+}
+
+query PTBACKEND::PTType::toApiVehicleType() : PTAPI::VehicleType {
+	return switch {
+		case(self = PTBACKEND::PTType::TRAM) return PTAPI::VehicleType::TRAM;
+		case(self = PTBACKEND::PTType::CITY_BUS) return PTAPI::VehicleType::CITY_BUS;
+		case(self = PTBACKEND::PTType::REGIONAL_BUS) return PTAPI::VehicleType::REGIONAL_BUS;
+		case(self = PTBACKEND::PTType::E_BUS) return PTAPI::VehicleType::E_BUS;
+		case(self = PTBACKEND::PTType::SCHOOL_BUS) return PTAPI::VehicleType::SCHOOL_BUS;
+		case(self = PTBACKEND::PTType::NIGHT_BUS) return PTAPI::VehicleType::NIGHT_BUS;
+		case(self = PTBACKEND::PTType::OTHER) return PTAPI::VehicleType::OTHER;
+	}
+}
+
+

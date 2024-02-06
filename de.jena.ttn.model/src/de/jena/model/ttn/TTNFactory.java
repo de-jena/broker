@@ -3,6 +3,7 @@
 package de.jena.model.ttn;
 
 import org.eclipse.emf.ecore.EFactory;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**

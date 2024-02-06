@@ -1,9 +1,0 @@
--buildpath: \
-	org.osgi.annotation.bundle,\
-	org.osgi.framework
-
--includeresource.config: \
-	OSGI-INF/configurator/=config/
-
-Provide-Capability: playground.config;playground.config=default
-Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

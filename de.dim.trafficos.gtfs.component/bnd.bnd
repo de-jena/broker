@@ -1,0 +1,13 @@
+-library: enable-emf
+Bundle-Version: 1.0.0.SNAPSHOT
+-buildpath: \
+	de.dim.trafficos.publictransport.apis,\
+	de.jena.udp.trafficos.publictransport.model,\
+	de.jena.udp.trafficos.common.model,\
+	org.osgi.util.promise,\
+	org.osgi.util.function;version=latest,\
+	org.gecko.emf.mongo.api,\
+	org.osgi.service.cm,\
+	org.osgi.service.component,\
+	org.apache.httpcomponents.httpclient,\
+	org.apache.httpcomponents.httpcore

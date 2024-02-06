@@ -1,7 +1,6 @@
 -buildpath: \
 	de.jena.sensinact.rest.tlc.control.model,\
-	org.gecko.emf.repository.api,\
-	org.gecko.emf.rest
+	org.gecko.emf.repository.api
 
 -library: \
 	enable-emf

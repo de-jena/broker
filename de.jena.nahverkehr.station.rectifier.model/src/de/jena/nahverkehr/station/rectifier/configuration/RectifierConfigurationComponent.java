@@ -12,7 +12,7 @@ import java.util.Hashtable;
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
 
-import org.gecko.emf.osgi.EPackageConfigurator;
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
 
 import org.osgi.annotation.bundle.Capability;
 
@@ -31,9 +31,10 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "RectifierConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.nahverkehr.station.rectifier.RectifierFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.nahverkehr.station.rectifier.RectifierPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.nahverkehr.station.rectifier.util.RectifierResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.nahverkehr.station.rectifier.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.nahverkehr.station.rectifier.RectifierFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.nahverkehr.station.rectifier.RectifierPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.nahverkehr.station.rectifier\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class RectifierConfigurationComponent {
 	
@@ -50,6 +51,7 @@ public class RectifierConfigurationComponent {
 	@Activate
 	public void activate(BundleContext ctx) {
 		RectifierPackage ePackage = RectifierPackageImpl.eINSTANCE;
+		
 		
 		RectifierEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerEPackageService(ePackage, packageConfigurator, ctx);
