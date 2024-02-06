@@ -19,9 +19,9 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
-import org.gecko.emf.jakartars.annotations.json.EMFJSONConfig;
 import org.gecko.emf.json.annotation.RequireEMFJson;
+import org.gecko.emf.rest.annotations.RequireEMFMessageBodyReaderWriter;
+import org.gecko.emf.rest.annotations.json.EMFJSONConfig;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
@@ -96,15 +96,15 @@ public class PTScheduleResource {
 	@Path("/schedules/line/{day}")
 	public Response getSchedulesByDayAndLine(@PathParam("day") String day, @QueryParam("lines") int[] lines) {
 		
-		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
-		response.setMessage("NO CONTENT");
-		return Response.ok(response).build();
-//		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
-//		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndLine(date, lines);
 //		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
-//		response.getData().addAll(schedules);
-//		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
+//		response.setMessage("NO CONTENT");
 //		return Response.ok(response).build();
+		LocalDate date = LocalDate.parse(day, DATE_FORMATTER);
+		List<Schedule> schedules = apiScheduleService.getScheduleByDayAndLine(date, lines);
+		de.jena.udp.model.trafficos.publictransport_api.Response response = TOSPublicTransportApiFactory.eINSTANCE.createResponse();
+		response.getData().addAll(schedules);
+		if(schedules.isEmpty()) response.setMessage("NO CONTENT");
+		return Response.ok(response).build();
 	}
 	
 	@GET

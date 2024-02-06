@@ -12,7 +12,6 @@
 	org.eclipse.sensinact.gateway.core.annotation,\
 	org.osgi.service.component,\
 	org.gecko.qvt.osgi.api,\
-	org.gecko.core.pool,\
 	org.osgi.service.condition,\
 	de.jena.ttn.sensinact.model,\
 	org.eclipse.sensinact.gateway.core.models.provider,\

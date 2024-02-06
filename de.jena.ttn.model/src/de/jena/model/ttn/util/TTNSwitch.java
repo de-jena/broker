@@ -2,25 +2,14 @@
  */
 package de.jena.model.ttn.util;
 
+import de.jena.model.ttn.*;
+
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.jena.model.ttn.ApplicationId;
-import de.jena.model.ttn.DataRate;
-import de.jena.model.ttn.EndDeviceIds;
-import de.jena.model.ttn.GatewayIds;
-import de.jena.model.ttn.Location;
-import de.jena.model.ttn.Lora;
-import de.jena.model.ttn.NetworkIds;
-import de.jena.model.ttn.RxMetadata;
-import de.jena.model.ttn.Settings;
-import de.jena.model.ttn.TTNPackage;
-import de.jena.model.ttn.TtnUplinkPayload;
-import de.jena.model.ttn.UplinkMessage;
-import de.jena.model.ttn.VersionIds;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

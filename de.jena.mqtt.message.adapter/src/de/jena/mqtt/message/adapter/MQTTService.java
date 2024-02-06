@@ -28,7 +28,6 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
-import org.gecko.core.pushstream.PushStreamHelper;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingConstants;
 import org.gecko.osgi.messaging.MessagingContext;
@@ -210,7 +209,7 @@ public class MQTTService implements MessagingService, AutoCloseable, MqttCallbac
 						.withBuffer(new ArrayBlockingQueue<PushEvent<? extends Message>>(4000)).build();
 				subscriptions.put(filter, source);
 			}
-			PushStreamBuilder<Message,BlockingQueue<PushEvent<? extends Message>>> buildStream = PushStreamHelper.configurePushStreamBuilder(source, context);
+			PushStreamBuilder<Message,BlockingQueue<PushEvent<? extends Message>>> buildStream = org.gecko.util.pushstream.PushStreamHelper.configurePushStreamBuilder(source, context);
 			return buildStream.build();
 		} catch(MqttException e){
 			logger.log(Level.ERROR,"Error subscribing to topic " + topic, e);

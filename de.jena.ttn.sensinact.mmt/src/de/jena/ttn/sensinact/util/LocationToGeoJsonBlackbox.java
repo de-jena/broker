@@ -22,11 +22,6 @@ import de.jena.model.ttn.TTNPackage;
 @Module(packageURIs={TTNPackage.eNS_URI})
 public class LocationToGeoJsonBlackbox implements Condition {
 	
-	/**
-	 * Contextual method that can be called on each {@link com.swarco.sdg.sdgtlc.CommunicationStateType}
-	 * @param self the instance the method is called from
-	 * @return the double value of the  
-	 */
 	@Operation(contextual = true, description = "Converts from UTM into degree latitude")
 	public static GeoJsonObject toGeoJson(Location location) {
 		Point point = new Point();

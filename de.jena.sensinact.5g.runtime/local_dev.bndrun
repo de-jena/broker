@@ -3,6 +3,8 @@
 
 -runbundles.local:\
 	 de.jena.sensinact.5g.runtime.config.local
+
+-runvm.localdev: -Duser.dir=${.}/generated/tmp
  	
 -runproperties.local: \
 	base.path=${.},\

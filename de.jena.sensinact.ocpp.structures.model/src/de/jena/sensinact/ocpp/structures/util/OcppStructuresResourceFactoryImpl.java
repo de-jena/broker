@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
-import org.gecko.emf.osgi.EMFNamespaces;
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,9 +61,9 @@ public class OcppStructuresResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	public Map<String, Object> getServiceProperties() {
 		Map<String, Object> properties = new HashMap<String, Object>();
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_NAME, OcppStructuresPackage.eNAME);
-		properties.put(EMFNamespaces.EMF_RESOURCE_CONFIGURATOR_FILE_EXT, "ocppstructures");
-		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		properties.put(EMFNamespaces.EMF_CONFIGURATOR_NAME, OcppStructuresPackage.eNAME);
+		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "ocppstructures");
+		properties.put(EMFNamespaces.EMF_MODEL_VERSION, "1.0");
 		return properties;
 	}
 

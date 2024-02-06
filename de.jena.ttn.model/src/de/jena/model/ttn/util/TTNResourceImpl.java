@@ -3,6 +3,7 @@
 package de.jena.model.ttn.util;
 
 import org.eclipse.emf.common.util.URI;
+
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 
 /**

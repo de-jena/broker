@@ -1,0 +1,5 @@
+"route_id","agency_id","route_short_name","route_long_name","route_type","route_color","route_text_color","route_desc"
+"7202_3",114,"252","",3,"","",""
+"7201_3",114,"252","",3,"","",""
+"5547_3",114,"3","",3,"008B45","FFFFFF",""
+"5546_3",114,"3","",3,"008B45","FFFFFF",""

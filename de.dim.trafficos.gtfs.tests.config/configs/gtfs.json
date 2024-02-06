@@ -1,0 +1,14 @@
+{
+	":configurator:resource-version": 1,
+	"GTFSToTOSPublicTransportConverter~pt": {
+		"pathToXMLStopFolder": "deutschlandweite-haltestellendaten-xml-test/",
+		"pathToGTFSScheduleFolder": "deutschlandweite-sollfahrplandaten-gtfs-test/",
+		"municipalities": ["Jena"]
+	},
+	"GTFSDownloadService": {
+		"germanStopsDownloadLink": "https://www.opendata-oepnv.de/index.php?id=1384&tx_vrrkit_view%5Bsharing%5D=eyJkYXRhc2V0IjoiZGV1dHNjaGxhbmR3ZWl0ZS1oYWx0ZXN0ZWxsZW5kYXRlbi14bWwiLCJ1c2VySWQiOjI3ODl9&tx_vrrkit_view%5Baction%5D=download&tx_vrrkit_view%5Bcontroller%5D=View",
+		"germanStopsFolder": "deutschlandweite-haltestellendaten-xml",
+		"germanScheduleDownloadLink": "https://www.opendata-oepnv.de/index.php?id=1384&tx_vrrkit_view%5Bsharing%5D=eyJkYXRhc2V0IjoiZGV1dHNjaGxhbmR3ZWl0ZS1zb2xsZmFocnBsYW5kYXRlbi1ndGZzIiwidXNlcklkIjoyNzg5fQ%3D%3D&tx_vrrkit_view%5Baction%5D=download&tx_vrrkit_view%5Bcontroller%5D=View",
+		"germanScheduleFolder": "deutschlandweite-sollfahrplandaten-gtfs"
+	}
+}

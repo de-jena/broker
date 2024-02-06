@@ -1,0 +1,12 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MMTMainConfig",
+	
+	"QVTModelTransformator~pt": {
+		"transformator.id": "publictransportToApi",
+		"qvt.template.path": "de.dim.trafficos.publictransport.api.mmt/transforms/publictransportToApi.qvto",
+		"qvt.transformator.name": "publictransportToApi",
+		"qvt.model.target": "(&(emf.name=common)(emf.name=publictransport)(emf.name=publictransport_api))"
+	}
+}

@@ -1,0 +1,40 @@
+{
+  ":configurator:resource-version": 1,
+  
+	"EMFLuceneIndex~ptvehicle": 
+  	{
+  	    "id": "ptvehicle",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/ptvehicle/"
+	},
+	"EMFLuceneIndex~ptstop": 
+  	{
+  	    "id": "ptstop",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/ptstop/"
+	},
+	"EMFLuceneIndex~ptroute": 
+  	{
+  	    "id": "ptroute",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/ptroute/"
+	},
+	"EMFLuceneIndex~pttimetableentry": 
+  	{
+  	    "id": "pttimetableentry",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/pttimetableentry/"
+	},
+	"EMFLuceneIndex~ptschedule": 
+  	{
+  	    "id": "ptschedule",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/ptschedule/"
+	},
+	"EMFLuceneIndex~ptupdate": 
+  	{
+  	    "id": "ptupdate",
+  	    "directory.type": "MMAP",
+		"base.path" : "/tmp/index/ptupdate/"
+	}
+}

@@ -4,12 +4,8 @@
 	
 #-export: assembly.bndrun;type=bnd.runbundles;name=distro.zip	
 -buildpath: \
-	org.gecko.rest.jersey,\
-	org.gecko.rest.jersey.servlet.whiteboard,\
-	org.gecko.rest.jersey.config,\
 	org.eclipse.paho.client.mqttv3;version=latest,\
 	org.apache.felix.configadmin.plugin.interpolation,\
-	org.gecko.core.pool,\
 	org.gecko.qvt.osgi.component,\
 	org.gecko.qvt.osgi.api,\
 	org.antlr.antlr4-runtime,\

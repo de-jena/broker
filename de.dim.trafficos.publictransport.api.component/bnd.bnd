@@ -1,0 +1,10 @@
+-library: enable-emf
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-buildpath: \
+	de.dim.trafficos.publictransport.apis;version=latest,\
+	de.jena.udp.trafficos.publictransport.api.model,\
+	de.jena.udp.trafficos.publictransport.model,\
+	de.jena.udp.trafficos.common.model,\
+	org.gecko.qvt.osgi.api
+	

@@ -1,0 +1,23 @@
+-library: \
+	enable-emf
+	
+-buildpath: \
+	de.dim.trafficos.publictransport.apis;version=latest,\
+	de.jena.udp.trafficos.publictransport.model;version=latest,\
+	de.jena.udp.trafficos.common.model;version=latest,\
+	org.gecko.emf.repository.api,\
+	org.gecko.emf.mongo.api,\
+	org.osgi.util.promise;version=latest,\
+	org.osgi.util.function;version=latest,\
+	org.osgi.service.component,\
+	org.gecko.emf.pushstreams,\
+	org.osgi.util.pushstream;version=latest,\
+	org.gecko.emf.mongo.pushstream,\
+	org.gecko.util.pushstream,\
+	org.apache.lucene.core,\
+	org.gecko.emf.repository.mongo;version='3.1',\
+	org.gecko.search.document,\
+	org.gecko.emf.search,\
+	org.gecko.search
+
+Bundle-Version: 1.0.0.SNAPSHOT

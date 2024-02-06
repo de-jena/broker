@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//.settings/org.eclipse.core.resources.prefs=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTRouteServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTScheduleSearchServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTScheduleServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTStopSearchServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTStopServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTTimetableEntrySearchServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTTimetableEntryServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTUpdateSearchServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTUpdateServiceTest.java=UTF-8
+encoding//src/de/dim/trafficos/publictransport/component/tests/PTVehicleServiceTest.java=UTF-8
+encoding/<project>=UTF-8
+encoding/bnd.bnd=UTF-8
+encoding/build.gradle=UTF-8
+encoding/test.bndrun=UTF-8

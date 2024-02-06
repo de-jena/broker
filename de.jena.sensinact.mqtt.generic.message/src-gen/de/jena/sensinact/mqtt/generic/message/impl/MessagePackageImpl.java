@@ -686,8 +686,8 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getLongValueUpdate_NewValue(), ecorePackage.getELongObject(), "newValue", null, 0, 1, LongValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanValueUpdateEClass, BooleanValueUpdate.class, "BooleanValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBooleanValueUpdate_OldValue(), ecorePackage.getEBoolean(), "oldValue", null, 0, 1, BooleanValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBooleanValueUpdate_NewValue(), ecorePackage.getEBoolean(), "newValue", null, 0, 1, BooleanValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanValueUpdate_OldValue(), ecorePackage.getEBooleanObject(), "oldValue", null, 0, 1, BooleanValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanValueUpdate_NewValue(), ecorePackage.getEBooleanObject(), "newValue", null, 0, 1, BooleanValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(objectValueUpdateEClass, ObjectValueUpdate.class, "ObjectValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObjectValueUpdate_OldValue(), ecorePackage.getEJavaObject(), "oldValue", null, 0, 1, ObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

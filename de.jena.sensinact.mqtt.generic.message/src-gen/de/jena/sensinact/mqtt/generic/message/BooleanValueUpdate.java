@@ -13,8 +13,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue <em>Old Value</em>}</li>
- *   <li>{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue <em>New Value</em>}</li>
+ *   <li>{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getOldValue <em>Old Value</em>}</li>
+ *   <li>{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getNewValue <em>New Value</em>}</li>
  * </ul>
  *
  * @see de.jena.sensinact.mqtt.generic.message.MessagePackage#getBooleanValueUpdate()
@@ -28,43 +28,43 @@ public interface BooleanValueUpdate extends UpdateMessage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Old Value</em>' attribute.
-	 * @see #setOldValue(boolean)
+	 * @see #setOldValue(Boolean)
 	 * @see de.jena.sensinact.mqtt.generic.message.MessagePackage#getBooleanValueUpdate_OldValue()
 	 * @model
 	 * @generated
 	 */
-	boolean isOldValue();
+	Boolean getOldValue();
 
 	/**
-	 * Sets the value of the '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isOldValue <em>Old Value</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getOldValue <em>Old Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Old Value</em>' attribute.
-	 * @see #isOldValue()
+	 * @see #getOldValue()
 	 * @generated
 	 */
-	void setOldValue(boolean value);
+	void setOldValue(Boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>New Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Value</em>' attribute.
-	 * @see #setNewValue(boolean)
+	 * @see #setNewValue(Boolean)
 	 * @see de.jena.sensinact.mqtt.generic.message.MessagePackage#getBooleanValueUpdate_NewValue()
 	 * @model
 	 * @generated
 	 */
-	boolean isNewValue();
+	Boolean getNewValue();
 
 	/**
-	 * Sets the value of the '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#isNewValue <em>New Value</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate#getNewValue <em>New Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>New Value</em>' attribute.
-	 * @see #isNewValue()
+	 * @see #getNewValue()
 	 * @generated
 	 */
-	void setNewValue(boolean value);
+	void setNewValue(Boolean value);
 
 } // BooleanValueUpdate

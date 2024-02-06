@@ -1,0 +1,12 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MMTMainConfig",
+	
+	"QVTModelTransformator~ttncat": {
+		"transformator.id": "TTN2SensinactTTNApi",
+		"qvt.template.path": "de.jena.ttn.sensinact.mmt/transformations/ttn.qvto",
+		"qvt.model.target": "(&(emf.name=ttn)(emf.name=ttnprovider))"
+		
+	}
+}

@@ -12,13 +12,16 @@
  */
 package de.jena.model.sensinact.ttnprovider.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
-
 import de.jena.model.sensinact.ttnprovider.GatewayData;
 import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
+
+import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
 
 /**
  * <!-- begin-user-doc -->

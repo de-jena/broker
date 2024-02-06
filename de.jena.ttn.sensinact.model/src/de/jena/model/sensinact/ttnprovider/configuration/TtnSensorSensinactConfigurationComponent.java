@@ -12,24 +12,32 @@
  */
 package de.jena.model.sensinact.ttnprovider.configuration;
 
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactFactory;
+import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
+
+import de.jena.model.sensinact.ttnprovider.impl.TtnSensorSensinactPackageImpl;
+
+import de.jena.model.sensinact.ttnprovider.util.TtnSensorSensinactResourceFactoryImpl;
+
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource.Factory;
-import org.gecko.emf.osgi.EPackageConfigurator;
+
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
+
 import org.osgi.annotation.bundle.Capability;
+
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.condition.Condition;
 
-import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactFactory;
-import de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage;
-import de.jena.model.sensinact.ttnprovider.impl.TtnSensorSensinactPackageImpl;
-import de.jena.model.sensinact.ttnprovider.util.TtnSensorSensinactResourceFactoryImpl;
+import org.osgi.service.condition.Condition;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
@@ -37,9 +45,10 @@ import de.jena.model.sensinact.ttnprovider.util.TtnSensorSensinactResourceFactor
  * @generated
  */
 @Component(name = "TtnSensorSensinactConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.sensinact.ttnprovider.TtnSensorSensinactFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.sensinact.ttnprovider.util.TtnSensorSensinactResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.model.sensinact.ttnprovider.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.sensinact.ttnprovider.TtnSensorSensinactFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.sensinact.ttnprovider.TtnSensorSensinactPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.sensinact.ttnprovider\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class TtnSensorSensinactConfigurationComponent {
 	
@@ -57,6 +66,7 @@ public class TtnSensorSensinactConfigurationComponent {
 	@Activate
 	public void activate(BundleContext ctx) {
 		TtnSensorSensinactPackage ePackage = TtnSensorSensinactPackageImpl.eINSTANCE;
+		
 		
 		TtnSensorSensinactEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerResourceFactoryService(ctx);

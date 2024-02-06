@@ -14,10 +14,10 @@ package de.jena.sensinact.sthbnd.rest.tlc.control;
 import java.util.List;
 import java.util.Optional;
 
-import org.gecko.emf.jakartars.annotations.RequireEMFMessageBodyReaderWriter;
-import org.gecko.emf.jakartars.annotations.json.EMFJSONConfig;
-import org.gecko.emf.jakartars.annotations.json.EMFJSONConfig.USE;
 import org.gecko.emf.json.annotation.RequireEMFJson;
+import org.gecko.emf.rest.annotations.RequireEMFMessageBodyReaderWriter;
+import org.gecko.emf.rest.annotations.json.EMFJSONConfig;
+import org.gecko.emf.rest.annotations.json.EMFJSONConfig.USE;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ServiceScope;

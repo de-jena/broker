@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#getTimestamp <em>Timestamp</em>}</li>
  *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#getResource <em>Resource</em>}</li>
- *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#isOldValue <em>Old Value</em>}</li>
- *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#isNewValue <em>New Value</em>}</li>
+ *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#getOldValue <em>Old Value</em>}</li>
+ *   <li>{@link de.jena.sensinact.mqtt.generic.message.impl.BooleanValueUpdateImpl#getNewValue <em>New Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,44 +72,44 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 	protected String resource = RESOURCE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isOldValue() <em>Old Value</em>}' attribute.
+	 * The default value of the '{@link #getOldValue() <em>Old Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isOldValue()
+	 * @see #getOldValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean OLD_VALUE_EDEFAULT = false;
+	protected static final Boolean OLD_VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isOldValue() <em>Old Value</em>}' attribute.
+	 * The cached value of the '{@link #getOldValue() <em>Old Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isOldValue()
+	 * @see #getOldValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean oldValue = OLD_VALUE_EDEFAULT;
+	protected Boolean oldValue = OLD_VALUE_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isNewValue() <em>New Value</em>}' attribute.
+	 * The default value of the '{@link #getNewValue() <em>New Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNewValue()
+	 * @see #getNewValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean NEW_VALUE_EDEFAULT = false;
+	protected static final Boolean NEW_VALUE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isNewValue() <em>New Value</em>}' attribute.
+	 * The cached value of the '{@link #getNewValue() <em>New Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isNewValue()
+	 * @see #getNewValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean newValue = NEW_VALUE_EDEFAULT;
+	protected Boolean newValue = NEW_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,7 +177,7 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isOldValue() {
+	public Boolean getOldValue() {
 		return oldValue;
 	}
 
@@ -186,8 +186,8 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setOldValue(boolean newOldValue) {
-		boolean oldOldValue = oldValue;
+	public void setOldValue(Boolean newOldValue) {
+		Boolean oldOldValue = oldValue;
 		oldValue = newOldValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.BOOLEAN_VALUE_UPDATE__OLD_VALUE, oldOldValue, oldValue));
@@ -198,7 +198,7 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isNewValue() {
+	public Boolean getNewValue() {
 		return newValue;
 	}
 
@@ -207,8 +207,8 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNewValue(boolean newNewValue) {
-		boolean oldNewValue = newValue;
+	public void setNewValue(Boolean newNewValue) {
+		Boolean oldNewValue = newValue;
 		newValue = newNewValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MessagePackage.BOOLEAN_VALUE_UPDATE__NEW_VALUE, oldNewValue, newValue));
@@ -227,9 +227,9 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__RESOURCE:
 				return getResource();
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__OLD_VALUE:
-				return isOldValue();
+				return getOldValue();
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__NEW_VALUE:
-				return isNewValue();
+				return getNewValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -295,9 +295,9 @@ public class BooleanValueUpdateImpl extends MinimalEObjectImpl.Container impleme
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__RESOURCE:
 				return RESOURCE_EDEFAULT == null ? resource != null : !RESOURCE_EDEFAULT.equals(resource);
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__OLD_VALUE:
-				return oldValue != OLD_VALUE_EDEFAULT;
+				return OLD_VALUE_EDEFAULT == null ? oldValue != null : !OLD_VALUE_EDEFAULT.equals(oldValue);
 			case MessagePackage.BOOLEAN_VALUE_UPDATE__NEW_VALUE:
-				return newValue != NEW_VALUE_EDEFAULT;
+				return NEW_VALUE_EDEFAULT == null ? newValue != null : !NEW_VALUE_EDEFAULT.equals(newValue);
 		}
 		return super.eIsSet(featureID);
 	}

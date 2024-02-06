@@ -44,3 +44,6 @@ org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.
 org.antlr:antlr4-runtime:4.12.0
 org.locationtech.spatial4j:spatial4j:0.8
 io.dropwizard.metrics:metrics-core:4.2.19
+
+org.slf4j:slf4j-api:2.0.11
+org.slf4j:slf4j-simple:2.0.11

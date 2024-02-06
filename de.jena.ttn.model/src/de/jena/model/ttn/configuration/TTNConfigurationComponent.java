@@ -2,24 +2,32 @@
  */
 package de.jena.model.ttn.configuration;
 
+import de.jena.model.ttn.TTNFactory;
+import de.jena.model.ttn.TTNPackage;
+
+import de.jena.model.ttn.impl.TTNPackageImpl;
+
+import de.jena.model.ttn.util.TTNResourceFactoryImpl;
+
 import java.util.Hashtable;
 
 import org.eclipse.emf.ecore.EFactory;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.resource.Resource.Factory;
-import org.gecko.emf.osgi.EPackageConfigurator;
+
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
+
 import org.osgi.annotation.bundle.Capability;
+
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.condition.Condition;
 
-import de.jena.model.ttn.TTNFactory;
-import de.jena.model.ttn.TTNPackage;
-import de.jena.model.ttn.impl.TTNPackageImpl;
-import de.jena.model.ttn.util.TTNResourceFactoryImpl;
+import org.osgi.service.condition.Condition;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
@@ -27,9 +35,10 @@ import de.jena.model.ttn.util.TTNResourceFactoryImpl;
  * @generated
  */
 @Component(name = "TTNConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.ttn.TTNFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.ttn" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.ttn.TTNPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.ttn" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,de.jena.model.ttn" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.ttn.util.TTNResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.model.ttn.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.ttn.TTNFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.ttn\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.model.ttn.TTNPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.ttn\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.model.ttn\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class TTNConfigurationComponent {
 	
@@ -47,6 +56,7 @@ public class TTNConfigurationComponent {
 	@Activate
 	public void activate(BundleContext ctx) {
 		TTNPackage ePackage = TTNPackageImpl.eINSTANCE;
+		
 		
 		TTNEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerResourceFactoryService(ctx);

@@ -4,7 +4,9 @@ package de.jena.model.ttn;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EObject;
+
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
