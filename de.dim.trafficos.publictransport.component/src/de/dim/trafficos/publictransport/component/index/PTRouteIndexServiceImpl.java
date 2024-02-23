@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 import org.eclipse.emf.ecore.EObject;
+import org.gecko.emf.mongo.ValueConverter;
 import org.gecko.emf.repository.EMFRepository;
 import org.gecko.emf.search.document.EObjectDocumentIndexObjectContext;
 import org.gecko.search.IndexActionType;
@@ -43,7 +44,10 @@ import de.jena.udp.model.trafficos.publictransport.TOSPublicTransportPackage;
  * @author ilenia
  * @since Jul 4, 2023
  */
-@Component(immediate = true, name = "PTRouteIndexService", service = PTRouteIndexService.class, scope = ServiceScope.SINGLETON)
+@Component(immediate = true, name = "PTRouteIndexService", service = PTRouteIndexService.class, scope = ServiceScope.SINGLETON, reference = {
+		@Reference(name="LocalTimeConverter", target = "(id=LocalTimeConverter)", service = ValueConverter.class),
+		@Reference(name="LocalDateConverter", target = "(id=LocalDateConverter)", service = ValueConverter.class)
+})
 public class PTRouteIndexServiceImpl implements PTRouteIndexService {
 	
 	@Reference(target = "(id=ptroute)")
@@ -63,7 +67,7 @@ public class PTRouteIndexServiceImpl implements PTRouteIndexService {
 	public void activate() {
 		factory.submit(() -> {
 			CountDownLatch latch = new CountDownLatch(1);
-			latch.await(100, TimeUnit.MILLISECONDS);
+			latch.await(5, TimeUnit.SECONDS);
 			initializeIndex();
 			return true;
 		}).onSuccess(t -> LOGGER.info("Finished indexing PTRoute objects!"))

@@ -25,7 +25,7 @@ import org.osgi.service.component.annotations.Component;
  * @author ilenia
  * @since Jul 5, 2023
  */
-@Component(service = ValueConverter.class, name = "LocalDateConverter")
+@Component(name = "LocalDateConverter", property = "id=LocalDateConverter")
 public class LocalDateConverter implements ValueConverter {
 	
 	private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMdd");

@@ -5,9 +5,13 @@ import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
-import org.gecko.qvt.osgi.api.ModelTransformationConstants;
+import org.gecko.qvt.osgi.annotations.ModelTransformatorConfig;
+import org.gecko.qvt.osgi.annotations.ModuleName;
+import org.gecko.qvt.osgi.annotations.QvtBlackbox;
+import org.gecko.qvt.osgi.annotations.TemplatePath;
+import org.gecko.qvt.osgi.annotations.TransformatorId;
+import org.gecko.qvt.osgi.annotations.UnitQualifiedName;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.condition.Condition;
 
 import de.jena.model.ttn.Location;
 import de.jena.model.ttn.TTNPackage;
@@ -18,9 +22,14 @@ import de.jena.model.ttn.TTNPackage;
  * @author mark
  * @since 24.11.2022
  */
-@Component(service = {LocationToGeoJsonBlackbox.class, Condition.class}, immediate=true, property = {ModelTransformationConstants.QVT_BLACKBOX + "=true", ModelTransformationConstants.BLACKBOX_MODULENAME + "=LocationToGeoJsonBlackbox", ModelTransformationConstants.BLACKBOX_QUALIFIED_UNIT_NAME + "=de.jena.ttn.sensinact.util.LocationToGeoJsonBlackbox", Condition.CONDITION_ID +"=ttnBlackboxes"})
+@Component(service = {LocationToGeoJsonBlackbox.class})
+@QvtBlackbox
+@TransformatorId("TTN2SensinactTTNApi")
+@ModuleName("LocationToGeoJsonBlackbox")
+@UnitQualifiedName("de.jena.ttn.sensinact.util.LocationToGeoJsonBlackbox")
+@TemplatePath("de.jena.ttn.sensinact.mmt/ttn.qvto")
 @Module(packageURIs={TTNPackage.eNS_URI})
-public class LocationToGeoJsonBlackbox implements Condition {
+public class LocationToGeoJsonBlackbox{
 	
 	@Operation(contextual = true, description = "Converts from UTM into degree latitude")
 	public static GeoJsonObject toGeoJson(Location location) {
