@@ -9,7 +9,9 @@ import org.eclipse.jetty.websocket.client.WebSocketClient;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.metatype.annotations.Designate;
 
 import de.jena.traficam.api.TrafiCamConfig;
 
@@ -24,6 +26,7 @@ import de.jena.traficam.api.TrafiCamConfig;
  */
 
 @Component(configurationPid = "TrafiCamConfig")
+@Designate(ocd = TrafiCamConfig.class)
 public class TrafiCamWebsocketClient {
 	private static final Logger logger = System.getLogger(TrafiCamWebsocketClient.class.getName());
 
@@ -34,16 +37,23 @@ public class TrafiCamWebsocketClient {
 	@Activate
 	public void activate(TrafiCamConfig config) throws Exception {
 		client = new WebSocketClient();
+		String camId = config.id();
 		String url = "ws://" + config.address() + "/api/subscriptions";
-		logger.log(Level.INFO, "Connect websocket " + url);
+		logger.log(Level.INFO, "Connect websocket for camera {0} to {1}.",camId, url);
 		URI dest = new URI(url);
 
 		client.start();
-		TrafiCamWebsocket socket = new TrafiCamWebsocket(reader);
+		TrafiCamWebsocket socket = new TrafiCamWebsocket(camId, reader);
 		ClientUpgradeRequest request = new ClientUpgradeRequest();
 		client.connect(socket, dest, request);
 	}
 
+	@Modified
+	public void modify(TrafiCamConfig config) throws Exception {
+		deactivate();
+		activate(config);
+	}
+	
 	@Deactivate
 	public void deactivate() throws Exception {
 		logger.log(Level.INFO, "Disconnect websocket");

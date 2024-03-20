@@ -27,8 +27,10 @@ public class TrafiCamWebsocket {
 
 	private static final Logger logger = System.getLogger(TrafiCamWebsocket.class.getName());
 	private TrafiCamReader reader;
+	private String id;
 
-	public TrafiCamWebsocket(TrafiCamReader reader) {
+	public TrafiCamWebsocket(String id, TrafiCamReader reader) {
+		this.id = id;
 		this.reader = reader;
 	}
 
@@ -55,7 +57,7 @@ public class TrafiCamWebsocket {
 	@OnWebSocketMessage
 	public void onMessage(Session session, String msg) {
 		logger.log(Level.DEBUG, "OnMessage: " + msg);
-		reader.read(msg);
+		reader.read(id, msg);
 	}
 
 	@OnWebSocketClose

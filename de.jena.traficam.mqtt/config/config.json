@@ -17,13 +17,5 @@
 		"username" : "$[env:MQTT_FULL_USER;default=]",
 		"password" : "$[env:MQTT_FULL_PWD;default=]",
 		"topic": "5g/ilsa/#"
-	},
-
-	"IlsaConfig":
-	{
-		"baud": 230400,
-		"port":"/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0",
-		"intersectionId": "Felsenkeller",
-		"intersectionConfig": "/opt/osgi/config.json"
 	}
 }

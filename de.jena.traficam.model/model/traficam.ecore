@@ -12,6 +12,7 @@
         eType="#//TrafiCamObject" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervalTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="camId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrafiCamObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="classId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EShort"

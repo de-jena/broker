@@ -11,7 +11,13 @@
  */
 package de.jena.traficam.api;
 
+import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+
+@ObjectClassDefinition(name = "TrafiCam Configuration")
 public @interface TrafiCamConfig {
-	String address() default "192.168.128.251:13218";
+    @AttributeDefinition(name = "Address", description = "Address including port of the camera")
+	String address() default "localhost:9180";
+    @AttributeDefinition(name = "ID", description = "Identifier of the camera. Is part of the topic where the data will be published.")
 	String id();
 }

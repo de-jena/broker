@@ -30,19 +30,19 @@ import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushEvent.EventType;
 import org.osgi.util.pushstream.PushStream;
 
-import de.jena.traficam.api.TrafiCamConfig;
 import de.jena.traficam.websocket.TrafiCamReader;
 import traficam.TrafiCam;
 import traficam.TrafiCamObject;
 
 @RequireEMFJson
-@Component(configurationPid = "TrafiCamConfig")
+@Component
 public class MqttTrafiCamSender {
 	private static final Logger logger = System.getLogger(MqttTrafiCamSender.class.getName());
 
@@ -60,11 +60,11 @@ public class MqttTrafiCamSender {
 	private String topic;
 
 	@Activate
-	public void activate(TrafiCamConfig config) {
-		String id = config.id();
-		topic = "5g/traficam/" + id + "/";
+	@Modified
+	public void activate() {
+		topic = "5g/traficam/";
 		refreshSubscribtion();
-		logger.log(Level.INFO, "MQTT TrafiCam sender started. {0}", id);
+		logger.log(Level.INFO, "MQTT TrafiCam sender started.");
 	}
 
 	private void refreshSubscribtion() {
@@ -88,7 +88,9 @@ public class MqttTrafiCamSender {
 			logger.log(Level.WARNING, "PushStream closed.");
 			break;
 		case DATA:
-			event.getData().getObject().forEach(this::sendObject);
+			TrafiCam trafiCam = event.getData();
+			String camId = trafiCam.getCamId();
+			trafiCam.getObject().forEach(t -> sendObject(camId,t));
 			break;
 		case ERROR:
 			logger.log(Level.ERROR, "PushStream error.", event.getFailure());
@@ -101,7 +103,7 @@ public class MqttTrafiCamSender {
 		return 0;
 	}
 
-	private void sendObject(TrafiCamObject object) {
+	private void sendObject(String camId, TrafiCamObject object) {
 		ResourceSet resourceSet = serviceObjects.getService();
 		try {
 			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));
@@ -111,7 +113,7 @@ public class MqttTrafiCamSender {
 			res.save(bao, config);
 			logger.log(Level.DEBUG, "Send traficam data via MQTT. {0}", new String(bao.toByteArray()));
 			ByteBuffer buffer = ByteBuffer.wrap(bao.toByteArray());
-			messaging.publish(getTopic(object), buffer);
+			messaging.publish(getTopic(camId, object), buffer);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error while sending telegram via MQTT.", e);
 		} finally {
@@ -119,9 +121,9 @@ public class MqttTrafiCamSender {
 		}
 	}
 
-	private String getTopic(TrafiCamObject object) {
+	private String getTopic(String camId, TrafiCamObject object) {
 		short classId = object.getClassId();
 		long id = object.getId();
-		return topic + classId + "/" + id;
+		return topic +camId+ "/"+ classId + "/" + id;
 	}
 }

@@ -19,6 +19,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.Executors;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -34,6 +36,8 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.util.pushstream.PushStream;
 import org.osgi.util.pushstream.PushStreamProvider;
+import org.osgi.util.pushstream.PushbackPolicyOption;
+import org.osgi.util.pushstream.QueuePolicyOption;
 import org.osgi.util.pushstream.SimplePushEventSource;
 
 import de.jena.traficam.api.TrafiCamService;
@@ -65,10 +69,12 @@ public class TrafiCamReader implements TrafiCamService {
 	public PushStream<TrafiCam> subscribe() {
 		SimplePushEventSource<TrafiCam> source = provider.buildSimpleEventSource(TrafiCam.class).build();
 		eventSources.add(source);
-		return provider.createStream(source);
+		return provider.buildStream(source).withPushbackPolicy(PushbackPolicyOption.ON_FULL_EXPONENTIAL.getPolicy(1))
+				.withQueuePolicy(QueuePolicyOption.BLOCK).withExecutor(Executors.newCachedThreadPool())
+				.withBuffer(new ArrayBlockingQueue<>(1000)).build();
 	}
 
-	public void read(String msg) {
+	public void read(String camId, String msg) {
 		ResourceSet resourceSet = serviceObjects.getService();
 		Resource resource = resourceSet.createResource(URI.createURI("dummy"), "application/json");
 		try {
@@ -79,7 +85,7 @@ public class TrafiCamReader implements TrafiCamService {
 			resource.load(stream, loadOption);
 			ArrayList<EObject> sensors = new ArrayList<>(resource.getContents());
 			resource.getContents().clear();
-			publish(sensors);
+			publish(camId, sensors);
 		} catch (Throwable e) {
 			resource.getErrors().forEach(diag -> System.out.println(diag.getMessage()));
 			e.printStackTrace();
@@ -89,13 +95,14 @@ public class TrafiCamReader implements TrafiCamService {
 
 	}
 
-	private void publish(List<EObject> sensors) {
+	private void publish(String camId, List<EObject> sensors) {
 		for (EObject sensor : sensors) {
 			Iterator<SimplePushEventSource<TrafiCam>> it = eventSources.iterator();
 			while (it.hasNext()) {
 				SimplePushEventSource<TrafiCam> source = it.next();
 				if (source.isConnected()) {
 					TrafiCam msg = (TrafiCam) EcoreUtil.copy(sensor);
+					msg.setCamId(camId);
 					source.publish(msg);
 				} else
 					it.remove();

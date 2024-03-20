@@ -1,9 +1,0 @@
-{
-	":configurator:resource-version": 1,
-
-	"TrafiCamConfig":
-	{
-		"address": "192.168.0.2:80",
-		"id": "Erbertstraße"
-	}
-}

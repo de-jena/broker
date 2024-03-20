@@ -7,9 +7,7 @@
 	bnd.identity;id='org.eclipse.paho.client.mqttv3',\
 	bnd.identity;id='org.eclipse.jetty.webapp'
 -runbundles: \
-	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
 	org.gecko.core.api;version='[1.0.5,1.0.6)',\
-	org.gecko.core.pushstream;version='[1.1.0,1.1.1)',\
 	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)',\
 	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)',\
 	org.gecko.adapter.mqtt;version='[1.0.6,1.0.7)',\
@@ -51,7 +49,10 @@
 	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
 	slf4j.api;version='[1.7.25,1.7.26)',\
 	org.eclipse.jetty.webapp;version='[11.0.13,11.0.14)',\
-	org.eclipse.jetty.xml;version='[11.0.13,11.0.14)'
+	org.eclipse.jetty.xml;version='[11.0.13,11.0.14)',\
+	de.jena.core.pushstream;version=snapshot,\
+	org.gecko.util.common;version='[2.0.0,2.0.1)',\
+	org.osgi.util.pushstream;version='[1.1.0,1.1.1)'
 	
 revipicam = \
 	remote; \

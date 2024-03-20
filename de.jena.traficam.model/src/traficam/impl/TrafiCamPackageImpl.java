@@ -206,6 +206,16 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getTrafiCam_CamId() {
+		return (EAttribute)trafiCamEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTrafiCamObject() {
 		return trafiCamObjectEClass;
 	}
@@ -466,6 +476,7 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		createEReference(trafiCamEClass, TRAFI_CAM__OBJECT);
 		createEAttribute(trafiCamEClass, TRAFI_CAM__TIME);
 		createEAttribute(trafiCamEClass, TRAFI_CAM__INTERVAL_TIME);
+		createEAttribute(trafiCamEClass, TRAFI_CAM__CAM_ID);
 
 		trafiCamObjectEClass = createEClass(TRAFI_CAM_OBJECT);
 		createEAttribute(trafiCamObjectEClass, TRAFI_CAM_OBJECT__CLASS_ID);
@@ -533,6 +544,7 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		initEReference(getTrafiCam_Object(), this.getTrafiCamObject(), null, "object", null, 0, -1, TrafiCam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrafiCam_Time(), ecorePackage.getEDate(), "time", null, 0, 1, TrafiCam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrafiCam_IntervalTime(), ecorePackage.getEDouble(), "intervalTime", null, 0, 1, TrafiCam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrafiCam_CamId(), ecorePackage.getEString(), "camId", null, 0, 1, TrafiCam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trafiCamObjectEClass, TrafiCamObject.class, "TrafiCamObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTrafiCamObject_ClassId(), ecorePackage.getEShort(), "classId", null, 0, 1, TrafiCamObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
