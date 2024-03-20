@@ -2,5 +2,6 @@
 	org.osgi.util.pushstream,\
 	org.osgi.annotation.versioning,\
 	org.osgi.annotation.bundle,\
-	de.jena.traficam.model
+	de.jena.traficam.model,\
+	org.osgi.service.metatype.annotations
 Export-Package: de.jena.traficam.api

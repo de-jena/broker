@@ -43,12 +43,11 @@
 	org.gecko.emf.osgi.component;version='[5.0.0,5.0.1)',\
 	org.osgi.service.cm;version='[1.6.0,1.6.1)',\
 	org.osgi.util.converter;version='[1.0.8,1.0.9)',\
-	org.osgi.util.pushstream;version='[1.0.1,1.0.2)',\
 	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
 	de.jena.traficam.model;version=snapshot,\
-	de.jena.traficam.api;version=snapshot,\
 	org.apache.felix.configurator;version='[1.0.6,1.0.7)',\
-	org.gecko.emf.osgi.api;version='[4.1.1,4.1.2)'
+	org.gecko.emf.osgi.api;version='[4.1.1,4.1.2)',\
+	org.osgi.util.pushstream;version='[1.1.0,1.1.1)'
 
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\

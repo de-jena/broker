@@ -11,9 +11,11 @@
 	org.eclipse.jetty.websocket.api,\
 	org.eclipse.jetty.websocket.client,\
 	de.jena.traficam.model;version=latest,\
-	de.jena.traficam.api
+	de.jena.traficam.api,\
+	org.osgi.service.metatype.annotations
 	
--includeresource.config: \
-	OSGI-INF/configurator/=config/
+Export-Package: de.jena.traficam.websocket
+ 
+-includepackage de.jena.traficam.api
 
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

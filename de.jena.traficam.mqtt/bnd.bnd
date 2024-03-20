@@ -14,14 +14,17 @@
 	de.jena.traficam.model,\
 	org.osgi.service.component.annotations,\
 	de.jena.traficam.websocket,\
-	de.jena.traficam.api
+	de.jena.traficam.api,\
+	org.osgi.service.metatype.annotations
 
 -testpath: \
 	${junit}
 
 Bundle-Version: 0.0.0.${tstamp}
-Private-Package: de.jena.traficam.mqtt
 
+Export-Package: de.jena.traficam.mqtt
+
+-includepackage de.jena.traficam.api
 -includeresource.config: \
 	OSGI-INF/configurator/=config/
 
