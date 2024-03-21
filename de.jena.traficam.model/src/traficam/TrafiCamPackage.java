@@ -139,22 +139,13 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int TRAFI_CAM__INTERVAL_TIME = 5;
 
 	/**
-	 * The feature id for the '<em><b>Cam Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAFI_CAM__CAM_ID = 6;
-
-	/**
 	 * The number of structural features of the '<em>Trafi Cam</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAFI_CAM_FEATURE_COUNT = 7;
+	int TRAFI_CAM_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Trafi Cam</em>' class.
@@ -508,17 +499,6 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getTrafiCam_IntervalTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getCamId <em>Cam Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cam Id</em>'.
-	 * @see traficam.TrafiCam#getCamId()
-	 * @see #getTrafiCam()
-	 * @generated
-	 */
-	EAttribute getTrafiCam_CamId();
-
-	/**
 	 * Returns the meta object for class '{@link traficam.TrafiCamObject <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -847,14 +827,6 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EAttribute TRAFI_CAM__INTERVAL_TIME = eINSTANCE.getTrafiCam_IntervalTime();
-
-		/**
-		 * The meta object literal for the '<em><b>Cam Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRAFI_CAM__CAM_ID = eINSTANCE.getTrafiCam_CamId();
 
 		/**
 		 * The meta object literal for the '{@link traficam.impl.TrafiCamObjectImpl <em>Object</em>}' class.

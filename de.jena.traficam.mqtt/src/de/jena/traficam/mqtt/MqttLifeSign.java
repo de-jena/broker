@@ -22,16 +22,17 @@ import java.util.concurrent.TimeUnit;
 import org.gecko.osgi.messaging.MessagingService;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 
 import de.jena.traficam.api.TrafiCamConfig;
 
-@Component(configurationPid = "TrafiCamConfig")
+@Component(configurationPid = "TrafficCamSender", configurationPolicy = ConfigurationPolicy.REQUIRE)
 public class MqttLifeSign {
 	private static final Logger logger = System.getLogger(MqttLifeSign.class.getName());
 
-	@Reference(target = "(id=full)")
+	@Reference
 	private MessagingService messaging;
 	private String topic;
 

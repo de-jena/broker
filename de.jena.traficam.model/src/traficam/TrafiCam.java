@@ -35,7 +35,6 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link traficam.TrafiCam#getObject <em>Object</em>}</li>
  *   <li>{@link traficam.TrafiCam#getTime <em>Time</em>}</li>
  *   <li>{@link traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}</li>
- *   <li>{@link traficam.TrafiCam#getCamId <em>Cam Id</em>}</li>
  * </ul>
  *
  * @see traficam.TrafiCamPackage#getTrafiCam()
@@ -168,27 +167,5 @@ public interface TrafiCam extends EObject {
 	 * @generated
 	 */
 	void setIntervalTime(double value);
-
-	/**
-	 * Returns the value of the '<em><b>Cam Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Cam Id</em>' attribute.
-	 * @see #setCamId(String)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_CamId()
-	 * @model
-	 * @generated
-	 */
-	String getCamId();
-
-	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getCamId <em>Cam Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cam Id</em>' attribute.
-	 * @see #getCamId()
-	 * @generated
-	 */
-	void setCamId(String value);
 
 } // TrafiCam

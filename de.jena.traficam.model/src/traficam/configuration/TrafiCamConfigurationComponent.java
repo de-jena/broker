@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.resource.Resource.Factory;
 
-import org.gecko.emf.osgi.EPackageConfigurator;
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
 
 import org.osgi.annotation.bundle.Capability;
 
@@ -45,9 +45,10 @@ import traficam.util.TrafiCamResourceFactoryImpl;
  * @generated
  */
 @Component(name = "TrafiCamConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=org.eclipse.emf.ecore,traficam" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=org.eclipse.emf.ecore,traficam" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.EPackageConfigurator\"" , "uses:=org.eclipse.emf.ecore,traficam" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.util.TrafiCamResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,traficam.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class TrafiCamConfigurationComponent {
 	
@@ -65,6 +66,7 @@ public class TrafiCamConfigurationComponent {
 	@Activate
 	public void activate(BundleContext ctx) {
 		TrafiCamPackage ePackage = TrafiCamPackageImpl.eINSTANCE;
+		
 		
 		TrafiCamEPackageConfigurator packageConfigurator = registerEPackageConfiguratorService(ePackage, ctx);
 		registerResourceFactoryService(ctx);

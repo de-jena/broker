@@ -15,7 +15,8 @@
 	org.osgi.service.component.annotations,\
 	de.jena.traficam.websocket,\
 	de.jena.traficam.api,\
-	org.osgi.service.metatype.annotations
+	org.osgi.service.metatype.annotations,\
+	org.gecko.emf.osgi.api
 
 -testpath: \
 	${junit}
@@ -25,7 +26,5 @@ Bundle-Version: 0.0.0.${tstamp}
 Export-Package: de.jena.traficam.mqtt
 
 -includepackage de.jena.traficam.api
--includeresource.config: \
-	OSGI-INF/configurator/=config/
 
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

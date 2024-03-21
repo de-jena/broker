@@ -48,7 +48,6 @@ import traficam.TrafiCamPackage;
  *   <li>{@link traficam.impl.TrafiCamImpl#getObject <em>Object</em>}</li>
  *   <li>{@link traficam.impl.TrafiCamImpl#getTime <em>Time</em>}</li>
  *   <li>{@link traficam.impl.TrafiCamImpl#getIntervalTime <em>Interval Time</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getCamId <em>Cam Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,26 +162,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 	 * @ordered
 	 */
 	protected double intervalTime = INTERVAL_TIME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCamId() <em>Cam Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCamId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CAM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCamId() <em>Cam Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCamId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String camId = CAM_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,29 +316,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 	 * @generated
 	 */
 	@Override
-	public String getCamId() {
-		return camId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCamId(String newCamId) {
-		String oldCamId = camId;
-		camId = newCamId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrafiCamPackage.TRAFI_CAM__CAM_ID, oldCamId, camId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TrafiCamPackage.TRAFI_CAM__OBJECT:
@@ -388,8 +344,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 				return getTime();
 			case TrafiCamPackage.TRAFI_CAM__INTERVAL_TIME:
 				return getIntervalTime();
-			case TrafiCamPackage.TRAFI_CAM__CAM_ID:
-				return getCamId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -422,9 +376,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 			case TrafiCamPackage.TRAFI_CAM__INTERVAL_TIME:
 				setIntervalTime((Double)newValue);
 				return;
-			case TrafiCamPackage.TRAFI_CAM__CAM_ID:
-				setCamId((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -455,9 +406,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 			case TrafiCamPackage.TRAFI_CAM__INTERVAL_TIME:
 				setIntervalTime(INTERVAL_TIME_EDEFAULT);
 				return;
-			case TrafiCamPackage.TRAFI_CAM__CAM_ID:
-				setCamId(CAM_ID_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -482,8 +430,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 				return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
 			case TrafiCamPackage.TRAFI_CAM__INTERVAL_TIME:
 				return intervalTime != INTERVAL_TIME_EDEFAULT;
-			case TrafiCamPackage.TRAFI_CAM__CAM_ID:
-				return CAM_ID_EDEFAULT == null ? camId != null : !CAM_ID_EDEFAULT.equals(camId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -508,8 +454,6 @@ public class TrafiCamImpl extends MinimalEObjectImpl.Container implements TrafiC
 		result.append(time);
 		result.append(", intervalTime: ");
 		result.append(intervalTime);
-		result.append(", camId: ");
-		result.append(camId);
 		result.append(')');
 		return result.toString();
 	}

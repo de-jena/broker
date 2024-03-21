@@ -31,6 +31,7 @@ org.apache.felix.gogo:org.apache.felix.gogo.commands:0.4.0
 org.apache.felix:org.apache.felix.gogo.jline:1.1.8
 org.apache.felix:org.apache.felix.gogo.runtime:1.1.6
 org.apache.felix:org.apache.felix.gogo.shell:1.1.4
+org.apache.felix:org.apache.felix.shell.remote:1.2.0
 org.apache.felix:org.apache.felix.healthcheck.annotation:2.0.0
 org.apache.felix:org.apache.felix.healthcheck.api:2.0.4
 org.apache.felix:org.apache.felix.healthcheck.core:2.0.8
@@ -81,8 +82,7 @@ org.apache.felix:org.apache.felix.framework:7.0.5
 
 # MQTT
 org.gecko.ma:org.gecko.adapter.amqp:2.2.0-SNAPSHOT
-org.gecko.ma:org.gecko.adapter.mqtt:1.0.6-SNAPSHOT
-org.gecko.ma:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
+org.geckoprojects.messaging:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
 org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5
 
 
