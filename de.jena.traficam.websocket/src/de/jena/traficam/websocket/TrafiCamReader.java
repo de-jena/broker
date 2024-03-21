@@ -13,11 +13,11 @@ package de.jena.traficam.websocket;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.lang.System.Logger;
+import java.lang.System.Logger.Level;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
@@ -29,28 +29,33 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushStream;
 import org.osgi.util.pushstream.PushStreamProvider;
 import org.osgi.util.pushstream.PushbackPolicyOption;
 import org.osgi.util.pushstream.QueuePolicyOption;
 import org.osgi.util.pushstream.SimplePushEventSource;
 
-import de.jena.traficam.api.TrafiCamService;
 import traficam.TrafiCam;
 import traficam.TrafiCamPackage;
 
-@Component(service = { TrafiCamService.class, TrafiCamReader.class }, name = "TrafiCamServiceWebsocket")
+// configure using reader config in ConfigurationUpdater#configureReader
+@Component(service = TrafiCamReader.class , name = "TrafiCamReader", configurationPolicy = ConfigurationPolicy.REQUIRE)
 @RequireEMFJson
-public class TrafiCamReader implements TrafiCamService {
+public class TrafiCamReader {
+	private static final Logger logger = System.getLogger(TrafiCamReader.class.getName());
 
 	private PushStreamProvider provider;
-	private List<SimplePushEventSource<TrafiCam>> eventSources = new ArrayList<>();
-	@Reference(target = "(&(emf.resource.configurator.name=" + EMFJs.EMFSJON_CAPABILITY_NAME + "))")
+	private SimplePushEventSource<TrafiCam> source;
+	@Reference(target = "(" + EMFNamespaces.EMF_CONFIGURATOR_NAME
+			+ "=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
 	ComponentServiceObjects<ResourceSet> serviceObjects;
 	@Reference
 	TrafiCamPackage trafiCampackage;
@@ -62,51 +67,44 @@ public class TrafiCamReader implements TrafiCamService {
 
 	@Deactivate
 	public void deactivate() {
-		eventSources.forEach(SimplePushEventSource::close);
+		if (source != null) {
+			source.close();
+		}
 	}
 
-	@Override
 	public PushStream<TrafiCam> subscribe() {
-		SimplePushEventSource<TrafiCam> source = provider.buildSimpleEventSource(TrafiCam.class).build();
-		eventSources.add(source);
+		if(source != null) {
+			source.close();
+		}
+		source = provider.buildSimpleEventSource(TrafiCam.class).build();
 		return provider.buildStream(source).withPushbackPolicy(PushbackPolicyOption.ON_FULL_EXPONENTIAL.getPolicy(1))
 				.withQueuePolicy(QueuePolicyOption.BLOCK).withExecutor(Executors.newCachedThreadPool())
 				.withBuffer(new ArrayBlockingQueue<>(1000)).build();
 	}
 
-	public void read(String camId, String msg) {
+	protected void read(String msg) {
 		ResourceSet resourceSet = serviceObjects.getService();
 		Resource resource = resourceSet.createResource(URI.createURI("dummy"), "application/json");
 		try {
 			Map<String, Object> loadOption = new HashMap<>();
 			loadOption.put(EMFJs.OPTION_ROOT_ELEMENT, trafiCampackage.getTrafiCam());
 			InputStream stream = new ByteArrayInputStream(msg.getBytes(StandardCharsets.UTF_8));
-
 			resource.load(stream, loadOption);
-			ArrayList<EObject> sensors = new ArrayList<>(resource.getContents());
+			ArrayList<EObject> camObjects = new ArrayList<>(resource.getContents());
 			resource.getContents().clear();
-			publish(camId, sensors);
+			camObjects.forEach(this::publish);
 		} catch (Throwable e) {
-			resource.getErrors().forEach(diag -> System.out.println(diag.getMessage()));
-			e.printStackTrace();
+			resource.getErrors().forEach(diag -> logger.log(Level.ERROR, diag.getMessage()));
+			logger.log(Level.ERROR, "Error while reading camera data", e);
 		} finally {
 			serviceObjects.ungetService(resourceSet);
 		}
 
 	}
 
-	private void publish(String camId, List<EObject> sensors) {
-		for (EObject sensor : sensors) {
-			Iterator<SimplePushEventSource<TrafiCam>> it = eventSources.iterator();
-			while (it.hasNext()) {
-				SimplePushEventSource<TrafiCam> source = it.next();
-				if (source.isConnected()) {
-					TrafiCam msg = (TrafiCam) EcoreUtil.copy(sensor);
-					msg.setCamId(camId);
-					source.publish(msg);
-				} else
-					it.remove();
-			}
+	private void publish(EObject camObject) {
+		if (source.isConnected()) {
+			source.publish((TrafiCam) EcoreUtil.copy(camObject));
 		}
 	}
 }

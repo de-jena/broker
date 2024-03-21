@@ -22,7 +22,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCam/object"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/time"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/intervalTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/camId"/>
     </genClasses>
     <genClasses ecoreClass="traficam.ecore#//TrafiCamObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/classId"/>

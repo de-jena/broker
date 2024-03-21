@@ -8,6 +8,7 @@ import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
@@ -25,25 +26,27 @@ import de.jena.traficam.api.TrafiCamConfig;
  * Contributors: Data In Motion - initial API and implementation
  */
 
-@Component(configurationPid = "TrafiCamConfig")
+//configure using reader config in ConfigurationUpdater#configureClient
+@Component(name = "TrafiCamWSC", configurationPolicy = ConfigurationPolicy.REQUIRE)
+//@Component(configurationPid = "TrafiCamConfig")
 @Designate(ocd = TrafiCamConfig.class)
 public class TrafiCamWebsocketClient {
 	private static final Logger logger = System.getLogger(TrafiCamWebsocketClient.class.getName());
 
 	private WebSocketClient client;
+	// configure using sender config in ConfigurationUpdater#configureClient using .target=(id=something))
 	@Reference
 	private TrafiCamReader reader;
 
 	@Activate
 	public void activate(TrafiCamConfig config) throws Exception {
 		client = new WebSocketClient();
-		String camId = config.id();
 		String url = "ws://" + config.address() + "/api/subscriptions";
-		logger.log(Level.INFO, "Connect websocket for camera {0} to {1}.",camId, url);
+		logger.log(Level.INFO, "Connect websocket for camera {0} to {1}.",config.id(), url);
 		URI dest = new URI(url);
 
 		client.start();
-		TrafiCamWebsocket socket = new TrafiCamWebsocket(camId, reader);
+		TrafiCamWebsocket socket = new TrafiCamWebsocket(reader);
 		ClientUpgradeRequest request = new ClientUpgradeRequest();
 		client.connect(socket, dest, request);
 	}

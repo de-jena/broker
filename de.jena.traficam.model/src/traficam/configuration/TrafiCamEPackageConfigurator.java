@@ -15,8 +15,9 @@ package traficam.configuration;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.gecko.emf.osgi.EMFNamespaces;
-import org.gecko.emf.osgi.EPackageConfigurator;
+import org.gecko.emf.osgi.configurator.EPackageConfigurator;
+
+import org.gecko.emf.osgi.constants.EMFNamespaces;
 
 import traficam.TrafiCamPackage;
 
@@ -65,7 +66,7 @@ public class TrafiCamEPackageConfigurator implements EPackageConfigurator {
 		properties.put(EMFNamespaces.EMF_MODEL_NAME, TrafiCamPackage.eNAME);
 		properties.put(EMFNamespaces.EMF_MODEL_NSURI, TrafiCamPackage.eNS_URI);
 		properties.put(EMFNamespaces.EMF_MODEL_FILE_EXT, "traficam");
-		properties.put(EMFNamespaces.EMF_CONFIGURATOR_VERSION, "1.0");
+		properties.put(EMFNamespaces.EMF_MODEL_VERSION, "1.0");
 		return properties;
 	}
 }
