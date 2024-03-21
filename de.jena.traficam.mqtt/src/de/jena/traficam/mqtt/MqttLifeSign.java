@@ -28,7 +28,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import de.jena.traficam.api.TrafiCamConfig;
 
-@Component(configurationPid = "TraficCamSender", configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(configurationPid = "TrafiCamSender", configurationPolicy = ConfigurationPolicy.REQUIRE)
 public class MqttLifeSign {
 	private static final Logger logger = System.getLogger(MqttLifeSign.class.getName());
 
