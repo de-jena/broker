@@ -49,7 +49,6 @@
 	org.eclipse.emf.ecore;version='[2.35.0,2.35.1)',\
 	org.eclipse.emf.ecore.xmi;version='[2.36.0,2.36.1)',\
 	org.eclipse.parsson.jakarta.json;version='[1.1.5,1.1.6)',\
-	org.gecko.adapter.mqtt;version='[1.0.5,1.0.6)',\
 	org.gecko.emf.json;version='[1.5.1,1.5.2)',\
 	org.gecko.emf.osgi.api;version='[6.1.1,6.1.2)',\
 	org.gecko.emf.osgi.component.minimal;version='[6.1.1,6.1.2)',\
@@ -58,7 +57,8 @@
 	org.osgi.service.component;version='[1.5.1,1.5.2)',\
 	org.osgi.util.converter;version='[1.0.9,1.0.10)',\
 	slf4j.api;version='[2.0.11,2.0.12)',\
-	slf4j.simple;version='[2.0.11,2.0.12)'
+	slf4j.simple;version='[2.0.11,2.0.12)',\
+	org.gecko.adapter.mqtt;version='[1.1.0,1.1.1)'
 
 -runrequires: \
 	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
@@ -73,4 +73,3 @@
 	bnd.identity;id='de.jena.traficam.config'
 -runblacklist: bnd.identity;id='org.osgi.service.cm';version:Version='1.6.0.201802012106'
 -resolve: cache
--runvm: -DMQTT_FULL_USER=5giot01 -DMQTT_FULL_PWD=fa8e5412b6 -DMQTT_FULL_HOST=mqttbr.jena.de -Dfelix.cm.config.plugins=org.apache.felix.configadmin.plugin.interpolation
