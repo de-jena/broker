@@ -27,7 +27,6 @@
         eType="#//Coordinates" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="worldCoordinates" upperBound="-1"
         eType="#//Coordinates" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="camId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GpsCoordinates">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="latitude" lowerBound="1"

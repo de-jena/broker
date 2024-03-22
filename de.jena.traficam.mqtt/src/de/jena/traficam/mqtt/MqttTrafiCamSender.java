@@ -81,6 +81,7 @@ public class MqttTrafiCamSender {
 			subscribtion.close();
 		subscribtion = trafficReader.subscribe();
 		subscribtion.forEachEvent(this::handle);
+		subscribtion.onError(e -> e.printStackTrace());
 	}
 
 	@Deactivate
@@ -111,7 +112,6 @@ public class MqttTrafiCamSender {
 	}
 
 	private void sendObject(TrafiCamObject object) {
-		object.setCamId(camId);
 		ResourceSet resourceSet = serviceObjects.getService();
 		try {
 			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));

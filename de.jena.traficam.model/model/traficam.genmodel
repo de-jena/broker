@@ -33,7 +33,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/gpsCoordinates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/imageCoordinates"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/worldCoordinates"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/camId"/>
     </genClasses>
     <genClasses ecoreClass="traficam.ecore#//GpsCoordinates">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//GpsCoordinates/latitude"/>
