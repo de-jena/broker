@@ -65,12 +65,15 @@ public class MqttTrafiCamSender {
 	private PushStream<TrafiCam> subscribtion;
 	private String topic;
 
+	private String camId;
+
 	@Activate
 	@Modified
 	public void activate(TrafiCamConfig config) {
-		topic = "5g/traficam/"+ config.id() + "/";
+		camId = config.id();
+		topic = "5g/traficam/"+ camId + "/";
 		refreshSubscribtion();
-		logger.log(Level.INFO, "MQTT TrafiCam sender for {0} started.", config.id());
+		logger.log(Level.INFO, "MQTT TrafiCam sender for {0} started.", camId);
 	}
 
 	private void refreshSubscribtion() {
@@ -108,6 +111,7 @@ public class MqttTrafiCamSender {
 	}
 
 	private void sendObject(TrafiCamObject object) {
+		object.setCamId(camId);
 		ResourceSet resourceSet = serviceObjects.getService();
 		try {
 			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));

@@ -38,6 +38,7 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link traficam.TrafiCamObject#getGpsCoordinates <em>Gps Coordinates</em>}</li>
  *   <li>{@link traficam.TrafiCamObject#getImageCoordinates <em>Image Coordinates</em>}</li>
  *   <li>{@link traficam.TrafiCamObject#getWorldCoordinates <em>World Coordinates</em>}</li>
+ *   <li>{@link traficam.TrafiCamObject#getCamId <em>Cam Id</em>}</li>
  * </ul>
  *
  * @see traficam.TrafiCamPackage#getTrafiCamObject()
@@ -240,5 +241,27 @@ public interface TrafiCamObject extends EObject {
 	 * @generated
 	 */
 	EList<Coordinates> getWorldCoordinates();
+
+	/**
+	 * Returns the value of the '<em><b>Cam Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Cam Id</em>' attribute.
+	 * @see #setCamId(String)
+	 * @see traficam.TrafiCamPackage#getTrafiCamObject_CamId()
+	 * @model
+	 * @generated
+	 */
+	String getCamId();
+
+	/**
+	 * Sets the value of the '{@link traficam.TrafiCamObject#getCamId <em>Cam Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Cam Id</em>' attribute.
+	 * @see #getCamId()
+	 * @generated
+	 */
+	void setCamId(String value);
 
 } // TrafiCamObject
