@@ -51,7 +51,6 @@ import traficam.TrafiCamPackage;
  *   <li>{@link traficam.impl.TrafiCamObjectImpl#getGpsCoordinates <em>Gps Coordinates</em>}</li>
  *   <li>{@link traficam.impl.TrafiCamObjectImpl#getImageCoordinates <em>Image Coordinates</em>}</li>
  *   <li>{@link traficam.impl.TrafiCamObjectImpl#getWorldCoordinates <em>World Coordinates</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getCamId <em>Cam Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -215,26 +214,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected EList<Coordinates> worldCoordinates;
-
-	/**
-	 * The default value of the '{@link #getCamId() <em>Cam Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCamId()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CAM_ID_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCamId() <em>Cam Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCamId()
-	 * @generated
-	 * @ordered
-	 */
-	protected String camId = CAM_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -465,29 +444,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public String getCamId() {
-		return camId;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCamId(String newCamId) {
-		String oldCamId = camId;
-		camId = newCamId;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TrafiCamPackage.TRAFI_CAM_OBJECT__CAM_ID, oldCamId, camId));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TrafiCamPackage.TRAFI_CAM_OBJECT__GPS_COORDINATES:
@@ -526,8 +482,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 				return getImageCoordinates();
 			case TrafiCamPackage.TRAFI_CAM_OBJECT__WORLD_COORDINATES:
 				return getWorldCoordinates();
-			case TrafiCamPackage.TRAFI_CAM_OBJECT__CAM_ID:
-				return getCamId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -571,9 +525,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 				getWorldCoordinates().clear();
 				getWorldCoordinates().addAll((Collection<? extends Coordinates>)newValue);
 				return;
-			case TrafiCamPackage.TRAFI_CAM_OBJECT__CAM_ID:
-				setCamId((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -613,9 +564,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 			case TrafiCamPackage.TRAFI_CAM_OBJECT__WORLD_COORDINATES:
 				getWorldCoordinates().clear();
 				return;
-			case TrafiCamPackage.TRAFI_CAM_OBJECT__CAM_ID:
-				setCamId(CAM_ID_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -646,8 +594,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 				return imageCoordinates != null && !imageCoordinates.isEmpty();
 			case TrafiCamPackage.TRAFI_CAM_OBJECT__WORLD_COORDINATES:
 				return worldCoordinates != null && !worldCoordinates.isEmpty();
-			case TrafiCamPackage.TRAFI_CAM_OBJECT__CAM_ID:
-				return CAM_ID_EDEFAULT == null ? camId != null : !CAM_ID_EDEFAULT.equals(camId);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -674,8 +620,6 @@ public class TrafiCamObjectImpl extends MinimalEObjectImpl.Container implements 
 		result.append(speed);
 		result.append(", speedConfidence: ");
 		result.append(speedConfidence);
-		result.append(", camId: ");
-		result.append(camId);
 		result.append(')');
 		return result.toString();
 	}

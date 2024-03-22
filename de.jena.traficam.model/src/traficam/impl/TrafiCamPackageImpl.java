@@ -306,16 +306,6 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTrafiCamObject_CamId() {
-		return (EAttribute)trafiCamObjectEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getGpsCoordinates() {
 		return gpsCoordinatesEClass;
 	}
@@ -487,7 +477,6 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		createEReference(trafiCamObjectEClass, TRAFI_CAM_OBJECT__GPS_COORDINATES);
 		createEReference(trafiCamObjectEClass, TRAFI_CAM_OBJECT__IMAGE_COORDINATES);
 		createEReference(trafiCamObjectEClass, TRAFI_CAM_OBJECT__WORLD_COORDINATES);
-		createEAttribute(trafiCamObjectEClass, TRAFI_CAM_OBJECT__CAM_ID);
 
 		gpsCoordinatesEClass = createEClass(GPS_COORDINATES);
 		createEAttribute(gpsCoordinatesEClass, GPS_COORDINATES__LATITUDE);
@@ -555,7 +544,6 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		initEReference(getTrafiCamObject_GpsCoordinates(), this.getGpsCoordinates(), null, "gpsCoordinates", null, 0, -1, TrafiCamObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrafiCamObject_ImageCoordinates(), this.getCoordinates(), null, "imageCoordinates", null, 0, -1, TrafiCamObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrafiCamObject_WorldCoordinates(), this.getCoordinates(), null, "worldCoordinates", null, 0, -1, TrafiCamObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTrafiCamObject_CamId(), ecorePackage.getEString(), "camId", null, 0, 1, TrafiCamObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gpsCoordinatesEClass, GpsCoordinates.class, "GpsCoordinates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGpsCoordinates_Latitude(), ecorePackage.getEDouble(), "latitude", null, 1, 1, GpsCoordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

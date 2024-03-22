@@ -248,22 +248,13 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int TRAFI_CAM_OBJECT__WORLD_COORDINATES = 8;
 
 	/**
-	 * The feature id for the '<em><b>Cam Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAFI_CAM_OBJECT__CAM_ID = 9;
-
-	/**
 	 * The number of structural features of the '<em>Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAFI_CAM_OBJECT_FEATURE_COUNT = 10;
+	int TRAFI_CAM_OBJECT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Object</em>' class.
@@ -617,17 +608,6 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	EReference getTrafiCamObject_WorldCoordinates();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getCamId <em>Cam Id</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Cam Id</em>'.
-	 * @see traficam.TrafiCamObject#getCamId()
-	 * @see #getTrafiCamObject()
-	 * @generated
-	 */
-	EAttribute getTrafiCamObject_CamId();
-
-	/**
 	 * Returns the meta object for class '{@link traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -929,14 +909,6 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EReference TRAFI_CAM_OBJECT__WORLD_COORDINATES = eINSTANCE.getTrafiCamObject_WorldCoordinates();
-
-		/**
-		 * The meta object literal for the '<em><b>Cam Id</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRAFI_CAM_OBJECT__CAM_ID = eINSTANCE.getTrafiCamObject_CamId();
 
 		/**
 		 * The meta object literal for the '{@link traficam.impl.GpsCoordinatesImpl <em>Gps Coordinates</em>}' class.
