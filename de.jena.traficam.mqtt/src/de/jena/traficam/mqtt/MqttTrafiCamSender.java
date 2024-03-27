@@ -17,11 +17,9 @@ import java.lang.System.Logger.Level;
 import java.nio.ByteBuffer;
 import java.util.Collections;
 import java.util.Map;
-import java.util.UUID;
 
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.gecko.emf.json.annotation.RequireEMFJson;
 import org.gecko.emf.json.constants.EMFJs;
@@ -112,9 +110,11 @@ public class MqttTrafiCamSender {
 	}
 
 	private void sendObject(TrafiCamObject object) {
-		ResourceSet resourceSet = serviceObjects.getService();
+//		ResourceSet resourceSet = serviceObjects.getService();
 		try {
-			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString() + ".json"));
+			BinaryResourceImpl res = new BinaryResourceImpl();
+//			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString()+ ".json"));
+//			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString()), "application/octet-stream");
 			res.getContents().add(EcoreUtil.copy(object));
 			ByteArrayOutputStream bao = new ByteArrayOutputStream();
 			res.save(bao, config);
@@ -123,8 +123,8 @@ public class MqttTrafiCamSender {
 			messaging.publish(getTopic(object), buffer);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error while sending telegram via MQTT.", e);
-		} finally {
-			serviceObjects.ungetService(resourceSet);
+//		} finally {
+//			serviceObjects.ungetService(resourceSet);
 		}
 	}
 

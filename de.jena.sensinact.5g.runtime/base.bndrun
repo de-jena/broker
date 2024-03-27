@@ -39,7 +39,8 @@
 	bnd.identity;id='de.dim.trafficos.publictransport.api.mmt',\
 	bnd.identity;id='de.dim.trafficos.gtfs.config',\
 	bnd.identity;id='de.jena.publictransport.runtime.config',\
-	bnd.identity;id='de.dim.trafficos.publictransport.config'
+	bnd.identity;id='de.dim.trafficos.publictransport.config',\
+	bnd.identity;id='de.jena.traficam.model'
 	
 -runbundles: \
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.16.0,2.16.1)';startlevel=100,\
@@ -58,14 +59,14 @@
 	de.dim.trafficos.publictransport.apis;version=snapshot;startlevel=230,\
 	de.dim.trafficos.publictransport.component;version=snapshot;startlevel=240,\
 	de.dim.trafficos.publictransport.config;version=snapshot;startlevel=250,\
-	de.jena.mqtt.message.adapter;version=snapshot;startlevel=260,\
-	de.jena.publictransport.rest;version=snapshot;startlevel=270,\
-	de.jena.publictransport.runtime.config;version=snapshot;startlevel=280,\
-	de.jena.sensinact.5g.runtime.config;version=snapshot;startlevel=290,\
-	de.jena.sensinact.mqtt.5g.topic.bridge;version=snapshot;startlevel=300,\
-	de.jena.sensinact.mqtt.generic.bridge;version=snapshot;startlevel=310,\
-	de.jena.sensinact.mqtt.generic.message;version=snapshot;startlevel=320,\
-	de.jena.sensinact.rest.log;version=snapshot;startlevel=330,\
+	de.jena.publictransport.rest;version=snapshot;startlevel=260,\
+	de.jena.publictransport.runtime.config;version=snapshot;startlevel=270,\
+	de.jena.sensinact.5g.runtime.config;version=snapshot;startlevel=280,\
+	de.jena.sensinact.mqtt.5g.topic.bridge;version=snapshot;startlevel=290,\
+	de.jena.sensinact.mqtt.generic.bridge;version=snapshot;startlevel=300,\
+	de.jena.sensinact.mqtt.generic.message;version=snapshot;startlevel=310,\
+	de.jena.sensinact.rest.log;version=snapshot;startlevel=320,\
+	de.jena.traficam.model;version=snapshot;startlevel=330,\
 	de.jena.udp.trafficos.common.model;version='[1.2.0,1.2.1)';startlevel=340,\
 	de.jena.udp.trafficos.publictransport.api.model;version='[1.2.0,1.2.1)';startlevel=350,\
 	de.jena.udp.trafficos.publictransport.model;version='[1.2.0,1.2.1)';startlevel=360,\
@@ -124,53 +125,53 @@
 	org.eclipse.osgitech.rest;version='[1.2.2,1.2.3)';startlevel=890,\
 	org.eclipse.osgitech.rest.servlet.whiteboard;version='[1.2.2,1.2.3)';startlevel=900,\
 	org.eclipse.osgitech.rest.sse;version='[1.2.2,1.2.3)';startlevel=910,\
-	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)';startlevel=920,\
+	org.eclipse.paho.client.mqttv3;version='[1.2.6,1.2.7)';startlevel=920,\
 	org.eclipse.parsson.jakarta.json;version='[1.1.5,1.1.6)';startlevel=930,\
 	org.eclipse.sensinact.gateway.core.annotation;version='[0.0.2,0.0.3)';startlevel=940,\
 	org.eclipse.sensinact.gateway.core.api;version='[0.0.2,0.0.3)';startlevel=950,\
 	org.eclipse.sensinact.gateway.core.geo-json;version='[0.0.2,0.0.3)';startlevel=960,\
 	org.eclipse.sensinact.gateway.core.models.provider;version='[0.0.2,0.0.3)';startlevel=970,\
-	org.gecko.emf.collections;version='[2.2.2,2.2.3)';startlevel=980,\
-	org.gecko.emf.json;version='[1.5.1,1.5.2)';startlevel=990,\
-	org.gecko.emf.mongo.component;version='[6.1.0,6.1.1)';startlevel=1000,\
-	org.gecko.emf.mongo.pushstream;version='[6.1.0,6.1.1)';startlevel=1010,\
-	org.gecko.emf.osgi.component;version='[6.1.1,6.1.2)';startlevel=1020,\
-	org.gecko.emf.osgi.model.info;version='[6.1.1,6.1.2)';startlevel=1030,\
-	org.gecko.emf.pushstreams;version='[1.2.2,1.2.3)';startlevel=1040,\
-	org.gecko.emf.repository.api;version='[9.3.0,9.3.1)';startlevel=1050,\
-	org.gecko.emf.repository.mongo;version='[3.2.0,3.2.1)';startlevel=1060,\
-	org.gecko.emf.rest.jakartars;version='[2.3.0,2.3.1)';startlevel=1070,\
-	org.gecko.emf.search;version='[1.3.1,1.3.2)';startlevel=1080,\
-	org.gecko.emf.util.annotations;version='[1.4.1,1.4.2)';startlevel=1090,\
-	org.gecko.mongo.osgi.component;version='[6.1.0,6.1.1)';startlevel=1100,\
-	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)';startlevel=1110,\
-	org.gecko.qvt.osgi.api;version='[5.0.0,5.0.1)';startlevel=1120,\
-	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)';startlevel=1130,\
-	org.gecko.search;version='[1.3.1,1.3.2)';startlevel=1140,\
-	org.gecko.search.document;version='[1.3.1,1.3.2)';startlevel=1150,\
-	org.gecko.util.common;version='[1.2.0,1.2.1)';startlevel=1160,\
-	org.gecko.util.pushstream;version='[1.2.0,1.2.1)';startlevel=1170,\
-	org.glassfish.hk2.api;version='[3.0.5,3.0.6)';startlevel=1180,\
-	org.glassfish.hk2.external.aopalliance-repackaged;version='[3.0.5,3.0.6)';startlevel=1190,\
-	org.glassfish.hk2.locator;version='[3.0.5,3.0.6)';startlevel=1200,\
-	org.glassfish.hk2.osgi-resource-locator;version='[1.0.3,1.0.4)';startlevel=1210,\
-	org.glassfish.hk2.utils;version='[3.0.5,3.0.6)';startlevel=1220,\
-	org.glassfish.jersey.containers.jersey-container-servlet;version='[3.1.3,3.1.4)';startlevel=1230,\
-	org.glassfish.jersey.containers.jersey-container-servlet-core;version='[3.1.3,3.1.4)';startlevel=1240,\
-	org.glassfish.jersey.core.jersey-client;version='[3.1.3,3.1.4)';startlevel=1250,\
-	org.glassfish.jersey.core.jersey-common;version='[3.1.3,3.1.4)';startlevel=1260,\
-	org.glassfish.jersey.core.jersey-server;version='[3.1.3,3.1.4)';startlevel=1270,\
-	org.glassfish.jersey.inject.jersey-hk2;version='[3.1.3,3.1.4)';startlevel=1280,\
-	org.glassfish.jersey.media.jersey-media-jaxb;version='[3.1.3,3.1.4)';startlevel=1290,\
-	org.glassfish.jersey.media.jersey-media-sse;version='[3.1.3,3.1.4)';startlevel=1300,\
-	org.mongodb.mongo-java-driver;version='[3.12.14,3.12.15)';startlevel=1310,\
-	org.objectweb.asm;version='[9.6.0,9.6.1)';startlevel=1320,\
-	org.osgi.service.component;version='[1.5.1,1.5.2)';startlevel=1330,\
-	org.osgi.service.event;version='[1.4.1,1.4.2)';startlevel=1340,\
-	org.osgi.service.jakartars;version='[2.0.0,2.0.1)';startlevel=1350,\
-	org.osgi.service.log;version='[1.5.0,1.5.1)';startlevel=1360,\
-	org.osgi.service.metatype;version='[1.4.1,1.4.2)';startlevel=1370,\
-	org.osgi.service.servlet;version='[2.0.0,2.0.1)';startlevel=1380,\
+	org.gecko.adapter.mqtt;version='[1.1.0,1.1.1)';startlevel=980,\
+	org.gecko.emf.collections;version='[2.2.2,2.2.3)';startlevel=990,\
+	org.gecko.emf.json;version='[1.5.1,1.5.2)';startlevel=1000,\
+	org.gecko.emf.mongo.component;version='[6.1.0,6.1.1)';startlevel=1010,\
+	org.gecko.emf.mongo.pushstream;version='[6.1.0,6.1.1)';startlevel=1020,\
+	org.gecko.emf.osgi.component;version='[6.1.1,6.1.2)';startlevel=1030,\
+	org.gecko.emf.osgi.model.info;version='[6.1.1,6.1.2)';startlevel=1040,\
+	org.gecko.emf.pushstreams;version='[1.2.2,1.2.3)';startlevel=1050,\
+	org.gecko.emf.repository.api;version='[9.3.0,9.3.1)';startlevel=1060,\
+	org.gecko.emf.repository.mongo;version='[3.2.0,3.2.1)';startlevel=1070,\
+	org.gecko.emf.rest.jakartars;version='[2.3.0,2.3.1)';startlevel=1080,\
+	org.gecko.emf.search;version='[1.3.1,1.3.2)';startlevel=1090,\
+	org.gecko.mongo.osgi.api;version='[6.1.0,6.1.1)';startlevel=1100,\
+	org.gecko.mongo.osgi.component;version='[6.1.0,6.1.1)';startlevel=1110,\
+	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)';startlevel=1120,\
+	org.gecko.qvt.osgi.api;version='[5.0.0,5.0.1)';startlevel=1130,\
+	org.gecko.qvt.osgi.component;version='[1.0.6,1.0.7)';startlevel=1140,\
+	org.gecko.search;version='[1.3.1,1.3.2)';startlevel=1150,\
+	org.gecko.search.document;version='[1.3.1,1.3.2)';startlevel=1160,\
+	org.gecko.util.common;version='[1.2.0,1.2.1)';startlevel=1170,\
+	org.gecko.util.pushstream;version='[1.2.0,1.2.1)';startlevel=1180,\
+	org.glassfish.hk2.api;version='[3.0.5,3.0.6)';startlevel=1190,\
+	org.glassfish.hk2.external.aopalliance-repackaged;version='[3.0.5,3.0.6)';startlevel=1200,\
+	org.glassfish.hk2.locator;version='[3.0.5,3.0.6)';startlevel=1210,\
+	org.glassfish.hk2.osgi-resource-locator;version='[1.0.3,1.0.4)';startlevel=1220,\
+	org.glassfish.hk2.utils;version='[3.0.5,3.0.6)';startlevel=1230,\
+	org.glassfish.jersey.containers.jersey-container-servlet;version='[3.1.3,3.1.4)';startlevel=1240,\
+	org.glassfish.jersey.containers.jersey-container-servlet-core;version='[3.1.3,3.1.4)';startlevel=1250,\
+	org.glassfish.jersey.core.jersey-client;version='[3.1.3,3.1.4)';startlevel=1260,\
+	org.glassfish.jersey.core.jersey-common;version='[3.1.3,3.1.4)';startlevel=1270,\
+	org.glassfish.jersey.core.jersey-server;version='[3.1.3,3.1.4)';startlevel=1280,\
+	org.glassfish.jersey.inject.jersey-hk2;version='[3.1.3,3.1.4)';startlevel=1290,\
+	org.glassfish.jersey.media.jersey-media-jaxb;version='[3.1.3,3.1.4)';startlevel=1300,\
+	org.glassfish.jersey.media.jersey-media-sse;version='[3.1.3,3.1.4)';startlevel=1310,\
+	org.mongodb.mongo-java-driver;version='[3.12.14,3.12.15)';startlevel=1320,\
+	org.objectweb.asm;version='[9.6.0,9.6.1)';startlevel=1330,\
+	org.osgi.service.component;version='[1.5.1,1.5.2)';startlevel=1340,\
+	org.osgi.service.event;version='[1.4.1,1.4.2)';startlevel=1350,\
+	org.osgi.service.jakartars;version='[2.0.0,2.0.1)';startlevel=1360,\
+	org.osgi.service.log;version='[1.5.0,1.5.1)';startlevel=1370,\
+	org.osgi.service.metatype;version='[1.4.1,1.4.2)';startlevel=1380,\
 	org.osgi.service.typedevent;version='[1.0.0,1.0.1)';startlevel=1390,\
 	org.osgi.util.converter;version='[1.0.9,1.0.10)';startlevel=1400,\
 	org.osgi.util.function;version='[1.2.0,1.2.1)';startlevel=1410,\
