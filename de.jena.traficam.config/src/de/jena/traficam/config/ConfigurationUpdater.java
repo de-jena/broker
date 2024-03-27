@@ -19,7 +19,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component
+@Component(enabled = false)
 public class ConfigurationUpdater {
 	private static final Logger logger = System.getLogger(ConfigurationUpdater.class.getName());
 
@@ -111,6 +111,7 @@ public class ConfigurationUpdater {
 		props.put("username", "$[env:MQTT_FULL_USER;default=]");
 		props.put("password", "$[env:MQTT_FULL_PWD;default=]");
 		props.put("topic", "5g/ilsa/#");
+		props.put("maxThreads", "4");
 		logger.log(Level.INFO,"Update configuration for {0} with {1}", config, props);
 		config.updateIfDifferent(props);
 		

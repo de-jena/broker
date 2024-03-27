@@ -83,7 +83,7 @@ org.apache.felix:org.apache.felix.framework:7.0.5
 # MQTT
 org.gecko.ma:org.gecko.adapter.amqp:2.2.0-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
-org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5
+#org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.6
 
 
 com.fasterxml.jackson.core:jackson-annotations:${jackson.version}
@@ -129,7 +129,6 @@ org.geckoprojects.messaging:org.gecko.adapter.amqp.pubsub:2.2.0-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.adapter.amqp.tests:1.0.4-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.adapter.eventadmin:3.1.0-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.adapter.eventadmin.tests:1.1.0-SNAPSHOT
-org.geckoprojects.messaging:org.gecko.adapter.mqtt:1.0.5-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.adapter.mqtt.tests:1.1.0-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
 org.apache.felix:org.apache.felix.configadmin:1.9.26

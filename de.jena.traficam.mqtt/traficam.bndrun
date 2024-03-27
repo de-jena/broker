@@ -12,7 +12,7 @@
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
 	org.gecko.osgi.messaging;version='[3.2.0,3.2.1)',\
-	org.eclipse.paho.client.mqttv3;version='[1.2.5,1.2.6)',\
+	org.eclipse.paho.client.mqttv3;version='[1.2.6,1.2.7)',\
 	de.jena.traficam.model;version=snapshot,\
 	de.jena.traficam.mqtt;version=snapshot,\
 	org.apache.felix.configadmin.plugin.interpolation;version='[1.2.6,1.2.7)',\
@@ -70,6 +70,7 @@
 	bnd.identity;id='de.jena.traficam.mqtt',\
 	bnd.identity;id='de.jena.traficam.api',\
 	bnd.identity;id='de.jena.traficam.websocket',\
-	bnd.identity;id='de.jena.traficam.config'
+	bnd.identity;id='de.jena.traficam.config',\
+	bnd.identity;id='org.eclipse.paho.client.mqttv3';version:Version='1.2.6'
 -runblacklist: bnd.identity;id='org.osgi.service.cm';version:Version='1.6.0.201802012106'
 -resolve: cache
