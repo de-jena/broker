@@ -57,7 +57,7 @@ public interface Breaker extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * können unterschiedlich je nach GUW und hersteller sein, Werden via bit und adresse direkt identifiziert
+	 * kÃ¶nnen unterschiedlich je nach GUW und hersteller sein, Werden via bit und adresse direkt identifiziert
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Alarm</em>' containment reference list.
 	 * @see de.jena.nahverkehr.station.rectifier.RectifierPackage#getBreaker_Alarm()
@@ -72,7 +72,7 @@ public interface Breaker extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Auf, Zu, Undefeiniert, gestört
+	 * Auf, Zu, Undefeiniert, gestÃ¶rt
 	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>State</em>' containment reference.
 	 * @see #setState(StateValue)

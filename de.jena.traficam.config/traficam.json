@@ -1,0 +1,11 @@
+{
+        "TrafiCamConfig":[
+        {
+                "address": "192.168.0.20:80",
+                "id": "Knebelstraße"
+        },
+        {
+                "address": "192.168.0.21:80",
+                "id": "Paradiesstraße"
+        }]
+}

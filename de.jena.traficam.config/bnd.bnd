@@ -1,0 +1,14 @@
+-buildpath: \
+	org.osgi.service.component.annotations,\
+	org.osgi.service.cm,\
+	com.fasterxml.jackson.core.jackson-core,\
+	com.fasterxml.jackson.core.jackson-databind
+
+-testpath: \
+	${junit}
+
+javac.source: 17
+javac.target: 17
+
+Bundle-Version: 0.0.0.${tstamp}
+Private-Package: de.jena.traficam.config

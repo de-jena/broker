@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2022 Contributors to the Eclipse Foundation.&#xA;&#xA;This program and the accompanying materials are made&#xA;available under the terms of the Eclipse Public License 2.0&#xA;which is available at https://www.eclipse.org/legal/epl-2.0/&#xA;&#xA;SPDX-License-Identifier: EPL-2.0&#xA;&#xA;Contributors:&#xA;  Data In Motion - initial API and implementation "
+    modelDirectory="/de.jena.traficam.model/src" editDirectory="/de.jena.traficam.model.edit/src"
+    editorDirectory="/de.jena.traficam.model.editor/src" modelPluginID="de.jena.traficam.model"
+    modelName="TrafiCam" editPluginClass="de.jena.traficam.model.provider.TraficamEditPlugin"
+    editorPluginClass="de.jena.traficam.model.presentation.TraficamEditorPlugin" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" editPluginID="de.jena.traficam.model.edit" editorPluginID="de.jena.traficam.model.editor"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>traficam.ecore</foreignModel>
+  <genPackages prefix="TrafiCam" resource="XMI" disposableProviderFactory="true" ecorePackage="traficam.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="traficam.ecore#//MessagType">
+      <genEnumLiterals ecoreEnumLiteral="traficam.ecore#//MessagType/Data"/>
+      <genEnumLiterals ecoreEnumLiteral="traficam.ecore#//MessagType/Event"/>
+      <genEnumLiterals ecoreEnumLiteral="traficam.ecore#//MessagType/Subscription"/>
+    </genEnums>
+    <genClasses ecoreClass="traficam.ecore#//TrafiCam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/dataNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/messageType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCam/object"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCam/intervalTime"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//TrafiCamObject">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/classId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/lifetime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/speed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TrafiCamObject/speedConfidence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/gpsCoordinates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/imageCoordinates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//TrafiCamObject/worldCoordinates"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//GpsCoordinates">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//GpsCoordinates/latitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//GpsCoordinates/longitude"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//GpsCoordinates/heading"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//Coordinates">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/xConfidence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/yConfidence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/z"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/heading3d"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/heading3dConfidence"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
