@@ -19,7 +19,7 @@ import org.osgi.service.component.annotations.Reference;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Component(enabled = false)
+@Component
 public class ConfigurationUpdater {
 	private static final Logger logger = System.getLogger(ConfigurationUpdater.class.getName());
 

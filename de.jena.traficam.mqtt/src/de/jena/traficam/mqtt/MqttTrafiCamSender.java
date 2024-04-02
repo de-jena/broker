@@ -110,11 +110,8 @@ public class MqttTrafiCamSender {
 	}
 
 	private void sendObject(TrafiCamObject object) {
-//		ResourceSet resourceSet = serviceObjects.getService();
 		try {
 			BinaryResourceImpl res = new BinaryResourceImpl();
-//			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString()+ ".json"));
-//			Resource res = resourceSet.createResource(URI.createFileURI(UUID.randomUUID().toString()), "application/octet-stream");
 			res.getContents().add(EcoreUtil.copy(object));
 			ByteArrayOutputStream bao = new ByteArrayOutputStream();
 			res.save(bao, config);
@@ -122,9 +119,7 @@ public class MqttTrafiCamSender {
 			ByteBuffer buffer = ByteBuffer.wrap(bao.toByteArray());
 			messaging.publish(getTopic(object), buffer);
 		} catch (Exception e) {
-			logger.log(Level.ERROR, "Error while sending telegram via MQTT.", e);
-//		} finally {
-//			serviceObjects.ungetService(resourceSet);
+			logger.log(Level.ERROR, "Error while sending traficam object via MQTT.", e);
 		}
 	}
 

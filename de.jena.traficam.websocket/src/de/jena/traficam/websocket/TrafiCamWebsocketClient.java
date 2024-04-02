@@ -28,7 +28,6 @@ import de.jena.traficam.api.TrafiCamConfig;
 
 //configure using reader config in ConfigurationUpdater#configureClient
 @Component(name = "TrafiCamWSC", configurationPolicy = ConfigurationPolicy.REQUIRE)
-//@Component(configurationPid = "TrafiCamConfig")
 @Designate(ocd = TrafiCamConfig.class)
 public class TrafiCamWebsocketClient {
 	private static final Logger logger = System.getLogger(TrafiCamWebsocketClient.class.getName());
