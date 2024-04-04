@@ -1,0 +1,22 @@
+-buildpath: \
+	org.apache.felix.http.jetty,\
+	org.gecko.emf.json,\
+	org.osgi.util.pushstream,\
+	org.eclipse.emf.ecore;version=latest,\
+	org.eclipse.emf.common;version=latest,\
+	org.osgi.service.component,\
+	org.osgi.service.component.annotations,\
+	org.osgi.annotation.versioning,\
+	org.osgi.annotation.bundle,\
+	org.eclipse.jetty.websocket.api,\
+	org.eclipse.jetty.websocket.client,\
+	de.jena.traficam.model;version=latest,\
+	de.jena.traficam.api,\
+	org.osgi.service.metatype.annotations,\
+	org.gecko.emf.osgi.api
+	
+-includepackage de.jena.traficam.api,\
+	de.jena.traficam.websocket
+
+
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'

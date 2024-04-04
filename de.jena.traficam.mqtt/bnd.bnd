@@ -1,0 +1,30 @@
+-buildpath: \
+	org.gecko.osgi.messaging,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.core.jackson-core,\
+	org.gecko.adapter.mqtt,\
+	org.osgi.util.function,\
+	org.eclipse.emf.ecore,\
+	org.gecko.emf.json,\
+	org.eclipse.emf.common,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	org.osgi.service.component;version='1.4',\
+	de.jena.traficam.model,\
+	org.osgi.service.component.annotations,\
+	de.jena.traficam.websocket,\
+	de.jena.traficam.api,\
+	org.osgi.service.metatype.annotations,\
+	org.gecko.emf.osgi.api
+
+-testpath: \
+	${junit}
+
+Bundle-Version: 0.0.0.${tstamp}
+
+Export-Package: de.jena.traficam.mqtt
+
+-includepackage de.jena.traficam.api
+
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
