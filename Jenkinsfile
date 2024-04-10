@@ -2,7 +2,7 @@ pipeline  {
 	agent any
 
 	environment {
-		JAVA_OPTS = "-Xms2048m -Xmx2048m ${sh(script:'echo $JAVA_OPTS', returnStdout: true).trim()}"
+		JAVA_OPTS = "-Xms4048m -Xmx4048m -XX:MaxMetaspaceSize=2048m ${sh(script:'echo $JAVA_OPTS', returnStdout: true).trim()}"
 		VERSION = "${env.BUILD_ID}"
   }
 
