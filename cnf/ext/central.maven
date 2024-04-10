@@ -55,15 +55,16 @@ org.apache.felix:org.apache.felix.systemready:0.4.2
 org.apache.felix:org.apache.felix.useradmin:1.0.4
 org.apache.felix:org.apache.felix.useradmin.filestore:1.0.2
 org.apache.felix:org.apache.felix.useradmin.mongodb:1.0.1
-org.apache.felix:org.apache.felix.webconsole:4.6.0
-org.apache.felix:org.apache.felix.webconsole.plugins.ds:2.1.0
-org.apache.felix:org.apache.felix.webconsole.plugins.event:1.1.8
-org.apache.felix:org.apache.felix.webconsole.plugins.memoryusage:1.0.8
-org.apache.felix:org.apache.felix.webconsole.plugins.packageadmin:1.0.4
+org.apache.felix:org.apache.felix.webconsole:5.0.0
+org.apache.felix:org.apache.felix.webconsole.plugins.ds:2.3.0
+org.apache.felix:org.apache.felix.webconsole.plugins.event:1.2.0
+org.apache.felix:org.apache.felix.webconsole.plugins.memoryusage:1.1.0
+org.apache.felix:org.apache.felix.webconsole.plugins.packageadmin:1.1.0
 org.apache.felix:org.apache.felix.webconsole.plugins.scriptconsole:1.0.2
 org.apache.felix:org.apache.felix.webconsole.plugins.subsystems:0.1.0
 org.apache.felix:org.apache.felix.webconsole.plugins.useradmin:1.0.2
-biz.aQute:biz.aQute.gogo.commands.provider:1.9.0
+biz.aQute:biz.aQute.gogo.commands.provider:1.10.0
+org.owasp.encoder:encoder:1.2.3
 
 
 # Swagger OpenAPI
@@ -133,3 +134,8 @@ org.geckoprojects.messaging:org.gecko.adapter.mqtt.tests:1.1.0-SNAPSHOT
 org.geckoprojects.messaging:org.gecko.osgi.messaging:3.2.0-SNAPSHOT
 org.apache.felix:org.apache.felix.configadmin:1.9.26
 org.apache.felix:org.apache.felix.configurator:1.0.18
+
+#log
+org.slf4j:jul-to-slf4j:2.0.11
+ch.qos.logback:logback-core:1.5.3
+ch.qos.logback:logback-classic:1.5.3

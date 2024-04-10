@@ -12,11 +12,21 @@ org.eclipse.sensinact.gateway.northbound:rest:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound:query-handler:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.filters:filters.core:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.filters:ldap:${sensinact.version}
+
+##session
+org.eclipse.sensinact.gateway.northbound.session:session-api:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.session:session-impl:${sensinact.version}
+
+## security
+org.eclipse.sensinact.gateway.northbound.security:security-api:${sensinact.version}
+org.eclipse.sensinact.gateway.northbound.security:openid-connect:${sensinact.version}
+
 ## sensorethings
 org.eclipse.sensinact.gateway.northbound.sensorthings:dto:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.api:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:rest.gateway:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.sensorthings:filter:${sensinact.version}
+
 ## security
 org.eclipse.sensinact.gateway.northbound.security:authentication-api:${sensinact.version}
 org.eclipse.sensinact.gateway.northbound.security:openid-connect:${sensinact.version}

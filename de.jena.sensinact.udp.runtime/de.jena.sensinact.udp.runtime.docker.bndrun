@@ -2,7 +2,7 @@
 
 -runproperties.docker: \
 	logback.configurationFile=file:/opt/sensinact/runtime/etc/logback.xml,\
-	gecko.log.dir=/opt/sensinact/runtime/etc/runtime/data/log,\
+	gecko.log.dir=/opt/sensinact/runtime/logs,\
 	org.apache.felix.configadmin.plugin.interpolation.secretsdir=/opt/sensinact/runtime/secrets
 
 -runbundles.docker:\
