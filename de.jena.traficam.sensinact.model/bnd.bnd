@@ -1,0 +1,13 @@
+-buildpath: \
+	org.osgi.service.condition,\
+	org.eclipse.sensinact.gateway.core.models.provider;version=latest,\
+	org.eclipse.sensinact.gateway.core.geo-json
+
+-testpath: \
+	${junit}
+
+javac.source: 17
+javac.target: 17
+
+Bundle-Version: 0.0.0.${tstamp}
+-privatepackage: de.jena.traficam.sensinact.model
