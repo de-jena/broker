@@ -2,8 +2,6 @@
  */
 package de.jena.ilsa.sensinact.model.ilsa;
 
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-
 import org.eclipse.sensinact.model.core.provider.Service;
 
 import org.osgi.annotation.versioning.ProviderType;
@@ -20,7 +18,6 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getColor <em>Color</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getType <em>Type</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getSignalGroup <em>Signal Group</em>}</li>
- *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea <em>Oberserved Area</em>}</li>
  * </ul>
  *
  * @see de.jena.ilsa.sensinact.model.ilsa.IlsaPackage#getSignal()
@@ -94,28 +91,5 @@ public interface Signal extends Service {
 	 * @generated
 	 */
 	void setSignalGroup(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Oberserved Area</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Oberserved Area</em>' attribute.
-	 * @see #setOberservedArea(GeoJsonObject)
-	 * @see de.jena.ilsa.sensinact.model.ilsa.IlsaPackage#getSignal_OberservedArea()
-	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
-	 *        annotation="Metadata sensorthings.observedArea='true'"
-	 * @generated
-	 */
-	GeoJsonObject getOberservedArea();
-
-	/**
-	 * Sets the value of the '{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea <em>Oberserved Area</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Oberserved Area</em>' attribute.
-	 * @see #getOberservedArea()
-	 * @generated
-	 */
-	void setOberservedArea(GeoJsonObject value);
 
 } // Signal

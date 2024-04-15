@@ -23,10 +23,13 @@
         <details key="sensorthings.unit.name" value="Signalgruppe"/>
       </eAnnotations>
     </eStructuralFeatures>
+<<<<<<< Upstream, based on branch 'trafficam' of git@github.com:gg-dim/broker.git
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oberservedArea" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject">
       <eAnnotations source="Metadata">
         <details key="sensorthings.observedArea" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
+=======
+>>>>>>> 69ba735 add ilsa sensinact model
   </eClassifiers>
 </ecore:EPackage>

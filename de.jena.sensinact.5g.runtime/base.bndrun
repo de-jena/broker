@@ -59,6 +59,12 @@ slf4j.runpath:  \
 
 -runbundles+: \
 	 de.jena.sensinact.mqtt.5g.topic.bridge;startlevel=50000
+	bnd.identity;id='de.jena.traficam.model',\
+	bnd.identity;id='de.jena.ilsa.sensinact.mmt',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway'
+	bnd.identity;id='de.jena.traficam.model',\
+	bnd.identity;id='de.jena.ilsa.sensinact.mmt',\
+	bnd.identity;id='org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway'
 	
 -runbundles: \
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.16.0,2.16.1)';startlevel=100,\

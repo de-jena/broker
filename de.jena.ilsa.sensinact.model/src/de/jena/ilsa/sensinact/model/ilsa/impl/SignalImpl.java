@@ -11,8 +11,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-
 import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
 
 /**
@@ -26,7 +24,6 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getColor <em>Color</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getSignalGroup <em>Signal Group</em>}</li>
- *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getOberservedArea <em>Oberserved Area</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,26 +88,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 	 * @ordered
 	 */
 	protected String signalGroup = SIGNAL_GROUP_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getOberservedArea() <em>Oberserved Area</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOberservedArea()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final GeoJsonObject OBERSERVED_AREA_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOberservedArea() <em>Oberserved Area</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOberservedArea()
-	 * @generated
-	 * @ordered
-	 */
-	protected GeoJsonObject oberservedArea = OBERSERVED_AREA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,29 +183,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 	 * @generated
 	 */
 	@Override
-	public GeoJsonObject getOberservedArea() {
-		return oberservedArea;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOberservedArea(GeoJsonObject newOberservedArea) {
-		GeoJsonObject oldOberservedArea = oberservedArea;
-		oberservedArea = newOberservedArea;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IlsaPackage.SIGNAL__OBERSERVED_AREA, oldOberservedArea, oberservedArea));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case IlsaPackage.SIGNAL__COLOR:
@@ -237,8 +191,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 				return getType();
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				return getSignalGroup();
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				return getOberservedArea();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,9 +211,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 				return;
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				setSignalGroup((String)newValue);
-				return;
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				setOberservedArea((GeoJsonObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,9 +233,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				setSignalGroup(SIGNAL_GROUP_EDEFAULT);
 				return;
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				setOberservedArea(OBERSERVED_AREA_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -305,8 +251,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				return SIGNAL_GROUP_EDEFAULT == null ? signalGroup != null : !SIGNAL_GROUP_EDEFAULT.equals(signalGroup);
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				return OBERSERVED_AREA_EDEFAULT == null ? oberservedArea != null : !OBERSERVED_AREA_EDEFAULT.equals(oberservedArea);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,8 +271,6 @@ public class SignalImpl extends ServiceImpl implements Signal {
 		result.append(type);
 		result.append(", signalGroup: ");
 		result.append(signalGroup);
-		result.append(", oberservedArea: ");
-		result.append(oberservedArea);
 		result.append(')');
 		return result.toString();
 	}

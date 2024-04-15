@@ -155,16 +155,6 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSignal_OberservedArea() {
-		return (EAttribute)signalEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public IlsaFactory getIlsaFactory() {
 		return (IlsaFactory)getEFactoryInstance();
 	}
@@ -194,7 +184,6 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 		createEAttribute(signalEClass, SIGNAL__COLOR);
 		createEAttribute(signalEClass, SIGNAL__TYPE);
 		createEAttribute(signalEClass, SIGNAL__SIGNAL_GROUP);
-		createEAttribute(signalEClass, SIGNAL__OBERSERVED_AREA);
 	}
 
 	/**
@@ -238,7 +227,6 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 		initEAttribute(getSignal_Color(), ecorePackage.getEString(), "color", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSignal_Type(), ecorePackage.getEString(), "type", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSignal_SignalGroup(), ecorePackage.getEString(), "signalGroup", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSignal_OberservedArea(), theProviderPackage.getEGeoJsonObject(), "oberservedArea", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -292,12 +280,6 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 		   source,
 		   new String[] {
 			   "sensorthings.unit.name", "Signalgruppe"
-		   });
-		addAnnotation
-		  (getSignal_OberservedArea(),
-		   source,
-		   new String[] {
-			   "sensorthings.observedArea", "true"
 		   });
 	}
 
