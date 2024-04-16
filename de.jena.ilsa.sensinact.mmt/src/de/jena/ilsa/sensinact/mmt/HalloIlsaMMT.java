@@ -1,7 +1,6 @@
 package de.jena.ilsa.sensinact.mmt;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -12,12 +11,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sensinact.core.push.DataUpdate;
-import org.eclipse.sensinact.gateway.geojson.Coordinates;
-import org.eclipse.sensinact.gateway.geojson.Polygon;
-import org.eclipse.sensinact.gateway.geojson.Feature;
-import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
-import org.eclipse.sensinact.gateway.geojson.LineString;
 import org.eclipse.sensinact.model.core.provider.Admin;
 import org.eclipse.sensinact.model.core.provider.ProviderFactory;
 import org.eclipse.sensinact.model.core.provider.Service;
@@ -33,6 +26,7 @@ import org.osgi.service.component.annotations.ReferenceScope;
 import de.jena.ilsa.sensinact.model.ilsa.Ilsa;
 import de.jena.ilsa.sensinact.model.ilsa.IlsaFactory;
 import de.jena.ilsa.sensinact.model.ilsa.Signal;
+import de.jena.udp.model.geojson.FeatureCollection;
 import de.jena.udp.model.trafficos.trafficlight.TLConfiguration;
 import de.jena.udp.model.trafficos.trafficlight.TLModule;
 import de.jena.udp.model.trafficos.trafficlight.TLSignal;
@@ -40,10 +34,6 @@ import de.jena.udp.model.trafficos.trafficlight.TLSignalGroup;
 import de.jena.udp.model.trafficos.trafficlight.TLSignalState;
 import de.jena.udp.model.trafficos.trafficlight.TOSTrafficLightFactory;
 import de.jena.udp.model.trafficos.trafficlight.TOSTrafficLightPackage;
-import geojson.AbstractGeometry;
-import geojson.Geometry;
-
-
 
 @RequireEMFJson
 @Component(immediate = true)
@@ -63,71 +53,22 @@ public class HalloIlsaMMT {
 	@Reference
 	private DataUpdate sensiNact;
 
-	
 	@Activate
 	public void activate() throws IOException {
 		System.out.println("Load config");
 		TLConfiguration config = loadConfig();
 		Ilsa ilsa = ilsaFactory.createIlsa(); // Provider
 		Admin admin = providerFactory.createAdmin();
-		FeatureCollection fc = new FeatureCollection();
-		geojson.FeatureCollection area = config.getModules().get(0).getSignals().get(0).getObservedArea();
-		area.getFeatures().forEach(f->{
-			Feature castFeature = new Feature();
-			if (f.getGeometry() instanceof geojson.LineString) {
-				LineString ls = new LineString();
-				geojson.LineString fls = (geojson.LineString)f;
-				fls.getCoordinates().forEach(c->{
-					Coordinates coordinates = new Coordinates();
-					coordinates.latitude =  c[0];
-					coordinates.longitude =  c[1];
-					
-					ls.coordinates.add(coordinates);
-				});
-				castFeature.geometry = ls;
-				fc.features.add(castFeature);
-			}
-		
-			if (f.getGeometry() instanceof geojson.Polygon) {
-				Polygon pg = new Polygon();
-				geojson.Polygon fpg = (geojson.Polygon)f.getGeometry();
-				pg.coordinates = new ArrayList<List<Coordinates>>();
-				fpg.getCoordinates().forEach(c->{ 
-					ArrayList<Coordinates> list = new ArrayList<Coordinates>();
-					
-					for (Double[] p: c) {
-						Coordinates coordinates = new Coordinates();
-						coordinates.latitude =  p[0];
-						coordinates.longitude =  p[1];
-						list.add(coordinates);
-					}
-			
-					pg.coordinates.add(list);
-				
-				});
-				castFeature.geometry = pg;
-				fc.features.add(castFeature);
-			}
-			
-		});
-	
-		
-
-		
-		
-				
-				
 		ilsa.setId(config.getIntersectionId());
 		ilsa.setAdmin(admin);
-		//ilsa.set
 		admin.setFriendlyName(config.getIntersectionId());
-		admin.setLocation(fc);
+//		admin.setLocation(null);
 		EMap<String, Service> services = ilsa.getServices();
 
 		List<TLSignal> signals = getSignals(config.getModules());
 		for (TLSignal tlSignal : signals) {
 
-			//FeatureCollection observedArea = tlSignal.getObservedArea();
+			FeatureCollection observedArea = tlSignal.getObservedArea();
 			EList<Integer> positions = tlSignal.getPositions();
 			String channel = tlSignal.getChannel();
 			String id = tlSignal.getId();
@@ -165,7 +106,7 @@ public class HalloIlsaMMT {
 	 */
 	private TLConfiguration loadConfig() throws IOException {
 		ResourceSet resourceSet = serviceObjects.getService();
-		Resource res = resourceSet.createResource(URI.createFileURI("/home/markus/dev/broker/de.jena.ilsa.sensinact.mmt/config.json"),
+		Resource res = resourceSet.createResource(URI.createFileURI("/home/grune/traffic/config.json"),
 				"application/json");
 		try {
 			res.load(Collections.singletonMap(EMFJs.OPTION_ROOT_ELEMENT, tlPackage.getTLConfiguration()));

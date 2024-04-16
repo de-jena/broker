@@ -14,8 +14,6 @@ package de.jena.traficam.util;
 
 import de.jena.traficam.*;
 
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -102,36 +100,6 @@ public class TrafiCamSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TrafiCamPackage.CAM_CONFIG: {
-				CamConfig camConfig = (CamConfig)theEObject;
-				T result = caseCamConfig(camConfig);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TrafiCamPackage.CALIBRATION: {
-				Calibration calibration = (Calibration)theEObject;
-				T result = caseCalibration(calibration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TrafiCamPackage.FIELD_OF_VIEW: {
-				FieldOfView fieldOfView = (FieldOfView)theEObject;
-				T result = caseFieldOfView(fieldOfView);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TrafiCamPackage.SCENE: {
-				Scene scene = (Scene)theEObject;
-				T result = caseScene(scene);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TrafiCamPackage.CLASS_MAP: {
-				@SuppressWarnings("unchecked") Map.Entry<String, String> classMap = (Map.Entry<String, String>)theEObject;
-				T result = caseClassMap(classMap);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -193,81 +161,6 @@ public class TrafiCamSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCoordinates(Coordinates object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Cam Config</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Cam Config</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCamConfig(CamConfig object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Calibration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Calibration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCalibration(Calibration object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Field Of View</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Field Of View</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFieldOfView(FieldOfView object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Scene</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Scene</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseScene(Scene object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Class Map</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Class Map</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseClassMap(Map.Entry<String, String> object) {
 		return null;
 	}
 

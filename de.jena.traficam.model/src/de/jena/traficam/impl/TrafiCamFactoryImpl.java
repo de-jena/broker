@@ -14,8 +14,6 @@ package de.jena.traficam.impl;
 
 import de.jena.traficam.*;
 
-import java.util.Map;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -73,11 +71,6 @@ public class TrafiCamFactoryImpl extends EFactoryImpl implements TrafiCamFactory
 			case TrafiCamPackage.TRAFI_CAM_OBJECT: return createTrafiCamObject();
 			case TrafiCamPackage.GPS_COORDINATES: return createGpsCoordinates();
 			case TrafiCamPackage.COORDINATES: return createCoordinates();
-			case TrafiCamPackage.CAM_CONFIG: return createCamConfig();
-			case TrafiCamPackage.CALIBRATION: return createCalibration();
-			case TrafiCamPackage.FIELD_OF_VIEW: return createFieldOfView();
-			case TrafiCamPackage.SCENE: return createScene();
-			case TrafiCamPackage.CLASS_MAP: return (EObject)createClassMap();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -155,60 +148,6 @@ public class TrafiCamFactoryImpl extends EFactoryImpl implements TrafiCamFactory
 	public Coordinates createCoordinates() {
 		CoordinatesImpl coordinates = new CoordinatesImpl();
 		return coordinates;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CamConfig createCamConfig() {
-		CamConfigImpl camConfig = new CamConfigImpl();
-		return camConfig;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Calibration createCalibration() {
-		CalibrationImpl calibration = new CalibrationImpl();
-		return calibration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public FieldOfView createFieldOfView() {
-		FieldOfViewImpl fieldOfView = new FieldOfViewImpl();
-		return fieldOfView;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Scene createScene() {
-		SceneImpl scene = new SceneImpl();
-		return scene;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map.Entry<String, String> createClassMap() {
-		ClassMapImpl classMap = new ClassMapImpl();
-		return classMap;
 	}
 
 	/**
