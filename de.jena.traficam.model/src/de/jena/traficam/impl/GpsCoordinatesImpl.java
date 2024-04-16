@@ -10,7 +10,10 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.impl;
+package de.jena.traficam.impl;
+
+import de.jena.traficam.GpsCoordinates;
+import de.jena.traficam.TrafiCamPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -18,9 +21,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import traficam.GpsCoordinates;
-import traficam.TrafiCamPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,9 +30,9 @@ import traficam.TrafiCamPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link traficam.impl.GpsCoordinatesImpl#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link traficam.impl.GpsCoordinatesImpl#getLongitude <em>Longitude</em>}</li>
- *   <li>{@link traficam.impl.GpsCoordinatesImpl#getHeading <em>Heading</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.GpsCoordinatesImpl#getLatitude <em>Latitude</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.GpsCoordinatesImpl#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.GpsCoordinatesImpl#getHeading <em>Heading</em>}</li>
  * </ul>
  *
  * @generated

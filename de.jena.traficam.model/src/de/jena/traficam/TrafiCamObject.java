@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import java.util.Date;
 
@@ -29,18 +29,18 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link traficam.TrafiCamObject#getClassId <em>Class Id</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getId <em>Id</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getTime <em>Time</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getSpeed <em>Speed</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getGpsCoordinates <em>Gps Coordinates</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getImageCoordinates <em>Image Coordinates</em>}</li>
- *   <li>{@link traficam.TrafiCamObject#getWorldCoordinates <em>World Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getClassId <em>Class Id</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getId <em>Id</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getTime <em>Time</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getGpsCoordinates <em>Gps Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getImageCoordinates <em>Image Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCamObject#getWorldCoordinates <em>World Coordinates</em>}</li>
  * </ul>
  *
- * @see traficam.TrafiCamPackage#getTrafiCamObject()
+ * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject()
  * @model
  * @generated
  */
@@ -54,14 +54,14 @@ public interface TrafiCamObject extends EObject {
 	 * @see #isSetClassId()
 	 * @see #unsetClassId()
 	 * @see #setClassId(short)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_ClassId()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_ClassId()
 	 * @model unsettable="true"
 	 * @generated
 	 */
 	short getClassId();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Class Id</em>' attribute.
@@ -73,7 +73,7 @@ public interface TrafiCamObject extends EObject {
 	void setClassId(short value);
 
 	/**
-	 * Unsets the value of the '{@link traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute.
+	 * Unsets the value of the '{@link de.jena.traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #isSetClassId()
@@ -84,7 +84,7 @@ public interface TrafiCamObject extends EObject {
 	void unsetClassId();
 
 	/**
-	 * Returns whether the value of the '{@link traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute is set.
+	 * Returns whether the value of the '{@link de.jena.traficam.TrafiCamObject#getClassId <em>Class Id</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return whether the value of the '<em>Class Id</em>' attribute is set.
@@ -101,14 +101,14 @@ public interface TrafiCamObject extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(long)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_Id()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_Id()
 	 * @model
 	 * @generated
 	 */
 	long getId();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -123,14 +123,14 @@ public interface TrafiCamObject extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time</em>' attribute.
 	 * @see #setTime(Date)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_Time()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_Time()
 	 * @model
 	 * @generated
 	 */
 	Date getTime();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getTime <em>Time</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getTime <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time</em>' attribute.
@@ -145,14 +145,14 @@ public interface TrafiCamObject extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Lifetime</em>' attribute.
 	 * @see #setLifetime(double)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_Lifetime()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_Lifetime()
 	 * @model
 	 * @generated
 	 */
 	double getLifetime();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Lifetime</em>' attribute.
@@ -167,14 +167,14 @@ public interface TrafiCamObject extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speed</em>' attribute.
 	 * @see #setSpeed(double)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_Speed()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_Speed()
 	 * @model
 	 * @generated
 	 */
 	double getSpeed();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getSpeed <em>Speed</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getSpeed <em>Speed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Speed</em>' attribute.
@@ -189,14 +189,14 @@ public interface TrafiCamObject extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speed Confidence</em>' attribute.
 	 * @see #setSpeedConfidence(short)
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_SpeedConfidence()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_SpeedConfidence()
 	 * @model
 	 * @generated
 	 */
 	short getSpeedConfidence();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Speed Confidence</em>' attribute.
@@ -207,11 +207,11 @@ public interface TrafiCamObject extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Gps Coordinates</b></em>' containment reference list.
-	 * The list contents are of type {@link traficam.GpsCoordinates}.
+	 * The list contents are of type {@link de.jena.traficam.GpsCoordinates}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Gps Coordinates</em>' containment reference list.
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_GpsCoordinates()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_GpsCoordinates()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -219,11 +219,11 @@ public interface TrafiCamObject extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Image Coordinates</b></em>' containment reference list.
-	 * The list contents are of type {@link traficam.Coordinates}.
+	 * The list contents are of type {@link de.jena.traficam.Coordinates}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Image Coordinates</em>' containment reference list.
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_ImageCoordinates()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_ImageCoordinates()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -231,11 +231,11 @@ public interface TrafiCamObject extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>World Coordinates</b></em>' containment reference list.
-	 * The list contents are of type {@link traficam.Coordinates}.
+	 * The list contents are of type {@link de.jena.traficam.Coordinates}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>World Coordinates</em>' containment reference list.
-	 * @see traficam.TrafiCamPackage#getTrafiCamObject_WorldCoordinates()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCamObject_WorldCoordinates()
 	 * @model containment="true"
 	 * @generated
 	 */

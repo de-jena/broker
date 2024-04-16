@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -34,9 +34,10 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see traficam.TrafiCamFactory
+ * @see de.jena.traficam.TrafiCamFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/GenModel basePackage='de.jena'"
  * @generated
  */
 @ProviderType
@@ -72,14 +73,14 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TrafiCamPackage eINSTANCE = traficam.impl.TrafiCamPackageImpl.init();
+	TrafiCamPackage eINSTANCE = de.jena.traficam.impl.TrafiCamPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link traficam.impl.TrafiCamImpl <em>Trafi Cam</em>}' class.
+	 * The meta object id for the '{@link de.jena.traficam.impl.TrafiCamImpl <em>Trafi Cam</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see traficam.impl.TrafiCamImpl
-	 * @see traficam.impl.TrafiCamPackageImpl#getTrafiCam()
+	 * @see de.jena.traficam.impl.TrafiCamImpl
+	 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getTrafiCam()
 	 * @generated
 	 */
 	int TRAFI_CAM = 0;
@@ -157,11 +158,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int TRAFI_CAM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link traficam.impl.TrafiCamObjectImpl <em>Object</em>}' class.
+	 * The meta object id for the '{@link de.jena.traficam.impl.TrafiCamObjectImpl <em>Object</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see traficam.impl.TrafiCamObjectImpl
-	 * @see traficam.impl.TrafiCamPackageImpl#getTrafiCamObject()
+	 * @see de.jena.traficam.impl.TrafiCamObjectImpl
+	 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getTrafiCamObject()
 	 * @generated
 	 */
 	int TRAFI_CAM_OBJECT = 1;
@@ -266,11 +267,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int TRAFI_CAM_OBJECT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link traficam.impl.GpsCoordinatesImpl <em>Gps Coordinates</em>}' class.
+	 * The meta object id for the '{@link de.jena.traficam.impl.GpsCoordinatesImpl <em>Gps Coordinates</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see traficam.impl.GpsCoordinatesImpl
-	 * @see traficam.impl.TrafiCamPackageImpl#getGpsCoordinates()
+	 * @see de.jena.traficam.impl.GpsCoordinatesImpl
+	 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getGpsCoordinates()
 	 * @generated
 	 */
 	int GPS_COORDINATES = 2;
@@ -321,11 +322,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int GPS_COORDINATES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link traficam.impl.CoordinatesImpl <em>Coordinates</em>}' class.
+	 * The meta object id for the '{@link de.jena.traficam.impl.CoordinatesImpl <em>Coordinates</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see traficam.impl.CoordinatesImpl
-	 * @see traficam.impl.TrafiCamPackageImpl#getCoordinates()
+	 * @see de.jena.traficam.impl.CoordinatesImpl
+	 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getCoordinates()
 	 * @generated
 	 */
 	int COORDINATES = 3;
@@ -412,337 +413,337 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	int COORDINATES_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link traficam.MessagType <em>Messag Type</em>}' enum.
+	 * The meta object id for the '{@link de.jena.traficam.MessagType <em>Messag Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see traficam.MessagType
-	 * @see traficam.impl.TrafiCamPackageImpl#getMessagType()
+	 * @see de.jena.traficam.MessagType
+	 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getMessagType()
 	 * @generated
 	 */
 	int MESSAG_TYPE = 4;
 
 
 	/**
-	 * Returns the meta object for class '{@link traficam.TrafiCam <em>Trafi Cam</em>}'.
+	 * Returns the meta object for class '{@link de.jena.traficam.TrafiCam <em>Trafi Cam</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Trafi Cam</em>'.
-	 * @see traficam.TrafiCam
+	 * @see de.jena.traficam.TrafiCam
 	 * @generated
 	 */
 	EClass getTrafiCam();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getDataNumber <em>Data Number</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCam#getDataNumber <em>Data Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Data Number</em>'.
-	 * @see traficam.TrafiCam#getDataNumber()
+	 * @see de.jena.traficam.TrafiCam#getDataNumber()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EAttribute getTrafiCam_DataNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCam#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see traficam.TrafiCam#getType()
+	 * @see de.jena.traficam.TrafiCam#getType()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EAttribute getTrafiCam_Type();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getMessageType <em>Message Type</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCam#getMessageType <em>Message Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Message Type</em>'.
-	 * @see traficam.TrafiCam#getMessageType()
+	 * @see de.jena.traficam.TrafiCam#getMessageType()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EAttribute getTrafiCam_MessageType();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link traficam.TrafiCam#getObject <em>Object</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.traficam.TrafiCam#getObject <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Object</em>'.
-	 * @see traficam.TrafiCam#getObject()
+	 * @see de.jena.traficam.TrafiCam#getObject()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EReference getTrafiCam_Object();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getTime <em>Time</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCam#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Time</em>'.
-	 * @see traficam.TrafiCam#getTime()
+	 * @see de.jena.traficam.TrafiCam#getTime()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EAttribute getTrafiCam_Time();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Interval Time</em>'.
-	 * @see traficam.TrafiCam#getIntervalTime()
+	 * @see de.jena.traficam.TrafiCam#getIntervalTime()
 	 * @see #getTrafiCam()
 	 * @generated
 	 */
 	EAttribute getTrafiCam_IntervalTime();
 
 	/**
-	 * Returns the meta object for class '{@link traficam.TrafiCamObject <em>Object</em>}'.
+	 * Returns the meta object for class '{@link de.jena.traficam.TrafiCamObject <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Object</em>'.
-	 * @see traficam.TrafiCamObject
+	 * @see de.jena.traficam.TrafiCamObject
 	 * @generated
 	 */
 	EClass getTrafiCamObject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getClassId <em>Class Id</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getClassId <em>Class Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Class Id</em>'.
-	 * @see traficam.TrafiCamObject#getClassId()
+	 * @see de.jena.traficam.TrafiCamObject#getClassId()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_ClassId();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see traficam.TrafiCamObject#getId()
+	 * @see de.jena.traficam.TrafiCamObject#getId()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getTime <em>Time</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Time</em>'.
-	 * @see traficam.TrafiCamObject#getTime()
+	 * @see de.jena.traficam.TrafiCamObject#getTime()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_Time();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getLifetime <em>Lifetime</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Lifetime</em>'.
-	 * @see traficam.TrafiCamObject#getLifetime()
+	 * @see de.jena.traficam.TrafiCamObject#getLifetime()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_Lifetime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getSpeed <em>Speed</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getSpeed <em>Speed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Speed</em>'.
-	 * @see traficam.TrafiCamObject#getSpeed()
+	 * @see de.jena.traficam.TrafiCamObject#getSpeed()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_Speed();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.TrafiCamObject#getSpeedConfidence <em>Speed Confidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Speed Confidence</em>'.
-	 * @see traficam.TrafiCamObject#getSpeedConfidence()
+	 * @see de.jena.traficam.TrafiCamObject#getSpeedConfidence()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EAttribute getTrafiCamObject_SpeedConfidence();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link traficam.TrafiCamObject#getGpsCoordinates <em>Gps Coordinates</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.traficam.TrafiCamObject#getGpsCoordinates <em>Gps Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Gps Coordinates</em>'.
-	 * @see traficam.TrafiCamObject#getGpsCoordinates()
+	 * @see de.jena.traficam.TrafiCamObject#getGpsCoordinates()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EReference getTrafiCamObject_GpsCoordinates();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link traficam.TrafiCamObject#getImageCoordinates <em>Image Coordinates</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.traficam.TrafiCamObject#getImageCoordinates <em>Image Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Image Coordinates</em>'.
-	 * @see traficam.TrafiCamObject#getImageCoordinates()
+	 * @see de.jena.traficam.TrafiCamObject#getImageCoordinates()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EReference getTrafiCamObject_ImageCoordinates();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link traficam.TrafiCamObject#getWorldCoordinates <em>World Coordinates</em>}'.
+	 * Returns the meta object for the containment reference list '{@link de.jena.traficam.TrafiCamObject#getWorldCoordinates <em>World Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>World Coordinates</em>'.
-	 * @see traficam.TrafiCamObject#getWorldCoordinates()
+	 * @see de.jena.traficam.TrafiCamObject#getWorldCoordinates()
 	 * @see #getTrafiCamObject()
 	 * @generated
 	 */
 	EReference getTrafiCamObject_WorldCoordinates();
 
 	/**
-	 * Returns the meta object for class '{@link traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
+	 * Returns the meta object for class '{@link de.jena.traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Gps Coordinates</em>'.
-	 * @see traficam.GpsCoordinates
+	 * @see de.jena.traficam.GpsCoordinates
 	 * @generated
 	 */
 	EClass getGpsCoordinates();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.GpsCoordinates#getLatitude <em>Latitude</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.GpsCoordinates#getLatitude <em>Latitude</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Latitude</em>'.
-	 * @see traficam.GpsCoordinates#getLatitude()
+	 * @see de.jena.traficam.GpsCoordinates#getLatitude()
 	 * @see #getGpsCoordinates()
 	 * @generated
 	 */
 	EAttribute getGpsCoordinates_Latitude();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.GpsCoordinates#getLongitude <em>Longitude</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.GpsCoordinates#getLongitude <em>Longitude</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Longitude</em>'.
-	 * @see traficam.GpsCoordinates#getLongitude()
+	 * @see de.jena.traficam.GpsCoordinates#getLongitude()
 	 * @see #getGpsCoordinates()
 	 * @generated
 	 */
 	EAttribute getGpsCoordinates_Longitude();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.GpsCoordinates#getHeading <em>Heading</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.GpsCoordinates#getHeading <em>Heading</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Heading</em>'.
-	 * @see traficam.GpsCoordinates#getHeading()
+	 * @see de.jena.traficam.GpsCoordinates#getHeading()
 	 * @see #getGpsCoordinates()
 	 * @generated
 	 */
 	EAttribute getGpsCoordinates_Heading();
 
 	/**
-	 * Returns the meta object for class '{@link traficam.Coordinates <em>Coordinates</em>}'.
+	 * Returns the meta object for class '{@link de.jena.traficam.Coordinates <em>Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Coordinates</em>'.
-	 * @see traficam.Coordinates
+	 * @see de.jena.traficam.Coordinates
 	 * @generated
 	 */
 	EClass getCoordinates();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getX <em>X</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getX <em>X</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>X</em>'.
-	 * @see traficam.Coordinates#getX()
+	 * @see de.jena.traficam.Coordinates#getX()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_X();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getXConfidence <em>XConfidence</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getXConfidence <em>XConfidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>XConfidence</em>'.
-	 * @see traficam.Coordinates#getXConfidence()
+	 * @see de.jena.traficam.Coordinates#getXConfidence()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_XConfidence();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getY <em>Y</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getY <em>Y</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Y</em>'.
-	 * @see traficam.Coordinates#getY()
+	 * @see de.jena.traficam.Coordinates#getY()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_Y();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getYConfidence <em>YConfidence</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getYConfidence <em>YConfidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>YConfidence</em>'.
-	 * @see traficam.Coordinates#getYConfidence()
+	 * @see de.jena.traficam.Coordinates#getYConfidence()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_YConfidence();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getZ <em>Z</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getZ <em>Z</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Z</em>'.
-	 * @see traficam.Coordinates#getZ()
+	 * @see de.jena.traficam.Coordinates#getZ()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_Z();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getHeading3d <em>Heading3d</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getHeading3d <em>Heading3d</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Heading3d</em>'.
-	 * @see traficam.Coordinates#getHeading3d()
+	 * @see de.jena.traficam.Coordinates#getHeading3d()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_Heading3d();
 
 	/**
-	 * Returns the meta object for the attribute '{@link traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Heading3d Confidence</em>'.
-	 * @see traficam.Coordinates#getHeading3dConfidence()
+	 * @see de.jena.traficam.Coordinates#getHeading3dConfidence()
 	 * @see #getCoordinates()
 	 * @generated
 	 */
 	EAttribute getCoordinates_Heading3dConfidence();
 
 	/**
-	 * Returns the meta object for enum '{@link traficam.MessagType <em>Messag Type</em>}'.
+	 * Returns the meta object for enum '{@link de.jena.traficam.MessagType <em>Messag Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>Messag Type</em>'.
-	 * @see traficam.MessagType
+	 * @see de.jena.traficam.MessagType
 	 * @generated
 	 */
 	EEnum getMessagType();
@@ -771,11 +772,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link traficam.impl.TrafiCamImpl <em>Trafi Cam</em>}' class.
+		 * The meta object literal for the '{@link de.jena.traficam.impl.TrafiCamImpl <em>Trafi Cam</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see traficam.impl.TrafiCamImpl
-		 * @see traficam.impl.TrafiCamPackageImpl#getTrafiCam()
+		 * @see de.jena.traficam.impl.TrafiCamImpl
+		 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getTrafiCam()
 		 * @generated
 		 */
 		EClass TRAFI_CAM = eINSTANCE.getTrafiCam();
@@ -829,11 +830,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		EAttribute TRAFI_CAM__INTERVAL_TIME = eINSTANCE.getTrafiCam_IntervalTime();
 
 		/**
-		 * The meta object literal for the '{@link traficam.impl.TrafiCamObjectImpl <em>Object</em>}' class.
+		 * The meta object literal for the '{@link de.jena.traficam.impl.TrafiCamObjectImpl <em>Object</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see traficam.impl.TrafiCamObjectImpl
-		 * @see traficam.impl.TrafiCamPackageImpl#getTrafiCamObject()
+		 * @see de.jena.traficam.impl.TrafiCamObjectImpl
+		 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getTrafiCamObject()
 		 * @generated
 		 */
 		EClass TRAFI_CAM_OBJECT = eINSTANCE.getTrafiCamObject();
@@ -911,11 +912,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		EReference TRAFI_CAM_OBJECT__WORLD_COORDINATES = eINSTANCE.getTrafiCamObject_WorldCoordinates();
 
 		/**
-		 * The meta object literal for the '{@link traficam.impl.GpsCoordinatesImpl <em>Gps Coordinates</em>}' class.
+		 * The meta object literal for the '{@link de.jena.traficam.impl.GpsCoordinatesImpl <em>Gps Coordinates</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see traficam.impl.GpsCoordinatesImpl
-		 * @see traficam.impl.TrafiCamPackageImpl#getGpsCoordinates()
+		 * @see de.jena.traficam.impl.GpsCoordinatesImpl
+		 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getGpsCoordinates()
 		 * @generated
 		 */
 		EClass GPS_COORDINATES = eINSTANCE.getGpsCoordinates();
@@ -945,11 +946,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		EAttribute GPS_COORDINATES__HEADING = eINSTANCE.getGpsCoordinates_Heading();
 
 		/**
-		 * The meta object literal for the '{@link traficam.impl.CoordinatesImpl <em>Coordinates</em>}' class.
+		 * The meta object literal for the '{@link de.jena.traficam.impl.CoordinatesImpl <em>Coordinates</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see traficam.impl.CoordinatesImpl
-		 * @see traficam.impl.TrafiCamPackageImpl#getCoordinates()
+		 * @see de.jena.traficam.impl.CoordinatesImpl
+		 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getCoordinates()
 		 * @generated
 		 */
 		EClass COORDINATES = eINSTANCE.getCoordinates();
@@ -1011,11 +1012,11 @@ public interface TrafiCamPackage extends org.eclipse.emf.ecore.EPackage {
 		EAttribute COORDINATES__HEADING3D_CONFIDENCE = eINSTANCE.getCoordinates_Heading3dConfidence();
 
 		/**
-		 * The meta object literal for the '{@link traficam.MessagType <em>Messag Type</em>}' enum.
+		 * The meta object literal for the '{@link de.jena.traficam.MessagType <em>Messag Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see traficam.MessagType
-		 * @see traficam.impl.TrafiCamPackageImpl#getMessagType()
+		 * @see de.jena.traficam.MessagType
+		 * @see de.jena.traficam.impl.TrafiCamPackageImpl#getMessagType()
 		 * @generated
 		 */
 		EEnum MESSAG_TYPE = eINSTANCE.getMessagType();

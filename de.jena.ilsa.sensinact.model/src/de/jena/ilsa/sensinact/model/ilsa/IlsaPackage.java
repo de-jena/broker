@@ -120,6 +120,24 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	int ILSA_FEATURE_COUNT = ProviderPackage.DYNAMIC_PROVIDER_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ILSA___GET_SERVICE__STRING = ProviderPackage.DYNAMIC_PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ILSA___GET_SERVICE_ECLASS__STRING = ProviderPackage.DYNAMIC_PROVIDER___GET_SERVICE_ECLASS__STRING;
+
+	/**
 	 * The number of operations of the '<em>Ilsa</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

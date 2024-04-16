@@ -10,7 +10,9 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.util;
+package de.jena.traficam.util;
+
+import de.jena.traficam.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -19,14 +21,12 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import traficam.*;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see traficam.TrafiCamPackage
+ * @see de.jena.traficam.TrafiCamPackage
  * @generated
  */
 public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
@@ -114,13 +114,13 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link traficam.TrafiCam <em>Trafi Cam</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.TrafiCam <em>Trafi Cam</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see traficam.TrafiCam
+	 * @see de.jena.traficam.TrafiCam
 	 * @generated
 	 */
 	public Adapter createTrafiCamAdapter() {
@@ -128,13 +128,13 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link traficam.TrafiCamObject <em>Object</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.TrafiCamObject <em>Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see traficam.TrafiCamObject
+	 * @see de.jena.traficam.TrafiCamObject
 	 * @generated
 	 */
 	public Adapter createTrafiCamObjectAdapter() {
@@ -142,13 +142,13 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see traficam.GpsCoordinates
+	 * @see de.jena.traficam.GpsCoordinates
 	 * @generated
 	 */
 	public Adapter createGpsCoordinatesAdapter() {
@@ -156,13 +156,13 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link traficam.Coordinates <em>Coordinates</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Coordinates <em>Coordinates</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see traficam.Coordinates
+	 * @see de.jena.traficam.Coordinates
 	 * @generated
 	 */
 	public Adapter createCoordinatesAdapter() {

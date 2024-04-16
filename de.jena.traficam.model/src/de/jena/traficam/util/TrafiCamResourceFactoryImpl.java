@@ -10,7 +10,9 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.util;
+package de.jena.traficam.util;
+
+import de.jena.traficam.TrafiCamPackage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,13 +25,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceFactoryImpl;
 
 import org.gecko.emf.osgi.constants.EMFNamespaces;
 
-import traficam.TrafiCamPackage;
-
 /**
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * @see traficam.util.TrafiCamResourceImpl
+ * @see de.jena.traficam.util.TrafiCamResourceImpl
  * @generated
  */
 public class TrafiCamResourceFactoryImpl extends ResourceFactoryImpl {

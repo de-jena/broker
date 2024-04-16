@@ -9,7 +9,8 @@
     copyrightFields="false" editPluginID="de.jena.traficam.model.edit" editorPluginID="de.jena.traficam.model.editor"
     operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>traficam.ecore</foreignModel>
-  <genPackages prefix="TrafiCam" resource="XMI" disposableProviderFactory="true" ecorePackage="traficam.ecore#/">
+  <genPackages prefix="TrafiCam" basePackage="de.jena" resource="XMI" disposableProviderFactory="true"
+      ecorePackage="traficam.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="traficam.ecore#//MessagType">
       <genEnumLiterals ecoreEnumLiteral="traficam.ecore#//MessagType/Data"/>
       <genEnumLiterals ecoreEnumLiteral="traficam.ecore#//MessagType/Event"/>

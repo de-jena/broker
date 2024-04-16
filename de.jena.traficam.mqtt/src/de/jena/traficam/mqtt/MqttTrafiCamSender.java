@@ -37,10 +37,10 @@ import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushEvent.EventType;
 import org.osgi.util.pushstream.PushStream;
 
+import de.jena.traficam.TrafiCam;
+import de.jena.traficam.TrafiCamObject;
 import de.jena.traficam.api.TrafiCamConfig;
 import de.jena.traficam.websocket.TrafiCamReader;
-import traficam.TrafiCam;
-import traficam.TrafiCamObject;
 
 @RequireEMFJson
 @Component(name = "TrafiCamSender", configurationPolicy = ConfigurationPolicy.REQUIRE)

@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -21,7 +21,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see traficam.TrafiCamPackage
+ * @see de.jena.traficam.TrafiCamPackage
  * @generated
  */
 @ProviderType
@@ -32,7 +32,7 @@ public interface TrafiCamFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TrafiCamFactory eINSTANCE = traficam.impl.TrafiCamFactoryImpl.init();
+	TrafiCamFactory eINSTANCE = de.jena.traficam.impl.TrafiCamFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Trafi Cam</em>'.

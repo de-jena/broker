@@ -10,7 +10,10 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.impl;
+package de.jena.traficam.impl;
+
+import de.jena.traficam.Coordinates;
+import de.jena.traficam.TrafiCamPackage;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -18,9 +21,6 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import traficam.Coordinates;
-import traficam.TrafiCamPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,13 +30,13 @@ import traficam.TrafiCamPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link traficam.impl.CoordinatesImpl#getX <em>X</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getXConfidence <em>XConfidence</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getY <em>Y</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getYConfidence <em>YConfidence</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getZ <em>Z</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getHeading3d <em>Heading3d</em>}</li>
- *   <li>{@link traficam.impl.CoordinatesImpl#getHeading3dConfidence <em>Heading3d Confidence</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getX <em>X</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getXConfidence <em>XConfidence</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getY <em>Y</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getYConfidence <em>YConfidence</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getZ <em>Z</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getHeading3d <em>Heading3d</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.CoordinatesImpl#getHeading3dConfidence <em>Heading3d Confidence</em>}</li>
  * </ul>
  *
  * @generated

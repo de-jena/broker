@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -25,7 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * A representation of the literals of the enumeration '<em><b>Messag Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see traficam.TrafiCamPackage#getMessagType()
+ * @see de.jena.traficam.TrafiCamPackage#getMessagType()
  * @model
  * @generated
  */

@@ -10,7 +10,15 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.impl;
+package de.jena.traficam.impl;
+
+import de.jena.traficam.Coordinates;
+import de.jena.traficam.GpsCoordinates;
+import de.jena.traficam.MessagType;
+import de.jena.traficam.TrafiCam;
+import de.jena.traficam.TrafiCamFactory;
+import de.jena.traficam.TrafiCamObject;
+import de.jena.traficam.TrafiCamPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -19,14 +27,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
-
-import traficam.Coordinates;
-import traficam.GpsCoordinates;
-import traficam.MessagType;
-import traficam.TrafiCam;
-import traficam.TrafiCamFactory;
-import traficam.TrafiCamObject;
-import traficam.TrafiCamPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -81,7 +81,7 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see traficam.TrafiCamPackage#eNS_URI
+	 * @see de.jena.traficam.TrafiCamPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -571,6 +571,8 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		// Create annotations
 		// http://www.eclipse.org/OCL/Import
 		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/GenModel
+		createGenModelAnnotations();
 	}
 
 	/**
@@ -586,6 +588,22 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		   source,
 		   new String[] {
 			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/GenModel</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createGenModelAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/GenModel";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "basePackage", "de.jena"
 		   });
 	}
 

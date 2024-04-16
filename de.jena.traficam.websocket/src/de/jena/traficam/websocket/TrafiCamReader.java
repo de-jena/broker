@@ -43,8 +43,8 @@ import org.osgi.util.pushstream.PushbackPolicyOption;
 import org.osgi.util.pushstream.QueuePolicyOption;
 import org.osgi.util.pushstream.SimplePushEventSource;
 
-import traficam.TrafiCam;
-import traficam.TrafiCamPackage;
+import de.jena.traficam.TrafiCam;
+import de.jena.traficam.TrafiCamPackage;
 
 // configure using reader config in ConfigurationUpdater#configureReader
 @Component(service = TrafiCamReader.class , name = "TrafiCamReader", configurationPolicy = ConfigurationPolicy.REQUIRE)

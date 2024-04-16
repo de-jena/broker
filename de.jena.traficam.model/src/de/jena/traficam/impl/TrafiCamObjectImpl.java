@@ -10,7 +10,12 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.impl;
+package de.jena.traficam.impl;
+
+import de.jena.traficam.Coordinates;
+import de.jena.traficam.GpsCoordinates;
+import de.jena.traficam.TrafiCamObject;
+import de.jena.traficam.TrafiCamPackage;
 
 import java.util.Collection;
 import java.util.Date;
@@ -29,11 +34,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import traficam.Coordinates;
-import traficam.GpsCoordinates;
-import traficam.TrafiCamObject;
-import traficam.TrafiCamPackage;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Object</b></em>'.
@@ -42,15 +42,15 @@ import traficam.TrafiCamPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getClassId <em>Class Id</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getId <em>Id</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getTime <em>Time</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getLifetime <em>Lifetime</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getSpeed <em>Speed</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getSpeedConfidence <em>Speed Confidence</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getGpsCoordinates <em>Gps Coordinates</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getImageCoordinates <em>Image Coordinates</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamObjectImpl#getWorldCoordinates <em>World Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getClassId <em>Class Id</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getId <em>Id</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getTime <em>Time</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getLifetime <em>Lifetime</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getSpeed <em>Speed</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getSpeedConfidence <em>Speed Confidence</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getGpsCoordinates <em>Gps Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getImageCoordinates <em>Image Coordinates</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamObjectImpl#getWorldCoordinates <em>World Coordinates</em>}</li>
  * </ul>
  *
  * @generated

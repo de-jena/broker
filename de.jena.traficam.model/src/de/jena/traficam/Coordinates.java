@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -25,16 +25,16 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link traficam.Coordinates#getX <em>X</em>}</li>
- *   <li>{@link traficam.Coordinates#getXConfidence <em>XConfidence</em>}</li>
- *   <li>{@link traficam.Coordinates#getY <em>Y</em>}</li>
- *   <li>{@link traficam.Coordinates#getYConfidence <em>YConfidence</em>}</li>
- *   <li>{@link traficam.Coordinates#getZ <em>Z</em>}</li>
- *   <li>{@link traficam.Coordinates#getHeading3d <em>Heading3d</em>}</li>
- *   <li>{@link traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getX <em>X</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getXConfidence <em>XConfidence</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getY <em>Y</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getYConfidence <em>YConfidence</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getZ <em>Z</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getHeading3d <em>Heading3d</em>}</li>
+ *   <li>{@link de.jena.traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}</li>
  * </ul>
  *
- * @see traficam.TrafiCamPackage#getCoordinates()
+ * @see de.jena.traficam.TrafiCamPackage#getCoordinates()
  * @model
  * @generated
  */
@@ -46,14 +46,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>X</em>' attribute.
 	 * @see #setX(double)
-	 * @see traficam.TrafiCamPackage#getCoordinates_X()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_X()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getX();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getX <em>X</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getX <em>X</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>X</em>' attribute.
@@ -68,14 +68,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>XConfidence</em>' attribute.
 	 * @see #setXConfidence(short)
-	 * @see traficam.TrafiCamPackage#getCoordinates_XConfidence()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_XConfidence()
 	 * @model
 	 * @generated
 	 */
 	short getXConfidence();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getXConfidence <em>XConfidence</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getXConfidence <em>XConfidence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>XConfidence</em>' attribute.
@@ -90,14 +90,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Y</em>' attribute.
 	 * @see #setY(double)
-	 * @see traficam.TrafiCamPackage#getCoordinates_Y()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_Y()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getY();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getY <em>Y</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getY <em>Y</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Y</em>' attribute.
@@ -112,14 +112,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>YConfidence</em>' attribute.
 	 * @see #setYConfidence(short)
-	 * @see traficam.TrafiCamPackage#getCoordinates_YConfidence()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_YConfidence()
 	 * @model
 	 * @generated
 	 */
 	short getYConfidence();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getYConfidence <em>YConfidence</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getYConfidence <em>YConfidence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>YConfidence</em>' attribute.
@@ -134,14 +134,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Z</em>' attribute.
 	 * @see #setZ(double)
-	 * @see traficam.TrafiCamPackage#getCoordinates_Z()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_Z()
 	 * @model
 	 * @generated
 	 */
 	double getZ();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getZ <em>Z</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getZ <em>Z</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Z</em>' attribute.
@@ -156,14 +156,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Heading3d</em>' attribute.
 	 * @see #setHeading3d(double)
-	 * @see traficam.TrafiCamPackage#getCoordinates_Heading3d()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_Heading3d()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getHeading3d();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getHeading3d <em>Heading3d</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getHeading3d <em>Heading3d</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Heading3d</em>' attribute.
@@ -178,14 +178,14 @@ public interface Coordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Heading3d Confidence</em>' attribute.
 	 * @see #setHeading3dConfidence(short)
-	 * @see traficam.TrafiCamPackage#getCoordinates_Heading3dConfidence()
+	 * @see de.jena.traficam.TrafiCamPackage#getCoordinates_Heading3dConfidence()
 	 * @model
 	 * @generated
 	 */
 	short getHeading3dConfidence();
 
 	/**
-	 * Sets the value of the '{@link traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.Coordinates#getHeading3dConfidence <em>Heading3d Confidence</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Heading3d Confidence</em>' attribute.

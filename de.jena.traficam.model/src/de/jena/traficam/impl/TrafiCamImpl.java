@@ -10,7 +10,12 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.impl;
+package de.jena.traficam.impl;
+
+import de.jena.traficam.MessagType;
+import de.jena.traficam.TrafiCam;
+import de.jena.traficam.TrafiCamObject;
+import de.jena.traficam.TrafiCamPackage;
 
 import java.util.Collection;
 import java.util.Date;
@@ -29,11 +34,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import traficam.MessagType;
-import traficam.TrafiCam;
-import traficam.TrafiCamObject;
-import traficam.TrafiCamPackage;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Trafi Cam</b></em>'.
@@ -42,12 +42,12 @@ import traficam.TrafiCamPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link traficam.impl.TrafiCamImpl#getDataNumber <em>Data Number</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getType <em>Type</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getObject <em>Object</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getTime <em>Time</em>}</li>
- *   <li>{@link traficam.impl.TrafiCamImpl#getIntervalTime <em>Interval Time</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getDataNumber <em>Data Number</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getType <em>Type</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getObject <em>Object</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getTime <em>Time</em>}</li>
+ *   <li>{@link de.jena.traficam.impl.TrafiCamImpl#getIntervalTime <em>Interval Time</em>}</li>
  * </ul>
  *
  * @generated

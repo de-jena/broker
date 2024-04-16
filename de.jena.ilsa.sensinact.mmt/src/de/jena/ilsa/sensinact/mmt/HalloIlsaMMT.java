@@ -13,11 +13,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sensinact.core.push.DataUpdate;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
-import org.eclipse.sensinact.gateway.geojson.Polygon;
 import org.eclipse.sensinact.gateway.geojson.Feature;
 import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
-import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.LineString;
+import org.eclipse.sensinact.gateway.geojson.Polygon;
 import org.eclipse.sensinact.model.core.provider.Admin;
 import org.eclipse.sensinact.model.core.provider.ProviderFactory;
 import org.eclipse.sensinact.model.core.provider.Service;
@@ -40,10 +39,6 @@ import de.jena.udp.model.trafficos.trafficlight.TLSignalGroup;
 import de.jena.udp.model.trafficos.trafficlight.TLSignalState;
 import de.jena.udp.model.trafficos.trafficlight.TOSTrafficLightFactory;
 import de.jena.udp.model.trafficos.trafficlight.TOSTrafficLightPackage;
-import geojson.AbstractGeometry;
-import geojson.Geometry;
-
-
 
 @RequireEMFJson
 @Component(immediate = true)
@@ -71,12 +66,12 @@ public class HalloIlsaMMT {
 		Ilsa ilsa = ilsaFactory.createIlsa(); // Provider
 		Admin admin = providerFactory.createAdmin();
 		FeatureCollection fc = new FeatureCollection();
-		geojson.FeatureCollection area = config.getModules().get(0).getSignals().get(0).getObservedArea();
+		de.jena.udp.model.geojson.FeatureCollection area = config.getModules().get(0).getSignals().get(0).getObservedArea();
 		area.getFeatures().forEach(f->{
 			Feature castFeature = new Feature();
-			if (f.getGeometry() instanceof geojson.LineString) {
+			if (f.getGeometry() instanceof de.jena.udp.model.geojson.LineString) {
 				LineString ls = new LineString();
-				geojson.LineString fls = (geojson.LineString)f;
+				de.jena.udp.model.geojson.LineString fls = (de.jena.udp.model.geojson.LineString)f;
 				fls.getCoordinates().forEach(c->{
 					Coordinates coordinates = new Coordinates();
 					coordinates.latitude =  c[0];
@@ -88,9 +83,9 @@ public class HalloIlsaMMT {
 				fc.features.add(castFeature);
 			}
 		
-			if (f.getGeometry() instanceof geojson.Polygon) {
+			if (f.getGeometry() instanceof de.jena.udp.model.geojson.Polygon) {
 				Polygon pg = new Polygon();
-				geojson.Polygon fpg = (geojson.Polygon)f.getGeometry();
+				de.jena.udp.model.geojson.Polygon fpg = (de.jena.udp.model.geojson.Polygon)f.getGeometry();
 				pg.coordinates = new ArrayList<List<Coordinates>>();
 				fpg.getCoordinates().forEach(c->{ 
 					ArrayList<Coordinates> list = new ArrayList<Coordinates>();

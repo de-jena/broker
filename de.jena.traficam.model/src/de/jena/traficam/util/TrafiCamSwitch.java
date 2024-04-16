@@ -10,14 +10,14 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.util;
+package de.jena.traficam.util;
+
+import de.jena.traficam.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
-import traficam.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import traficam.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see traficam.TrafiCamPackage
+ * @see de.jena.traficam.TrafiCamPackage
  * @generated
  */
 public class TrafiCamSwitch<T> extends Switch<T> {

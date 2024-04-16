@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import java.util.Date;
 
@@ -29,15 +29,15 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link traficam.TrafiCam#getDataNumber <em>Data Number</em>}</li>
- *   <li>{@link traficam.TrafiCam#getType <em>Type</em>}</li>
- *   <li>{@link traficam.TrafiCam#getMessageType <em>Message Type</em>}</li>
- *   <li>{@link traficam.TrafiCam#getObject <em>Object</em>}</li>
- *   <li>{@link traficam.TrafiCam#getTime <em>Time</em>}</li>
- *   <li>{@link traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getDataNumber <em>Data Number</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getType <em>Type</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getMessageType <em>Message Type</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getObject <em>Object</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getTime <em>Time</em>}</li>
+ *   <li>{@link de.jena.traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}</li>
  * </ul>
  *
- * @see traficam.TrafiCamPackage#getTrafiCam()
+ * @see de.jena.traficam.TrafiCamPackage#getTrafiCam()
  * @model
  * @generated
  */
@@ -49,14 +49,14 @@ public interface TrafiCam extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Data Number</em>' attribute.
 	 * @see #setDataNumber(long)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_DataNumber()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_DataNumber()
 	 * @model
 	 * @generated
 	 */
 	long getDataNumber();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getDataNumber <em>Data Number</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCam#getDataNumber <em>Data Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Data Number</em>' attribute.
@@ -71,14 +71,14 @@ public interface TrafiCam extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_Type()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_Type()
 	 * @model
 	 * @generated
 	 */
 	String getType();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCam#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
@@ -89,24 +89,24 @@ public interface TrafiCam extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Message Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link traficam.MessagType}.
+	 * The literals are from the enumeration {@link de.jena.traficam.MessagType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Message Type</em>' attribute.
-	 * @see traficam.MessagType
+	 * @see de.jena.traficam.MessagType
 	 * @see #setMessageType(MessagType)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_MessageType()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_MessageType()
 	 * @model
 	 * @generated
 	 */
 	MessagType getMessageType();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getMessageType <em>Message Type</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCam#getMessageType <em>Message Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Message Type</em>' attribute.
-	 * @see traficam.MessagType
+	 * @see de.jena.traficam.MessagType
 	 * @see #getMessageType()
 	 * @generated
 	 */
@@ -114,11 +114,11 @@ public interface TrafiCam extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Object</b></em>' containment reference list.
-	 * The list contents are of type {@link traficam.TrafiCamObject}.
+	 * The list contents are of type {@link de.jena.traficam.TrafiCamObject}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Object</em>' containment reference list.
-	 * @see traficam.TrafiCamPackage#getTrafiCam_Object()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_Object()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -130,14 +130,14 @@ public interface TrafiCam extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time</em>' attribute.
 	 * @see #setTime(Date)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_Time()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_Time()
 	 * @model
 	 * @generated
 	 */
 	Date getTime();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getTime <em>Time</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCam#getTime <em>Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time</em>' attribute.
@@ -152,14 +152,14 @@ public interface TrafiCam extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Interval Time</em>' attribute.
 	 * @see #setIntervalTime(double)
-	 * @see traficam.TrafiCamPackage#getTrafiCam_IntervalTime()
+	 * @see de.jena.traficam.TrafiCamPackage#getTrafiCam_IntervalTime()
 	 * @model
 	 * @generated
 	 */
 	double getIntervalTime();
 
 	/**
-	 * Sets the value of the '{@link traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.TrafiCam#getIntervalTime <em>Interval Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Interval Time</em>' attribute.

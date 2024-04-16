@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.util;
+package de.jena.traficam.util;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * @see traficam.util.TrafiCamResourceFactoryImpl
+ * @see de.jena.traficam.util.TrafiCamResourceFactoryImpl
  * @generated
  */
 public class TrafiCamResourceImpl extends XMIResourceImpl {

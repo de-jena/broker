@@ -209,6 +209,7 @@ slf4j.runpath:  \
 	bnd.identity;id='de.jena.ttn.sensinact.mmt',\
 	bnd.identity;id='de.jena.sensinact.web.client',\
 	bnd.identity;id='de.jena.icesensor.rest',\
-	bnd.identity;id='de.jena.sensinact.web.mimetype.helper'
+	bnd.identity;id='de.jena.sensinact.web.mimetype.helper',\
+	bnd.identity;id='de.jena.ilsa.sensinact.mmt'
 	
 -runee: JavaSE-17

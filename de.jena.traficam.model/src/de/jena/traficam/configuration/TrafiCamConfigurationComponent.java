@@ -10,7 +10,14 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.configuration;
+package de.jena.traficam.configuration;
+
+import de.jena.traficam.TrafiCamFactory;
+import de.jena.traficam.TrafiCamPackage;
+
+import de.jena.traficam.impl.TrafiCamPackageImpl;
+
+import de.jena.traficam.util.TrafiCamResourceFactoryImpl;
 
 import java.util.Hashtable;
 
@@ -31,13 +38,6 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
 import org.osgi.service.condition.Condition;
-
-import traficam.TrafiCamFactory;
-import traficam.TrafiCamPackage;
-
-import traficam.impl.TrafiCamPackageImpl;
-
-import traficam.util.TrafiCamResourceFactoryImpl;
 /**
  * The <b>PackageConfiguration</b> for the model.
  * The package will be registered into a OSGi base model registry.
@@ -45,10 +45,10 @@ import traficam.util.TrafiCamResourceFactoryImpl;
  * @generated
  */
 @Component(name = "TrafiCamConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.util.TrafiCamResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,traficam.util\"" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"traficam.TrafiCamPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,traficam\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.traficam.util.TrafiCamResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.traficam.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.traficam.TrafiCamFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.traficam\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.traficam.TrafiCamPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.traficam\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.traficam\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.osgi.service.condition.Condition\"" , "uses:=org.osgi.service.condition" })
 public class TrafiCamConfigurationComponent {
 	

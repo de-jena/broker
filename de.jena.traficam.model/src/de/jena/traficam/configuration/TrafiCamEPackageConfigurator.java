@@ -10,7 +10,9 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam.configuration;
+package de.jena.traficam.configuration;
+
+import de.jena.traficam.TrafiCamPackage;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,8 +20,6 @@ import java.util.Map;
 import org.gecko.emf.osgi.configurator.EPackageConfigurator;
 
 import org.gecko.emf.osgi.constants.EMFNamespaces;
-
-import traficam.TrafiCamPackage;
 
 /**
  * <!-- begin-user-doc -->

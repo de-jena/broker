@@ -10,7 +10,7 @@
  * Contributors:
  *   Data In Motion - initial API and implementation 
  */
-package traficam;
+package de.jena.traficam;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -25,12 +25,12 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link traficam.GpsCoordinates#getLatitude <em>Latitude</em>}</li>
- *   <li>{@link traficam.GpsCoordinates#getLongitude <em>Longitude</em>}</li>
- *   <li>{@link traficam.GpsCoordinates#getHeading <em>Heading</em>}</li>
+ *   <li>{@link de.jena.traficam.GpsCoordinates#getLatitude <em>Latitude</em>}</li>
+ *   <li>{@link de.jena.traficam.GpsCoordinates#getLongitude <em>Longitude</em>}</li>
+ *   <li>{@link de.jena.traficam.GpsCoordinates#getHeading <em>Heading</em>}</li>
  * </ul>
  *
- * @see traficam.TrafiCamPackage#getGpsCoordinates()
+ * @see de.jena.traficam.TrafiCamPackage#getGpsCoordinates()
  * @model
  * @generated
  */
@@ -42,14 +42,14 @@ public interface GpsCoordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Latitude</em>' attribute.
 	 * @see #setLatitude(double)
-	 * @see traficam.TrafiCamPackage#getGpsCoordinates_Latitude()
+	 * @see de.jena.traficam.TrafiCamPackage#getGpsCoordinates_Latitude()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getLatitude();
 
 	/**
-	 * Sets the value of the '{@link traficam.GpsCoordinates#getLatitude <em>Latitude</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.GpsCoordinates#getLatitude <em>Latitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Latitude</em>' attribute.
@@ -64,14 +64,14 @@ public interface GpsCoordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Longitude</em>' attribute.
 	 * @see #setLongitude(double)
-	 * @see traficam.TrafiCamPackage#getGpsCoordinates_Longitude()
+	 * @see de.jena.traficam.TrafiCamPackage#getGpsCoordinates_Longitude()
 	 * @model required="true"
 	 * @generated
 	 */
 	double getLongitude();
 
 	/**
-	 * Sets the value of the '{@link traficam.GpsCoordinates#getLongitude <em>Longitude</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.GpsCoordinates#getLongitude <em>Longitude</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Longitude</em>' attribute.
@@ -86,14 +86,14 @@ public interface GpsCoordinates extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Heading</em>' attribute.
 	 * @see #setHeading(double)
-	 * @see traficam.TrafiCamPackage#getGpsCoordinates_Heading()
+	 * @see de.jena.traficam.TrafiCamPackage#getGpsCoordinates_Heading()
 	 * @model
 	 * @generated
 	 */
 	double getHeading();
 
 	/**
-	 * Sets the value of the '{@link traficam.GpsCoordinates#getHeading <em>Heading</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.GpsCoordinates#getHeading <em>Heading</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Heading</em>' attribute.
