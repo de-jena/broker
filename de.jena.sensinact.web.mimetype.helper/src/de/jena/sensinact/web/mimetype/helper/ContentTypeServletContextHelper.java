@@ -8,7 +8,7 @@
  * Contributors:
 *    Kentyou - initial API and implementation
  */
-package de.jena.sensinact.web.client;
+package de.jena.sensinact.web.mimetype.helper;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -24,8 +24,7 @@ import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardContext;
 import org.osgi.service.http.whiteboard.propertytypes.HttpWhiteboardContextSelect;
 
 @Component(service = ServletContextHelper.class, scope = ServiceScope.SINGLETON)
-@HttpWhiteboardContext(name = "default", path = "/")
-@HttpWhiteboardContextSelect("()")
+@HttpWhiteboardContext(name = "default", path = "/*")
 public class ContentTypeServletContextHelper extends ServletContextHelper {
 
 	

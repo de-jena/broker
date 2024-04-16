@@ -60,10 +60,10 @@ public class MQTTBridge {
 
 	private AtomicInteger current = new AtomicInteger(0);
 
-	private List<String> knownTopics = new ArrayList<>();
-
 	private List<PushStream<Message>> emSubscribe;
-	private ComponentServiceObjects<MessagingService> messagingServiceObjects;
+	private ComponentServiceObjects<MessagingService> messagingServiceRead;
+	private ComponentServiceObjects<MessagingService> messagingServiceWrite;
+	
 	@Reference(target = "(" + EMFNamespaces.EMF_CONFIGURATOR_NAME
 			+ "=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
 	private ComponentServiceObjects<ResourceSet> serviceObjects;
@@ -72,6 +72,8 @@ public class MQTTBridge {
 	private String outputContentType;
 	private Map<String, Object> inputOptions;
 	private Map<String, Object> outputOptions;
+
+	private MessagingService readMessagingService;
 
 	private @interface Config {
 		int forwardClients() default 1;
@@ -85,11 +87,13 @@ public class MQTTBridge {
 
 	@Activate
 	public MQTTBridge(BundleContext bctx,
-			@Reference(target = "(id=full)") ComponentServiceObjects<MessagingService> messagingServiceObjects,
+			@Reference(target = "(id=read)") ComponentServiceObjects<MessagingService> messagingServiceRead,
+			@Reference(target = "(id=write)") ComponentServiceObjects<MessagingService> messagingServiceWrite,
 			Config config, Map<String, Object> properties) {
-		this.messagingServiceObjects = messagingServiceObjects;
+		this.messagingServiceWrite = messagingServiceWrite;
+		this.messagingServiceRead = messagingServiceRead;
 		for (int i = 0; i < config.forwardClients(); i++) {
-			senders.add(messagingServiceObjects.getService());
+			senders.add(messagingServiceWrite.getService());
 		}
 		inputContentType = config.inputContentType();
 		outputContentType = config.outputContenType();
@@ -99,22 +103,22 @@ public class MQTTBridge {
 
 		emSubscribe = new ArrayList<>();
 		MessagingContext messagingContext = new SimpleMessagingContextBuilder()
-				.withPushbackPolicy(ThresholdPushbackPolicy.createSimpleThresholdPushbackPolicy(600))
+				.withPushbackPolicy(ThresholdPushbackPolicy.createSimpleThresholdPushbackPolicy(2000))
 				.withExecutor(Executors.newCachedThreadPool()).withParallelism(4)
 				.withBufferQueue(new ArrayBlockingQueue<PushEvent<? extends Message>>(4000)).build();
 		Arrays.asList(config.topics()).forEach(topic -> {
-			MessagingService messaging = messagingServiceObjects.getService();
+			readMessagingService = messagingServiceRead.getService();
 			try {
 				logger.log(Level.INFO, "Connecting to " + topic);
-				PushStream<Message> subscribe = messaging.subscribe(topic, messagingContext);
+				PushStream<Message> subscribe = readMessagingService.subscribe(topic, messagingContext);
 
-				subscribe.onError(e -> logger.log(Level.ERROR, "Error in Pushstream ", e));
+				subscribe.onError(e -> logger.log(Level.ERROR, "Error in Pushstream for topic " + topic, e));
 				subscribe.forEach(this::forward);
 				emSubscribe.add(subscribe);
-				this.messaging.add(messaging);
+				this.messaging.add(readMessagingService);
 			} catch (Exception e) {
 				logger.log(Level.ERROR, "Could not connect to topic " + topic, e);
-				messagingServiceObjects.ungetService(messaging);
+				messagingServiceRead.ungetService(readMessagingService);
 			}
 		});
 	}
@@ -122,7 +126,8 @@ public class MQTTBridge {
 	@Deactivate
 	public void deactivate() {
 		emSubscribe.forEach(PushStream::close);
-		messaging.forEach(messagingServiceObjects::ungetService);
+		messagingServiceRead.ungetService(readMessagingService);
+		messaging.forEach(messagingServiceWrite::ungetService);
 	}
 
 	private Map<String, Object> readOption(Map<String, Object> properties, String prefix) {
@@ -138,11 +143,7 @@ public class MQTTBridge {
 	public void forward(Message message) {
 		String topic = message.topic();
 		MQTTContext context = (MQTTContext) message.getContext();
-		if(!knownTopics.contains(topic)) {
-			knownTopics.add(topic);
-			logger.log(Level.INFO, "New Topic: " + topic + " Retained: " + context.isRetained());
-		}
-		
+
 		String baseTopic = topic.substring(3);
 		boolean retained = context.isRetained();
 		
@@ -150,17 +151,14 @@ public class MQTTBridge {
 			retained = BridgeUtil.isRetained(baseTopic);
 		}
 		String forwardTopic = "5g/data/" + baseTopic;
-//		System.out.println("Forwarding from  " + topic + " to " + forwardTopic);
 		try {
 			int sender = current.getAndUpdate(i -> {
-				if (i != senders.size() - 1) {
-					i++;
-				}
-				return 0;
+				return ++i == senders.size() ? 0 : i;
 			});
+//			System.out.println(sender  + " - Forwarding from  " + topic + " to " + forwardTopic);
 			context.setRetained(retained);
 			ByteBuffer inPayload = message.payload();
-			ByteBuffer outPayload = convertPayload(inPayload);
+			ByteBuffer outPayload = topic.endsWith("/lifesign")? inPayload : convertPayload(inPayload);
 			senders.get(sender).publish(forwardTopic, outPayload, context);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Could not forward message from " + topic + " to " + forwardTopic, e);

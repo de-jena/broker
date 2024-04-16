@@ -7,7 +7,7 @@
 	org.osgi.util.pushstream;version=latest,\
 	org.osgi.util.promise,\
 	org.gecko.util.pushstream,\
-	org.gecko.adapter.mqtt,\
 	org.gecko.emf.osgi.api,\
 	org.eclipse.emf.ecore,\
-	org.eclipse.emf.common
+	org.eclipse.emf.common,\
+	org.gecko.adapter.mqtt;version=latest

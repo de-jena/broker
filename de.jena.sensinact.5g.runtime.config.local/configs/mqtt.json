@@ -3,9 +3,10 @@
 
 	"MQTTService~read":
 	{
-		"brokerUrl" : "tcp://datainmotion.de:1883",
-		"username" : "demo",
-		"password" : "1234",
+		"brokerUrl" : "ssl://$[env:MQTT_FULL_HOST;default=]$[prop:MQTT_FULL_HOST;default=mqttbr.jena.de]:$[env:MQTT_FULL_PORT;default=]$[prop:MQTT_FULL_PORT;default=8883]",
+		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
+		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
+		"maxInflight" : 1000,
 		"id" : "read"
 	},
 	"MQTTService~write":
@@ -13,6 +14,7 @@
 		"brokerUrl" : "tcp://datainmotion.de:1883",
 		"username" : "demo",
 		"password" : "1234",
+		"maxThreads" : 5,
 		"id" : "write"
 	},
 	"MQTTService~full":

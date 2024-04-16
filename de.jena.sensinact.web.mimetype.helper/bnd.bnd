@@ -1,0 +1,6 @@
+-buildpath: \
+	org.osgi.service.http.whiteboard,\
+	org.osgi.annotation.bundle,\
+	org.osgi.service.component.annotations,\
+	org.osgi.framework,\
+	jakarta.servlet-api
