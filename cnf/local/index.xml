@@ -1,141 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1712744119748">
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="Eclipse Public License 1.0"/>
-      <attribute name="copyright" value="Data In Motion GmbH all rights reserved"/>
-      <attribute name="osgi.identity" value="de.dim.trafficos.simulator.impl"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.1.SNAPSHOT" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.simulator.impl"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
-      <attribute name="osgi.wiring.host" value="de.dim.trafficos.simulator.impl"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="49748" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
-      <attribute name="osgi.content" value="72CC0CA0E31026E7F3EFAC49B58236DF9DFBF95AA8D212F82B269B9407597BE9"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
-      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.IntersectionService" type="List&lt;String&gt;"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
-      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.SignalPlanService" type="List&lt;String&gt;"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="uses" value="org.osgi.service.event"/>
-      <attribute name="objectClass" value="org.osgi.service.event.EventHandler" type="List&lt;String&gt;"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.model.device)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="de.dim.trafficos.model.device"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.simulator.api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
-      <attribute name="osgi.wiring.package" value="de.dim.trafficos.simulator.api"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.common.util)"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore)"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore.util)"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository)(version&gt;=7.1.0)(!(version&gt;=8.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository.query)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository.query"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.event)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.osgi.service.event"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
-    </requirement>
-    <requirement namespace="osgi.service">
-      <directive name="filter" value="(objectClass=org.gecko.emf.repository.EMFRepository)"/>
-      <directive name="effective" value="active"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.2.6" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="version" value="1.2.6" type="Version"/>
-      <attribute name="bnd.hashes" value="-1275931128,1484020643,1737846135,-872097766,-464122568,229959768,-1253088498,-553369876,-12744611,-107589160,-707792548,2037158787,-482232407,1981403138,1864307759,-1738951952,1527654072,1797505,461186411,2053303331,1611711306,-361967148,-780633941,-2014963189,907214101,907219019,1303542479,230541031,-363559369,-1434766516" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.logging"/>
-      <attribute name="version" value="1.2.6" type="Version"/>
-      <attribute name="bnd.hashes" value="-1157127908,-2013470288,971415866,-1808473896" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.persist"/>
-      <attribute name="version" value="1.2.6" type="Version"/>
-      <attribute name="bnd.hashes" value="1658516158,-1411825818,-329683593,935422050" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.util"/>
-      <attribute name="version" value="1.2.6" type="Version"/>
-      <attribute name="bnd.hashes" value="65906227,-217105822" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.paho.client.mqttv3"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.2.6" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.paho.client.mqttv3"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="227224" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="org.eclipse.paho.client.mqttv3/org.eclipse.paho.client.mqttv3-1.2.6.jar"/>
-      <attribute name="osgi.content" value="70040E6D49916FABCE5FD581282B2D2FA32B52661FFBC5E4696F437CA492124A"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.net"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-  </resource>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1713253871904">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
@@ -753,6 +617,142 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.2.6" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="version" value="1.2.6" type="Version"/>
+      <attribute name="bnd.hashes" value="-1275931128,1484020643,1737846135,-872097766,-464122568,229959768,-1253088498,-553369876,-12744611,-107589160,-707792548,2037158787,-482232407,1981403138,1864307759,-1738951952,1527654072,1797505,461186411,2053303331,1611711306,-361967148,-780633941,-2014963189,907214101,907219019,1303542479,230541031,-363559369,-1434766516" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.logging"/>
+      <attribute name="version" value="1.2.6" type="Version"/>
+      <attribute name="bnd.hashes" value="-1157127908,-2013470288,971415866,-1808473896" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.persist"/>
+      <attribute name="version" value="1.2.6" type="Version"/>
+      <attribute name="bnd.hashes" value="1658516158,-1411825818,-329683593,935422050" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.paho.client.mqttv3"/>
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.paho.client.mqttv3.util"/>
+      <attribute name="version" value="1.2.6" type="Version"/>
+      <attribute name="bnd.hashes" value="65906227,-217105822" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.paho.client.mqttv3"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.2.6" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.paho.client.mqttv3"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="227224" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="org.eclipse.paho.client.mqttv3/org.eclipse.paho.client.mqttv3-1.2.6.jar"/>
+      <attribute name="osgi.content" value="70040E6D49916FABCE5FD581282B2D2FA32B52661FFBC5E4696F437CA492124A"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="Eclipse Public License 1.0"/>
+      <attribute name="copyright" value="Data In Motion GmbH all rights reserved"/>
+      <attribute name="osgi.identity" value="de.dim.trafficos.simulator.impl"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.1.SNAPSHOT" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="de.dim.trafficos.simulator.impl"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.1.SNAPSHOT" type="Version"/>
+      <attribute name="osgi.wiring.host" value="de.dim.trafficos.simulator.impl"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="49748" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="de.dim.trafficos.simulator.impl/de.dim.trafficos.simulator.impl-1.1.1.jar"/>
+      <attribute name="osgi.content" value="72CC0CA0E31026E7F3EFAC49B58236DF9DFBF95AA8D212F82B269B9407597BE9"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
+      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.IntersectionService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="de.dim.trafficos.simulator.api"/>
+      <attribute name="objectClass" value="de.dim.trafficos.simulator.api.SignalPlanService" type="List&lt;String&gt;"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="org.osgi.service.event"/>
+      <attribute name="objectClass" value="org.osgi.service.event.EventHandler" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.model.device)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.model.device"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=de.dim.trafficos.simulator.api)(version&gt;=1.0.0)(!(version&gt;=1.1.0)))"/>
+      <attribute name="osgi.wiring.package" value="de.dim.trafficos.simulator.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.common.util)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.common.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.eclipse.emf.ecore.util)"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.emf.ecore.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository)(version&gt;=7.1.0)(!(version&gt;=8.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.gecko.emf.repository.query)(version&gt;=3.0.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.gecko.emf.repository.query"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.osgi.service.event)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.osgi.service.event"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.4.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.gecko.emf.repository.EMFRepository)"/>
+      <directive name="effective" value="active"/>
     </requirement>
   </resource>
 </repository>

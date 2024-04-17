@@ -65,8 +65,54 @@ public class HalloIlsaMMT {
 		TLConfiguration config = loadConfig();
 		Ilsa ilsa = ilsaFactory.createIlsa(); // Provider
 		Admin admin = providerFactory.createAdmin();
+		
+		
+
+		
+		
+				
+				
+		ilsa.setId(config.getIntersectionId());
+		ilsa.setAdmin(admin);
+		//ilsa.set
+		admin.setFriendlyName(config.getIntersectionId());
+		//admin.setLocation(fc);
+		EMap<String, Service> services = ilsa.getServices();
+
+		List<TLSignal> signals = getSignals(config.getModules());
+		for (TLSignal tlSignal : signals) {
+
+			//FeatureCollection observedArea = tlSignal.getObservedArea();
+			EList<Integer> positions = tlSignal.getPositions();
+			String channel = tlSignal.getChannel();
+			String id = tlSignal.getId();
+			TLSignalGroup signalGroup = tlSignal.getSignalGroup();
+
+			TLSignalState signalState = tlFactory.createTLSignalState();
+			signalState.setState("🟢🟡");// 🔴
+			signalState.setId("K1/1");
+//		signalState.get
+
+			// s und signalstate über id mappen
+
+			Signal signal = ilsaFactory.createSignal(); // Service
+			signal.setSignalGroup(signalGroup.getId());
+			signal.setType(tlSignal.getSignalType().getName());
+			signal.setColor(signalState.getState());
+			FeatureCollection fc = convertToGeoJson(tlSignal.getObservedArea());
+			signal.setOberservedArea(fc);
+//			signal.
+//		signal.
+
+			services.put(id, signal);
+		}
+		
+		sensiNact.pushUpdate(ilsa);
+
+	}
+
+	private FeatureCollection convertToGeoJson(de.jena.udp.model.geojson.FeatureCollection area) {
 		FeatureCollection fc = new FeatureCollection();
-		de.jena.udp.model.geojson.FeatureCollection area = config.getModules().get(0).getSignals().get(0).getObservedArea();
 		area.getFeatures().forEach(f->{
 			Feature castFeature = new Feature();
 			if (f.getGeometry() instanceof de.jena.udp.model.geojson.LineString) {
@@ -105,48 +151,7 @@ public class HalloIlsaMMT {
 			}
 			
 		});
-	
-		
-
-		
-		
-				
-				
-		ilsa.setId(config.getIntersectionId());
-		ilsa.setAdmin(admin);
-		//ilsa.set
-		admin.setFriendlyName(config.getIntersectionId());
-		admin.setLocation(fc);
-		EMap<String, Service> services = ilsa.getServices();
-
-		List<TLSignal> signals = getSignals(config.getModules());
-		for (TLSignal tlSignal : signals) {
-
-			//FeatureCollection observedArea = tlSignal.getObservedArea();
-			EList<Integer> positions = tlSignal.getPositions();
-			String channel = tlSignal.getChannel();
-			String id = tlSignal.getId();
-			TLSignalGroup signalGroup = tlSignal.getSignalGroup();
-
-			TLSignalState signalState = tlFactory.createTLSignalState();
-			signalState.setState("🟢🟡");// 🔴
-			signalState.setId("K1/1");
-//		signalState.get
-
-			// s und signalstate über id mappen
-
-			Signal signal = ilsaFactory.createSignal(); // Service
-			signal.setSignalGroup(signalGroup.getId());
-			signal.setType(tlSignal.getSignalType().getName());
-			signal.setColor(signalState.getState());
-//			signal.
-//		signal.
-
-			services.put(id, signal);
-		}
-
-		sensiNact.pushUpdate(ilsa);
-
+		return fc;
 	}
 
 	private List<TLSignal> getSignals(EList<TLModule> modules) {

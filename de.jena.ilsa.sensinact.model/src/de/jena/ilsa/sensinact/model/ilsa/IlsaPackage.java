@@ -193,13 +193,22 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	int SIGNAL__SIGNAL_GROUP = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Oberserved Area</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIGNAL__OBERSERVED_AREA = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Signal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SIGNAL_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
+	int SIGNAL_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -274,6 +283,17 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getSignal_SignalGroup();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea <em>Oberserved Area</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Oberserved Area</em>'.
+	 * @see de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea()
+	 * @see #getSignal()
+	 * @generated
+	 */
+	EAttribute getSignal_OberservedArea();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -339,6 +359,14 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EAttribute SIGNAL__SIGNAL_GROUP = eINSTANCE.getSignal_SignalGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Oberserved Area</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SIGNAL__OBERSERVED_AREA = eINSTANCE.getSignal_OberservedArea();
 
 	}
 
