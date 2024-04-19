@@ -15,6 +15,7 @@
 		"username" : "$[env:MQTT_FULL_USER;default=]$[prop:MQTT_FULL_USER;default=]",
 		"password" : "$[env:MQTT_FULL_PWD;default=]$[prop:MQTT_FULL_PWD;default=]",
 		"maxThreads" : 5,
+		"maxInflight" : 1000,
 		"id" : "write"
 	},
 	"MQTTService~full":
