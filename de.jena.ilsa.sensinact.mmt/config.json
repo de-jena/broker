@@ -2,6 +2,13 @@
 	"eClass": "http://jena.de/udp/trafficos/trafficlight/1.1.1#//TLConfiguration",
 	"intersectionId": "K440",
 	"intersectionName": "Felsenkeller",
+	"location": [
+		{
+			"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+			"latitude": 11.581308, 
+			"longitude": 50.921032
+		}
+	],
 	"modules": [
 		{
 			"id": "6426ee356280c369c0d6177b",

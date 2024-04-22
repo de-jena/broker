@@ -14,6 +14,8 @@ package de.jena.traficam.util;
 
 import de.jena.traficam.*;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -94,6 +96,26 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 				return createCoordinatesAdapter();
 			}
 			@Override
+			public Adapter caseCamConfig(CamConfig object) {
+				return createCamConfigAdapter();
+			}
+			@Override
+			public Adapter caseCalibration(Calibration object) {
+				return createCalibrationAdapter();
+			}
+			@Override
+			public Adapter caseFieldOfView(FieldOfView object) {
+				return createFieldOfViewAdapter();
+			}
+			@Override
+			public Adapter caseScene(Scene object) {
+				return createSceneAdapter();
+			}
+			@Override
+			public Adapter caseClassMap(Map.Entry<String, String> object) {
+				return createClassMapAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -166,6 +188,76 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCoordinatesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.CamConfig <em>Cam Config</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.traficam.CamConfig
+	 * @generated
+	 */
+	public Adapter createCamConfigAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Calibration <em>Calibration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.traficam.Calibration
+	 * @generated
+	 */
+	public Adapter createCalibrationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.FieldOfView <em>Field Of View</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.traficam.FieldOfView
+	 * @generated
+	 */
+	public Adapter createFieldOfViewAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Scene <em>Scene</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.traficam.Scene
+	 * @generated
+	 */
+	public Adapter createSceneAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Class Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createClassMapAdapter() {
 		return null;
 	}
 

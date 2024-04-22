@@ -49,5 +49,33 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/heading3d"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Coordinates/heading3dConfidence"/>
     </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//CamConfig">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//CamConfig/calibration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//CamConfig/location"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference traficam.ecore#//CamConfig/fieldOfView"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//CamConfig/scene"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//CamConfig/classMap"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//Calibration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Calibration/focalDistance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Calibration/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Calibration/panAngle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Calibration/rollAngle"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//Calibration/tiltAngle"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//FieldOfView">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//FieldOfView/hfov"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//FieldOfView/vfov"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//Scene">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//Scene/leftBottom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//Scene/leftTop"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//Scene/rightBottom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference traficam.ecore#//Scene/rightTop"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//ClassMap">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ClassMap/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ClassMap/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
