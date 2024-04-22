@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -26,6 +25,8 @@ import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingContext;
 import org.gecko.osgi.messaging.MessagingService;
 import org.gecko.osgi.messaging.SimpleMessagingContextBuilder;
+import org.gecko.util.pushstream.OptionPushStreamContext;
+import org.gecko.util.pushstream.PushStreamConstants;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.component.ComponentServiceObjects;
 import org.osgi.service.component.annotations.Activate;
@@ -34,9 +35,8 @@ import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
-import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushStream;
-import org.osgi.util.pushstream.ThresholdPushbackPolicy;
+import org.osgi.util.pushstream.QueuePolicyOption;
 
 /**
  * Forwards messages from the incomming topics, to the ones that people are
@@ -102,16 +102,22 @@ public class MQTTBridge {
 		outputOptions = readOption(properties, "outputOptions.");
 
 		emSubscribe = new ArrayList<>();
+		
+		Map<String, Object> pushOptions = Map.of(
+				PushStreamConstants.PROP_BUFFER_SIZE, 32,
+				PushStreamConstants.PROP_PARALLELISM, 4,
+				PushStreamConstants.PROP_QUEUE_POLICY_OPTION, QueuePolicyOption.BLOCK,
+				PushStreamConstants.PROP_EXECUTOR, Executors.newCachedThreadPool());
+		
+		
 		MessagingContext messagingContext = new SimpleMessagingContextBuilder()
-				.withPushbackPolicy(ThresholdPushbackPolicy.createSimpleThresholdPushbackPolicy(2000))
-				.withExecutor(Executors.newCachedThreadPool()).withParallelism(4)
-				.withBufferQueue(new ArrayBlockingQueue<PushEvent<? extends Message>>(4000)).build();
+				.withPushstreamContext(new OptionPushStreamContext<>(pushOptions))
+				.build();
 		Arrays.asList(config.topics()).forEach(topic -> {
 			readMessagingService = messagingServiceRead.getService();
 			try {
 				logger.log(Level.INFO, "Connecting to " + topic);
 				PushStream<Message> subscribe = readMessagingService.subscribe(topic, messagingContext);
-
 				subscribe.onError(e -> logger.log(Level.ERROR, "Error in Pushstream for topic " + topic, e));
 				subscribe.forEach(this::forward);
 				emSubscribe.add(subscribe);
@@ -139,6 +145,8 @@ public class MQTTBridge {
 		}
 		return result;
 	}
+	
+//	AtomicLong counter = new AtomicLong(0);
 
 	public void forward(Message message) {
 		String topic = message.topic();
@@ -155,10 +163,10 @@ public class MQTTBridge {
 			int sender = current.getAndUpdate(i -> {
 				return ++i == senders.size() ? 0 : i;
 			});
-//			System.out.println(sender  + " - Forwarding from  " + topic + " to " + forwardTopic);
 			context.setRetained(retained);
 			ByteBuffer inPayload = message.payload();
 			ByteBuffer outPayload = topic.endsWith("/lifesign")? inPayload : convertPayload(inPayload);
+//			System.out.println(counter.incrementAndGet()  + " - Forwarding from  " + topic + " to " + forwardTopic + " with size: " + outPayload.capacity());
 			senders.get(sender).publish(forwardTopic, outPayload, context);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Could not forward message from " + topic + " to " + forwardTopic, e);

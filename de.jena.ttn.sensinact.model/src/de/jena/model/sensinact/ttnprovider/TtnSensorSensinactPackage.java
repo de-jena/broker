@@ -131,6 +131,24 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	int ABSTRACT_TTN_PROVIDER_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TTN_PROVIDER___GET_SERVICE__STRING = ProviderPackage.PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_TTN_PROVIDER___GET_SERVICE_ECLASS__STRING = ProviderPackage.PROVIDER___GET_SERVICE_ECLASS__STRING;
+
+	/**
 	 * The number of operations of the '<em>Abstract Ttn Provider</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -202,6 +220,24 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int TTN_SENSOR_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_SENSOR___GET_SERVICE__STRING = ProviderPackage.PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_SENSOR___GET_SERVICE_ECLASS__STRING = ProviderPackage.PROVIDER___GET_SERVICE_ECLASS__STRING;
 
 	/**
 	 * The number of operations of the '<em>Ttn Sensor</em>' class.
@@ -515,6 +551,24 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	int TTN_NOISE_SENSOR_FEATURE_COUNT = ABSTRACT_TTN_PROVIDER_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_NOISE_SENSOR___GET_SERVICE__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_NOISE_SENSOR___GET_SERVICE_ECLASS__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE_ECLASS__STRING;
+
+	/**
 	 * The number of operations of the '<em>Ttn Noise Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,6 +733,24 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	int TTN_TEMPERATURE_SENSOR_FEATURE_COUNT = ABSTRACT_TTN_PROVIDER_FEATURE_COUNT + 1;
 
 	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_TEMPERATURE_SENSOR___GET_SERVICE__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_TEMPERATURE_SENSOR___GET_SERVICE_ECLASS__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE_ECLASS__STRING;
+
+	/**
 	 * The number of operations of the '<em>Ttn Temperature Sensor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -814,6 +886,24 @@ public interface TtnSensorSensinactPackage extends org.eclipse.emf.ecore.EPackag
 	 * @ordered
 	 */
 	int TTN_SOIL_MOISTURE_SENSOR_FEATURE_COUNT = ABSTRACT_TTN_PROVIDER_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Service</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_SOIL_MOISTURE_SENSOR___GET_SERVICE__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Service EClass</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TTN_SOIL_MOISTURE_SENSOR___GET_SERVICE_ECLASS__STRING = ABSTRACT_TTN_PROVIDER___GET_SERVICE_ECLASS__STRING;
 
 	/**
 	 * The number of operations of the '<em>Ttn Soil Moisture Sensor</em>' class.
