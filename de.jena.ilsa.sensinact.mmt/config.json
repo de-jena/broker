@@ -1,0 +1,1215 @@
+{
+	"eClass": "http://jena.de/udp/trafficos/trafficlight/1.1.1#//TLConfiguration",
+	"intersectionId": "K440",
+	"intersectionName": "Felsenkeller",
+	"location": [
+		{
+			"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+			"latitude": 11.581308, 
+			"longitude": 50.921032
+		}
+	],
+	"modules": [
+		{
+			"id": "6426ee356280c369c0d6177b",
+			"address": 1,
+			"signals": [
+				{
+					"id": "K1/1",
+					"channel": "a",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.920902
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "1"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581172244021019,
+												50.92088465493745
+											],
+											[
+												11.580962930409413,
+												50.92061489009322
+											],
+											[
+												11.581001692189915,
+												50.920604627269256
+											],
+											[
+												11.58107223862865,
+												50.920704811881905
+											],
+											[
+												11.581209455329883,
+												50.92087145995427
+											],
+											[
+												11.581172244021019,
+												50.92088465493745
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K1"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"id": "K1/2",
+					"channel": "b",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "1"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581172244021019,
+												50.92088465493745
+											],
+											[
+												11.580962930409413,
+												50.92061489009322
+											],
+											[
+												11.581001692189915,
+												50.920604627269256
+											],
+											[
+												11.58107223862865,
+												50.920704811881905
+											],
+											[
+												11.581209455329883,
+												50.92087145995427
+											],
+											[
+												11.581172244021019,
+												50.92088465493745
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K1"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee356280c369c0d6ab",
+			"address": 3,
+			"signals": [
+				{
+					"id": "F1/1",
+					"channel": "a",
+					"signalType": "RED_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "F",
+									"signal_id": "1"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581098596629147,
+												50.920928638193146
+											],
+											[
+												11.581221083854246,
+												50.920888075863616
+											],
+											[
+												11.58124744186469,
+												50.92091837543839
+											],
+											[
+												11.5811203032261,
+												50.92096089254997
+											],
+											[
+												11.581098596629147,
+												50.920928638193146
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "F1"
+					},
+					"positions": [
+						0,
+						2
+					]
+				},
+				{
+					"id": "BLN1/1",
+					"channel": "b",
+					"signalType": "ORIENTATION_SOUND",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BLN1"
+					},
+					"positions": [
+						2
+					]
+				},
+				{
+					"id": "SIK1/1",
+					"channel": "c",
+					"signalType": "SIGNAL_IS_COMING",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "SIK1"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "HT1/2",
+					"channel": "c",
+					"signalType": "BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "HT1"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "BT1/2",
+					"channel": "c",
+					"signalType": "BLIND_BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BT1"
+					},
+					"positions": [
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee356280c369c0d6178a",
+			"address": 4,
+			"signals": [
+				{
+					"id": "K2/2",
+					"channel": "a",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "2"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.58113348224191,
+												50.920897849916884
+											],
+											[
+												11.581024174022701,
+												50.92077029829224
+											],
+											[
+												11.580921842922919,
+												50.92062808514913
+											],
+											[
+												11.580961379939225,
+												50.92061537879917
+											],
+											[
+												11.581173019256767,
+												50.920886121046436
+											],
+											[
+												11.58113348224191,
+												50.920897849916884
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K2"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee356280c369ad6179b",
+			"address": 5,
+			"signals": [
+				{
+					"id": "F1/2",
+					"channel": "a",
+					"signalType": "RED_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "F",
+									"signal_id": "1"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581098596629147,
+												50.920928638193146
+											],
+											[
+												11.581221083854246,
+												50.920888075863616
+											],
+											[
+												11.58124744186469,
+												50.92091837543839
+											],
+											[
+												11.5811203032261,
+												50.92096089254997
+											],
+											[
+												11.581098596629147,
+												50.920928638193146
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "F1"
+					},
+					"positions": [
+						0,
+						2
+					]
+				},
+				{
+					"id": "BLN1/2",
+					"channel": "b",
+					"signalType": "ORIENTATION_SOUND",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BLN1"
+					},
+					"positions": [
+						2
+					]
+				},
+				{
+					"id": "SIK1/2",
+					"channel": "c",
+					"signalType": "SIGNAL_IS_COMING",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "SIK1"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "HT1/1",
+					"channel": "c",
+					"signalType": "BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "HT1"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "BT1/1",
+					"channel": "c",
+					"signalType": "BLIND_BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BT1"
+					},
+					"positions": [
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee352280c369c0d6177e",
+			"address": 6,
+			"signals": [
+				{
+					"id": "K3/1",
+					"channel": "a",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581118,
+							"longitude": 50.921037
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "3"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.58111359198287,
+												50.9210907716226
+											],
+											[
+												11.58049747377666,
+												50.92129680139212
+											],
+											[
+												11.580469869914992,
+												50.921270699698084
+											],
+											[
+												11.5810942692801,
+												50.92106397376466
+											],
+											[
+												11.58111359198287,
+												50.9210907716226
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K3"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"id": "Bli2",
+					"channel": "b",
+					"signalType": "BLINKING",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581118,
+							"longitude": 50.921037
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "Bli2"
+					},
+					"positions": [
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": "6426eea56280c369c0d61780",
+			"address": 7,
+			"signals": [
+				{
+					"id": "RF2/1",
+					"channel": "a",
+					"signalType": "RED_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581118,
+							"longitude": 50.921037
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "RF",
+									"signal_id": "2"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581174804340378,
+												50.92114749250047
+											],
+											[
+												11.581092406951655,
+												50.92103629166223
+											],
+											[
+												11.581132445119607,
+												50.921015807268105
+											],
+											[
+												11.58123631225098,
+												50.92114163983149
+											],
+											[
+												11.581174804340378,
+												50.92114749250047
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "RF2"
+					},
+					"positions": [
+						0,
+						2
+					]
+				},
+				{
+					"id": "BLN2/1",
+					"channel": "b",
+					"signalType": "ORIENTATION_SOUND",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581118,
+							"longitude": 50.921037
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BLN2"
+					},
+					"positions": [
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee35f280c369c0d6179a",
+			"address": 8,
+			"signals": [
+				{
+					"id": "K3/2",
+					"channel": "a",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581108,
+							"longitude": 50.920949
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "3"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.58111359198287,
+												50.9210907716226
+											],
+											[
+												11.58049747377666,
+												50.92129680139212
+											],
+											[
+												11.580469869914992,
+												50.921270699698084
+											],
+											[
+												11.5810942692801,
+												50.92106397376466
+											],
+											[
+												11.58111359198287,
+												50.9210907716226
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K3"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee356280c369c0d9ab",
+			"address": 11,
+			"signals": [
+				{
+					"id": "RF3/1",
+					"channel": "a",
+					"signalType": "RED_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "RF",
+									"signal_id": "3"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581350041018055,
+												50.921183244297964
+											],
+											[
+												11.58131050400172,
+												50.921157831897375
+											],
+											[
+												11.581420587456762,
+												50.921121668072885
+											],
+											[
+												11.581443069289548,
+												50.92115245619581
+											],
+											[
+												11.581350041018055,
+												50.921183244297964
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "RF3"
+					},
+					"positions": [
+						0,
+						2
+					]
+				},
+				{
+					"id": "BLN3/1",
+					"channel": "b",
+					"signalType": "ORIENTATION_SOUND",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BLN3"
+					},
+					"positions": [
+						2
+					]
+				},
+				{
+					"id": "SIK3/1",
+					"channel": "c",
+					"signalType": "SIGNAL_IS_COMING",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "SIK3"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "HT3/2",
+					"channel": "c",
+					"signalType": "BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "HT3"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "BT3/2",
+					"channel": "c",
+					"signalType": "BLIND_BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BT3"
+					},
+					"positions": [
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee356280c369c1d9ab",
+			"address": 12,
+			"signals": [
+				{
+					"id": "RF3/2",
+					"channel": "a",
+					"signalType": "RED_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "RF",
+									"signal_id": "3"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581350041018055,
+												50.921183244297964
+											],
+											[
+												11.58131050400172,
+												50.921157831897375
+											],
+											[
+												11.581420587456762,
+												50.921121668072885
+											],
+											[
+												11.581443069289548,
+												50.92115245619581
+											],
+											[
+												11.581350041018055,
+												50.921183244297964
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "RF3"
+					},
+					"positions": [
+						0,
+						2
+					]
+				},
+				{
+					"id": "BLN3/2",
+					"channel": "b",
+					"signalType": "ORIENTATION_SOUND",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BLN3"
+					},
+					"positions": [
+						2
+					]
+				},
+				{
+					"id": "SIK3/2",
+					"channel": "c",
+					"signalType": "SIGNAL_IS_COMING",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "SIK3"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "HT3/1",
+					"channel": "c",
+					"signalType": "BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "HT3"
+					},
+					"positions": [
+						0
+					]
+				},
+				{
+					"id": "BT3/1",
+					"channel": "c",
+					"signalType": "BLIND_BUTTON",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.9209022
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+						]
+					},
+					"signalGroup": {
+						"id": "BT3"
+					},
+					"positions": [
+						1
+					]
+				}
+			]
+		},
+		{
+			"id": "6426ee456280c369c0d6177b",
+			"address": 10,
+			"signals": [
+				{
+					"id": "K4/1",
+					"channel": "a",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581255,
+							"longitude": 50.920902
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "4"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581362758845728,
+												50.92119925415841
+											],
+											[
+												11.581410823453098,
+												50.921182149665384
+											],
+											[
+												11.581541063033455,
+												50.92134146555577
+											],
+											[
+												11.581496874603744,
+												50.9213561264998
+											],
+											[
+												11.581362758845728,
+												50.92119925415841
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K4"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"id": "K4/2",
+					"channel": "b",
+					"signalType": "RED_AMBER_GREEN",
+					"location": [
+						{
+							"eClass": "http://jena.de/udp/trafficos/common/1.1.1#//Position",
+							"latitude": 11.581216,
+							"longitude": 50.920914
+						}
+					],
+					"observedArea": {
+						"type": "FeatureCollection",
+						"features": [
+							{
+								"type": "Feature",
+								"properties": {
+									"signal_type": "K",
+									"signal_id": "4"
+								},
+								"geometry": {
+									"eClass": "http://datainmotion.com/emf/geojson/1.0#//Polygon",
+									"coordinates": [
+										[
+											[
+												11.581362758845728,
+												50.92119925415841
+											],
+											[
+												11.581410823453098,
+												50.921182149665384
+											],
+											[
+												11.581541063033455,
+												50.92134146555577
+											],
+											[
+												11.581496874603744,
+												50.9213561264998
+											],
+											[
+												11.581362758845728,
+												50.92119925415841
+											]
+										]
+									],
+									"type": "Polygon"
+								}
+							}
+						]
+					},
+					"signalGroup": {
+						"id": "K4"
+					},
+					"positions": [
+						0,
+						1,
+						2
+					]
+				}
+			]
+		}
+	]
+}

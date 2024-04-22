@@ -1,0 +1,25 @@
+#-includeresource: \
+#	transformations=transformations,\
+#	OSGI-INF/configurator/=configs/
+Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
+
+-buildpath: \
+	org.eclipse.m2m.qvt.oml,\
+	org.osgi.service.component.annotations;version=latest,\
+	de.jena.ilsa.sensinact.model,\
+	org.gecko.qvt.osgi.api,\
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.osgi.service.condition,\
+	com.fasterxml.jackson.core.jackson-annotations;version=latest,\
+	de.jena.udp.trafficos.trafficlight.model,\
+	org.osgi.service.component,\
+	org.gecko.emf.json,\
+	de.jena.udp.trafficos.common.model,\
+	org.osgi.util.promise,\
+	org.eclipse.sensinact.gateway.core.api,\
+	org.eclipse.sensinact.gateway.core.models.metadata,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.eclipse.sensinact.gateway.northbound.session.session-api,\
+	org.eclipse.sensinact.gateway.northbound.session.session-impl
+	
+-library: enable-emf

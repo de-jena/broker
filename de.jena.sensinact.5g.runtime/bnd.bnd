@@ -31,4 +31,6 @@
 	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-client,\
 	org.eclipse.sensinact.gateway.southbound.mqtt.mqtt-device-factory,\
 	org.eclipse.sensinact.gateway.southbound.virtual.virtual-temperature-sensor,\
-	org.locationtech.spatial4j
+	org.locationtech.spatial4j,\
+	org.eclipse.sensinact.gateway.northbound.session.session-impl,\
+	org.eclipse.sensinact.gateway.northbound.session.session-api

@@ -1,0 +1,51 @@
+#-runfw: org.apache.felix.framework;version=5
+#-runee: JavaSE-1.8
+
+-runprovidedcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+
+-runbundles: \
+	de.jena.ilsa.sensinact.mmt;version=snapshot,\
+	org.apache.felix.cm.json;version='[2.0.0,2.0.1)',\
+	org.apache.felix.configurator;version='[1.0.18,1.0.19)',\
+	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
+	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
+	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\
+	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
+	org.eclipse.parsson.jakarta.json;version='[1.1.5,1.1.6)',\
+	org.osgi.service.component;version='[1.5.1,1.5.2)',\
+	org.osgi.util.converter;version='[1.0.9,1.0.10)',\
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	org.osgi.util.promise;version='[1.3.0,1.3.1)',\
+	com.fasterxml.jackson.core.jackson-annotations;version='[2.16.0,2.16.1)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.16.0,2.16.1)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.16.0,2.16.1)',\
+	de.jena.ilsa.sensinact.model;version=snapshot,\
+	de.jena.udp.trafficos.common.model;version='[1.2.0,1.2.1)',\
+	de.jena.udp.trafficos.trafficlight.model;version='[1.2.0,1.2.1)',\
+	org.eclipse.emf.common;version='[2.29.0,2.29.1)',\
+	org.eclipse.emf.ecore;version='[2.35.0,2.35.1)',\
+	org.eclipse.emf.ecore.xmi;version='[2.36.0,2.36.1)',\
+	org.eclipse.sensinact.gateway.core.geo-json;version='[0.0.2,0.0.3)',\
+	org.gecko.emf.osgi.api;version='[6.1.1,6.1.2)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-properties;version='[2.14.1,2.14.2)',\
+	com.fasterxml.jackson.dataformat.jackson-dataformat-yaml;version='[2.14.1,2.14.2)',\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310;version='[2.16.0,2.16.1)',\
+	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
+	org.eclipse.emfcloud.emfjson-jackson;version='[2.2.0,2.2.1)',\
+	org.gecko.emf.json;version='[1.5.1,1.5.2)',\
+	org.gecko.emf.osgi.component.config;version='[6.1.1,6.1.2)',\
+	org.gecko.emf.osgi.component.minimal;version='[6.1.1,6.1.2)',\
+	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
+	org.eclipse.sensinact.gateway.core.annotation;version='[0.0.2,0.0.3)',\
+	org.eclipse.sensinact.gateway.core.api;version='[0.0.2,0.0.3)',\
+	de.jena.sensinact.udp.runtime.config.local;version=snapshot
+
+-runrequires: \
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.shell)',\
+	osgi.identity;filter:='(osgi.identity=org.apache.felix.gogo.command)',\
+	bnd.identity;id='de.jena.ilsa.sensinact.mmt',\
+	bnd.identity;id='de.jena.sensinact.udp.runtime.config.local'
+-runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
+-runee: JavaSE-17

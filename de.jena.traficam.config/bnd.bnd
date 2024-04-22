@@ -2,13 +2,32 @@
 	org.osgi.service.component.annotations,\
 	org.osgi.service.cm,\
 	com.fasterxml.jackson.core.jackson-core,\
-	com.fasterxml.jackson.core.jackson-databind
+	com.fasterxml.jackson.core.jackson-databind,\
+	org.gecko.osgi.messaging,\
+	org.gecko.emf.json,\
+	de.jena.traficam.api,\
+	org.osgi.service.metatype.annotations,\
+	de.jena.traficam.model,\
+	org.eclipse.emf.ecore,\
+	org.eclipse.emf.common,\
+	org.osgi.service.component,\
+	org.gecko.emf.osgi.api,\
+	org.gecko.adapter.mqtt,\
+	org.eclipse.jetty.websocket.client,\
+	org.eclipse.jetty.websocket.api,\
+	org.apache.felix.http.jetty
 
 -testpath: \
 	${junit}
 
 javac.source: 17
 javac.target: 17
+
+
+-includepackage de.jena.traficam.api
+
+#-includeresource.config: \
+#	OSGI-INF/configurator/=config/
 
 Bundle-Version: 0.0.0.${tstamp}
 Private-Package: de.jena.traficam.config

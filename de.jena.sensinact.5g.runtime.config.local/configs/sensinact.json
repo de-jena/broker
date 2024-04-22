@@ -1,0 +1,12 @@
+{
+    ":configurator:resource-version": 1,
+    ":configurator:symbolic-name": "org.eclipse.sensinact.gateway.configuration",
+    ":configurator:version": "0.0.1",
+    "sensinact.northbound.rest": {
+        "allow.anonymous": true,
+        "osgi.jakartars.whiteboard.target": "(osgi.jakartars.name=sensiNact.rest)"
+    },
+    "sensinact.session.manager": {
+    	"auth.policy": "ALLOW_ALL"
+    }
+}

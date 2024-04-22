@@ -1,0 +1,12 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MMTMainConfig",
+	
+	"QVTModelTransformator~ttncat": {
+		"transformator.id": "Ilsa2SensinactIlsapi",
+		"qvt.template.path": "de.jena.ilsa.sensinact.mmt/transformations/ilsa.qvto",
+		"qvt.model.target": "(&(emf.name=ilsa)(emf.name=ilsaprovider))"
+		
+	}
+}
