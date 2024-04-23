@@ -1,5 +1,151 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1713253871904">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="Local" increment="1713511094627">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="&quot;EPL 2.0&quot;;link=&quot;http://www.eclipse.org/legal/epl-2.0&quot;;description=&quot;Except for 3rd party content and examples.&quot;"/>
+      <attribute name="copyright" value="Copyright (c) (2024) Contributors to the Eclipse Foundation."/>
+      <attribute name="osgi.identity" value="org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway"/>
+      <attribute name="documentation" value="https://projects.eclipse.org/projects/technology.sensinact/northbound/sensorthings/rest.gateway"/>
+      <attribute name="description" value="This reactor contains northbound connectors that are used to interact with sensiNact"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="0.0.2.202404181935" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="0.0.2.202404181935" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="0.0.2.202404181935" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="56109" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway/org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway-0.0.2.jar"/>
+      <attribute name="osgi.content" value="C51AD81E0BCF5948DA687FB81B622B4E43AF9B6835E3EA1033DA3EFBB90F5ECC"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="uses" value="jakarta.ws.rs.core"/>
+      <attribute name="objectClass" value="jakarta.ws.rs.core.Application" type="List&lt;String&gt;"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.core)(version&gt;=2.16.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.fasterxml.jackson.core"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.fasterxml.jackson.databind)(version&gt;=2.16.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.fasterxml.jackson.databind"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.ws.rs)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.ws.rs"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.ws.rs.container)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.ws.rs.container"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.ws.rs.core)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.ws.rs.core"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.ws.rs.ext)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.ws.rs.ext"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.annotation)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time.temporal)"/>
+      <attribute name="osgi.wiring.package" value="java.time.temporal"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.core.snapshot)(version&gt;=0.2.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.core.snapshot"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.core.twin)(version&gt;=0.2.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.core.twin"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.gateway.geojson)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.gateway.geojson"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.northbound.filters.api)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.northbound.filters.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.northbound.filters.sensorthings)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.northbound.filters.sensorthings"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.northbound.security.api)(version&gt;=0.2.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.northbound.security.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.northbound.session)(version&gt;=0.2.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.northbound.session"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.sensorthings.sensing.dto)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.sensorthings.sensing.dto"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.sensorthings.sensing.rest)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.sensorthings.sensing.rest"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.sensinact.sensorthings.sensing.rest.annotation)(version&gt;=0.0.0)(!(version&gt;=1.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.sensinact.sensorthings.sensing.rest.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=11))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.component)(version&gt;=1.5.0)(!(version&gt;=2.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.implementation">
+      <directive name="filter" value="(&amp;(osgi.implementation=osgi.jakartars)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.eclipse.sensinact.northbound.filters.sensorthings.ISensorthingsFilterParser)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+    <requirement namespace="osgi.service">
+      <directive name="filter" value="(objectClass=org.eclipse.sensinact.northbound.session.SensiNactSessionManager)"/>
+      <directive name="effective" value="active"/>
+    </requirement>
+  </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="https://www.apache.org/licenses/LICENSE-2.0.txt"/>

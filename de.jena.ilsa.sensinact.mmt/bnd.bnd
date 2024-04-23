@@ -20,6 +20,16 @@ Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 	org.eclipse.sensinact.gateway.core.models.metadata,\
 	org.eclipse.sensinact.gateway.core.models.provider,\
 	org.eclipse.sensinact.gateway.northbound.session.session-api,\
-	org.eclipse.sensinact.gateway.northbound.session.session-impl
+	org.eclipse.sensinact.gateway.northbound.session.session-impl,\
+	org.eclipse.sensinact.gateway.core.emf-api,\
+	org.eclipse.sensinact.gateway.core.annotation;version=latest,\
+	com.fasterxml.jackson.core.jackson-databind,\
+	org.osgi.util.pushstream,\
+	org.gecko.osgi.messaging,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	org.osgi.util.function
+	
 	
 -library: enable-emf
+
+-includeresource: transformations=transformations

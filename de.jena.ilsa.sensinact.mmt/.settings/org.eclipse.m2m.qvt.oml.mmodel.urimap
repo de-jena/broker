@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="https://model.data.jena.de/sensinact/ilsa/1.0" targetURI="platform:/resource/de.jena.ilsa.sensinact.model/model/ilsa.ecore"/>
+  <mapping sourceURI="http://jena.de/udp/trafficos/trafficlight/1.1.1" targetURI="platform:/resource/de.jena.udp.trafficos.trafficlight.model/model/tos-trafficlight.ecore"/>
+  <mapping sourceURI="https://eclipse.org/sensinact/core/provider/1.0" targetURI="platform:/resource/org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore"/>
+</uriMap:MappingContainer>
