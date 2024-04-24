@@ -35,7 +35,9 @@ import org.gecko.qvt.osgi.annotations.TemplatePath;
 import org.gecko.qvt.osgi.annotations.TransformatorId;
 import org.gecko.qvt.osgi.annotations.UnitQualifiedName;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
+import de.jena.ilsa.sensinact.model.ilsa.IlsaPackage;
 import de.jena.udp.model.geojson.GeojsonPackage;
 
 /**
@@ -51,6 +53,13 @@ import de.jena.udp.model.geojson.GeojsonPackage;
 @TemplatePath("de.jena.ilsa.sensinact.mmt/transformations/ilsa.qvto")
 @Module(packageURIs={GeojsonPackage.eNS_URI, ProviderPackage.eNS_URI})
 public final class GeoJsonBlackBox {
+	
+	@Reference
+	GeojsonPackage geoJsonPackage;
+	@Reference
+	ProviderPackage providerPackage;
+	@Reference
+	IlsaPackage ilsaPackage;
 	
 	@Operation(contextual = true, description = "Converts from GeoJson into Sensorthing Feature Collections")
 	public static FeatureCollection convertToFeatureCollection(de.jena.udp.model.geojson.GeoJSON sarea) {

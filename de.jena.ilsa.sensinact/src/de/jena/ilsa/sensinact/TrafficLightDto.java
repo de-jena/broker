@@ -15,22 +15,27 @@ import java.time.temporal.ChronoUnit;
 
 import org.eclipse.sensinact.core.annotation.dto.Data;
 import org.eclipse.sensinact.core.annotation.dto.Model;
+import org.eclipse.sensinact.core.annotation.dto.ModelPackageUri;
 import org.eclipse.sensinact.core.annotation.dto.Provider;
 import org.eclipse.sensinact.core.annotation.dto.Resource;
 import org.eclipse.sensinact.core.annotation.dto.Service;
 import org.eclipse.sensinact.core.annotation.dto.Timestamp;
 
+import de.jena.ilsa.sensinact.model.ilsa.IlsaPackage;
+
+@ModelPackageUri(IlsaPackage.eNS_URI)
 @Service("data")
+@Model("Ilsa")
 public class TrafficLightDto {
 
-	@Model
-	public String model;
+//	@Model
+//	public String model = "Ilsa";
 
 	@Provider
 	public String intersection;
 
 	@Service
-	public String signalGroup;
+	public String signal;
 
 	@Resource
 	public String resource;

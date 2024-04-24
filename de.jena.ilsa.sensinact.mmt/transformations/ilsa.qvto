@@ -30,7 +30,7 @@ mapping ILSA::TLSignal::toSignalMapEntry(): PROVIDER::ServiceMap {
 
 mapping ILSA::TLSignal::toSignal(): SENSINACT::Signal {
 	type :=  self.signalType.toString();
-	oberservedArea := self.observedArea.convertToFeatureCollection();
+	observedArea := self.observedArea.convertToFeatureCollection();
 
 }
 

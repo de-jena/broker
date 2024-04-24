@@ -20,7 +20,7 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getColor <em>Color</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getType <em>Type</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getSignalGroup <em>Signal Group</em>}</li>
- *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea <em>Oberserved Area</em>}</li>
+ *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getObservedArea <em>Observed Area</em>}</li>
  * </ul>
  *
  * @see de.jena.ilsa.sensinact.model.ilsa.IlsaPackage#getSignal()
@@ -96,26 +96,26 @@ public interface Signal extends Service {
 	void setSignalGroup(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Oberserved Area</b></em>' attribute.
+	 * Returns the value of the '<em><b>Observed Area</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Oberserved Area</em>' attribute.
-	 * @see #setOberservedArea(GeoJsonObject)
-	 * @see de.jena.ilsa.sensinact.model.ilsa.IlsaPackage#getSignal_OberservedArea()
+	 * @return the value of the '<em>Observed Area</em>' attribute.
+	 * @see #setObservedArea(GeoJsonObject)
+	 * @see de.jena.ilsa.sensinact.model.ilsa.IlsaPackage#getSignal_ObservedArea()
 	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
 	 *        annotation="Metadata sensorthings.observedArea='true'"
 	 * @generated
 	 */
-	GeoJsonObject getOberservedArea();
+	GeoJsonObject getObservedArea();
 
 	/**
-	 * Sets the value of the '{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getOberservedArea <em>Oberserved Area</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.ilsa.sensinact.model.ilsa.Signal#getObservedArea <em>Observed Area</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Oberserved Area</em>' attribute.
-	 * @see #getOberservedArea()
+	 * @param value the new value of the '<em>Observed Area</em>' attribute.
+	 * @see #getObservedArea()
 	 * @generated
 	 */
-	void setOberservedArea(GeoJsonObject value);
+	void setObservedArea(GeoJsonObject value);
 
 } // Signal

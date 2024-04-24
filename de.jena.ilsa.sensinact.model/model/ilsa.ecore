@@ -23,7 +23,7 @@
         <details key="sensorthings.unit.name" value="Signalgruppe"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oberservedArea" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="observedArea" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject">
       <eAnnotations source="Metadata">
         <details key="sensorthings.observedArea" value="true"/>
       </eAnnotations>

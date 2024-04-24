@@ -26,7 +26,7 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getColor <em>Color</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getType <em>Type</em>}</li>
  *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getSignalGroup <em>Signal Group</em>}</li>
- *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getOberservedArea <em>Oberserved Area</em>}</li>
+ *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl#getObservedArea <em>Observed Area</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,24 +93,24 @@ public class SignalImpl extends ServiceImpl implements Signal {
 	protected String signalGroup = SIGNAL_GROUP_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getOberservedArea() <em>Oberserved Area</em>}' attribute.
+	 * The default value of the '{@link #getObservedArea() <em>Observed Area</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOberservedArea()
+	 * @see #getObservedArea()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final GeoJsonObject OBERSERVED_AREA_EDEFAULT = null;
+	protected static final GeoJsonObject OBSERVED_AREA_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getOberservedArea() <em>Oberserved Area</em>}' attribute.
+	 * The cached value of the '{@link #getObservedArea() <em>Observed Area</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOberservedArea()
+	 * @see #getObservedArea()
 	 * @generated
 	 * @ordered
 	 */
-	protected GeoJsonObject oberservedArea = OBERSERVED_AREA_EDEFAULT;
+	protected GeoJsonObject observedArea = OBSERVED_AREA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -206,8 +206,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 	 * @generated
 	 */
 	@Override
-	public GeoJsonObject getOberservedArea() {
-		return oberservedArea;
+	public GeoJsonObject getObservedArea() {
+		return observedArea;
 	}
 
 	/**
@@ -216,11 +216,11 @@ public class SignalImpl extends ServiceImpl implements Signal {
 	 * @generated
 	 */
 	@Override
-	public void setOberservedArea(GeoJsonObject newOberservedArea) {
-		GeoJsonObject oldOberservedArea = oberservedArea;
-		oberservedArea = newOberservedArea;
+	public void setObservedArea(GeoJsonObject newObservedArea) {
+		GeoJsonObject oldObservedArea = observedArea;
+		observedArea = newObservedArea;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IlsaPackage.SIGNAL__OBERSERVED_AREA, oldOberservedArea, oberservedArea));
+			eNotify(new ENotificationImpl(this, Notification.SET, IlsaPackage.SIGNAL__OBSERVED_AREA, oldObservedArea, observedArea));
 	}
 
 	/**
@@ -237,8 +237,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 				return getType();
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				return getSignalGroup();
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				return getOberservedArea();
+			case IlsaPackage.SIGNAL__OBSERVED_AREA:
+				return getObservedArea();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -260,8 +260,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				setSignalGroup((String)newValue);
 				return;
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				setOberservedArea((GeoJsonObject)newValue);
+			case IlsaPackage.SIGNAL__OBSERVED_AREA:
+				setObservedArea((GeoJsonObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,8 +284,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				setSignalGroup(SIGNAL_GROUP_EDEFAULT);
 				return;
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				setOberservedArea(OBERSERVED_AREA_EDEFAULT);
+			case IlsaPackage.SIGNAL__OBSERVED_AREA:
+				setObservedArea(OBSERVED_AREA_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -305,8 +305,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case IlsaPackage.SIGNAL__SIGNAL_GROUP:
 				return SIGNAL_GROUP_EDEFAULT == null ? signalGroup != null : !SIGNAL_GROUP_EDEFAULT.equals(signalGroup);
-			case IlsaPackage.SIGNAL__OBERSERVED_AREA:
-				return OBERSERVED_AREA_EDEFAULT == null ? oberservedArea != null : !OBERSERVED_AREA_EDEFAULT.equals(oberservedArea);
+			case IlsaPackage.SIGNAL__OBSERVED_AREA:
+				return OBSERVED_AREA_EDEFAULT == null ? observedArea != null : !OBSERVED_AREA_EDEFAULT.equals(observedArea);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,8 +327,8 @@ public class SignalImpl extends ServiceImpl implements Signal {
 		result.append(type);
 		result.append(", signalGroup: ");
 		result.append(signalGroup);
-		result.append(", oberservedArea: ");
-		result.append(oberservedArea);
+		result.append(", observedArea: ");
+		result.append(observedArea);
 		result.append(')');
 		return result.toString();
 	}
