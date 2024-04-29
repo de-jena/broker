@@ -11,6 +11,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.sensinact.model.core.provider.Admin;
 import org.eclipse.sensinact.model.core.provider.DynamicProvider;
 import org.eclipse.sensinact.model.core.provider.Provider;
 import org.eclipse.sensinact.model.core.provider.Service;
@@ -80,6 +81,10 @@ public class IlsaAdapterFactory extends AdapterFactoryImpl {
 				return createSignalAdapter();
 			}
 			@Override
+			public Adapter caseThermal(Thermal object) {
+				return createThermalAdapter();
+			}
+			@Override
 			public Adapter caseProvider(Provider object) {
 				return createProviderAdapter();
 			}
@@ -90,6 +95,10 @@ public class IlsaAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseService(Service object) {
 				return createServiceAdapter();
+			}
+			@Override
+			public Adapter caseAdmin(Admin object) {
+				return createAdminAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -140,6 +149,20 @@ public class IlsaAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.ilsa.sensinact.model.ilsa.Thermal <em>Thermal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.ilsa.sensinact.model.ilsa.Thermal
+	 * @generated
+	 */
+	public Adapter createThermalAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Provider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -178,6 +201,20 @@ public class IlsaAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createServiceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Admin <em>Admin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.sensinact.model.core.provider.Admin
+	 * @generated
+	 */
+	public Adapter createAdminAdapter() {
 		return null;
 	}
 

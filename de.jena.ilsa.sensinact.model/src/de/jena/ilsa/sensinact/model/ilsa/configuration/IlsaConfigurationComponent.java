@@ -35,7 +35,7 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "IlsaConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.ilsa.sensinact.model.ilsa.util.IlsaResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.ilsa.sensinact.model.ilsa.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.ilsa.sensinact.model.ilsa.util.IlsaResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource$Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.ilsa.sensinact.model.ilsa.util\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.ilsa.sensinact.model.ilsa.IlsaFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.ilsa.sensinact.model.ilsa\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.ilsa.sensinact.model.ilsa.IlsaPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.ilsa.sensinact.model.ilsa\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.ilsa.sensinact.model.ilsa\"" })

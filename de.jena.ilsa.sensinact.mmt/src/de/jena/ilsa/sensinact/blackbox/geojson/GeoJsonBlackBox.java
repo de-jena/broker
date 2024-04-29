@@ -47,7 +47,7 @@ import de.jena.udp.model.geojson.GeojsonPackage;
  */
 @Component(service = {GeoJsonBlackBox.class})
 @QvtBlackbox
-@TransformatorId("TLSTraficLightToIlsa")
+@TransformatorId("TLSTrafficLightToIlsa")
 @ModuleName("LocationToGeoJsonBlackbox")
 @UnitQualifiedName("LocationToGeoJsonBlackbox")
 @TemplatePath("de.jena.ilsa.sensinact.mmt/transformations/ilsa.qvto")

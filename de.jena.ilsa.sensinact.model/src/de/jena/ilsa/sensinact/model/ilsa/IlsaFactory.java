@@ -43,6 +43,15 @@ public interface IlsaFactory extends EFactory {
 	Signal createSignal();
 
 	/**
+	 * Returns a new object of class '<em>Thermal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thermal</em>'.
+	 * @generated
+	 */
+	Thermal createThermal();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

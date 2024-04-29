@@ -5,6 +5,7 @@ package de.jena.ilsa.sensinact.model.ilsa;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
@@ -111,13 +112,22 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	int ILSA__SERVICES = ProviderPackage.DYNAMIC_PROVIDER__SERVICES;
 
 	/**
+	 * The feature id for the '<em><b>Thermal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ILSA__THERMAL = ProviderPackage.DYNAMIC_PROVIDER_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Ilsa</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ILSA_FEATURE_COUNT = ProviderPackage.DYNAMIC_PROVIDER_FEATURE_COUNT + 0;
+	int ILSA_FEATURE_COUNT = ProviderPackage.DYNAMIC_PROVIDER_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get Service</em>' operation.
@@ -228,6 +238,97 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	 */
 	int SIGNAL_OPERATION_COUNT = ProviderPackage.SERVICE_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link de.jena.ilsa.sensinact.model.ilsa.impl.ThermalImpl <em>Thermal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.ilsa.sensinact.model.ilsa.impl.ThermalImpl
+	 * @see de.jena.ilsa.sensinact.model.ilsa.impl.IlsaPackageImpl#getThermal()
+	 * @generated
+	 */
+	int THERMAL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Metadata</b></em>' map.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__METADATA = ProviderPackage.ADMIN__METADATA;
+
+	/**
+	 * The feature id for the '<em><b>Friendly Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__FRIENDLY_NAME = ProviderPackage.ADMIN__FRIENDLY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Location</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__LOCATION = ProviderPackage.ADMIN__LOCATION;
+
+	/**
+	 * The feature id for the '<em><b>Model Package Uri</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__MODEL_PACKAGE_URI = ProviderPackage.ADMIN__MODEL_PACKAGE_URI;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__MODEL = ProviderPackage.ADMIN__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Temperature</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL__TEMPERATURE = ProviderPackage.ADMIN_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Thermal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL_FEATURE_COUNT = ProviderPackage.ADMIN_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>EIs Set</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL___EIS_SET__ESTRUCTURALFEATURE = ProviderPackage.ADMIN___EIS_SET__ESTRUCTURALFEATURE;
+
+	/**
+	 * The number of operations of the '<em>Thermal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THERMAL_OPERATION_COUNT = ProviderPackage.ADMIN_OPERATION_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.ilsa.sensinact.model.ilsa.Ilsa <em>Ilsa</em>}'.
@@ -238,6 +339,17 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 */
 	EClass getIlsa();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.jena.ilsa.sensinact.model.ilsa.Ilsa#getThermal <em>Thermal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Thermal</em>'.
+	 * @see de.jena.ilsa.sensinact.model.ilsa.Ilsa#getThermal()
+	 * @see #getIlsa()
+	 * @generated
+	 */
+	EReference getIlsa_Thermal();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.ilsa.sensinact.model.ilsa.Signal <em>Signal</em>}'.
@@ -294,6 +406,27 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getSignal_ObservedArea();
 
 	/**
+	 * Returns the meta object for class '{@link de.jena.ilsa.sensinact.model.ilsa.Thermal <em>Thermal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thermal</em>'.
+	 * @see de.jena.ilsa.sensinact.model.ilsa.Thermal
+	 * @generated
+	 */
+	EClass getThermal();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.ilsa.sensinact.model.ilsa.Thermal#getTemperature <em>Temperature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Temperature</em>'.
+	 * @see de.jena.ilsa.sensinact.model.ilsa.Thermal#getTemperature()
+	 * @see #getThermal()
+	 * @generated
+	 */
+	EAttribute getThermal_Temperature();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -325,6 +458,14 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EClass ILSA = eINSTANCE.getIlsa();
+
+		/**
+		 * The meta object literal for the '<em><b>Thermal</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ILSA__THERMAL = eINSTANCE.getIlsa_Thermal();
 
 		/**
 		 * The meta object literal for the '{@link de.jena.ilsa.sensinact.model.ilsa.impl.SignalImpl <em>Signal</em>}' class.
@@ -367,6 +508,24 @@ public interface IlsaPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EAttribute SIGNAL__OBSERVED_AREA = eINSTANCE.getSignal_ObservedArea();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.ilsa.sensinact.model.ilsa.impl.ThermalImpl <em>Thermal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.ilsa.sensinact.model.ilsa.impl.ThermalImpl
+		 * @see de.jena.ilsa.sensinact.model.ilsa.impl.IlsaPackageImpl#getThermal()
+		 * @generated
+		 */
+		EClass THERMAL = eINSTANCE.getThermal();
+
+		/**
+		 * The meta object literal for the '<em><b>Temperature</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THERMAL__TEMPERATURE = eINSTANCE.getThermal_Temperature();
 
 	}
 

@@ -24,22 +24,41 @@ import org.eclipse.sensinact.core.annotation.dto.Timestamp;
 import de.jena.ilsa.sensinact.model.ilsa.IlsaPackage;
 
 @ModelPackageUri(IlsaPackage.eNS_URI)
-@Service("data")
 @Model("Ilsa")
 public class TrafficLightDto {
 
-//	@Model
-//	public String model = "Ilsa";
+	/**
+	 * Creates a new instance.
+	 * 
+	 * @param intersectionId
+	 * @param id
+	 * @param state
+	 */
+	public TrafficLightDto(String intersectionId, String id, String state) {
+		intersection = intersectionId;
+		signal = id;
+		data = state;
+	}
 
 	@Provider
 	public String intersection;
 
 	@Service
 	public String signal;
+//	
+//	@Service
+//	EClass serviceClass = IlsaPackage.Literals.SIGNAL;
 
-	@Resource
-	public String resource;
+//	@Service
+//	EReference serviceRef = IlsaPackage.Literals.ILSA__THERMAL;
 
+//	@Resource
+//	EAttribute res = IlsaPackage.Literals.SIGNAL__COLOR;
+
+//	@Resource
+//	public String resource = "color";
+
+	@Resource("color")
 	@Data
 	public String data;
 

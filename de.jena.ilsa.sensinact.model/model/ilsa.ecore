@@ -5,7 +5,9 @@
   <eAnnotations source="Version">
     <details key="value" value="1.0"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Ilsa" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//DynamicProvider"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ilsa" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//DynamicProvider">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thermal" eType="#//Thermal"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Signal" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//Service">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="Metadata">
@@ -28,5 +30,8 @@
         <details key="sensorthings.observedArea" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Thermal" eSuperTypes="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//Admin">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="temperature" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -2,49 +2,57 @@
  */
 package de.jena.ilsa.sensinact.model.ilsa.impl;
 
-import de.jena.ilsa.sensinact.model.ilsa.Ilsa;
 import de.jena.ilsa.sensinact.model.ilsa.IlsaPackage;
 import de.jena.ilsa.sensinact.model.ilsa.Thermal;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.sensinact.model.core.provider.impl.DynamicProviderImpl;
+import org.eclipse.sensinact.model.core.provider.impl.AdminImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Ilsa</b></em>'.
+ * An implementation of the model object '<em><b>Thermal</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.IlsaImpl#getThermal <em>Thermal</em>}</li>
+ *   <li>{@link de.jena.ilsa.sensinact.model.ilsa.impl.ThermalImpl#getTemperature <em>Temperature</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
+public class ThermalImpl extends AdminImpl implements Thermal {
 	/**
-	 * The cached value of the '{@link #getThermal() <em>Thermal</em>}' reference.
+	 * The default value of the '{@link #getTemperature() <em>Temperature</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getThermal()
+	 * @see #getTemperature()
 	 * @generated
 	 * @ordered
 	 */
-	protected Thermal thermal;
+	protected static final double TEMPERATURE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getTemperature() <em>Temperature</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTemperature()
+	 * @generated
+	 * @ordered
+	 */
+	protected double temperature = TEMPERATURE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IlsaImpl() {
+	protected ThermalImpl() {
 		super();
 	}
 
@@ -55,7 +63,7 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IlsaPackage.Literals.ILSA;
+		return IlsaPackage.Literals.THERMAL;
 	}
 
 	/**
@@ -64,25 +72,8 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	 * @generated
 	 */
 	@Override
-	public Thermal getThermal() {
-		if (thermal != null && thermal.eIsProxy()) {
-			InternalEObject oldThermal = (InternalEObject)thermal;
-			thermal = (Thermal)eResolveProxy(oldThermal);
-			if (thermal != oldThermal) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, IlsaPackage.ILSA__THERMAL, oldThermal, thermal));
-			}
-		}
-		return thermal;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Thermal basicGetThermal() {
-		return thermal;
+	public double getTemperature() {
+		return temperature;
 	}
 
 	/**
@@ -91,11 +82,11 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	 * @generated
 	 */
 	@Override
-	public void setThermal(Thermal newThermal) {
-		Thermal oldThermal = thermal;
-		thermal = newThermal;
+	public void setTemperature(double newTemperature) {
+		double oldTemperature = temperature;
+		temperature = newTemperature;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, IlsaPackage.ILSA__THERMAL, oldThermal, thermal));
+			eNotify(new ENotificationImpl(this, Notification.SET, IlsaPackage.THERMAL__TEMPERATURE, oldTemperature, temperature));
 	}
 
 	/**
@@ -106,9 +97,8 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case IlsaPackage.ILSA__THERMAL:
-				if (resolve) return getThermal();
-				return basicGetThermal();
+			case IlsaPackage.THERMAL__TEMPERATURE:
+				return getTemperature();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,8 +111,8 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case IlsaPackage.ILSA__THERMAL:
-				setThermal((Thermal)newValue);
+			case IlsaPackage.THERMAL__TEMPERATURE:
+				setTemperature((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +126,8 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case IlsaPackage.ILSA__THERMAL:
-				setThermal((Thermal)null);
+			case IlsaPackage.THERMAL__TEMPERATURE:
+				setTemperature(TEMPERATURE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -151,10 +141,26 @@ public class IlsaImpl extends DynamicProviderImpl implements Ilsa {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case IlsaPackage.ILSA__THERMAL:
-				return thermal != null;
+			case IlsaPackage.THERMAL__TEMPERATURE:
+				return temperature != TEMPERATURE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //IlsaImpl
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (temperature: ");
+		result.append(temperature);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ThermalImpl

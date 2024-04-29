@@ -8,12 +8,17 @@
   <foreignModel>ilsa.ecore</foreignModel>
   <genPackages prefix="Ilsa" basePackage="de.jena.ilsa.sensinact.model" resource="XMI"
       disposableProviderFactory="true" ecorePackage="ilsa.ecore#/">
-    <genClasses ecoreClass="ilsa.ecore#//Ilsa"/>
+    <genClasses ecoreClass="ilsa.ecore#//Ilsa">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ilsa.ecore#//Ilsa/thermal"/>
+    </genClasses>
     <genClasses ecoreClass="ilsa.ecore#//Signal">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ilsa.ecore#//Signal/color"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ilsa.ecore#//Signal/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ilsa.ecore#//Signal/signalGroup"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ilsa.ecore#//Signal/observedArea"/>
+    </genClasses>
+    <genClasses ecoreClass="ilsa.ecore#//Thermal">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ilsa.ecore#//Thermal/temperature"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

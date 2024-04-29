@@ -58,6 +58,7 @@ public class IlsaFactoryImpl extends EFactoryImpl implements IlsaFactory {
 		switch (eClass.getClassifierID()) {
 			case IlsaPackage.ILSA: return createIlsa();
 			case IlsaPackage.SIGNAL: return createSignal();
+			case IlsaPackage.THERMAL: return createThermal();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -83,6 +84,17 @@ public class IlsaFactoryImpl extends EFactoryImpl implements IlsaFactory {
 	public Signal createSignal() {
 		SignalImpl signal = new SignalImpl();
 		return signal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Thermal createThermal() {
+		ThermalImpl thermal = new ThermalImpl();
+		return thermal;
 	}
 
 	/**

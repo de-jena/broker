@@ -6,10 +6,12 @@ import de.jena.ilsa.sensinact.model.ilsa.Ilsa;
 import de.jena.ilsa.sensinact.model.ilsa.IlsaFactory;
 import de.jena.ilsa.sensinact.model.ilsa.IlsaPackage;
 import de.jena.ilsa.sensinact.model.ilsa.Signal;
+import de.jena.ilsa.sensinact.model.ilsa.Thermal;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -35,6 +37,13 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 	 * @generated
 	 */
 	private EClass signalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass thermalEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -115,6 +124,16 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getIlsa_Thermal() {
+		return (EReference)ilsaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSignal() {
 		return signalEClass;
 	}
@@ -165,6 +184,26 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getThermal() {
+		return thermalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThermal_Temperature() {
+		return (EAttribute)thermalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public IlsaFactory getIlsaFactory() {
 		return (IlsaFactory)getEFactoryInstance();
 	}
@@ -189,12 +228,16 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 
 		// Create classes and their features
 		ilsaEClass = createEClass(ILSA);
+		createEReference(ilsaEClass, ILSA__THERMAL);
 
 		signalEClass = createEClass(SIGNAL);
 		createEAttribute(signalEClass, SIGNAL__COLOR);
 		createEAttribute(signalEClass, SIGNAL__TYPE);
 		createEAttribute(signalEClass, SIGNAL__SIGNAL_GROUP);
 		createEAttribute(signalEClass, SIGNAL__OBSERVED_AREA);
+
+		thermalEClass = createEClass(THERMAL);
+		createEAttribute(thermalEClass, THERMAL__TEMPERATURE);
 	}
 
 	/**
@@ -230,15 +273,20 @@ public class IlsaPackageImpl extends EPackageImpl implements IlsaPackage {
 		// Add supertypes to classes
 		ilsaEClass.getESuperTypes().add(theProviderPackage.getDynamicProvider());
 		signalEClass.getESuperTypes().add(theProviderPackage.getService());
+		thermalEClass.getESuperTypes().add(theProviderPackage.getAdmin());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ilsaEClass, Ilsa.class, "Ilsa", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIlsa_Thermal(), this.getThermal(), null, "thermal", null, 0, 1, Ilsa.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(signalEClass, Signal.class, "Signal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSignal_Color(), ecorePackage.getEString(), "color", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSignal_Type(), ecorePackage.getEString(), "type", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSignal_SignalGroup(), ecorePackage.getEString(), "signalGroup", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSignal_ObservedArea(), theProviderPackage.getEGeoJsonObject(), "observedArea", null, 0, 1, Signal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(thermalEClass, Thermal.class, "Thermal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThermal_Temperature(), ecorePackage.getEDouble(), "temperature", null, 0, 1, Thermal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
