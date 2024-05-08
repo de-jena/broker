@@ -41,14 +41,17 @@ public class TrafiCamDto {
 	@Service
 	public EClass serviceEClass = TraficamproviderPackage.Literals.OBSERVED_OBJECTS;
 
-	@Service("admin")
-	public GeoJsonObject viewport;
-
 	@Service
 	public String serviceName = "objects";
 
+	@Service("admin")
+	public GeoJsonObject location;
+
 	@Data
 	public int classification;
+
+	@Data
+	public GeoJsonObject viewport;
 
 	@Data
 	public String classificationName;

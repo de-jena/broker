@@ -67,6 +67,7 @@ public class TrafiCam {
 	public void activate() {
 		try {
 			subscription = messaging.subscribe(TOPIC + "#");
+//			subscription
 			subscription.forEachEvent(this::handle);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error subscribing mqtt {0}.\n{1}", TOPIC, e);
@@ -122,6 +123,7 @@ public class TrafiCam {
 			String className = getClassName(camId, classId);
 			FeatureCollection geo = createFeatureCollection(tc);
 			TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
+			dto.location = createLocation(camId);
 			dto.viewport = createFeatureCollection(camId);
 			Promise<?> promise = sensiNact.pushUpdate(dto);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
@@ -177,6 +179,28 @@ public class TrafiCam {
 	private FeatureCollection createFeatureCollection(TrafiCamObject tc) {
 		FeatureCollection geo = new FeatureCollection();
 		GpsCoordinates gps = tc.getGpsCoordinates().get(0);
+		if (gps == null) {
+			return geo;
+		}
+		Feature f = new Feature();
+		Point point = new Point();
+		point.coordinates = new Coordinates();
+		point.coordinates.latitude = gps.getLatitude();
+		point.coordinates.longitude = gps.getLongitude();
+		f.geometry = point;
+		geo.features.add(f);
+		return geo;
+	}
+
+	private FeatureCollection createLocation(String camId) {
+		FeatureCollection geo = new FeatureCollection();
+		CamConfig camConfig = configs.get(camId);
+		if (camConfig == null) {
+			logger.log(Level.WARNING, "Warn: configuration for {0} not loaded.", camId);
+			return geo;
+		}
+
+		GpsCoordinates gps = camConfig.getLocation();
 		if (gps == null) {
 			return geo;
 		}

@@ -26,6 +26,7 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassification <em>Classification</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getObjects <em>Objects</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassificationName <em>Classification Name</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getViewport <em>Viewport</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,6 +91,26 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * @ordered
 	 */
 	protected String classificationName = CLASSIFICATION_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getViewport() <em>Viewport</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewport()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final GeoJsonObject VIEWPORT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getViewport() <em>Viewport</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getViewport()
+	 * @generated
+	 * @ordered
+	 */
+	protected GeoJsonObject viewport = VIEWPORT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -178,6 +199,27 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public GeoJsonObject getViewport() {
+		return viewport;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setViewport(GeoJsonObject newViewport) {
+		GeoJsonObject oldViewport = viewport;
+		viewport = newViewport;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT, oldViewport, viewport));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -187,6 +229,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 				return getObjects();
 			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
 				return getClassificationName();
+			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
+				return getViewport();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,6 +251,9 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 				return;
 			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
 				setClassificationName((String)newValue);
+				return;
+			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
+				setViewport((GeoJsonObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -229,6 +276,9 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
 				setClassificationName(CLASSIFICATION_NAME_EDEFAULT);
 				return;
+			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
+				setViewport(VIEWPORT_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -247,6 +297,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 				return OBJECTS_EDEFAULT == null ? objects != null : !OBJECTS_EDEFAULT.equals(objects);
 			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
 				return CLASSIFICATION_NAME_EDEFAULT == null ? classificationName != null : !CLASSIFICATION_NAME_EDEFAULT.equals(classificationName);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
+				return VIEWPORT_EDEFAULT == null ? viewport != null : !VIEWPORT_EDEFAULT.equals(viewport);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,6 +319,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 		result.append(objects);
 		result.append(", classificationName: ");
 		result.append(classificationName);
+		result.append(", viewport: ");
+		result.append(viewport);
 		result.append(')');
 		return result.toString();
 	}

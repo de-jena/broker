@@ -202,22 +202,13 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	int TRAFICAM_ADMIN__MODEL = ProviderPackage.ADMIN__MODEL;
 
 	/**
-	 * The feature id for the '<em><b>Viewport</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRAFICAM_ADMIN__VIEWPORT = ProviderPackage.ADMIN_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Traficam Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAFICAM_ADMIN_FEATURE_COUNT = ProviderPackage.ADMIN_FEATURE_COUNT + 1;
+	int TRAFICAM_ADMIN_FEATURE_COUNT = ProviderPackage.ADMIN_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -284,13 +275,22 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	int OBSERVED_OBJECTS__CLASSIFICATION_NAME = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Viewport</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBSERVED_OBJECTS__VIEWPORT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Observed Objects</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVED_OBJECTS_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
+	int OBSERVED_OBJECTS_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -330,17 +330,6 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	 * @generated
 	 */
 	EClass getTraficamAdmin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin#getViewport <em>Viewport</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Viewport</em>'.
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin#getViewport()
-	 * @see #getTraficamAdmin()
-	 * @generated
-	 */
-	EAttribute getTraficamAdmin_Viewport();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects <em>Observed Objects</em>}'.
@@ -386,6 +375,17 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	EAttribute getObservedObjects_ClassificationName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Viewport</em>'.
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport()
+	 * @see #getObservedObjects()
+	 * @generated
+	 */
+	EAttribute getObservedObjects_Viewport();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -429,14 +429,6 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		EClass TRAFICAM_ADMIN = eINSTANCE.getTraficamAdmin();
 
 		/**
-		 * The meta object literal for the '<em><b>Viewport</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TRAFICAM_ADMIN__VIEWPORT = eINSTANCE.getTraficamAdmin_Viewport();
-
-		/**
 		 * The meta object literal for the '{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl <em>Observed Objects</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -469,6 +461,14 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		 * @generated
 		 */
 		EAttribute OBSERVED_OBJECTS__CLASSIFICATION_NAME = eINSTANCE.getObservedObjects_ClassificationName();
+
+		/**
+		 * The meta object literal for the '<em><b>Viewport</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OBSERVED_OBJECTS__VIEWPORT = eINSTANCE.getObservedObjects_Viewport();
 
 	}
 

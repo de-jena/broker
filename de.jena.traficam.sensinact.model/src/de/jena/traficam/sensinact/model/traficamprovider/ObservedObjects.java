@@ -20,6 +20,7 @@ import org.osgi.annotation.versioning.ProviderType;
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getObjects <em>Objects</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}</li>
  * </ul>
  *
  * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects()
@@ -93,5 +94,28 @@ public interface ObservedObjects extends Service {
 	 * @generated
 	 */
 	void setClassificationName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Viewport</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Viewport</em>' attribute.
+	 * @see #setViewport(GeoJsonObject)
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_Viewport()
+	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
+	 *        annotation="Metadata sensorthings.observedArea='true'"
+	 * @generated
+	 */
+	GeoJsonObject getViewport();
+
+	/**
+	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Viewport</em>' attribute.
+	 * @see #getViewport()
+	 * @generated
+	 */
+	void setViewport(GeoJsonObject value);
 
 } // ObservedObjects
