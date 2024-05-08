@@ -71,6 +71,42 @@ public interface TrafiCamFactory extends EFactory {
 	Coordinates createCoordinates();
 
 	/**
+	 * Returns a new object of class '<em>Cam Config</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Cam Config</em>'.
+	 * @generated
+	 */
+	CamConfig createCamConfig();
+
+	/**
+	 * Returns a new object of class '<em>Calibration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Calibration</em>'.
+	 * @generated
+	 */
+	Calibration createCalibration();
+
+	/**
+	 * Returns a new object of class '<em>Field Of View</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Field Of View</em>'.
+	 * @generated
+	 */
+	FieldOfView createFieldOfView();
+
+	/**
+	 * Returns a new object of class '<em>Scene</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Scene</em>'.
+	 * @generated
+	 */
+	Scene createScene();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

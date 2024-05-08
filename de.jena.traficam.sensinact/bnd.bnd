@@ -1,0 +1,26 @@
+-buildpath: \
+	org.eclipse.sensinact.gateway.core.api,\
+	org.eclipse.sensinact.gateway.core.impl,\
+	org.osgi.service.typedevent,\
+	org.osgi.service.event,\
+	org.osgi.service.component.annotations,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.eclipse.sensinact.gateway.core.annotation,\
+	org.gecko.osgi.messaging,\
+	de.jena.sensinact.mqtt.generic.message,\
+	org.osgi.service.component,\
+	org.gecko.emf.json,\
+	org.eclipse.sensinact.gateway.core.models.provider;version='0.0',\
+	com.fasterxml.jackson.core.jackson-databind,\
+	com.fasterxml.jackson.core.jackson-core,\
+	org.osgi.util.function,\
+	com.fasterxml.jackson.datatype.jackson-datatype-jsr310,\
+	org.eclipse.emfcloud.emfjson-jackson,\
+	org.gecko.qvt.osgi.api,\
+	de.jena.udp.trafficos.common.model,\
+	de.jena.traficam.model,\
+	de.jena.traficam.sensinact.model;version=latest,\
+	org.eclipse.sensinact.gateway.core.geo-json
+	
+-library: enable-emf

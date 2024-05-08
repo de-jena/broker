@@ -1,13 +1,18 @@
--buildpath: \
-	org.osgi.service.condition,\
-	org.eclipse.sensinact.gateway.core.models.provider;version=latest,\
-	org.eclipse.sensinact.gateway.core.geo-json
+-library: enable-emf
 
--testpath: \
-	${junit}
+-generate:\
+	model/traficam.genmodel;\
+		generate=geckoEMF;\
+		genmodel=model/traficam.genmodel;\
+		output=src
 
 javac.source: 17
 javac.target: 17
 
+-includeresource.model: model=model
+
 Bundle-Version: 0.0.0.${tstamp}
--privatepackage: de.jena.traficam.sensinact.model
+
+-buildpath: \
+	org.eclipse.sensinact.gateway.core.models.provider;version=latest,\
+	org.eclipse.sensinact.gateway.core.geo-json

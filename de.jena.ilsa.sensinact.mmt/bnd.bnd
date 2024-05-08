@@ -1,6 +1,3 @@
-#-includeresource: \
-#	transformations=transformations,\
-#	OSGI-INF/configurator/=configs/
 Require-Capability: osgi.extender;filter:='(osgi.extender=osgi.configurator)'
 
 -buildpath: \

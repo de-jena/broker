@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.traficam.sensinact.model/src" modelPluginID="de.jena.traficam.sensinact.model"
+    modelName="Traficam" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>traficam.ecore</foreignModel>
+  <genPackages prefix="Traficamprovider" basePackage="de.jena.traficam.sensinact.model"
+      disposableProviderFactory="true" ecorePackage="traficam.ecore#/">
+    <genClasses ecoreClass="traficam.ecore#//TraficamProvider"/>
+    <genClasses ecoreClass="traficam.ecore#//TraficamAdmin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TraficamAdmin/viewport"/>
+    </genClasses>
+    <genClasses ecoreClass="traficam.ecore#//ObservedObjects">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/objects"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classificationName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

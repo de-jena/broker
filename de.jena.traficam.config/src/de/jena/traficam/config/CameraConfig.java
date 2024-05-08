@@ -48,10 +48,19 @@ import de.jena.traficam.TrafiCamFactory;
 import de.jena.traficam.TrafiCamPackage;
 import de.jena.traficam.api.TrafiCamConfig;
 
+/**
+ * Reads traficam camera configuration via rest api calls and sends it to MQTT broker
+ * 
+ * @author grune
+ * @since Apr 23, 2024
+ */
 @RequireEMFJson
 @Component(configurationPid = "TrafiCamWSC", configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = TrafiCamConfig.class)
 public class CameraConfig {
+	/** _5G_CONFIG_TRAFICAM */
+	private static final String TOPIC_PREFIX = "5g/config/traficam/";
+
 	private static final Logger logger = System.getLogger(CameraConfig.class.getName());
 
 	private static final String CLASSMAP_PATH = "/classmap";
@@ -128,7 +137,7 @@ public class CameraConfig {
 			res.save(bao, null);
 			ByteBuffer buffer = ByteBuffer.wrap(bao.toByteArray());
 			MessagingContext ctx = new MQTTContextBuilder().retained().build();
-			messaging.publish("5g/config/traficam/" + id + "/retained", buffer, ctx);
+			messaging.publish(TOPIC_PREFIX + id + "/retained", buffer, ctx);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error writing intersection configuration from {0}.\n{1}", config, e);
 		}

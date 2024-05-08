@@ -1,20 +1,8 @@
 /**
- * Copyright (c) 2022 Contributors to the Eclipse Foundation.
- * 
- * This program and the accompanying materials are made
- * available under the terms of the Eclipse Public License 2.0
- * which is available at https://www.eclipse.org/legal/epl-2.0/
- * 
- * SPDX-License-Identifier: EPL-2.0
- * 
- * Contributors:
- *   Data In Motion - initial API and implementation 
  */
-package de.jena.traficam.util;
+package de.jena.traficam.sensinact.model.traficamprovider.util;
 
-import de.jena.traficam.*;
-
-import java.util.Map;
+import de.jena.traficam.sensinact.model.traficamprovider.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -23,22 +11,27 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.sensinact.model.core.provider.Admin;
+import org.eclipse.sensinact.model.core.provider.DynamicProvider;
+import org.eclipse.sensinact.model.core.provider.Provider;
+import org.eclipse.sensinact.model.core.provider.Service;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see de.jena.traficam.TrafiCamPackage
+ * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage
  * @generated
  */
-public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
+public class TraficamproviderAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TrafiCamPackage modelPackage;
+	protected static TraficamproviderPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -46,9 +39,9 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TrafiCamAdapterFactory() {
+	public TraficamproviderAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = TrafiCamPackage.eINSTANCE;
+			modelPackage = TraficamproviderPackage.eINSTANCE;
 		}
 	}
 
@@ -77,43 +70,35 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TrafiCamSwitch<Adapter> modelSwitch =
-		new TrafiCamSwitch<Adapter>() {
+	protected TraficamproviderSwitch<Adapter> modelSwitch =
+		new TraficamproviderSwitch<Adapter>() {
 			@Override
-			public Adapter caseTrafiCam(TrafiCam object) {
-				return createTrafiCamAdapter();
+			public Adapter caseTraficamProvider(TraficamProvider object) {
+				return createTraficamProviderAdapter();
 			}
 			@Override
-			public Adapter caseTrafiCamObject(TrafiCamObject object) {
-				return createTrafiCamObjectAdapter();
+			public Adapter caseTraficamAdmin(TraficamAdmin object) {
+				return createTraficamAdminAdapter();
 			}
 			@Override
-			public Adapter caseGpsCoordinates(GpsCoordinates object) {
-				return createGpsCoordinatesAdapter();
+			public Adapter caseObservedObjects(ObservedObjects object) {
+				return createObservedObjectsAdapter();
 			}
 			@Override
-			public Adapter caseCoordinates(Coordinates object) {
-				return createCoordinatesAdapter();
+			public Adapter caseProvider(Provider object) {
+				return createProviderAdapter();
 			}
 			@Override
-			public Adapter caseCamConfig(CamConfig object) {
-				return createCamConfigAdapter();
+			public Adapter caseDynamicProvider(DynamicProvider object) {
+				return createDynamicProviderAdapter();
 			}
 			@Override
-			public Adapter caseCalibration(Calibration object) {
-				return createCalibrationAdapter();
+			public Adapter caseService(Service object) {
+				return createServiceAdapter();
 			}
 			@Override
-			public Adapter caseFieldOfView(FieldOfView object) {
-				return createFieldOfViewAdapter();
-			}
-			@Override
-			public Adapter caseScene(Scene object) {
-				return createSceneAdapter();
-			}
-			@Override
-			public Adapter caseClassMap(Map.Entry<String, String> object) {
-				return createClassMapAdapter();
+			public Adapter caseAdmin(Admin object) {
+				return createAdminAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -136,128 +121,100 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.TrafiCam <em>Trafi Cam</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.sensinact.model.traficamprovider.TraficamProvider <em>Traficam Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.TrafiCam
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamProvider
 	 * @generated
 	 */
-	public Adapter createTrafiCamAdapter() {
+	public Adapter createTraficamProviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.TrafiCamObject <em>Object</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin <em>Traficam Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.TrafiCamObject
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin
 	 * @generated
 	 */
-	public Adapter createTrafiCamObjectAdapter() {
+	public Adapter createTraficamAdminAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.GpsCoordinates <em>Gps Coordinates</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects <em>Observed Objects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.GpsCoordinates
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects
 	 * @generated
 	 */
-	public Adapter createGpsCoordinatesAdapter() {
+	public Adapter createObservedObjectsAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Coordinates <em>Coordinates</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Provider <em>Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.Coordinates
+	 * @see org.eclipse.sensinact.model.core.provider.Provider
 	 * @generated
 	 */
-	public Adapter createCoordinatesAdapter() {
+	public Adapter createProviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.CamConfig <em>Cam Config</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.DynamicProvider <em>Dynamic Provider</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.CamConfig
+	 * @see org.eclipse.sensinact.model.core.provider.DynamicProvider
 	 * @generated
 	 */
-	public Adapter createCamConfigAdapter() {
+	public Adapter createDynamicProviderAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Calibration <em>Calibration</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Service <em>Service</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.Calibration
+	 * @see org.eclipse.sensinact.model.core.provider.Service
 	 * @generated
 	 */
-	public Adapter createCalibrationAdapter() {
+	public Adapter createServiceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.FieldOfView <em>Field Of View</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.sensinact.model.core.provider.Admin <em>Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.jena.traficam.FieldOfView
+	 * @see org.eclipse.sensinact.model.core.provider.Admin
 	 * @generated
 	 */
-	public Adapter createFieldOfViewAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link de.jena.traficam.Scene <em>Scene</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.jena.traficam.Scene
-	 * @generated
-	 */
-	public Adapter createSceneAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry <em>Class Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see java.util.Map.Entry
-	 * @generated
-	 */
-	public Adapter createClassMapAdapter() {
+	public Adapter createAdminAdapter() {
 		return null;
 	}
 
@@ -273,4 +230,4 @@ public class TrafiCamAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //TrafiCamAdapterFactory
+} //TraficamproviderAdapterFactory

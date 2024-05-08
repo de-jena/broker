@@ -12,13 +12,19 @@
  */
 package de.jena.traficam.impl;
 
+import de.jena.traficam.Calibration;
+import de.jena.traficam.CamConfig;
 import de.jena.traficam.Coordinates;
+import de.jena.traficam.FieldOfView;
 import de.jena.traficam.GpsCoordinates;
 import de.jena.traficam.MessagType;
+import de.jena.traficam.Scene;
 import de.jena.traficam.TrafiCam;
 import de.jena.traficam.TrafiCamFactory;
 import de.jena.traficam.TrafiCamObject;
 import de.jena.traficam.TrafiCamPackage;
+
+import java.util.Map;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -62,6 +68,41 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 	 * @generated
 	 */
 	private EClass coordinatesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass camConfigEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass calibrationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass fieldOfViewEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sceneEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass classMapEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -426,6 +467,236 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getCamConfig() {
+		return camConfigEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCamConfig_Calibration() {
+		return (EReference)camConfigEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCamConfig_Location() {
+		return (EReference)camConfigEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCamConfig_FieldOfView() {
+		return (EReference)camConfigEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCamConfig_Scene() {
+		return (EReference)camConfigEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCamConfig_ClassMap() {
+		return (EReference)camConfigEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCalibration() {
+		return calibrationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCalibration_FocalDistance() {
+		return (EAttribute)calibrationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCalibration_Height() {
+		return (EAttribute)calibrationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCalibration_PanAngle() {
+		return (EAttribute)calibrationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCalibration_RollAngle() {
+		return (EAttribute)calibrationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCalibration_TiltAngle() {
+		return (EAttribute)calibrationEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFieldOfView() {
+		return fieldOfViewEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFieldOfView_Hfov() {
+		return (EAttribute)fieldOfViewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFieldOfView_Vfov() {
+		return (EAttribute)fieldOfViewEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getScene() {
+		return sceneEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScene_LeftBottom() {
+		return (EReference)sceneEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScene_LeftTop() {
+		return (EReference)sceneEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScene_RightBottom() {
+		return (EReference)sceneEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScene_RightTop() {
+		return (EReference)sceneEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getClassMap() {
+		return classMapEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getClassMap_Key() {
+		return (EAttribute)classMapEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getClassMap_Value() {
+		return (EAttribute)classMapEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMessagType() {
 		return messagTypeEEnum;
 	}
@@ -491,6 +762,34 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		createEAttribute(coordinatesEClass, COORDINATES__Z);
 		createEAttribute(coordinatesEClass, COORDINATES__HEADING3D);
 		createEAttribute(coordinatesEClass, COORDINATES__HEADING3D_CONFIDENCE);
+
+		camConfigEClass = createEClass(CAM_CONFIG);
+		createEReference(camConfigEClass, CAM_CONFIG__CALIBRATION);
+		createEReference(camConfigEClass, CAM_CONFIG__LOCATION);
+		createEReference(camConfigEClass, CAM_CONFIG__FIELD_OF_VIEW);
+		createEReference(camConfigEClass, CAM_CONFIG__SCENE);
+		createEReference(camConfigEClass, CAM_CONFIG__CLASS_MAP);
+
+		calibrationEClass = createEClass(CALIBRATION);
+		createEAttribute(calibrationEClass, CALIBRATION__FOCAL_DISTANCE);
+		createEAttribute(calibrationEClass, CALIBRATION__HEIGHT);
+		createEAttribute(calibrationEClass, CALIBRATION__PAN_ANGLE);
+		createEAttribute(calibrationEClass, CALIBRATION__ROLL_ANGLE);
+		createEAttribute(calibrationEClass, CALIBRATION__TILT_ANGLE);
+
+		fieldOfViewEClass = createEClass(FIELD_OF_VIEW);
+		createEAttribute(fieldOfViewEClass, FIELD_OF_VIEW__HFOV);
+		createEAttribute(fieldOfViewEClass, FIELD_OF_VIEW__VFOV);
+
+		sceneEClass = createEClass(SCENE);
+		createEReference(sceneEClass, SCENE__LEFT_BOTTOM);
+		createEReference(sceneEClass, SCENE__LEFT_TOP);
+		createEReference(sceneEClass, SCENE__RIGHT_BOTTOM);
+		createEReference(sceneEClass, SCENE__RIGHT_TOP);
+
+		classMapEClass = createEClass(CLASS_MAP);
+		createEAttribute(classMapEClass, CLASS_MAP__KEY);
+		createEAttribute(classMapEClass, CLASS_MAP__VALUE);
 
 		// Create enums
 		messagTypeEEnum = createEEnum(MESSAG_TYPE);
@@ -558,6 +857,34 @@ public class TrafiCamPackageImpl extends EPackageImpl implements TrafiCamPackage
 		initEAttribute(getCoordinates_Z(), ecorePackage.getEDouble(), "z", null, 0, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoordinates_Heading3d(), ecorePackage.getEDouble(), "heading3d", null, 1, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCoordinates_Heading3dConfidence(), ecorePackage.getEShort(), "heading3dConfidence", null, 0, 1, Coordinates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(camConfigEClass, CamConfig.class, "CamConfig", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCamConfig_Calibration(), this.getCalibration(), null, "calibration", null, 0, 1, CamConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCamConfig_Location(), this.getGpsCoordinates(), null, "location", null, 0, 1, CamConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCamConfig_FieldOfView(), this.getFieldOfView(), null, "fieldOfView", null, 0, 1, CamConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCamConfig_Scene(), this.getScene(), null, "scene", null, 0, 1, CamConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCamConfig_ClassMap(), this.getClassMap(), null, "classMap", null, 0, -1, CamConfig.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(calibrationEClass, Calibration.class, "Calibration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCalibration_FocalDistance(), ecorePackage.getEDouble(), "focalDistance", null, 0, 1, Calibration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCalibration_Height(), ecorePackage.getEDouble(), "height", null, 0, 1, Calibration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCalibration_PanAngle(), ecorePackage.getEDouble(), "panAngle", null, 0, 1, Calibration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCalibration_RollAngle(), ecorePackage.getEDouble(), "rollAngle", null, 0, 1, Calibration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCalibration_TiltAngle(), ecorePackage.getEDouble(), "tiltAngle", null, 0, 1, Calibration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(fieldOfViewEClass, FieldOfView.class, "FieldOfView", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFieldOfView_Hfov(), ecorePackage.getEDouble(), "hfov", null, 0, 1, FieldOfView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFieldOfView_Vfov(), ecorePackage.getEDouble(), "vfov", null, 0, 1, FieldOfView.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sceneEClass, Scene.class, "Scene", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getScene_LeftBottom(), this.getGpsCoordinates(), null, "leftBottom", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScene_LeftTop(), this.getGpsCoordinates(), null, "leftTop", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScene_RightBottom(), this.getGpsCoordinates(), null, "rightBottom", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScene_RightTop(), this.getGpsCoordinates(), null, "rightTop", null, 0, 1, Scene.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(classMapEClass, Map.Entry.class, "ClassMap", !IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClassMap_Key(), ecorePackage.getEString(), "key", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClassMap_Value(), ecorePackage.getEString(), "value", null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(messagTypeEEnum, MessagType.class, "MessagType");
