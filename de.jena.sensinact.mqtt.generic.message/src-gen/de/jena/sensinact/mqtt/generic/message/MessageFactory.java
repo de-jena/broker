@@ -124,6 +124,15 @@ public interface MessageFactory extends EFactory {
 	PointValueUpdate createPointValueUpdate();
 
 	/**
+	 * Returns a new object of class '<em>Feature Collection Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Feature Collection Value Update</em>'.
+	 * @generated
+	 */
+	FeatureCollectionValueUpdate createFeatureCollectionValueUpdate();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

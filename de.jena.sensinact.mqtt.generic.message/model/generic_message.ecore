@@ -25,7 +25,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="EInstant" instanceClassName="java.time.Instant"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EInstant" instanceClassName="java.time.Instant">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="convert" value="return it.toString();"/>
+      <details key="create" value="return Instant.parse(it);"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanValueUpdate" eSuperTypes="#//UpdateMessage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
@@ -50,9 +55,24 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType ../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore#//EGeoJsonObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="EPoint" instanceClassName="org.eclipse.sensinact.gateway.geojson.Point"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EPoint" instanceClassName="org.eclipse.sensinact.gateway.geojson.Point">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="convert" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+      <details key="create" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Point.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PointValueUpdate" eSuperTypes="#//UpdateMessage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="#//EPoint"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="#//EPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="EFeatureCollection" instanceClassName="org.eclipse.sensinact.gateway.geojson.FeatureCollection">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="convert" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+      <details key="create" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureCollectionValueUpdate" eSuperTypes="#//UpdateMessage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="#//EFeatureCollection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="#//EFeatureCollection"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -6,6 +6,7 @@ import de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.IntegerValueUpdate;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Point;
 
 import org.eclipse.sensinact.model.core.provider.ProviderPackage;
@@ -126,6 +128,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass featureCollectionValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType eInstantEDataType = null;
 
 	/**
@@ -134,6 +143,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EDataType ePointEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eFeatureCollectionEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -527,6 +543,33 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getFeatureCollectionValueUpdate() {
+		return featureCollectionValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureCollectionValueUpdate_OldValue() {
+		return (EAttribute)featureCollectionValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFeatureCollectionValueUpdate_NewValue() {
+		return (EAttribute)featureCollectionValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getEInstant() {
 		return eInstantEDataType;
 	}
@@ -538,6 +581,15 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	public EDataType getEPoint() {
 		return ePointEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEFeatureCollection() {
+		return eFeatureCollectionEDataType;
 	}
 
 	/**
@@ -616,9 +668,14 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(pointValueUpdateEClass, POINT_VALUE_UPDATE__OLD_VALUE);
 		createEAttribute(pointValueUpdateEClass, POINT_VALUE_UPDATE__NEW_VALUE);
 
+		featureCollectionValueUpdateEClass = createEClass(FEATURE_COLLECTION_VALUE_UPDATE);
+		createEAttribute(featureCollectionValueUpdateEClass, FEATURE_COLLECTION_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(featureCollectionValueUpdateEClass, FEATURE_COLLECTION_VALUE_UPDATE__NEW_VALUE);
+
 		// Create data types
 		eInstantEDataType = createEDataType(EINSTANT);
 		ePointEDataType = createEDataType(EPOINT);
+		eFeatureCollectionEDataType = createEDataType(EFEATURE_COLLECTION);
 	}
 
 	/**
@@ -663,6 +720,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		bigDecimalValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		geoJsonObjectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		pointValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		featureCollectionValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(updateMessageEClass, UpdateMessage.class, "UpdateMessage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -713,9 +771,14 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getPointValueUpdate_OldValue(), this.getEPoint(), "oldValue", null, 0, 1, PointValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPointValueUpdate_NewValue(), this.getEPoint(), "newValue", null, 0, 1, PointValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(featureCollectionValueUpdateEClass, FeatureCollectionValueUpdate.class, "FeatureCollectionValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFeatureCollectionValueUpdate_OldValue(), this.getEFeatureCollection(), "oldValue", null, 0, 1, FeatureCollectionValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFeatureCollectionValueUpdate_NewValue(), this.getEFeatureCollection(), "newValue", null, 0, 1, FeatureCollectionValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(eInstantEDataType, Instant.class, "EInstant", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ePointEDataType, Point.class, "EPoint", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eFeatureCollectionEDataType, FeatureCollection.class, "EFeatureCollection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

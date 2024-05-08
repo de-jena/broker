@@ -116,6 +116,10 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createPointValueUpdateAdapter();
 			}
 			@Override
+			public Adapter caseFeatureCollectionValueUpdate(FeatureCollectionValueUpdate object) {
+				return createFeatureCollectionValueUpdateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -300,6 +304,20 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPointValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate <em>Feature Collection Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate
+	 * @generated
+	 */
+	public Adapter createFeatureCollectionValueUpdateAdapter() {
 		return null;
 	}
 

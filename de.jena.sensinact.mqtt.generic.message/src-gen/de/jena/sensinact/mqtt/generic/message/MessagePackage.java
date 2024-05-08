@@ -814,6 +814,70 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	int POINT_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link de.jena.sensinact.mqtt.generic.message.impl.FeatureCollectionValueUpdateImpl <em>Feature Collection Value Update</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.FeatureCollectionValueUpdateImpl
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getFeatureCollectionValueUpdate()
+	 * @generated
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE__TIMESTAMP = UPDATE_MESSAGE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Resource</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE__RESOURCE = UPDATE_MESSAGE__RESOURCE;
+
+	/**
+	 * The feature id for the '<em><b>Old Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE__OLD_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE__NEW_VALUE = UPDATE_MESSAGE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Feature Collection Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE_FEATURE_COUNT = UPDATE_MESSAGE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Feature Collection Value Update</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FEATURE_COLLECTION_VALUE_UPDATE_OPERATION_COUNT = UPDATE_MESSAGE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '<em>EInstant</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -821,7 +885,7 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEInstant()
 	 * @generated
 	 */
-	int EINSTANT = 12;
+	int EINSTANT = 13;
 
 	/**
 	 * The meta object id for the '<em>EPoint</em>' data type.
@@ -831,7 +895,17 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEPoint()
 	 * @generated
 	 */
-	int EPOINT = 13;
+	int EPOINT = 14;
+
+	/**
+	 * The meta object id for the '<em>EFeature Collection</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.sensinact.gateway.geojson.FeatureCollection
+	 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEFeatureCollection()
+	 * @generated
+	 */
+	int EFEATURE_COLLECTION = 15;
 
 
 	/**
@@ -1219,6 +1293,38 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getPointValueUpdate_NewValue();
 
 	/**
+	 * Returns the meta object for class '{@link de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate <em>Feature Collection Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Feature Collection Value Update</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate
+	 * @generated
+	 */
+	EClass getFeatureCollectionValueUpdate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate#getOldValue <em>Old Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Old Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate#getOldValue()
+	 * @see #getFeatureCollectionValueUpdate()
+	 * @generated
+	 */
+	EAttribute getFeatureCollectionValueUpdate_OldValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate#getNewValue <em>New Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Value</em>'.
+	 * @see de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate#getNewValue()
+	 * @see #getFeatureCollectionValueUpdate()
+	 * @generated
+	 */
+	EAttribute getFeatureCollectionValueUpdate_NewValue();
+
+	/**
 	 * Returns the meta object for data type '{@link java.time.Instant <em>EInstant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1239,6 +1345,17 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 */
 	EDataType getEPoint();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.sensinact.gateway.geojson.FeatureCollection <em>EFeature Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>EFeature Collection</em>'.
+	 * @see org.eclipse.sensinact.gateway.geojson.FeatureCollection
+	 * @model instanceClass="org.eclipse.sensinact.gateway.geojson.FeatureCollection"
+	 * @generated
+	 */
+	EDataType getEFeatureCollection();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1576,6 +1693,32 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 		EAttribute POINT_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getPointValueUpdate_NewValue();
 
 		/**
+		 * The meta object literal for the '{@link de.jena.sensinact.mqtt.generic.message.impl.FeatureCollectionValueUpdateImpl <em>Feature Collection Value Update</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.FeatureCollectionValueUpdateImpl
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getFeatureCollectionValueUpdate()
+		 * @generated
+		 */
+		EClass FEATURE_COLLECTION_VALUE_UPDATE = eINSTANCE.getFeatureCollectionValueUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Old Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_COLLECTION_VALUE_UPDATE__OLD_VALUE = eINSTANCE.getFeatureCollectionValueUpdate_OldValue();
+
+		/**
+		 * The meta object literal for the '<em><b>New Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FEATURE_COLLECTION_VALUE_UPDATE__NEW_VALUE = eINSTANCE.getFeatureCollectionValueUpdate_NewValue();
+
+		/**
 		 * The meta object literal for the '<em>EInstant</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1594,6 +1737,16 @@ public interface MessagePackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EDataType EPOINT = eINSTANCE.getEPoint();
+
+		/**
+		 * The meta object literal for the '<em>EFeature Collection</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.sensinact.gateway.geojson.FeatureCollection
+		 * @see de.jena.sensinact.mqtt.generic.message.impl.MessagePackageImpl#getEFeatureCollection()
+		 * @generated
+		 */
+		EDataType EFEATURE_COLLECTION = eINSTANCE.getEFeatureCollection();
 
 	}
 

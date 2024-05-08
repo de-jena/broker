@@ -12,6 +12,8 @@
         convert="return it.toString();"/>
     <genDataTypes ecoreDataType="generic_message.ecore#//EPoint" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Point.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
         convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+    <genDataTypes ecoreDataType="generic_message.ecore#//EFeatureCollection" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
+        convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
     <genClasses image="false" ecoreClass="generic_message.ecore#//UpdateMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/timestamp"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/resource"/>
@@ -59,6 +61,10 @@
     <genClasses ecoreClass="generic_message.ecore#//PointValueUpdate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//PointValueUpdate/oldValue"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//PointValueUpdate/newValue"/>
+    </genClasses>
+    <genClasses ecoreClass="generic_message.ecore#//FeatureCollectionValueUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//FeatureCollectionValueUpdate/oldValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//FeatureCollectionValueUpdate/newValue"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Point;
 
 /**
@@ -72,6 +73,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 			case MessagePackage.BIG_DECIMAL_VALUE_UPDATE: return createBigDecimalValueUpdate();
 			case MessagePackage.GEO_JSON_OBJECT_VALUE_UPDATE: return createGeoJsonObjectValueUpdate();
 			case MessagePackage.POINT_VALUE_UPDATE: return createPointValueUpdate();
+			case MessagePackage.FEATURE_COLLECTION_VALUE_UPDATE: return createFeatureCollectionValueUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,6 +91,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 				return createEInstantFromString(eDataType, initialValue);
 			case MessagePackage.EPOINT:
 				return createEPointFromString(eDataType, initialValue);
+			case MessagePackage.EFEATURE_COLLECTION:
+				return createEFeatureCollectionFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,6 +110,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 				return convertEInstantToString(eDataType, instanceValue);
 			case MessagePackage.EPOINT:
 				return convertEPointToString(eDataType, instanceValue);
+			case MessagePackage.EFEATURE_COLLECTION:
+				return convertEFeatureCollectionToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -226,6 +232,16 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public FeatureCollectionValueUpdate createFeatureCollectionValueUpdate() {
+		FeatureCollectionValueUpdateImpl featureCollectionValueUpdate = new FeatureCollectionValueUpdateImpl();
+		return featureCollectionValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Instant createEInstant(final String it) {
 		return Instant.parse(it);
 	}
@@ -291,6 +307,42 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 */
 	public String convertEPointToString(EDataType eDataType, Object instanceValue) {
 		return convertEPoint((Point)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureCollection createEFeatureCollection(final String it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FeatureCollection createEFeatureCollectionFromString(EDataType eDataType, String initialValue) {
+		return createEFeatureCollection(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEFeatureCollection(final FeatureCollection it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEFeatureCollectionToString(EDataType eDataType, Object instanceValue) {
+		return convertEFeatureCollection((FeatureCollection)instanceValue);
 	}
 
 	/**
