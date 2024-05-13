@@ -130,6 +130,15 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTraficamAdmin_Viewport() {
+		return (EAttribute)traficamAdminEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getObservedObjects() {
 		return observedObjectsEClass;
 	}
@@ -139,7 +148,7 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObservedObjects_Classification() {
+	public EAttribute getObservedObjects_Objects() {
 		return (EAttribute)observedObjectsEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -148,26 +157,8 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObservedObjects_Objects() {
+	public EAttribute getObservedObjects_Classification() {
 		return (EAttribute)observedObjectsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getObservedObjects_ClassificationName() {
-		return (EAttribute)observedObjectsEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getObservedObjects_Viewport() {
-		return (EAttribute)observedObjectsEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -201,12 +192,11 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 		traficamProviderEClass = createEClass(TRAFICAM_PROVIDER);
 
 		traficamAdminEClass = createEClass(TRAFICAM_ADMIN);
+		createEAttribute(traficamAdminEClass, TRAFICAM_ADMIN__VIEWPORT);
 
 		observedObjectsEClass = createEClass(OBSERVED_OBJECTS);
-		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__CLASSIFICATION);
 		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__OBJECTS);
-		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__CLASSIFICATION_NAME);
-		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__VIEWPORT);
+		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__CLASSIFICATION);
 	}
 
 	/**
@@ -248,12 +238,11 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 		initEClass(traficamProviderEClass, TraficamProvider.class, "TraficamProvider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(traficamAdminEClass, TraficamAdmin.class, "TraficamAdmin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTraficamAdmin_Viewport(), theProviderPackage.getEGeoJsonObject(), "viewport", null, 0, 1, TraficamAdmin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(observedObjectsEClass, ObservedObjects.class, "ObservedObjects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getObservedObjects_Classification(), ecorePackage.getEInt(), "classification", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getObservedObjects_Objects(), theProviderPackage.getEGeoJsonObject(), "objects", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getObservedObjects_ClassificationName(), ecorePackage.getEString(), "classificationName", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getObservedObjects_Viewport(), theProviderPackage.getEGeoJsonObject(), "viewport", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObservedObjects_Classification(), ecorePackage.getEString(), "classification", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -290,13 +279,7 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 	protected void createMetadataAnnotations() {
 		String source = "Metadata";
 		addAnnotation
-		  (getObservedObjects_ClassificationName(),
-		   source,
-		   new String[] {
-			   "sensorthings.unit.name", "Type"
-		   });
-		addAnnotation
-		  (getObservedObjects_Viewport(),
+		  (getTraficamAdmin_Viewport(),
 		   source,
 		   new String[] {
 			   "sensorthings.observedArea", "true"

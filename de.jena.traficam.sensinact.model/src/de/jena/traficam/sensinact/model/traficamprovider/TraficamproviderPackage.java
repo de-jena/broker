@@ -202,13 +202,22 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	int TRAFICAM_ADMIN__MODEL = ProviderPackage.ADMIN__MODEL;
 
 	/**
+	 * The feature id for the '<em><b>Viewport</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAFICAM_ADMIN__VIEWPORT = ProviderPackage.ADMIN_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Traficam Admin</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAFICAM_ADMIN_FEATURE_COUNT = ProviderPackage.ADMIN_FEATURE_COUNT + 0;
+	int TRAFICAM_ADMIN_FEATURE_COUNT = ProviderPackage.ADMIN_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -248,40 +257,22 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	int OBSERVED_OBJECTS__METADATA = ProviderPackage.SERVICE__METADATA;
 
 	/**
-	 * The feature id for the '<em><b>Classification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVED_OBJECTS__CLASSIFICATION = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Objects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVED_OBJECTS__OBJECTS = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
+	int OBSERVED_OBJECTS__OBJECTS = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Classification Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Classification</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVED_OBJECTS__CLASSIFICATION_NAME = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Viewport</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBSERVED_OBJECTS__VIEWPORT = ProviderPackage.SERVICE_FEATURE_COUNT + 3;
+	int OBSERVED_OBJECTS__CLASSIFICATION = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Observed Objects</em>' class.
@@ -290,7 +281,7 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVED_OBJECTS_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 4;
+	int OBSERVED_OBJECTS_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -332,6 +323,17 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	EClass getTraficamAdmin();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin#getViewport <em>Viewport</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Viewport</em>'.
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin#getViewport()
+	 * @see #getTraficamAdmin()
+	 * @generated
+	 */
+	EAttribute getTraficamAdmin_Viewport();
+
+	/**
 	 * Returns the meta object for class '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects <em>Observed Objects</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -340,17 +342,6 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	 * @generated
 	 */
 	EClass getObservedObjects();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Classification</em>'.
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification()
-	 * @see #getObservedObjects()
-	 * @generated
-	 */
-	EAttribute getObservedObjects_Classification();
 
 	/**
 	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getObjects <em>Objects</em>}'.
@@ -364,26 +355,15 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	EAttribute getObservedObjects_Objects();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Classification Name</em>'.
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName()
+	 * @return the meta object for the attribute '<em>Classification</em>'.
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification()
 	 * @see #getObservedObjects()
 	 * @generated
 	 */
-	EAttribute getObservedObjects_ClassificationName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Viewport</em>'.
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport()
-	 * @see #getObservedObjects()
-	 * @generated
-	 */
-	EAttribute getObservedObjects_Viewport();
+	EAttribute getObservedObjects_Classification();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -429,6 +409,14 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		EClass TRAFICAM_ADMIN = eINSTANCE.getTraficamAdmin();
 
 		/**
+		 * The meta object literal for the '<em><b>Viewport</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAFICAM_ADMIN__VIEWPORT = eINSTANCE.getTraficamAdmin_Viewport();
+
+		/**
 		 * The meta object literal for the '{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl <em>Observed Objects</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -439,14 +427,6 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		EClass OBSERVED_OBJECTS = eINSTANCE.getObservedObjects();
 
 		/**
-		 * The meta object literal for the '<em><b>Classification</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OBSERVED_OBJECTS__CLASSIFICATION = eINSTANCE.getObservedObjects_Classification();
-
-		/**
 		 * The meta object literal for the '<em><b>Objects</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -455,20 +435,12 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		EAttribute OBSERVED_OBJECTS__OBJECTS = eINSTANCE.getObservedObjects_Objects();
 
 		/**
-		 * The meta object literal for the '<em><b>Classification Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Classification</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBSERVED_OBJECTS__CLASSIFICATION_NAME = eINSTANCE.getObservedObjects_ClassificationName();
-
-		/**
-		 * The meta object literal for the '<em><b>Viewport</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OBSERVED_OBJECTS__VIEWPORT = eINSTANCE.getObservedObjects_Viewport();
+		EAttribute OBSERVED_OBJECTS__CLASSIFICATION = eINSTANCE.getObservedObjects_Classification();
 
 	}
 

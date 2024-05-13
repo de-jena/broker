@@ -17,10 +17,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getObjects <em>Objects</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}</li>
  * </ul>
  *
  * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects()
@@ -29,28 +27,6 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 public interface ObservedObjects extends Service {
-	/**
-	 * Returns the value of the '<em><b>Classification</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classification</em>' attribute.
-	 * @see #setClassification(int)
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_Classification()
-	 * @model
-	 * @generated
-	 */
-	int getClassification();
-
-	/**
-	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classification</em>' attribute.
-	 * @see #getClassification()
-	 * @generated
-	 */
-	void setClassification(int value);
-
 	/**
 	 * Returns the value of the '<em><b>Objects</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -74,48 +50,25 @@ public interface ObservedObjects extends Service {
 	void setObjects(GeoJsonObject value);
 
 	/**
-	 * Returns the value of the '<em><b>Classification Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Classification</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classification Name</em>' attribute.
-	 * @see #setClassificationName(String)
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_ClassificationName()
-	 * @model annotation="Metadata sensorthings.unit.name='Type'"
+	 * @return the value of the '<em>Classification</em>' attribute.
+	 * @see #setClassification(String)
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_Classification()
+	 * @model
 	 * @generated
 	 */
-	String getClassificationName();
+	String getClassification();
 
 	/**
-	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classification Name</em>' attribute.
-	 * @see #getClassificationName()
+	 * @param value the new value of the '<em>Classification</em>' attribute.
+	 * @see #getClassification()
 	 * @generated
 	 */
-	void setClassificationName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Viewport</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Viewport</em>' attribute.
-	 * @see #setViewport(GeoJsonObject)
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_Viewport()
-	 * @model dataType="org.eclipse.sensinact.model.core.provider.EGeoJsonObject"
-	 *        annotation="Metadata sensorthings.observedArea='true'"
-	 * @generated
-	 */
-	GeoJsonObject getViewport();
-
-	/**
-	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getViewport <em>Viewport</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Viewport</em>' attribute.
-	 * @see #getViewport()
-	 * @generated
-	 */
-	void setViewport(GeoJsonObject value);
+	void setClassification(String value);
 
 } // ObservedObjects

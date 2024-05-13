@@ -23,35 +23,13 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassification <em>Classification</em>}</li>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getObjects <em>Objects</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassificationName <em>Classification Name</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getViewport <em>Viewport</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassification <em>Classification</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects {
-	/**
-	 * The default value of the '{@link #getClassification() <em>Classification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassification()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int CLASSIFICATION_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getClassification() <em>Classification</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClassification()
-	 * @generated
-	 * @ordered
-	 */
-	protected int classification = CLASSIFICATION_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getObjects() <em>Objects</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,44 +51,24 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	protected GeoJsonObject objects = OBJECTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getClassificationName() <em>Classification Name</em>}' attribute.
+	 * The default value of the '{@link #getClassification() <em>Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassificationName()
+	 * @see #getClassification()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLASSIFICATION_NAME_EDEFAULT = null;
+	protected static final String CLASSIFICATION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getClassificationName() <em>Classification Name</em>}' attribute.
+	 * The cached value of the '{@link #getClassification() <em>Classification</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassificationName()
+	 * @see #getClassification()
 	 * @generated
 	 * @ordered
 	 */
-	protected String classificationName = CLASSIFICATION_NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getViewport() <em>Viewport</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewport()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final GeoJsonObject VIEWPORT_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getViewport() <em>Viewport</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getViewport()
-	 * @generated
-	 * @ordered
-	 */
-	protected GeoJsonObject viewport = VIEWPORT_EDEFAULT;
+	protected String classification = CLASSIFICATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,27 +87,6 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	@Override
 	protected EClass eStaticClass() {
 		return TraficamproviderPackage.Literals.OBSERVED_OBJECTS;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getClassification() {
-		return classification;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClassification(int newClassification) {
-		int oldClassification = classification;
-		classification = newClassification;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION, oldClassification, classification));
 	}
 
 	/**
@@ -178,8 +115,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getClassificationName() {
-		return classificationName;
+	public String getClassification() {
+		return classification;
 	}
 
 	/**
@@ -187,32 +124,11 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClassificationName(String newClassificationName) {
-		String oldClassificationName = classificationName;
-		classificationName = newClassificationName;
+	public void setClassification(String newClassification) {
+		String oldClassification = classification;
+		classification = newClassification;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME, oldClassificationName, classificationName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public GeoJsonObject getViewport() {
-		return viewport;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setViewport(GeoJsonObject newViewport) {
-		GeoJsonObject oldViewport = viewport;
-		viewport = newViewport;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT, oldViewport, viewport));
+			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION, oldClassification, classification));
 	}
 
 	/**
@@ -223,14 +139,10 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				return getClassification();
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				return getObjects();
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
-				return getClassificationName();
-			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
-				return getViewport();
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
+				return getClassification();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,17 +155,11 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				setClassification((Integer)newValue);
-				return;
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				setObjects((GeoJsonObject)newValue);
 				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
-				setClassificationName((String)newValue);
-				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
-				setViewport((GeoJsonObject)newValue);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
+				setClassification((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -267,17 +173,11 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				setClassification(CLASSIFICATION_EDEFAULT);
-				return;
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				setObjects(OBJECTS_EDEFAULT);
 				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
-				setClassificationName(CLASSIFICATION_NAME_EDEFAULT);
-				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
-				setViewport(VIEWPORT_EDEFAULT);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
+				setClassification(CLASSIFICATION_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -291,14 +191,10 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				return classification != CLASSIFICATION_EDEFAULT;
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				return OBJECTS_EDEFAULT == null ? objects != null : !OBJECTS_EDEFAULT.equals(objects);
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
-				return CLASSIFICATION_NAME_EDEFAULT == null ? classificationName != null : !CLASSIFICATION_NAME_EDEFAULT.equals(classificationName);
-			case TraficamproviderPackage.OBSERVED_OBJECTS__VIEWPORT:
-				return VIEWPORT_EDEFAULT == null ? viewport != null : !VIEWPORT_EDEFAULT.equals(viewport);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
+				return CLASSIFICATION_EDEFAULT == null ? classification != null : !CLASSIFICATION_EDEFAULT.equals(classification);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -313,14 +209,10 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (classification: ");
-		result.append(classification);
-		result.append(", objects: ");
+		result.append(" (objects: ");
 		result.append(objects);
-		result.append(", classificationName: ");
-		result.append(classificationName);
-		result.append(", viewport: ");
-		result.append(viewport);
+		result.append(", classification: ");
+		result.append(classification);
 		result.append(')');
 		return result.toString();
 	}

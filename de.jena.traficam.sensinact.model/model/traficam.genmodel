@@ -9,12 +9,12 @@
   <genPackages prefix="Traficamprovider" basePackage="de.jena.traficam.sensinact.model"
       disposableProviderFactory="true" ecorePackage="traficam.ecore#/">
     <genClasses ecoreClass="traficam.ecore#//TraficamProvider"/>
-    <genClasses ecoreClass="traficam.ecore#//TraficamAdmin"/>
+    <genClasses ecoreClass="traficam.ecore#//TraficamAdmin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//TraficamAdmin/viewport"/>
+    </genClasses>
     <genClasses ecoreClass="traficam.ecore#//ObservedObjects">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classification"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/objects"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classificationName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/viewport"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classification"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

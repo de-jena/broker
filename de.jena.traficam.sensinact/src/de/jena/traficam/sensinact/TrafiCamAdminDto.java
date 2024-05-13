@@ -23,13 +23,10 @@ import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage
 
 @ModelPackageUri(TraficamproviderPackage.eNS_URI)
 @Model("TrafiCam")
-public class TrafiCamDto {
+public class TrafiCamAdminDto {
 
-	public TrafiCamDto(String camId, String classId, String classificationName, GeoJsonObject objects) {
+	public TrafiCamAdminDto(String camId) {
 		this.camId = camId;
-		this.classification = classId;
-		this.classificationName = classificationName;
-		this.objects = objects;
 	}
 
 	@Model
@@ -39,15 +36,14 @@ public class TrafiCamDto {
 	public String camId;
 
 	@Service
-	public EClass serviceEClass = TraficamproviderPackage.Literals.OBSERVED_OBJECTS;
+	public EClass serviceEClass = TraficamproviderPackage.Literals.TRAFICAM_ADMIN;
 
+	@Service("admin")
 	@Data
-	public String classification;
+	public GeoJsonObject location;
 
-	@Service
-	public String classificationName;
-
+	@Service("admin")
 	@Data
-	public GeoJsonObject objects;
+	public GeoJsonObject viewport;
 
 }

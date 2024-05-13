@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -12,8 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emfcloud.jackson.resource.JsonResourceFactory;
 import org.eclipse.sensinact.core.push.DataUpdate;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.Feature;
@@ -34,11 +38,18 @@ import org.osgi.util.promise.Promise;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushEvent.EventType;
 import org.osgi.util.pushstream.PushStream;
+import org.osgi.util.pushstream.PushStreamProvider;
+import org.osgi.util.pushstream.QueuePolicyOption;
+import org.osgi.util.pushstream.SimplePushEventSource;
 
 import de.jena.traficam.CamConfig;
 import de.jena.traficam.GpsCoordinates;
 import de.jena.traficam.Scene;
 import de.jena.traficam.TrafiCamObject;
+import de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin;
+import de.jena.traficam.sensinact.model.traficamprovider.TraficamProvider;
+import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderFactory;
+import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage;
 
 @RequireEMFJson
 @Component(immediate = true)
@@ -59,16 +70,23 @@ public class TrafiCam {
 	@Reference(target = "(id=full)")
 	private MessagingService messaging;
 
+	final PushStreamProvider psp = new PushStreamProvider();
 	private PushStream<Message> subscription;
+	private JsonResourceFactory factory = new JsonResourceFactory();
 
+	private Map<String, Map<String, SimplePushEventSource<Message>>> sources = Collections
+			.synchronizedMap(new HashMap<>());
 	private Map<String, CamConfig> configs = new HashMap<>();
 
 	@Activate
 	public void activate() {
 		try {
 			subscription = messaging.subscribe(TOPIC + "#");
-//			subscription
 			subscription.forEachEvent(this::handle);
+			EClass eClass = TraficamproviderPackage.eINSTANCE.getObservedObjects();
+			for (EStructuralFeature feature : eClass.getEAllStructuralFeatures()) {
+				System.out.println(feature.getName());
+			}
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error subscribing mqtt {0}.\n{1}", TOPIC, e);
 		}
@@ -78,6 +96,7 @@ public class TrafiCam {
 	@Deactivate
 	private void deactivate() {
 		subscription.close();
+		sources.values().forEach(m -> m.values().forEach(s -> s.close()));
 	}
 
 	private long handle(PushEvent<? extends Message> event) {
@@ -100,48 +119,77 @@ public class TrafiCam {
 
 	private void onMessage(Message message) {
 		String topic = message.topic();
-		String camId = topic.split("/")[3];
+		String[] split = topic.split("/");
+		String camId = split[3];
 		if (topic.endsWith("config/retained")) {
 			updateConfig(message, camId);
 		} else if (topic.endsWith("lifesign")) {
 		} else {
-			update(message, camId);
-		}
-	}
-
-	private void update(Message message, String camId) {
-		ResourceSet resourceSet = serviceObjects.getService();
-		Resource resource = resourceSet.createResource(TEMP_URI);
-		try {
-			resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
-			if (resource.getContents().size() == 0) {
-				logger.log(Level.WARNING, "Can't load Traficam from {0}.", message);
-				return;
+			if (split.length >= 5) {
+				String classId = split[4];
+				update(message, camId, classId);
 			}
-			TrafiCamObject tc = (TrafiCamObject) resource.getContents().get(0);
-			short classId = tc.getClassId();
-			String className = getClassName(camId, classId);
-			FeatureCollection geo = createFeatureCollection(tc);
-			TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
-			dto.location = createLocation(camId);
-			dto.viewport = createFeatureCollection(camId);
-			Promise<?> promise = sensiNact.pushUpdate(dto);
-			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
-		} catch (IOException e) {
-			logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
-		} finally {
-			serviceObjects.ungetService(resourceSet);
 		}
 	}
 
-	private String getClassName(String camId, short classId) {
+	private void update(Message message, String camId, String classId) {
+
+		Map<String, SimplePushEventSource<Message>> s = sources.computeIfAbsent(camId,
+				k -> Collections.synchronizedMap(new HashMap<>()));
+		SimplePushEventSource<Message> source = s.computeIfAbsent(classId, k -> createSource(camId, classId));
+		source.publish(message);
+	}
+
+	private SimplePushEventSource<Message> createSource(String camId, String classId) {
+		String className = getClassName(camId, classId);
+		final SimplePushEventSource<Message> source = psp.buildSimpleEventSource(Message.class)
+				.withQueuePolicy(QueuePolicyOption.BLOCK).build();
+		PushStream<FeatureCollection> stream = psp.buildStream(source).unbuffered().build()
+				.window(Duration.ofSeconds(2), (messages) -> {
+					FeatureCollection geo = new FeatureCollection();
+//					ResourceSet resourceSet = serviceObjects.getService();
+					Resource resource = factory.createResource(TEMP_URI);
+
+//					Resource resource = resourceSet.createResource(TEMP_URI);
+					try {
+						for (Message message : messages) {
+							resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
+							if (resource.getContents().size() == 0) {
+								logger.log(Level.WARNING, "Can't load Traficam from {0}.", message);
+								continue;
+							}
+							TrafiCamObject tc = (TrafiCamObject) resource.getContents().get(0);
+							GpsCoordinates gps = tc.getGpsCoordinates().get(0);
+							if (gps == null) {
+								continue;
+							}
+							Feature feature = createFeature(gps);
+							feature.properties.put("class", classId);
+							feature.properties.put("className", className);
+							geo.features.add(feature);
+						}
+					} catch (IOException e) {
+						logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
+//					} finally {
+//						serviceObjects.ungetService(resourceSet);
+					}
+					return geo;
+				});
+		stream.forEach(geo -> {
+			TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
+			Promise<?> promise = sensiNact.pushUpdate(dto);
+			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
+		});
+		return source;
+	}
+
+	private String getClassName(String camId, String classId) {
 		CamConfig camConfig = configs.get(camId);
 		if (camConfig == null) {
 			logger.log(Level.WARNING, "Warn: configuration for {0} not loaded.", camId);
-			return "";
+			return classId;
 		}
-		String className = camConfig.getClassMap().get("" + classId);
-		return className;
+		return camConfig.getClassMap().get(classId);
 	}
 
 	private FeatureCollection createFeatureCollection(String camId) {
@@ -176,22 +224,6 @@ public class TrafiCam {
 		return p;
 	}
 
-	private FeatureCollection createFeatureCollection(TrafiCamObject tc) {
-		FeatureCollection geo = new FeatureCollection();
-		GpsCoordinates gps = tc.getGpsCoordinates().get(0);
-		if (gps == null) {
-			return geo;
-		}
-		Feature f = new Feature();
-		Point point = new Point();
-		point.coordinates = new Coordinates();
-		point.coordinates.latitude = gps.getLatitude();
-		point.coordinates.longitude = gps.getLongitude();
-		f.geometry = point;
-		geo.features.add(f);
-		return geo;
-	}
-
 	private FeatureCollection createLocation(String camId) {
 		FeatureCollection geo = new FeatureCollection();
 		CamConfig camConfig = configs.get(camId);
@@ -204,14 +236,19 @@ public class TrafiCam {
 		if (gps == null) {
 			return geo;
 		}
+		Feature f = createFeature(gps);
+		geo.features.add(f);
+		return geo;
+	}
+
+	private Feature createFeature(GpsCoordinates gps) {
 		Feature f = new Feature();
 		Point point = new Point();
 		point.coordinates = new Coordinates();
 		point.coordinates.latitude = gps.getLatitude();
 		point.coordinates.longitude = gps.getLongitude();
 		f.geometry = point;
-		geo.features.add(f);
-		return geo;
+		return f;
 	}
 
 	private void updateConfig(Message message, String camId) {
@@ -221,6 +258,18 @@ public class TrafiCam {
 			resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 			CamConfig configuration = (CamConfig) resource.getContents().get(0);
 			configs.put(camId, configuration);
+			TraficamProvider traficamProvider = TraficamproviderFactory.eINSTANCE.createTraficamProvider();
+			TraficamAdmin traficamAdmin = TraficamproviderFactory.eINSTANCE.createTraficamAdmin();
+			traficamProvider.setId(camId);
+			traficamProvider.setAdmin(traficamAdmin);
+			traficamAdmin.setLocation(createLocation(camId));
+			traficamAdmin.setViewport(createFeatureCollection(camId));
+//			TrafiCamAdminDto dto = new TrafiCamAdminDto(camId);
+//			dto.location = createLocation(camId);
+//			dto.viewport = createFeatureCollection(camId);
+			Promise<?> promise = sensiNact.pushUpdate(traficamAdmin);
+			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
+
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "Error while parsing json.", e);
 		} finally {
