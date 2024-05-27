@@ -166,6 +166,8 @@ public class TrafiCam {
 							Feature feature = createFeature(gps);
 							feature.properties.put("class", classId);
 							feature.properties.put("className", className);
+							feature.properties.put("speed", tc.getSpeed());
+							feature.properties.put("heading", gps.getHeading());
 							geo.features.add(feature);
 						}
 					} catch (IOException e) {
@@ -267,7 +269,7 @@ public class TrafiCam {
 //			TrafiCamAdminDto dto = new TrafiCamAdminDto(camId);
 //			dto.location = createLocation(camId);
 //			dto.viewport = createFeatureCollection(camId);
-			Promise<?> promise = sensiNact.pushUpdate(traficamAdmin);
+			Promise<?> promise = sensiNact.pushUpdate(traficamProvider);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
 
 		} catch (IOException e) {
