@@ -12,7 +12,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference conflict.ecore#//TrafficConflictProvider/conflict"/>
     </genClasses>
     <genClasses ecoreClass="conflict.ecore#//Conflict">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//Conflict/isConflict"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//Conflict/conflict"/>
     </genClasses>
     <genClasses ecoreClass="conflict.ecore#//TrafficConflictAdmin">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//TrafficConflictAdmin/viewport"/>

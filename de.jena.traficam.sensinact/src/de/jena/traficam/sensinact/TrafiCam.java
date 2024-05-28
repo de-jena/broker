@@ -8,12 +8,15 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -147,18 +150,17 @@ public class TrafiCam {
 		PushStream<FeatureCollection> stream = psp.buildStream(source).unbuffered().build()
 				.window(Duration.ofSeconds(2), (messages) -> {
 					FeatureCollection geo = new FeatureCollection();
-//					ResourceSet resourceSet = serviceObjects.getService();
 					Resource resource = factory.createResource(TEMP_URI);
 
-//					Resource resource = resourceSet.createResource(TEMP_URI);
 					try {
 						for (Message message : messages) {
 							resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
-							if (resource.getContents().size() == 0) {
+							EList<EObject> contents = resource.getContents();
+							if (contents.size() == 0) {
 								logger.log(Level.WARNING, "Can't load Traficam from {0}.", message);
 								continue;
 							}
-							TrafiCamObject tc = (TrafiCamObject) resource.getContents().get(0);
+							TrafiCamObject tc = (TrafiCamObject) contents.get(0);
 							GpsCoordinates gps = tc.getGpsCoordinates().get(0);
 							if (gps == null) {
 								continue;
@@ -168,17 +170,18 @@ public class TrafiCam {
 							feature.properties.put("className", className);
 							feature.properties.put("speed", tc.getSpeed());
 							feature.properties.put("heading", gps.getHeading());
+							feature.properties.put("time", tc.getTime().getTime());
 							geo.features.add(feature);
 						}
 					} catch (IOException e) {
 						logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
-//					} finally {
-//						serviceObjects.ungetService(resourceSet);
 					}
 					return geo;
 				});
 		stream.forEach(geo -> {
 			TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
+			dto.timestamp = new Date().getTime();
+
 			Promise<?> promise = sensiNact.pushUpdate(dto);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
 		});
@@ -266,9 +269,6 @@ public class TrafiCam {
 			traficamProvider.setAdmin(traficamAdmin);
 			traficamAdmin.setLocation(createLocation(camId));
 			traficamAdmin.setViewport(createFeatureCollection(camId));
-//			TrafiCamAdminDto dto = new TrafiCamAdminDto(camId);
-//			dto.location = createLocation(camId);
-//			dto.viewport = createFeatureCollection(camId);
 			Promise<?> promise = sensiNact.pushUpdate(traficamProvider);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
 

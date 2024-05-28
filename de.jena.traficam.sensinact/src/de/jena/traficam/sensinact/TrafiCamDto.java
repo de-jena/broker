@@ -17,6 +17,7 @@ import org.eclipse.sensinact.core.annotation.dto.Model;
 import org.eclipse.sensinact.core.annotation.dto.ModelPackageUri;
 import org.eclipse.sensinact.core.annotation.dto.Provider;
 import org.eclipse.sensinact.core.annotation.dto.Service;
+import org.eclipse.sensinact.core.annotation.dto.Timestamp;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 
 import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage;
@@ -49,5 +50,8 @@ public class TrafiCamDto {
 
 	@Data
 	public GeoJsonObject objects;
+
+	@Timestamp
+	public long timestamp;
 
 }

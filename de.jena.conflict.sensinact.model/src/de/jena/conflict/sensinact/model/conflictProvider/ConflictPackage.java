@@ -167,13 +167,13 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 	int CONFLICT__METADATA = ProviderPackage.SERVICE__METADATA;
 
 	/**
-	 * The feature id for the '<em><b>Is Conflict</b></em>' attribute.
+	 * The feature id for the '<em><b>Conflict</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFLICT__IS_CONFLICT = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
+	int CONFLICT__CONFLICT = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Conflict</em>' class.
@@ -326,15 +326,15 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 	EClass getConflict();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isIsConflict <em>Is Conflict</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isConflict <em>Conflict</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Conflict</em>'.
-	 * @see de.jena.conflict.sensinact.model.conflictProvider.Conflict#isIsConflict()
+	 * @return the meta object for the attribute '<em>Conflict</em>'.
+	 * @see de.jena.conflict.sensinact.model.conflictProvider.Conflict#isConflict()
 	 * @see #getConflict()
 	 * @generated
 	 */
-	EAttribute getConflict_IsConflict();
+	EAttribute getConflict_Conflict();
 
 	/**
 	 * Returns the meta object for class '{@link de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictAdmin <em>Traffic Conflict Admin</em>}'.
@@ -409,12 +409,12 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 		EClass CONFLICT = eINSTANCE.getConflict();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Conflict</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Conflict</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONFLICT__IS_CONFLICT = eINSTANCE.getConflict_IsConflict();
+		EAttribute CONFLICT__CONFLICT = eINSTANCE.getConflict_Conflict();
 
 		/**
 		 * The meta object literal for the '{@link de.jena.conflict.sensinact.model.conflictProvider.impl.TrafficConflictAdminImpl <em>Traffic Conflict Admin</em>}' class.

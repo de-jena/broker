@@ -15,7 +15,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isIsConflict <em>Is Conflict</em>}</li>
+ *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isConflict <em>Conflict</em>}</li>
  * </ul>
  *
  * @see de.jena.conflict.sensinact.model.conflictProvider.ConflictPackage#getConflict()
@@ -25,25 +25,25 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 public interface Conflict extends Service {
 	/**
-	 * Returns the value of the '<em><b>Is Conflict</b></em>' attribute.
+	 * Returns the value of the '<em><b>Conflict</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Is Conflict</em>' attribute.
-	 * @see #setIsConflict(boolean)
-	 * @see de.jena.conflict.sensinact.model.conflictProvider.ConflictPackage#getConflict_IsConflict()
+	 * @return the value of the '<em>Conflict</em>' attribute.
+	 * @see #setConflict(boolean)
+	 * @see de.jena.conflict.sensinact.model.conflictProvider.ConflictPackage#getConflict_Conflict()
 	 * @model
 	 * @generated
 	 */
-	boolean isIsConflict();
+	boolean isConflict();
 
 	/**
-	 * Sets the value of the '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isIsConflict <em>Is Conflict</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#isConflict <em>Conflict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Is Conflict</em>' attribute.
-	 * @see #isIsConflict()
+	 * @param value the new value of the '<em>Conflict</em>' attribute.
+	 * @see #isConflict()
 	 * @generated
 	 */
-	void setIsConflict(boolean value);
+	void setConflict(boolean value);
 
 } // Conflict

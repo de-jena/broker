@@ -21,31 +21,31 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.impl.ConflictImpl#isIsConflict <em>Is Conflict</em>}</li>
+ *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.impl.ConflictImpl#isConflict <em>Conflict</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ConflictImpl extends ServiceImpl implements Conflict {
 	/**
-	 * The default value of the '{@link #isIsConflict() <em>Is Conflict</em>}' attribute.
+	 * The default value of the '{@link #isConflict() <em>Conflict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsConflict()
+	 * @see #isConflict()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_CONFLICT_EDEFAULT = false;
+	protected static final boolean CONFLICT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isIsConflict() <em>Is Conflict</em>}' attribute.
+	 * The cached value of the '{@link #isConflict() <em>Conflict</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isIsConflict()
+	 * @see #isConflict()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean isConflict = IS_CONFLICT_EDEFAULT;
+	protected boolean conflict = CONFLICT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,8 +72,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 */
 	@Override
-	public boolean isIsConflict() {
-		return isConflict;
+	public boolean isConflict() {
+		return conflict;
 	}
 
 	/**
@@ -82,11 +82,11 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 */
 	@Override
-	public void setIsConflict(boolean newIsConflict) {
-		boolean oldIsConflict = isConflict;
-		isConflict = newIsConflict;
+	public void setConflict(boolean newConflict) {
+		boolean oldConflict = conflict;
+		conflict = newConflict;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ConflictPackage.CONFLICT__IS_CONFLICT, oldIsConflict, isConflict));
+			eNotify(new ENotificationImpl(this, Notification.SET, ConflictPackage.CONFLICT__CONFLICT, oldConflict, conflict));
 	}
 
 	/**
@@ -97,8 +97,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ConflictPackage.CONFLICT__IS_CONFLICT:
-				return isIsConflict();
+			case ConflictPackage.CONFLICT__CONFLICT:
+				return isConflict();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -111,8 +111,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ConflictPackage.CONFLICT__IS_CONFLICT:
-				setIsConflict((Boolean)newValue);
+			case ConflictPackage.CONFLICT__CONFLICT:
+				setConflict((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,8 +126,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ConflictPackage.CONFLICT__IS_CONFLICT:
-				setIsConflict(IS_CONFLICT_EDEFAULT);
+			case ConflictPackage.CONFLICT__CONFLICT:
+				setConflict(CONFLICT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -141,8 +141,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ConflictPackage.CONFLICT__IS_CONFLICT:
-				return isConflict != IS_CONFLICT_EDEFAULT;
+			case ConflictPackage.CONFLICT__CONFLICT:
+				return conflict != CONFLICT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,8 +157,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (isConflict: ");
-		result.append(isConflict);
+		result.append(" (conflict: ");
+		result.append(conflict);
 		result.append(')');
 		return result.toString();
 	}
