@@ -1,0 +1,19 @@
+-library: enable-emf
+-buildpath: \
+	org.osgi.service.component.annotations,\
+	org.osgi.service.typedevent,\
+	org.eclipse.sensinact.gateway.core.api,\
+	de.jena.conflict.sensinact.model,\
+	org.osgi.util.promise,\
+	org.osgi.util.function,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.eclipse.sensinact.gateway.core.geo-json
+
+-testpath: \
+	${junit}
+
+javac.source: 17
+javac.target: 17
+
+Bundle-Version: 0.0.0.${tstamp}
+-privatepackage: de.jena.conflict.sensinact
