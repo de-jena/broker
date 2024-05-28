@@ -3,6 +3,8 @@ package de.jena.conflict.sensinact;
 import java.lang.System.Logger;
 import java.lang.System.Logger.Level;
 import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -48,9 +50,13 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 	private State state = new State();
 
 	private static class State {
+
+		private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME
+				.withZone(ZoneId.systemDefault());
+
 		private boolean bike;
 		private String currentColor;
-		public Instant bikeTimestamp;
+		public Instant bikeTimestamp = Instant.EPOCH;
 		public Instant trafficLightTimestamp;
 
 		boolean isConflict() {
@@ -59,8 +65,9 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 
 		@Override
 		public String toString() {
-			return "State [conflict=" + (isConflict() ? "🔴" : "🟢") + ", bike=" + bike + "(" + bikeTimestamp + "), currentColor="
-					+ currentColor + "("+trafficLightTimestamp+")]";
+			return "State [conflict=" + (isConflict() ? "🔴" : "🟢") + ", bike=" + bike + "("
+					+ formatter.format(bikeTimestamp) + "), currentColor=" + currentColor + "("
+					+ formatter.format(trafficLightTimestamp) + ")]";
 		}
 
 	}
@@ -151,7 +158,7 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		for (Feature feature : features) {
 			Double heading = (Double) feature.properties.get("heading");
 			Double speed = (Double) feature.properties.get("speed");
-			Long time= (Long) feature.properties.get("times");
+			Long time = (Long) feature.properties.get("times");
 
 			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2}", heading, speed, Instant.ofEpochMilli(time));
 			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
