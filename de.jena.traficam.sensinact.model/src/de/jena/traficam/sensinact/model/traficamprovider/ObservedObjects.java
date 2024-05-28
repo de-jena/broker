@@ -18,7 +18,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * </p>
  * <ul>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getObjects <em>Objects</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}</li>
  * </ul>
  *
  * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects()
@@ -50,25 +50,25 @@ public interface ObservedObjects extends Service {
 	void setObjects(GeoJsonObject value);
 
 	/**
-	 * Returns the value of the '<em><b>Classification</b></em>' attribute.
+	 * Returns the value of the '<em><b>Classification Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classification</em>' attribute.
-	 * @see #setClassification(String)
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_Classification()
+	 * @return the value of the '<em>Classification Name</em>' attribute.
+	 * @see #setClassificationName(String)
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage#getObservedObjects_ClassificationName()
 	 * @model
 	 * @generated
 	 */
-	String getClassification();
+	String getClassificationName();
 
 	/**
-	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}' attribute.
+	 * Sets the value of the '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Classification</em>' attribute.
-	 * @see #getClassification()
+	 * @param value the new value of the '<em>Classification Name</em>' attribute.
+	 * @see #getClassificationName()
 	 * @generated
 	 */
-	void setClassification(String value);
+	void setClassificationName(String value);
 
 } // ObservedObjects

@@ -42,10 +42,10 @@ public class TrafiCamDto {
 	@Service
 	public EClass serviceEClass = TraficamproviderPackage.Literals.OBSERVED_OBJECTS;
 
-	@Data
+	@Service
 	public String classification;
 
-	@Service
+	@Data
 	public String classificationName;
 
 	@Data

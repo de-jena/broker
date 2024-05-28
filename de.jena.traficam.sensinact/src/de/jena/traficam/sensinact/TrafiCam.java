@@ -70,7 +70,7 @@ public class TrafiCam {
 	@Reference
 	private DataUpdate sensiNact;
 
-	@Reference(target = "(id=full)")
+	@Reference(target = "(id=read)")
 	private MessagingService messaging;
 
 	final PushStreamProvider psp = new PushStreamProvider();
@@ -166,6 +166,7 @@ public class TrafiCam {
 								continue;
 							}
 							Feature feature = createFeature(gps);
+							feature.properties.put("id", tc.getId());
 							feature.properties.put("class", classId);
 							feature.properties.put("className", className);
 							feature.properties.put("speed", tc.getSpeed());

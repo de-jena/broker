@@ -29,7 +29,7 @@ import de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictAdmin;
 import de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictProvider;
 
 @Component
-@EventTopics({ "DATA/K440/K4/*", "DATA/Felsenkeller/MotorcyclePlus/*" })
+@EventTopics({ "DATA/Ilsa/K440/K4/1/*", "DATA/TraficamProvider/Felsenkeller/3/*" })
 public class TrafficConflictNotification implements TypedEventHandler<ResourceDataNotification> {
 
 	private static final Logger logger = System.getLogger(TrafficConflictNotification.class.getName());
@@ -98,7 +98,7 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 //		}
 
 		boolean isCam = "Felsenkeller".equals(event.provider) && "objects".equals(event.resource)
-				&& "MotorcyclePlus".equals(event.service);
+				&& "3".equals(event.service);
 		if (isCam) {
 			state.bike = isBikeToSouth(event);
 			state.bikeTimestamp = event.timestamp;
@@ -158,9 +158,11 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		for (Feature feature : features) {
 			Double heading = (Double) feature.properties.get("heading");
 			Double speed = (Double) feature.properties.get("speed");
-			Long time = (Long) feature.properties.get("times");
+			Long time = (Long) feature.properties.get("time");
+			Long id = (Long) feature.properties.get("id");
 
-			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2}", heading, speed, Instant.ofEpochMilli(time));
+			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} Id: {3}", heading, speed,
+					time == null ? "" : Instant.ofEpochMilli(time), id == null ? "" : id);
 			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
 				return true;
 			}

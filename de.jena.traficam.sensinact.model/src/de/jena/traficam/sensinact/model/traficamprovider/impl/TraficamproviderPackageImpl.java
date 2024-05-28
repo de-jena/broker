@@ -157,7 +157,7 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getObservedObjects_Classification() {
+	public EAttribute getObservedObjects_ClassificationName() {
 		return (EAttribute)observedObjectsEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -196,7 +196,7 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 
 		observedObjectsEClass = createEClass(OBSERVED_OBJECTS);
 		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__OBJECTS);
-		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__CLASSIFICATION);
+		createEAttribute(observedObjectsEClass, OBSERVED_OBJECTS__CLASSIFICATION_NAME);
 	}
 
 	/**
@@ -242,7 +242,7 @@ public class TraficamproviderPackageImpl extends EPackageImpl implements Trafica
 
 		initEClass(observedObjectsEClass, ObservedObjects.class, "ObservedObjects", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getObservedObjects_Objects(), theProviderPackage.getEGeoJsonObject(), "objects", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getObservedObjects_Classification(), ecorePackage.getEString(), "classification", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getObservedObjects_ClassificationName(), ecorePackage.getEString(), "classificationName", null, 0, 1, ObservedObjects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

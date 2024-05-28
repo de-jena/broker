@@ -14,7 +14,7 @@
     </genClasses>
     <genClasses ecoreClass="traficam.ecore#//ObservedObjects">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/objects"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classification"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute traficam.ecore#//ObservedObjects/classificationName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

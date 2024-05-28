@@ -42,7 +42,7 @@ public class TrafficLight {
 
 	private static final Logger logger = System.getLogger(TrafficLight.class.getName());
 
-	private static final String TOPIC = "5g/data/ilsa/";
+	private static final String TOPIC = "5g/ilsa/";
 	private static final Pattern TOPIC_PATTERN = Pattern.compile(TOPIC + "(\\w+)/([A-Za-z0-9-]+)/([0-9])");
 	private static final URI TEMP_URI = URI.createFileURI("temp.json");
 
@@ -58,7 +58,7 @@ public class TrafficLight {
 	@Reference(target = "(transformator.id=TLSTrafficLightToIlsa)")
 	private ModelTransformator traf;
 
-	@Reference(target = "(id=full)")
+	@Reference(target = "(id=read)")
 	private MessagingService messaging;
 
 	private PushStream<Message> subscription;

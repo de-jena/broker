@@ -266,13 +266,13 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	int OBSERVED_OBJECTS__OBJECTS = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Classification</b></em>' attribute.
+	 * The feature id for the '<em><b>Classification Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBSERVED_OBJECTS__CLASSIFICATION = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
+	int OBSERVED_OBJECTS__CLASSIFICATION_NAME = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Observed Objects</em>' class.
@@ -355,15 +355,15 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 	EAttribute getObservedObjects_Objects();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification <em>Classification</em>}'.
+	 * Returns the meta object for the attribute '{@link de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName <em>Classification Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Classification</em>'.
-	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassification()
+	 * @return the meta object for the attribute '<em>Classification Name</em>'.
+	 * @see de.jena.traficam.sensinact.model.traficamprovider.ObservedObjects#getClassificationName()
 	 * @see #getObservedObjects()
 	 * @generated
 	 */
-	EAttribute getObservedObjects_Classification();
+	EAttribute getObservedObjects_ClassificationName();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -435,12 +435,12 @@ public interface TraficamproviderPackage extends org.eclipse.emf.ecore.EPackage 
 		EAttribute OBSERVED_OBJECTS__OBJECTS = eINSTANCE.getObservedObjects_Objects();
 
 		/**
-		 * The meta object literal for the '<em><b>Classification</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Classification Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OBSERVED_OBJECTS__CLASSIFICATION = eINSTANCE.getObservedObjects_Classification();
+		EAttribute OBSERVED_OBJECTS__CLASSIFICATION_NAME = eINSTANCE.getObservedObjects_ClassificationName();
 
 	}
 

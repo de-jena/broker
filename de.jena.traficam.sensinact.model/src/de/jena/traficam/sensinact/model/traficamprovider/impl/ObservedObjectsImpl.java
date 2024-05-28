@@ -24,7 +24,7 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  * </p>
  * <ul>
  *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getObjects <em>Objects</em>}</li>
- *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassification <em>Classification</em>}</li>
+ *   <li>{@link de.jena.traficam.sensinact.model.traficamprovider.impl.ObservedObjectsImpl#getClassificationName <em>Classification Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,24 +51,24 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	protected GeoJsonObject objects = OBJECTS_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getClassification() <em>Classification</em>}' attribute.
+	 * The default value of the '{@link #getClassificationName() <em>Classification Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassification()
+	 * @see #getClassificationName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String CLASSIFICATION_EDEFAULT = null;
+	protected static final String CLASSIFICATION_NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getClassification() <em>Classification</em>}' attribute.
+	 * The cached value of the '{@link #getClassificationName() <em>Classification Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getClassification()
+	 * @see #getClassificationName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String classification = CLASSIFICATION_EDEFAULT;
+	protected String classificationName = CLASSIFICATION_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,8 +115,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getClassification() {
-		return classification;
+	public String getClassificationName() {
+		return classificationName;
 	}
 
 	/**
@@ -124,11 +124,11 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setClassification(String newClassification) {
-		String oldClassification = classification;
-		classification = newClassification;
+	public void setClassificationName(String newClassificationName) {
+		String oldClassificationName = classificationName;
+		classificationName = newClassificationName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION, oldClassification, classification));
+			eNotify(new ENotificationImpl(this, Notification.SET, TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME, oldClassificationName, classificationName));
 	}
 
 	/**
@@ -141,8 +141,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 		switch (featureID) {
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				return getObjects();
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				return getClassification();
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
+				return getClassificationName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,8 +158,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				setObjects((GeoJsonObject)newValue);
 				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				setClassification((String)newValue);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
+				setClassificationName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,8 +176,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				setObjects(OBJECTS_EDEFAULT);
 				return;
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				setClassification(CLASSIFICATION_EDEFAULT);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
+				setClassificationName(CLASSIFICATION_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -193,8 +193,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 		switch (featureID) {
 			case TraficamproviderPackage.OBSERVED_OBJECTS__OBJECTS:
 				return OBJECTS_EDEFAULT == null ? objects != null : !OBJECTS_EDEFAULT.equals(objects);
-			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION:
-				return CLASSIFICATION_EDEFAULT == null ? classification != null : !CLASSIFICATION_EDEFAULT.equals(classification);
+			case TraficamproviderPackage.OBSERVED_OBJECTS__CLASSIFICATION_NAME:
+				return CLASSIFICATION_NAME_EDEFAULT == null ? classificationName != null : !CLASSIFICATION_NAME_EDEFAULT.equals(classificationName);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -211,8 +211,8 @@ public class ObservedObjectsImpl extends ServiceImpl implements ObservedObjects 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (objects: ");
 		result.append(objects);
-		result.append(", classification: ");
-		result.append(classification);
+		result.append(", classificationName: ");
+		result.append(classificationName);
 		result.append(')');
 		return result.toString();
 	}
