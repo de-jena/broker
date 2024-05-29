@@ -119,17 +119,11 @@ public class TrafiCam {
 		String[] split = topic.split("/");
 		String camId = split[2];
 		String classId = split[3];
-		if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
-			System.out.println(System.currentTimeMillis() + " - " + topic);
-		}
 		if (topic.endsWith("config/retained")) {
 			updateConfig(message, camId);
 		} else if (topic.endsWith("lifesign")) {
 		} else {
 			if (split.length >= 4) {
-				if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
-					System.out.println(System.currentTimeMillis() + " - " + topic);
-				}
 				update(message, camId, classId);
 			}
 		}
@@ -153,7 +147,6 @@ public class TrafiCam {
 					FeatureCollection geo = new FeatureCollection();
 					try {
 						for (Message message : messages) {
-							long start = System.currentTimeMillis();
 							BinaryResourceImpl resource = new BinaryResourceImpl();
 							resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 							EList<EObject> contents = resource.getContents();
@@ -175,11 +168,6 @@ public class TrafiCam {
 								feature.properties.put("speed", tc.getSpeed());
 								feature.properties.put("heading", gps.getHeading());
 								feature.properties.put("time", tc.getTime().getTime());
-								if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
-									System.out
-											.println((System.currentTimeMillis() - start) + " ms - " + "====== " + id);
-									System.out.println(System.currentTimeMillis() + " - " + "====== " + id);
-								}
 								geo.features.add(feature);
 							}
 							sendEmpty.set(false);

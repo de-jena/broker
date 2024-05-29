@@ -5,7 +5,6 @@ import java.lang.System.Logger.Level;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -108,15 +107,13 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		if (isCam) {
 			state.bike = isBikeToSouth(event);
 			state.bikeTimestamp = event.timestamp;
-			if (state.bike)
-				logger.log(Level.INFO, "Bike incoming ");
 		}
 
 		boolean isIlsa = "K440".equals(event.provider) && "color".equals(event.resource);
 		if (isIlsa) {
 			state.currentColor = (String) event.newValue;
 			state.trafficLightTimestamp = event.timestamp;
-			logger.log(Level.INFO, "Traffic light changed to: {0}", state.currentColor);
+			logger.log(Level.DEBUG, "Traffic light changed to: {0}", state.currentColor);
 		}
 
 		boolean conflict = state.isConflict();
@@ -165,14 +162,11 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		for (Feature feature : features) {
 			Double heading = (Double) feature.properties.get("heading");
 			Double speed = (Double) feature.properties.get("speed");
-			Long time = (Long) feature.properties.get("time");
+//			Long time = (Long) feature.properties.get("time");
 			Long id = (Long) feature.properties.get("id");
-			Instant timestamp = event.timestamp;
-
-			Instant objectTime = Instant.ofEpochMilli(time);
-			System.out.println(System.currentTimeMillis() + " - conflict -  " + id);
-			System.out.println(String.format( "Heading: %s Speed: %s Time: %s (%s - %s) Id: %s", heading, speed,
-					objectTime,objectTime.until(Instant.now(), ChronoUnit.SECONDS), timestamp.until(Instant.now(), ChronoUnit.SECONDS), id == null ? "" : id));
+//			Instant timestamp = event.timestamp;
+//
+//			Instant objectTime = Instant.ofEpochMilli(time);
 //			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} ({3} - {4}) Id: {5}", heading, speed,
 //					objectTime,objectTime.until(Instant.now(), ChronoUnit.SECONDS), timestamp.until(Instant.now(), ChronoUnit.SECONDS), id == null ? "" : id);
 			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
