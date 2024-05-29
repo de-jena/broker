@@ -28,5 +28,11 @@
 			"5g/ilsa/#",
 			"5g/test/#"
 		]
+	},
+	"MQTTBridge~vdv": {
+		"forwardClients": 1,
+		"topics" : [
+			"5g/vdv/#"
+		]
 	}
 }
