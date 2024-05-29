@@ -25,6 +25,15 @@ public interface MessageFactory extends EFactory {
 	MessageFactory eINSTANCE = de.jena.sensinact.mqtt.generic.message.impl.MessageFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>EObject Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EObject Value Update</em>'.
+	 * @generated
+	 */
+	EObjectValueUpdate createEObjectValueUpdate();
+
+	/**
 	 * Returns a new object of class '<em>String Value Update</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -131,6 +140,15 @@ public interface MessageFactory extends EFactory {
 	 * @generated
 	 */
 	FeatureCollectionValueUpdate createFeatureCollectionValueUpdate();
+
+	/**
+	 * Returns a new object of class '<em>Polygon Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Polygon Value Update</em>'.
+	 * @generated
+	 */
+	PolygonValueUpdate createPolygonValueUpdate();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -72,6 +72,13 @@ public class MessageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagePackage.EOBJECT_VALUE_UPDATE: {
+				EObjectValueUpdate eObjectValueUpdate = (EObjectValueUpdate)theEObject;
+				T result = caseEObjectValueUpdate(eObjectValueUpdate);
+				if (result == null) result = caseUpdateMessage(eObjectValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case MessagePackage.STRING_VALUE_UPDATE: {
 				StringValueUpdate stringValueUpdate = (StringValueUpdate)theEObject;
 				T result = caseStringValueUpdate(stringValueUpdate);
@@ -156,6 +163,13 @@ public class MessageSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MessagePackage.POLYGON_VALUE_UPDATE: {
+				PolygonValueUpdate polygonValueUpdate = (PolygonValueUpdate)theEObject;
+				T result = casePolygonValueUpdate(polygonValueUpdate);
+				if (result == null) result = caseUpdateMessage(polygonValueUpdate);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -172,6 +186,21 @@ public class MessageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseUpdateMessage(UpdateMessage object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EObject Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EObject Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEObjectValueUpdate(EObjectValueUpdate object) {
 		return null;
 	}
 
@@ -352,6 +381,21 @@ public class MessageSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFeatureCollectionValueUpdate(FeatureCollectionValueUpdate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Polygon Value Update</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Polygon Value Update</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePolygonValueUpdate(PolygonValueUpdate object) {
 		return null;
 	}
 

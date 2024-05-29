@@ -6,6 +6,7 @@ import de.jena.sensinact.mqtt.generic.message.BigDecimalValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.BooleanValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DateValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.DoubleValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.EObjectValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.FeatureCollectionValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.GeoJsonObjectValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.InsantValueUpdate;
@@ -15,6 +16,7 @@ import de.jena.sensinact.mqtt.generic.message.MessageFactory;
 import de.jena.sensinact.mqtt.generic.message.MessagePackage;
 import de.jena.sensinact.mqtt.generic.message.ObjectValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.PointValueUpdate;
+import de.jena.sensinact.mqtt.generic.message.PolygonValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.StringValueUpdate;
 import de.jena.sensinact.mqtt.generic.message.UpdateMessage;
 
@@ -24,11 +26,13 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Point;
+import org.eclipse.sensinact.gateway.geojson.Polygon;
 
 import org.eclipse.sensinact.model.core.provider.ProviderPackage;
 
@@ -45,6 +49,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EClass updateMessageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eObjectValueUpdateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,6 +146,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass polygonValueUpdateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EDataType eInstantEDataType = null;
 
 	/**
@@ -150,6 +168,13 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * @generated
 	 */
 	private EDataType eFeatureCollectionEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType ePolygonEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -239,6 +264,33 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	public EAttribute getUpdateMessage_Resource() {
 		return (EAttribute)updateMessageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEObjectValueUpdate() {
+		return eObjectValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEObjectValueUpdate_NewValue() {
+		return (EReference)eObjectValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEObjectValueUpdate_OldValue() {
+		return (EReference)eObjectValueUpdateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -570,6 +622,33 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPolygonValueUpdate() {
+		return polygonValueUpdateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPolygonValueUpdate_OldValue() {
+		return (EAttribute)polygonValueUpdateEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPolygonValueUpdate_NewValue() {
+		return (EAttribute)polygonValueUpdateEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getEInstant() {
 		return eInstantEDataType;
 	}
@@ -590,6 +669,15 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 	 */
 	public EDataType getEFeatureCollection() {
 		return eFeatureCollectionEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getEPolygon() {
+		return ePolygonEDataType;
 	}
 
 	/**
@@ -623,6 +711,10 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		updateMessageEClass = createEClass(UPDATE_MESSAGE);
 		createEAttribute(updateMessageEClass, UPDATE_MESSAGE__TIMESTAMP);
 		createEAttribute(updateMessageEClass, UPDATE_MESSAGE__RESOURCE);
+
+		eObjectValueUpdateEClass = createEClass(EOBJECT_VALUE_UPDATE);
+		createEReference(eObjectValueUpdateEClass, EOBJECT_VALUE_UPDATE__NEW_VALUE);
+		createEReference(eObjectValueUpdateEClass, EOBJECT_VALUE_UPDATE__OLD_VALUE);
 
 		stringValueUpdateEClass = createEClass(STRING_VALUE_UPDATE);
 		createEAttribute(stringValueUpdateEClass, STRING_VALUE_UPDATE__OLD_VALUE);
@@ -672,10 +764,15 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		createEAttribute(featureCollectionValueUpdateEClass, FEATURE_COLLECTION_VALUE_UPDATE__OLD_VALUE);
 		createEAttribute(featureCollectionValueUpdateEClass, FEATURE_COLLECTION_VALUE_UPDATE__NEW_VALUE);
 
+		polygonValueUpdateEClass = createEClass(POLYGON_VALUE_UPDATE);
+		createEAttribute(polygonValueUpdateEClass, POLYGON_VALUE_UPDATE__OLD_VALUE);
+		createEAttribute(polygonValueUpdateEClass, POLYGON_VALUE_UPDATE__NEW_VALUE);
+
 		// Create data types
 		eInstantEDataType = createEDataType(EINSTANT);
 		ePointEDataType = createEDataType(EPOINT);
 		eFeatureCollectionEDataType = createEDataType(EFEATURE_COLLECTION);
+		ePolygonEDataType = createEDataType(EPOLYGON);
 	}
 
 	/**
@@ -709,6 +806,7 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		eObjectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		stringValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		doubleValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		integerValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
@@ -721,11 +819,16 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		geoJsonObjectValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		pointValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 		featureCollectionValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
+		polygonValueUpdateEClass.getESuperTypes().add(this.getUpdateMessage());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(updateMessageEClass, UpdateMessage.class, "UpdateMessage", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUpdateMessage_Timestamp(), this.getEInstant(), "timestamp", null, 0, 1, UpdateMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUpdateMessage_Resource(), ecorePackage.getEString(), "resource", null, 0, 1, UpdateMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eObjectValueUpdateEClass, EObjectValueUpdate.class, "EObjectValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEObjectValueUpdate_NewValue(), ecorePackage.getEObject(), null, "newValue", null, 0, 1, EObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEObjectValueUpdate_OldValue(), ecorePackage.getEObject(), null, "oldValue", null, 0, 1, EObjectValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringValueUpdateEClass, StringValueUpdate.class, "StringValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringValueUpdate_OldValue(), ecorePackage.getEString(), "oldValue", null, 0, 1, StringValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -775,10 +878,15 @@ public class MessagePackageImpl extends EPackageImpl implements MessagePackage {
 		initEAttribute(getFeatureCollectionValueUpdate_OldValue(), this.getEFeatureCollection(), "oldValue", null, 0, 1, FeatureCollectionValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFeatureCollectionValueUpdate_NewValue(), this.getEFeatureCollection(), "newValue", null, 0, 1, FeatureCollectionValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(polygonValueUpdateEClass, PolygonValueUpdate.class, "PolygonValueUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPolygonValueUpdate_OldValue(), this.getEPolygon(), "oldValue", null, 0, 1, PolygonValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPolygonValueUpdate_NewValue(), this.getEPolygon(), "newValue", null, 0, 1, PolygonValueUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(eInstantEDataType, Instant.class, "EInstant", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(ePointEDataType, Point.class, "EPoint", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(eFeatureCollectionEDataType, FeatureCollection.class, "EFeatureCollection", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(ePolygonEDataType, Polygon.class, "EPolygon", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

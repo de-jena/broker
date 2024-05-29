@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Point;
+import org.eclipse.sensinact.gateway.geojson.Polygon;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,6 +63,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case MessagePackage.EOBJECT_VALUE_UPDATE: return createEObjectValueUpdate();
 			case MessagePackage.STRING_VALUE_UPDATE: return createStringValueUpdate();
 			case MessagePackage.DOUBLE_VALUE_UPDATE: return createDoubleValueUpdate();
 			case MessagePackage.INTEGER_VALUE_UPDATE: return createIntegerValueUpdate();
@@ -74,6 +76,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 			case MessagePackage.GEO_JSON_OBJECT_VALUE_UPDATE: return createGeoJsonObjectValueUpdate();
 			case MessagePackage.POINT_VALUE_UPDATE: return createPointValueUpdate();
 			case MessagePackage.FEATURE_COLLECTION_VALUE_UPDATE: return createFeatureCollectionValueUpdate();
+			case MessagePackage.POLYGON_VALUE_UPDATE: return createPolygonValueUpdate();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,6 +96,8 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 				return createEPointFromString(eDataType, initialValue);
 			case MessagePackage.EFEATURE_COLLECTION:
 				return createEFeatureCollectionFromString(eDataType, initialValue);
+			case MessagePackage.EPOLYGON:
+				return createEPolygonFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,9 +117,21 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 				return convertEPointToString(eDataType, instanceValue);
 			case MessagePackage.EFEATURE_COLLECTION:
 				return convertEFeatureCollectionToString(eDataType, instanceValue);
+			case MessagePackage.EPOLYGON:
+				return convertEPolygonToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObjectValueUpdate createEObjectValueUpdate() {
+		EObjectValueUpdateImpl eObjectValueUpdate = new EObjectValueUpdateImpl();
+		return eObjectValueUpdate;
 	}
 
 	/**
@@ -242,6 +259,16 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PolygonValueUpdate createPolygonValueUpdate() {
+		PolygonValueUpdateImpl polygonValueUpdate = new PolygonValueUpdateImpl();
+		return polygonValueUpdate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Instant createEInstant(final String it) {
 		return Instant.parse(it);
 	}
@@ -343,6 +370,42 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 */
 	public String convertEFeatureCollectionToString(EDataType eDataType, Object instanceValue) {
 		return convertEFeatureCollection((FeatureCollection)instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Polygon createEPolygon(final String it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Polygon createEPolygonFromString(EDataType eDataType, String initialValue) {
+		return createEPolygon(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEPolygon(final Polygon it) {
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEPolygonToString(EDataType eDataType, Object instanceValue) {
+		return convertEPolygon((Polygon)instanceValue);
 	}
 
 	/**
