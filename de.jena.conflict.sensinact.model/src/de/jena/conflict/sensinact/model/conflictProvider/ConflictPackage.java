@@ -176,13 +176,22 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 	int CONFLICT__CONFLICT = ProviderPackage.SERVICE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Bike Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONFLICT__BIKE_ID = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Conflict</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONFLICT_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 1;
+	int CONFLICT_FEATURE_COUNT = ProviderPackage.SERVICE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>EIs Set</em>' operation.
@@ -337,6 +346,17 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 	EAttribute getConflict_Conflict();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#getBikeId <em>Bike Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Bike Id</em>'.
+	 * @see de.jena.conflict.sensinact.model.conflictProvider.Conflict#getBikeId()
+	 * @see #getConflict()
+	 * @generated
+	 */
+	EAttribute getConflict_BikeId();
+
+	/**
 	 * Returns the meta object for class '{@link de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictAdmin <em>Traffic Conflict Admin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,6 +435,14 @@ public interface ConflictPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EAttribute CONFLICT__CONFLICT = eINSTANCE.getConflict_Conflict();
+
+		/**
+		 * The meta object literal for the '<em><b>Bike Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONFLICT__BIKE_ID = eINSTANCE.getConflict_BikeId();
 
 		/**
 		 * The meta object literal for the '{@link de.jena.conflict.sensinact.model.conflictProvider.impl.TrafficConflictAdminImpl <em>Traffic Conflict Admin</em>}' class.
