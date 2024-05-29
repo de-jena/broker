@@ -49,15 +49,19 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 
 	private State state = new State();
 
+	private TrafficConflictProvider provider;
+
 	private static class State {
 
 		private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME
 				.withZone(ZoneId.systemDefault());
 
 		private boolean bike;
+		private Long bikeId;
 		private String currentColor;
-		public Instant bikeTimestamp = Instant.EPOCH;
-		public Instant trafficLightTimestamp;
+		private Instant bikeTimestamp = Instant.EPOCH;
+		private Instant trafficLightTimestamp = Instant.EPOCH;
+
 
 		boolean isConflict() {
 			return ("🟢⚪⚪".equals(currentColor) || "⚪🟡🔴".equals(currentColor)) && bike;
@@ -74,12 +78,13 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 
 	@Activate
 	public void activate() {
-		TrafficConflictProvider provider = ConflictFactory.eINSTANCE.createTrafficConflictProvider();
+		provider = ConflictFactory.eINSTANCE.createTrafficConflictProvider();
 		TrafficConflictAdmin admin = ConflictFactory.eINSTANCE.createTrafficConflictAdmin();
 		provider.setId("FelsenkellerRadAuto");
 		provider.setAdmin(admin);
 		admin.setLocation(createViewport());
 		conflict = ConflictFactory.eINSTANCE.createConflict();
+		conflict.setConflict(true);
 		provider.setConflict(conflict);
 		sensiNact.pushUpdate(provider);
 		promiseFactory = new PromiseFactory(Executors.newCachedThreadPool());
@@ -116,8 +121,9 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		boolean conflict = state.isConflict();
 		if (conflictOld == null || conflict != conflictOld) {
 			this.conflict.setConflict(conflict);
+			this.conflict.setBikeId(state.bikeId);
 			conflictOld = conflict;
-			Promise<?> promise = sensiNact.pushUpdate(conflict);
+			Promise<?> promise = sensiNact.pushUpdate(provider);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing to sensinact.", e));
 		}
 		logger.log(Level.INFO, "{0}", state);
@@ -164,10 +170,12 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} Id: {3}", heading, speed,
 					time == null ? "" : Instant.ofEpochMilli(time), id == null ? "" : id);
 			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
+				state.bikeId = id;
 				return true;
 			}
 		}
 		logger.log(Level.INFO, "No Bike to south but {0} MotorCyclePlus", features.size());
+		state.bikeId = 0l;
 		return false;
 	}
 }

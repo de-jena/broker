@@ -45,7 +45,7 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "OcppStructuresConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.structures.util.OcppStructuresResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.sensinact.ocpp.structures.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.structures.util.OcppStructuresResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource$Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.sensinact.ocpp.structures.util\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.structures.OcppStructuresFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.ocpp.structures\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.ocpp.structures.OcppStructuresPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.ocpp.structures\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.ocpp.structures\"" })

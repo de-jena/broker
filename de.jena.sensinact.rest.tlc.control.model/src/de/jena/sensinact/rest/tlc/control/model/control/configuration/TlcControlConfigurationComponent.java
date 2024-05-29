@@ -45,7 +45,7 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "TlcControlConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.rest.tlc.control.model.control.util.TlcControlResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.sensinact.rest.tlc.control.model.control.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.rest.tlc.control.model.control.util.TlcControlResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource$Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.jena.sensinact.rest.tlc.control.model.control.util\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.rest.tlc.control.model.control.TlcControlFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.rest.tlc.control.model.control\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.jena.sensinact.rest.tlc.control.model.control.TlcControlPackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.rest.tlc.control.model.control\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.jena.sensinact.rest.tlc.control.model.control\"" })

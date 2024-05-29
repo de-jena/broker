@@ -19,7 +19,6 @@ org.jline:jline:3.23.0
 
 #felix bundles
 org.apache.felix:org.apache.felix.cm.json:1.0.6
-org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.6
 org.apache.felix:org.apache.felix.connect:0.2.0
 org.apache.felix:org.apache.felix.coordinator:1.0.2
 org.apache.felix:org.apache.felix.deploymentadmin:0.9.10
@@ -141,4 +140,4 @@ ch.qos.logback:logback-classic:1.5.3
 org.apache.felix:org.apache.felix.webconsole:5.0.2
 org.apache.aries.typedevent:org.apache.aries.typedevent.bus:0.0.2
 org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2
-
+org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.8

@@ -13,6 +13,7 @@
     </genClasses>
     <genClasses ecoreClass="conflict.ecore#//Conflict">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//Conflict/conflict"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//Conflict/bikeId"/>
     </genClasses>
     <genClasses ecoreClass="conflict.ecore#//TrafficConflictAdmin">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute conflict.ecore#//TrafficConflictAdmin/viewport"/>

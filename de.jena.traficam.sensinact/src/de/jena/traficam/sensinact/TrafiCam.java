@@ -12,12 +12,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emfcloud.jackson.resource.JsonResourceFactory;
@@ -52,7 +51,6 @@ import de.jena.traficam.TrafiCamObject;
 import de.jena.traficam.sensinact.model.traficamprovider.TraficamAdmin;
 import de.jena.traficam.sensinact.model.traficamprovider.TraficamProvider;
 import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderFactory;
-import de.jena.traficam.sensinact.model.traficamprovider.TraficamproviderPackage;
 
 @RequireEMFJson
 @Component(immediate = true)
@@ -86,10 +84,6 @@ public class TrafiCam {
 		try {
 			subscription = messaging.subscribe(TOPIC + "#");
 			subscription.forEachEvent(this::handle);
-			EClass eClass = TraficamproviderPackage.eINSTANCE.getObservedObjects();
-			for (EStructuralFeature feature : eClass.getEAllStructuralFeatures()) {
-				System.out.println(feature.getName());
-			}
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error subscribing mqtt {0}.\n{1}", TOPIC, e);
 		}
@@ -147,13 +141,13 @@ public class TrafiCam {
 		String className = getClassName(camId, classId);
 		final SimplePushEventSource<Message> source = psp.buildSimpleEventSource(Message.class)
 				.withQueuePolicy(QueuePolicyOption.BLOCK).build();
+		final AtomicBoolean sendEmpty = new AtomicBoolean(false);
 		PushStream<FeatureCollection> stream = psp.buildStream(source).unbuffered().build()
 				.window(Duration.ofSeconds(2), (messages) -> {
 					FeatureCollection geo = new FeatureCollection();
-					Resource resource = factory.createResource(TEMP_URI);
-
 					try {
 						for (Message message : messages) {
+							Resource resource = factory.createResource(TEMP_URI);
 							resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 							EList<EObject> contents = resource.getContents();
 							if (contents.size() == 0) {
@@ -165,14 +159,18 @@ public class TrafiCam {
 							if (gps == null) {
 								continue;
 							}
-							Feature feature = createFeature(gps);
-							feature.properties.put("id", tc.getId());
-							feature.properties.put("class", classId);
-							feature.properties.put("className", className);
-							feature.properties.put("speed", tc.getSpeed());
-							feature.properties.put("heading", gps.getHeading());
-							feature.properties.put("time", tc.getTime().getTime());
-							geo.features.add(feature);
+							long id = tc.getId();
+							if (geo.features.stream().noneMatch(f -> f.properties.get("id").equals(id))) {
+								Feature feature = createFeature(gps);
+								feature.properties.put("id", id);
+								feature.properties.put("class", classId);
+								feature.properties.put("className", className);
+								feature.properties.put("speed", tc.getSpeed());
+								feature.properties.put("heading", gps.getHeading());
+								feature.properties.put("time", tc.getTime().getTime());
+								geo.features.add(feature);
+							}
+							sendEmpty.set(false);
 						}
 					} catch (IOException e) {
 						logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
@@ -180,11 +178,13 @@ public class TrafiCam {
 					return geo;
 				});
 		stream.forEach(geo -> {
-			TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
-			dto.timestamp = new Date().getTime();
+			if (!geo.features.isEmpty() || !sendEmpty.getAndSet(true)) {
+				TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
+				dto.timestamp = new Date().getTime();
 
-			Promise<?> promise = sensiNact.pushUpdate(dto);
-			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
+				Promise<?> promise = sensiNact.pushUpdate(dto);
+				promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
+			}
 		});
 		return source;
 	}

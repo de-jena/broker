@@ -22,6 +22,7 @@ import org.eclipse.sensinact.model.core.provider.impl.ServiceImpl;
  * </p>
  * <ul>
  *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.impl.ConflictImpl#isConflict <em>Conflict</em>}</li>
+ *   <li>{@link de.jena.conflict.sensinact.model.conflictProvider.impl.ConflictImpl#getBikeId <em>Bike Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,26 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @ordered
 	 */
 	protected boolean conflict = CONFLICT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getBikeId() <em>Bike Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBikeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long BIKE_ID_EDEFAULT = 0L;
+
+	/**
+	 * The cached value of the '{@link #getBikeId() <em>Bike Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBikeId()
+	 * @generated
+	 * @ordered
+	 */
+	protected long bikeId = BIKE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,10 +116,35 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 */
 	@Override
+	public long getBikeId() {
+		return bikeId;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBikeId(long newBikeId) {
+		long oldBikeId = bikeId;
+		bikeId = newBikeId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ConflictPackage.CONFLICT__BIKE_ID, oldBikeId, bikeId));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case ConflictPackage.CONFLICT__CONFLICT:
 				return isConflict();
+			case ConflictPackage.CONFLICT__BIKE_ID:
+				return getBikeId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +159,9 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 		switch (featureID) {
 			case ConflictPackage.CONFLICT__CONFLICT:
 				setConflict((Boolean)newValue);
+				return;
+			case ConflictPackage.CONFLICT__BIKE_ID:
+				setBikeId((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +178,9 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 			case ConflictPackage.CONFLICT__CONFLICT:
 				setConflict(CONFLICT_EDEFAULT);
 				return;
+			case ConflictPackage.CONFLICT__BIKE_ID:
+				setBikeId(BIKE_ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +195,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 		switch (featureID) {
 			case ConflictPackage.CONFLICT__CONFLICT:
 				return conflict != CONFLICT_EDEFAULT;
+			case ConflictPackage.CONFLICT__BIKE_ID:
+				return bikeId != BIKE_ID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +213,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (conflict: ");
 		result.append(conflict);
+		result.append(", bikeId: ");
+		result.append(bikeId);
 		result.append(')');
 		return result.toString();
 	}
