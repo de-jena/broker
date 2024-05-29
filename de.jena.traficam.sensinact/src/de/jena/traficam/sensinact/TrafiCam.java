@@ -12,6 +12,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -123,8 +124,7 @@ public class TrafiCam {
 		} else {
 			if (split.length >= 5) {
 				String classId = split[4];
-				if ("Felsenkeller".equals(camId) && "3".equals(classId))
-					update(message, camId, classId);
+				update(message, camId, classId);
 			}
 		}
 	}
@@ -141,6 +141,7 @@ public class TrafiCam {
 		String className = getClassName(camId, classId);
 		final SimplePushEventSource<Message> source = psp.buildSimpleEventSource(Message.class)
 				.withQueuePolicy(QueuePolicyOption.BLOCK).build();
+		final AtomicBoolean sendEmpty = new AtomicBoolean(false);
 		PushStream<FeatureCollection> stream = psp.buildStream(source).unbuffered().build()
 				.window(Duration.ofSeconds(2), (messages) -> {
 					FeatureCollection geo = new FeatureCollection();
@@ -169,6 +170,7 @@ public class TrafiCam {
 								feature.properties.put("time", tc.getTime().getTime());
 								geo.features.add(feature);
 							}
+							sendEmpty.set(false);
 						}
 					} catch (IOException e) {
 						logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
@@ -176,7 +178,7 @@ public class TrafiCam {
 					return geo;
 				});
 		stream.forEach(geo -> {
-			if (!geo.features.isEmpty()) {
+			if (!geo.features.isEmpty() || !sendEmpty.getAndSet(true)) {
 				TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
 				dto.timestamp = new Date().getTime();
 
