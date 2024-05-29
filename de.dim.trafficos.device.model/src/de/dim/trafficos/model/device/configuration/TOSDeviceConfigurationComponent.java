@@ -45,7 +45,7 @@ import org.osgi.service.condition.Condition;
  * @generated
  */
 @Component(name = "TOSDeviceConfigurator")
-@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.dim.trafficos.model.device.util.TOSDeviceResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource.Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.dim.trafficos.model.device.util\"" })
+@Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.dim.trafficos.model.device.util.TOSDeviceResourceFactoryImpl, org.eclipse.emf.ecore.resource.Resource$Factory\"" , "uses:=\"org.eclipse.emf.ecore.resource,de.dim.trafficos.model.device.util\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.dim.trafficos.model.device.TOSDeviceFactory, org.eclipse.emf.ecore.EFactory\"" , "uses:=\"org.eclipse.emf.ecore,de.dim.trafficos.model.device\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"de.dim.trafficos.model.device.TOSDevicePackage, org.eclipse.emf.ecore.EPackage\"" , "uses:=\"org.eclipse.emf.ecore,de.dim.trafficos.model.device\"" })
 @Capability( namespace = "osgi.service", attribute = { "objectClass:List<String>=\"org.gecko.emf.osgi.configurator.EPackageConfigurator\"" , "uses:=\"org.eclipse.emf.ecore,de.dim.trafficos.model.device\"" })
