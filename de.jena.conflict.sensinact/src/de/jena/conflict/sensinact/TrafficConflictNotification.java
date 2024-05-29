@@ -5,6 +5,7 @@ import java.lang.System.Logger.Level;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
@@ -166,9 +167,14 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 			Double speed = (Double) feature.properties.get("speed");
 			Long time = (Long) feature.properties.get("time");
 			Long id = (Long) feature.properties.get("id");
+			Instant timestamp = event.timestamp;
 
-			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} Id: {3}", heading, speed,
-					time == null ? "" : Instant.ofEpochMilli(time), id == null ? "" : id);
+			Instant objectTime = Instant.ofEpochMilli(time);
+			System.out.println(System.currentTimeMillis() + " - conflict -  " + id);
+			System.out.println(String.format( "Heading: %s Speed: %s Time: %s (%s - %s) Id: %s", heading, speed,
+					objectTime,objectTime.until(Instant.now(), ChronoUnit.SECONDS), timestamp.until(Instant.now(), ChronoUnit.SECONDS), id == null ? "" : id));
+//			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} ({3} - {4}) Id: {5}", heading, speed,
+//					objectTime,objectTime.until(Instant.now(), ChronoUnit.SECONDS), timestamp.until(Instant.now(), ChronoUnit.SECONDS), id == null ? "" : id);
 			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
 				state.bikeId = id;
 				return true;

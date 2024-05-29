@@ -12,14 +12,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emfcloud.jackson.resource.JsonResourceFactory;
+import org.eclipse.emf.ecore.resource.impl.BinaryResourceImpl;
 import org.eclipse.sensinact.core.push.DataUpdate;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.Feature;
@@ -27,15 +26,16 @@ import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Point;
 import org.eclipse.sensinact.gateway.geojson.Polygon;
 import org.gecko.emf.json.annotation.RequireEMFJson;
-import org.gecko.emf.osgi.constants.EMFNamespaces;
 import org.gecko.osgi.messaging.Message;
+import org.gecko.osgi.messaging.MessagingContext;
 import org.gecko.osgi.messaging.MessagingService;
-import org.osgi.service.component.ComponentServiceObjects;
+import org.gecko.osgi.messaging.SimpleMessagingContextBuilder;
+import org.gecko.util.pushstream.OptionPushStreamContext;
+import org.gecko.util.pushstream.PushStreamConstants;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.promise.Promise;
 import org.osgi.util.pushstream.PushEvent;
 import org.osgi.util.pushstream.PushEvent.EventType;
@@ -58,12 +58,7 @@ public class TrafiCam {
 
 	private static final Logger logger = System.getLogger(TrafiCam.class.getName());
 
-	private static final String TOPIC = "5g/data/traficam/";
-	private static final URI TEMP_URI = URI.createFileURI("temp.json");
-
-	@Reference(target = "(" + EMFNamespaces.EMF_CONFIGURATOR_NAME
-			+ "=EMFJson)", scope = ReferenceScope.PROTOTYPE_REQUIRED)
-	private ComponentServiceObjects<ResourceSet> serviceObjects;
+	private static final String TOPIC = "5g/traficam/";
 
 	@Reference
 	private DataUpdate sensiNact;
@@ -71,9 +66,8 @@ public class TrafiCam {
 	@Reference(target = "(id=read)")
 	private MessagingService messaging;
 
-	final PushStreamProvider psp = new PushStreamProvider();
+	private PushStreamProvider psp = new PushStreamProvider();
 	private PushStream<Message> subscription;
-	private JsonResourceFactory factory = new JsonResourceFactory();
 
 	private Map<String, Map<String, SimplePushEventSource<Message>>> sources = Collections
 			.synchronizedMap(new HashMap<>());
@@ -81,8 +75,14 @@ public class TrafiCam {
 
 	@Activate
 	public void activate() {
+		Map<String, Object> pushOptions = Map.of(PushStreamConstants.PROP_BUFFER_SIZE, 3200,
+				PushStreamConstants.PROP_PARALLELISM, 10, PushStreamConstants.PROP_QUEUE_POLICY_OPTION,
+				QueuePolicyOption.BLOCK, PushStreamConstants.PROP_EXECUTOR, Executors.newCachedThreadPool());
+
+		MessagingContext messagingContext = new SimpleMessagingContextBuilder()
+				.withPushstreamContext(new OptionPushStreamContext<>(pushOptions)).build();
 		try {
-			subscription = messaging.subscribe(TOPIC + "#");
+			subscription = messaging.subscribe(TOPIC + "#", messagingContext);
 			subscription.forEachEvent(this::handle);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Error subscribing mqtt {0}.\n{1}", TOPIC, e);
@@ -117,13 +117,19 @@ public class TrafiCam {
 	private void onMessage(Message message) {
 		String topic = message.topic();
 		String[] split = topic.split("/");
-		String camId = split[3];
+		String camId = split[2];
+		String classId = split[3];
+		if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
+			System.out.println(System.currentTimeMillis() + " - " + topic);
+		}
 		if (topic.endsWith("config/retained")) {
 			updateConfig(message, camId);
 		} else if (topic.endsWith("lifesign")) {
 		} else {
-			if (split.length >= 5) {
-				String classId = split[4];
+			if (split.length >= 4) {
+				if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
+					System.out.println(System.currentTimeMillis() + " - " + topic);
+				}
 				update(message, camId, classId);
 			}
 		}
@@ -147,7 +153,8 @@ public class TrafiCam {
 					FeatureCollection geo = new FeatureCollection();
 					try {
 						for (Message message : messages) {
-							Resource resource = factory.createResource(TEMP_URI);
+							long start = System.currentTimeMillis();
+							BinaryResourceImpl resource = new BinaryResourceImpl();
 							resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 							EList<EObject> contents = resource.getContents();
 							if (contents.size() == 0) {
@@ -168,6 +175,11 @@ public class TrafiCam {
 								feature.properties.put("speed", tc.getSpeed());
 								feature.properties.put("heading", gps.getHeading());
 								feature.properties.put("time", tc.getTime().getTime());
+								if ("Felsenkeller".equals(camId) && "3".equals(classId)) {
+									System.out
+											.println((System.currentTimeMillis() - start) + " ms - " + "====== " + id);
+									System.out.println(System.currentTimeMillis() + " - " + "====== " + id);
+								}
 								geo.features.add(feature);
 							}
 							sendEmpty.set(false);
@@ -181,7 +193,6 @@ public class TrafiCam {
 			if (!geo.features.isEmpty() || !sendEmpty.getAndSet(true)) {
 				TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
 				dto.timestamp = new Date().getTime();
-
 				Promise<?> promise = sensiNact.pushUpdate(dto);
 				promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
 			}
@@ -258,8 +269,7 @@ public class TrafiCam {
 	}
 
 	private void updateConfig(Message message, String camId) {
-		ResourceSet resourceSet = serviceObjects.getService();
-		Resource resource = resourceSet.createResource(TEMP_URI);
+		Resource resource = new BinaryResourceImpl();
 		try {
 			resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 			CamConfig configuration = (CamConfig) resource.getContents().get(0);
@@ -275,8 +285,6 @@ public class TrafiCam {
 
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "Error while parsing json.", e);
-		} finally {
-			serviceObjects.ungetService(resourceSet);
 		}
 	}
 }
