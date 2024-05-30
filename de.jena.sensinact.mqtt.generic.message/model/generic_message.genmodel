@@ -14,7 +14,7 @@
         convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
     <genDataTypes ecoreDataType="generic_message.ecore#//EFeatureCollection" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
         convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
-    <genDataTypes ecoreDataType="generic_message.ecore#//EPolygon" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
+    <genDataTypes ecoreDataType="generic_message.ecore#//EPolygon" create="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Polygon.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"
         convert="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
     <genClasses image="false" ecoreClass="generic_message.ecore#//UpdateMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute generic_message.ecore#//UpdateMessage/timestamp"/>

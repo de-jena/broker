@@ -378,7 +378,7 @@ public class MessageFactoryImpl extends EFactoryImpl implements MessageFactory {
 	 * @generated
 	 */
 	public Polygon createEPolygon(final String it) {
-		try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
+		try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Polygon.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }
 	}
 
 	/**

@@ -84,7 +84,7 @@
   <eClassifiers xsi:type="ecore:EDataType" name="EPolygon" instanceClassName="org.eclipse.sensinact.gateway.geojson.Polygon">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="convert" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().writeValueAsString(it); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
-      <details key="create" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, FeatureCollection.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
+      <details key="create" value="try { return new com.fasterxml.jackson.databind.ObjectMapper().readValue(it, Polygon.class); } catch (com.fasterxml.jackson.core.JsonProcessingException e) { throw new IllegalArgumentException(e); }"/>
     </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PolygonValueUpdate" eSuperTypes="#//UpdateMessage">
