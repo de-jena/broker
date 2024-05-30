@@ -21,6 +21,7 @@
 	de.jena.udp.trafficos.common.model,\
 	de.jena.traficam.model,\
 	de.jena.traficam.sensinact.model;version=latest,\
-	org.eclipse.sensinact.gateway.core.geo-json
+	org.eclipse.sensinact.gateway.core.geo-json,\
+	org.gecko.util.pushstream
 	
 -library: enable-emf
