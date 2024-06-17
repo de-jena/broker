@@ -17,6 +17,7 @@ env:
   LC_ALL: en_US.UTF-8
   GRADLE_OPTS: >-
     -Dorg.gradle.parallel=true
+    -Xms4048m -Xmx4048m -XX:MaxMetaspaceSize=2048m
 
 defaults:
   run:
