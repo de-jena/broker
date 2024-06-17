@@ -4,6 +4,7 @@
 	":configurator:symbolic-name": "MQTT Forward",
 	
 	"MQTTBridge~Actemium": {
+		"forceRetained" : true,
 		"forwardClients": 10,
 		"topics" : [
 			"5g/Actemium/#"
