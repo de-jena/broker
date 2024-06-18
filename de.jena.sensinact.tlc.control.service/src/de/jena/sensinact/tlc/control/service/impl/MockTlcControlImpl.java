@@ -161,7 +161,7 @@ public class MockTlcControlImpl implements TlcControl{
 	}
 
 	/* 
-	 * (non-Ja)vadoc)
+	 * (non-Javadoc)
 	 * @see de.jena.sensinact.tlc.control.service.api.TlcControl#getControlPhase(java.lang.String)
 	 */
 	@Override

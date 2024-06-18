@@ -1,6 +1,14 @@
 -buildpath: \
 	de.jena.sensinact.rest.tlc.control.model,\
-	org.gecko.emf.repository.api
+	org.gecko.emf.repository.api,\
+	org.gecko.osgi.messaging,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.promise,\
+	org.osgi.util.function,\
+	org.osgi.service.typedevent,\
+	org.osgi.service.component,\
+	de.jena.udp.trafficos.trafficlight.model,\
+	org.gecko.emf.json
 
 -library: \
 	enable-emf
