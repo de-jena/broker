@@ -72,6 +72,10 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createUpdateMessageAdapter();
 			}
 			@Override
+			public Adapter caseEObjectValueUpdate(EObjectValueUpdate object) {
+				return createEObjectValueUpdateAdapter();
+			}
+			@Override
 			public Adapter caseStringValueUpdate(StringValueUpdate object) {
 				return createStringValueUpdateAdapter();
 			}
@@ -120,6 +124,10 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 				return createFeatureCollectionValueUpdateAdapter();
 			}
 			@Override
+			public Adapter casePolygonValueUpdate(PolygonValueUpdate object) {
+				return createPolygonValueUpdateAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -150,6 +158,20 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUpdateMessageAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.EObjectValueUpdate <em>EObject Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.EObjectValueUpdate
+	 * @generated
+	 */
+	public Adapter createEObjectValueUpdateAdapter() {
 		return null;
 	}
 
@@ -318,6 +340,20 @@ public class MessageAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFeatureCollectionValueUpdateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.jena.sensinact.mqtt.generic.message.PolygonValueUpdate <em>Polygon Value Update</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.jena.sensinact.mqtt.generic.message.PolygonValueUpdate
+	 * @generated
+	 */
+	public Adapter createPolygonValueUpdateAdapter() {
 		return null;
 	}
 

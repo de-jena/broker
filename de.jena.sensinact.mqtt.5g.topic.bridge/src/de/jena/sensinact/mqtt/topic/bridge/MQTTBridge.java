@@ -75,6 +75,8 @@ public class MQTTBridge {
 
 	private MessagingService readMessagingService;
 
+	private boolean forceRetained;
+
 	private @interface Config {
 		int forwardClients() default 1;
 
@@ -83,6 +85,8 @@ public class MQTTBridge {
 		String inputContentType() default "application/json";
 
 		String outputContenType() default "application/json";
+		
+		boolean forceRetained() default false; 
 	}
 
 	@Activate
@@ -101,10 +105,12 @@ public class MQTTBridge {
 		inputOptions = readOption(properties, "inputOptions.");
 		outputOptions = readOption(properties, "outputOptions.");
 
+		forceRetained = config.forceRetained();
+		
 		emSubscribe = new ArrayList<>();
 		
 		Map<String, Object> pushOptions = Map.of(
-				PushStreamConstants.PROP_BUFFER_SIZE, 32,
+				PushStreamConstants.PROP_BUFFER_SIZE, 320,
 				PushStreamConstants.PROP_PARALLELISM, 4,
 				PushStreamConstants.PROP_QUEUE_POLICY_OPTION, QueuePolicyOption.BLOCK,
 				PushStreamConstants.PROP_EXECUTOR, Executors.newCachedThreadPool());
@@ -153,7 +159,7 @@ public class MQTTBridge {
 		MQTTContext context = (MQTTContext) message.getContext();
 
 		String baseTopic = topic.substring(3);
-		boolean retained = context.isRetained();
+		boolean retained = forceRetained ||  context.isRetained();
 		
 		if(!retained) {
 			retained = BridgeUtil.isRetained(baseTopic);
@@ -166,7 +172,7 @@ public class MQTTBridge {
 			context.setRetained(retained);
 			ByteBuffer inPayload = message.payload();
 			ByteBuffer outPayload = topic.endsWith("/lifesign")? inPayload : convertPayload(inPayload);
-//			System.out.println(counter.incrementAndGet()  + " - Forwarding from  " + topic + " to " + forwardTopic + " with size: " + outPayload.capacity());
+//			System.out.println(counter.incrementAndGet()  + " - Forwarding from  " + topic + " (retained: " +  retained + ") to " + forwardTopic + " with size: " + outPayload.capacity());
 			senders.get(sender).publish(forwardTopic, outPayload, context);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Could not forward message from " + topic + " to " + forwardTopic, e);
