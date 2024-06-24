@@ -17,7 +17,10 @@ import org.eclipse.sensinact.gateway.geojson.FeatureCollection;
 import org.eclipse.sensinact.gateway.geojson.Polygon;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.ConfigurationPolicy;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
+import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.typedevent.TypedEventHandler;
 import org.osgi.service.typedevent.propertytypes.EventTopics;
 import org.osgi.util.promise.Promise;
@@ -28,15 +31,11 @@ import de.jena.conflict.sensinact.model.conflictProvider.ConflictFactory;
 import de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictAdmin;
 import de.jena.conflict.sensinact.model.conflictProvider.TrafficConflictProvider;
 
-@Component
+@Component(configurationPolicy = ConfigurationPolicy.OPTIONAL)
 @EventTopics({ "DATA/Ilsa/K440/K4/1/*", "DATA/TraficamProvider/Felsenkeller/3/*" })
 public class TrafficConflictNotification implements TypedEventHandler<ResourceDataNotification> {
 
 	private static final Logger logger = System.getLogger(TrafficConflictNotification.class.getName());
-
-	private static final double MIN_BIKE_SPEED = 7.0;
-	private static final double MAX_HEADING = 230;
-	private static final double MIN_HEADING = 90;
 
 	@Reference
 	private DataUpdate sensiNact;
@@ -51,6 +50,21 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 
 	private TrafficConflictProvider provider;
 
+	private ConflictConfiguration config;
+
+	public @interface ConflictConfiguration {
+
+	    @AttributeDefinition(name = "MinBikeSpeed", description = "Minimum speed to detect a class 3 object as bike")
+		double minBikeSpeed() default 7.0;
+
+	    @AttributeDefinition(name = "MaxHeading", description = "Maximum heading a bike has to move to be considered for a conflict")
+		double maxHeading() default 230;
+
+	    @AttributeDefinition(name = "MinHeading", description = "Minimum heading a bike has to move to be considered for a conflict")
+		double minHeading() default 90;
+
+	}
+
 	private static class State {
 
 		private static final DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME
@@ -61,7 +75,6 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		private String currentColor;
 		private Instant bikeTimestamp = Instant.EPOCH;
 		private Instant trafficLightTimestamp = Instant.EPOCH;
-
 
 		boolean isConflict() {
 			return ("🟢⚪⚪".equals(currentColor) || "⚪🟡🔴".equals(currentColor)) && bike;
@@ -77,7 +90,8 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 	}
 
 	@Activate
-	public void activate() {
+	public void activate(ConflictConfiguration configuration) {
+		this.config = configuration;
 		provider = ConflictFactory.eINSTANCE.createTrafficConflictProvider();
 		TrafficConflictAdmin admin = ConflictFactory.eINSTANCE.createTrafficConflictAdmin();
 		provider.setId("FelsenkellerRadAuto");
@@ -90,17 +104,21 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 		promiseFactory = new PromiseFactory(Executors.newCachedThreadPool());
 	}
 
+	@Modified
+	public void modify(ConflictConfiguration config) {
+		this.config = config;
+	}
+	
+	
 	@Override
 	public void notify(String topic, ResourceDataNotification event) {
-		promiseFactory.submit(() -> handleNotify(topic, event));
+		promiseFactory.submit(() -> handleNotify(topic, event))
+				.onFailure(e -> logger.log(Level.ERROR, "Error while handling notification from {0}.\n{1}", topic, e));
 	}
 
 	public boolean handleNotify(String topic, ResourceDataNotification event) {
 
 		logger.log(Level.DEBUG, "Event: {0} - {1}", event.getTopic(), event.timestamp);
-//		if ("dataId".equals(event.resource)) {
-//			logger.log(Level.INFO, "DataId {0} - {1} ", event.newValue, event.timestamp);
-//		}
 
 		boolean isCam = "Felsenkeller".equals(event.provider) && "objects".equals(event.resource)
 				&& "3".equals(event.service);
@@ -158,18 +176,16 @@ public class TrafficConflictNotification implements TypedEventHandler<ResourceDa
 	}
 
 	private boolean isBikeToSouth(ResourceDataNotification event) {
+		if (event.newValue == null) {
+			return false;
+		}
 		List<Feature> features = ((FeatureCollection) event.newValue).features;
 		for (Feature feature : features) {
 			Double heading = (Double) feature.properties.get("heading");
 			Double speed = (Double) feature.properties.get("speed");
-//			Long time = (Long) feature.properties.get("time");
 			Long id = (Long) feature.properties.get("id");
-//			Instant timestamp = event.timestamp;
-//
-//			Instant objectTime = Instant.ofEpochMilli(time);
-//			logger.log(Level.INFO, "Heading: {0} Speed: {1} Time: {2} ({3} - {4}) Id: {5}", heading, speed,
-//					objectTime,objectTime.until(Instant.now(), ChronoUnit.SECONDS), timestamp.until(Instant.now(), ChronoUnit.SECONDS), id == null ? "" : id);
-			if (heading > MIN_HEADING && heading < MAX_HEADING && speed > MIN_BIKE_SPEED) {
+			if (heading > config.minHeading() && heading < config.maxHeading()
+					&& speed > config.minBikeSpeed()) {
 				state.bikeId = id;
 				return true;
 			}
