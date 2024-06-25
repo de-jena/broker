@@ -41,7 +41,7 @@ public class MqttLifeSign {
 	@Activate
 	public void activate(TrafiCamConfig config) {
 		String id = config.id();
-		topic = "5g/traficam/" + id + "/lifesign";
+		topic = "5g/admin/" + id + "/lifesign";
 		executor = Executors.newScheduledThreadPool(1);
 		executor.scheduleAtFixedRate(this::sendLifeSign, 0, 1, TimeUnit.MINUTES);
 		logger.log(Level.INFO, "MQTT life sign started. {0}", id);
