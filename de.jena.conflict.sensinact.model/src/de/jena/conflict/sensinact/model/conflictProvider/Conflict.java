@@ -52,12 +52,12 @@ public interface Conflict extends Service {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bike Id</em>' attribute.
-	 * @see #setBikeId(long)
+	 * @see #setBikeId(Long)
 	 * @see de.jena.conflict.sensinact.model.conflictProvider.ConflictPackage#getConflict_BikeId()
 	 * @model
 	 * @generated
 	 */
-	long getBikeId();
+	Long getBikeId();
 
 	/**
 	 * Sets the value of the '{@link de.jena.conflict.sensinact.model.conflictProvider.Conflict#getBikeId <em>Bike Id</em>}' attribute.
@@ -67,6 +67,6 @@ public interface Conflict extends Service {
 	 * @see #getBikeId()
 	 * @generated
 	 */
-	void setBikeId(long value);
+	void setBikeId(Long value);
 
 } // Conflict

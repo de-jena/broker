@@ -56,7 +56,7 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final long BIKE_ID_EDEFAULT = 0L;
+	protected static final Long BIKE_ID_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getBikeId() <em>Bike Id</em>}' attribute.
@@ -66,7 +66,7 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 * @ordered
 	 */
-	protected long bikeId = BIKE_ID_EDEFAULT;
+	protected Long bikeId = BIKE_ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 */
 	@Override
-	public long getBikeId() {
+	public Long getBikeId() {
 		return bikeId;
 	}
 
@@ -126,8 +126,8 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 	 * @generated
 	 */
 	@Override
-	public void setBikeId(long newBikeId) {
-		long oldBikeId = bikeId;
+	public void setBikeId(Long newBikeId) {
+		Long oldBikeId = bikeId;
 		bikeId = newBikeId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ConflictPackage.CONFLICT__BIKE_ID, oldBikeId, bikeId));
@@ -196,7 +196,7 @@ public class ConflictImpl extends ServiceImpl implements Conflict {
 			case ConflictPackage.CONFLICT__CONFLICT:
 				return conflict != CONFLICT_EDEFAULT;
 			case ConflictPackage.CONFLICT__BIKE_ID:
-				return bikeId != BIKE_ID_EDEFAULT;
+				return BIKE_ID_EDEFAULT == null ? bikeId != null : !BIKE_ID_EDEFAULT.equals(bikeId);
 		}
 		return super.eIsSet(featureID);
 	}
