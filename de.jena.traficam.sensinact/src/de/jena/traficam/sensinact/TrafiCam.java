@@ -173,7 +173,7 @@ public class TrafiCam {
 							sendEmpty.set(false);
 						}
 					} catch (IOException e) {
-						logger.log(Level.ERROR, "Error while parsing json for {0}.", camId, e);
+						logger.log(Level.ERROR, "Error while parsing json for {0}.\n{1}", camId, e);
 					}
 					return geo;
 				});
@@ -182,7 +182,7 @@ public class TrafiCam {
 				TrafiCamDto dto = new TrafiCamDto(camId, classId, className, geo);
 				dto.timestamp = new Date().getTime();
 				Promise<?> promise = sensiNact.pushUpdate(dto);
-				promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.", e));
+				promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing update to sensinact.\n{0}", e));
 			}
 		});
 		return source;
@@ -272,7 +272,7 @@ public class TrafiCam {
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
 
 		} catch (IOException e) {
-			logger.log(Level.ERROR, "Error while parsing json.", e);
+			logger.log(Level.ERROR, "Error while parsing json.\n{0}", e);
 		}
 	}
 }
