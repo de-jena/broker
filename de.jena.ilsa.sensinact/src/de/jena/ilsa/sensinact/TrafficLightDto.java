@@ -13,6 +13,7 @@ package de.jena.ilsa.sensinact;
 
 import java.time.temporal.ChronoUnit;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.sensinact.core.annotation.dto.Data;
 import org.eclipse.sensinact.core.annotation.dto.Model;
 import org.eclipse.sensinact.core.annotation.dto.ModelPackageUri;
@@ -45,15 +46,15 @@ public class TrafficLightDto {
 
 	@Service
 	public String signal;
-//	
-//	@Service
-//	EClass serviceClass = IlsaPackage.Literals.SIGNAL;
+
+	@Service
+	public EClass serviceEClass = IlsaPackage.Literals.SIGNAL;
 
 //	@Service
-//	EReference serviceRef = IlsaPackage.Literals.ILSA__THERMAL;
+//	public EReference serviceRef = IlsaPackage.Literals.ILSA__THERMAL;
 
 //	@Resource
-//	EAttribute res = IlsaPackage.Literals.SIGNAL__COLOR;
+//	public EAttribute res = IlsaPackage.Literals.SIGNAL__COLOR;
 
 //	@Resource
 //	public String resource = "color";

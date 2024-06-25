@@ -52,8 +52,6 @@ public class TrafficLight {
 
 	@Reference
 	private DataUpdate sensiNact;
-//	@Reference
-//	private SensinactDigitalTwin twin;
 
 	@Reference(target = "(transformator.id=TLSTrafficLightToIlsa)")
 	private ModelTransformator traf;
@@ -101,15 +99,11 @@ public class TrafficLight {
 		String topic = message.topic();
 		Matcher matcher = TOPIC_PATTERN.matcher(topic);
 		if (matcher.find()) {
-//			if (null != twin.getProvider("Ilsa")) {
 			updateSignal(message, matcher.group(1));
-//			}
 		} else if (topic.endsWith("config/retained")) {
 			updateConfig(message);
 		} else if (topic.endsWith("thermal")) {
-//			if (null != twin.getProvider("Ilsa")) {
 			updateThermal(message, topic.split("/")[3]);
-//			}
 		}
 	}
 
@@ -125,7 +119,7 @@ public class TrafficLight {
 		dto.type = Double.class;
 		logger.log(Level.DEBUG, "push thermal {0} ", dto.value);
 		Promise<?> promise = sensiNact.pushUpdate(dto);
-		promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing to sensinact.", e));
+		promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing thermal to sensinact.", e));
 	}
 
 	private void updateSignal(Message message, String intersectionId) {
@@ -139,7 +133,7 @@ public class TrafficLight {
 			dto.timestamp = signalState.getTimestamp().getTime();
 			logger.log(Level.DEBUG, "push {0} {1}", signalState.getId(), signalState.getState());
 			Promise<?> promise = sensiNact.pushUpdate(dto);
-			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing to sensinact.", e));
+			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing signal to sensinact.", e));
 		} catch (IOException e) {
 			logger.log(Level.ERROR, "Error while parsing json.", e);
 		} finally {
