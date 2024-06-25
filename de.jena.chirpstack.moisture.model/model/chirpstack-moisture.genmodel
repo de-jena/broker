@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.jena.chirpstack.moisture.model/src" modelPluginID="de.jena.chirpstack.moisture.model"
+    modelName="chirpstack-moisture" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" suppressGenModelAnnotations="false"
+    copyrightFields="false" usedGenPackages="../../org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.genmodel#//provider"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>chirpstack-moisture.ecore</foreignModel>
+  <genPackages prefix="ChirpstackMoisture" basePackage="de.jena.chirpstack.moisture.model"
+      resource="XMI" disposableProviderFactory="true" ecorePackage="chirpstack-moisture.ecore#/">
+    <genClasses ecoreClass="chirpstack-moisture.ecore#//Dragino">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference chirpstack-moisture.ecore#//Dragino/sensor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference chirpstack-moisture.ecore#//Dragino/soil"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference chirpstack-moisture.ecore#//Dragino/device"/>
+    </genClasses>
+    <genClasses ecoreClass="chirpstack-moisture.ecore#//Sensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Sensor/battery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Sensor/iflag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Sensor/sflag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Sensor/Mod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Sensor/temperatureDS18B20"/>
+    </genClasses>
+    <genClasses ecoreClass="chirpstack-moisture.ecore#//Soil">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Soil/temperature"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Soil/water"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Soil/conduct"/>
+    </genClasses>
+    <genClasses ecoreClass="chirpstack-moisture.ecore#//Device">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/DevEUI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/profileId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/profileName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/tenantId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/tenantName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/applicationId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute chirpstack-moisture.ecore#//Device/applicationName"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

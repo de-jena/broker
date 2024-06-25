@@ -1,0 +1,83 @@
+{
+	"deduplicationId": "9ffbc7be-916a-4597-9d64-0713a3d5e030",
+	"time": "2024-06-20T08:48:38.863512+00:00",
+	"deviceInfo": {
+		"tenantId": "52f14cd4-c6f1-4fbd-8f87-4025e1d49242",
+		"tenantName": "Jena",
+		"applicationId": "5bb92de6-49b3-49af-a366-34667f2230be",
+		"applicationName": "KSJ_Bodenfeuchte_Stadtforst",
+		"deviceProfileId": "37cf9cbd-e7e1-4269-8c22-b46bb5261a2a",
+		"deviceProfileName": "Dragino_LSE01",
+		"deviceName": "LST25628782",
+		"devEui": "a8404187d187106e",
+		"tags": {
+			"dev_type": "dragino_lse01"
+		}
+	},
+	"devAddr": "01acdec6",
+	"adr": true,
+	"dr": 0,
+	"fCnt": 110,
+	"fPort": 2,
+	"confirmed": true,
+	"data": "DOUAAAVeBS0AIxA=",
+	"object": {
+		"BatV": 3.301,
+		"temp_DS18B20": "0.00",
+		"temp_SOIL": "13.25",
+		"water_SOIL_f": 13.74,
+		"conduct_SOIL": 35.0,
+		"i_flag": 0.0,
+		"water_SOIL": "13.74",
+		"temp_SOIL_f": 13.25,
+		"s_flag": 1.0,
+		"conduct_SOIL_f": 35.0,
+		"Mod": 0.0
+	},
+	"rxInfo": [
+		{
+			"gatewayId": "a84041ffff1f4b70",
+			"uplinkId": 45347,
+			"time": "2024-06-20T08:48:38.863512+00:00",
+			"rssi": -127,
+			"snr": -12.8,
+			"channel": 3,
+			"location": {
+				"latitude": 50.949717,
+				"longitude": 11.608153,
+				"altitude": 151.0
+			},
+			"context": "a72XTA==",
+			"metadata": {
+				"region_name": "eu868",
+				"region_common_name": "EU868"
+			}
+		},
+		{
+			"gatewayId": "fcc23dfffe2ea641",
+			"uplinkId": 24930,
+			"rssi": -116,
+			"snr": -1.0,
+			"channel": 3,
+			"location": {
+				"latitude": 50.932005871988125,
+				"longitude": 11.591793894767763
+			},
+			"context": "4Xz01A==",
+			"metadata": {
+				"region_common_name": "EU868",
+				"region_name": "eu868"
+			}
+		}
+	],
+	"txInfo": {
+		"frequency": 867100000,
+		"modulation": {
+			"lora": {
+				"bandwidth": 125000,
+				"spreadingFactor": 12,
+				"codeRate": "CR_4_5"
+			}
+		}
+	}
+}

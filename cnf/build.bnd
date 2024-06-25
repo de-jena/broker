@@ -78,5 +78,6 @@ Bundle-Version: ${broker-base-version}
   traficam;member=${filter;${p};.*\.traficam\.*},\
   ilsa;member=${filter;${p};.*\.ilsa\.*},\
   ttn;member=${filter;${p};.*\.ttn\.*},\
+  chirpstack;member=${filter;${p};.*\.chirpstack\.*},\
   trafficos;member=${filter;${p};.*\.trafficos\.*}
   

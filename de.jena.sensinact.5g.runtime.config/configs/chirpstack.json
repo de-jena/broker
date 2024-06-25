@@ -1,0 +1,24 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:symbolic-name": "ChirpstackConfig",
+	":configurator:version": "0.0.1",
+	
+	"ChirpstackConfig~jena": 
+	{
+		"id": "chirpstack-jena",
+		"mappingFile": "/opt/sensinact/chirpstack/mapping.json",
+		"protocol": "ssl",
+		"host": "chirpstack.jena.de",
+		"port": 8883,
+		"topics": [
+			"application/5bb92de6-49b3-49af-a366-34667f2230be/device/+/event/up"
+		],
+		"certPath": "/opt/sensinact/certificates/tls.pem",
+		"certKey": "/opt/sensinact/certificates/tls.key",
+		"caPath": "/opt/sensinact/certificates/ca.pem",
+		"caChainPath": [
+			"/opt/sensinact/certificates/ISRG_Root_X1_DST_Root_CA_X3_.cer",
+			"/opt/sensinact/certificates/R3_ISRG_Root_X1_.cer"
+		]
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"parser": "json",
+	"mapping": {
+		"$devEui": "deviceInfo/devEui",
+		"@modelPackageUri": {
+			"literal": "https://model.data.jena.de/sensinact/chirpstack/moisture/1.0"
+		},
+		"@model": "deviceInfo/deviceProfileName",
+		"@provider": {
+			"literal": "chirpstack-${devEui}"
+		},
+		"@friendlyName": "deviceInfo/deviceName",
+		"@latitude": "rxInfo/0/location/latitude",
+		"@longitude": "rxInfo/0/location/longitude",
+		"@altitude": "rxInfo/0/location/altitude",
+		"device/DevEUI": "deviceInfo/devEui",
+		"device/name": "deviceInfo/deviceName",
+		"device/profileId": "deviceInfo/deviceProfileId",
+		"device/profileName": "deviceInfo/deviceProfileName",
+		"device/tenantId": "deviceInfo/tenantId",
+		"device/tenantName": "deviceInfo/tenantName",
+		"device/applicationId": "deviceInfo/applicationId",
+		"device/applicationName": "deviceInfo/applicationName",
+		"sensor/battery": "object/BatV",
+		"sensor/iflag": "object/i_flag",
+		"sensor/sflag": "object/s_flag",
+		"sensor/Mod": "object/Mod",
+		"sensor/temperatureDS18B20": {
+			"path": "object/temp_DS18B20",
+			"type": "float"
+		},
+		"soil/temperature": "object/temp_SOIL_f",
+		"soil/water": "object/water_SOIL_f",
+		"soil/conduct": "object/conduct_SOIL_f"
+	}
+}
