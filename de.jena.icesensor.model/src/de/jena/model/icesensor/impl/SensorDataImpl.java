@@ -326,7 +326,7 @@ public class SensorDataImpl extends MinimalEObjectImpl.Container implements Sens
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensorPackage.eINSTANCE.getSensorData();
+		return IcesensorPackage.Literals.SENSOR_DATA;
 	}
 
 	/**

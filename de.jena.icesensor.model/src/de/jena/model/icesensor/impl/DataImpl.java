@@ -197,7 +197,7 @@ public class DataImpl extends MinimalEObjectImpl.Container implements Data {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensorPackage.eINSTANCE.getData();
+		return IcesensorPackage.Literals.DATA;
 	}
 
 	/**

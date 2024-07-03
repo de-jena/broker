@@ -140,7 +140,7 @@ public class IceSENSORImpl extends MinimalEObjectImpl.Container implements IceSE
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensorPackage.eINSTANCE.getIceSENSOR();
+		return IcesensorPackage.Literals.ICE_SENSOR;
 	}
 
 	/**

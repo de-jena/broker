@@ -93,7 +93,7 @@ public class CoordsImpl extends MinimalEObjectImpl.Container implements Coords {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensorPackage.eINSTANCE.getCoords();
+		return IcesensorPackage.Literals.COORDS;
 	}
 
 	/**

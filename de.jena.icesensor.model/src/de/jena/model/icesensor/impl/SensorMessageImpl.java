@@ -107,7 +107,7 @@ public class SensorMessageImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return IcesensorPackage.eINSTANCE.getSensorMessage();
+		return IcesensorPackage.Literals.SENSOR_MESSAGE;
 	}
 
 	/**

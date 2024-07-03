@@ -933,4 +933,334 @@ public interface IcesensorPackage extends org.eclipse.emf.ecore.EPackage {
 	 */
 	IcesensorFactory getIcesensorFactory();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link de.jena.model.icesensor.impl.IceSENSORImpl <em>Ice SENSOR</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.icesensor.impl.IceSENSORImpl
+		 * @see de.jena.model.icesensor.impl.IcesensorPackageImpl#getIceSENSOR()
+		 * @generated
+		 */
+		EClass ICE_SENSOR = eINSTANCE.getIceSENSOR();
+
+		/**
+		 * The meta object literal for the '<em><b>Ice id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ICE_SENSOR__ICE_ID = eINSTANCE.getIceSENSOR_Ice_id();
+
+		/**
+		 * The meta object literal for the '<em><b>Coords</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__COORDS = eINSTANCE.getIceSENSOR_Coords();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ICE_SENSOR__DATA = eINSTANCE.getIceSENSOR_Data();
+
+		/**
+		 * The meta object literal for the '<em><b>Has beacon</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ICE_SENSOR__HAS_BEACON = eINSTANCE.getIceSENSOR_Has_beacon();
+
+		/**
+		 * The meta object literal for the '<em><b>Detail</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ICE_SENSOR__DETAIL = eINSTANCE.getIceSENSOR_Detail();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.model.icesensor.impl.DataImpl <em>Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.icesensor.impl.DataImpl
+		 * @see de.jena.model.icesensor.impl.IcesensorPackageImpl#getData()
+		 * @generated
+		 */
+		EClass DATA = eINSTANCE.getData();
+
+		/**
+		 * The meta object literal for the '<em><b>H2sugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__H2SUGM3 = eINSTANCE.getData_H2sugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Cougm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__COUGM3 = eINSTANCE.getData_Cougm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Nougm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__NOUGM3 = eINSTANCE.getData_Nougm3();
+
+		/**
+		 * The meta object literal for the '<em><b>O3ugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__O3UGM3 = eINSTANCE.getData_O3ugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>1p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__1P = eINSTANCE.getData__1p();
+
+		/**
+		 * The meta object literal for the '<em><b>Aqi criteria</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__AQI_CRITERIA = eINSTANCE.getData_Aqi_criteria();
+
+		/**
+		 * The meta object literal for the '<em><b>Temperature</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__TEMPERATURE = eINSTANCE.getData_Temperature();
+
+		/**
+		 * The meta object literal for the '<em><b>Humidity</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__HUMIDITY = eINSTANCE.getData_Humidity();
+
+		/**
+		 * The meta object literal for the '<em><b>10p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__10P = eINSTANCE.getData__10p();
+
+		/**
+		 * The meta object literal for the '<em><b>Pressure</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__PRESSURE = eINSTANCE.getData_Pressure();
+
+		/**
+		 * The meta object literal for the '<em><b>No2ugm3</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__NO2UGM3 = eINSTANCE.getData_No2ugm3();
+
+		/**
+		 * The meta object literal for the '<em><b>Aqi</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__AQI = eINSTANCE.getData_Aqi();
+
+		/**
+		 * The meta object literal for the '<em><b>25p</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DATA__25P = eINSTANCE.getData__2_5p();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.model.icesensor.impl.CoordsImpl <em>Coords</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.icesensor.impl.CoordsImpl
+		 * @see de.jena.model.icesensor.impl.IcesensorPackageImpl#getCoords()
+		 * @generated
+		 */
+		EClass COORDS = eINSTANCE.getCoords();
+
+		/**
+		 * The meta object literal for the '<em><b>Latitude</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COORDS__LATITUDE = eINSTANCE.getCoords_Latitude();
+
+		/**
+		 * The meta object literal for the '<em><b>Longitude</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COORDS__LONGITUDE = eINSTANCE.getCoords_Longitude();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.model.icesensor.impl.SensorDataImpl <em>Sensor Data</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.icesensor.impl.SensorDataImpl
+		 * @see de.jena.model.icesensor.impl.IcesensorPackageImpl#getSensorData()
+		 * @generated
+		 */
+		EClass SENSOR_DATA = eINSTANCE.getSensorData();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__SENSOR_TYPE = eINSTANCE.getSensorData_Sensor_type();
+
+		/**
+		 * The meta object literal for the '<em><b>Gateway</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__GATEWAY = eINSTANCE.getSensorData_Gateway();
+
+		/**
+		 * The meta object literal for the '<em><b>Sensor model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__SENSOR_MODEL = eINSTANCE.getSensorData_Sensor_model();
+
+		/**
+		 * The meta object literal for the '<em><b>Avg</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__AVG = eINSTANCE.getSensorData_Avg();
+
+		/**
+		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__MIN = eINSTANCE.getSensorData_Min();
+
+		/**
+		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__MAX = eINSTANCE.getSensorData_Max();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__UNIT = eINSTANCE.getSensorData_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Validity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__VALIDITY = eINSTANCE.getSensorData_Validity();
+
+		/**
+		 * The meta object literal for the '<em><b>Created at</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__CREATED_AT = eINSTANCE.getSensorData_Created_at();
+
+		/**
+		 * The meta object literal for the '<em><b>Str data</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_DATA__STR_DATA = eINSTANCE.getSensorData_Str_data();
+
+		/**
+		 * The meta object literal for the '{@link de.jena.model.icesensor.impl.SensorMessageImpl <em>Sensor Message</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.jena.model.icesensor.impl.SensorMessageImpl
+		 * @see de.jena.model.icesensor.impl.IcesensorPackageImpl#getSensorMessage()
+		 * @generated
+		 */
+		EClass SENSOR_MESSAGE = eINSTANCE.getSensorMessage();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_MESSAGE__TYPE = eINSTANCE.getSensorMessage_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Stream</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SENSOR_MESSAGE__STREAM = eINSTANCE.getSensorMessage_Stream();
+
+		/**
+		 * The meta object literal for the '<em><b>Data</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SENSOR_MESSAGE__DATA = eINSTANCE.getSensorMessage_Data();
+
+	}
+
 } //IcesensorPackage

@@ -7,7 +7,7 @@
     copyrightFields="false" operationReflection="true" importOrganizing="true" oSGiCompatible="true">
   <foreignModel>icesensor.ecore</foreignModel>
   <genPackages prefix="Icesensor" basePackage="de.jena.model" resource="XMI" disposableProviderFactory="true"
-      literalsInterface="false" ecorePackage="icesensor.ecore#/">
+      ecorePackage="icesensor.ecore#/">
     <genClasses ecoreClass="icesensor.ecore#//IceSENSOR">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute icesensor.ecore#//IceSENSOR/ice_id"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference icesensor.ecore#//IceSENSOR/coords"/>
