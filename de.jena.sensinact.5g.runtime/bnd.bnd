@@ -37,4 +37,5 @@
 	org.gecko.adapter.mqtt,\
 	org.gecko.osgi.messaging,\
 	org.gecko.util.common,\
-	org.gecko.util.pushstream
+	org.gecko.util.pushstream,\
+	org.eclipse.sensinact.gateway.northbound.sensorthings.mqtt
