@@ -37,7 +37,7 @@ import de.jena.udp.model.trafficos.trafficlight.TLConfiguration;
 import de.jena.udp.model.trafficos.trafficlight.TLSignalState;
 
 @RequireEMFJson
-@Component(immediate = true)
+@Component
 public class TrafficLight {
 
 	private static final Logger logger = System.getLogger(TrafficLight.class.getName());

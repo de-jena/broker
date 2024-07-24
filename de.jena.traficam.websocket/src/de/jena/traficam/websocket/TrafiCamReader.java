@@ -103,7 +103,7 @@ public class TrafiCamReader {
 	}
 
 	private void publish(EObject camObject) {
-		if (source.isConnected()) {
+		if (source != null && source.isConnected()) {
 			source.publish((TrafiCam) EcoreUtil.copy(camObject));
 		}
 	}
