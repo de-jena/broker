@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="https://jena.de/models/ibis/sensinact/1.0" targetURI="platform:/resource/de.jena.ibis.sensinact.model/model/ibis.ecore"/>
+  <mapping sourceURI="https://jena.de/models/ibis/customerinfoservice/1.0" targetURI="platform:/resource/de.jena.ibis.customer.info.service.model/model/ibis-customerinfoservice.ecore"/>
+  <mapping sourceURI="https://jena.de/models/ibis/gnsslocationservice/1.0" targetURI="platform:/resource/de.jena.ibis.gnss.location.service.model/model/ibis-gnsslocationservice.ecore"/>
+  <mapping sourceURI="https://jena.de/models/ibis/ticketvalidationservice/1.0" targetURI="platform:/resource/de.jena.ibis.ticket.validation.service.model/model/ibis-ticketvalidationservice.ecore"/>
+  <mapping sourceURI="https://jena.de/models/ibis/common/1.0" targetURI="platform:/resource/de.jena.ibis.common.model/model/ibis-common.ecore"/>
+  <mapping sourceURI="https://eclipse.org/sensinact/core/provider/1.0" targetURI="platform:/resource/org.eclipse.sensinact.gateway.core.models.provider/model/sensinact.ecore"/>
+</uriMap:MappingContainer>

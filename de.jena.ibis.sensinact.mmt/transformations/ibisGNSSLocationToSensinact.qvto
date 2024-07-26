@@ -1,0 +1,100 @@
+library ibisGNSSLocationToSensinact;
+
+import ibisToSensinactLibrary;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype GNSSLOCATION uses "https://jena.de/models/ibis/gnsslocationservice/1.0";
+modeltype SENSINACT uses "https://jena.de/models/ibis/sensinact/1.0";
+
+mapping GNSSLOCATION::GNSSLocationData::gnssLocationToService(): SENSINACT::IbisDevice {
+	gnssLocationData := self.map locationDataToService("GNSSLocationService", "GNSSLocationData");
+	admin := toAdmin("GNSSLocationService-GNSSLocationData");
+}
+
+mapping GNSSLOCATION::GNSSLocationData::locationDataToService(friendlyServiceName : String, operation : String): SENSINACT::GNSSLocationData {
+	var eClass := SENSINACT::GNSSLocationData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.time.getEInstant();
+	serviceName := friendlyServiceName;
+	serviceOperation := operation;
+	
+	latitudeDegree := self.latitude.degree.value;
+	if(self.latitude.degree.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("latitudeDegree"), friendlyServiceName, null, "true", null);
+	};
+	
+	longitudeDegree := self.longitude.degree.value;
+	if(self.longitude.degree.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("longitudeDegree"), friendlyServiceName, null, "true", null);
+	};
+	
+	latitudeDirection := self.latitude.direction.value;
+	if(self.latitude.direction.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("latitudeDirection"), friendlyServiceName, null, "true", null);
+	};
+	
+	longitudeDirection := self.longitude.direction.value;
+	if(self.longitude.direction.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("longitudeDirection"), friendlyServiceName, null, "true", null);
+	};
+	
+	date := self.date.getEInstant();
+	if(self.date.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("date"), friendlyServiceName, null, "true", null);
+	};
+
+	time := self.time.getEInstant();
+	if(self.time.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("time"), friendlyServiceName, null, "true", null);
+	};
+
+	altitude := self.altitude.value;
+	if(self.altitude.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("altitude"), friendlyServiceName, null, "true", null);
+	};
+	
+	speedOverGround := self.speedOverGround.value;
+	if(self.speedOverGround.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("speedOverGround"), friendlyServiceName, null, "true", null);
+	};
+	
+	signalQuality := self.signalQuality.toString();
+	if(self.signalQuality.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("signalQuality"), friendlyServiceName, null, "true", null);
+	};
+	
+	numberOfSatellites := self.numberOfSatellites.value;
+	if(self.numberOfSatellites.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("numberOfSatellites"), friendlyServiceName, null, "true", null);
+	};
+	
+	horizontalDilutionOfPrecision := self.horiziontalDilutionOfPrecision.value;
+	if(self.horiziontalDilutionOfPrecision.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("horizontalDilutionOfPrecision"), friendlyServiceName, null, "true", null);
+	};
+	
+	verticalDilutionOfPrecision := self.verticalDilutionOfPrecision.value;
+	if(self.verticalDilutionOfPrecision.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("verticalDilutionOfPrecision"), friendlyServiceName, null, "true", null);
+	};
+	
+	trackDegreeTrue := self.trackDegreeTrue.value;
+	if(self.trackDegreeTrue.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("trackDegreeTrue"), friendlyServiceName, null, "true", null);
+	};
+	
+	trackDegreeMagnetic := self.trackDegreeMagnetic.value;
+	if(self.trackDegreeMagnetic.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("trackDegreeMagnetic"), friendlyServiceName, null, "true", null);
+	};
+	
+	gNSSType := self.gNSSType.toString();
+	if(self.gNSSType.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("gNSSType"), friendlyServiceName, null, "true", null);
+	};
+	
+	gNSSCoordinateSystem := self.gNSSCoordinateSystem.toString();
+	if(self.gNSSCoordinateSystem.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("gNSSCoordinateSystem"), friendlyServiceName, null, "true", null);
+	};
+}

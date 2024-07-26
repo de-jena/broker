@@ -1,0 +1,20 @@
+-includeresource: \
+	transformations=transformations
+
+-library: enable-emf
+
+-buildpath: \
+	org.eclipse.m2m.qvt.oml,\
+	de.jena.ibis.common.model,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.gecko.qvt.osgi.api;version=latest,\
+	org.osgi.util.promise,\
+	org.osgi.util.pushstream,\
+	org.osgi.util.function,\
+	de.jena.ibis.customer.info.service.model,\
+	de.jena.ibis.device.management.service.model,\
+	de.jena.ibis.door.state.service.model,\
+	de.jena.ibis.enumerations.model,\
+	de.jena.ibis.gnss.location.service.model,\
+	de.jena.ibis.passenger.counting.service.model,\
+	de.jena.ibis.ticket.validation.service.model

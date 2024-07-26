@@ -1,0 +1,17 @@
+-library: \
+	enable-emf,\
+	enableOSGi-Test
+	
+Bundle-Version: 1.0.0.SNAPSHOT
+
+-buildpath: \
+	org.gecko.qvt.osgi.api,\
+	de.jena.ibis.customer.info.service.model;version=latest,\
+	de.jena.ibis.common.model;version=latest,\
+	de.jena.ibis.enumerations.model;version=latest,\
+	org.osgi.test.junit5.cm,\
+	de.jena.ibis.sensinact.model;version=latest,\
+	org.eclipse.sensinact.gateway.core.models.provider,\
+	org.eclipse.m2m.qvt.oml,\
+	de.jena.ibis.gnss.location.service.model;version=latest,\
+	de.jena.ibis.ticket.validation.service.model;version=latest

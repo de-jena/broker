@@ -10,7 +10,6 @@
 	org.osgi.service.component,\
 	org.gecko.emf.json,\
 	de.jena.udp.trafficos.common.model,\
-	org.osgi.util.promise,\
 	org.eclipse.sensinact.gateway.core.api,\
 	org.eclipse.sensinact.gateway.core.models.metadata,\
 	org.eclipse.sensinact.gateway.core.models.provider,\
@@ -19,10 +18,11 @@
 	org.eclipse.sensinact.gateway.core.emf-api,\
 	org.eclipse.sensinact.gateway.core.annotation;version=latest,\
 	com.fasterxml.jackson.core.jackson-databind,\
+	org.osgi.util.promise,\
 	org.osgi.util.pushstream,\
+	org.osgi.util.function,\
 	org.gecko.osgi.messaging,\
-	org.eclipse.emfcloud.emfjson-jackson,\
-	org.osgi.util.function
+	org.eclipse.emfcloud.emfjson-jackson
 	
 	
 -library: enable-emf

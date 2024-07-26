@@ -1,0 +1,416 @@
+library ibisCustomerInfoToSensinact;
+
+import ibisToSensinactLibrary;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype CUSTOMERINFO uses "https://jena.de/models/ibis/customerinfoservice/1.0";
+modeltype SENSINACT uses "https://jena.de/models/ibis/sensinact/1.0";
+
+mapping CUSTOMERINFO::AllDataResponse::allDataToService(): SENSINACT::IbisDevice {
+	customerInfoAllData := self.allData.map allDataToService("CustomerInformationService", "AllData");
+	admin := toAdmin("CustomerInformationService-AllData");
+}
+
+mapping CUSTOMERINFO::CurrentAnnouncementResponse::announcementToService(): SENSINACT::IbisDevice {
+	customerInfoCurrentAnnouncementData := self.currentAnnouncementData.map announcementToService("CustomerInformationService", "CurrentAnnouncementData");
+	admin := toAdmin("CustomerInformationService-CurrentAnnoucement");
+}
+
+mapping CUSTOMERINFO::CurrentConnectionInformationResponse::connectionToService(): SENSINACT::IbisDevice {
+	customerInfoCurrentConnectionData := self.currentConnectionData.map connectionToService("CustomerInformationService", "CurrentConnectionInformationData");
+	admin := toAdmin("CustomerInformationService-CurrentConnectionInformation");
+}
+
+mapping CUSTOMERINFO::CurrentDisplayContentResponse::displayToService(): SENSINACT::IbisDevice {
+	customerInfoCurrentDisplayContentData := self.currentDisplayContentData.map displayToService("CustomerInformationService", "CurrentDisplayContentData");
+	admin := toAdmin("CustomerInformationService-CurrentDisplayContent");
+}
+
+mapping CUSTOMERINFO::CurrentStopIndexResponse::stopIndexToService(): SENSINACT::IbisDevice {
+	customerInfoCurrentStopIndexData := self.currentStopIndexData.map stopIndexToService("CustomerInformationService", "CurrentStopIndexData");
+	admin := toAdmin("CustomerInformationService-CurrentStopIndex");
+}
+
+mapping CUSTOMERINFO::CurrentStopPointResponse::stopPointToService(): SENSINACT::IbisDevice {
+	customerInfoCurrentStopPointData := self.currentStopPointData.map stopPointToService("CustomerInformationService", "CurrentStopPointData");
+	admin := toAdmin("CustomerInformationService-CurrentStopPoint");
+}
+
+mapping CUSTOMERINFO::TripDataResponse::tripToService(): SENSINACT::IbisDevice {
+	customerInfoTripData := self.tripData.map tripToService("CustomerInformationService", "TripData");
+	admin := toAdmin("CustomerInformationService-TripData");
+}
+
+mapping CUSTOMERINFO::VehicleDataResponse::vehicleToService(): SENSINACT::IbisDevice {
+	customerInfoVehicleData := self.vehicleData.map vehicleToService("CustomerInformationService", "VehicleData");
+	admin := toAdmin("CustomerInformationService-VehicleData");
+}
+
+mapping CUSTOMERINFO::CurrentAnnouncementData::announcementToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoCurrentAnnouncementData {
+	var eClass := SENSINACT::CustomerInfoCurrentAnnouncementData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();	
+	serviceName := "CustomerInformationService";
+	serviceOperation := "CurrentAnnouncement";
+	
+	announcementRef := self.currentAnnouncement.announcementRef.value;
+	if(self.currentAnnouncement.announcementRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("announcementRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	announcementText += self.currentAnnouncement.announcementText.value;
+	if(self.currentAnnouncement.announcementText->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("announcementText"), friendlyServiceName, null, "true", null);
+	};
+	
+	announcementTTSText += self.currentAnnouncement.announcementTTSText.value;
+	if(self.currentAnnouncement.announcementTTSText->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("announcementTTSText"), friendlyServiceName, null, "true", null);
+	};	
+}
+
+mapping CUSTOMERINFO::CurrentConnectionInformationData::connectionToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoCurrentConnectionData {
+	var eClass := SENSINACT::CustomerInfoCurrentConnectionData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();	
+	serviceName := "CustomerInformationService";
+	serviceOperation := "CurrentConnectionInformation";
+	
+//	TODO: connection is a list in ibis 	
+}
+
+mapping CUSTOMERINFO::CurrentDisplayContentData::displayToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoCurrentDisplayContentData {
+	var eClass := SENSINACT::CustomerInfoCurrentDisplayContentData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();	
+	serviceName := "CustomerInformationService";
+	serviceOperation := "CurrentDisplayContent";
+	
+//	TODO: add display content list to sensinact model
+	
+}
+
+mapping CUSTOMERINFO::CurrentStopIndexData::stopIndexToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoCurrentStopIndexData {
+	var eClass := SENSINACT::CustomerInfoCurrentStopIndexData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := "CustomerInformationService";
+	serviceOperation := "CurrentStopIndex";
+		
+	currentStopIndex := self.currentStopIndex.value;
+	if(self.currentStopIndex.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("currentStopIndex"), friendlyServiceName, null, "true", null);
+	};
+}
+
+mapping CUSTOMERINFO::CurrentStopPointData::stopPointToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoCurrentStopPointData {
+	var eClass := SENSINACT::CustomerInfoCurrentStopPointData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := "CustomerInformationService";
+	serviceOperation := "CurrentStopPointData";
+		
+	stopIndex := self.currentStopPoint.stopIndex.value;
+	if(self.currentStopPoint.stopIndex.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopIndex"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopRef := self.currentStopPoint.stopRef.value;
+	if(self.currentStopPoint.stopRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopName += self.currentStopPoint.stopName.value;
+	if(self.currentStopPoint.stopName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopName"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopAlternativeName += self.currentStopPoint.stopAlternativeName.value; 
+	if(self.currentStopPoint.stopAlternativeName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopAlternativeName"), friendlyServiceName, null, "true", null);
+	};
+	
+	platform := self.currentStopPoint.platform.value;
+	if(self.currentStopPoint.platform.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("platform"), friendlyServiceName, null, "true", null);
+	};
+	
+	arrivalScheduled := self.currentStopPoint.arrivalScheduled.getEInstant();
+	if(self.currentStopPoint.arrivalScheduled.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("arrivalScheduled"), friendlyServiceName, null, "true", null);
+	};
+	
+	arrivalExpected := self.currentStopPoint.arrivalExpected.getEInstant();
+	if(self.currentStopPoint.arrivalExpected.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("arrivalExpected"), friendlyServiceName, null, "true", null);
+	};
+	
+	departureScheduled := self.currentStopPoint.departureScheduled.getEInstant();
+	if(self.currentStopPoint.departureScheduled.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("departureScheduled"), friendlyServiceName, null, "true", null);
+	};
+	
+	departureExpected := self.currentStopPoint.departureExpected.getEInstant();
+	if(self.currentStopPoint.departureExpected.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("departureExpected"), friendlyServiceName, null, "true", null);
+	};
+	
+	recordedArrivalTime := self.currentStopPoint.recordedArrivalTime.getEInstant();
+	if(self.currentStopPoint.recordedArrivalTime.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("recordedArrivalTime"), friendlyServiceName, null, "true", null);
+	};
+	
+	distanceToNextStop := self.currentStopPoint.distanceToNextStop.value;
+	if(self.currentStopPoint.distanceToNextStop.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("distanceToNextStop"), friendlyServiceName, null, "true", null);
+	};
+	
+	fareZone += self.currentStopPoint.fareZone.value;
+	if(self.currentStopPoint.fareZone->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("fareZone"), friendlyServiceName, null, "true", null);
+	};
+}
+
+mapping CUSTOMERINFO::TripData::tripToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoTripData {
+	var eClass := SENSINACT::CustomerInfoTripData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := "CustomerInformationService";
+	serviceOperation := "TripData";
+		
+	vehicleRef := self.vehicleRef.value;
+	if(self.vehicleRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	defaultLanguage := self.defaultLanguage.value;
+	if(self.defaultLanguage.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("defaultLanguage"), friendlyServiceName, null, "true", null);
+	};
+	
+	tripRef := self.tripInformation.tripRef.value;
+	if(self.tripInformation.tripRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("tripRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	locationState := self.tripInformation.locationState.toString();
+	if(self.tripInformation.locationState.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("locationState"), friendlyServiceName, null, "true", null);
+	};
+	
+	timetableDelay := self.tripInformation.timetableDelay.value;
+	if(self.tripInformation.timetableDelay.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("timetableDelay"), friendlyServiceName, "sec", "true", null);
+	};
+	
+	routeDirection := self.tripInformation.routeDirection.toString();
+	if(self.tripInformation.routeDirection.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("routeDirection"), friendlyServiceName, null, "true", null);
+	};
+	
+	runNumber := self.tripInformation.runNumber.value;
+	if(self.tripInformation.runNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("runNumber"), friendlyServiceName, null, "true", null);
+	};
+	
+	patternNumber := self.tripInformation.patternNumber.value;
+	if(self.tripInformation.patternNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("patternNumber"), friendlyServiceName, null, "true", null);
+	};
+	
+	pathDestinationNumber := self.tripInformation.pathDestinationNumber.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("pathDestinationNumber"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg := self.tripInformation.additionalTextMessage.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg1 := self.tripInformation.additionalTextMessage1.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg1"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg2 := self.tripInformation.additionalTextMessage2.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg2"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg3 := self.tripInformation.additionalTextMessage3.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg3"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg4 := self.tripInformation.additionalTextMessage4.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg4"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg5 := self.tripInformation.additionalTextMessage5.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg5"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg6 := self.tripInformation.additionalTextMessage6.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg6"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg7 := self.tripInformation.additionalTextMessage7.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg7"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg8 := self.tripInformation.additionalTextMessage8.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg8"), friendlyServiceName, null, "true", null);
+	};
+	
+	additionalTextMsg9 := self.tripInformation.additionalTextMessage9.value;
+	if(self.tripInformation.pathDestinationNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("additionalTextMsg9"), friendlyServiceName, null, "true", null);
+	};
+	
+	currentStopIndex := self.currentStopIndex.value;
+	if(self.currentStopIndex.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("currentStopIndex"), friendlyServiceName, null, "true", null);
+	};
+}
+
+mapping CUSTOMERINFO::VehicleData::vehicleToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoVehicleData {
+	var eClass := SENSINACT::CustomerInfoVehicleData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := "CustomerInformationService";
+	serviceOperation := "VechicleData";
+		
+	vehicleRef := self.vehicleRef.value;
+	if(self.vehicleRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	routeDeviation := self.routeDeviation.toString();
+	if(self.routeDeviation.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("routeDeviation"), friendlyServiceName, null, "true", null);
+	};
+	
+	doorState := self.doorState.toString();
+	if(self.doorState.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("doorState"), friendlyServiceName, null, "true", null);
+	};
+	
+	inPanic := self.inPanic.value;
+	if(self.inPanic.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("inPanic"), friendlyServiceName, null, "true", null);
+	};
+	
+	vehicleStopRequested := self.vehicleStopRequested.value;
+	if(self.vehicleStopRequested.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleStopRequested"), friendlyServiceName, null, "true", null);
+	};
+	
+	exitSide := self.exitSide.toString();
+	if(self.exitSide.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("exitSide"), friendlyServiceName, null, "true", null);
+	};
+	
+	movingDirectionForward := self.movingDirectionForward.value;
+	if(self.movingDirectionForward.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("movingDirectionForward"), friendlyServiceName, null, "true", null);
+	};
+	
+	vehicleMode := self.vehicleMode.toString();
+	if(self.vehicleMode.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleMode"), friendlyServiceName, null, "true", null);
+	};
+	
+	speakerActive := self.speakerActive.value;
+	if(self.speakerActive.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("speakerActive"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopInformationActive := self.stopInformationActive.value;
+	if(self.stopInformationActive.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopInformationActive"), friendlyServiceName, null, "true", null);
+	};
+	
+	tripState := self.tripState.toString();
+	if(self.tripState.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("tripState"), friendlyServiceName, null, "true", null);
+	};
+}
+
+mapping CUSTOMERINFO::AllData::allDataToService(friendlyServiceName : String, operation : String): SENSINACT::CustomerInfoAllData {
+	var eClass := SENSINACT::CustomerInfoAllData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := "CustomerInformationService";
+	serviceOperation := "AllData";
+		
+	vehicleRef := self.vehicleRef.value;
+	if(self.vehicleRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleRef"), friendlyServiceName, null, "true", null);
+	};
+
+	defaultLanguage := self.defaultLanguage.value;
+	if(self.defaultLanguage.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("defaultLanguage"), friendlyServiceName, null, "true", null);
+	};
+	
+	currentStopIndex := self.currentStopIndex.value;
+	if(self.currentStopIndex.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("currentStopIndex"), friendlyServiceName, null, "true", null);
+	};
+	
+	routeDeviation := self.routeDeviation.toString();
+	if(self.routeDeviation.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("routeDeviation"), friendlyServiceName, null, "true", null);
+	};
+	
+	doorState := self.doorState.toString();
+	if(self.doorState.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("doorState"), friendlyServiceName, null, "true", null);
+	};
+	
+	inPanic := self.inPanic.value;
+	if(self.inPanic.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("inPanic"), friendlyServiceName, null, "true", null);
+	};
+	
+	vehicleStopRequested := self.vehicleStopRequested.value;
+	if(self.vehicleStopRequested.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleStopRequested"), friendlyServiceName, null, "true", null);
+	};
+	
+	exitSide := self.exitSide.toString();
+	if(self.exitSide.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("exitSide"), friendlyServiceName, null, "true", null);
+	};
+	
+	movingDirectionForward := self.movingDirectionForward.value;
+	if(self.movingDirectionForward.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("movingDirectionForward"), friendlyServiceName, null, "true", null);
+	};
+	
+	vehicleMode := self.vehicleMode.toString();
+	if(self.vehicleMode.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleMode"), friendlyServiceName, null, "true", null);
+	};
+	
+	speakerActive := self.speakerActive.value;
+	if(self.speakerActive.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("speakerActive"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopInformationActive := self.stopInformationActive.value;
+	if(self.stopInformationActive.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopInformationActive"), friendlyServiceName, null, "true", null);
+	};
+	
+	tripState := self.tripState.toString();
+	if(self.tripState.toString().oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("tripState"), friendlyServiceName, null, "true", null);
+	};
+}
