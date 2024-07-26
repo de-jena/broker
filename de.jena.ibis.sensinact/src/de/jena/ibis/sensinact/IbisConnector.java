@@ -107,7 +107,7 @@ public class IbisConnector {
 
 	private void onMessage(Message message) {
 		String topic = message.topic();
-		LOGGER.log(Level.INFO, "Event arrived for topic {0}", topic);
+		LOGGER.log(Level.DEBUG, "Event arrived for topic {0}", topic);
 		ResourceSet resourceSet = serviceObjects.getService();
 		Resource resource = resourceSet.createResource(URI.createFileURI(UUID.randomUUID() + "-ibis.json"));
 		try {
@@ -127,7 +127,7 @@ public class IbisConnector {
 	private Optional<IbisDevice> transform(String topic, EObject eo) {
 		String[] topicSplit = topic.replaceFirst(TOPIC, "").split("/");
 		if (topicSplit.length < 2) {
-			LOGGER.log(Level.INFO, "Topic \"{0}\" without deviceId and deviceType.", topic);
+			LOGGER.log(Level.WARNING, "Topic \"{0}\" without deviceId and deviceType.", topic);
 			return Optional.empty();
 		}
 		String deviceType = topicSplit[0];
@@ -137,7 +137,6 @@ public class IbisConnector {
 		device.setId(deviceId);
 		IbisAdmin ibisAdmin = IbisSensinactFactory.eINSTANCE.createIbisAdmin();
 		ibisAdmin.setDeviceType(deviceType);
-//		ibisAdmin.setLocation(null);
 		device.setIbisAdmin(ibisAdmin);
 		return Optional.of(device);
 	}
