@@ -37,27 +37,24 @@ de.jena:de.jena.udp.trafficos.publictransport.api.model:${upd.models.version}
 de.jena:de.jena.udp.trafficos.intersection.model:${upd.models.version}
 de.jena:de.jena.udp.trafficos.intersectionsystem.model:${upd.models.version}
 de.jena:de.jena.udp.trafficos.trafficlight.model:${upd.models.version}
-de.jena:de.jena.udp.sensinact.generic.message.model:${upd.models.version}
+
+de.jena:de.jena.ibis.common.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.customer.info.service.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.device.management.service.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.door.state.service.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.enumerations.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.gnss.location.service.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.passenger.counting.service.model:1.0.0-SNAPSHOT
+de.jena:de.jena.ibis.ticket.validation.service.model:1.0.0-SNAPSHOT
 
 de.jena.ibis-ip:de.jena.ibis.apis:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.common.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.components:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.customer.info.service.model:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.device.management.service.model:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.door.state.service.model:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.enumerations.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.event.handlers:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.gnss.location.service.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.local.config:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.passenger.counting.service.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.raspberry.config:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.rest.application:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.runtime:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.sensinact.mmt:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.sensinact.mmt.tests:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.sensinact.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.tests:1.0.0-SNAPSHOT
-de.jena.ibis-ip:de.jena.ibis.ticket.validation.service.model:1.0.0-SNAPSHOT
 de.jena.ibis-ip:de.jena.ibis.txw2:4.0.2
 
 
