@@ -1,0 +1,184 @@
+library ibisTicketValidationToSensinact;
+
+import ibisToSensinactLibrary;
+
+modeltype ECORE "strict" uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+modeltype TICKETVALIDATION uses "https://jena.de/models/ibis/ticketvalidationservice/1.0";
+modeltype SENSINACT uses "https://jena.de/models/ibis/sensinact/1.0";
+
+mapping TICKETVALIDATION::CurrentTariffStopResponse::currentTariffStopToService() : SENSINACT::IbisDevice {
+	admin := toAdmin("TicketValidationService-CurrentTariffStopData");
+	currentTariffStopData := self.currentTariffStopData.map toCurrentTariffStopData("TicketValidationService", "CurrentTariffStopData");
+}
+
+mapping TICKETVALIDATION::CurrentLineResponse::currentLineToService() : SENSINACT::IbisDevice {
+	admin := toAdmin("TicketValidationService-CurrentLineData");
+	currentLineData := self.currentLineData.map toCurrentLineData("TicketValidationService", "CurrentLineData");
+}
+
+mapping TICKETVALIDATION::RazziaResponse::razziaToService() : SENSINACT::IbisDevice {
+	admin := toAdmin("TicketValidationService-RazziaData");
+	razziaData := self.razziaData.map toRazziaData("TicketValidationService", "RazziaData");
+}
+
+mapping TICKETVALIDATION::VehicleDataResponse::vehicleToService() : SENSINACT::IbisDevice {
+	admin := toAdmin("TicketValidationService-VehicleData");
+	vehicleData := self.vehicleData.map toVehicleData("TicketValidationService","VehicleData");
+}
+
+mapping TICKETVALIDATION::CurrentTariffStopData::toCurrentTariffStopData(friendlyServiceName : String, operation : String) : SENSINACT::TicketValidationCurrentTariffStopData {
+	var eClass := SENSINACT::TicketValidationCurrentTariffStopData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := friendlyServiceName;
+	serviceOperation := operation;
+	
+	stopIndex := self.currentTariffStop.stopIndex.value;
+	if(self.currentTariffStop.stopIndex.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopIndex"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopRef := self.currentTariffStop.stopRef.value;
+	if(self.currentTariffStop.stopRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopName += self.currentTariffStop.stopName.value;
+	if(self.currentTariffStop.stopName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopName"), friendlyServiceName, null, "true", null);
+	};
+	
+	stopAlternativeName += self.currentTariffStop.stopAlternativeName.value;
+	if(self.currentTariffStop.stopAlternativeName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("stopAlternativeName"), friendlyServiceName, null, "true", null);
+	};
+	
+	platform := self.currentTariffStop.platform.value;
+	if(self.currentTariffStop.platform.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("platform"), friendlyServiceName, null, "true", null);
+	};
+	
+	arrivalScheduled := self.currentTariffStop.arrivalScheduled.getEInstant();
+	if(self.currentTariffStop.arrivalScheduled.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("arrivalScheduled"), friendlyServiceName, null, "true", null);
+	};
+	
+	arrivalExpected := self.currentTariffStop.arrivalExpected.getEInstant();
+	if(self.currentTariffStop.arrivalExpected.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("arrivalExpected"), friendlyServiceName, null, "true", null);
+	};
+	
+	departureScheduled := self.currentTariffStop.departureScheduled.getEInstant();
+	if(self.currentTariffStop.departureScheduled.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("departureScheduled"), friendlyServiceName, null, "true", null);
+	};
+	
+	departureExpected := self.currentTariffStop.departureExpected.getEInstant();
+	if(self.currentTariffStop.departureExpected.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("departureExpected"), friendlyServiceName, null, "true", null);
+	};
+	
+	recordedArrivalTime := self.currentTariffStop.recordedArrivalTime.getEInstant();
+	if(self.currentTariffStop.recordedArrivalTime.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("recordedArrivalTime"), friendlyServiceName, null, "true", null);
+	};
+	
+	distanceToNextStop := self.currentTariffStop.distanceToNextStop.value;
+	if(self.currentTariffStop.distanceToNextStop.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("distanceToNextStop"), friendlyServiceName, null, "true", null);
+	};
+	
+	fareZone += self.currentTariffStop.fareZone.value;
+	if(self.currentTariffStop.fareZone->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("fareZone"), friendlyServiceName, null, "true", null);
+	};
+	
+	currentTripRef := self.currentTripRef.value;
+	if(self.currentTripRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("currentTripRef"), friendlyServiceName, null, "true", null);
+	};
+}
+
+mapping TICKETVALIDATION::CurrentLineData::toCurrentLineData(friendlyServiceName : String, operation : String) : SENSINACT::TicketValidationCurrentLineData {
+	var eClass := SENSINACT::TicketValidationCurrentLineData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := friendlyServiceName;
+	serviceOperation := operation;
+	
+	lineRef := self.currentLine.lineRef.value;
+	if(self.currentLine.lineRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("lineRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	lineName += self.currentLine.lineName.value;
+	if(self.currentLine.lineName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("lineName"), friendlyServiceName, null, "true", null);
+	};
+	
+	lineShortName += self.currentLine.lineShortName.value;
+	if(self.currentLine.lineShortName->notEmpty()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("lineShortName"), friendlyServiceName, null, "true", null);
+	};
+	
+	lineNumber := self.currentLine.lineNumber.value;
+	if(self.currentLine.lineNumber.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("lineNumber"), friendlyServiceName, null, "true", null);
+	};
+	
+	lineCode := self.currentLine.lineCode.value;
+	if(self.currentLine.lineCode.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("lineCode"), friendlyServiceName, null, "true", null);
+	};	
+}
+
+mapping TICKETVALIDATION::RazziaData::toRazziaData(friendlyServiceName : String, operation : String) : SENSINACT::TicketValidationRazziaData {
+	var eClass := SENSINACT::TicketValidationRazziaData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := friendlyServiceName;
+	serviceOperation := operation;
+	
+	razziaState := self.razziaState.toString();
+	if(self.razziaState.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("razziaState"), friendlyServiceName, null, "true", null);
+	};	
+}
+
+mapping TICKETVALIDATION::VehicleData::toVehicleData(friendlyServiceName : String, operation : String) : SENSINACT::TicketValidationVehicleData {
+	var eClass := SENSINACT::TicketValidationVehicleData.oclAsType(ECORE::EClass);
+	
+	timestamp := self.timeStamp.getEInstant();
+	serviceName := friendlyServiceName;
+	serviceOperation := operation;
+	
+	vehicleRef := self.vehicleRef.value;
+	if(self.vehicleRef.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleRef"), friendlyServiceName, null, "true", null);
+	};
+	
+	routeDeviation := self.routeDeviation.toString();
+	if(self.routeDeviation.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("routeDeviation"), friendlyServiceName, null, "true", null);
+	};
+	
+	doorState := self.doorOpenState.toString();
+	if(self.doorOpenState.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("doorOpenState"), friendlyServiceName, null, "true", null);
+	};
+	
+	movingDirectionForward := self.movingDirectionForward.value;
+	if(self.movingDirectionForward.value.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("movingDirectionForward"), friendlyServiceName, null, "true", null);
+	};
+	
+	vehicleMode := self.vehicleMode.toString();
+	if(self.vehicleMode.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("vehicleMode"), friendlyServiceName, null, "true", null);
+	};
+	
+	driverNumber := self.driverNumber.value;
+	if(self.driverNumber.oclIsUndefined().not()){
+		metadata += toMetadataEntry(eClass.getEStructuralFeature("driverNumber"), friendlyServiceName, null, "true", null);
+	};
+}

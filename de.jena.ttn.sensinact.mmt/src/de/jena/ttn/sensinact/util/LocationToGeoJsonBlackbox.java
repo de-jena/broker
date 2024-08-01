@@ -5,7 +5,6 @@ import org.eclipse.m2m.qvt.oml.blackbox.java.Operation;
 import org.eclipse.sensinact.gateway.geojson.Coordinates;
 import org.eclipse.sensinact.gateway.geojson.GeoJsonObject;
 import org.eclipse.sensinact.gateway.geojson.Point;
-import org.gecko.qvt.osgi.annotations.ModelTransformatorConfig;
 import org.gecko.qvt.osgi.annotations.ModuleName;
 import org.gecko.qvt.osgi.annotations.QvtBlackbox;
 import org.gecko.qvt.osgi.annotations.TemplatePath;

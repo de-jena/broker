@@ -79,5 +79,6 @@ Bundle-Version: ${broker-base-version}
   ilsa;member=${filter;${p};.*\.ilsa\.*},\
   ttn;member=${filter;${p};.*\.ttn\.*},\
   chirpstack;member=${filter;${p};.*\.chirpstack\.*},\
-  trafficos;member=${filter;${p};.*\.trafficos\.*}
+  trafficos;member=${filter;${p};.*\.trafficos\.*},\
+  ibis;member=${filter;${p};.*\.ibis\.*}
   
