@@ -10,7 +10,7 @@
 		"org.apache.felix.http.runtime.init.id": "sensinactHttp"
 	},
 	"JakartarsServletWhiteboardRuntimeComponent~snarest": {
-		"jersey.jakartars.whiteboard.name": "snarest",
+		"jersey.jakartars.whiteboard.name": "sensiNact.rest",
 		"jersey.context.path": "rest",
 		"osgi.http.whiteboard.target": "(id=sensinactHttp)"
 	},

@@ -10,7 +10,16 @@ services:
         environment:
             - MONGO_INITDB_ROOT_USERNAME=mdo
             - MONGO_INITDB_ROOT_PASSWORD=init@mdo_
-        
+
+	timescaledb:
+	    hostname: 'timescaledb'
+	    image: timescale/timescaledb-ha:pg16
+	    ports:
+	      - 5432:5432
+	    environment:
+	      - POSTGRES_DB=sensinactHistory
+	      - POSTGRES_USER=snaHistory
+	      - POSTGRES_PASSWORD=test.password        
 
     sensinact:
         image: devel.data-in-motion.biz:6000/scj/dim-broker:latest

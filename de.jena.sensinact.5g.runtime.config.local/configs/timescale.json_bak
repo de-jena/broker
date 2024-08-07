@@ -1,0 +1,12 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "Timescale",
+	
+	"sensinact.history.timescale": {
+		"url": "jdbc://localhost:5432/sensinactHistory",
+		"user": "snaHistory",
+		".password": "test.password",
+		"provider": "history"
+	}
+}
