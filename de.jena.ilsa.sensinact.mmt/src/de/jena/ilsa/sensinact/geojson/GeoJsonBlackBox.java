@@ -79,8 +79,8 @@ public final class GeoJsonBlackBox {
 					de.jena.udp.model.geojson.LineString fls = (de.jena.udp.model.geojson.LineString) f;
 					fls.getCoordinates().forEach(c -> {
 						Coordinates coordinates = new Coordinates();
-						coordinates.latitude = c[0];
-						coordinates.longitude = c[1];
+						coordinates.longitude = c[0];
+						coordinates.latitude = c[1];
 
 						ls.coordinates.add(coordinates);
 					});
@@ -97,8 +97,8 @@ public final class GeoJsonBlackBox {
 
 						for (Double[] p : c) {
 							Coordinates coordinates = new Coordinates();
-							coordinates.latitude = p[0];
-							coordinates.longitude = p[1];
+							coordinates.longitude = p[0];
+							coordinates.latitude = p[1];
 							list.add(coordinates);
 						}
 
@@ -113,8 +113,8 @@ public final class GeoJsonBlackBox {
 					de.jena.udp.model.geojson.Point fp = (de.jena.udp.model.geojson.Point) f.getGeometry();
 					EList<Double> co = fp.getCoordinates();
 					Coordinates coordinates = new Coordinates();
-					coordinates.latitude = co.get(0);
-					coordinates.longitude = co.get(1);
+					coordinates.longitude = co.get(0);
+					coordinates.latitude = co.get(1);
 					pg.coordinates = coordinates;
 					castFeature.geometry = pg;
 					fc.features.add(castFeature);
@@ -126,8 +126,8 @@ public final class GeoJsonBlackBox {
 
 					for (Double[] p : fmp.getCoordinates()) {
 						Coordinates coordinates = new Coordinates();
-						coordinates.latitude = p[0];
-						coordinates.longitude = p[1];
+						coordinates.longitude = p[0];
+						coordinates.latitude = p[1];
 						pg.coordinates.add(coordinates);
 					}
 
@@ -143,8 +143,8 @@ public final class GeoJsonBlackBox {
 						ArrayList<Coordinates> list = new ArrayList<Coordinates>();
 						for (Double[] p : c) {
 							Coordinates coordinates = new Coordinates();
-							coordinates.latitude = p[0];
-							coordinates.longitude = p[1];
+							coordinates.longitude = p[0];
+							coordinates.latitude = p[1];
 							list.add(coordinates);
 						}
 						mls.coordinates.add(list);
