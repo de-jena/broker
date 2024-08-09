@@ -4,9 +4,9 @@
 	":configurator:symbolic-name": "Timescale",
 	
 	"sensinact.history.timescale": {
-		"url": "jdbc://localhost:5432/sensinactHistory",
+		"url": "jdbc:postgresql://localhost:5432/sensinactHistory",
 		"user": "snaHistory",
 		".password": "test.password",
-		"provider": "history"
+		"provider": "brokerHistory"
 	}
 }
