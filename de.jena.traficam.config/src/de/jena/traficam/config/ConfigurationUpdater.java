@@ -100,7 +100,7 @@ public class ConfigurationUpdater {
 //		"id" : "full",
 //		"brokerUrl" : "ssl://$[env:MQTT_FULL_HOST;default=mqttbr.jena.de]:$[env:MQTT_FULL_PORT;default=8883]",
 //		"username" : "$[env:MQTT_FULL_USER;default=]",
-//		"password" : "$[env:MQTT_FULL_PWD;default=]",
+//		".password" : "$[env:MQTT_FULL_PWD;default=]",
 //		"topic": "5g/ilsa/#"
 //	}
 	void configureMQTT(String name, Map<String, String> map) throws IOException {
@@ -109,7 +109,7 @@ public class ConfigurationUpdater {
 		props.put("id", name);
 		props.put("brokerUrl", "ssl://$[env:MQTT_FULL_HOST;default=mqttbr.jena.de]:$[env:MQTT_FULL_PORT;default=8883]");
 		props.put("username", "$[env:MQTT_FULL_USER;default=]");
-		props.put("password", "$[env:MQTT_FULL_PWD;default=]");
+		props.put(".password", "$[env:MQTT_FULL_PWD;default=]");
 		props.put("topic", "5g/ilsa/#");
 		props.put("maxThreads", "4");
 		logger.log(Level.INFO,"Update configuration for {0} with {1}", config, props);
