@@ -262,7 +262,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_IbisAdmin() {
+	public EReference getIbisDevice_CustomerInfoAllData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -272,7 +272,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoAllData() {
+	public EReference getIbisDevice_CustomerInfoCurrentStopIndexData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -282,7 +282,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoCurrentStopIndexData() {
+	public EReference getIbisDevice_CustomerInfoCurrentStopPointData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -292,7 +292,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoCurrentStopPointData() {
+	public EReference getIbisDevice_CustomerInfoTripData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -302,7 +302,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoTripData() {
+	public EReference getIbisDevice_CustomerInfoVehicleData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -312,7 +312,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoVehicleData() {
+	public EReference getIbisDevice_CustomerInfoCurrentAnnouncementData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -322,7 +322,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoCurrentAnnouncementData() {
+	public EReference getIbisDevice_CustomerInfoCurrentConnectionData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -332,7 +332,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoCurrentConnectionData() {
+	public EReference getIbisDevice_CustomerInfoCurrentDisplayContentData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -342,7 +342,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CustomerInfoCurrentDisplayContentData() {
+	public EReference getIbisDevice_Door1CountingState() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -352,7 +352,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door1CountingState() {
+	public EReference getIbisDevice_Door2CountingState() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -362,7 +362,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door2CountingState() {
+	public EReference getIbisDevice_Door3CountingState() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(10);
 	}
 
@@ -372,7 +372,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door3CountingState() {
+	public EReference getIbisDevice_Door4CountingState() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -382,7 +382,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door4CountingState() {
+	public EReference getIbisDevice_Door1State() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(12);
 	}
 
@@ -392,7 +392,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door1State() {
+	public EReference getIbisDevice_Door2State() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(13);
 	}
 
@@ -402,7 +402,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door2State() {
+	public EReference getIbisDevice_Door3State() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(14);
 	}
 
@@ -412,7 +412,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door3State() {
+	public EReference getIbisDevice_Door4State() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(15);
 	}
 
@@ -422,7 +422,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_Door4State() {
+	public EReference getIbisDevice_StopRequested() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(16);
 	}
 
@@ -432,7 +432,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_StopRequested() {
+	public EReference getIbisDevice_GnssLocationData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(17);
 	}
 
@@ -442,7 +442,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_GnssLocationData() {
+	public EReference getIbisDevice_CurrentTariffStopData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(18);
 	}
 
@@ -452,7 +452,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CurrentTariffStopData() {
+	public EReference getIbisDevice_RazziaData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(19);
 	}
 
@@ -462,7 +462,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_RazziaData() {
+	public EReference getIbisDevice_CurrentLineData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(20);
 	}
 
@@ -472,7 +472,7 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_CurrentLineData() {
+	public EReference getIbisDevice_VehicleData() {
 		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(21);
 	}
 
@@ -482,18 +482,8 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 	 * @generated
 	 */
 	@Override
-	public EReference getIbisDevice_VehicleData() {
-		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(22);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getIbisDevice_TripInfo() {
-		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(23);
+		return (EReference)ibisDeviceEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -2366,7 +2356,6 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 
 		// Create classes and their features
 		ibisDeviceEClass = createEClass(IBIS_DEVICE);
-		createEReference(ibisDeviceEClass, IBIS_DEVICE__IBIS_ADMIN);
 		createEReference(ibisDeviceEClass, IBIS_DEVICE__CUSTOMER_INFO_ALL_DATA);
 		createEReference(ibisDeviceEClass, IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_INDEX_DATA);
 		createEReference(ibisDeviceEClass, IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_POINT_DATA);
@@ -2647,7 +2636,6 @@ public class IbisSensinactPackageImpl extends EPackageImpl implements IbisSensin
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(ibisDeviceEClass, IbisDevice.class, "IbisDevice", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIbisDevice_IbisAdmin(), this.getIbisAdmin(), null, "ibisAdmin", null, 0, 1, IbisDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIbisDevice_CustomerInfoAllData(), this.getCustomerInfoAllData(), null, "customerInfoAllData", null, 0, 1, IbisDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIbisDevice_CustomerInfoCurrentStopIndexData(), this.getCustomerInfoCurrentStopIndexData(), null, "customerInfoCurrentStopIndexData", null, 0, 1, IbisDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIbisDevice_CustomerInfoCurrentStopPointData(), this.getCustomerInfoCurrentStopPointData(), null, "customerInfoCurrentStopPointData", null, 0, 1, IbisDevice.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

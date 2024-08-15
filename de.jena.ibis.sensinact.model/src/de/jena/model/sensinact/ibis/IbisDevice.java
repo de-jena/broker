@@ -29,7 +29,6 @@ import org.osgi.annotation.versioning.ProviderType;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link de.jena.model.sensinact.ibis.IbisDevice#getIbisAdmin <em>Ibis Admin</em>}</li>
  *   <li>{@link de.jena.model.sensinact.ibis.IbisDevice#getCustomerInfoAllData <em>Customer Info All Data</em>}</li>
  *   <li>{@link de.jena.model.sensinact.ibis.IbisDevice#getCustomerInfoCurrentStopIndexData <em>Customer Info Current Stop Index Data</em>}</li>
  *   <li>{@link de.jena.model.sensinact.ibis.IbisDevice#getCustomerInfoCurrentStopPointData <em>Customer Info Current Stop Point Data</em>}</li>
@@ -61,28 +60,6 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 public interface IbisDevice extends Provider {
-	/**
-	 * Returns the value of the '<em><b>Ibis Admin</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ibis Admin</em>' containment reference.
-	 * @see #setIbisAdmin(IbisAdmin)
-	 * @see de.jena.model.sensinact.ibis.IbisSensinactPackage#getIbisDevice_IbisAdmin()
-	 * @model containment="true"
-	 * @generated
-	 */
-	IbisAdmin getIbisAdmin();
-
-	/**
-	 * Sets the value of the '{@link de.jena.model.sensinact.ibis.IbisDevice#getIbisAdmin <em>Ibis Admin</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ibis Admin</em>' containment reference.
-	 * @see #getIbisAdmin()
-	 * @generated
-	 */
-	void setIbisAdmin(IbisAdmin value);
-
 	/**
 	 * Returns the value of the '<em><b>Customer Info All Data</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

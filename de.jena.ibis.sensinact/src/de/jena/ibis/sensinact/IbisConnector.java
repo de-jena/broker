@@ -132,12 +132,13 @@ public class IbisConnector {
 		}
 		String deviceType = topicSplit[0];
 		String deviceId = topicSplit[1];
+		String service = topicSplit[2];
 		
 		IbisDevice device = (IbisDevice) transformator.doTransformation(eo);
-		device.setId(deviceId);
+		device.setId(deviceId + "-" + service);
 		IbisAdmin ibisAdmin = IbisSensinactFactory.eINSTANCE.createIbisAdmin();
 		ibisAdmin.setDeviceType(deviceType);
-		device.setIbisAdmin(ibisAdmin);
+		device.setAdmin(ibisAdmin);
 		return Optional.of(device);
 	}
 }

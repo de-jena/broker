@@ -113,22 +113,13 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	int IBIS_DEVICE__LINKED_PROVIDERS = ProviderPackage.PROVIDER__LINKED_PROVIDERS;
 
 	/**
-	 * The feature id for the '<em><b>Ibis Admin</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBIS_DEVICE__IBIS_ADMIN = ProviderPackage.PROVIDER_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Customer Info All Data</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_ALL_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 1;
+	int IBIS_DEVICE__CUSTOMER_INFO_ALL_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Current Stop Index Data</b></em>' containment reference.
@@ -137,7 +128,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_INDEX_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 2;
+	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_INDEX_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Current Stop Point Data</b></em>' containment reference.
@@ -146,7 +137,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_POINT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 3;
+	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_STOP_POINT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Trip Data</b></em>' containment reference.
@@ -155,7 +146,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_TRIP_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 4;
+	int IBIS_DEVICE__CUSTOMER_INFO_TRIP_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Vehicle Data</b></em>' containment reference.
@@ -164,7 +155,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_VEHICLE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 5;
+	int IBIS_DEVICE__CUSTOMER_INFO_VEHICLE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Current Announcement Data</b></em>' containment reference.
@@ -173,7 +164,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_ANNOUNCEMENT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 6;
+	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_ANNOUNCEMENT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Current Connection Data</b></em>' containment reference.
@@ -182,7 +173,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_CONNECTION_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 7;
+	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_CONNECTION_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Customer Info Current Display Content Data</b></em>' containment reference.
@@ -191,7 +182,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_DISPLAY_CONTENT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 8;
+	int IBIS_DEVICE__CUSTOMER_INFO_CURRENT_DISPLAY_CONTENT_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Door1 Counting State</b></em>' containment reference.
@@ -200,7 +191,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR1_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 9;
+	int IBIS_DEVICE__DOOR1_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Door2 Counting State</b></em>' containment reference.
@@ -209,7 +200,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR2_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 10;
+	int IBIS_DEVICE__DOOR2_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Door3 Counting State</b></em>' containment reference.
@@ -218,7 +209,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR3_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 11;
+	int IBIS_DEVICE__DOOR3_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Door4 Counting State</b></em>' containment reference.
@@ -227,7 +218,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR4_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 12;
+	int IBIS_DEVICE__DOOR4_COUNTING_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 11;
 
 	/**
 	 * The feature id for the '<em><b>Door1 State</b></em>' containment reference.
@@ -236,7 +227,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR1_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 13;
+	int IBIS_DEVICE__DOOR1_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 12;
 
 	/**
 	 * The feature id for the '<em><b>Door2 State</b></em>' containment reference.
@@ -245,7 +236,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR2_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 14;
+	int IBIS_DEVICE__DOOR2_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 13;
 
 	/**
 	 * The feature id for the '<em><b>Door3 State</b></em>' containment reference.
@@ -254,7 +245,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR3_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 15;
+	int IBIS_DEVICE__DOOR3_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 14;
 
 	/**
 	 * The feature id for the '<em><b>Door4 State</b></em>' containment reference.
@@ -263,7 +254,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__DOOR4_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 16;
+	int IBIS_DEVICE__DOOR4_STATE = ProviderPackage.PROVIDER_FEATURE_COUNT + 15;
 
 	/**
 	 * The feature id for the '<em><b>Stop Requested</b></em>' containment reference.
@@ -272,7 +263,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__STOP_REQUESTED = ProviderPackage.PROVIDER_FEATURE_COUNT + 17;
+	int IBIS_DEVICE__STOP_REQUESTED = ProviderPackage.PROVIDER_FEATURE_COUNT + 16;
 
 	/**
 	 * The feature id for the '<em><b>Gnss Location Data</b></em>' containment reference.
@@ -281,7 +272,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__GNSS_LOCATION_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 18;
+	int IBIS_DEVICE__GNSS_LOCATION_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 17;
 
 	/**
 	 * The feature id for the '<em><b>Current Tariff Stop Data</b></em>' containment reference.
@@ -290,7 +281,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CURRENT_TARIFF_STOP_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 19;
+	int IBIS_DEVICE__CURRENT_TARIFF_STOP_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 18;
 
 	/**
 	 * The feature id for the '<em><b>Razzia Data</b></em>' containment reference.
@@ -299,7 +290,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__RAZZIA_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 20;
+	int IBIS_DEVICE__RAZZIA_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 19;
 
 	/**
 	 * The feature id for the '<em><b>Current Line Data</b></em>' containment reference.
@@ -308,7 +299,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__CURRENT_LINE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 21;
+	int IBIS_DEVICE__CURRENT_LINE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 20;
 
 	/**
 	 * The feature id for the '<em><b>Vehicle Data</b></em>' containment reference.
@@ -317,7 +308,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__VEHICLE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 22;
+	int IBIS_DEVICE__VEHICLE_DATA = ProviderPackage.PROVIDER_FEATURE_COUNT + 21;
 
 	/**
 	 * The feature id for the '<em><b>Trip Info</b></em>' containment reference.
@@ -326,7 +317,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE__TRIP_INFO = ProviderPackage.PROVIDER_FEATURE_COUNT + 23;
+	int IBIS_DEVICE__TRIP_INFO = ProviderPackage.PROVIDER_FEATURE_COUNT + 22;
 
 	/**
 	 * The number of structural features of the '<em>Ibis Device</em>' class.
@@ -335,7 +326,7 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBIS_DEVICE_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 24;
+	int IBIS_DEVICE_FEATURE_COUNT = ProviderPackage.PROVIDER_FEATURE_COUNT + 23;
 
 	/**
 	 * The operation id for the '<em>Get Service</em>' operation.
@@ -2734,17 +2725,6 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 	EClass getIbisDevice();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.ibis.IbisDevice#getIbisAdmin <em>Ibis Admin</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Ibis Admin</em>'.
-	 * @see de.jena.model.sensinact.ibis.IbisDevice#getIbisAdmin()
-	 * @see #getIbisDevice()
-	 * @generated
-	 */
-	EReference getIbisDevice_IbisAdmin();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link de.jena.model.sensinact.ibis.IbisDevice#getCustomerInfoAllData <em>Customer Info All Data</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5035,14 +5015,6 @@ public interface IbisSensinactPackage extends org.eclipse.emf.ecore.EPackage {
 		 * @generated
 		 */
 		EClass IBIS_DEVICE = eINSTANCE.getIbisDevice();
-
-		/**
-		 * The meta object literal for the '<em><b>Ibis Admin</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IBIS_DEVICE__IBIS_ADMIN = eINSTANCE.getIbisDevice_IbisAdmin();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer Info All Data</b></em>' containment reference feature.

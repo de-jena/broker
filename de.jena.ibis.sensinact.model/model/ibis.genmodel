@@ -10,7 +10,6 @@
   <genPackages prefix="IbisSensinact" basePackage="de.jena.model.sensinact" disposableProviderFactory="true"
       ecorePackage="ibis.ecore#/">
     <genClasses ecoreClass="ibis.ecore#//IbisDevice">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ibis.ecore#//IbisDevice/ibisAdmin"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ibis.ecore#//IbisDevice/customerInfoAllData"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ibis.ecore#//IbisDevice/customerInfoCurrentStopIndexData"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ibis.ecore#//IbisDevice/customerInfoCurrentStopPointData"/>
