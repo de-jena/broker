@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.gecko.adapter.mqtt.MQTTContext;
+import org.gecko.adapter.mqtt.MQTTContextBuilder;
 import org.gecko.emf.osgi.constants.EMFNamespaces;
 import org.gecko.osgi.messaging.Message;
 import org.gecko.osgi.messaging.MessagingContext;
@@ -164,16 +165,18 @@ public class MQTTBridge {
 		if(!retained) {
 			retained = BridgeUtil.isRetained(baseTopic);
 		}
+		MessagingContext forwardContext = new MQTTContextBuilder() //
+				.withQoS(context.getQoS()) //
+				.setRetained(retained).build();
 		String forwardTopic = "5g/data/" + baseTopic;
 		try {
 			int sender = current.getAndUpdate(i -> {
 				return ++i == senders.size() ? 0 : i;
 			});
-			context.setRetained(retained);
 			ByteBuffer inPayload = message.payload();
 			ByteBuffer outPayload = topic.endsWith("/lifesign")? inPayload : convertPayload(inPayload);
 //			System.out.println(counter.incrementAndGet()  + " - Forwarding from  " + topic + " (retained: " +  retained + ") to " + forwardTopic + " with size: " + outPayload.capacity());
-			senders.get(sender).publish(forwardTopic, outPayload, context);
+			senders.get(sender).publish(forwardTopic, outPayload, forwardContext);
 		} catch (Exception e) {
 			logger.log(Level.ERROR, "Could not forward message from " + topic + " to " + forwardTopic, e);
 		}

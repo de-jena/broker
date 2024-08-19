@@ -33,7 +33,8 @@
 		"inputContentType": "application/octet-stream",
 		"outputOption.OPTION_DATE_FORMAT": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'zzz",
 		"topics": [
-			"5g/traficam/#"
+			"5g/traficam/#",
+			"5g/config/traficam/#"
 		]
 	}
 }
