@@ -43,7 +43,7 @@ public class TrafficLight {
 	private static final Logger logger = System.getLogger(TrafficLight.class.getName());
 
 	private static final String TOPIC = "5g/ilsa/";
-	private static final Pattern TOPIC_PATTERN = Pattern.compile(TOPIC + "(\\w+)/([A-Za-z0-9-]+)/([0-9])");
+	private static final Pattern TOPIC_PATTERN = Pattern.compile(TOPIC + "(\\w+)/tk[0-9]/([A-Za-z0-9-]+)/*([0-9])");
 	private static final URI TEMP_URI = URI.createFileURI("temp.json");
 
 	@Reference(target = "(" + EMFNamespaces.EMF_CONFIGURATOR_NAME
