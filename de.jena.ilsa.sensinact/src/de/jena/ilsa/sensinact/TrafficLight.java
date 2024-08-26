@@ -7,10 +7,14 @@ import java.lang.System.Logger.Level;
 import java.nio.CharBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.sensinact.core.push.DataUpdate;
@@ -60,6 +64,8 @@ public class TrafficLight {
 	private MessagingService messaging;
 
 	private PushStream<Message> subscription;
+
+	private Map<String, TLConfiguration> configs = new HashMap<>();
 
 	@Activate
 	public void activate() {
@@ -147,7 +153,7 @@ public class TrafficLight {
 		try {
 			resource.load(new ByteArrayInputStream(message.payload().array()), Collections.emptyMap());
 			TLConfiguration configuration = (TLConfiguration) resource.getContents().get(0);
-
+			mergeConfig(configuration);
 			Provider provider = (Provider) traf.doTransformation(configuration);
 			Promise<?> promise = sensiNact.pushUpdate(provider);
 			promise.onFailure(e -> logger.log(Level.ERROR, "Error while pushing configuration to sensinact.", e));
@@ -158,4 +164,21 @@ public class TrafficLight {
 		}
 	}
 
+	private void mergeConfig(TLConfiguration configuration) {
+		String id = configuration.getIntersectionId();
+		TLConfiguration existingConf = configs.get(id);
+		if (existingConf != null) {
+			move(existingConf.getModules(), configuration.getModules());
+			move(existingConf.getMonitoredPorts(), configuration.getMonitoredPorts());
+			move(existingConf.getPhases(), configuration.getPhases());
+			move(existingConf.getSignalGroups(), configuration.getSignalGroups());
+		}
+		configs.put(id, configuration);
+	}
+
+	private <T extends EObject> void move(EList<T> source, EList<T> target) {
+		while (!source.isEmpty()) {
+			target.add(source.remove(0));
+		}
+	}
 }
