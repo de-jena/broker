@@ -65,6 +65,7 @@ Bundle-Version: ${broker-base-version}
 -removeheaders: Bnd-LastModified, Tool, Created-By, Private-Package
 -snapshot: ${tstamp}-SNAPSHOT
 -pom: version=${versionmask;===s;${@version}}	
+-releaserepo: Broker_Nexus_Release
 
 -digest: sha256
 	

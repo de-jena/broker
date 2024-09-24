@@ -85,32 +85,6 @@ pipeline  {
 
 		}
 
-		stage('Docker 5G Image build'){
-			when {
-				branch 'main'
-			}
-
-			steps  {
-				echo "I am building and publishing a docker image on branch: ${env.GIT_BRANCH}"
-
-				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'docker_5g',
-							cloud: 'docker',
-							tagsString: """registry-git.jena.de/scj/dim-broker:latest
-                                        registry-git.jena.de/scj/dim-broker:0.1.0.${VERSION}""",
-							pushOnSuccess: true,
-							pushCredentialsId: 'github-jena'])
-
-				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'docker_5g',
-							cloud: 'docker',
-							tagsString: """devel.data-in-motion.biz:6000/scj/dim-broker:latest
-							            devel.data-in-motion.biz:6000/scj/dim-broker:0.1.0.${VERSION}""",
-							pushOnSuccess: true,
-							pushCredentialsId: 'dim-nexus'])
-		  }
-		}
-
 		stage('Resolve UDP Broker') {
 
 			steps {
@@ -147,6 +121,42 @@ pipeline  {
 
 			}
 
+		}
+
+		stage('Release'){
+			when {
+				branch 'main'
+			}
+
+			steps  {
+				sh "./gradlew release --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
+		  }
+		}
+
+		stage('Docker 5G Image build'){
+			when {
+				branch 'main'
+			}
+
+			steps  {
+				echo "I am building and publishing a docker image on branch: ${env.GIT_BRANCH}"
+
+				step([$class: 'DockerBuilderPublisher',
+				      dockerFileDirectory: 'docker_5g',
+							cloud: 'docker',
+							tagsString: """registry-git.jena.de/scj/dim-broker:latest
+                                        registry-git.jena.de/scj/dim-broker:0.1.0.${VERSION}""",
+							pushOnSuccess: true,
+							pushCredentialsId: 'github-jena'])
+
+				step([$class: 'DockerBuilderPublisher',
+				      dockerFileDirectory: 'docker_5g',
+							cloud: 'docker',
+							tagsString: """devel.data-in-motion.biz:6000/scj/dim-broker:latest
+							            devel.data-in-motion.biz:6000/scj/dim-broker:0.1.0.${VERSION}""",
+							pushOnSuccess: true,
+							pushCredentialsId: 'dim-nexus'])
+		  }
 		}
 
 		stage('Docker UDP Image build'){

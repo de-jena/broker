@@ -51,3 +51,11 @@
 		locations=https://devel.data-in-motion.biz/public/update/repository/p2/obr/dim-core-runtime/index.xml;\
 		cache=${build}/cache/dim-core-runtime;\
 		poll.time=-1		
+		
+-plugin.release: \
+	aQute.bnd.repository.maven.provider.MavenBndRepository;\
+		releaseUrl="https://devel.data-in-motion.biz/nexus/repository/dim-release/";\
+		snapshotUrl=https://devel.data-in-motion.biz/nexus/repository/dim-snapshot/;\
+		index=${.}/broker_release.maven;\
+		poll_time 			= -1;\
+		name='Broker_Nexus_Release'		
