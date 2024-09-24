@@ -21,6 +21,17 @@ pipeline  {
 				checkout scm
 			}
 		}
+		
+		stage('Make Executable') {
+
+			steps {
+				echo "Marking gradlew as executable"
+
+
+				sh "chmod +x ./gradlew"
+
+			}
+		}
 
 		stage('App build') {
 
