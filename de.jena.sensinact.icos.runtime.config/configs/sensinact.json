@@ -1,0 +1,19 @@
+{
+    ":configurator:resource-version": 1,
+    ":configurator:symbolic-name": "org.eclipse.sensinact.gateway.configuration",
+    ":configurator:version": "0.0.1",
+    "sensinact.northbound.rest": {
+        "allow.anonymous": true,
+        "osgi.jakartars.whiteboard.target": "(osgi.jakartars.name=sensiNact.rest)"
+    },
+    "sensinact.session.manager": {
+    	"auth.policy": "ALLOW_ALL"
+    },
+    "sensiNact.northbound.sensorthings.mqtt" :
+	{
+		"port" : "$[env:SENSORTHINGS_MQTT_PORT;default=$[prop:SENSORTHINGS_MQTT_PORT;default=1883]]",
+		"secure.port" : "$[env:SENSORTHINGS_MQTT_SECURE_PORT;default=$[prop:SENSORTHINGS_MQTT_SECURE_PORT;default=8883]]",
+		"websocket.port" : "$[env:SENSORTHINGS_MQTT_WS_PORT;default=$[prop:SENSORTHINGS_MQTT_WS_PORT;default=8885]]",
+		"websocket.secure.port" : "$[env:SENSORTHINGS_MQTT_WSS_PORT;default=$[prop:SENSORTHINGS_MQTT_WSS_PORT;default=8886]]"
+	}
+}

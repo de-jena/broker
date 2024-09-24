@@ -1,0 +1,10 @@
+-include: ${.}/icos_traficam.bndrun
+
+-buildpath: ${-runbundles}
+
+delimiter: \" },\n\t{ \"id\": \"
+bundles: ${sjoin;${delimiter}; ${template;-maven-dependencies;${@}}}
+
+-includeresource: {resources}
+
+-maven-release: extra;path=@${repo;${bsn}}!icos-feature.json;class=feature
