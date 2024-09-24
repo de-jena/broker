@@ -7,4 +7,4 @@ bundles: ${sjoin;${delimiter}; ${template;-maven-dependencies;${@}}}
 
 -includeresource: {resources}
 
--release-maven:extra;path=@${repo;${bsn}}!icos-feature.json;class=feature
+-maven-release: extra;path=@${repo;${bsn}}!icos-feature.json;class=feature
