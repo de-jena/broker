@@ -2,5 +2,23 @@
   "id":" ${bsn} ",
   "bundles":[
 	{ "id": "${bundles}" }  
-  ]
+  ],
+  "configurations" : {
+  	"MQTTService~read":
+	{
+		"brokerUrl" : "ssl://$[env:MQTT_ICOS_HOST;default=$[prop:MQTT_ICOS_HOST;default=mqttbr.jena.de]]:$[env:MQTT_ICOS_PORT;default=$[prop:MQTT_ICOS_PORT;default=8883]]",
+		"username" : "$[env:MQTT_ICOS_USER;default=]$[prop:MQTT_ICOS_USER;default=]",
+		"password" : "$[env:MQTT_ICOS_PWD;default=]$[prop:MQTT_ICOS_PWD;default=]",
+		"maxInflight" : 1000,
+		"id" : "read"
+	},
+	"MQTTService~full":
+	{
+		"brokerUrl" : "tcp://$[env:MQTT_DIM_HOST;default=$[prop:MQTT_DIM_HOST;default=datainmotion.de]]:$[env:MQTT_DIM_PORT;default=$[prop:MQTT_DIM_PORT;default=1883]]",
+		"username" : "$[env:MQTT_DIM_USER;default=]$[prop:MQTT_DIM_USER;default=]",
+		"password" : "$[env:MQTT_DIM_PWD;default=]$[prop:MQTT_DIM_PWD;default=]",
+		"maxInflight" : 1000,
+		"id" : "full"
+    }
+  }
 }

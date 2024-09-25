@@ -50,18 +50,12 @@ slf4j.runpath:  \
 	bnd.identity;id='org.gecko.emf.pushstreams'
 
 -runrequires: \
-	bnd.identity;id='de.jena.publictransport.rest',\
 	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
-	bnd.identity;id='de.jena.sensinact.rest.log',\
-	bnd.identity;id='de.jena.sensinact.web.mimetype.helper',\
-	bnd.identity;id='org.apache.felix.http.webconsoleplugin',\
-	bnd.identity;id='org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway',\
 	bnd.identity;id='de.jena.ilsa.sensinact.mmt',\
 	bnd.identity;id='de.jena.ilsa.sensinact',\
 	bnd.identity;id='org.gecko.adapter.mqtt',\
 	bnd.identity;id='org.apache.felix.configadmin',\
-	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
-	bnd.identity;id='de.jena.sensinact.icos.runtime.config'
+	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation'
 	
 -runbundles: \
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.16.0,2.16.1)';startlevel=100,\

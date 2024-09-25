@@ -50,18 +50,12 @@ slf4j.runpath:  \
 	bnd.identity;id='org.gecko.emf.pushstreams'
 
 -runrequires: \
-	bnd.identity;id='de.jena.publictransport.rest',\
 	bnd.identity;id='de.jena.sensinact.mqtt.generic.bridge',\
-	bnd.identity;id='de.jena.sensinact.rest.log',\
 	bnd.identity;id='de.jena.traficam.model',\
-	bnd.identity;id='de.jena.sensinact.web.mimetype.helper',\
-	bnd.identity;id='org.apache.felix.http.webconsoleplugin',\
-	bnd.identity;id='org.eclipse.sensinact.gateway.northbound.sensorthings.rest.gateway',\
 	bnd.identity;id='de.jena.traficam.sensinact',\
 	bnd.identity;id='de.jena.traficam.sensinact.model',\
 	bnd.identity;id='org.apache.felix.configadmin',\
-	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
-	bnd.identity;id='de.jena.sensinact.icos.runtime.config'
+	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation'
 -runbundles+: \
 	 de.jena.sensinact.mqtt.5g.topic.bridge;startlevel=50000
 	

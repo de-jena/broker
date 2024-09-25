@@ -7,4 +7,4 @@ bundles: ${sjoin;${delimiter}; ${template;-maven-dependencies;${@}}}
 
 -includeresource: {${bsn}-feature.json=resources/feature.json}
 
--maven-release: archive;path=/@${repo;${bsn}}!${bsn}-feature.json;classifier=feature
+#-maven-release: archive;path=/@${repo;${bsn}}!${bsn}-feature.json;classifier=feature
