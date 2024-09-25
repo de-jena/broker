@@ -5,6 +5,6 @@
 delimiter: \" },\n\t{ \"id\": \"
 bundles: ${sjoin;${delimiter}; ${template;-maven-dependencies;${@}}}
 
--includeresource: {resources}
+-includeresource: {${bsn}-feature.json=resources/feature.json}
 
--maven-release: extra;path=@${repo;${bsn}}!icos-feature.json;class=feature
+-maven-release: archive;path=@${repo;${bsn}}!${bsn}-feature.json;classifier=feature

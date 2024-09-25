@@ -62,8 +62,6 @@ slf4j.runpath:  \
 	bnd.identity;id='org.apache.felix.configadmin',\
 	bnd.identity;id='org.apache.felix.configadmin.plugin.interpolation',\
 	bnd.identity;id='de.jena.sensinact.icos.runtime.config'
--runbundles+: \
-	 de.jena.sensinact.mqtt.5g.topic.bridge;startlevel=50000
 	
 -runbundles: \
 	com.fasterxml.jackson.core.jackson-annotations;version='[2.16.0,2.16.1)';startlevel=100,\
@@ -85,7 +83,7 @@ slf4j.runpath:  \
 	de.jena.ilsa.sensinact.mmt;version=snapshot;startlevel=260,\
 	de.jena.ilsa.sensinact.model;version=snapshot;startlevel=270,\
 	de.jena.publictransport.rest;version=snapshot;startlevel=280,\
-	de.jena.sensinact.icos.runtime;version=snapshot;startlevel=290,\
+	de.jena.sensinact.icos.runtime.config;version=snapshot;startlevel=290,\
 	de.jena.sensinact.mqtt.generic.bridge;version=snapshot;startlevel=300,\
 	de.jena.sensinact.mqtt.generic.message;version=snapshot;startlevel=310,\
 	de.jena.sensinact.rest.log;version=snapshot;startlevel=320,\
