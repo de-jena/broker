@@ -1,0 +1,41 @@
+{
+	":configurator:resource-version": 1,
+	":configurator:version": "1.0.0",
+	":configurator:symbolic-name": "MQTT Forward",
+	
+	"MQTTBridge~Actemium": {
+		"forceRetained" : true,
+		"forwardClients": 10,
+		"topics" : [
+			"5g/Actemium/#"
+		]
+	},
+	"MQTTBridge~vdv": {
+		"forwardClients": 1,
+		"topics" : [
+			"5g/vdv/#"
+		]
+	},
+	"MQTTBridge~all": {
+		"forwardClients": 6,
+		"topics" : [
+			"5g/devices/#",
+			"5g/miv/#",
+			"5g/oev/#",
+			"5g/klsa/#",
+			"5g/vissim_simulation/#",
+			"5g/ilsa/#",
+			"5g/ibis/#",
+			"5g/test/#"
+		]
+	},
+	"MQTTBridge~octed": {
+		"forwardClients": 5,
+		"inputContentType":"application/octet-stream",
+		"outputOption.OPTION_DATE_FORMAT" : "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'zzz",
+		"topics" : [
+			"5g/traficam/#",
+			"5g/config/traficam/#"
+		]
+	}
+}

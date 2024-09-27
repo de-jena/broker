@@ -62,7 +62,6 @@ org.apache.felix:org.apache.felix.webconsole.plugins.packageadmin:1.1.0
 org.apache.felix:org.apache.felix.webconsole.plugins.scriptconsole:1.0.2
 org.apache.felix:org.apache.felix.webconsole.plugins.subsystems:0.1.0
 org.apache.felix:org.apache.felix.webconsole.plugins.useradmin:1.0.2
-biz.aQute:biz.aQute.gogo.commands.provider:1.10.0
 org.owasp.encoder:encoder:1.2.3
 
 
@@ -141,3 +140,4 @@ org.apache.felix:org.apache.felix.webconsole:5.0.2
 org.apache.aries.typedevent:org.apache.aries.typedevent.bus:0.0.2
 org.apache.aries.component-dsl:org.apache.aries.component-dsl.component-dsl:1.2.2
 org.apache.felix:org.apache.felix.configadmin.plugin.interpolation:1.2.8
+biz.aQute:biz.aQute.gogo.commands.provider:1.11.0-SNAPSHOT

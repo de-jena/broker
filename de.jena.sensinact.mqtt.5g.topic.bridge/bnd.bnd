@@ -10,4 +10,5 @@
 	org.gecko.emf.osgi.api,\
 	org.eclipse.emf.ecore,\
 	org.eclipse.emf.common,\
-	org.gecko.adapter.mqtt;version=latest
+	org.gecko.adapter.mqtt;version=latest,\
+	org.gecko.emf.json

@@ -1,0 +1,9 @@
+services:
+
+    mqttbridge:
+        image: devel.data-in-motion.biz:6000/scj/mqtt-bridge:latest
+        environment:
+            - MQTT_FULL_USER=iwoms
+            - MQTT_FULL_PWD=b2952fa553ad3ac2
+
+

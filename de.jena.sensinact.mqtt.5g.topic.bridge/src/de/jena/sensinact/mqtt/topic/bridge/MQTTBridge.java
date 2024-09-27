@@ -38,6 +38,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceScope;
 import org.osgi.util.pushstream.PushStream;
 import org.osgi.util.pushstream.QueuePolicyOption;
+import org.gecko.emf.json.annotation.RequireEMFJson;
 
 /**
  * Forwards messages from the incomming topics, to the ones that people are
@@ -51,6 +52,7 @@ import org.osgi.util.pushstream.QueuePolicyOption;
  * iwoms    5g/* r/w
  * 
  */
+@RequireEMFJson
 @Component(name = "MQTTBridge", configurationPolicy = ConfigurationPolicy.REQUIRE)
 public class MQTTBridge {
 

@@ -1,0 +1,46 @@
+/*
+ * build Gradle build script
+ */
+import aQute.bnd.gradle.Export
+
+configurations {
+  bundles
+}
+
+task prepareDocker(){
+	def stageDir = file('content')
+	def runtimeDir = new File(stageDir, 'runtime')
+	doFirst {
+		stageDir.deleteDir()
+    }
+    doLast {
+		println "Prepare Docker build"
+		stageDir.mkdirs()
+	     // copy all necessary files to  build/docker/ dir
+    	copy {
+	        from new File("../de.jena.mqttbridge.runtime/generated/distributions/executable/mqttbridge.jar")
+	        into stageDir
+	        rename("mqttbridge.jar", "de.jena.mqttbridge.runtime.jar")
+	    }
+	    copy {
+	        from new File("../de.jena.mqttbridge.runtime/runtime/")
+	        into new File(stageDir, "runtime")
+	    }
+    }
+}
+
+/*
+ * Executing docker image build. Copy everything to the right places
+ */
+task buildDocker(type:Exec, dependsOn: prepareDocker){
+	
+	workingDir '.'
+    def tag = "scj/mqtt-bridge:latest"
+	executable "docker"
+
+	args "build", "-f", "Dockerfile", ".", "-t", tag
+	
+	doFirst{
+		println "Building docker image " + tag
+	}
+}
