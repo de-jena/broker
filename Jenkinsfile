@@ -228,14 +228,6 @@ pipeline  {
 				step([$class: 'DockerBuilderPublisher',
 				      dockerFileDirectory: 'docker_bridge',
 							cloud: 'docker',
-							tagsString: """registry-git.jena.de/scj/mqtt-bridge:latest
-                                        registry-git.jena.de/scj/mqtt-bridge:0.1.0.${VERSION}""",
-							pushOnSuccess: true,
-							pushCredentialsId: 'github-jena'])
-
-				step([$class: 'DockerBuilderPublisher',
-				      dockerFileDirectory: 'docker_udp',
-							cloud: 'docker',
 							tagsString: """devel.data-in-motion.biz:6000/scj/mqtt-bridge:latest
 							            devel.data-in-motion.biz:6000/scj/mqtt-bridge:0.1.0.${VERSION}""",
 							pushOnSuccess: true,
