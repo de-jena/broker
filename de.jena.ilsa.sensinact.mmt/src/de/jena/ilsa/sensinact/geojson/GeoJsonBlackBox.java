@@ -52,7 +52,7 @@ import de.jena.udp.model.trafficos.common.TOSCommonPackage;
 @ModuleName("GeoJsonBlackBox")
 @UnitQualifiedName("de.jena.ilsa.sensinact.geojson.GeoJsonBlackBox")
 @TemplatePath("de.jena.ilsa.sensinact.mmt/transformations/ilsa.qvto")
-@Module(packageURIs = { GeojsonPackage.eNS_URI, ProviderPackage.eNS_URI, TOSCommonPackage.eNS_URI })
+@Module(packageURIs = { GeojsonPackage.eNS_URI, ProviderPackage.eNS_URI, TOSCommonPackage.eNS_URI, IlsaPackage.eNS_URI })
 public final class GeoJsonBlackBox {
 
 	@Reference
