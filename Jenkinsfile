@@ -156,16 +156,6 @@ pipeline  {
 
 		}
 
-		stage('Release'){
-			when {
-				branch 'main'
-			}
-
-			steps  {
-				sh "./gradlew release --info --stacktrace -Dmaven.repo.local=${WORKSPACE}/.m2"
-		  }
-		}
-
 		stage('Docker 5G Image build'){
 			when {
 				branch 'main'
