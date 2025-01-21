@@ -14,7 +14,7 @@ main() {
 mapping ILSA::TLConfiguration::toProvider(): SENSINACT::Ilsa {
 	id := self.intersectionId;
 	admin := self.map toAdmin();
-	services := self.modules.signals->map toSignalMapEntry();
+	services := self.subcircles.serialPorts.modules.signals->map toSignalMapEntry();
 }
 
 
